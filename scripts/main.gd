@@ -117,10 +117,10 @@ func fighter(pos,c,is_hero,index=0):
 func draw_ellipse(p,r,c):
  draw_set_transform(p)
  draw_circle(Vector2.ZERO,1,c)
- draw_set_transform()
+ draw_set_transform(Vector2.ZERO)
  draw_set_transform(p,0,r)
  draw_circle(Vector2.ZERO,1,c)
- draw_set_transform()
+ draw_set_transform(Vector2.ZERO)
 func _draw():
  draw_rect(Rect2(0,0,1280,720),Color("#091923"))
  for n in 9:
