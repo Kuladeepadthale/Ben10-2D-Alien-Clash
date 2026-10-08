@@ -10,18 +10,49 @@ jobs:
       image: barichello/godot-ci:4.3
     steps:
       - uses: actions/checkout@v4
-      - name: Import project
-        run: godot --headless --editor --path . --import --quit
-      - name: Prepare Android debug keystore
+      - name: Install Godot Android export templates
+        shell: bash
         run: |
-          mkdir -p /root/.android builds
-          keytool -genkeypair -keystore /root/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+          set -euo pipefail
+          DEST="$HOME/.local/share/godot/export_templates/4.3.stable"
+          mkdir -p "$DEST"
+          TEMPLATE=$(find /root /opt /usr/local -type f -name android_debug.apk -print -quit 2>/dev/null || true)
+          if [ -n "$TEMPLATE" ]; then
+            cp -v "$(dirname "$TEMPLATE")"/android_*.apk "$DEST/"
+          else
+            echo "Templates not preinstalled; downloading official 4.3 archive"
+            curl -fL --retry 3 -o /tmp/templates.tpz https://github.com/godotengine/godot-builds/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
+            mkdir -p /tmp/godot-tpl
+            unzip -q /tmp/templates.tpz 'templates/android_debug.apk' 'templates/android_release.apk' -d /tmp/godot-tpl
+            cp /tmp/godot-tpl/templates/android_*.apk "$DEST/"
+          fi
+          ls -lh "$DEST"
+      - name: Configure Android SDK and Java
+        shell: bash
+        run: |
+          set -euo pipefail
+          export JAVA_HOME="${JAVA_HOME:-$(dirname "$(dirname "$(readlink -f "$(command -v javac)")")")}"
+          export ANDROID_HOME="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/opt/android-sdk}}"
+          export ANDROID_SDK_ROOT="$ANDROID_HOME"
+          echo "JAVA_HOME=$JAVA_HOME" >> "$GITHUB_ENV"
+          echo "ANDROID_HOME=$ANDROID_HOME" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> "$GITHUB_ENV"
+          mkdir -p "$HOME/.android" builds
+          keytool -genkeypair -keystore "$HOME/.android/debug.keystore" -alias androiddebugkey -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+          godot --headless --path . --editor --script ci/configure_android.gd --quit
+      - name: Import project and check scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+          godot --headless --editor --path . --import --quit 2>&1 | tee /tmp/import.log
+          if grep -E 'SCRIPT ERROR|Parse Error|Failed to load script' /tmp/import.log; then exit 1; fi
       - name: Export APK
-        env:
-          GODOT_ANDROID_KEYSTORE_DEBUG_PATH: /root/.android/debug.keystore
-          GODOT_ANDROID_KEYSTORE_DEBUG_USER: androiddebugkey
-          GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
-        run: godot --headless --path . --export-debug Android builds/AlienClash2D-debug.apk
+        shell: bash
+        run: |
+          set -euo pipefail
+          godot --headless --path . --export-debug Android builds/AlienClash2D-debug.apk
+          test -s builds/AlienClash2D-debug.apk
+          ls -lh builds/AlienClash2D-debug.apk
       - uses: actions/upload-artifact@v4
         with:
           name: AlienClash2D-Android-APK
