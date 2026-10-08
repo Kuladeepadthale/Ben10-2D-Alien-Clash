@@ -1,0 +1,29 @@
+name: Build Android APK
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Import project
+        run: godot --headless --editor --path . --import --quit
+      - name: Prepare Android debug keystore
+        run: |
+          mkdir -p /root/.android builds
+          keytool -genkeypair -keystore /root/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+      - name: Export APK
+        env:
+          GODOT_ANDROID_KEYSTORE_DEBUG_PATH: /root/.android/debug.keystore
+          GODOT_ANDROID_KEYSTORE_DEBUG_USER: androiddebugkey
+          GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
+        run: godot --headless --path . --export-debug Android builds/AlienClash2D-debug.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AlienClash2D-Android-APK
+          path: builds/AlienClash2D-debug.apk
+          if-no-files-found: error
