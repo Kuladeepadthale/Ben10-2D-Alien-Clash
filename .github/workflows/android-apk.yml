@@ -3,6 +3,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,13 +41,20 @@ jobs:
           echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> "$GITHUB_ENV"
           mkdir -p "$HOME/.android" builds
           keytool -genkeypair -keystore "$HOME/.android/debug.keystore" -alias androiddebugkey -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
-          godot --headless --path . --editor --script ci/configure_android.gd --quit
+          godot --headless --path . --editor --script ci/configure_android.gd --quit 2>&1 | tee /tmp/configure.log
+          if grep -E "SCRIPT ERROR|Parse Error|Cannot save" /tmp/configure.log; then exit 1; fi
       - name: Import project and check scripts
         shell: bash
         run: |
           set -euo pipefail
           godot --headless --editor --path . --import --quit 2>&1 | tee /tmp/import.log
           if grep -E 'SCRIPT ERROR|Parse Error|Failed to load script' /tmp/import.log; then exit 1; fi
+      - name: Run gameplay smoke check
+        shell: bash
+        run: |
+          set -euo pipefail
+          godot --headless --path . --quit-after 180 2>&1 | tee /tmp/game.log
+          if grep -E "SCRIPT ERROR|Parse Error|Failed to load script" /tmp/game.log; then exit 1; fi
       - name: Export APK
         shell: bash
         run: |

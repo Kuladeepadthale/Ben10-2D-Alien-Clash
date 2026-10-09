@@ -24,7 +24,9 @@ func _ready():
   var p = "res://assets/characters/%s.png" % ["heatblast","fourarms","diamondhead","xlr8"][i]
   if ResourceLoader.exists(p): sprites[i] = load(p)
 func _physics_process(delta):
- if stopped: return
+ if stopped:
+  queue_redraw()
+  return
  time += delta
  for i in range(3): cooldown[i] = maxf(0.0,cooldown[i]-delta)
  var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down") + move_axis
@@ -77,13 +79,18 @@ func cast(slot):
   rival_hp = maxf(0,rival_hp-(48 if position_a.distance_to(position_b)<620 else 15))
   burst(position_b,PALETTE[hero],65)
 func reset():
- hp=100;rival_hp=100;charge=0;stopped=false;position_a=Vector2(310,400);position_b=Vector2(955,400);projectiles.clear();particles.clear()
+ hp=100;rival_hp=100;charge=0;stopped=false;cooldown=[0.0,0.0,0.0];time=0.0;move_axis=Vector2.ZERO;touch_id=-1;position_a=Vector2(310,400);position_b=Vector2(955,400);projectiles.clear();particles.clear()
 func _unhandled_key_input(event):
  if event.pressed and not event.echo:
   if event.keycode==KEY_J:cast(0)
   if event.keycode==KEY_K:cast(1)
   if event.keycode==KEY_L:cast(2)
   if event.keycode in [KEY_1,KEY_2,KEY_3,KEY_4]:hero=event.keycode-KEY_1;reset()
+func _notification(what):
+ if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+  move_axis=Vector2.ZERO
+  touch_id=-1
+
 func _input(event):
  if event is InputEventScreenTouch:
   if event.pressed:
@@ -92,7 +99,7 @@ func _input(event):
     reset()
    elif event.position.x>835 and event.position.y>585:
     cast(clampi(int((event.position.x-840)/125),0,2))
-   elif event.position.x<420:
+   elif event.position.x<420 and touch_id == -1:
     touch_id=event.index;touch_origin=event.position
   elif event.index==touch_id:
    touch_id=-1;move_axis=Vector2.ZERO
