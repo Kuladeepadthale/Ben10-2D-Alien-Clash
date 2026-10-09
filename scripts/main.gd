@@ -61,7 +61,8 @@ func _physics_process(delta):
   position_a = (position_a + axis * SPEED[hero] * delta).clamp(FLOOR.position, FLOOR.end)
   var toward = position_a - position_b
   if toward.length() > 130.0:
-   position_b += toward.normalized() * (130.0 + round_number * 6.0) * delta
+   var chase_speed = 260.0 if rival == 3 else (175.0 if rival == 1 else 135.0)
+   position_b += toward.normalized() * (chase_speed + round_number * 6.0) * delta
   position_b = position_b.clamp(FLOOR.position, FLOOR.end)
   enemy_cooldown -= delta
   if enemy_cooldown <= 0.0:
@@ -70,8 +71,16 @@ func _physics_process(delta):
     hp = maxf(0.0, hp - 8.0)
     hit_flash = 0.2
     burst(position_a - Vector2(0, 70), Color("ff5368"), 14)
+   elif rival == 0 or rival == 2:
+    shoot(position_b, toward.normalized(), 350.0, 8.0, COLORS[rival], true, "fire" if rival == 0 else "crystal")
+   elif rival == 3:
+    position_b = (position_b + toward.normalized() * minf(230.0, maxf(0.0, toward.length() - 100.0))).clamp(FLOOR.position, FLOOR.end)
+    ring(position_b, COLORS[rival], 200.0)
    else:
-    shoot(position_b, toward.normalized(), 320.0, 8.0, Color("d488ff"), true, "enemy")
+    ring(position_b, COLORS[rival], 220.0)
+    if toward.length() < 260.0:
+     hp = maxf(0.0, hp - 10.0)
+     hit_flash = 0.2
  for i in range(projectiles.size() - 1, -1, -1):
   var p = projectiles[i]
   var previous = p.pos
