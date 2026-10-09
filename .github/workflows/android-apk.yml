@@ -1,7 +1,7 @@
 name: Build Android APK
 on:
   push:
-    branches: [main]
+    branches: [native-3d]
   workflow_dispatch:
 permissions:
   contents: write
@@ -61,37 +61,40 @@ jobs:
         run: |
           set -euo pipefail
           apt-get update -qq
-          apt-get install -y -qq xvfb libgl1-mesa-dri
+          apt-get install -y -qq xvfb libgl1-mesa-dri ffmpeg
           timeout 60 xvfb-run -a godot --path . --script ci/visual_check.gd
           test -s builds/alien-selection.png
           test -s builds/arena-gameplay.png
+          ffmpeg -y -framerate 12 -i builds/movement-%03d.png -c:v libx264 -pix_fmt yuv420p builds/movement-preview.mp4
+          rm builds/movement-*.png
       - name: Export APK
         shell: bash
         run: |
           set -euo pipefail
-          godot --headless --path . --export-debug Android builds/AlienClash2D-debug.apk
-          test -s builds/AlienClash2D-debug.apk
-          ls -lh builds/AlienClash2D-debug.apk
+          godot --headless --path . --export-debug Android builds/Ben10-Alien-Clash-3D.apk
+          test -s builds/Ben10-Alien-Clash-3D.apk
+          ls -lh builds/Ben10-Alien-Clash-3D.apk
       - name: Publish downloadable test APK
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            const tag = 'android-' + context.sha.slice(0, 12);
+            const tag = 'android-3d-' + context.sha.slice(0, 12);
             const release = await github.rest.repos.createRelease({
               ...context.repo, tag_name: tag, target_commitish: context.sha,
-              name: 'Alien Clash 2D Android test build',
-              body: 'Installable debug APK. Includes generated classic Ben 10 character sprites, desert facility scenery, distinct abilities, selection menu and combat improvements. Fan-made test build.',
+              name: 'Alien Clash 3D Android test build',
+              body: 'Native 3D Android prototype. Reuses the supplied rigged Heatblast and Diamondhead models and their idle, walk and run animations. Includes 3D arena, camera orbit, jumping, dodge and abilities. Four Arms and XLR8 require matching 3D models and are not included.',
               prerelease: true
             });
             await github.rest.repos.uploadReleaseAsset({
               ...context.repo, release_id: release.data.id,
-              name: 'Ben10-2D-Alien-Clash.apk',
-              data: fs.readFileSync('builds/AlienClash2D-debug.apk')
+              name: 'Ben10-Alien-Clash-3D.apk',
+              data: fs.readFileSync('builds/Ben10-Alien-Clash-3D.apk')
             });
       - uses: actions/upload-artifact@v4
         continue-on-error: true
         with:
-          name: AlienClash2D-Android-APK
+          name: AlienClash3D-Android-APK
           path: builds/*
           if-no-files-found: error
+

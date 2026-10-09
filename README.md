@@ -1,9 +1,9 @@
-# Ben 10 Alien Clash — 2D fan game
+# Ben 10 Alien Clash 3D — Android prototype
 
-Godot 4.3 Android test build with generated classic Heatblast, Four Arms, Diamondhead and XLR8 sprites, desert research-base scenery, a character selection screen, touch joystick, distinct attacks and special moves, energy ultimates, rival AI, rounds and pause/resume.
+This native Godot 4.3 branch converts the arena into a real 3D scene and uses the supplied rigged Heatblast and Diamondhead GLB models unchanged. Their Idle_Breathe, Walk_Narrow and Run_Narrow clips are crossfaded according to actual movement speed. Acceleration, braking, turning and camera tracking are smoothed independently. It includes orbit camera, collision, jumping, dodge, six abilities, AI combat, rounds, pause and touch controls.
 
-Sprites are separate transparent textures, independently rendered over arena artwork. Animation currently uses whole-sprite motion and attack effects; it is not frame-by-frame character animation. This is a fan-made prototype, not an official Ben 10 game.
+Four Arms and XLR8 are not included: matching rigged 3D assets are still needed. This is a two-character prototype, not completion of the requested four-character exact-match conversion. Model quality and deformation are inherited from the supplied meshes and clips; performance requires testing on the target Android phone.
 
-Desktop: arrows to move; J/K/L for attacks, 1–4 to choose, Enter to begin, Escape to pause. Android: select an alien, enter arena, joystick and three ability buttons.
+Controls: left joystick moves relative to camera; drag the right side to rotate camera; ability buttons attack; JUMP and DODGE handle movement. Desktop uses arrow keys, right mouse drag, J/K/L, Space, Shift and Escape.
 
-CI checks all twelve abilities, asset loading, movement, restart and rival attacks, captures actual screenshots, exports a debug APK and publishes it in GitHub Releases.
+GitHub Actions imports assets, tests gameplay and animation transitions, renders actual screenshots and a short movement preview, then exports and publishes an installable test APK. Package org.alienclash.threed installs separately from the 2D version.
