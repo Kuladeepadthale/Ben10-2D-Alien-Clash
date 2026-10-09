@@ -53,8 +53,18 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          godot --headless --path . --quit-after 180 2>&1 | tee /tmp/game.log
+          timeout 60 godot --headless --path . --script ci/gameplay_check.gd 2>&1 | tee /tmp/game.log
+          grep -q "PASS:" /tmp/game.log
           if grep -E "SCRIPT ERROR|Parse Error|Failed to load script" /tmp/game.log; then exit 1; fi
+      - name: Capture actual game screens
+        shell: bash
+        run: |
+          set -euo pipefail
+          apt-get update -qq
+          apt-get install -y -qq xvfb libgl1-mesa-dri
+          timeout 60 xvfb-run -a godot --path . --script ci/visual_check.gd
+          test -s builds/alien-selection.png
+          test -s builds/arena-gameplay.png
       - name: Export APK
         shell: bash
         run: |
@@ -71,7 +81,7 @@ jobs:
             const release = await github.rest.repos.createRelease({
               ...context.repo, tag_name: tag, target_commitish: context.sha,
               name: 'Alien Clash 2D Android test build',
-              body: 'Installable debug APK. Includes Android build fixes, landscape display and control/reset fixes. Character artwork is still placeholder art.',
+              body: 'Installable debug APK. Includes generated classic Ben 10 character sprites, desert facility scenery, distinct abilities, selection menu and combat improvements. Fan-made test build.',
               prerelease: true
             });
             await github.rest.repos.uploadReleaseAsset({
@@ -83,5 +93,5 @@ jobs:
         continue-on-error: true
         with:
           name: AlienClash2D-Android-APK
-          path: builds/AlienClash2D-debug.apk
+          path: builds/*
           if-no-files-found: error
