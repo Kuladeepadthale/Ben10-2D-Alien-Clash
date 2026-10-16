@@ -9,3 +9,6 @@ A transparent 6-column × 8-row sprite atlas with exactly 48 separate full-body 
 
 ## Limits
 This is an initial key-pose pilot, with six keys per major row and limited in-between drawings. It is not yet a full production animation set. Motion quality and frame pacing require review on the user's Android device.
+
+## Runtime alignment pass (0.9)
+The unchanged source atlas contains uneven per-cell padding and isolated neighboring-row fragments. `heatblastRegistration` records the primary body bounds, torso pivot and foot baseline for every cell. The renderer uses these source rectangles rather than displaying each entire square. A feet-plane clip prevents below-floor sprite fragments, including during crossfades. No replacement drawing was generated for this pass. Idle uses frame 0 with minimal foot-anchored breathing; sustained releases hold frame 39 or 47. The standing height is calibrated once, avoiding per-frame rescaling of the body. These changes address registration jitter; they do not add new in-between drawings.
