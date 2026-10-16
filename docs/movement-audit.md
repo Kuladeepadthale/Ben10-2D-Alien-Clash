@@ -37,3 +37,8 @@ The supplied art consists of one classic illustration per alien. No original car
 
 ## Validation
 Automated tests cover all ten aliens, every control state, all 30 selectable powers and ten ultimates, attack envelopes, navigation, mode progression, saved settings, damage caps, collision travel and fixed simulation consistency at 30/60/120 render updates. Canvas output is visually inspected. Physical Android performance and WebGL output need device testing; a fixed simulation does not guarantee a particular display frame rate.
+
+## Version 0.7: hierarchical skinning
+The animation now runs through real parent-child joint matrices and inverse-bind skinning in `web/skeleton.js`. Neutral transforms reconstruct the source illustration exactly. Per-vertex distance weights blend the nearest bones; head, spine, waist, shoulder, elbow, wrist, hip, knee and ankle nodes animate independently. No joint markers are rendered. There are no separate cutout edges: the original texture stays on a single continuous mesh. Extra branches cover Four Arms' lower arms, XLR8's tail, Stinkfly's wings and Ghostfreak's spectral tail. Source Wildmutt faces left, so the fight renderer corrects its facing. GPU skin geometry uses 18×28 cells; the Canvas fallback uses 10×18 cells. Skinning cannot expose unseen drawing angles or recreate original TV motion from one illustration.
+
+Additional checks validate neutral-bind identity, normalized skin weights, acyclic parent chains, finite animated vertices, all four Tetramand arm chains and the spectral tail.

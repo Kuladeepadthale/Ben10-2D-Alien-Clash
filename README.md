@@ -22,3 +22,6 @@ Character motion now uses cached articulated mesh deformation of the same origin
 
 ## Version 0.6 movement pass
 Continuous pose sampling replaces the 16-step bitmap animation. WebGL texture deformation renders where supported, with a Canvas fallback. Guard, landing, recoil and attacks blend rather than snap. Ability movement uses each cast's actual wind-up, ticks and recovery. Combat runs in fixed 1/120-second simulation steps, independent of display frame rate. See `docs/movement-audit.md` for all characters, buttons and source limitations. These are authored image-based motions, not extracted cartoon animation.
+
+## Version 0.7 joint skeletons
+Each alien now has a hierarchical bone rig bound to its classic artwork: head/neck, chest/spine, waist, shoulders, elbows, wrists, hips, knees and ankles where applicable. Four Arms uses all four arm chains; Wildmutt uses four limb chains and corrected facing; Stinkfly adds wing bones; Ghostfreak uses a segmented tail instead of legs. Smooth skin weights overlap between bones, keeping the texture continuous without visible joint markers or cutout seams. Bones and neutral weights are cached; only joint matrices and vertices change per frame. Original cartoon animation has not been extracted. Physical-device performance still needs testing.
