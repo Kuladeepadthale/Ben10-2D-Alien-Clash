@@ -105,12 +105,30 @@ function render(){let ratio=Math.min(window.devicePixelRatio||1,typeof settings!
  for(let f of [player,enemy]){let v=f.cast;if(v&&v.elapsed<v.cfg.windup){let p=v.elapsed/v.cfg.windup,b=body(f),col=CLASSIC_COLORS[f.id];c.save();c.globalAlpha=.25+p*.65;c.shadowColor=col;c.shadowBlur=20;oval(c,f.x+f.dir*48,b.y+b.h*.42,8+p*(v.ultimate?35:18),8+p*(v.ultimate?35:18),col,null);c.strokeStyle=col;c.lineWidth=2;c.beginPath();c.arc(f.x,f.y-85,50+p*35,time*8,time*8+Math.PI*1.5);c.stroke();c.restore()}}
  for(let e of effects)if(!['warning','trap','afterimage'].includes(e.kind))drawEffect(c,e);for(let s of shots)drawShot(c,s);for(let p of particles){c.globalAlpha=Math.max(0,p.life/p.max);oval(c,p.x,p.y,p.r,p.r,p.color,null)}c.globalAlpha=1;for(let v of floating){c.globalAlpha=Math.min(1,v.life*2);c.fillStyle=v.color;c.textAlign='center';c.font='bold 23px Arial';c.strokeStyle='#07120d';c.lineWidth=4;c.strokeText(v.text,v.x,v.y);c.fillText(v.text,v.x,v.y)}c.globalAlpha=1;c.textAlign='left';if(combo>1&&comboTime>0){c.fillStyle='#c4f98c';c.font='italic bold 28px Arial';c.fillText(combo+' HIT COMBO',75,210)}if(flash>0){c.fillStyle='#deffb7';c.globalAlpha=flash;c.fillRect(0,0,W,H);c.globalAlpha=1}c.restore()}
 function ai(dt){let d=Math.abs(player.x-enemy.x),diff=$('difficulty').value;enemy.aiGuard=Math.max(0,enemy.aiGuard-dt);enemy.block=enemy.aiGuard>0&&!enemy.cast&&enemy.y>=floor;aiWait-=dt;let preferred=enemy.id===5?75:115*aliens[enemy.id].scale;if(d>preferred&&!enemy.aiRetreat)move(enemy,player.x>enemy.x?1:-1,dt);if(enemy.aiRetreat>0){enemy.aiRetreat-=dt;move(enemy,player.x>enemy.x?-1:1,dt)}if(aiWait>0)return;const r=Math.random();if(shots.some(s=>s.owner===player&&Math.abs(s.x-enemy.x)<210)&&r>.55&&diff!=='easy')jump(enemy);if(d<85&&r>.7)enemy.aiRetreat=.25;if(player.cast&&d<300&&r<(diff==='hard'?.5:diff==='easy'?.08:.25)){enemy.aiGuard=.35;enemy.block=!enemy.cast}else if(enemy.ult>=100&&d<700)cast(enemy,'ultimate');else if(r>.4){let slot=Math.random()>.5?0:1,s=aliens[enemy.id].skills[enemy.loadout[slot]];if(d<s.range+60)cast(enemy,'skill'+slot)}else if(d<baseNormal(enemy).range+10)cast(enemy,'normal');if(player.y<floor-45&&r>.75)jump(enemy);aiWait=diff==='easy'?.85:diff==='hard'?.24:.48}
-function tick(stamp){let dt=Math.min((stamp-last)/1000||0,.033);last=stamp;if(mode!=='paused'){time+=dt;if(announceTime>0){announceTime-=dt;if(announceTime<=0)$('announcement').textContent=''}}if(mode==='fight'){
- if(hitStop>0)hitStop-=dt;else{player.moving=false;enemy.moving=false;if(!training)clock=Math.max(0,clock-dt);player.block=!!keys.block&&!player.cast&&player.y>=floor&&player.stun<=0;if(keys.left)move(player,-1,dt);if(keys.right)move(player,1,dt);if(presses.jump)jump(player);for(let k of ['normal','skill0','skill1','ultimate'])if(presses[k]){cast(player,k);break}for(let k in presses)presses[k]=false;if(!training)ai(dt);updateF(player,dt);updateF(enemy,dt);
- if(Math.abs(player.x-enemy.x)<55&&Math.abs(player.y-enemy.y)<80&&!player.cast&&!enemy.cast){let mid=(player.x+enemy.x)/2,dir=player.x<enemy.x?-1:1;player.x=mid+dir*28;enemy.x=mid-dir*28}updateEffects(dt);
- if(training&&enemy.hp<=0){enemy=make(enemy.id,910,-1);shots=[];effects=[];player.ult=100;announce('TARGET RESET · ULTIMATE READY',1)}else if(player.hp<=0||enemy.hp<=0||clock<=0)finish();}hud()
+const PHYSICS_STEP=1/120;let simulationCarry=0;
+function simulateCombat(dt){
+ if(mode==='fight'){
+  if(hitStop>0){hitStop=Math.max(0,hitStop-dt);return}
+  player.moving=false;enemy.moving=false;if(!training)clock=Math.max(0,clock-dt);
+  player.block=!!keys.block&&!player.cast&&player.y>=floor&&player.stun<=0;
+  if(keys.left)move(player,-1,dt);if(keys.right)move(player,1,dt);if(presses.jump)jump(player);
+  for(let k of ['normal','skill0','skill1','ultimate'])if(presses[k]){cast(player,k);break}
+  for(let k in presses)presses[k]=false;if(!training)ai(dt);updateF(player,dt);updateF(enemy,dt);
+  if(Math.abs(player.x-enemy.x)<55&&Math.abs(player.y-enemy.y)<80&&!player.cast&&!enemy.cast){let mid=(player.x+enemy.x)/2,dir=player.x<enemy.x?-1:1;player.x=mid+dir*28;enemy.x=mid-dir*28}
+  updateEffects(dt);
+  if(training&&enemy.hp<=0){enemy=make(enemy.id,910,-1);shots=[];effects=[];player.ult=100;announce('TARGET RESET · ULTIMATE READY',1)}
+  else if(player.hp<=0||enemy.hp<=0||clock<=0)finish();
  }else if(mode==='roundend'){roundDelay-=dt;if(roundDelay<=0){if(wins[0]>=2||wins[1]>=2)endMatch();else{round++;begin(false)}}}
- if(mode!=='paused'){comboTime-=dt;shake=Math.max(0,shake-dt*35);flash=Math.max(0,flash-dt);for(let p of particles){p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=dt*500}particles=particles.filter(p=>p.life>0);for(let f of floating){f.life-=dt;f.y-=dt*40}floating=floating.filter(f=>f.life>0)}render();requestAnimationFrame(tick)
+}
+function advanceSimulation(elapsed){simulationCarry+=Math.min(.1,Math.max(0,elapsed));let steps=0;while(simulationCarry+1e-9>=PHYSICS_STEP&&steps<12){simulateCombat(PHYSICS_STEP);simulationCarry-=PHYSICS_STEP;steps++}return steps;}
+function tick(stamp){const dt=Math.min(Math.max(0,(stamp-last)/1000||0),.1);last=stamp;
+ if(mode!=='paused'){
+  time+=dt;if(announceTime>0){announceTime-=dt;if(announceTime<=0)$('announcement').textContent=''}
+  advanceSimulation(dt);comboTime-=dt;shake=Math.max(0,shake-dt*35);flash=Math.max(0,flash-dt);
+  for(let p of particles){p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=dt*500}particles=particles.filter(p=>p.life>0);
+  for(let f of floating){f.life-=dt;f.y-=dt*40}floating=floating.filter(f=>f.life>0);
+ }else simulationCarry=0;
+ hud();render();requestAnimationFrame(tick);
 }
 $('start').onclick=()=>{if(mode==='paused')pause();else begin(true,false)};$('pause').onclick=pause;$('quit').onclick=quit;$('training').onclick=()=>{begin(true,true);$('game').scrollIntoView({behavior:'smooth',block:'center'})};$('profileNav').onclick=()=>{if(mode==='fight')pause();$('profile').scrollIntoView({behavior:'smooth',block:'start'})};$('sound').onclick=()=>{muted=!muted;$('sound').textContent=muted?'SOUND OFF':'SOUND ON';if(!muted)sound(350,.1)};$('full').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen?.();else $('game').requestFullscreen?.().catch(()=>{})};
 const map={KeyA:'left',ArrowLeft:'left',KeyD:'right',ArrowRight:'right',KeyW:'jump',ArrowUp:'jump',KeyJ:'normal',KeyK:'skill0',KeyL:'skill1',KeyI:'ultimate',Space:'block'};

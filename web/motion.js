@@ -1,63 +1,76 @@
 'use strict';
-// Deform the existing classic artwork with a small articulated mesh. No replacement character art.
-const motionFrames=new Map();let motionSerial=0;
+// Continuous image rig. These are new gameplay motions, not extracted cartoon frames.
 const smoothRange=(v,a,b)=>{let n=Math.max(0,Math.min(1,(v-a)/(b-a)));return n*n*(3-2*n)};
-function motionPoint(x,y,state,p,id,w,h){
- const wave=p*Math.PI*2,side=x<.5?-1:1,leg=smoothRange(y,.58,.92),arm=smoothRange(Math.abs(x-.5),.12,.30)*(1-smoothRange(y,.69,.83))*smoothRange(y,.17,.33),head=1-smoothRange(y,.17,.29);
- let dx=(x-.5)*Math.sin(wave)*.009,dy=-Math.sin(wave)*.006*(1-leg),attack=Math.sin(p*Math.PI),bodyTurn=0;
- if(state==='walk'){
-  const stride=Math.sin(wave);dx+=side*stride*.095*leg;dy-=Math.max(0,side*Math.cos(wave))*.085*leg;
-  dx-=side*stride*.055*arm;dy+=side*Math.cos(wave)*.035*arm;bodyTurn=stride*.018;
-  dy-=Math.abs(stride)*.018*(1-leg);dx-=.025*(1-leg);
+const movementProfiles=[
+ {gait:.64,stride:.044,arms:.045,breath:1.8,hover:0,weight:1,lean:.025},
+ {gait:.84,stride:.036,arms:.055,breath:2,hover:0,weight:1.25,lean:.025},
+ {gait:.76,stride:.036,arms:.036,breath:1.1,hover:0,weight:1.1,lean:.02},
+ {gait:.36,stride:.045,arms:.035,breath:1.3,hover:0,weight:.65,lean:.10},
+ {gait:.48,stride:.055,arms:.035,breath:2.4,hover:0,weight:.95,lean:.035},
+ {gait:.44,stride:.042,arms:.045,breath:1.4,hover:0,weight:.55,lean:.035},
+ {gait:.78,stride:.025,arms:.026,breath:1.3,hover:0,weight:.9,lean:.02},
+ {gait:.42,stride:.015,arms:.025,breath:1.2,hover:7,weight:.55,lean:.035},
+ {gait:.72,stride:.044,arms:.045,breath:1.9,hover:0,weight:1.1,lean:.035},
+ {gait:1.05,stride:.012,arms:.02,breath:1,hover:9,weight:.5,lean:.015}
+];
+function attackEnvelope(v){if(!v)return {prepare:0,release:0,recover:0,pulse:0};const w=Math.max(.01,v.cfg.windup),d=['rush','pounce'].includes(v.cfg.kind)?Math.max(.42,v.cfg.duration||.08):v.cfg.duration||.08,e=v.elapsed,a=Math.max(0,e-w),recovery=Math.max(.01,v.cfg.recovery);
+ const prepare=smoothRange(e,0,w),recover=smoothRange(e,w+d,w+d+recovery),release=smoothRange(e,w*.55,w)*(1-recover),ticks=v.cfg.ticks||1;
+ const pulse=e<w?0:e<=w+d?(ticks===1?1:.65+.35*Math.sin(Math.min(1,a/d)*Math.PI*ticks*2-Math.PI/2)):1-recover;
+ return {prepare:prepare*(1-recover),release,recover,pulse};
+}
+function movementPose(f,t){const id=f.id,pr=movementProfiles[id],v=f.cast,state=f.hp<=0?'ko':f.stun>0?'hit':f.block?'guard':v?(v.ultimate?'ultimate':v.key==='normal'?'normal':'power'):f.y<floor-3?'jump':f.moving?'walk':'idle';
+ const walk=(f.walk||0)/12/pr.gait*Math.PI*2,breath=Math.sin(t*3.6+id),pose={state,walk,step:state==='walk'?1:0,left:0,right:0,crouch:0,lean:0,shift:0,lift:0,spread:0,ripple:0,ko:0,bob:breath*pr.breath};
+ if(state==='walk'){pose.lean=pr.lean;pose.bob-=Math.abs(Math.sin(walk))*3.5*pr.weight;pose.left=Math.sin(walk)*.06;pose.right=-pose.left;}
+ if(pr.hover&&state!=='ko'){pose.bob=-pr.hover+Math.sin(t*(id===7?5:3.5))*3;}
+ if(state==='guard'){pose.left=.22;pose.right=-.28;pose.crouch=.022;pose.lean=-.025;pose.shift=-4;}
+ if(state==='jump'){const height=Math.max(0,floor-f.y),tuck=smoothRange(height,0,145);pose.crouch=-.07*tuck;pose.spread=.025*tuck;pose.left=.18*tuck;pose.right=-.18*tuck;pose.lean=Math.max(-.045,Math.min(.045,-f.vy*.00012));}
+ if(state==='hit'){const h=Math.max(f.stun||0,f.hitTint||0)/.22;pose.lean=-.14*h;pose.shift=-9*h;pose.right=.15*h;pose.left=-.12*h;pose.crouch=.025*h;}
+ if(state==='ko'){pose.ko=1;pose.lean=-1.42;pose.shift=-12;pose.crouch=.035;}
+ if(v&&state!=='hit'&&state!=='ko'){const e=attackEnvelope(v),kind=v.cfg.kind,normal=v.key==='normal',prp=e.prepare,s=e.release,p=e.pulse,chain=f.normalChain||0;
+  pose.shift=-5*prp*(1-s)+s*(normal?15:6);pose.lean=-.024*prp*(1-s)+.025*s;pose.crouch=.008*s;
+  if(normal){pose.right=-.52*s;pose.left=.10*s;if(chain===1){pose.left=.37*s;pose.right=-.12*s}if(chain===2){pose.crouch=.025*s;pose.right=-.60*s;pose.lean=.055*s}if(id===4||id===8){pose.lean=.10*s;pose.shift=20*s;pose.right=-.18*s;pose.left=.13*s}if(id===1)pose.left=.24*s;}
+  else if(['projectile','lob','rain'].includes(kind)){pose.right=-.42*s;pose.left=.12*prp;pose.lean=-.025*prp+.045*s;if(kind==='lob')pose.right=-.54*s;if(kind==='rain'){pose.right=-.48*s;pose.left=.42*s;pose.spread=.02*s;}}
+  else if(kind==='beam'){pose.right=-.40*s;pose.left=id===6?.04:.24*s;pose.lean=-.035*s;pose.shift=-4*s;}
+  else if(['ground','eruption','spikes','leapslam'].includes(kind)){const slam=smoothRange(v.elapsed,Math.max(0,v.cfg.windup-.09),v.cfg.windup+.12);pose.left=.48*prp*(1-slam)-.12*s;pose.right=-.50*prp*(1-slam)+.15*s;pose.crouch=.045*s;pose.lean=.045*s;pose.spread=.022*s;}
+  else if(['rush','pounce'].includes(kind)){pose.lean=(id===3?.13:.08)*s;pose.crouch=.025*s;pose.left=.12*s;pose.right=.10*s;pose.step=s;pose.walk=t*(id===3?22:14);}
+  else if(kind==='trap'){pose.crouch=.05*s;pose.right=.20*s;pose.left=.08*s;pose.lean=.07*s;}
+  else if(kind==='wave'||kind==='vortex'){pose.left=.32*s;pose.right=-.38*s;pose.ripple=.014*s;pose.lean=.02*Math.sin(v.elapsed*10)*s;}
+  else if(kind==='melee'){pose.right=-.42*s*p;pose.left=.25*s*(1-p*.5);pose.lean=.04*s*p;if(id===8){pose.lean=.09*s*p;pose.shift=17*s*p}if(id===9)pose.ripple=.03*s;}
+  if(id===1&&v.cfg.ticks>1){pose.right-=.13*s*Math.sin(v.elapsed*20);pose.left+=.12*s*Math.sin(v.elapsed*20+Math.PI);}
+  if(id===6)pose.ripple+=.012*s;if(v.ultimate){pose.left*=1.12;pose.right*=1.12;}
  }
- if(state==='normal'||state==='power'||state==='ultimate'){
-  // Anticipation, fast extension and longer recovery; repeating fists for a normal combo.
-  const strike=smoothRange(p,.12,.43)*(1-smoothRange(p,.56,1)),pull=Math.sin(Math.min(1,p/.27)*Math.PI)*.025;
-  const both=state==='ultimate',forward=both?1:smoothRange(x,.42,.72),weight=arm*(both?1:forward);
-  const angle=-strike*(state==='normal'?.62:state==='ultimate'?.85:.65)*(both&&x<.5?-1:1);
-  const px=x<.5?.33:.66,py=.29,vx=(x-px)*w,vy=(y-py)*h;
-  dx+=(vx*Math.cos(angle)-vy*Math.sin(angle)-vx)/w*weight;dy+=(vx*Math.sin(angle)+vy*Math.cos(angle)-vy)/h*weight;
-  dx+=strike*.055*(1-leg)-pull*(1-leg);dy+=strike*.035*leg;dx+=side*strike*.035*leg;
-  bodyTurn=strike*.035;dx+=bodyTurn*(.6-y);dy-=strike*.015*head;
-  if(id===1)dx+=Math.sin(p*Math.PI*4)*arm*.035;
-  if(id===4){dx+=strike*.10*smoothRange(x,.35,.8);dy-=strike*.06*(1-leg)}
- }
- if(state==='guard'){dx-=side*arm*.10;dy-=arm*.15;dy+=leg*.045;dx-=.03*(1-leg)}
- if(state==='jump'){dx+=side*leg*.075;dy-=leg*.15;dx+=side*arm*.045;dy-=arm*.07}
- if(state==='hit'){dx-=attack*.10*(1-leg);dy+=attack*.045*(1-leg);dx+=side*arm*attack*.05}
- if(id===4&&state==='walk'){dx+=Math.sin(wave+side*1.5)*.06*leg;dy-=Math.max(0,Math.cos(wave+side*1.5))*.07*leg}
- if(id===7){const wing=(1-smoothRange(y,.33,.65))*(1-smoothRange(x,.68,.92));dx+=(.6-x)*Math.sin(wave*2)*.18*wing;dy+=(.58-y)*Math.sin(wave*2)*.12*wing}
- if(id===9){dx+=Math.sin(wave+y*6)*.06*smoothRange(y,.45,.95);dy-=.018*Math.sin(wave)}
- if(id===6){dx+=Math.sin(wave+y*8)*.018;dy+=Math.sin(wave+x*6)*.01}
- if(id===3&&state==='walk'){dx-=.06*(1-leg);dy-=Math.sin(wave*2)*.025}
+ if(id===9&&state!=='ko')pose.ripple+=.016;return pose;
+}
+function pointFromPose(x,y,pose,id,w,h,t){const pr=movementProfiles[id],side=x<.5?-1:1,leg=smoothRange(y,.57,.94),arm=smoothRange(Math.abs(x-.5),.12,.24)*(1-smoothRange(y,.79,.94))*smoothRange(y,.17,.32),lower=smoothRange(y,.50,.94),stride=Math.sin(pose.walk+(id===4?side*1.2:0));
+ let dx=side*stride*pr.stride*leg*pose.step,dy=-Math.max(0,side*Math.cos(pose.walk))*pr.stride*.8*leg*pose.step;
+ dx-=side*stride*pr.arms*arm*pose.step;dy+=pose.crouch*lower;dx+=side*pose.spread*leg;
+ const angle=x<.5?pose.left:pose.right,px=x<.5?.33:.67,py=.29,vx=(x-px)*w,vy=(y-py)*h;
+ dx+=(vx*Math.cos(angle)-vy*Math.sin(angle)-vx)/w*arm;dy+=(vx*Math.sin(angle)+vy*Math.cos(angle)-vy)/h*arm;
+ dx+=Math.sin(t*4+y*7)*pose.ripple*smoothRange(y,.42,.94);
+ if(id===7){const wing=(1-smoothRange(y,.33,.63))*(1-smoothRange(x,.66,.93));dx+=(.6-x)*Math.sin(t*20)*.07*wing;dy+=(.58-y)*Math.sin(t*20)*.045*wing;}
  return [160+(x-.5)*w+dx*w,306-h+y*h+dy*h];
 }
-function meshTriangle(ctx,img,s,d){const [s0,s1,s2]=s,[d0,d1,d2]=d,den=(s1[0]-s0[0])*(s2[1]-s0[1])-(s2[0]-s0[0])*(s1[1]-s0[1]);if(!den)return;
- const a=((d1[0]-d0[0])*(s2[1]-s0[1])-(d2[0]-d0[0])*(s1[1]-s0[1]))/den,b=((d1[1]-d0[1])*(s2[1]-s0[1])-(d2[1]-d0[1])*(s1[1]-s0[1]))/den,cc=((d2[0]-d0[0])*(s1[0]-s0[0])-(d1[0]-d0[0])*(s2[0]-s0[0]))/den,dd=((d2[1]-d0[1])*(s1[0]-s0[0])-(d1[1]-d0[1])*(s2[0]-s0[0]))/den;
- ctx.save();ctx.beginPath();let cx=(d0[0]+d1[0]+d2[0])/3,cy=(d0[1]+d1[1]+d2[1])/3;d.forEach((q,i)=>{let x=q[0]+Math.sign(q[0]-cx)*1.1,y=q[1]+Math.sign(q[1]-cy)*1.1;i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.closePath();ctx.clip();ctx.transform(a,b,cc,dd,d0[0]-a*s0[0]-cc*s0[1],d0[1]-b*s0[0]-dd*s0[1]);ctx.drawImage(img,0,0);ctx.restore();
+function meshTriangle(ctx,img,s,d){const [s0,s1,s2]=s,[d0,d1,d2]=d,den=(s1[0]-s0[0])*(s2[1]-s0[1])-(s2[0]-s0[0])*(s1[1]-s0[1]);if(!den)return;const a=((d1[0]-d0[0])*(s2[1]-s0[1])-(d2[0]-d0[0])*(s1[1]-s0[1]))/den,b=((d1[1]-d0[1])*(s2[1]-s0[1])-(d2[1]-d0[1])*(s1[1]-s0[1]))/den,cc=((d2[0]-d0[0])*(s1[0]-s0[0])-(d1[0]-d0[0])*(s2[0]-s0[0]))/den,dd=((d2[1]-d0[1])*(s1[0]-s0[0])-(d1[1]-d0[1])*(s2[0]-s0[0]))/den;ctx.save();ctx.beginPath();const cx=(d0[0]+d1[0]+d2[0])/3,cy=(d0[1]+d1[1]+d2[1])/3;d.forEach((q,i)=>{const x=q[0]+Math.sign(q[0]-cx)*.8,y=q[1]+Math.sign(q[1]-cy)*.8;i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.closePath();ctx.clip();ctx.transform(a,b,cc,dd,d0[0]-a*s0[0]-cc*s0[1],d0[1]-b*s0[0]-dd*s0[1]);ctx.drawImage(img,0,0);ctx.restore();}
+// One texture upload per alien; continuous vertices replace runtime frame generation/cache churn.
+let rigGPU,rigGPULost=false;
+function initRigGPU(){try{const cv=document.createElement('canvas');cv.width=cv.height=320;const gl=cv.getContext('webgl',{alpha:true,antialias:true,premultipliedAlpha:true,preserveDrawingBuffer:true});if(!gl||typeof gl.createShader!=='function')return null;
+ const compile=(type,src)=>{const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error('shader');return s},program=gl.createProgram();
+ gl.attachShader(program,compile(gl.VERTEX_SHADER,'attribute vec2 aPosition; attribute vec2 aUV; varying vec2 vUV; void main(){gl_Position=vec4(aPosition.x/160.0-1.0,1.0-aPosition.y/160.0,0.0,1.0);vUV=aUV;}'));
+ gl.attachShader(program,compile(gl.FRAGMENT_SHADER,'precision mediump float; uniform sampler2D uImage; varying vec2 vUV; void main(){gl_FragColor=texture2D(uImage,vUV);}'));gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error('program');gl.useProgram(program);gl.viewport(0,0,320,320);gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL,true);
+ const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);for(const [name,size,offset] of [['aPosition',2,0],['aUV',2,8]]){const loc=gl.getAttribLocation(program,name);gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,size,gl.FLOAT,false,16,offset)}gl.uniform1i(gl.getUniformLocation(program,'uImage'),0);
+ cv.addEventListener('webglcontextlost',e=>{e.preventDefault();rigGPULost=true});cv.addEventListener('webglcontextrestored',()=>{rigGPU=undefined;rigGPULost=false});return {cv,gl,buffer,textures:new Map()};
+ }catch{return null}}
+const rigFallback=document.createElement('canvas');rigFallback.width=rigFallback.height=320;
+function drawRigImage(id,points,cols,rows){const img=classicPortraits[id];if(rigGPU===undefined)rigGPU=initRigGPU();const gpu=!rigGPULost&&rigGPU;
+ if(gpu){try{const {gl}=gpu;let tex=gpu.textures.get(id);if(!tex){tex=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,tex);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);gpu.textures.set(id,tex)}else gl.bindTexture(gl.TEXTURE_2D,tex);
+ const data=gpu.data&&gpu.data.length===cols*rows*24?gpu.data:(gpu.data=new Float32Array(cols*rows*24));let k=0;const emit=(x,y)=>{data[k++]=points[y][x][0];data[k++]=points[y][x][1];data[k++]=x/cols;data[k++]=y/rows};for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){emit(x,y);emit(x+1,y);emit(x,y+1);emit(x+1,y);emit(x+1,y+1);emit(x,y+1)}gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);gl.bindBuffer(gl.ARRAY_BUFFER,gpu.buffer);gl.bufferData(gl.ARRAY_BUFFER,data,gl.DYNAMIC_DRAW);gl.drawArrays(gl.TRIANGLES,0,cols*rows*6);return gpu.cv;
+ }catch{rigGPU=null}}
+ const ctx=rigFallback.getContext('2d');ctx.clearRect(0,0,320,320);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){const a=[x/cols*img.width,y/rows*img.height],b=[(x+1)/cols*img.width,y/rows*img.height],d=[x/cols*img.width,(y+1)/rows*img.height],e=[(x+1)/cols*img.width,(y+1)/rows*img.height];meshTriangle(ctx,img,[a,b,d],[points[y][x],points[y][x+1],points[y+1][x]]);meshTriangle(ctx,img,[b,e,d],[points[y][x+1],points[y+1][x+1],points[y+1][x]])}return rigFallback;
 }
-function rigFrame(id,state,index){let key=id+':'+state+':'+index,entry=motionFrames.get(key);if(entry){entry.used=++motionSerial;return entry.canvas}const img=classicPortraits[id];if(!img)return null;
- let cv=document.createElement('canvas');cv.width=320;cv.height=320;const ctx=cv.getContext('2d'),w=Math.min(260,240*img.width/img.height),h=w*img.height/img.width,cols=10,rows=14,points=[];
- const loop=['idle','walk','guard'].includes(state),p=index/(loop?16:15);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
- for(let y=0;y<=rows;y++){points[y]=[];for(let x=0;x<=cols;x++)points[y][x]=motionPoint(x/cols,y/rows,state,p,id,w,h)}
- for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){const src=[[x/cols*img.width,y/rows*img.height],[(x+1)/cols*img.width,y/rows*img.height],[x/cols*img.width,(y+1)/rows*img.height],[(x+1)/cols*img.width,(y+1)/rows*img.height]],dst=[points[y][x],points[y][x+1],points[y+1][x],points[y+1][x+1]];meshTriangle(ctx,img,[src[0],src[1],src[2]],[dst[0],dst[1],dst[2]]);meshTriangle(ctx,img,[src[1],src[3],src[2]],[dst[1],dst[3],dst[2]])}
- motionFrames.set(key,{canvas:cv,used:++motionSerial});if(motionFrames.size>112){const oldest=[...motionFrames.entries()].reduce((a,b)=>a[1].used<b[1].used?a:b);motionFrames.delete(oldest[0])}return cv;
-}
-const sheetDrawAlien=drawAlien;
-drawAlien=function(ctx,f,t,portrait=false){if(portrait){sheetDrawAlien(ctx,f,t,true);return}const img=classicPortraits[f.id];if(!img)return;const id=f.id,a=aliens[id];let state=classicState(f),v=f.cast,duration=v?v.cfg.windup+(v.cfg.duration||.08)+v.cfg.recovery:1,elapsed=v?v.elapsed:f.anim||0,p;
- if(state==='walk')p=((f.walk||0)/(id===3?6:8))%1;else if(['normal','power','ultimate'].includes(state))p=Math.min(.999,elapsed/duration);else if(state==='hit')p=1-Math.max(0,f.stun||0)/.24;else if(state==='jump')p=Math.max(0,Math.min(1,1-((f.y??floor)-floor+220)/220));else p=(t/(id===7?.65:1.5)+id*.13)%1;
- const frame=rigFrame(id,state,Math.max(0,Math.min(15,Math.floor(p*16))));if(!frame)return;
- const baseW=Math.min(260,240*img.width/img.height),artH=baseW*img.height/img.width,wantedH=(id===4?142:226)*a.scale,scale=wantedH/artH;
- ctx.save();ctx.translate(f.x,f.y);ctx.scale(f.dir||1,1);
- let bob=state==='walk'?-Math.abs(Math.sin(p*Math.PI*2))*7:Math.sin(t*4+id)*2.6,lean=state==='walk'?(id===3?.14:.055):0;
- if(id===7||id===9)bob-=8+Math.sin(t*5)*8;
- if(v){let strike=smoothRange(v.elapsed,Math.max(.01,v.cfg.windup*.6),v.cfg.windup+.07)*(1-smoothRange(v.elapsed,v.cfg.windup+.13,duration));ctx.translate(strike*(v.key==='normal'?27:12),0);lean+=strike*(v.key==='normal'?.075:.035);if(v.cfg.kind==='rush')lean+=.15}
- if(f.stun>0||f.hitTint>0){lean-=.22*Math.max(f.stun||0,f.hitTint||0)/.24;ctx.translate(-5,3)}
- if(f.block){lean=-.045;ctx.translate(-5,4)}
- if(f.hp<=0){lean=-1.45;bob=3;ctx.translate(-15,0)}
- ctx.translate(0,bob);ctx.rotate(lean);if(id===9&&f.inv>0)ctx.globalAlpha*=.3;
- if(f.moving&&id===3){ctx.save();ctx.globalAlpha*=.16;for(let n=3;n>0;n--)ctx.drawImage(frame,-160*scale-n*17,-306*scale,320*scale,320*scale);ctx.restore()}
- ctx.drawImage(frame,-160*scale,-306*scale,320*scale,320*scale);
- if(id===0&&f.hp>0){ctx.save();ctx.globalCompositeOperation='screen';const col='#ffd861';ctx.fillStyle=col;for(let k=0;k<5;k++){let phase=(t*2+k*.21)%1;ctx.globalAlpha=(1-phase)*.7;ctx.beginPath();ctx.arc((k-2)*9+Math.sin(t*5+k)*5,-wantedH-10-phase*22,1.2+phase,0,7);ctx.fill()}ctx.restore()}
- ctx.restore();
+const rigMotions=new WeakMap(),originalPortraitDraw=drawAlien;
+function blendedPose(f,t){const target=movementPose(f,t);let record=rigMotions.get(f);if(!record){record={pose:{...target},last:t,lastY:f.y,airborne:f.y<floor-2,landing:0};rigMotions.set(f,record)}const dt=Math.max(0,Math.min(.08,t-record.last));if(f.y<floor-2)record.airborne=true;if(record.airborne&&f.y>=floor-1){record.landing=1;record.airborne=false;}record.landing=Math.max(0,record.landing-dt*8);const blend=1-Math.exp(-dt*(target.state==='hit'?38:target.state==='normal'?32:20));for(const k of Object.keys(target)){if(typeof target[k]==='number'&&k!=='walk')record.pose[k]+=(target[k]-record.pose[k])*blend;else record.pose[k]=target[k]}record.last=t;record.lastY=f.y;return {...record.pose,crouch:record.pose.crouch+record.landing*.025,bob:record.pose.bob+record.landing*2};}
+drawAlien=function(ctx,f,t,portrait=false){if(portrait){originalPortraitDraw(ctx,f,t,true);return}const img=classicPortraits[f.id];if(!img)return;const id=f.id,pose=blendedPose(f,t),w=Math.min(260,240*img.width/img.height),h=w*img.height/img.width,cols=8,rows=12,points=[];for(let y=0;y<=rows;y++){points[y]=[];for(let x=0;x<=cols;x++)points[y][x]=pointFromPose(x/cols,y/rows,pose,id,w,h,t)}const frame=drawRigImage(id,points,cols,rows),scale=(id===4?142:226)*aliens[id].scale/h;
+ ctx.save();ctx.translate(f.x,f.y);ctx.scale(f.dir||1,1);ctx.translate(pose.shift,pose.bob);ctx.rotate(pose.lean);if(id===9&&f.inv>0)ctx.globalAlpha*=.28;
+ if(id===3&&f.moving){ctx.save();ctx.globalAlpha*=.10;ctx.drawImage(frame,-160*scale-23,-306*scale,320*scale,320*scale);ctx.restore()}ctx.drawImage(frame,-160*scale,-306*scale,320*scale,320*scale);ctx.restore();
 };
+preloadClassic=function(){};
