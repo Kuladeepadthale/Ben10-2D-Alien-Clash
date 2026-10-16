@@ -25,3 +25,8 @@ Continuous pose sampling replaces the 16-step bitmap animation. WebGL texture de
 
 ## Version 0.7 joint skeletons
 Each alien now has a hierarchical bone rig bound to its classic artwork: head/neck, chest/spine, waist, shoulders, elbows, wrists, hips, knees and ankles where applicable. Four Arms uses all four arm chains; Wildmutt uses four limb chains and corrected facing; Stinkfly adds wing bones; Ghostfreak uses a segmented tail instead of legs. Smooth skin weights overlap between bones, keeping the texture continuous without visible joint markers or cutout seams. Bones and neutral weights are cached; only joint matrices and vertices change per frame. Original cartoon animation has not been extracted. Physical-device performance still needs testing.
+
+## Version 0.8 — Heatblast drawn-pose pilot
+Heatblast now plays 48 newly drawn poses from a 6×8 transparent atlas instead of deforming the original single illustration. This pilot covers idle, six-key walk cycle, crouch/takeoff/ascent/apex/descent/landing, guard entry/hold/release, recoil/KO, normal punch, fireball throw, flame-jet brace, ground eruption and raised-arm ultimate. Pose changes align with each cast's actual wind-up, release and recovery. Heatblast's fireball and beam now originate at its extended palms; close-range launch sweeps preserve collision behavior. Jump includes a 70ms crouch anticipation. Other aliens retain version 0.7's joint rigs.
+
+The atlas is newly generated artwork based on the classic Heatblast design; it is not original TV footage or studio animation. This is a test of the new animation approach, not a finished ten-alien art pass. See `web/assets/heatblast-poses/ART.md`.
