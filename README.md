@@ -14,3 +14,8 @@ JDK 17, Gradle 8.9, Android SDK 35. Run `gradle -p android assembleDebug`. APK: 
 Classic character illustrations from Trixdex are bundled with image-based animation sheets. These are newly composed puppet/transform animations, not original TV frame sequences. Powers and relative character sizes are adapted for gameplay. Ben 10 belongs to its respective owners; this is an unofficial fan project. See `web/assets/classic/README.md` and in-game credits.
 
 The optional browser sprite importer is intended for the browser edition; the Android edition uses bundled art. Website profile saves are separate from Android app saves.
+
+## Version 0.5
+Home hub with separate Modes, Match Setup, Characters, Powers, Upgrades, Settings, Controls, Credits and Results screens. Each screen includes Back navigation; Android Back pauses/resumes battle. Versus plays best of three; Training gives a resetting target; Survival carries health through successive random rivals, restores 20% health between stages and awards 40 credits per defeated rival.
+
+Character motion now uses cached articulated mesh deformation of the same original illustrations, with stepping, arm extension, anticipation, recoil, guard, jump and hit poses. These remain newly made image-based animations, not animation extracted from the TV show. Includes material trails, impact shards, foot dust and an animated home character preview. Sound, shake and quality settings persist locally.
