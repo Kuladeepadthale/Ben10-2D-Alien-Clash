@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "columns": 4,
+  "frames": 12,
+  "originX": 160,
+  "originY": 306,
+  "artHeight": 240,
+  "credits": "Ben 10 classic character artwork \u00a9 Cartoon Network. Image source: Trixdex. New puppet motion; not television animation frames.",
+  "characters": [
+    {
+      "id": 0,
+      "name": "heatblast",
+      "baseArtHeight": 239.99999999999997,
+      "source": "https://trixdex.com/images/Heatblast.png"
+    },
+    {
+      "id": 1,
+      "name": "four-arms",
+      "baseArtHeight": 240.00000000000003,
+      "source": "https://trixdex.com/images/FourArms.png"
+    },
+    {
+      "id": 2,
+      "name": "diamondhead",
+      "baseArtHeight": 240.00000000000003,
+      "source": "https://trixdex.com/images/Diamondhead.png"
+    },
+    {
+      "id": 3,
+      "name": "xlr8",
+      "baseArtHeight": 240.00000000000003,
+      "source": "https://trixdex.com/images/XLR8.png"
+    },
+    {
+      "id": 4,
+      "name": "wildmutt",
+      "baseArtHeight": 208.78137651821865,
+      "source": "https://trixdex.com/images/Wildmutt.png"
+    },
+    {
+      "id": 5,
+      "name": "grey-matter",
+      "baseArtHeight": 240.00000000000003,
+      "source": "https://trixdex.com/images/GreyMatter.png"
+    },
+    {
+      "id": 6,
+      "name": "upgrade",
+      "baseArtHeight": 240,
+      "source": "https://trixdex.com/images/Upgrade.png"
+    },
+    {
+      "id": 7,
+      "name": "stinkfly",
+      "baseArtHeight": 240,
+      "source": "https://trixdex.com/images/Stinkfly.png"
+    },
+    {
+      "id": 8,
+      "name": "ripjaws",
+      "baseArtHeight": 239.99999999999997,
+      "source": "https://trixdex.com/images/Ripjaws.png"
+    },
+    {
+      "id": 9,
+      "name": "ghostfreak",
+      "baseArtHeight": 239.99999999999997,
+      "source": "https://trixdex.com/images/Ghostfreak.png"
+    }
+  ],
+  "states": [
+    "idle",
+    "walk",
+    "normal",
+    "power",
+    "ultimate",
+    "guard",
+    "jump",
+    "hit"
+  ]
+}

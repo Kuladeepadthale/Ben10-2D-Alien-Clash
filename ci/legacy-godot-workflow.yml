@@ -1,0 +1,98 @@
+name: Build Android APK
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Godot Android export templates
+        shell: bash
+        run: |
+          set -euo pipefail
+          DEST="$HOME/.local/share/godot/export_templates/4.3.stable"
+          mkdir -p "$DEST"
+          TEMPLATE=$(find /root /opt /usr/local -type f -name android_debug.apk -print -quit 2>/dev/null || true)
+          if [ -n "$TEMPLATE" ]; then
+            cp -v "$(dirname "$TEMPLATE")"/android_*.apk "$DEST/"
+          else
+            echo "Templates not preinstalled; downloading official 4.3 archive"
+            curl -fL --retry 3 -o /tmp/templates.tpz https://github.com/godotengine/godot-builds/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
+            mkdir -p /tmp/godot-tpl
+            unzip -q /tmp/templates.tpz 'templates/android_debug.apk' 'templates/android_release.apk' -d /tmp/godot-tpl
+            cp /tmp/godot-tpl/templates/android_*.apk "$DEST/"
+          fi
+          ls -lh "$DEST"
+      - name: Configure Android SDK and Java
+        shell: bash
+        run: |
+          set -euo pipefail
+          export JAVA_HOME="${JAVA_HOME:-$(dirname "$(dirname "$(readlink -f "$(command -v javac)")")")}"
+          export ANDROID_HOME="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/opt/android-sdk}}"
+          export ANDROID_SDK_ROOT="$ANDROID_HOME"
+          echo "JAVA_HOME=$JAVA_HOME" >> "$GITHUB_ENV"
+          echo "ANDROID_HOME=$ANDROID_HOME" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> "$GITHUB_ENV"
+          mkdir -p "$HOME/.android" builds
+          keytool -genkeypair -keystore "$HOME/.android/debug.keystore" -alias androiddebugkey -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+          godot --headless --path . --editor --script ci/configure_android.gd --quit 2>&1 | tee /tmp/configure.log
+          if grep -E "SCRIPT ERROR|Parse Error|Cannot save" /tmp/configure.log; then exit 1; fi
+      - name: Import project and check scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+          godot --headless --editor --path . --import --quit 2>&1 | tee /tmp/import.log
+          if grep -E 'SCRIPT ERROR|Parse Error|Failed to load script' /tmp/import.log; then exit 1; fi
+      - name: Run gameplay smoke check
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout 60 godot --headless --path . --script ci/gameplay_check.gd 2>&1 | tee /tmp/game.log
+          grep -q "PASS:" /tmp/game.log
+          if grep -E "SCRIPT ERROR|Parse Error|Failed to load script" /tmp/game.log; then exit 1; fi
+      - name: Capture actual game screens
+        shell: bash
+        run: |
+          set -euo pipefail
+          apt-get update -qq
+          apt-get install -y -qq xvfb libgl1-mesa-dri
+          timeout 60 xvfb-run -a godot --path . --script ci/visual_check.gd
+          test -s builds/alien-selection.png
+          test -s builds/arena-gameplay.png
+      - name: Export APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          godot --headless --path . --export-debug Android builds/AlienClash2D-debug.apk
+          test -s builds/AlienClash2D-debug.apk
+          ls -lh builds/AlienClash2D-debug.apk
+      - name: Publish downloadable test APK
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const tag = 'android-' + context.sha.slice(0, 12);
+            const release = await github.rest.repos.createRelease({
+              ...context.repo, tag_name: tag, target_commitish: context.sha,
+              name: 'Alien Clash 2D Android test build',
+              body: 'Installable debug APK. Includes generated classic Ben 10 character sprites, desert facility scenery, distinct abilities, selection menu and combat improvements. Fan-made test build.',
+              prerelease: true
+            });
+            await github.rest.repos.uploadReleaseAsset({
+              ...context.repo, release_id: release.data.id,
+              name: 'Ben10-2D-Alien-Clash.apk',
+              data: fs.readFileSync('builds/AlienClash2D-debug.apk')
+            });
+      - uses: actions/upload-artifact@v4
+        continue-on-error: true
+        with:
+          name: AlienClash2D-Android-APK
+          path: builds/*
+          if-no-files-found: error
+
