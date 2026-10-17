@@ -34,10 +34,19 @@ jobs:
           key: alien-clash-test-key-v1
       - name: Check game scripts and assets
         run: |
+          python3 ci/check-drawn-assets.py
           for script in web/*.js; do node --check "$script"; done
           python3 - <<'PY'
           from pathlib import Path
-          import struct
+          import struct, json
+          manifest=json.loads(Path('web/assets/drawn-aliens/manifest.json').read_text())
+          assert set(manifest['characters'])==set(map(str,range(1,10)))
+          for alien in manifest['characters'].values():
+            raw=Path('web/'+alien['src']).read_bytes()
+            assert struct.unpack('>II',raw[16:24])==(alien['width'],alien['height'])
+            assert len(alien['frames'])==48
+            for x,y,w,h,ox,oy in alien['frames']:
+              assert x>=0 and y>=0 and x+w<=alien['width'] and y+h<=alien['height'] and oy==h
           data=Path('web/assets/heatblast-poses/atlas-v8.png').read_bytes()
           assert data[:8]==b'\x89PNG\r\n\x1a\n'
           assert struct.unpack('>II',data[16:24])==(1086,1448)
@@ -62,6 +71,9 @@ jobs:
           z=zipfile.ZipFile('builds/Ben10-2D-Alien-Clash.apk')
           assert 'assets/index.html' in z.namelist()
           assert 'assets/heatblast-poses.js' in z.namelist()
+          assert 'assets/alien-poses.js' in z.namelist()
+          assert 'assets/alien-poses-data.js' in z.namelist()
+          assert len([p for p in z.namelist() if p.startswith('assets/assets/drawn-aliens/') and p.endswith('.png')])==9
           assert 'assets/assets/heatblast-poses/atlas-v8.png' in z.namelist()
           assert len([p for p in z.namelist() if p.startswith('assets/assets/classic/') and p.endswith('.webp')])==90
           PY
@@ -74,4 +86,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 0.9 — Heatblast polish' --notes 'Heatblast animation polish: quiet breathing, registered torso pivots and foot baselines, corrected jump states, cropped sprite fragments, and steady beam/ultimate release poses. Other aliens retain their v0.7 joint rigs. Existing home hub and modes retained. New image-based motion; not extracted TV animation. Debug-signed testing APK. Android 6.0+ with current System WebView. Original Godot source preserved. Existing builds signed with a different key must be uninstalled first.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.0 — Classic ten drawn animations' --notes 'All ten classic aliens now use newly drawn pose animation with quiet idle breathing, registered pivots and foot baselines, cropped sprite fragments, steady power releases and corrected jumping. Character-specific release poses cover every selectable power and ultimate. Existing home hub and modes retained. New image-based motion; not extracted TV animation. Debug-signed testing APK. Android 6.0+ with current System WebView. Original Godot source preserved. Existing builds signed with a different key must be uninstalled first.' --prerelease --target "$GITHUB_SHA"
