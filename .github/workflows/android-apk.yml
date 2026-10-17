@@ -78,6 +78,7 @@ jobs:
           assert 'assets/heatblast-poses.js' in z.namelist()
           assert 'assets/alien-poses.js' in z.namelist()
           assert 'assets/diamondhead-puppet.js' in z.namelist()
+          assert 'assets/diamondhead-gait-data.js' in z.namelist()
           assert 'assets/assets/diamondhead-puppet/walk-parts-v1.png' in z.namelist()
           assert 'assets/alien-poses-data.js' in z.namelist()
           assert len([p for p in z.namelist() if p.startswith('assets/assets/drawn-aliens/') and p.endswith('.png')])==9
@@ -93,4 +94,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.2 — Diamondhead movement puppet pilot' --notes 'Diamondhead-only movement pilot: newly generated classic-style cutout artwork animated with continuous limb rotation, planted-foot IK, steady head/torso and eased starts/stops. Forward and backward movement use one rig without whole-body pose crossfades. Diamondhead combat poses and the other nine aliens retain 1.1 behavior. Debug-signed testing APK; Android 6.0+ with current System WebView. Not original TV animation.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.3 — Diamondhead human-motion study' --notes 'Diamondhead motion study: distinct real-human forward and backward walking recordings retargeted from the 100STYLE Dataset by Ian Mason (CC BY 4.0). Connected constant-length joints, pelvis/chest/head response, articulated wrists and rolling boots, smooth starts/stops and direction changes. No full-body pose fading. Diamondhead combat, other aliens and game speeds unchanged. Debug-signed test build, Android 6.0+. New adapted motion, not original TV animation.' --prerelease --target "$GITHUB_SHA"
