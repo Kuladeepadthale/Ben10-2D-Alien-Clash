@@ -1,66 +1,49 @@
 'use strict';
-// Diamondhead movement pilot: one generated cutout rig, no walk-key crossfades.
-let diamondheadPuppetImage=null;
-const diamondheadPuppetReady=loadClassicImage('assets/diamondhead-puppet/walk-parts-v1.png').then(image=>{if(image.width!==1254||image.height!==1254)throw Error('Invalid Diamondhead movement artwork');diamondheadPuppetImage=image;return true}).catch(()=>false);
-// Neutral silhouette matches classic artwork's 300:480 aspect at the existing 253.12px game height.
-const DIAMONDHEAD_DISPLAY_X=1.070,DIAMONDHEAD_DISPLAY_Y=.919;
-function diamondheadSizeFactor(){return typeof aliens==='undefined'?1:aliens[2].scale/1.12;}
-const diamondheadPuppetMotion=new WeakMap();
-const diamondheadPreviousDraw=drawAlien;
-// Source rectangles and attachment points are measured in atlas pixels.
-const diamondheadParts={
- head:{rect:[62,0,236,310],anchor:[180,293],scale:.185,widthScale:.91},
- torso:{rect:[338,0,282,313],anchor:[494,307],scale:.378,widthScale:1.3},
- pelvis:{rect:[689,135,225,178],anchor:[799,235],scale:.30,widthScale:1.15},
- upperNear:{rect:[98,322,142,299],a:[172,352],b:[209,591],width:55},
- lowerNear:{rect:[413,327,149,286],a:[452,355],b:[533,588],width:58},
- handNear:{rect:[716,381,152,206],anchor:[774,405],scale:.19},
- upperFar:{rect:[114,630,140,311],a:[176,661],b:[156,902],width:52},
- lowerFar:{rect:[415,632,149,308],a:[526,665],b:[453,902],width:54},
- handFar:{rect:[714,687,152,204],anchor:[777,718],scale:.18},
- thigh:{rect:[106,940,150,311],a:[133,979],b:[178,1227],width:38},
- shin:{rect:[411,940,125,295],a:[483,962],b:[496,1208],width:37},
- foot:{rect:[677,960,263,268],anchor:[769,990],scale:.128}
-};
-function diamondheadPointPart(ctx,name,x,y,angle=0,turn=0){const p=diamondheadParts[name],[sx,sy,sw,sh]=p.rect;ctx.save();ctx.translate(x,y);ctx.rotate(angle);ctx.transform(1-Math.abs(turn)*.04,0,Math.sin(turn)*.12,1,0,0);ctx.drawImage(diamondheadPuppetImage,sx,sy,sw,sh,(sx-p.anchor[0])*p.scale*(p.widthScale||1),(sy-p.anchor[1])*p.scale,sw*p.scale*(p.widthScale||1),sh*p.scale);ctx.restore();}
-function diamondheadLimb(ctx,name,a,b){const p=diamondheadParts[name],[sx,sy,sw,sh]=p.rect,sourceAngle=Math.atan2(p.b[1]-p.a[1],p.b[0]-p.a[0]),targetAngle=Math.atan2(b.y-a.y,b.x-a.x),length=Math.hypot(b.x-a.x,b.y-a.y),sourceLength=Math.hypot(p.b[0]-p.a[0],p.b[1]-p.a[1]);ctx.save();ctx.translate(a.x,a.y);ctx.rotate(targetAngle);ctx.scale(length/sourceLength,p.width/sw);ctx.rotate(-sourceAngle);ctx.drawImage(diamondheadPuppetImage,sx,sy,sw,sh,sx-p.a[0],sy-p.a[1],sw,sh);ctx.restore();}
-// Retarget two real human locomotion recordings onto the generated Diamondhead rig.
-// Curves are derived from 100STYLE (Ian Mason, CC BY 4.0); see MOTION.md.
-const diamondheadSole=[[3.968,-2.432],[20.224,21.504],[21.376,27.136],[18.432,28.928],[16,29.44],[10.112,29.696],[6.656,29.696],[-6.4,29.056],[-11.648,27.52],[-11.264,21.76],[-8.576,9.856],[-4.736,-1.92],[-2.176,-3.584],[.64,-3.712]];
+// Preserve the actual classic Diamondhead illustration: no generated replacement art.
+const diamondheadPuppetReady=classicReady.then(()=>!!classicPortraits[2]).catch(()=>false);
+const diamondheadPuppetMotion=new WeakMap(),diamondheadOriginalRecords=new WeakMap();
+const diamondheadPreviousDraw=drawAlien,diamondheadPreviousEmitter=drawnAlienEmitter;
 const diamondheadGaitIndex=Object.fromEntries(DIAMONDHEAD_GAIT.keys.map((name,i)=>[name,i]));
 const diamondheadClamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function diamondheadGaitSample(clip,phase){const a=DIAMONDHEAD_GAIT.clips[clip].values,n=a.length,p=((phase%1)+1)%1*n,i=Math.floor(p),u=p-i;return a[i].map((v,j)=>{const p0=a[(i+n-1)%n][j],p2=a[(i+1)%n][j],p3=a[(i+2)%n][j];return .5*((2*v)+(-p0+p2)*u+(2*p0-5*v+4*p2-p3)*u*u+(-p0+3*v-3*p2+p3)*u*u*u)});}
 function diamondheadMovement(f,t){let s=diamondheadPuppetMotion.get(f);if(!s){s={last:t,weight:0,travel:f.walk||0,phase:0,clip:'forward',pose:null};diamondheadPuppetMotion.set(f,s)}const dt=Math.max(0,Math.min(.05,t-s.last)),delta=(f.walk||0)-s.travel,walking=!!f.moving,ease=1-Math.exp(-dt*13);s.weight+=((walking?1:0)-s.weight)*ease;
- if(walking&&Math.abs(delta)>1e-8){const next=delta<0?'backward':'forward';if(next!==s.clip){const current=diamondheadGaitSample(s.clip,s.phase);let best=Infinity,bestPhase=s.phase;for(let i=0;i<96;i++){const candidate=diamondheadGaitSample(next,i/96);let cost=0;for(const name of ['RightThigh','RightShin','LeftThigh','LeftShin']){const k=diamondheadGaitIndex[name];cost+=(candidate[k]-current[k])**2}if(cost<best){best=cost;bestPhase=i/96}}s.phase=bestPhase;s.clip=next}const stride=DIAMONDHEAD_GAIT.clips[s.clip].stride*DIAMONDHEAD_DISPLAY_X/.90*diamondheadSizeFactor();s.phase=(s.phase+Math.abs(delta)*20/stride)%1;}
+ if(walking&&Math.abs(delta)>1e-8){const next=delta<0?'backward':'forward';if(next!==s.clip){const current=diamondheadGaitSample(s.clip,s.phase);let best=Infinity,bestPhase=s.phase;for(let i=0;i<96;i++){const candidate=diamondheadGaitSample(next,i/96);let cost=0;for(const name of ['RightThigh','RightShin','LeftThigh','LeftShin']){const k=diamondheadGaitIndex[name];cost+=(candidate[k]-current[k])**2}if(cost<best){best=cost;bestPhase=i/96}}s.phase=bestPhase;s.clip=next}const stride=DIAMONDHEAD_GAIT.clips[s.clip].stride*(226*aliens[2].scale/240)/.90;s.phase=(s.phase+Math.abs(delta)*20/stride)%1;}
  const target=diamondheadGaitSample(s.clip,s.phase),follow=1-Math.exp(-dt*48);if(!s.pose)s.pose=target;else for(let i=0;i<target.length;i++)s.pose[i]+=(target[i]-s.pose[i])*follow;s.travel=f.walk||0;s.last=t;return s;
 }
-function diamondheadRotate(p,angle){return {x:p.x*Math.cos(angle)-p.y*Math.sin(angle),y:p.x*Math.sin(angle)+p.y*Math.cos(angle)};}
-function diamondheadAdd(a,b){return {x:a.x+b.x,y:a.y+b.y};}
-function diamondheadEnd(p,angle,length){return {x:p.x+Math.sin(angle)*length,y:p.y+Math.cos(angle)*length};}
-function diamondheadFootBottom(angle){const c=Math.cos(angle),s=Math.sin(angle);return Math.max(...diamondheadSole.map(([x,y])=>x*s+y*c));}
-function diamondheadBodyPose(f,t){const motion=diamondheadMovement(f,t),w=motion.weight,means=DIAMONDHEAD_GAIT.clips[motion.clip].means,get=name=>motion.pose[diamondheadGaitIndex[name]],variation=name=>get(name)-means[diamondheadGaitIndex[name]],breath=Math.sin(t*Math.PI*2/4.4)*.14;
- const pelvisYaw=variation('pelvisYaw')*w,chestYaw=variation('chestYaw')*w,chestAngle=(variation('torso')+(motion.clip==='backward'?-.05:-.025))*w,headAngle=variation('head')*.65*w;
- const pelvis={x:Math.sin(pelvisYaw)*3,y:-133-get('bob')*w},torso=diamondheadAdd(pelvis,{x:0,y:-6+breath}),head=diamondheadAdd(torso,diamondheadRotate({x:0,y:-82.9},chestAngle));
- function leg(side,offset){const capturedThigh=get(side+'Thigh'),capturedShin=get(side+'Shin'),thigh=capturedThigh*w,shin=capturedShin*w,hip=diamondheadAdd(pelvis,{x:offset+Math.sin(pelvisYaw)*(side==='Right'?-11:11),y:Math.sin(pelvisYaw)*(side==='Right'?-3:3)}),knee=diamondheadEnd(hip,thigh,53),ankle=diamondheadEnd(knee,shin,51),footAngle=diamondheadClamp(get(side+'Foot'),-.40,.80)*w;return {hip,knee,ankle,footAngle,sole:ankle.y+diamondheadFootBottom(footAngle)};}
- function arm(side,offset){const shoulder=diamondheadAdd(torso,diamondheadRotate({x:offset+Math.sin(chestYaw)*(side==='Right'?-15:15),y:-55.6},chestAngle)),upper=get(side+'Upper')*w+(side==='Right'?-.09:.10),fore=get(side+'Fore')*w+(side==='Right'?-.05:.05),elbow=diamondheadEnd(shoulder,upper,43),wrist=diamondheadEnd(elbow,fore,48),handAngle=-get(side+'Hand')*w;return {shoulder,elbow,wrist,handAngle};}
- const nearLeg=leg('Right',-13),farLeg=leg('Left',13),nearArm=arm('Right',-37),farArm=arm('Left',45);
- // Ground the lowest point of the actual crystal boot silhouette, including heel/toe roll.
- // A smooth maximum avoids a vertical derivative kink when support changes feet.
- const a=nearLeg.sole,b=farLeg.sole,ground=(a+b+Math.sqrt((a-b)**2+.04))/2;
- for(const part of [pelvis,torso,head,nearLeg.hip,nearLeg.knee,nearLeg.ankle,farLeg.hip,farLeg.knee,farLeg.ankle,nearArm.shoulder,nearArm.elbow,nearArm.wrist,farArm.shoulder,farArm.elbow,farArm.wrist])part.y-=ground;
- return {pelvis,torso,head,pelvisYaw,chestYaw,chestAngle,headAngle,nearLeg,farLeg,nearArm,farArm,weight:w,phase:motion.phase,clip:motion.clip};
+function diamondheadNeutral(f){return f.hp>0&&!(f.stun>0)&&!f.block&&!f.cast&&!(f.jumpWindup>0)&&f.y>=floor-1;}
+function diamondheadRig(){if(rigGPU===undefined)rigGPU=initRigGPU();return buildJointRig(2,rigGPU&&!rigGPULost?18:10,rigGPU&&!rigGPULost?28:18);}
+function diamondheadRigAngles(f,t,rig){const neutral=diamondheadNeutral(f),pose=movementPose(f,t);let angles=jointTargets(f,pose,t),motion=null;
+ if(neutral){motion=diamondheadMovement(f,t);angles=Object.fromEntries(rig.bones.map(b=>[b.name,0]));const w=motion.weight,means=DIAMONDHEAD_GAIT.clips[motion.clip].means,get=name=>motion.pose[diamondheadGaitIndex[name]],variation=name=>get(name)-means[diamondheadGaitIndex[name]];
+  angles.waist=(variation('torso')*.4+variation('pelvisYaw')*.12)*w;angles.chest=(variation('torso')*.6+variation('chestYaw')*.12)*w;angles.head=-angles.waist-angles.chest+variation('head')*.4*w;
+  for(const group of rig.bones.filter(b=>b.name.startsWith('leg_')&&b.name.endsWith('0'))){const side=group.name.includes('left')?'Right':'Left',prefix=group.name.slice(0,-1),bones=[0,1,2].map(n=>rig.bones.find(b=>b.name===prefix+n)),bind=b=>Math.atan2(b.tip[0]-b.at[0],b.tip[1]-b.at[1]),thighDelta=(get(side+'Thigh')-bind(bones[0]))*w,shinDelta=(get(side+'Shin')-bind(bones[1]))*w;
+   angles[prefix+'0']=thighDelta-angles.waist;angles[prefix+'1']=shinDelta-thighDelta;angles[prefix+'2']=diamondheadClamp(get(side+'Foot'),-.35,.65)*w-shinDelta;
+  }
+  for(const sideName of ['left','right']){const side=sideName==='left'?'Right':'Left',prefix='arm_'+sideName,upper=variation(side+'Upper')*w,fore=variation(side+'Fore')*w,hand=variation(side+'Hand')*.6*w;angles[prefix+'0']=upper-angles.waist-angles.chest;angles[prefix+'1']=fore-upper;angles[prefix+'2']=hand-fore;}
+ }else diamondheadPuppetMotion.delete(f);
+ return {angles,pose,motion,neutral};
 }
-function drawDiamondheadPuppet(ctx,f,t){const p=diamondheadBodyPose(f,t),{nearLeg:n,farLeg:b,nearArm:a,farArm:z}=p;
- ctx.save();ctx.beginPath();ctx.rect(f.x-350,f.y-500,700,500);ctx.clip();ctx.translate(f.x,f.y);const size=diamondheadSizeFactor();ctx.scale((f.dir||1)*DIAMONDHEAD_DISPLAY_X*size,DIAMONDHEAD_DISPLAY_Y*size);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
- diamondheadLimb(ctx,'thigh',b.hip,b.knee);diamondheadLimb(ctx,'shin',b.knee,b.ankle);diamondheadPointPart(ctx,'foot',b.ankle.x,b.ankle.y,b.footAngle);
- diamondheadLimb(ctx,'upperFar',z.shoulder,z.elbow);diamondheadLimb(ctx,'lowerFar',z.elbow,z.wrist);diamondheadPointPart(ctx,'handFar',z.wrist.x,z.wrist.y,z.handAngle);
- diamondheadPointPart(ctx,'pelvis',p.pelvis.x,p.pelvis.y-7,p.pelvisYaw*.12,p.pelvisYaw);
- diamondheadLimb(ctx,'thigh',n.hip,n.knee);diamondheadLimb(ctx,'shin',n.knee,n.ankle);diamondheadPointPart(ctx,'foot',n.ankle.x,n.ankle.y,n.footAngle);
- diamondheadPointPart(ctx,'torso',p.torso.x,p.torso.y,p.chestAngle,p.chestYaw);diamondheadPointPart(ctx,'head',p.head.x,p.head.y,p.headAngle);
- diamondheadLimb(ctx,'upperNear',a.shoulder,a.elbow);diamondheadLimb(ctx,'lowerNear',a.elbow,a.wrist);diamondheadPointPart(ctx,'handNear',a.wrist.x,a.wrist.y,a.handAngle);ctx.restore();
+function diamondheadSamplePoint(points,u,v){const rows=points.length-1,cols=points[0].length-1,x=u*cols,y=v*rows,ix=Math.min(cols-1,Math.floor(x)),iy=Math.min(rows-1,Math.floor(y)),fx=x-ix,fy=y-iy;return [0,1].map(k=>(points[iy][ix][k]*(1-fx)+points[iy][ix+1][k]*fx)*(1-fy)+(points[iy+1][ix][k]*(1-fx)+points[iy+1][ix+1][k]*fx)*fy);}
+function diamondheadFloorOffset(points){return Math.max(...[[.24,.998],[.35,.998],[.75,.965],[.86,.965]].map(([u,v])=>diamondheadSamplePoint(points,u,v)[1]))-366;}
+function diamondheadWorldBones(rig,angles){const world=[];for(const b of rig.bones){const parent=b.parent<0?null:rig.bones[b.parent],local=jointMatrix(b.at[0]-(parent?parent.at[0]:0),b.at[1]-(parent?parent.at[1]:0),angles[b.name]||0);world[b.index]=parent?matrixMultiply(world[b.parent],local):local;}return world;}
+// Gap-free CPU fallback. Rasterize the continuous original texture without padded clips.
+const diamondheadCanvas=document.createElement('canvas');diamondheadCanvas.width=diamondheadCanvas.height=384;
+let diamondheadTexture=null,diamondheadPixels=null;
+function diamondheadRenderFrame(rig,points){if(rigGPU&&!rigGPULost){const frame=drawRigImage(2,points,rig.cols,rig.rows);if(rigGPU&&!rigGPULost)return frame;}const ctx=diamondheadCanvas.getContext('2d'),img=classicPortraits[2];
+ if(!diamondheadTexture){const source=document.createElement('canvas');source.width=img.width;source.height=img.height;const sc=source.getContext('2d');sc.drawImage(img,0,0);diamondheadTexture=sc.getImageData(0,0,img.width,img.height);diamondheadPixels=ctx.createImageData(384,384);}
+ const out=diamondheadPixels.data,src=diamondheadTexture.data,iw=img.width,ih=img.height;out.fill(0);
+ function triangle(s0,s1,s2,a,b,c){const den=(b[1]-c[1])*(a[0]-c[0])+(c[0]-b[0])*(a[1]-c[1]);if(Math.abs(den)<1e-7)return;const x0=Math.max(0,Math.floor(Math.min(a[0],b[0],c[0]))),x1=Math.min(383,Math.ceil(Math.max(a[0],b[0],c[0]))),y0=Math.max(0,Math.floor(Math.min(a[1],b[1],c[1]))),y1=Math.min(383,Math.ceil(Math.max(a[1],b[1],c[1]))),dx0=(b[1]-c[1])/den,dx1=(c[1]-a[1])/den;
+  for(let y=y0;y<=y1;y++){let w0=((b[1]-c[1])*(x0+.5-c[0])+(c[0]-b[0])*(y+.5-c[1]))/den,w1=((c[1]-a[1])*(x0+.5-c[0])+(a[0]-c[0])*(y+.5-c[1]))/den;for(let x=x0;x<=x1;x++,w0+=dx0,w1+=dx1){const w2=1-w0-w1;if(w0< -1e-7||w1< -1e-7||w2< -1e-7)continue;
+   const u=Math.max(0,Math.min(iw-1,s0[0]*w0+s1[0]*w1+s2[0]*w2-.5)),v=Math.max(0,Math.min(ih-1,s0[1]*w0+s1[1]*w1+s2[1]*w2-.5)),ix=Math.floor(u),iy=Math.floor(v),fx=u-ix,fy=v-iy,p00=(iy*iw+ix)*4,p10=(iy*iw+Math.min(iw-1,ix+1))*4,p01=(Math.min(ih-1,iy+1)*iw+ix)*4,p11=(Math.min(ih-1,iy+1)*iw+Math.min(iw-1,ix+1))*4,k0=(1-fx)*(1-fy),k1=fx*(1-fy),k2=(1-fx)*fy,k3=fx*fy,a0=src[p00+3]*k0,a1=src[p10+3]*k1,a2=src[p01+3]*k2,a3=src[p11+3]*k3,alpha=a0+a1+a2+a3;if(alpha<.01)continue;const dest=(y*384+x)*4,remaining=1-alpha/255,oldAlpha=out[dest+3]*remaining,total=alpha+oldAlpha;for(let ch=0;ch<3;ch++)out[dest+ch]=(src[p00+ch]*a0+src[p10+ch]*a1+src[p01+ch]*a2+src[p11+ch]*a3+out[dest+ch]*oldAlpha)/total;out[dest+3]=total;
+  }}
+ }
+ for(let y=0;y<rig.rows;y++)for(let x=0;x<rig.cols;x++){const a=[x/rig.cols*iw,y/rig.rows*ih],b=[(x+1)/rig.cols*iw,y/rig.rows*ih],d=[x/rig.cols*iw,(y+1)/rig.rows*ih],e=[(x+1)/rig.cols*iw,(y+1)/rig.rows*ih];triangle(a,b,d,points[y][x],points[y][x+1],points[y+1][x]);triangle(b,e,d,points[y][x+1],points[y+1][x+1],points[y+1][x]);}
+ ctx.putImageData(diamondheadPixels,0,0);return diamondheadCanvas;
 }
-drawAlien=function(ctx,f,t,portrait=false){const neutral=f.id===2&&!portrait&&f.hp>0&&!(f.stun>0)&&!f.block&&!f.cast&&!(f.jumpWindup>0)&&f.y>=floor-1;
- if(neutral&&diamondheadPuppetImage){drawDiamondheadPuppet(ctx,f,t);return}
- // Reset blend on action changes; leave the approved combat poses untouched.
- diamondheadPuppetMotion.delete(f);diamondheadPreviousDraw(ctx,f,t,portrait);
-};
+function diamondheadExactArtwork(ctx,f){const image=classicPortraits[2],height=226*aliens[2].scale,width=height*image.width/image.height;ctx.save();ctx.translate(f.x,f.y);ctx.scale(f.dir||1,1);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(image,-width/2,-height,width,height);ctx.restore();}
+function drawOriginalDiamondhead(ctx,f,t){const rig=diamondheadRig(),state=diamondheadRigAngles(f,t,rig);if(state.neutral&&state.motion.weight<.001){diamondheadExactArtwork(ctx,f);diamondheadOriginalRecords.delete(f);return}
+ let record=diamondheadOriginalRecords.get(f);if(!record){record={angles:{...state.angles},last:t};diamondheadOriginalRecords.set(f,record)}const dt=Math.max(0,Math.min(.05,t-record.last)),blend=1-Math.exp(-dt*(state.neutral?40:30));for(const name in state.angles)record.angles[name]+=(state.angles[name]-record.angles[name])*blend;record.last=t;
+ const points=skinJointRig(rig,record.angles),frame=diamondheadRenderFrame(rig,points),scale=226*aliens[2].scale/rig.h,ground=f.y>=floor-1&&!state.pose.ko?diamondheadFloorOffset(points):0;
+ ctx.save();ctx.beginPath();ctx.rect(f.x-500,f.y-650,1000,650);ctx.clip();ctx.translate(f.x+(f.dir||1)*state.pose.shift,f.y-ground*scale);ctx.scale(f.dir||1,1);if(state.pose.ko)ctx.rotate(-1.42);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(frame,-192*scale,-366*scale,384*scale,384*scale);ctx.restore();
+}
+drawAlien=function(ctx,f,t,portrait=false){if(f.id!==2||portrait||!classicPortraits[2]){diamondheadPreviousDraw(ctx,f,t,portrait);return}drawOriginalDiamondhead(ctx,f,t);};
+drawnAlienEmitter=function(f,v=f.cast){if(f.id!==2||!classicPortraits[2])return diamondheadPreviousEmitter(f,v);const rig=diamondheadRig(),source=v?{...f,cast:{...v,elapsed:v.cfg.windup+.001}}:f,state=diamondheadRigAngles(source,typeof time==='number'?time:0,rig),record=diamondheadOriginalRecords.get(f),angles=record?.angles||state.angles,bone=rig.bones.find(b=>b.name==='arm_right2'),world=diamondheadWorldBones(rig,angles)[bone.index],dx=bone.tip[0]-bone.at[0],dy=bone.tip[1]-bone.at[1],x=world[0]*dx+world[2]*dy+world[4],y=world[1]*dx+world[3]*dy+world[5],scale=226*aliens[2].scale/rig.h,ground=f.y>=floor-1?diamondheadFloorOffset(skinJointRig(rig,angles)):0;return {x:f.x+(f.dir||1)*((x-192)*scale+state.pose.shift),y:f.y+(y-366-ground)*scale};};

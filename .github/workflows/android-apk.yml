@@ -36,7 +36,7 @@ jobs:
         run: |
           python3 ci/check-drawn-assets.py
           node ci/check-locomotion.cjs
-          node ci/check-diamondhead-puppet.cjs
+          node ci/check-diamondhead-original.cjs
           for script in web/*.js; do node --check "$script"; done
           python3 - <<'PY'
           from pathlib import Path
@@ -94,4 +94,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.4 — Diamondhead size and proportions' --notes 'Diamondhead size correction: match the existing 253px game height and classic reference width-to-height ratio, with a smaller proportional head, broader chest and shoulders, heavier longer arms and sturdier legs. Neutral render measured 253x157px against a 253x158px reference target. Retain captured forward/backward joint motion; compensate gait distance for the corrected display scale. Other aliens, combat, speed and hitboxes unchanged. Debug-signed Android 6.0+ test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.5 — Original Diamondhead artwork' --notes 'Diamondhead now uses the actual bundled original classic illustration, preserving its original face, black-and-white uniform, logo, hands and black boots. Exact original image and aspect at rest; continuous skeletal movement retargeted to that same texture. Jump, guard, attacks and powers keep the original artwork too. Original wrist projectile emitters. Clean texture-raster Canvas fallback; WebGL preferred. Other aliens unchanged. 100STYLE motion attribution retained. Debug-signed Android 6.0+ test APK.' --prerelease --target "$GITHUB_SHA"

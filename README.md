@@ -42,3 +42,7 @@ Heatblast's approved 0.9 playback is retained. All required artwork is bundled o
 ## Version 1.3 — Diamondhead human-motion study
 
 Diamondhead neutral locomotion now retargets separate real-human forward and backward walking recordings from **The 100STYLE Dataset — Ian Mason (CC BY 4.0)**. Connected, fixed-length arms and legs follow captured joint timing; pelvis, chest, shoulders, head, wrists and rolling boots react together. Periodic numeric interpolation and joint transitions replace whole-body image fading. Boot silhouette support grounds the character through heel/toe rotation. Capture attribution appears in Credits. The generated 1.2 artwork is retained. Combat poses, other aliens and movement speeds are unchanged. See `web/assets/diamondhead-puppet/MOTION.md` for sources, source hashes, processing, regeneration and limits. Android testing and user visual review remain necessary.
+
+## Version 1.5 — original Diamondhead artwork
+
+Diamondhead now uses the actual bundled classic illustration for resting, walking and all combat states. The original face, uniform, logo, hands, boots and native aspect ratio are preserved. Rest draws the original image directly; movement skins that same texture with the studied human gait. The generated cutout replacement is retired. Wrist emitters follow the animated original rig. A clean CPU texture rasterizer supports Canvas fallback without padded-triangle fragments. See `web/assets/diamondhead-puppet/ORIGINAL.md`. Other aliens retain their prior rendering.
