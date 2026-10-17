@@ -1,0 +1,11 @@
+# Diamondhead movement puppet pilot (Android 1.2)
+
+`walk-parts-v1.png` is newly generated transparent classic-style Diamondhead artwork, created using the built-in image generation tool. It is a cutout rig atlas, not animation extracted from the television series. Ben 10 belongs to its respective owners.
+
+Generation specification: a square transparent 4-by-4 parts atlas for the original classic Diamondhead design, pale mint faceted crystal skin, yellow eyes, black-and-white sleeveless uniform, clean black cartoon outlines and cel shading, facing right. Row 1: head/neck, torso with shoulder spikes, pelvis, empty. Row 2: near upper arm, near forearm, near fist, empty. Row 3: far upper arm, far forearm, far fist, empty. Row 4: thigh, shin, right-facing boot, empty. Separate overlapping joint ends, no full-body frames, text, grid, ground shadow or effects.
+
+The generated image is preserved unchanged. Source rectangles and joint attachment points are measured in `web/diamondhead-puppet.js`. Continuous rotations animate the same pieces at display refresh rate. Leg inverse kinematics follows planted feet; signed distance reverses the gait while preserving facing. The stride matches physical movement at the rig's 0.94 render scale. The foot sole stays on the floor, and the rig clips at the floor as a final guard. Starts/stops ease into a standing arrangement; the head and torso have less than a pixel of breathing motion. The renderer uses ordinary Canvas 2D and no per-frame atlas extraction or pixel reads.
+
+Scope: only Diamondhead's idle and forward/backward movement use this new pilot. His already approved jumps, attacks, powers, guard, hit and KO poses retain the drawn combat playback. All other aliens retain 1.1 rendering. This lets the user assess the movement approach before further action-specific artwork or alien conversions.
+
+Validation: script parsing, forward/backward and left/right-facing rig execution, finite draw transforms, planted-foot translation, stance/swing loop seams, stop easing, combat fallback and other-character routing. An offscreen Canvas render was inspected at multiple gait phases. Visual quality and frame pacing on the user's Android phone still require device testing.

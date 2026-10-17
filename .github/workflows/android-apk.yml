@@ -36,6 +36,7 @@ jobs:
         run: |
           python3 ci/check-drawn-assets.py
           node ci/check-locomotion.cjs
+          node ci/check-diamondhead-puppet.cjs
           for script in web/*.js; do node --check "$script"; done
           python3 - <<'PY'
           from pathlib import Path
@@ -48,6 +49,9 @@ jobs:
             assert len(alien['frames'])==48
             for x,y,w,h,ox,oy in alien['frames']:
               assert x>=0 and y>=0 and x+w<=alien['width'] and y+h<=alien['height'] and oy==h
+          puppet=Path('web/assets/diamondhead-puppet/walk-parts-v1.png').read_bytes()
+          assert puppet[:8]==b'\x89PNG\r\n\x1a\n'
+          assert struct.unpack('>II',puppet[16:24])==(1254,1254)
           data=Path('web/assets/heatblast-poses/atlas-v8.png').read_bytes()
           assert data[:8]==b'\x89PNG\r\n\x1a\n'
           assert struct.unpack('>II',data[16:24])==(1086,1448)
@@ -73,6 +77,8 @@ jobs:
           assert 'assets/index.html' in z.namelist()
           assert 'assets/heatblast-poses.js' in z.namelist()
           assert 'assets/alien-poses.js' in z.namelist()
+          assert 'assets/diamondhead-puppet.js' in z.namelist()
+          assert 'assets/assets/diamondhead-puppet/walk-parts-v1.png' in z.namelist()
           assert 'assets/alien-poses-data.js' in z.namelist()
           assert len([p for p in z.namelist() if p.startswith('assets/assets/drawn-aliens/') and p.endswith('.png')])==9
           assert 'assets/assets/heatblast-poses/atlas-v8.png' in z.namelist()
@@ -87,4 +93,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.1 — Smooth forward and backward movement' --notes 'Movement 1.1: continuous pose blending throughout each walk step, reversed backward cycles, distance-driven playback and no walking against arena edges. All ten classic aliens now use newly drawn pose animation with quiet idle breathing, registered pivots and foot baselines, cropped sprite fragments, steady power releases and corrected jumping. Character-specific release poses cover every selectable power and ultimate. Existing home hub and modes retained. New image-based motion; not extracted TV animation. Debug-signed testing APK. Android 6.0+ with current System WebView. Original Godot source preserved. Existing builds signed with a different key must be uninstalled first.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.2 — Diamondhead movement puppet pilot' --notes 'Diamondhead-only movement pilot: newly generated classic-style cutout artwork animated with continuous limb rotation, planted-foot IK, steady head/torso and eased starts/stops. Forward and backward movement use one rig without whole-body pose crossfades. Diamondhead combat poses and the other nine aliens retain 1.1 behavior. Debug-signed testing APK; Android 6.0+ with current System WebView. Not original TV animation.' --prerelease --target "$GITHUB_SHA"
