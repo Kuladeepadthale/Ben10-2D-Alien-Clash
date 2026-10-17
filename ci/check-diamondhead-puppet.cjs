@@ -15,7 +15,7 @@ const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
   for(let n=0;n<480;n++){box.f.walk=n/120*12*direction*facing;box.n=n;const p=vm.runInContext('diamondheadBodyPose(f,n/120)',box);
    for(const key of ['nearLeg','farLeg']){const l=p[key];assert(Math.abs(distance(l.hip,l.knee)-53)<1e-8);assert(Math.abs(distance(l.knee,l.ankle)-51)<1e-8);box.angle=l.footAngle;l.bottom=l.ankle.y+vm.runInContext('diamondheadFootBottom(angle)',box);assert(l.bottom<=.001);}
    assert(Math.max(p.nearLeg.bottom,p.farLeg.bottom)>-.2);
-   for(const key of ['nearArm','farArm']){const a=p[key];assert(Math.abs(distance(a.shoulder,a.elbow)-38)<1e-8);assert(Math.abs(distance(a.elbow,a.wrist)-33)<1e-8);}
+   for(const key of ['nearArm','farArm']){const a=p[key];assert(Math.abs(distance(a.shoulder,a.elbow)-43)<1e-8);assert(Math.abs(distance(a.elbow,a.wrist)-48)<1e-8);}
    if(n>120){minY=Math.min(minY,p.pelvis.y);maxY=Math.max(maxY,p.pelvis.y);if(previous)maxRootStep=Math.max(maxRootStep,Math.abs(p.pelvis.y-previous.pelvis.y));}previous=p;vm.runInContext('drawAlien(ctx,f,n/120)',box);
   }
   assert(maxY-minY<8);assert(maxRootStep<1.2);
