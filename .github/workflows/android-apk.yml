@@ -35,6 +35,7 @@ jobs:
       - name: Check game scripts and assets
         run: |
           python3 ci/check-drawn-assets.py
+          node ci/check-locomotion.cjs
           for script in web/*.js; do node --check "$script"; done
           python3 - <<'PY'
           from pathlib import Path
@@ -86,4 +87,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.0 — Classic ten drawn animations' --notes 'All ten classic aliens now use newly drawn pose animation with quiet idle breathing, registered pivots and foot baselines, cropped sprite fragments, steady power releases and corrected jumping. Character-specific release poses cover every selectable power and ultimate. Existing home hub and modes retained. New image-based motion; not extracted TV animation. Debug-signed testing APK. Android 6.0+ with current System WebView. Original Godot source preserved. Existing builds signed with a different key must be uninstalled first.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.1 — Smooth forward and backward movement' --notes 'Movement 1.1: continuous pose blending throughout each walk step, reversed backward cycles, distance-driven playback and no walking against arena edges. All ten classic aliens now use newly drawn pose animation with quiet idle breathing, registered pivots and foot baselines, cropped sprite fragments, steady power releases and corrected jumping. Character-specific release poses cover every selectable power and ultimate. Existing home hub and modes retained. New image-based motion; not extracted TV animation. Debug-signed testing APK. Android 6.0+ with current System WebView. Original Godot source preserved. Existing builds signed with a different key must be uninstalled first.' --prerelease --target "$GITHUB_SHA"

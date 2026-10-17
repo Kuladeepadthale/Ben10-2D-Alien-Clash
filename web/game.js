@@ -68,7 +68,7 @@ function updateEffects(dt){for(let s of shots){s.life-=dt;let oldX=s.spawnFromX?
  if(touches){e.hit=true;let actual=receiveHit(e.owner,o,e.damage,e.name,e.ultimate,20,e.budget);if(actual&&e.slow)o.slow=e.slow;if(e.kind==='trap'){effects.push({...e,kind:'explosion',r:e.r,life:.4,maxLife:.4,harmless:true});e.life=.1}}
  }effects=effects.filter(e=>e.life>0).slice(-240);
 }
-function move(f,dir,dt){if(f.stun||f.cast||f.block)return;f.moving=true;f.x+=dir*aliens[f.id].speed*dt*(f.slow?.45:1);f.x=Math.max(65,Math.min(W-65,f.x));f.walk+=dt*(f.id===3?20:12);if(Math.floor(f.walk*2)!==f.lastStep&&f.y>=floor){f.lastStep=Math.floor(f.walk*2);particles.push({x:f.x,y:floor-3,vx:-dir*35,vy:-25,life:.24,max:.24,r:7,color:'#b9c5a366'})}}
+function move(f,dir,dt){if(f.stun||f.cast||f.block)return;const previousX=f.x;f.x+=dir*aliens[f.id].speed*dt*(f.slow?.45:1);f.x=Math.max(65,Math.min(W-65,f.x));const travelled=f.x-previousX;if(Math.abs(travelled)<1e-6)return;f.moving=true;f.walk+=travelled/aliens[f.id].speed*(f.id===3?20:12)*(f.dir||1);if(Math.floor(Math.abs(f.walk)*2)!==f.lastStep&&f.y>=floor){f.lastStep=Math.floor(Math.abs(f.walk)*2);particles.push({x:f.x,y:floor-3,vx:-dir*35,vy:-25,life:.24,max:.24,r:7,color:'#b9c5a366'})}}
 function jump(f){if(f.y>=floor&&!f.stun&&!f.block&&!f.cast&&!f.jumpWindup){if(typeof hasDrawnAlien==='function'&&hasDrawnAlien(f.id)&&f.id!==7&&f.id!==9||f.id===0&&typeof heatblastAtlas!=='undefined'&&heatblastAtlas)f.jumpWindup=.07;else f.vy=-520;sound(180,.08,'sine')}}
 function announce(txt,dur=1){$('announcement').textContent=txt;announceTime=dur}
 function resetInputs(){for(let k in keys)keys[k]=false;for(let k in presses)presses[k]=false;document.querySelectorAll('[data-key]').forEach(b=>b.classList.remove('pressed'))}
@@ -111,7 +111,7 @@ function simulateCombat(dt){
   if(hitStop>0){hitStop=Math.max(0,hitStop-dt);return}
   player.moving=false;enemy.moving=false;if(!training)clock=Math.max(0,clock-dt);
   player.block=!!keys.block&&!player.cast&&player.y>=floor&&player.stun<=0;
-  if(keys.left)move(player,-1,dt);if(keys.right)move(player,1,dt);if(presses.jump)jump(player);
+  const moveInput=Number(!!keys.right)-Number(!!keys.left);if(moveInput)move(player,moveInput,dt);if(presses.jump)jump(player);
   for(let k of ['normal','skill0','skill1','ultimate'])if(presses[k]){cast(player,k);break}
   for(let k in presses)presses[k]=false;if(!training)ai(dt);updateF(player,dt);updateF(enemy,dt);
   if(Math.abs(player.x-enemy.x)<55&&Math.abs(player.y-enemy.y)<80&&!player.cast&&!enemy.cast){let mid=(player.x+enemy.x)/2,dir=player.x<enemy.x?-1:1;player.x=mid+dir*28;enemy.x=mid-dir*28}
