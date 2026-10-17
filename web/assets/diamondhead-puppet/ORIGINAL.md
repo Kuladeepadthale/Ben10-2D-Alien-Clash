@@ -1,15 +1,15 @@
-# Original Diamondhead artwork — version 1.5
+# Diamondhead movement review — 1.6
 
-Diamondhead now renders from the existing bundled **`assets/classic/diamondhead/portrait.webp`**, the same original classic character illustration shown in the roster and original reference. No generated replacement head, uniform, boots, hands or torso is selected by this renderer. The character's existing art credits remain applicable.
+The 1.5 rendered sequence exposed leg folding, stretched boots and excessive root movement despite passing script tests. Those tests did not establish visual quality.
 
-At rest, the original image is drawn directly at the existing game height `226 × aliens[2].scale` (253.12 pixels at scale 1.12), with its native 300:480 aspect ratio (158.2 pixels wide). No reconstruction, stretching by separate body-axis scales, or color replacement is used for the resting character.
+## Change
 
-During movement, the original image is the single continuous texture on its existing anatomical joint mesh. The separate forward/backward human-motion curves introduced in 1.3 drive rotations in the original bind pose. The head, uniform, logo, crystal skin, hands and black boots retain their original pixels. Starts/stops and direction changes interpolate numeric joints. This is image-based skeletal animation; it cannot reveal unseen views or create hand-drawn television frames.
+The renderer now cuts rigid articulated layers from the bundled original portrait. It preserves the original resting image and 300:480 proportions. It does not generate a replacement design. Rigid transforms prevent triangle inversion and texture stretching. A forward/backward stance and swing trajectory drives two-bone leg IK; foot pitch, upper-body and arm variations retain the separate 100STYLE motion curves. Stance occupies 60% of each cycle; swing has continuous endpoint velocity and a smooth lift. Starts, stops, changes of direction and combat transitions interpolate numeric joints. Art layers are cached canvases, avoiding the previous per-frame CPU texture rasterizer. Other aliens delegate unchanged.
 
-The same original texture remains active in jumping, guard, normal attacks, powers, recoil and KO. Those actions use the existing articulated combat poses instead of switching to generated pose sheets. Crystal projectiles use the animated original wrist as their emitter. The other nine aliens keep their previous rendering.
+## Review and checks
 
-WebGL uses the existing shared texture renderer. If WebGL is unavailable, a Diamondhead-specific barycentric texture rasterizer writes interpolated source pixels into a cached Canvas buffer. It avoids clipped-triangle seams and avoids padded clips leaking neighboring limb pixels. The source texture is read once; buffers are reused. Canvas-only performance still requires testing on the user's phone.
+Rendered 540 frames at 30 fps with a 120 Hz simulation: 18 seconds covering idle, forward/backward walking, stops, guard, jump/landing and five attacks. Inspected the contact sheet and alpha-component analysis. Largest secondary opaque component: 49 pixels; no large detached limb component was found. Numeric contact checks cover 558 forward and 553 backward consecutive stance intervals after settling, with maximum foot displacement below 0.000001 arena pixels per 120 Hz interval. Rigid transform length/determinant errors remain below 1e-10. These numerical checks do not establish artistic quality.
 
-Validation: exact original image object and native aspect at rest, identity bind geometry, continuous forward/backward rig execution, original-texture combat routing, finite wrist emitters, delegation for other aliens, script checks, and rendered Canvas frame inspection. Source attribution for the recorded locomotion remains in `MOTION.md` and in-game Credits.
+The reviewed sequence no longer shows the previous mesh-fold and stretched-boot defect. Some knee joins and overlapping outlines remain visible at stronger bends. The single three-quarter illustration cannot supply unseen views, changing hand silhouettes or drawn-through television anatomy. This is an improved test build, not a claim of perfect television animation. Mobile device performance has not been measured here.
 
-The generated `walk-parts-v1.png` and earlier 1.2–1.4 notes are historical artifacts. They are no longer loaded or used by Diamondhead's active renderer.
+The captured recordings, author and CC BY 4.0 attribution remain documented in MOTION.md and the in-game credits. Earlier generated walk-parts assets are historical and not used by the active Diamondhead renderer.
