@@ -1,0 +1,15 @@
+// Real browser regression: every alien's overview and upgrades fit the viewport.
+const {chromium}=require('playwright'),http=require('http'),fs=require('fs'),path=require('path'),assert=require('assert/strict');
+(async()=>{const root=path.resolve('web'),server=http.createServer((req,res)=>{let file=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(file===root)file+='/index.html';if(!file.startsWith(root+path.sep)){res.writeHead(403).end();return}try{const ext=path.extname(file);res.setHeader('Content-Type',({'.html':'text/html','.js':'application/javascript','.css':'text/css','.png':'image/png','.webp':'image/webp','.svg':'image/svg+xml'})[ext]||'application/octet-stream');res.end(fs.readFileSync(file))}catch{res.writeHead(404).end()}});
+await new Promise(r=>server.listen(0,'127.0.0.1',r));const executablePath=['/usr/bin/google-chrome','/usr/bin/chromium','/opt/google/chrome/chrome'].find(p=>fs.existsSync(p));const browser=await chromium.launch({headless:true,executablePath,args:['--no-sandbox','--disable-dev-shm-usage']});
+try{for(const viewport of [{width:360,height:800},{width:640,height:360},{width:932,height:430},{width:1280,height:720}]){
+const page=await browser.newPage({viewport}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:'+server.address().port+'/index.html');await page.waitForFunction(()=>typeof renderAlienInfo==='function');
+await page.evaluate(()=>{chooseStarter(career.offers[0]);career.owned=aliens.map((_,i)=>i);profile.credits=10000;saveProfile();showScreen('characters')});await page.locator('#roster .card:visible').first().click();
+assert.equal(await page.evaluate(()=>currentScreen),'alieninfo');
+for(let id=0;id<22;id++){await page.evaluate(id=>{select(id);alienUpgradeOpen=false;renderAlienInfo()},id);
+for(const upgrades of [false,true]){await page.evaluate(up=>{alienUpgradeOpen=up;renderAlienInfo()},upgrades);await page.waitForTimeout(30);
+const bad=await page.evaluate(()=>{const el=$('screen-alieninfo'),b=el.getBoundingClientRect();return {scroll:el.scrollHeight>el.clientHeight+2,items:[...el.querySelectorAll('button,p,strong,span,h1,h2,h3')].filter(e=>e.getClientRects().length&&e.clientWidth).filter(e=>{const r=e.getBoundingClientRect();return r.bottom>b.bottom+2||r.right>innerWidth+2||e.scrollWidth>e.clientWidth+3}).map(e=>e.textContent)}});
+assert.deepEqual(bad,{scroll:false,items:[]},JSON.stringify({viewport,id,upgrades,bad}));}}
+await page.evaluate(()=>{showScreen('home')});assert.equal(await page.locator('.home-shortcuts').isVisible(),false);assert.equal(await page.locator('.app-bottom [data-screen="upgrades"]').isVisible(),false);assert.deepEqual(errors,[]);await page.close();}
+console.log('Passed: all 22 alien stories, powers and upgrade panels fit four viewports without scrolling; collection entry and simple Home navigation work.');
+}finally{await browser.close();await new Promise(r=>server.close(r))}})().catch(e=>{console.error(e);process.exit(1)});

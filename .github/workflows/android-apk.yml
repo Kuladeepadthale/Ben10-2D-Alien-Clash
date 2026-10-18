@@ -52,6 +52,7 @@ jobs:
           node ci/check-cel-ui.cjs
           node ci/check-progression.cjs
           node ci/check-progression-layout.cjs
+          node ci/check-alien-detail.cjs
           for script in web/*.js; do node --check "$script"; done
       - name: Build APK
         run: gradle -p android --no-daemon assembleDebug
@@ -84,6 +85,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 4.1 — 22 Original-series aliens' --notes 'Adds Cannonbolt, Wildvine, Blitzwolfer, Snare-oh, Frankenstrike, Upchuck, Ditto, Eye Guy, Way Big, Arctiguana, Spitter and Buzzshock. 22 Original-series aliens with complete cel action sets, distinct powers, coin unlocks, missions and upgrades. All 22 are free to try in Testing. Existing characters, owned aliens, coins, mission claims and upgrade levels are preserved. Debug-signed Android test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 4.2 — Compact alien details and clean animation frames' --notes 'Adds Cannonbolt, Wildvine, Blitzwolfer, Snare-oh, Frankenstrike, Upchuck, Ditto, Eye Guy, Way Big, Arctiguana, Spitter and Buzzshock. 22 Original-series aliens with complete cel action sets, distinct powers, coin unlocks, missions and upgrades. All 22 are free to try in Testing. Existing characters, owned aliens, coins, mission claims and upgrade levels are preserved. Debug-signed Android test APK.' --prerelease --target "$GITHUB_SHA"
+
 
 

@@ -1,0 +1,61 @@
+/* Fitted collection/detail views. Readable text, small portraits, no page scrolling. */
+body:not(.in-battle) #screen-alieninfo,body:not(.in-battle) #screen-characters{height:100%!important;min-height:0!important;overflow:hidden;padding:12px 18px;gap:10px;box-sizing:border-box}
+body:not(.in-battle) #screen-alieninfo{display:flex;flex-direction:column}
+body:not(.in-battle) #screen-alieninfo[hidden]{display:none}
+body:not(.in-battle) #screen-characters .page-title{flex:none;margin:0}
+body:not(.in-battle) #screen-characters h1{font-size:28px!important;margin:0}
+body:not(.in-battle) #screen-characters .page-title>p{font-size:15px!important;margin:2px 0}
+body:not(.in-battle) #screen-characters .screen-content{flex:1;min-height:0;overflow:hidden;gap:8px}
+body:not(.in-battle) #characterContent{display:flex;flex:1;min-height:0;flex-direction:column}
+body:not(.in-battle) #characterContent>.deck-wrap{flex:1;min-height:0;gap:8px}
+body:not(.in-battle) #roster{flex:1;min-height:0;gap:8px}
+body:not(.in-battle) #screen-characters .card{min-height:0!important;gap:4px;padding:6px!important}
+body:not(.in-battle) #screen-characters .card canvas{height:72px;min-height:0;max-height:110px;flex:1;object-fit:contain}
+body:not(.in-battle) #screen-characters .card span{font-size:17px!important}
+body:not(.in-battle) #screen-characters .ownership{font-size:12px;padding:3px 6px}
+body:not(.in-battle) #screen-characters .collection-notice{font-size:14px;padding:5px 10px;line-height:1.25}
+body:not(.in-battle) #screen-characters .screen-footer{display:none}
+.alien-heading{display:flex;align-items:center;gap:12px;flex-wrap:wrap;flex:none}
+body:not(.in-battle) .alien-heading h1{font-size:28px!important;margin:0}
+.alien-heading>span{color:#b6d3b4;font-size:13px}
+.alien-overview{flex:1;min-height:0;display:grid;grid-template-columns:34% 1fr;gap:16px;align-items:center}
+.alien-art{height:100%;min-height:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse,#b4ff6d20,transparent 70%)}
+.alien-art canvas{max-height:100%;width:100%;height:100%;object-fit:contain}
+.alien-facts{min-width:0;min-height:0}
+body:not(.in-battle) #screen-alieninfo p{font-size:16px!important;line-height:1.35!important;margin:0 0 10px}
+body:not(.in-battle) #screen-alieninfo h2{font-size:20px!important;margin:0 0 8px}
+#alienAbilities{display:grid;gap:8px}
+#alienAbilities>div{display:flex;flex-direction:column;gap:2px;border-left:2px solid #a4e36b;padding-left:9px}
+#alienAbilities strong{font-size:17px}#alienAbilities span{font-size:14px;color:#c1d3bd}
+.alien-actions{display:flex;flex:none;gap:8px;flex-wrap:wrap}
+.alien-actions>button{flex:1;min-width:100px}
+#alienUpgradePanel{flex:1;min-height:0;display:flex;flex-direction:column}
+#alienUpgradePanel[hidden],.alien-overview[hidden]{display:none!important}
+body:not(.in-battle) #alienUpgradePanel .deck-wrap{flex:1;min-height:0;gap:8px}
+body:not(.in-battle) #alienUpgradePanel .deck-grid{flex:1;min-height:0}
+body:not(.in-battle) #alienUpgradePanel .upgrade{min-height:0;padding:12px}
+body:not(.in-battle) #alienUpgradePanel h3{font-size:20px!important;margin:0}
+body:not(.in-battle) #screen-home .home-shortcuts,body:not(.in-battle) #screen-home .home-bottom{display:none!important}
+body:not(.in-battle) .app-bottom button[hidden]{display:none!important}
+@media(max-width:600px) and (orientation:portrait){
+ .alien-overview{grid-template-columns:1fr;grid-template-rows:minmax(90px,1fr) auto;gap:8px}
+ .alien-heading{gap:8px}.alien-heading>span{width:100%}
+ .alien-art canvas{max-height:180px}
+ #alienAbilities{grid-template-columns:1fr 1fr;gap:10px}
+ .alien-actions{display:grid;grid-template-columns:1fr 1fr}
+}
+@media(max-height:500px) and (orientation:landscape){
+ body:not(.in-battle) #appShell{--top-h:44px;--nav-h:48px}
+ body:not(.in-battle) .app-top{min-height:44px;height:44px}
+ body:not(.in-battle) .app-bottom{min-height:48px;height:48px}
+ body:not(.in-battle) #screen-alieninfo,body:not(.in-battle) #screen-characters{padding:6px 12px;gap:5px}
+ body:not(.in-battle) #screen-alieninfo button,body:not(.in-battle) #screen-characters button{min-height:36px;padding:5px 9px!important;font-size:15px!important}
+ body:not(.in-battle) .alien-heading h1{font-size:23px!important}
+ body:not(.in-battle) #screen-alieninfo p{font-size:15px!important;line-height:1.2!important;margin-bottom:5px}
+ #alienAbilities{grid-template-columns:1fr 1fr;gap:6px}
+ #alienAbilities strong{font-size:16px}#alienAbilities span{font-size:13px}
+ body:not(.in-battle) #screen-characters .page-title>p,body:not(.in-battle) #screen-characters .page-title .eyebrow{display:none!important}
+ body:not(.in-battle) #screen-characters h1{font-size:23px!important}
+ body:not(.in-battle) #screen-characters .card canvas{max-height:85px}
+ body:not(.in-battle) #alienUpgradePanel .upgrade{padding:8px}
+}

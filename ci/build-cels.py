@@ -33,7 +33,12 @@ for id,name in enumerate(NAMES):
             labels,count=ndimage.label(a[:,:,3]>32,structure=np.ones((3,3)))
             assert count>0,(name,kind,i)
             areas=np.bincount(labels.ravel());areas[0]=0
-            main=int(areas.argmax());a[:,:,3]=np.where(labels==main,a[:,:,3],0)
+            main=int(areas.argmax())
+            # Keep small detached hands/details close to the body as well as the main
+            # silhouette. Drop remote fragments from neighboring animation cells.
+            near=ndimage.binary_dilation(labels==main,iterations=max(3,round(min(cell.size)*.025)))
+            keep=np.unique(labels[near]);keep=keep[keep!=0]
+            a[:,:,3]=np.where(np.isin(labels,keep),a[:,:,3],0)
             cell=Image.fromarray(a);b=cell.getchannel('A').getbbox();assert b and b[2]-b[0]>30 and b[3]-b[1]>30
             # X is the torso/hips rather than extended hands, tail or attack silhouette.
             yy,xx=np.indices(a.shape[:2]); alpha=a[:,:,3]>180
@@ -45,7 +50,9 @@ for id,name in enumerate(NAMES):
             rect=[x0+b[0],y0+b[1],b[2]-b[0],b[3]-b[1]]
             character['frames'].append({'sheet':si,'rect':rect,'origin':[round(anchor-b[0],2),round(ground-b[1],2)],'source':kind,'cell':i,'bounds':list(b)})
             clean.paste(cell,(x0,y0))
-        dest=folder/(kind+source.suffix);shutil.copyfile(source,dest);processed.append(dest)
+        # Package the isolated cells used to calculate frame bounds. The original
+        # sheet can contain disconnected neighboring hands/tails inside those bounds.
+        dest=save_native(clean,folder/kind);processed.append(dest)
         character['sheets'].append({'src':'assets/cels/'+name+'/'+dest.name,'width':sheet.width,'height':sheet.height})
     if id==0:
         character['clips']={'walk':list(range(8)),'jump':list(range(8,12)),'skill0':list(range(12,16)),'normal':list(range(16,20)),'skill1':list(range(20,24)),'skill2':[24,25,26],'ultimate':[27,28,29],'idle':[30,38,39],'guard':[31],'hit':[32,33],'ko':[34,35],'dash':[36,37]}
@@ -70,4 +77,5 @@ shutil.copytree(WEB/'assets/ui',bundle/'assets/ui',copy_function=shutil.copyfile
 for file in ['assets/animation-manifest-example.json']:
     if (WEB/file).exists(): (bundle/file).parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(WEB/file,bundle/file)
 print('Exported',sum(len(c['frames']) for c in manifest['characters']),'native cels across 22 complete action sets.')
+
 
