@@ -35,6 +35,10 @@ jobs:
         with:
           path: ~/.android/debug.keystore
           key: alien-clash-test-key-v1
+      - name: Bake all alien transitions at source resolution
+        run: |
+          python3 -m pip install Pillow numpy opencv-python-headless
+          python3 ci/heatblast-smooth/build-all.py
       - name: Check game scripts and assets
         run: |
           python3 ci/check-drawn-assets.py
@@ -86,6 +90,9 @@ jobs:
           assert 'assets/heatblast-poses.js' in z.namelist()
           assert 'assets/heatblast-smooth-data.js' in z.namelist()
           assert all('assets/assets/heatblast-smooth/atlas-v21-'+str(i)+'.webp' in z.namelist() for i in range(8))
+          assert 'assets/alien-smooth.js' in z.namelist()
+          assert 'assets/alien-smooth-data.js' in z.namelist()
+          assert len([p for p in z.namelist() if p.startswith('assets/assets/alien-smooth/') and p.endswith('.webp')])>=9
           assert 'assets/alien-poses.js' in z.namelist()
           assert 'assets/diamondhead-puppet.js' in z.namelist()
           assert 'assets/diamondhead-gait-data.js' in z.namelist()
@@ -104,4 +111,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/Heatblast-v2.1-actions.mp4 builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 2.1 — Heatblast original-art smoothing' --notes 'Restores the original illustrated Heatblast character and actions approved in the animation preview. Adds 450 precomputed frames, a 72-frame forward/backward walk cycle, entry/exit, guard, jump/landing, hit, knockdown and all five combat animations. Uses the approved offline image interpolation approach. Original strike poses align to existing attack impact times; steady held poses avoid vibration during guard, beams and ultimate. Gameplay damage, timing, physics, other aliens and the 1.9 menus remain unchanged. Includes a 24-second production-renderer animation review video. Image interpolation can still deform occluded details; this is not Shadow Fight technology. Debug-signed Android 6.0+ test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/Heatblast-v2.1-actions.mp4 builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 2.3 — All alien smooth animation' --notes 'Extends the approved Heatblast offline interpolation system to all nine other aliens. Includes smooth walk entry and exit, guard, jump preparation/rise/fall/landing, hit reactions, knockdown and attacks. Retains full source pose resolution in lossless 256px registered cells without runtime crossfade ghosting or floor clipping. Original character art and gameplay are preserved. Debug-signed Android test APK.' --prerelease --target "$GITHUB_SHA"
