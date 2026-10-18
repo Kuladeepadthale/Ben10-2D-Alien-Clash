@@ -1,5 +1,7 @@
 # Ben 10 — Classic Alien Clash 2D
 
+**Version 3.1:** larger readable menus, a free starter choice, coin-based alien unlocks, missions and rewards, and a character-first upgrade picker. Testing keeps all ten aliens available. See [PROGRESSION.md](PROGRESSION.md).
+
 An unofficial ten-alien arena game in `web/`, packaged as an offline landscape Android game in `android/`. The previous four-alien Godot source remains for reference.
 
 ## Version 3.0 — Full cel action clips
@@ -23,3 +25,4 @@ See [CEL-ANIMATION.md](CEL-ANIMATION.md) for asset generation, tests and preview
 The new cel sheets were generated with ImageGen from the existing classic character designs and the approved Heatblast preview style. They are new game artwork, not TV footage. Original design references were sourced from Trixdex; Ben 10 belongs to its respective owners. Powers and relative sizes are adapted for gameplay. Source prompts and sheets are in `ci/cel-sources/`; processed game assets are in `web/assets/cels/`.
 
 The optional browser sprite importer remains available. Browser saves and Android saves are separate. Automated animation and control checks do not replace play-testing on a physical Android device.
+

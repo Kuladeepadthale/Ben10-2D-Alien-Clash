@@ -37,10 +37,8 @@ jobs:
           key: alien-clash-test-key-v1
       - name: Install asset and video tools
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends ffmpeg
           python3 -m pip install Pillow numpy scipy
-          npm install --prefix /tmp/cel-tools --no-package-lock --no-save @napi-rs/canvas jsdom@30.1.3 css-tree
+          npm install --prefix /tmp/cel-tools --no-package-lock --no-save @napi-rs/canvas jsdom@30.1.3 css-tree playwright
       - name: Export native cel assets and Android bundle
         run: python3 ci/build-cels.py
       - name: Verify all ten action sets and game controls
@@ -51,25 +49,21 @@ jobs:
           node ci/check-footwork-dash.cjs
           node ci/check-interface.cjs
           node ci/check-cel-ui.cjs
+          node ci/check-progression.cjs
+          node ci/check-progression-layout.cjs
           for script in web/*.js; do node --check "$script"; done
-      - name: Render all alien action clips
-        env:
-          NODE_PATH: /tmp/cel-tools/node_modules
-        run: |
-          node ci/render-cels.cjs
-          python3 ci/verify-cel-video.py
       - name: Build APK
         run: gradle -p android --no-daemon assembleDebug
       - name: Verify APK and downloads
         run: |
           cp android/app/build/outputs/apk/debug/app-debug.apk builds/Ben10-2D-Alien-Clash.apk
-          cp previews/All-Aliens-Cel-Actions.mp4 previews/All-Aliens-Cel-Preview.zip builds/
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose builds/Ben10-2D-Alien-Clash.apk
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging builds/Ben10-2D-Alien-Clash.apk
           python3 - <<'PY'
           import zipfile,json
           z=zipfile.ZipFile('builds/Ben10-2D-Alien-Clash.apk');names=z.namelist()
           assert 'assets/index.html' in names and 'assets/cel-player.js' in names
+          assert 'assets/progression.js' in names and 'assets/progression.css' in names
           m=json.loads(z.read('assets/assets/cels/manifest.json'))
           assert len(m['characters'])==10
           for c in m['characters']:
@@ -77,17 +71,16 @@ jobs:
            assert set(c['clips'])=={'idle','walk','jump','normal','skill0','skill1','skill2','ultimate','guard','hit','ko','dash'}
           assert not any('alien-smooth' in n or 'heatblast-smooth' in n or 'footwork.js' in n for n in names)
           PY
-          sha256sum builds/*.apk builds/*.mp4 builds/*.zip > builds/SHA256SUMS.txt
+          sha256sum builds/*.apk > builds/SHA256SUMS.txt
       - uses: actions/upload-artifact@v4
         with:
           name: AlienClash2D-Android-APK
           path: |
             builds/*.apk
-            builds/*.mp4
-            builds/*.zip
             builds/SHA256SUMS.txt
-      - name: Publish APK and complete preview
+      - name: Publish final APK
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/*.mp4 builds/*.zip builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 3.0 — All-alien cel action clips' --notes 'New native-resolution whole-body cel art for all ten aliens and every action: individual walking, skating, flight and hovering cycles; jump; normal strike; three powers; ultimate; guard; hit; knockdown; dash. Discrete clips replace all optical-flow and crossfade animation. Walking cadence follows distance traveled. Current-pair texture loading reduces memory. Existing combat, upgrades and dodge dash retained. Includes a complete 1080p preview. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 3.1 — Unlock aliens, missions and readable menus' --notes 'Larger readable menus and redesigned match selection. New players choose one free alien from three persistent random choices. Earn coins from battles, Survival and repeatable missions to unlock the remaining aliens. Testing keeps all ten aliens available without rewards or permanent unlocks. Upgrades start with a character picker and separate Select and Upgrade buttons. Existing coins, upgrades, combat and approved character art are retained. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+
