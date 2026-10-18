@@ -76,6 +76,11 @@ jobs:
               p=d/(state+'.webp')
               assert p.stat().st_size>100, str(p)
           PY
+      - name: Install video encoder
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          ffmpeg -version
       - name: Render current footwork and dash preview
         run: NODE_PATH=/tmp/diamondhead-canvas/node_modules node ci/render-footwork-video.cjs
       - name: Build APK
