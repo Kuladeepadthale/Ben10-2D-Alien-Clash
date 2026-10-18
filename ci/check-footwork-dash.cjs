@@ -13,3 +13,4 @@ for(const dir of [1,-1])for(const fps of [30,60,120]){
 for(const patch of [{y:400},{stun:.1},{block:true},{hp:0},{jumpWindup:.07},{cast:{cfg:{windup:1}}}]){vm.runInContext('player=make(0,640,1);f=player',b);Object.assign(b.f,patch);assert(!vm.runInContext('dash(f)',b));}
 for(const [x,dir,end]of [[1200,1,1215],[80,-1,65]]){vm.runInContext('player=make(0,'+x+','+dir+');f=player;dash(f);updateDash(f,.22)',b);assert.equal(b.f.x,end);}
 console.log('Passed: 30/60/120Hz dash distance, dodge immunity and expiry, cooldown, invalid-state rejection and arena edges.');
+

@@ -2,10 +2,11 @@ plugins { id 'com.android.application' }
 android {
  namespace 'org.alienclash.twod'
  compileSdk 35
- defaultConfig { applicationId 'org.alienclash.twod'; minSdk 23; targetSdk 35; versionCode 31; versionName '3.1' }
+ defaultConfig { applicationId 'org.alienclash.twod'; minSdk 23; targetSdk 35; versionCode 41; versionName '4.1' }
  sourceSets { main { assets.srcDirs = ['src/main/assets', '../../builds/web'] } }
  buildTypes { release { minifyEnabled false } }
 }
+
 
 
 

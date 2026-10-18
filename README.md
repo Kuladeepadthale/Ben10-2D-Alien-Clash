@@ -1,8 +1,8 @@
 # Ben 10 — Classic Alien Clash 2D
 
-**Version 3.1:** larger readable menus, a free starter choice, coin-based alien unlocks, missions and rewards, and a character-first upgrade picker. Testing keeps all ten aliens available. See [PROGRESSION.md](PROGRESSION.md).
+**Version 4.1:** 22 Classic aliens, including Cannonbolt, Wildvine, Blitzwolfer, Snare-oh, Frankenstrike, Upchuck, Ditto, Eye Guy, Way Big, Arctiguana, Spitter and Buzzshock. Full cel action sets, individual powers, coin unlocks and upgrades. Testing keeps all 22 available. Existing progress is preserved. See [EXPANSION.md](EXPANSION.md).
 
-An unofficial ten-alien arena game in `web/`, packaged as an offline landscape Android game in `android/`. The previous four-alien Godot source remains for reference.
+An unofficial 22-alien arena game in `web/`, packaged as an offline landscape Android game in `android/`. The previous four-alien Godot source remains for reference.
 
 ## Version 3.0 — Full cel action clips
 
@@ -26,3 +26,6 @@ The new cel sheets were generated with ImageGen from the existing classic charac
 
 The optional browser sprite importer remains available. Browser saves and Android saves are separate. Automated animation and control checks do not replace play-testing on a physical Android device.
 
+
+
+Version 4.1 adds Spitter and Buzzshock with complete original-style cel action sets, coin unlocks, and free Testing access. The original 20-alien collection mission is retained; a separate 22-alien collection mission adds 300 coins, preserving existing claims.

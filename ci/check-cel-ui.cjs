@@ -7,10 +7,11 @@ const {JSDOM}=require('jsdom'),fs=require('fs'),vm=require('vm'),assert=require(
  }else vm.runInContext(fs.readFileSync('web/'+file,'utf8'),box,{filename:file})}
  for(const file of ['game.js','cartoon-gaits.js','cel-player.js','app.js','interface.js'])vm.runInContext(fs.readFileSync('web/'+file,'utf8'),box,{filename:file});
  assert(await vm.runInContext('allAlienPosesReady',box),vm.runInContext('allAlienPoseError',box));await new Promise(r=>setTimeout(r,0));
- for(let id=0;id<10;id++){box.testId=id;vm.runInContext("mode='menu';selectedMode='training';select(testId);$('opponent').value=String((testId+1)%10);showScreen('setup',false)",box);await vm.runInContext('launch()',box);
- assert.equal(vm.runInContext('mode',box),'fight','alien '+id+' '+vm.runInContext('allAlienPoseError',box));assert.equal(vm.runInContext('currentScreen',box),'battle');assert.equal(vm.runInContext('player.id',box),id);assert.equal(vm.runInContext('enemy.id',box),(id+1)%10);assert(vm.runInContext('celCache.has(player.id)&&celCache.has(enemy.id)',box));vm.runInContext('render();pause();quit()',box);
+ for(let id=0;id<22;id++){box.testId=id;vm.runInContext("mode='menu';selectedMode='training';select(testId);$('opponent').value=String((testId+1)%22);showScreen('setup',false)",box);await vm.runInContext('launch()',box);
+ assert.equal(vm.runInContext('mode',box),'fight','alien '+id+' '+vm.runInContext('allAlienPoseError',box));assert.equal(vm.runInContext('currentScreen',box),'battle');assert.equal(vm.runInContext('player.id',box),id);assert.equal(vm.runInContext('enemy.id',box),(id+1)%22);assert(vm.runInContext('celCache.has(player.id)&&celCache.has(enemy.id)',box));vm.runInContext('render();pause();quit()',box);
  }
  // Survival awaits the next opponent's sheets before restoring carried health and score.
  vm.runInContext("mode='menu';selectedMode='survival';selected=0;showScreen('setup',false)",box);await vm.runInContext('launch()',box);vm.runInContext('player.hp=700;enemy.hp=0;',box);await vm.runInContext('finish()',box);assert.equal(vm.runInContext('survivalStage',box),2);assert.equal(vm.runInContext('mode',box),'fight');assert.equal(vm.runInContext('player.hp',box),900);assert.equal(vm.runInContext('survivalScore',box),1);
- console.log('Passed: real UI + cel player launches all ten training pairs, actual arena rendering, pause/quit, and survival transition with health/score carryover.');w.close();
+ console.log('Passed: real UI + cel player launches all 22 training pairs, actual arena rendering, pause/quit, and survival transition with health/score carryover.');w.close();
 })().catch(e=>{console.error(e);process.exit(1)});
+

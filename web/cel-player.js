@@ -16,7 +16,7 @@ function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.g
  let frames=d.clips[state]||d.clips.idle,index=0;
  if(state==='walk'){
   // Travel-based cadence. The cell exporter records soles; artwork owns the actual limb motion.
-  const profile=CARTOON_GAITS[f.id],h=(f.id===4?142:226)*aliens[f.id].scale;
+  const profile=CARTOON_GAITS[f.id],h=aliens[f.id].renderHeight*aliens[f.id].scale;
   let phase=((s.distance/(h*profile.stride))%1+1)%1;if(profile.skate)phase=cartoonSkatePhase(phase);index=Math.floor(phase*frames.length)%frames.length;
  }else if(f.cast&&['normal','skill0','skill1','skill2','ultimate'].includes(state)){
   const v=f.cast,wind=Math.max(.001,v.cfg.windup),active=['rush','pounce'].includes(v.cfg.kind)?Math.max(.42,v.cfg.duration||.08):(v.cfg.duration||.08),recovery=Math.max(.001,v.cfg.recovery);
@@ -36,15 +36,16 @@ function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.g
 function celState(f){if(f.hp<=0)return'ko';if(f.dash)return'dash';if(f.stun>0)return'hit';if(f.block)return'guard';if(f.cast)return f.cast.ultimate?'ultimate':f.cast.key;if(f.jumpWindup>0||f.y<floor-2)return'jump';if(f.moving)return'walk';return'idle'}
 const celFallbackDraw=drawAlien;
 drawAlien=function(ctx,f,t,portrait=false){const d=CEL_DATA.characters[f.id],cache=celCache.get(f.id);if(!cache){if(!celPending.has(f.id))celEnsure(f.id).catch(()=>{});celFallbackDraw(ctx,f,t,portrait);return;}cache.used=++celUse;
- const picked=celPhase(f,portrait?'idle':celState(f),t),frame=picked.frame,[x,y,w,h]=frame.rect,[ox,oy]=frame.origin,scale=(f.id===4?142:226)*aliens[f.id].scale/d.referenceHeight;
- ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-(f.id===7||f.id===9?6+Math.sin(t*(f.id===7?8:3))*1.5:0));ctx.scale((f.dash?.dir||f.cast?.dir||f.dir||1)*scale,scale);ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-ox,-oy,w,h);ctx.restore();
+ const picked=celPhase(f,portrait?'idle':celState(f),t),frame=picked.frame,[x,y,w,h]=frame.rect,[ox,oy]=frame.origin,scale=aliens[f.id].renderHeight*aliens[f.id].scale/d.referenceHeight;
+ ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-(f.id===7||f.id===9?6+Math.sin(t*(f.id===7?8:3))*1.5:0));ctx.scale((f.dash?.dir||f.cast?.dir||f.dir||1)*scale,scale);if(f.id===10&&f.cast&&f.cast.cfg.kind==='rush'&&f.cast.elapsed>=f.cast.cfg.windup&&f.cast.elapsed<f.cast.cfg.windup+Math.max(.42,f.cast.cfg.duration||.08)){const angle=(f.x-(f.cast.startX??f.x))*(f.cast.dir||f.dir||1)/Math.max(1,h*.5*scale);ctx.translate(0,-h*.5);ctx.rotate(angle);ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-w*.5,-h*.5,w,h);}else ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-ox,-oy,w,h);ctx.restore();
 };
-function drawnAlienEmitter(f,cast){const d=CEL_DATA.characters[f.id],frames=d.clips[cast.ultimate?'ultimate':cast.key]||d.clips.normal,frame=d.frames[frames[f.id===0&&cast.key==='skill0'?2:Math.min(1,frames.length-1)]],w=frame.rect[2],h=frame.rect[3],s=(f.id===4?142:226)*aliens[f.id].scale/d.referenceHeight;
- let u=.94,v=.43;if(f.id===6){u=.60;v=.16}if(f.id===7){u=.92;v=.38}if(f.id===5){u=.93;v=.55}return{x:f.x+(cast.dir||f.dir||1)*(w*u-frame.origin[0])*s,y:f.y+(h*v-frame.origin[1])*s-(f.id===7||f.id===9?6:0)};
+function drawnAlienEmitter(f,cast){const d=CEL_DATA.characters[f.id],frames=d.clips[cast.ultimate?'ultimate':cast.key]||d.clips.normal,frame=d.frames[frames[f.id===0&&cast.key==='skill0'?2:Math.min(1,frames.length-1)]],w=frame.rect[2],h=frame.rect[3],s=aliens[f.id].renderHeight*aliens[f.id].scale/d.referenceHeight;
+ let u=.94,v=.43;if(f.id===6){u=.60;v=.16}if(f.id===7){u=.92;v=.38}if(f.id===5){u=.93;v=.55}if([12,15,19,20].includes(f.id)){u=.91;v=.25}if(f.id===17&&cast.key!=='skill0'){u=.56;v=.43}if(f.id===18){u=.69;v=.38}return{x:f.x+(cast.dir||f.dir||1)*(w*u-frame.origin[0])*s,y:f.y+(h*v-frame.origin[1])*s-(f.id===7||f.id===9?6:0)};
 }
 const celOriginalBegin=begin;
-begin=async function(newMatch=true,practice=false){const request=++celBattleRequest,op=$('opponent'),saved=op.value,e=newMatch?(saved==='auto'?(selected+1+Math.floor(Math.random()*9))%10:Number(saved)):enemy.id;celPinned=new Set([selected,e]);mode='loading';resetInputs();if($('launchMatch'))$('launchMatch').disabled=true;$('launchStatus')&&($('launchStatus').textContent='Preparing '+aliens[selected].name+' and '+aliens[e].name+'…');
+begin=async function(newMatch=true,practice=false){const request=++celBattleRequest,op=$('opponent'),saved=op.value,e=newMatch?(saved==='auto'?(selected+1+Math.floor(Math.random()*(ALIEN_COUNT-1)))%ALIEN_COUNT:Number(saved)):enemy.id;celPinned=new Set([selected,e]);mode='loading';resetInputs();if($('launchMatch'))$('launchMatch').disabled=true;$('launchStatus')&&($('launchStatus').textContent='Preparing '+aliens[selected].name+' and '+aliens[e].name+'…');
  try{await Promise.all([classicReady,celEnsure(selected),celEnsure(e)]);if(request!==celBattleRequest)return false;op.value=String(e);celOriginalBegin(newMatch,practice);op.value=saved;celTrim();if($('launchMatch'))$('launchMatch').disabled=false;return true;}catch(err){op.value=saved;mode='menu';if($('launchMatch'))$('launchMatch').disabled=false;allAlienPoseError=err.message;$('launchStatus')&&($('launchStatus').textContent='Animation could not load. Tap start to retry.');return false;}
 };
 const allAlienPosesReady=Promise.all([classicReady,celEnsure(0),celEnsure(2)]).then(()=>{allAlienPosesLoaded=true;return true}).catch(e=>{allAlienPoseError=e.message;return false});
 const diamondheadPuppetReady=Promise.resolve(true);
+

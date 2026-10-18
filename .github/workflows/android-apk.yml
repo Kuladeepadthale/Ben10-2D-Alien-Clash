@@ -41,11 +41,12 @@ jobs:
           npm install --prefix /tmp/cel-tools --no-package-lock --no-save @napi-rs/canvas jsdom@30.1.3 css-tree playwright
       - name: Export native cel assets and Android bundle
         run: python3 ci/build-cels.py
-      - name: Verify all ten action sets and game controls
+      - name: Verify all 22 action sets and game controls
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
           node ci/check-cels.cjs
+          node ci/check-expansion.cjs
           node ci/check-footwork-dash.cjs
           node ci/check-interface.cjs
           node ci/check-cel-ui.cjs
@@ -64,8 +65,9 @@ jobs:
           z=zipfile.ZipFile('builds/Ben10-2D-Alien-Clash.apk');names=z.namelist()
           assert 'assets/index.html' in names and 'assets/cel-player.js' in names
           assert 'assets/progression.js' in names and 'assets/progression.css' in names
+          assert 'assets/expansion-effects.js' in names
           m=json.loads(z.read('assets/assets/cels/manifest.json'))
-          assert len(m['characters'])==10
+          assert len(m['characters'])==22
           for c in m['characters']:
            assert all('assets/'+s['src'] in names for s in c['sheets'])
            assert set(c['clips'])=={'idle','walk','jump','normal','skill0','skill1','skill2','ultimate','guard','hit','ko','dash'}
@@ -82,5 +84,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 3.1 — Unlock aliens, missions and readable menus' --notes 'Larger readable menus and redesigned match selection. New players choose one free alien from three persistent random choices. Earn coins from battles, Survival and repeatable missions to unlock the remaining aliens. Testing keeps all ten aliens available without rewards or permanent unlocks. Upgrades start with a character picker and separate Select and Upgrade buttons. Existing coins, upgrades, combat and approved character art are retained. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 4.1 — 22 Original-series aliens' --notes 'Adds Cannonbolt, Wildvine, Blitzwolfer, Snare-oh, Frankenstrike, Upchuck, Ditto, Eye Guy, Way Big, Arctiguana, Spitter and Buzzshock. 22 Original-series aliens with complete cel action sets, distinct powers, coin unlocks, missions and upgrades. All 22 are free to try in Testing. Existing characters, owned aliens, coins, mission claims and upgrade levels are preserved. Debug-signed Android test APK.' --prerelease --target "$GITHUB_SHA"
+
 

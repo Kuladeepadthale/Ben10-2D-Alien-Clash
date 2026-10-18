@@ -3,3 +3,4 @@
 
 body.android-playing{overflow:hidden}body.android-playing #game{position:fixed;inset:0;width:100vw;height:100vh;max-height:none;aspect-ratio:auto;border:0;border-radius:0;z-index:100}body.android-playing #arena{width:100%;height:100%;object-fit:contain}body.android-playing .touch{display:flex;bottom:18px}body.android-playing .touch button{width:48px;height:48px}body.android-playing .arena-label{display:none}body.android-playing .hud{top:12px}body.android-playing #pause{top:80px}body.android-playing .modal{padding:12px}body.android-playing .modal h2{font-size:32px}
 
+
