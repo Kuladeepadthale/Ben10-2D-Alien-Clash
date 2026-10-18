@@ -35,5 +35,31 @@ function heatblastHand(f){const name=f.cast?heatblastActionName(f.cast):'firebal
 // These shared helpers remain unchanged for the other aliens.
 function locomotionSample(f){const stride=f.id===3?1.05:f.id===4?1:1.1,phase=((f.walk||0)/stride%6+6)%6,index=Math.floor(phase),u=phase-index;return {frame:6+index,next:6+(index+1)%6,blend:u*u*(3-2*u)};}
 function isLocomotionPose(f,frame){return frame>=6&&frame<=11&&!!f.moving&&f.hp>0&&!(f.stun>0)&&!f.block&&!f.cast&&!(f.jumpWindup>0)&&f.y>=floor-1;}
-function drawRegisteredHeatblast(ctx,frame,breath=1){const data=HEATBLAST_SMOOTH,cell=data.cell,scale=heatblastScale(),local=frame%data.sheetFrames;ctx.save();ctx.scale(1,breath);ctx.drawImage(heatblastAtlases[Math.floor(frame/data.sheetFrames)],(local%data.columns)*cell,Math.floor(local/data.columns)*cell,cell,cell,-data.originX*scale,-data.ground*scale,cell*scale,cell*scale);ctx.restore();}
+// Cache only recently used sharpened cells: bounded memory on Android.
+// RGB sharpening preserves the original alpha silhouette and frame registration.
+const heatblastSharpFrames=new Map(),HEATBLAST_SHARP_LIMIT=32;
+function heatblastSharpCell(frame){
+ if(typeof document==='undefined')return null;
+ if(heatblastSharpFrames.has(frame)){const cell=heatblastSharpFrames.get(frame);heatblastSharpFrames.delete(frame);heatblastSharpFrames.set(frame,cell);return cell;}
+ const d=HEATBLAST_SMOOTH,n=d.cell,j=frame%d.sheetFrames,cv=document.createElement('canvas');cv.width=cv.height=n;
+ const cx=cv.getContext('2d',{willReadFrequently:true});if(!cx)return null;
+ cx.drawImage(heatblastAtlases[Math.floor(frame/d.sheetFrames)],j%d.columns*n,Math.floor(j/d.columns)*n,n,n,0,0,n,n);
+ try{
+ const pixels=cx.getImageData(0,0,n,n),src=new Uint8ClampedArray(pixels.data),out=pixels.data;
+ for(let y=1;y<n-1;y++)for(let x=1;x<n-1;x++){
+  const k=(y*n+x)*4;
+  // Leave translucent edges alone to prevent dark outlines or bright halos.
+  if(src[k+3]<240||src[k-4+3]<240||src[k+4+3]<240||src[k-n*4+3]<240||src[k+n*4+3]<240)continue;
+  for(let channel=0;channel<3;channel++){
+   const i=k+channel,blur=(src[i-4]+src[i+4]+src[i-n*4]+src[i+n*4])/4;
+   out[i]=src[i]+Math.max(-16,Math.min(16,(src[i]-blur)*.65));
+  }
+ }
+ cx.putImageData(pixels,0,0);
+ }catch{return null;}
+ heatblastSharpFrames.set(frame,cv);
+ if(heatblastSharpFrames.size>HEATBLAST_SHARP_LIMIT)heatblastSharpFrames.delete(heatblastSharpFrames.keys().next().value);
+ return cv;
+}
+function drawRegisteredHeatblast(ctx,frame,breath=1){const data=HEATBLAST_SMOOTH,cell=data.cell,scale=heatblastScale(),local=frame%data.sheetFrames;ctx.save();ctx.scale(1,breath);const balanced=typeof settings!=='undefined'&&settings.quality==='balanced',sharp=balanced?null:heatblastSharpCell(frame);ctx.drawImage(sharp||heatblastAtlases[Math.floor(frame/data.sheetFrames)],sharp?0:(local%data.columns)*cell,sharp?0:Math.floor(local/data.columns)*cell,cell,cell,-data.originX*scale,-data.ground*scale,cell*scale,cell*scale);ctx.restore();}
 drawAlien=function(ctx,f,t,portrait=false){if(f.id!==0||portrait||!heatblastAtlas){heatblastRigDraw(ctx,f,t,portrait);return}const frame=heatblastPoseFrame(f,t),quiet=frame===0&&!f.cast&&!f.moving&&!f.block&&!f.stun&&f.hp>0&&f.y>=floor-1,breath=quiet?1+Math.sin(t*Math.PI*2/4.4)*.0012:1;ctx.save();ctx.beginPath();ctx.rect(f.x-650,f.y-650,1300,650);ctx.clip();ctx.translate(f.x,f.y);ctx.scale(f.dir||1,1);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';drawRegisteredHeatblast(ctx,frame,breath);ctx.restore();};
