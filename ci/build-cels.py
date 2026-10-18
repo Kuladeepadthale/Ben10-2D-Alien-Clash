@@ -36,7 +36,7 @@ for id,name in enumerate(NAMES):
             main=int(areas.argmax())
             # Keep small detached hands/details close to the body as well as the main
             # silhouette. Drop remote fragments from neighboring animation cells.
-            near=ndimage.binary_dilation(labels==main,iterations=max(3,round(min(cell.size)*.025)))
+            near=ndimage.binary_dilation(labels==main,iterations=max(3,round(min(cell.size)*.04)))
             keep=np.unique(labels[near]);keep=keep[keep!=0]
             a[:,:,3]=np.where(np.isin(labels,keep),a[:,:,3],0)
             cell=Image.fromarray(a);b=cell.getchannel('A').getbbox();assert b and b[2]-b[0]>30 and b[3]-b[1]>30
