@@ -1,7 +1,7 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const heat=fs.readFileSync('web/heatblast-poses.js','utf8'),game=fs.readFileSync('web/game.js','utf8');
 const context=vm.createContext({floor:500,Math,Number,aliens:Array.from({length:10},()=>({speed:200})),W:1200,particles:[]});
-vm.runInContext(heat.slice(heat.indexOf('function locomotionSample'),heat.indexOf('const heatblastRenderState')),context);
+vm.runInContext(heat.slice(heat.indexOf('function locomotionSample'),heat.indexOf('function drawRegisteredHeatblast')),context);
 vm.runInContext(game.slice(game.indexOf('function move('),game.indexOf('\n',game.indexOf('function move('))),context);
 for(let id=0;id<10;id++){
  const stride=id===3?1.05:id===4?1:1.1;
