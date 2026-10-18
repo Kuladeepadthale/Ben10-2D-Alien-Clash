@@ -36,9 +36,8 @@ jobs:
         run: |
           python3 ci/check-drawn-assets.py
           node ci/check-locomotion.cjs
-          node ci/check-diamondhead-original.cjs
           npm install --prefix /tmp/diamondhead-canvas --no-package-lock --no-save @napi-rs/canvas
-          NODE_PATH=/tmp/diamondhead-canvas/node_modules node ci/check-diamondhead-joints.cjs
+          NODE_PATH=/tmp/diamondhead-canvas/node_modules node ci/check-diamondhead-poses.cjs
           for script in web/*.js; do node --check "$script"; done
           python3 - <<'PY'
           from pathlib import Path
@@ -96,4 +95,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.7 — Connected Diamondhead arm joints' --notes 'Diamondhead keeps the actions from the supplied 1.6 APK and the original character design. Opaque overlapping shoulder, elbow and wrist sockets keep arm pieces connected, including extended poses. Cleaned torso pixels from arm cutouts and arm pixels from torso. Six wide-range arm stress poses pass 1044 joint-opacity checks and a detached-limb component check. Walking, guard, jump, landing, normal attack and powers reviewed in an 18-second rendered sequence. Other aliens unchanged. Debug-signed Android 6.0+ test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.8 — Clear Diamondhead image poses' --notes 'Returns Diamondhead to the separate drawn action images used by the other aliens. Walking holds six clean poses at a slightly slower cadence. Removes overlapping crossfades for Diamondhead so silhouettes and actions stay clear. Restores image-based attacks, powers, guard, jump, hit and KO. No joint puppet or skin stretching. Other aliens unchanged. Reviewed an 18-second action sequence and tested all image action paths. Debug-signed Android 6.0+ test APK.' --prerelease --target "$GITHUB_SHA"
