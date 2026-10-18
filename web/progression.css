@@ -47,3 +47,5 @@ body:not(.in-battle) .home-copy .eyebrow{font-size:14px!important}body:not(.in-b
 @media(max-width:360px){body:not(.in-battle) #homeLogo img{display:none}}
 body:not(.in-battle) #screen-characters .card span{max-width:100%;white-space:normal!important;overflow-wrap:anywhere;line-height:1.25;text-align:center}
 body:not(.in-battle) #screen-characters .card .ownership{max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:center}
+@media(max-width:760px) and (orientation:landscape){body:not(.in-battle) .mode-grid{grid-template-columns:1fr}body:not(.in-battle) .mode-card{min-height:280px}}
+@media(max-width:600px){body:not(.in-battle) .app-bottom{gap:4px;padding-left:6px;padding-right:6px}body:not(.in-battle) .app-bottom button{flex:1;width:auto;min-width:0;padding-left:2px;padding-right:2px}}
