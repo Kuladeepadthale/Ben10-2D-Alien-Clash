@@ -13,3 +13,9 @@ Rendered 540 frames at 30 fps with a 120 Hz simulation: 18 seconds covering idle
 The reviewed sequence no longer shows the previous mesh-fold and stretched-boot defect. Some knee joins and overlapping outlines remain visible at stronger bends. The single three-quarter illustration cannot supply unseen views, changing hand silhouettes or drawn-through television anatomy. This is an improved test build, not a claim of perfect television animation. Mobile device performance has not been measured here.
 
 The captured recordings, author and CC BY 4.0 attribution remain documented in MOTION.md and the in-game credits. Earlier generated walk-parts assets are historical and not used by the active Diamondhead renderer.
+
+## 1.7 connected arm joints
+
+Preserves action targets from the supplied 1.6 APK. Adds opaque overlapping shoulder, elbow and wrist sockets under original arm artwork, with a short shoulder bridge on the far arm. Socket colors match existing crystal skin. Cached cutouts reject torso pixels outside arm skin and remove shoulder fragments from the torso. Exact original resting image remains unchanged.
+
+Validation: six widely extended/bent arm poses, 1044 opaque samples at six arm joints, and connected-component checks rejecting detached limbs larger than 64 pixels. These complement the 18-second action render, walking, original-art/size and other-alien delegation checks.
