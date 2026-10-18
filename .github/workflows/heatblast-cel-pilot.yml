@@ -1,0 +1,44 @@
+name: Heatblast cel action clip pilot
+on:
+  push:
+    branches: [heatblast-cel-clips-pilot]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install render dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          python3 -m pip install Pillow numpy opencv-python-headless
+          npm install --prefix /tmp/cel-canvas --no-package-lock --no-save @napi-rs/canvas
+      - name: Prepare discrete cel sequences and render clips
+        run: |
+          mkdir -p clip-pilot/frames clip-pilot/output
+          python3 clip-pilot/prepare.py
+          NODE_PATH=/tmp/cel-canvas/node_modules node clip-pilot/render.cjs
+          python3 clip-pilot/pack.py
+          for video in clip-pilot/output/*.mp4; do ffprobe -v error -show_entries stream=width,height,r_frame_rate -show_entries format=duration "$video"; done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Heatblast-Cel-Clips-Pilot
+          path: |
+            clip-pilot/output/*.mp4
+            clip-pilot/output/*.zip
+            clip-pilot/output/SHA256SUMS.txt
+      - name: Publish review videos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "heatblast-cel-pilot-${GITHUB_SHA::12}" clip-pilot/output/*.mp4 clip-pilot/output/*.zip clip-pilot/output/SHA256SUMS.txt --title 'Heatblast — new cel action clip test' --notes 'Visual test only; current game and APK are unchanged. New higher-resolution art uses discrete frame sequences for walk, jump and fireball, without optical flow, crossfades or blended silhouettes. Contains combined and separate action videos. These are new test drawings, not animation extracted from the TV show. More in-between drawings and timing review are still needed for production use.' --prerelease --target "$GITHUB_SHA"
