@@ -14,6 +14,9 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -38,6 +41,8 @@ jobs:
           node ci/check-locomotion.cjs
           npm install --prefix /tmp/diamondhead-canvas --no-package-lock --no-save @napi-rs/canvas
           NODE_PATH=/tmp/diamondhead-canvas/node_modules node ci/check-diamondhead-poses.cjs
+          npm install --prefix /tmp/omni-ui-qa --no-package-lock --no-save jsdom@30.1.3 css-tree
+          NODE_PATH=/tmp/omni-ui-qa/node_modules node ci/check-interface.cjs
           for script in web/*.js; do node --check "$script"; done
           python3 - <<'PY'
           from pathlib import Path
@@ -95,4 +100,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.8 — Clear Diamondhead image poses' --notes 'Returns Diamondhead to the separate drawn action images used by the other aliens. Walking holds six clean poses at a slightly slower cadence. Removes overlapping crossfades for Diamondhead so silhouettes and actions stay clear. Restores image-based attacks, powers, guard, jump, hit and KO. No joint puppet or skin stretching. Other aliens unchanged. Reviewed an 18-second action sequence and tested all image action paths. Debug-signed Android 6.0+ test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 1.9 — Omnitrix interface' --notes 'New Omnitrix emblem and offline alien-world home background. Redesigned combat buttons with clear action icons, press feedback, power cooldown indicators and an ultimate-charge ring. Fixed-screen menus use visible Previous/Next buttons and numbered page dots for alien selection, details, powers, upgrades, setup, settings, help, credits and damage logs. Seven viewport configurations checked with DOM navigation tests; CSS syntax checks passed. Gameplay and character animations retained. Android WebView visual geometry has not been verified on a device here. Debug-signed Android 6.0+ test APK.' --prerelease --target "$GITHUB_SHA"
