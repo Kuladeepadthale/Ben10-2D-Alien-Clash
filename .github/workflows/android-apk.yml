@@ -41,7 +41,7 @@ jobs:
           node ci/check-locomotion.cjs
           npm install --prefix /tmp/diamondhead-canvas --no-package-lock --no-save @napi-rs/canvas
           NODE_PATH=/tmp/diamondhead-canvas/node_modules node ci/check-diamondhead-poses.cjs
-          NODE_PATH=/tmp/diamondhead-canvas/node_modules node ci/check-heatblast-model.cjs
+          NODE_PATH=/tmp/diamondhead-canvas/node_modules node ci/check-heatblast-smooth.cjs
           npm install --prefix /tmp/omni-ui-qa --no-package-lock --no-save jsdom@30.1.3 css-tree
           NODE_PATH=/tmp/omni-ui-qa/node_modules node ci/check-interface.cjs
           for script in web/*.js; do node --check "$script"; done
@@ -76,6 +76,7 @@ jobs:
         run: |
           mkdir -p builds
           cp android/app/build/outputs/apk/debug/app-debug.apk builds/Ben10-2D-Alien-Clash.apk
+          cp previews/Heatblast-v2.1-actions.mp4 builds/Heatblast-v2.1-actions.mp4
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose builds/Ben10-2D-Alien-Clash.apk
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging builds/Ben10-2D-Alien-Clash.apk
           python3 - <<'PY'
@@ -83,8 +84,8 @@ jobs:
           z=zipfile.ZipFile('builds/Ben10-2D-Alien-Clash.apk')
           assert 'assets/index.html' in z.namelist()
           assert 'assets/heatblast-poses.js' in z.namelist()
-          assert 'assets/heatblast-model-data.js' in z.namelist()
-          assert all('assets/assets/heatblast-model/atlas-v20-'+str(i)+'.webp' in z.namelist() for i in range(4))
+          assert 'assets/heatblast-smooth-data.js' in z.namelist()
+          assert all('assets/assets/heatblast-smooth/atlas-v21-'+str(i)+'.webp' in z.namelist() for i in range(8))
           assert 'assets/alien-poses.js' in z.namelist()
           assert 'assets/diamondhead-puppet.js' in z.namelist()
           assert 'assets/diamondhead-gait-data.js' in z.namelist()
@@ -94,7 +95,7 @@ jobs:
           assert 'assets/assets/heatblast-poses/atlas-v8.png' in z.namelist()
           assert len([p for p in z.namelist() if p.startswith('assets/assets/classic/') and p.endswith('.webp')])==90
           PY
-          sha256sum builds/Ben10-2D-Alien-Clash.apk > builds/SHA256SUMS.txt
+          sha256sum builds/Ben10-2D-Alien-Clash.apk builds/Heatblast-v2.1-actions.mp4 > builds/SHA256SUMS.txt
       - uses: actions/upload-artifact@v4
         with:
           name: AlienClash2D-Android-APK
@@ -103,4 +104,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 2.0 — Heatblast model animation pilot' --notes 'Heatblast animation pilot: a new classic-inspired Blender skeletal body, with the original illustrated flame head retained as a texture decal. 256 baked action frames, including 48 forward and 48 backward walk frames; planted-foot IK targets, connected joints, original hand-emitter projections and separate authored combat actions. Stable bind-pose lava detail. Lossless image playback on the phone; no live 3D renderer required. The 1.9 interface and other aliens are unchanged. This is a pilot, not Nekki technology or an exact reproduction of television animation. Debug-signed Android 6.0+ test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/Heatblast-v2.1-actions.mp4 builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 2.1 — Heatblast original-art smoothing' --notes 'Restores the original illustrated Heatblast character and actions approved in the animation preview. Adds 450 precomputed frames, a 72-frame forward/backward walk cycle, entry/exit, guard, jump/landing, hit, knockdown and all five combat animations. Uses the approved offline image interpolation approach. Original strike poses align to existing attack impact times; steady held poses avoid vibration during guard, beams and ultimate. Gameplay damage, timing, physics, other aliens and the 1.9 menus remain unchanged. Includes a 24-second production-renderer animation review video. Image interpolation can still deform occluded details; this is not Shadow Fight technology. Debug-signed Android 6.0+ test APK.' --prerelease --target "$GITHUB_SHA"
