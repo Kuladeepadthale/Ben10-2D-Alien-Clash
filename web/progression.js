@@ -1,6 +1,6 @@
 'use strict';
 // Ownership, coins and mission claims share the existing atomic profile save.
-const ALIEN_PRICES=[600,900,750,1000,500,450,850,650,700,950,850,750,900,800,1000,650,700,950,1800,850,800,900];
+const ALIEN_PRICES=[600,900,750,1000,500,450,850,650,700,950,850,750,900,800,1000,650,700,950,1800,850,800,900,1000,800,1200,1000,1100,1100,900,950,850,1800];
 const MISSION_DEFS=[
  {id:'battles',name:'Arena explorer',text:'Finish 3 battles.',stat:'matches',goal:3,reward:120,repeat:true},
  {id:'wins',name:'Hero of the arena',text:'Win 2 battles.',stat:'wins',goal:2,reward:150,repeat:true},
@@ -9,8 +9,9 @@ const MISSION_DEFS=[
  {id:'survival',name:'Survival streak',text:'Defeat 5 Survival rivals.',stat:'stages',goal:5,reward:200,repeat:true},
  {id:'collection',name:'Build your team',text:'Own 3 aliens.',stat:'owned',goal:3,reward:250,repeat:false},
  {id:'expanded',name:'Expand your Omnitrix',text:'Own 10 aliens.',stat:'owned',goal:10,reward:400,repeat:false},
- {id:'complete',name:'Classic collector',text:'Own all 20 aliens.',stat:'owned',goal:20,reward:800,repeat:false},
- {id:'originals',name:'Original-series master',text:'Own all 22 original-series aliens.',stat:'owned',goal:22,reward:300,repeat:false},
+ {id:'complete',name:'Classic collector',text:'Own 20 aliens.',stat:'owned',goal:20,reward:800,repeat:false},
+ {id:'originals',name:'Original-series master',text:'Own all 22 Original Series aliens.',stat:'originals',goal:22,reward:300,repeat:false},
+ {id:'alienforce',name:'Alien Force team',text:'Own all 10 Alien Force aliens.',stat:'alienforce',goal:10,reward:650,repeat:false},
  {id:'upgrades',name:'Stronger together',text:'Buy 5 upgrades.',stat:'upgrades',goal:5,reward:150,repeat:false}
 ];
 const careerNumber=(v,max=100000000)=>Number.isFinite(v)?Math.max(0,Math.min(max,Math.floor(v))):0;
@@ -24,7 +25,7 @@ saveProfile();
 const ownsAlien=id=>career.owned.includes(id),testingMode=()=>selectedMode==='training';
 let garageAlien=career.owned.includes(career.selected)?career.selected:career.owned[0]??career.offers[0];
 let starterChoice=career.offers[0];
-function missionProgress(m){const total=m.stat==='owned'?career.owned.length:career.stats[m.stat]||0,claims=career.claims[m.id]||0;return Math.max(0,Math.min(m.goal,total-(m.repeat?claims*m.goal:0)));}
+function missionProgress(m){const total=m.stat==='owned'?career.owned.length:m.stat==='alienforce'?career.owned.filter(id=>id>=22).length:m.stat==='originals'?career.owned.filter(id=>id<22).length:career.stats[m.stat]||0,claims=career.claims[m.id]||0;return Math.max(0,Math.min(m.goal,total-(m.repeat?claims*m.goal:0)));}
 function missionReady(m){return (m.repeat||!career.claims[m.id])&&missionProgress(m)>=m.goal;}
 function claimMission(id){const m=MISSION_DEFS.find(x=>x.id===id);if(!m||!missionReady(m)||isLocked())return false;career.claims[id]=(career.claims[id]||0)+1;profile.credits+=m.reward;saveProfile();careerToast('Reward claimed! +'+m.reward+' coins');renderSetup();renderMissions();return true;}
 function chooseStarter(id){if(career.owned.length||!career.offers.includes(id)||isLocked())return false;career.owned=[id];career.selected=id;garageAlien=id;saveProfile();select(id);showScreen('home',false);screenHistory.length=0;careerToast(aliens[id].name+' is yours!');return true;}
@@ -83,4 +84,5 @@ const careerFinishBase=finish;finish=async function(){if(selectedMode==='surviva
 const careerEndBase=endMatch;endMatch=function(){careerEndBase();renderCareerReward();};
 function renderCareerReward(){const survival=selectedMode==='survival',coins=training?0:survival?survivalScore*40:wins[0]>=2?120:60,ready=MISSION_DEFS.filter(missionReady).length;rewardPanel.innerHTML='<span class="coin-medal">◈</span><div><span>'+(survival?'Coins earned in this run':'Battle reward')+'</span><strong>+'+coins+' coins</strong></div><button id="resultMissions">'+(ready?ready+' mission rewards ready':'View missions')+' →</button>';$('resultMissions').onclick=()=>showScreen('missions');$('resultText').textContent=$('resultText').textContent.replace(/credits/g,'coins');careerRefresh();}
 renderStarter();renderMissions();select(career.owned.includes(career.selected)?career.selected:career.owned[0]??career.offers[0]);showScreen(career.owned.length?'home':'starter',false);
+
 

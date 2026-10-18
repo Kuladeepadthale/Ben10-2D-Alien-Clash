@@ -40,12 +40,15 @@ jobs:
           python3 -m pip install Pillow numpy scipy
           npm install --prefix /tmp/cel-tools --no-package-lock --no-save @napi-rs/canvas jsdom@30.1.3 css-tree playwright
       - name: Export native cel assets and Android bundle
-        run: python3 ci/build-cels.py
-      - name: Verify all 22 action sets and game controls
+        run: |
+          python3 ci/prepare-alien-force.py
+          python3 ci/build-cels.py
+      - name: Verify all 32 action sets and game controls
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
           node ci/check-cels.cjs
+          node ci/check-alien-force.cjs
           node ci/check-expansion.cjs
           node ci/check-footwork-dash.cjs
           node ci/check-interface.cjs
@@ -68,7 +71,7 @@ jobs:
           assert 'assets/progression.js' in names and 'assets/progression.css' in names
           assert 'assets/expansion-effects.js' in names
           m=json.loads(z.read('assets/assets/cels/manifest.json'))
-          assert len(m['characters'])==22
+          assert len(m['characters'])==32
           for c in m['characters']:
            assert all('assets/'+s['src'] in names for s in c['sheets'])
            assert set(c['clips'])=={'idle','walk','jump','normal','skill0','skill1','skill2','ultimate','guard','hit','ko','dash'}
@@ -85,7 +88,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 4.2 — Compact alien details and clean animation frames' --notes 'Adds Cannonbolt, Wildvine, Blitzwolfer, Snare-oh, Frankenstrike, Upchuck, Ditto, Eye Guy, Way Big, Arctiguana, Spitter and Buzzshock. 22 Original-series aliens with complete cel action sets, distinct powers, coin unlocks, missions and upgrades. All 22 are free to try in Testing. Existing characters, owned aliens, coins, mission claims and upgrade levels are preserved. Debug-signed Android test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 5.0 — Alien Force expansion' --notes 'Adds Swampfire, Echo Echo, Humungousaur, Jetray, Big Chill, Chromastone, Brainstorm, Spidermonkey, Goop and Alien X. 32 playable aliens with complete image action sets, distinct powers, coin unlocks, upgrades and collection missions. All 32 are available in Testing. Existing coins, unlocked characters, upgrades and mission claims are preserved. Compact alien details and simple Home retained. Debug-signed Android test APK.' --prerelease --target "$GITHUB_SHA"
+
 
 
 

@@ -1,22 +1,22 @@
 """Export native cel sprites, registration metadata and a minimal Android web bundle."""
 from pathlib import Path
 import json, shutil, re, argparse
-parser=argparse.ArgumentParser();parser.add_argument("--new-only",action="store_true");parser.add_argument("--skip-bundle",action="store_true");args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument("--new-only",action="store_true");parser.add_argument("--skip-bundle",action="store_true");parser.add_argument("--from-id",type=int,default=None);args=parser.parse_args();start=args.from_id if args.from_id is not None else (10 if args.new_only else 0)
 import numpy as np
 from PIL import Image
 from scipy import ndimage
 ROOT=Path(__file__).resolve().parents[1]
 WEB=ROOT/'web'; SRC=ROOT/'ci/cel-sources'; OUT=WEB/'assets/cels'
 NAMES=json.loads((ROOT/'ci/roster.json').read_text())
-previous=json.loads((OUT/"manifest.json").read_text())["characters"] if args.new_only else []
-if OUT.exists() and not args.new_only: shutil.rmtree(OUT)
+previous=json.loads((OUT/"manifest.json").read_text())["characters"] if start else []
+if OUT.exists() and not start: shutil.rmtree(OUT)
 OUT.mkdir(parents=True,exist_ok=True)
 def save_native(im,base):
     dest=base.with_suffix('.png');im.save(dest,'PNG',compress_level=3)
     Image.open(dest).verify();return dest
-manifest={'version':1,'rendering':'Native discrete cel frames. No optical flow, crossfade or frame blending.','characters':previous[:10]}
+manifest={'version':1,'rendering':'Native discrete cel frames. No optical flow, crossfade or frame blending.','characters':previous[:start]}
 for id,name in enumerate(NAMES):
-    if args.new_only and id<10: continue
+    if id<start: continue
     folder=OUT/name;folder.mkdir(exist_ok=True)
     kinds=['walk','actions','strike-jet','powers-states','reactions'] if id==0 else ['walk','jump-strike','powers','states']
     processed=[]
@@ -76,6 +76,6 @@ shutil.copytree(OUT,bundle/'assets/cels',copy_function=shutil.copyfile)
 shutil.copytree(WEB/'assets/ui',bundle/'assets/ui',copy_function=shutil.copyfile)
 for file in ['assets/animation-manifest-example.json']:
     if (WEB/file).exists(): (bundle/file).parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(WEB/file,bundle/file)
-print('Exported',sum(len(c['frames']) for c in manifest['characters']),'native cels across 22 complete action sets.')
+print('Exported',sum(len(c['frames']) for c in manifest['characters']),'native cels across',len(NAMES),'complete action sets.')
 
 

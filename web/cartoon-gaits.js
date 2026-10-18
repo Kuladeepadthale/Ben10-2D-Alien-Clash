@@ -24,6 +24,18 @@ const CARTOON_GAITS=[
  {style:'Heavy waddling steps',stride:.65,bob:.45},
  {style:'Quick battery steps',stride:.9,bob:.35}
 ];
+CARTOON_GAITS.push(...[
+ {style:'Rooted plant strides',stride:.85},
+ {style:'Quick light steps',stride:.85},
+ {style:'Heavy dinosaur strides',stride:.80},
+ {style:'Aerodynamic steps',stride:1.02},
+ {style:'Cloaked spectral steps',stride:.92,hover:true},
+ {style:'Measured crystal strides',stride:.82},
+ {style:'Six-legged crab scuttle',stride:.72},
+ {style:'Agile monkey strides',stride:.95},
+ {style:'Elastic fluid strides',stride:.92},
+ {style:'Calm celestial strides',stride:.84}
+]);
 function cartoonSkatePhase(p){const half=Math.floor(p*2),u=p*2-half;let q;
  // A short push, long extended-wheel glide, then a smooth transfer to the other leg.
  if(u<.28)q=u/.28*.66;else if(u<.82)q=.66+(u-.28)/.54*.04;else q=.70+(u-.82)/.18*.30;
@@ -38,4 +50,5 @@ function cartoonGaitPhase(f,s,t,walking){
  const height=aliens[f.id].renderHeight*aliens[f.id].scale,cycle=height*profile.stride,p=((g.distance/cycle)%1+1)%1;
  return profile.skate?cartoonSkatePhase(p):p-(profile.weight||0)*Math.sin(p*Math.PI*4);
 }
+
 
