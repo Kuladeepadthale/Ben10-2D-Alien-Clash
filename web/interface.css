@@ -8,3 +8,15 @@ body.in-battle #appShell{display:block}.in-battle #screens{height:100dvh}body.in
 @media(prefers-reduced-motion:reduce){button{transition:none}}
 .credit-pages>p{display:block;align-content:center}#screen-results .page-title #resultText{display:block;font-size:11px;margin:0;color:#b8d4b4;flex-basis:100%}
 @media(max-height:460px) and (orientation:landscape){.setup-panel .muted-note{display:none}.power-card{padding:8px 10px;gap:3px}.power-card h3{font-size:18px;line-height:1.1}.power-card p{font-size:9px;line-height:1.35}.power-card .damage{font-size:22px}.power-card .damage small{font-size:7px;margin-left:4px}.equip-buttons button{font-size:8px}.power-card .eyebrow{font-size:7px}}
+
+/* Dash stays reachable beside movement without adding another control row. */
+body.in-battle .dpad{display:grid;grid-template-columns:repeat(3,max-content);gap:8px}
+body.in-battle .dpad button[data-key=jump]{grid-row:1;grid-column:1}
+body.in-battle .dpad button[data-key=block]{grid-row:1;grid-column:2}
+body.in-battle .dpad button[data-key=dash]{grid-row:1;grid-column:3;border-color:#a7ecff;background:linear-gradient(145deg,#245b70ed,#0b293bee)}
+body.in-battle .dpad button[data-key=left]{grid-row:2;grid-column:1}
+body.in-battle .dpad button[data-key=right]{grid-row:2;grid-column:2}
+@media(max-height:460px) and (orientation:landscape){body.in-battle .dpad{gap:6px}body.in-battle .dpad button[data-key=dash]{width:48px;height:48px}}
+
+@media(max-width:400px) and (orientation:portrait){body.in-battle .touch{gap:12px}body.in-battle .dpad,body.in-battle .actions{gap:6px}body.in-battle .touch button,body.in-battle .touch button[data-key=left],body.in-battle .touch button[data-key=right],body.in-battle .touch button[data-key=normal],body.in-battle .actions .power,body.in-battle .touch .ultimate{width:50px;height:50px}body.in-battle .touch svg{width:20px;height:20px}.touch button span{font-size:7px}}
+body.in-battle .touch button[data-key=dash] svg{width:21px;height:21px}

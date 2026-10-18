@@ -42,5 +42,7 @@ drawAlien=function(ctx,f,t,portrait=false){const d=ALIEN_SMOOTH[f.id],sheets=smo
  const quiet=frame===0&&!f.cast&&!f.moving&&!f.block&&!f.stun&&f.y>=floor-1,breath=quiet?1+Math.sin(t*Math.PI*2/4.4+f.id*.3)*.0012:1;
  ctx.save();ctx.translate(f.x,f.y-hover);ctx.scale(f.dir||1,breath);if(f.id===9&&f.inv>0)ctx.globalAlpha*=.28;
  ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
- ctx.drawImage(sheets[Math.floor(frame/d.sheetFrames)],local%d.columns*d.cell,Math.floor(local/d.columns)*d.cell,d.cell,d.cell,-d.originX*scale,-d.ground*scale,d.cell*scale,d.cell*scale);ctx.restore();
+ const sheet=sheets[Math.floor(frame/d.sheetFrames)],sharp=alienClarityCell(f.id,frame,sheet,d);
+ ctx.drawImage(sharp||sheet,sharp?0:local%d.columns*d.cell,sharp?0:Math.floor(local/d.columns)*d.cell,d.cell,d.cell,-d.originX*scale,-d.ground*scale,d.cell*scale,d.cell*scale);ctx.restore();
 };
+

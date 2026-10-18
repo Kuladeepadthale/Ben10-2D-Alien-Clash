@@ -12,7 +12,7 @@ reg=json.loads((root/'registration.json').read_text())
 source=Path('web/assets/heatblast-poses/atlas-v8.png');atlas=Image.open(source).convert('RGBA')
 dst=Path('web/assets/heatblast-smooth');dst.mkdir(parents=True,exist_ok=True)
 tmp=Path('tmp/heatblast-smooth');tmp.mkdir(parents=True,exist_ok=True)
-images=[];arrays=[];meta=[];CELL=192;ratio=CELL/256
+images=[];arrays=[];meta=[];CELL=256;ratio=CELL/256
 def add(im,provenance):
  im=im.resize((CELL,CELL),Image.Resampling.LANCZOS)
  # Flow inversion can carry a heel below both registered source baselines.
@@ -65,6 +65,7 @@ for sheet in range(math.ceil(count/64)):
  im=Image.new('RGBA',(CELL*8,CELL*8))
  for j,frame in enumerate(images[sheet*64:(sheet+1)*64]):im.paste(frame,(j%8*CELL,j//8*CELL))
  filename=f'atlas-v21-{sheet}.webp';im.save(dst/filename,lossless=True,method=5,exact=True);sources.append('assets/heatblast-smooth/'+filename)
-m={'version':21,'cell':CELL,'columns':8,'width':CELL*8,'height':CELL*8,'sheetFrames':64,'frameCount':count,'originX':128*ratio,'ground':240*ratio,'standingHeight':165*ratio,'sources':sources,'clips':clips,'frames':meta,'emitters':emitters,'sourceSha256':hashlib.sha256(source.read_bytes()).hexdigest(),'source':'Existing original Heatblast atlas-v8 artwork; offline bidirectional image interpolation from the approved preview. No live rig or runtime crossfades.'}
+m={'version':24,'cell':CELL,'columns':8,'width':CELL*8,'height':CELL*8,'sheetFrames':64,'frameCount':count,'originX':128*ratio,'ground':240*ratio,'standingHeight':165*ratio,'sources':sources,'clips':clips,'frames':meta,'emitters':emitters,'sourceSha256':hashlib.sha256(source.read_bytes()).hexdigest(),'source':'Existing original Heatblast atlas-v8 artwork; offline bidirectional image interpolation from the approved preview. No live rig or runtime crossfades.'}
 (dst/'animation.json').write_text(json.dumps(m,separators=(',',':'))+'\n');Path('web/heatblast-smooth-data.js').write_text("'use strict';\nconst HEATBLAST_SMOOTH="+json.dumps(m,separators=(',',':'))+';\n')
 print('DONE',count,'frames',len(sources),'sheets',sum((dst/Path(s).name).stat().st_size for s in sources),'bytes',flush=True)
+
