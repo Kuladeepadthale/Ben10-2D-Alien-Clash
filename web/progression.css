@@ -45,3 +45,5 @@ body:not(.in-battle) .home-copy .eyebrow{font-size:14px!important}body:not(.in-b
 .career-alien strong{max-width:100%;overflow-wrap:anywhere;text-align:center}
 @media(max-width:600px){body:not(.in-battle) .app-top{padding:0 10px;gap:8px}body:not(.in-battle) #homeLogo{min-width:0;flex:1;gap:6px;font-size:13px;letter-spacing:1px}body:not(.in-battle) #homeLogo img{width:30px;height:30px}body:not(.in-battle) #homeLogo span{font-size:13px;letter-spacing:1px}body:not(.in-battle) .app-top #navBack{min-width:36px;width:36px;padding:6px}body:not(.in-battle) .app-top button{padding:8px;min-width:36px}body:not(.in-battle) .top-actions{gap:6px}body:not(.in-battle) #wallet b{font-size:15px}}
 @media(max-width:360px){body:not(.in-battle) #homeLogo img{display:none}}
+body:not(.in-battle) #screen-characters .card span{max-width:100%;white-space:normal!important;overflow-wrap:anywhere;line-height:1.25;text-align:center}
+body:not(.in-battle) #screen-characters .card .ownership{max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:center}
