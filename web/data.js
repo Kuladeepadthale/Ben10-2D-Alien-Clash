@@ -13,3 +13,4 @@ const aliens=[
 {name:'Ghostfreak',species:'ECTONURITE',color:'#c4c7b9',light:'#ebeada',dark:'#6b7674',type:'phase',speed:270,strength:.85,scale:1.03,desc:'A floating spectral body, a single purple eye, and black skin seams.',skills:[skill('Phantom lunge','rush',125,5,500,{speed:690,phase:true}),skill('Tentacle lash','melee',150,6.5,240,{windup:.45}),skill('Spectral pulse','wave',135,6,500,{speed:400,radius:55})],ultimate:skill('Nightmare sweep','wave',315,0,1100,{ticks:3,duration:.7,speed:580,radius:95,windup:.8})}
 ];
 const CLASSIC_COLORS=['#ffb836','#ee6558','#93edc7','#67d3f5','#eea34e','#bfdb89','#93f65c','#c6e973','#c5e5dc','#cba6ef'];
+

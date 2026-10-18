@@ -1,0 +1,415 @@
+{
+  "sharedSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+  "sheets": [
+    {
+      "source": "diamondhead-jump-strike.webp",
+      "subject": "diamondhead",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Top row: anticipation crouch, rising leap, tucked apex, landing. Bottom row: normal strike anticipation, impact, follow-through, recovery.",
+      "locomotion": "Measured upright alternating armored walk.",
+      "designReference": "web/assets/drawn-aliens/diamondhead.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "diamondhead-powers.webp",
+      "subject": "diamondhead",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "First power anticipation, release, recovery; second power anticipation, release, recovery; third power anticipation, release.",
+      "locomotion": "Measured upright alternating armored walk.",
+      "designReference": "web/assets/drawn-aliens/diamondhead.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "diamondhead-states.webp",
+      "subject": "diamondhead",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Ultimate anticipation, release, recovery; neutral idle; guard; hit recoil; collapsed knockdown; forward dash lean.",
+      "locomotion": "Measured upright alternating armored walk.",
+      "designReference": "web/assets/drawn-aliens/diamondhead.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "diamondhead-walk.webp",
+      "subject": "diamondhead",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Eight successive locomotion poses: contact, down, passing, up, opposite contact, down, passing, up, adapted to the alien anatomy.",
+      "locomotion": "Measured upright alternating armored walk.",
+      "designReference": "web/assets/drawn-aliens/diamondhead.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "four-arms-jump-strike.webp",
+      "subject": "four-arms",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Top row: anticipation crouch, rising leap, tucked apex, landing. Bottom row: normal strike anticipation, impact, follow-through, recovery.",
+      "locomotion": "Heavy upright alternating strides, four arms counter-swing.",
+      "designReference": "web/assets/drawn-aliens/four-arms.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "four-arms-powers.webp",
+      "subject": "four-arms",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "First power anticipation, release, recovery; second power anticipation, release, recovery; third power anticipation, release.",
+      "locomotion": "Heavy upright alternating strides, four arms counter-swing.",
+      "designReference": "web/assets/drawn-aliens/four-arms.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "four-arms-states.webp",
+      "subject": "four-arms",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Ultimate anticipation, release, recovery; neutral idle; guard; hit recoil; collapsed knockdown; forward dash lean.",
+      "locomotion": "Heavy upright alternating strides, four arms counter-swing.",
+      "designReference": "web/assets/drawn-aliens/four-arms.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "four-arms-walk.webp",
+      "subject": "four-arms",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Eight successive locomotion poses: contact, down, passing, up, opposite contact, down, passing, up, adapted to the alien anatomy.",
+      "locomotion": "Heavy upright alternating strides, four arms counter-swing.",
+      "designReference": "web/assets/drawn-aliens/four-arms.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "ghostfreak-jump-strike.webp",
+      "subject": "ghostfreak",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "prompt": "Use case: stylized-concept. Production cartoon 2D game cel sprite sheet. Image 1 is exact SUBJECT DESIGN. Image 2 is only the clean sharp CEL STYLE; do not copy its fire character. Ghostfreak: pale spectral alien, single purple eye, black lines, curled ghost tail, NEVER legs or feet. Exactly eight COMPLETE distinct body drawings in four columns and two rows, landscape 2:1 transparent canvas. Read top row then bottom: cells 1-4: jump anticipation, rising leap, tucked airborne apex, landing; cells 5-8: normal attack anticipation, impact, follow-through, recovery. All poses face RIGHT in side three-quarter view; same scale and matching anatomy/costume throughout. Each pose stays inside its own equal cell with complete head, fingers, toes or tail and 8% empty margin. Keep hips centered, baseline consistent. Crisp bold dark ink outlines, flat opaque colors, one cel shadow tone. No blur, gradients, glow, motion streaks, ghost frames, captions, grid, floor, shadows, scenery or external projectile/effects. The CHARACTER only; complete connected anatomy.",
+      "poses": "cells 1-4: jump anticipation, rising leap, tucked airborne apex, landing; cells 5-8: normal attack anticipation, impact, follow-through, recovery"
+    },
+    {
+      "source": "ghostfreak-powers.webp",
+      "subject": "ghostfreak",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "prompt": "Use case: stylized-concept. Production cartoon 2D game cel sprite sheet. Image 1 is exact SUBJECT DESIGN. Image 2 is only the clean sharp CEL STYLE; do not copy its fire character. Ghostfreak: pale spectral alien, single purple eye, black lines, curled ghost tail, NEVER legs or feet. Exactly eight COMPLETE distinct body drawings in four columns and two rows, landscape 2:1 transparent canvas. Read top row then bottom: cells1-3 phantom lunge windup, forward stretched ghost release, recovery; cells4-6 tentacle lash windup, extended tentacles, recovery; cells7-8 spectral pulse windup and arms spread release. All poses face RIGHT in side three-quarter view; same scale and matching anatomy/costume throughout. Each pose stays inside its own equal cell with complete head, fingers, toes or tail and 8% empty margin. Keep hips centered, baseline consistent. Crisp bold dark ink outlines, flat opaque colors, one cel shadow tone. No blur, gradients, glow, motion streaks, ghost frames, captions, grid, floor, shadows, scenery or external projectile/effects. The CHARACTER only; complete connected anatomy.",
+      "poses": "cells1-3 phantom lunge windup, forward stretched ghost release, recovery; cells4-6 tentacle lash windup, extended tentacles, recovery; cells7-8 spectral pulse windup and arms spread release"
+    },
+    {
+      "source": "ghostfreak-states.webp",
+      "subject": "ghostfreak",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "prompt": "Use case: stylized-concept. Production cartoon 2D game cel sprite sheet. Image 1 is exact SUBJECT DESIGN. Image 2 is only the clean sharp CEL STYLE; do not copy its fire character. Ghostfreak: pale spectral alien, single purple eye, black lines, curled ghost tail, NEVER legs or feet. Exactly eight COMPLETE distinct body drawings in four columns and two rows, landscape 2:1 transparent canvas. Read top row then bottom: cells1-3 ultimate power windup, release, recovery; cell4 neutral idle; cell5 guard; cell6 hit recoil; cell7 collapsed knockdown; cell8 forward dash lean. All poses face RIGHT in side three-quarter view; same scale and matching anatomy/costume throughout. Each pose stays inside its own equal cell with complete head, fingers, toes or tail and 8% empty margin. Keep hips centered, baseline consistent. Crisp bold dark ink outlines, flat opaque colors, one cel shadow tone. No blur, gradients, glow, motion streaks, ghost frames, captions, grid, floor, shadows, scenery or external projectile/effects. The CHARACTER only; complete connected anatomy.",
+      "poses": "cells1-3 ultimate power windup, release, recovery; cell4 neutral idle; cell5 guard; cell6 hit recoil; cell7 collapsed knockdown; cell8 forward dash lean"
+    },
+    {
+      "source": "ghostfreak-walk.webp",
+      "subject": "ghostfreak",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "prompt": "Use case: stylized-concept. Production cartoon 2D game cel sprite sheet. Image 1 is exact SUBJECT DESIGN. Image 2 is only the clean sharp CEL STYLE; do not copy its fire character. Ghostfreak: pale spectral alien, single purple eye, black lines, curled ghost tail, NEVER legs or feet. Exactly eight COMPLETE distinct body drawings in four columns and two rows, landscape 2:1 transparent canvas. Read top row then bottom: eight successive FLOATING poses with curling spectral tail, gentle sway and reaching arms; NO LEGS OR FEET. All poses face RIGHT in side three-quarter view; same scale and matching anatomy/costume throughout. Each pose stays inside its own equal cell with complete head, fingers, toes or tail and 8% empty margin. Keep hips centered, baseline consistent. Crisp bold dark ink outlines, flat opaque colors, one cel shadow tone. No blur, gradients, glow, motion streaks, ghost frames, captions, grid, floor, shadows, scenery or external projectile/effects. The CHARACTER only; complete connected anatomy.",
+      "poses": "eight successive FLOATING poses with curling spectral tail, gentle sway and reaching arms; NO LEGS OR FEET"
+    },
+    {
+      "source": "grey-matter-jump-strike.webp",
+      "subject": "grey-matter",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Top row: anticipation crouch, rising leap, tucked apex, landing. Bottom row: normal strike anticipation, impact, follow-through, recovery.",
+      "locomotion": "Quick light upright alternating steps.",
+      "designReference": "web/assets/drawn-aliens/grey-matter.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "grey-matter-powers.webp",
+      "subject": "grey-matter",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "First power anticipation, release, recovery; second power anticipation, release, recovery; third power anticipation, release.",
+      "locomotion": "Quick light upright alternating steps.",
+      "designReference": "web/assets/drawn-aliens/grey-matter.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "grey-matter-states.webp",
+      "subject": "grey-matter",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Ultimate anticipation, release, recovery; neutral idle; guard; hit recoil; collapsed knockdown; forward dash lean.",
+      "locomotion": "Quick light upright alternating steps.",
+      "designReference": "web/assets/drawn-aliens/grey-matter.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "grey-matter-walk.webp",
+      "subject": "grey-matter",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Eight successive locomotion poses: contact, down, passing, up, opposite contact, down, passing, up, adapted to the alien anatomy.",
+      "locomotion": "Quick light upright alternating steps.",
+      "designReference": "web/assets/drawn-aliens/grey-matter.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "heatblast-actions.webp",
+      "subject": "heatblast",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "poses": "Approved pilot actions sheet; see HEATBLAST-PILOT.md."
+    },
+    {
+      "source": "heatblast-powers-states.webp",
+      "subject": "heatblast",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "prompt": "Use case: stylized-concept. Production cartoon 2D game cel sprite sheet. Image 1 is exact SUBJECT DESIGN.  Heatblast: red lava-rock alien with yellow fire head, exactly the approved reference. Exactly eight COMPLETE distinct body drawings in four columns and two rows, landscape 2:1 transparent canvas. Read top row then bottom: cells1-3 Eruption anticipation crouch, palms slam ground, rising recovery; cells4-6 Inferno Storm charging raised hands, overhead release, recovery; cell7 neutral upright relaxed idle; cell8 defensive guard. All poses face RIGHT in side three-quarter view; same scale and matching anatomy/costume throughout. Each pose stays inside its own equal cell with complete head, fingers, toes or tail and 8% empty margin. Keep hips centered, baseline consistent. Crisp bold dark ink outlines, flat opaque colors, one cel shadow tone. No blur, gradients, glow, motion streaks, ghost frames, captions, grid, floor, shadows, scenery or external projectile/effects. The CHARACTER only; complete connected anatomy.",
+      "poses": "cells1-3 Eruption anticipation crouch, palms slam ground, rising recovery; cells4-6 Inferno Storm charging raised hands, overhead release, recovery; cell7 neutral upright relaxed idle; cell8 defensive guard"
+    },
+    {
+      "source": "heatblast-reactions.webp",
+      "subject": "heatblast",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "prompt": "Use case: stylized-concept. Production cartoon 2D game cel sprite sheet. Image 1 is exact SUBJECT DESIGN.  Heatblast: red lava-rock alien with yellow fire head, exactly the approved reference. Exactly eight COMPLETE distinct body drawings in four columns and two rows, landscape 2:1 transparent canvas. Read top row then bottom: cells1-2 hit recoil and recovery; cells3-4 falling knockdown and collapsed ground pose; cells5-6 dash acceleration lean and extended stride; cells7-8 subtle upright relaxed breathing idle. All poses face RIGHT in side three-quarter view; same scale and matching anatomy/costume throughout. Each pose stays inside its own equal cell with complete head, fingers, toes or tail and 8% empty margin. Keep hips centered, baseline consistent. Crisp bold dark ink outlines, flat opaque colors, one cel shadow tone. No blur, gradients, glow, motion streaks, ghost frames, captions, grid, floor, shadows, scenery or external projectile/effects. The CHARACTER only; complete connected anatomy.",
+      "poses": "cells1-2 hit recoil and recovery; cells3-4 falling knockdown and collapsed ground pose; cells5-6 dash acceleration lean and extended stride; cells7-8 subtle upright relaxed breathing idle"
+    },
+    {
+      "source": "heatblast-strike-jet.webp",
+      "subject": "heatblast",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "prompt": "Use case: stylized-concept. Production cartoon 2D game cel sprite sheet. Image 1 is exact SUBJECT DESIGN.  Heatblast: red lava-rock alien with yellow fire head, exactly the approved reference. Exactly eight COMPLETE distinct body drawings in four columns and two rows, landscape 2:1 transparent canvas. Read top row then bottom: cells1-4 normal punch anticipation, extended punch impact, follow-through, recovery; cells5-8 Flame Jet anticipation, both hands forward release, sustaining beam pose, recovery. All poses face RIGHT in side three-quarter view; same scale and matching anatomy/costume throughout. Each pose stays inside its own equal cell with complete head, fingers, toes or tail and 8% empty margin. Keep hips centered, baseline consistent. Crisp bold dark ink outlines, flat opaque colors, one cel shadow tone. No blur, gradients, glow, motion streaks, ghost frames, captions, grid, floor, shadows, scenery or external projectile/effects. The CHARACTER only; complete connected anatomy.",
+      "poses": "cells1-4 normal punch anticipation, extended punch impact, follow-through, recovery; cells5-8 Flame Jet anticipation, both hands forward release, sustaining beam pose, recovery"
+    },
+    {
+      "source": "heatblast-walk.webp",
+      "subject": "heatblast",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "poses": "Approved pilot walk sheet; see HEATBLAST-PILOT.md."
+    },
+    {
+      "source": "ripjaws-jump-strike.webp",
+      "subject": "ripjaws",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "prompt": "Use case: stylized-concept. Production cartoon 2D game cel sprite sheet. Image 1 is exact SUBJECT DESIGN. Image 2 is only the clean sharp CEL STYLE; do not copy its fire character. Ripjaws: grey-green anglerfish humanoid, wide toothy mouth, lure, fins, two land legs, black-white uniform. Exactly eight COMPLETE distinct body drawings in four columns and two rows, landscape 2:1 transparent canvas. Read top row then bottom: cells 1-4: jump anticipation, rising leap, tucked airborne apex, landing; cells 5-8: normal attack anticipation, impact, follow-through, recovery. All poses face RIGHT in side three-quarter view; same scale and matching anatomy/costume throughout. Each pose stays inside its own equal cell with complete head, fingers, toes or tail and 8% empty margin. Keep hips centered, baseline consistent. Crisp bold dark ink outlines, flat opaque colors, one cel shadow tone. No blur, gradients, glow, motion streaks, ghost frames, captions, grid, floor, shadows, scenery or external projectile/effects. The CHARACTER only; complete connected anatomy.",
+      "poses": "cells 1-4: jump anticipation, rising leap, tucked airborne apex, landing; cells 5-8: normal attack anticipation, impact, follow-through, recovery"
+    },
+    {
+      "source": "ripjaws-powers.webp",
+      "subject": "ripjaws",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "prompt": "Use case: stylized-concept. Production cartoon 2D game cel sprite sheet. Image 1 is exact SUBJECT DESIGN. Image 2 is only the clean sharp CEL STYLE; do not copy its fire character. Ripjaws: grey-green anglerfish humanoid, wide toothy mouth, lure, fins, two land legs, black-white uniform. Exactly eight COMPLETE distinct body drawings in four columns and two rows, landscape 2:1 transparent canvas. Read top row then bottom: cells1-3 crushing bite windup, jaws thrust open impact, recovery; cells4-6 raking claw slash windup, claws extended impact, recovery; cells7-8 predator leap crouch and airborne pounce. All poses face RIGHT in side three-quarter view; same scale and matching anatomy/costume throughout. Each pose stays inside its own equal cell with complete head, fingers, toes or tail and 8% empty margin. Keep hips centered, baseline consistent. Crisp bold dark ink outlines, flat opaque colors, one cel shadow tone. No blur, gradients, glow, motion streaks, ghost frames, captions, grid, floor, shadows, scenery or external projectile/effects. The CHARACTER only; complete connected anatomy.",
+      "poses": "cells1-3 crushing bite windup, jaws thrust open impact, recovery; cells4-6 raking claw slash windup, claws extended impact, recovery; cells7-8 predator leap crouch and airborne pounce"
+    },
+    {
+      "source": "ripjaws-states.webp",
+      "subject": "ripjaws",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "prompt": "Use case: stylized-concept. Production cartoon 2D game cel sprite sheet. Image 1 is exact SUBJECT DESIGN. Image 2 is only the clean sharp CEL STYLE; do not copy its fire character. Ripjaws: grey-green anglerfish humanoid, wide toothy mouth, lure, fins, two land legs, black-white uniform. Exactly eight COMPLETE distinct body drawings in four columns and two rows, landscape 2:1 transparent canvas. Read top row then bottom: cells1-3 ultimate power windup, release, recovery; cell4 neutral idle; cell5 guard; cell6 hit recoil; cell7 collapsed knockdown; cell8 forward dash lean. All poses face RIGHT in side three-quarter view; same scale and matching anatomy/costume throughout. Each pose stays inside its own equal cell with complete head, fingers, toes or tail and 8% empty margin. Keep hips centered, baseline consistent. Crisp bold dark ink outlines, flat opaque colors, one cel shadow tone. No blur, gradients, glow, motion streaks, ghost frames, captions, grid, floor, shadows, scenery or external projectile/effects. The CHARACTER only; complete connected anatomy.",
+      "poses": "cells1-3 ultimate power windup, release, recovery; cell4 neutral idle; cell5 guard; cell6 hit recoil; cell7 collapsed knockdown; cell8 forward dash lean"
+    },
+    {
+      "source": "ripjaws-walk.webp",
+      "subject": "ripjaws",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "prompt": "Use case: stylized-concept. Production cartoon 2D game cel sprite sheet. Image 1 is exact SUBJECT DESIGN. Image 2 is only the clean sharp CEL STYLE; do not copy its fire character. Ripjaws: grey-green anglerfish humanoid, wide toothy mouth, lure, fins, two land legs, black-white uniform. Exactly eight COMPLETE distinct body drawings in four columns and two rows, landscape 2:1 transparent canvas. Read top row then bottom: eight successive upright stalking walk poses: right foot forward contact, right foot planted under hips left leg passes, right foot behind left knee lifts, right toe lifts left foot approaches, LEFT foot forward contact, left foot planted under hips right leg passes, left foot behind right knee lifts, left toe lifts right foot approaches. All poses face RIGHT in side three-quarter view; same scale and matching anatomy/costume throughout. Each pose stays inside its own equal cell with complete head, fingers, toes or tail and 8% empty margin. Keep hips centered, baseline consistent. Crisp bold dark ink outlines, flat opaque colors, one cel shadow tone. No blur, gradients, glow, motion streaks, ghost frames, captions, grid, floor, shadows, scenery or external projectile/effects. The CHARACTER only; complete connected anatomy.",
+      "poses": "eight successive upright stalking walk poses: right foot forward contact, right foot planted under hips left leg passes, right foot behind left knee lifts, right toe lifts left foot approaches, LEFT foot forward contact, left foot planted under hips right leg passes, left foot behind right knee lifts, left toe lifts right foot approaches"
+    },
+    {
+      "source": "stinkfly-jump-strike.webp",
+      "subject": "stinkfly",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Top row: anticipation crouch, rising leap, tucked apex, landing. Bottom row: normal strike anticipation, impact, follow-through, recovery.",
+      "locomotion": "Hovering flight, wings alternate up and down and insect legs tuck.",
+      "designReference": "web/assets/drawn-aliens/stinkfly.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "stinkfly-powers.webp",
+      "subject": "stinkfly",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "First power anticipation, release, recovery; second power anticipation, release, recovery; third power anticipation, release.",
+      "locomotion": "Hovering flight, wings alternate up and down and insect legs tuck.",
+      "designReference": "web/assets/drawn-aliens/stinkfly.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "stinkfly-states.webp",
+      "subject": "stinkfly",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Ultimate anticipation, release, recovery; neutral idle; guard; hit recoil; collapsed knockdown; forward dash lean.",
+      "locomotion": "Hovering flight, wings alternate up and down and insect legs tuck.",
+      "designReference": "web/assets/drawn-aliens/stinkfly.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "stinkfly-walk.webp",
+      "subject": "stinkfly",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Eight successive locomotion poses: contact, down, passing, up, opposite contact, down, passing, up, adapted to the alien anatomy.",
+      "locomotion": "Hovering flight, wings alternate up and down and insect legs tuck.",
+      "designReference": "web/assets/drawn-aliens/stinkfly.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "upgrade-jump-strike.webp",
+      "subject": "upgrade",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Top row: anticipation crouch, rising leap, tucked apex, landing. Bottom row: normal strike anticipation, impact, follow-through, recovery.",
+      "locomotion": "Long fluid upright alternating steps.",
+      "designReference": "web/assets/drawn-aliens/upgrade.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "upgrade-powers.webp",
+      "subject": "upgrade",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "First power anticipation, release, recovery; second power anticipation, release, recovery; third power anticipation, release.",
+      "locomotion": "Long fluid upright alternating steps.",
+      "designReference": "web/assets/drawn-aliens/upgrade.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "upgrade-states.webp",
+      "subject": "upgrade",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Ultimate anticipation, release, recovery; neutral idle; guard; hit recoil; collapsed knockdown; forward dash lean.",
+      "locomotion": "Long fluid upright alternating steps.",
+      "designReference": "web/assets/drawn-aliens/upgrade.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "upgrade-walk.webp",
+      "subject": "upgrade",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Eight successive locomotion poses: contact, down, passing, up, opposite contact, down, passing, up, adapted to the alien anatomy.",
+      "locomotion": "Long fluid upright alternating steps.",
+      "designReference": "web/assets/drawn-aliens/upgrade.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "wildmutt-jump-strike.webp",
+      "subject": "wildmutt",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Top row: anticipation crouch, rising leap, tucked apex, landing. Bottom row: normal strike anticipation, impact, follow-through, recovery.",
+      "locomotion": "Quadruped walk, diagonal limbs alternate contact and recovery.",
+      "designReference": "web/assets/drawn-aliens/wildmutt.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "wildmutt-powers.webp",
+      "subject": "wildmutt",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "First power anticipation, release, recovery; second power anticipation, release, recovery; third power anticipation, release.",
+      "locomotion": "Quadruped walk, diagonal limbs alternate contact and recovery.",
+      "designReference": "web/assets/drawn-aliens/wildmutt.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "wildmutt-states.webp",
+      "subject": "wildmutt",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Ultimate anticipation, release, recovery; neutral idle; guard; hit recoil; collapsed knockdown; forward dash lean.",
+      "locomotion": "Quadruped walk, diagonal limbs alternate contact and recovery.",
+      "designReference": "web/assets/drawn-aliens/wildmutt.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "wildmutt-walk.webp",
+      "subject": "wildmutt",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Eight successive locomotion poses: contact, down, passing, up, opposite contact, down, passing, up, adapted to the alien anatomy.",
+      "locomotion": "Quadruped walk, diagonal limbs alternate contact and recovery.",
+      "designReference": "web/assets/drawn-aliens/wildmutt.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "xlr8-jump-strike.webp",
+      "subject": "xlr8",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Top row: anticipation crouch, rising leap, tucked apex, landing. Bottom row: normal strike anticipation, impact, follow-through, recovery.",
+      "locomotion": "Alternating skating pushes and glides on wheel feet, long tail balances.",
+      "designReference": "web/assets/drawn-aliens/xlr8.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "xlr8-powers.webp",
+      "subject": "xlr8",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "First power anticipation, release, recovery; second power anticipation, release, recovery; third power anticipation, release.",
+      "locomotion": "Alternating skating pushes and glides on wheel feet, long tail balances.",
+      "designReference": "web/assets/drawn-aliens/xlr8.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "xlr8-states.webp",
+      "subject": "xlr8",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Ultimate anticipation, release, recovery; neutral idle; guard; hit recoil; collapsed knockdown; forward dash lean.",
+      "locomotion": "Alternating skating pushes and glides on wheel feet, long tail balances.",
+      "designReference": "web/assets/drawn-aliens/xlr8.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    },
+    {
+      "source": "xlr8-walk.webp",
+      "subject": "xlr8",
+      "layout": "four columns by two rows",
+      "generationTool": "built-in ImageGen",
+      "promptSpecification": "Production 2D game cel-animation sprite sheet. Design reference defines the subject; approved Heatblast walk defines the crisp inked cel style only. Exactly eight complete full-body poses in four columns and two rows, landscape 2:1 transparent canvas. All poses face right in side three-quarter game view. Match costume, colors, proportions and anatomy in every frame; consistent scale, centered hips and ground baseline; complete connected limbs inside each cell with transparent margins. Bold dark outlines, opaque flat colors and one shadow tone. No motion blur, optical flow, blended ghost frames, gradients, glow, text, grid, scenery, floor shadow or detached power effects.",
+      "poses": "Eight successive locomotion poses: contact, down, passing, up, opposite contact, down, passing, up, adapted to the alien anatomy.",
+      "locomotion": "Alternating skating pushes and glides on wheel feet, long tail balances.",
+      "designReference": "web/assets/drawn-aliens/xlr8.png",
+      "styleReference": "ci/cel-sources/heatblast-walk.webp"
+    }
+  ]
+}

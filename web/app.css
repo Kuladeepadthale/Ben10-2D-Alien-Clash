@@ -3,3 +3,4 @@
 @media(max-width:599px){#homeLogo{font-size:17px}#homeLogo small{display:none}.app-top{padding:0 12px}.app-top button{padding:9px}.app-top #navBack{min-width:58px}.app-top #navBack span{font-size:8px}.home-layout{grid-template-columns:1fr;gap:0}.home-copy h1{font-size:64px}.hero-preview{height:280px}.home-copy{padding-top:10px}.home-bottom{gap:8px;font-size:6px}.mode-grid,.setup-grid,.help-grid{grid-template-columns:1fr}.mode-card{min-height:170px}.mode-card p{min-height:0}.mode-card h2{margin-top:20px}.app-bottom button{width:20%;font-size:18px}.app-bottom button span{font-size:7px}#screen-characters #roster{grid-template-columns:repeat(2,1fr)}.settings-panel{padding:4px 14px}.page-actions button{flex:1}.settings-panel label{font-size:11px}body.in-battle .touch button{width:36px;height:42px}}
 
 body.app-loading>header,body.app-loading>main{visibility:hidden}body.app-loading #appShell{visibility:visible}
+

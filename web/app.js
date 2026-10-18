@@ -38,11 +38,11 @@ $('pauseHelp').onclick=()=>showScreen('controls');$('pauseSettings').onclick=()=
 function saveSettings(){try{localStorage.setItem('omnitrix-settings-v1',JSON.stringify(settings))}catch{}muted=!settings.sound;document.body.classList.toggle('balanced',settings.quality==='balanced');}
 $('soundSetting').checked=!!settings.sound;$('shakeSetting').checked=!!settings.shake;$('qualitySetting').value=settings.quality;
 $('soundSetting').onchange=e=>{settings.sound=e.target.checked;saveSettings();if(settings.sound)sound(330,.1)};$('shakeSetting').onchange=e=>{settings.shake=e.target.checked;saveSettings()};$('qualitySetting').onchange=e=>{settings.quality=e.target.value;saveSettings()};saveSettings();
-function launch(){if(isLocked()){showScreen('battle');return}if(!classicPortraits.every(Boolean)||classicPortraits.length!==10){$('launchStatus').textContent='Loading character artwork…';return}survivalStage=1;survivalScore=0;begin(true,selectedMode==='training');showScreen('battle');screenHistory.length=0;}
+async function launch(){if(isLocked()){showScreen('battle');return}if(!classicPortraits.every(Boolean)||classicPortraits.length!==10){$('launchStatus').textContent='Loading character artwork…';return}survivalStage=1;survivalScore=0;if(await begin(true,selectedMode==='training')){showScreen('battle');screenHistory.length=0;}}
 $('launchMatch').onclick=launch;$('playAgain').onclick=()=>{mode='menu';launch()};
-const baseBegin=begin;begin=function(newMatch=true,practice=false){if(newMatch&&selectedMode==='survival')$('opponent').value='auto';baseBegin(newMatch,practice);};
+const baseBegin=begin;begin=function(newMatch=true,practice=false){if(newMatch&&selectedMode==='survival')$('opponent').value='auto';return baseBegin(newMatch,practice);};
 const baseEndMatch=endMatch;endMatch=function(){baseEndMatch();$('resultEye').textContent='MATCH COMPLETE';$('resultTitle').textContent=wins[0]>=2?'Hero of the arena.':'Time to transform.';$('resultText').textContent=$('modalText').textContent;showScreen('results',false);};
-const baseFinish=finish;finish=function(){if(selectedMode!=='survival'){baseFinish();return}if(mode!=='fight')return;if(player.hp>0&&enemy.hp<=0){survivalScore++;profile.credits+=40;saveProfile();const hp=Math.min(player.maxHp,player.hp+player.maxHp*.2),charge=player.ult;survivalStage++;const previousTotals={...totals},previousReport=[...report];baseBegin(true,false);totals=previousTotals;report=previousReport;renderReport();player.hp=hp;player.ult=charge;announce('STAGE '+survivalStage+' · +40 CREDITS',1.5);return}mode='matchend';profile.matches++;if(survivalScore>0)profile.wins++;saveProfile();$('resultEye').textContent='SURVIVAL COMPLETE';$('resultTitle').textContent=survivalScore+' rivals defeated.';$('resultText').textContent='Stage '+survivalStage+' • '+(survivalScore*40)+' credits earned. Your run is saved in your match record.';renderSetup();showScreen('results',false);};
+const baseFinish=finish;finish=async function(){if(selectedMode!=='survival'){baseFinish();return}if(mode!=='fight')return;if(player.hp>0&&enemy.hp<=0){survivalScore++;profile.credits+=40;saveProfile();const hp=Math.min(player.maxHp,player.hp+player.maxHp*.2),charge=player.ult;survivalStage++;const previousTotals={...totals},previousReport=[...report];await baseBegin(true,false);totals=previousTotals;report=previousReport;renderReport();player.hp=hp;player.ult=charge;announce('STAGE '+survivalStage+' · +40 CREDITS',1.5);return}mode='matchend';profile.matches++;if(survivalScore>0)profile.wins++;saveProfile();$('resultEye').textContent='SURVIVAL COMPLETE';$('resultTitle').textContent=survivalScore+' rivals defeated.';$('resultText').textContent='Stage '+survivalStage+' • '+(survivalScore*40)+' credits earned. Your run is saved in your match record.';renderSetup();showScreen('results',false);};
 const baseQuit=quit;quit=function(){baseQuit();showScreen('setup',false);};$('quit').onclick=quit;
 $('start').onclick=()=>{if(mode==='paused')pause();else launch()};
 window.androidBack=goBack;window.androidPause=()=>{if(mode==='fight')pause()};
@@ -54,9 +54,9 @@ showScreen('home',false);
 
 document.body.classList.remove('app-loading');
 
-// Do not enter a fight before all bundled character poses are decoded.
+// Initial battle pair is decoded; other pairs load before their match starts.
 $('launchMatch').disabled=true;
 if(!allAlienPosesLoaded)$('launchStatus').textContent='Preparing character animation…';
-Promise.all([allAlienPosesReady,diamondheadPuppetReady]).then(results=>{const ok=results.every(Boolean);$('launchMatch').disabled=!ok;$('launchStatus').textContent=ok?'All ten aliens ready.':(allAlienPoseError||'Diamondhead movement artwork failed to load.')+' Close and reopen the app to retry.';});
+Promise.all([allAlienPosesReady,diamondheadPuppetReady]).then(results=>{const ok=results.every(Boolean);$('launchMatch').disabled=!ok;$('launchStatus').textContent=ok?'Cel animations ready.':(allAlienPoseError||'Diamondhead movement artwork failed to load.')+' Close and reopen the app to retry.';});
 
 
