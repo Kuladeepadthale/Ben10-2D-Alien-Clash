@@ -12,9 +12,12 @@ previous=json.loads((OUT/"manifest.json").read_text())["characters"] if start el
 if OUT.exists() and not start: shutil.rmtree(OUT)
 OUT.mkdir(parents=True,exist_ok=True)
 def save_native(im,base):
-    dest=base.with_suffix('.png');im.save(dest,'PNG',compress_level=3)
-    Image.open(dest).verify();return dest
-manifest={'version':1,'rendering':'Native discrete cel frames. No optical flow, crossfade or frame blending.','characters':previous[:start]}
+    from io import BytesIO
+    dest=base.with_suffix('.png');buffer=BytesIO();im.save(buffer,'PNG',compress_level=3)
+    encoded=buffer.getvalue();Image.open(BytesIO(encoded)).load();dest.write_bytes(encoded)
+    assert dest.stat().st_size==len(encoded)
+    Image.open(dest).load();return dest
+manifest={'version':2,'rendering':'Whole-pose extraction before padded atlas packing. No source grid clipping, frame blending or limb compositing.','characters':previous[:start]}
 for id,name in enumerate(NAMES):
     if id<start: continue
     folder=OUT/name;folder.mkdir(exist_ok=True)
@@ -24,41 +27,30 @@ for id,name in enumerate(NAMES):
     for si,kind in enumerate(kinds):
         source=SRC/(name+'-'+kind+'.webp')
         if not source.exists(): source=SRC/(name+'-'+kind+'.png')
-        sheet=Image.open(source).convert('RGBA'); clean=Image.new('RGBA',sheet.size)
-        assert sheet.width/sheet.height>1.8,(name,kind,sheet.size)
-        for i in range(8):
-            x0=round(i%4*sheet.width/4);x1=round((i%4+1)*sheet.width/4)
-            y0=round(i//4*sheet.height/2);y1=round((i//4+1)*sheet.height/2)
-            cell=sheet.crop((x0,y0,x1,y1));a=np.array(cell)
-            labels,count=ndimage.label(a[:,:,3]>32,structure=np.ones((3,3)))
-            assert count>0,(name,kind,i)
-            areas=np.bincount(labels.ravel());areas[0]=0
-            main=int(areas.argmax())
-            # Keep small detached hands/details close to the body as well as the main
-            # silhouette. Drop remote fragments from neighboring animation cells.
-            near=ndimage.binary_dilation(labels==main,iterations=max(3,round(min(cell.size)*.04)))
-            keep=np.unique(labels[near]);keep=keep[keep!=0]
-            a[:,:,3]=np.where(np.isin(labels,keep),a[:,:,3],0)
-            cell=Image.fromarray(a);b=cell.getchannel('A').getbbox();assert b and b[2]-b[0]>30 and b[3]-b[1]>30
-            # X is the torso/hips rather than extended hands, tail or attack silhouette.
-            yy,xx=np.indices(a.shape[:2]); alpha=a[:,:,3]>180
-            band=alpha&(yy>cell.height*.48)&(yy<cell.height*.72)
-            anchor=float(np.median(xx[band])) if band.any() else cell.width/2
-            ground=b[3]
-            # Tucked apex is airborne above the same virtual ground, never cropped at the ankles.
-            if (kind=='actions' or kind=='jump-strike') and i==2: ground=min(cell.height-3,ground+cell.height*.15)
-            rect=[x0+b[0],y0+b[1],b[2]-b[0],b[3]-b[1]]
-            character['frames'].append({'sheet':si,'rect':rect,'origin':[round(anchor-b[0],2),round(ground-b[1],2)],'source':kind,'cell':i,'bounds':list(b)})
-            clean.paste(cell,(x0,y0))
-        # Package the isolated cells used to calculate frame bounds. The original
-        # sheet can contain disconnected neighboring hands/tails inside those bounds.
+        repaired=SRC/(name+'-'+kind+'-v51.png')
+        if repaired.exists():source=repaired
+        from full_poses import whole_poses,pack_poses
+        original=Image.open(source).convert('RGBA')
+        clean,placements=pack_poses(whole_poses(original))
+        sheet=clean
+        for i,(x,y,w,h,metadata) in enumerate(placements):
+            cell=clean.crop((x,y,x+w,y+h));a=np.array(cell)
+            yy,xx=np.indices(a.shape[:2]);alpha=a[:,:,3]>180
+            band=alpha&(yy>h*.48)&(yy<h*.72)
+            anchor=float(np.median(xx[band])) if band.any() else w/2
+            ground=h
+            if (kind=='actions' or kind=='jump-strike') and i==2:ground+=h*.15
+            # Include transparent border in every draw rectangle, preventing atlas bleed.
+            margin=8
+            rect=[x-margin,y-margin,w+margin*2,h+margin*2]
+            character['frames'].append({'sheet':si,'rect':rect,'origin':[round(anchor+margin,2),round(ground+margin,2)],'source':kind,'cell':i,'bounds':[0,0,w,h],**metadata})
         dest=save_native(clean,folder/kind);processed.append(dest)
         character['sheets'].append({'src':'assets/cels/'+name+'/'+dest.name,'width':sheet.width,'height':sheet.height})
     if id==0:
         character['clips']={'walk':list(range(8)),'jump':list(range(8,12)),'skill0':list(range(12,16)),'normal':list(range(16,20)),'skill1':list(range(20,24)),'skill2':[24,25,26],'ultimate':[27,28,29],'idle':[30,38,39],'guard':[31],'hit':[32,33],'ko':[34,35],'dash':[36,37]}
     else:
         character['clips']={'walk':list(range(8)),'jump':list(range(8,12)),'normal':list(range(12,16)),'skill0':[16,17,18],'skill1':[19,20,21],'skill2':[22,23],'ultimate':[24,25,26],'idle':[27],'guard':[28],'hit':[29],'ko':[30],'dash':[31]}
-    idle=character['frames'][character['clips']['idle'][0]]; character['referenceHeight']=idle['rect'][3]
+    idle=character['frames'][character['clips']['idle'][0]]; character['referenceHeight']=idle['rect'][3]-16
     sheet=Image.open(processed[idle['sheet']]);x,y,w,h=idle['rect'];portrait=sheet.crop((x,y,x+w,y+h));portrait.thumbnail((300,400),Image.Resampling.LANCZOS);portrait_dest=save_native(portrait,folder/'portrait')
     character['portrait']='assets/cels/'+name+'/'+portrait_dest.name
     manifest['characters'].append(character)

@@ -47,6 +47,7 @@ jobs:
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
+          python3 ci/check-full-poses.py
           node ci/check-cels.cjs
           node ci/check-alien-force.cjs
           node ci/check-expansion.cjs
@@ -88,7 +89,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 5.0 — Alien Force expansion' --notes 'Adds Swampfire, Echo Echo, Humungousaur, Jetray, Big Chill, Chromastone, Brainstorm, Spidermonkey, Goop and Alien X. 32 playable aliens with complete image action sets, distinct powers, coin unlocks, upgrades and collection missions. All 32 are available in Testing. Existing coins, unlocked characters, upgrades and mission claims are preserved. Compact alien details and simple Home retained. Debug-signed Android test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 5.1 — Full-body animation fix' --notes 'Fixes disappearing faces, hands and feet by isolating complete poses before atlas packing. Repairs crossing grid boundaries, adds transparent margins to every frame, removes stray neighboring body fragments and separates overlapping Upchuck power poses. All 32 aliens and every action rebuilt and checked for source-pixel preservation. Saves, coins, unlocks and upgrades preserved. Debug-signed Android test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
