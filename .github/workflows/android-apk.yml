@@ -45,6 +45,7 @@ jobs:
           python3 ci/check-drawn-assets.py
           node ci/check-locomotion.cjs
           node ci/check-footwork-dash.cjs
+          node ci/check-cartoon-gaits.cjs
           npm install --prefix /tmp/diamondhead-canvas --no-package-lock --no-save @napi-rs/canvas
           NODE_PATH=/tmp/diamondhead-canvas/node_modules node ci/check-diamondhead-poses.cjs
           NODE_PATH=/tmp/diamondhead-canvas/node_modules node ci/check-heatblast-smooth.cjs
@@ -89,7 +90,7 @@ jobs:
         run: |
           mkdir -p builds
           cp android/app/build/outputs/apk/debug/app-debug.apk builds/Ben10-2D-Alien-Clash.apk
-          cp previews/Alien-Clash-Footwork-Dash.mp4 builds/Alien-Clash-Footwork-Dash.mp4
+          cp previews/Alien-Clash-Classic-Walks-Dash.mp4 builds/Alien-Clash-Classic-Walks-Dash.mp4
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose builds/Ben10-2D-Alien-Clash.apk
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging builds/Ben10-2D-Alien-Clash.apk
           python3 - <<'PY'
@@ -99,7 +100,7 @@ jobs:
           assert 'assets/heatblast-poses.js' in z.namelist()
           assert 'assets/heatblast-smooth-data.js' in z.namelist()
           assert all('assets/assets/heatblast-smooth/atlas-v21-'+str(i)+'.webp' in z.namelist() for i in range(8))
-          assert 'assets/footwork.js' in z.namelist()
+          assert 'assets/cartoon-gaits.js' in z.namelist()
           assert 'assets/clarity.js' in z.namelist()
           assert 'assets/alien-smooth.js' in z.namelist()
           assert 'assets/alien-smooth-data.js' in z.namelist()
@@ -113,7 +114,7 @@ jobs:
           assert 'assets/assets/heatblast-poses/atlas-v8.png' in z.namelist()
           assert len([p for p in z.namelist() if p.startswith('assets/assets/classic/') and p.endswith('.webp')])==90
           PY
-          sha256sum builds/Ben10-2D-Alien-Clash.apk builds/Alien-Clash-Footwork-Dash.mp4 > builds/SHA256SUMS.txt
+          sha256sum builds/Ben10-2D-Alien-Clash.apk builds/Alien-Clash-Classic-Walks-Dash.mp4 > builds/SHA256SUMS.txt
       - uses: actions/upload-artifact@v4
         with:
           name: AlienClash2D-Android-APK
@@ -122,5 +123,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/Alien-Clash-Footwork-Dash.mp4 builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 2.4 — Foot planting and dodge dash' --notes 'Adds distance-driven inverse-kinematic walking with planted support feet, connected joint skins, and source artwork; adds a forward dodge dash (Shift/E or mobile Dash), a 0.22-second dodge window, and a 1.25-second cooldown. Full-resolution Heatblast bake and shared clarity for other aliens. Extends the approved Heatblast offline interpolation system to all nine other aliens. Includes smooth walk entry and exit, guard, jump preparation/rise/fall/landing, hit reactions, knockdown and attacks. Retains full source pose resolution in lossless 256px registered cells without runtime crossfade ghosting or floor clipping. Original character art and gameplay are preserved. Debug-signed Android test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/Ben10-2D-Alien-Clash.apk builds/Alien-Clash-Classic-Walks-Dash.mp4 builds/SHA256SUMS.txt --title 'Ben 10 Classic Alien Clash — Android 2.5 — Restored classic walks and alien-specific movement' --notes 'Restores the previous full-body illustrated walking animation and removes the procedural leg renderer. Gives all ten aliens separate movement profiles: alternating skate pushes and glides for XLR8, heavy Four Arms strides, measured Diamondhead steps, quadruped Wildmutt bounding, quick Grey Matter steps, fluid Upgrade strides, Stinkfly hovering, Ripjaws stalking, and Ghostfreak floating. Keeps the forward dodge dash, existing attacks, and source-resolution clarity improvements. Debug-signed Android test APK.' --prerelease --target "$GITHUB_SHA"
 

@@ -20,7 +20,7 @@ function smoothAlienPoseFrame(f,t){let s=smoothAlienPlayback.get(f);if(!s){s={la
  if(f.y<floor-2)s.airborne=true;if(s.airborne&&f.y>=floor-1){s.landUntil=t+.14;s.airborne=false;}
  const walking=!!f.moving&&f.y>=floor-1&&f.hp>0&&!f.stun&&!f.block&&!f.cast&&!f.jumpWindup;
  if(walking&&!s.walking){s.walkAt=t;s.walkOrigin=f.walk||0;s.phase=0;s.exitAt=-100;}
- if(walking){if(t-s.walkAt<.07)s.walkOrigin=f.walk||0;else s.phase=(((f.walk||0)-s.walkOrigin)/1.1/6%1+1)%1;}
+ if(typeof cartoonGaitPhase==='function')s.phase=cartoonGaitPhase(f,s,t,walking);else if(walking){if(t-s.walkAt<.07)s.walkOrigin=f.walk||0;else s.phase=(((f.walk||0)-s.walkOrigin)/1.1/6%1+1)%1;}
  if(!walking&&s.walking){s.exitAt=t;s.exitKey=6+(Math.round(s.phase*6)%6);}s.walking=walking;
  let frame=0;
  if(f.hp<=0)frame=smoothAlienClipFrame(f.id,'ko',(t-s.koAt)/.4);
