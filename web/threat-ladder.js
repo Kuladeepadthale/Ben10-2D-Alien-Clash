@@ -16,8 +16,8 @@ const threatSaveBase=saveProfile;saveProfile=function(){const matches=Math.max(0
  const before=heroStanding().level;lastXPGain=completedMatchXP(winsGained>0)+(heroSession.firstClear?75:0);heroProgress.xp=Math.min(999999999,heroProgress.xp+lastXPGain);heroSession.awarded=true;lastRankUp=heroStanding().level-before;
  }heroProgress.lastMatches=profile.matches;heroProgress.lastWins=profile.wins;profile.heroProgress=heroProgress;profile.threatLadder=threatProgress;threatSaveBase();if($('heroLevelCard'))renderHeroProgress();};
 function villainEnsure(id){if(villainTextures.has(id))return Promise.resolve(villainTextures.get(id));if(villainPending.has(id))return villainPending.get(id);const d=VILLAIN_DATA.characters[id],promise=loadClassicImage(d.src).then(image=>{villainTextures.clear();villainTextures.set(id,image);villainPending.delete(id);return image},e=>{villainPending.delete(id);throw e});villainPending.set(id,promise);return promise;}
-function threatTuning(stage){return {hp:700+stage*35,damage:.60+stage*.027,speed:220+stage*2,difficulty:stage<10?'easy':stage<20?'normal':'hard'};}
-function villainKit(id){const d=VILLAIN_DATA.characters[id],type=d.type,stage=id+1,t=threatTuning(stage),copy=s=>({...s,damage:s.damage*t.damage});return {...d.kit,name:d.name,species:'CLASSIC VILLAIN',renderHeight:d.height||226,bodyHeight:d.bodyHeight||205,scale:1,speed:t.speed,strength:t.damage,type,light:d.color,skills:d.kit.skills.map(copy),ultimate:copy(d.kit.ultimate)};}
+function threatTuning(stage){stage=Math.max(1,Math.min(VILLAIN_COUNT,stage));const n=stage-1;return {hp:1200+100*n+8*n*n,damage:.9+.055*n+.0015*n*n,speed:245+3*n,playerCooldown:1+.045*n,enemyCooldown:Math.max(.5,1-.017*n),reaction:Math.max(.36,1-.022*n),difficulty:stage<5?'normal':'hard'};}
+function villainKit(id){const d=VILLAIN_DATA.characters[id],type=d.type,stage=id+1,t=threatTuning(stage),copy=s=>({...s,damage:s.damage*t.damage,cooldown:s.cooldown*t.enemyCooldown});return {...d.kit,name:d.name,species:'CLASSIC VILLAIN',renderHeight:d.height||226,bodyHeight:d.bodyHeight||205,scale:1,speed:t.speed,strength:t.damage,type,light:d.color,skills:d.kit.skills.map(copy),ultimate:copy(d.kit.ultimate)};}
 function villainFrame(f){const d=VILLAIN_DATA.characters[f.villain],state=celState(f);let index=0;
  if(state==='walk')index=[1,2,3,2][Math.floor(Math.abs(f.walk)*.4)%4];
  else if(state==='jump')index=f.jumpWindup?4:5;
@@ -56,7 +56,7 @@ const threatBeginBase=begin;begin=async function(newMatch=true,practice=false){c
  if(newMatch){heroSession={mode:selectedMode,awarded:false,firstClear:false};lastXPGain=0;lastRankUp=0;}
  try{if(campaign){mode='loading';$('fightThreat').disabled=true;$('threatStatus').textContent='Preparing '+VILLAIN_DATA.characters[threatStage].name+'…';await villainEnsure(threatStage);mode='menu';}
  const ok=await threatBeginBase(newMatch,practice);if(!ok)return false;
- if(campaign){const stage=threatStage+1,t=threatTuning(stage);enemy.villain=threatStage;enemy.config=villainKit(threatStage);enemy.maxHp=enemy.hp=t.hp;enemy.loadout=[0,1];$('difficulty').value=t.difficulty;clock=90;threatAttempt={stage:threatStage,finished:false};$('reportMode').textContent=THREAT_NAME;announce('STAGE '+stage+' · '+enemy.config.name.toUpperCase(),1.5);hud();}
+ if(campaign){const stage=threatStage+1,t=threatTuning(stage);enemy.villain=threatStage;enemy.config=villainKit(threatStage);enemy.maxHp=enemy.hp=t.hp;enemy.loadout=[0,1];$('difficulty').value=t.difficulty;clock=180;threatAttempt={stage:threatStage,finished:false};$('reportMode').textContent=THREAT_NAME;announce('STAGE '+stage+' · '+enemy.config.name.toUpperCase(),1.5);hud();}
  return ok;
  }catch(e){mode='menu';heroSession=null;$('threatStatus').textContent='Villain artwork could not load. Tap fight to retry.';return false;}finally{if(campaign){$('opponent').value=saved;$('fightThreat').disabled=false;}}
 };
@@ -78,4 +78,8 @@ const threatUpgradeBase=upgrade;upgrade=function(key){const before=profile.alien
 // Restore the regular replay action whenever a non-campaign match starts.
 const threatLaunchBase=launch;launch=async function(){if(selectedMode!=='campaign'){$('playAgain').textContent='Play again';$('playAgain').onclick=()=>{mode='menu';launch()};if($('resultHeroXP'))$('resultHeroXP').remove();}return threatLaunchBase();};$('launchMatch').onclick=()=>launch();
 window.addEventListener('resize',()=>{if(currentScreen==='threats')renderThreats()});
+// Campaign-only cooldown and reaction scaling. Normal modes retain their combat rules.
+const ladderCastBase=cast;cast=function(f,type){const ok=ladderCastBase(f,type);if(ok&&selectedMode==='campaign'&&f===player&&(type==='skill0'||type==='skill1')){const slot=type==='skill0'?0:1;f.cd[slot]*=threatTuning(threatStage+1).playerCooldown;}return ok;};
+const ladderAIBase=ai;ai=function(dt){const before=aiWait;ladderAIBase(dt);if(selectedMode==='campaign'&&aiWait>0&&aiWait>before-dt+.00001)aiWait*=threatTuning(threatStage+1).reaction;};
 renderHeroProgress();saveProfile();
+
