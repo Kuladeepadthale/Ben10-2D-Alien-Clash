@@ -22,3 +22,6 @@ body:not(.in-battle) #screen-characters .card.alien-locked{border-style:dashed!i
 @media(max-height:500px) and (orientation:landscape){body:not(.in-battle) #appShell{--top-h:44px;--nav-h:44px;}body:not(.in-battle) .app-top{height:44px;min-height:44px;}body:not(.in-battle) .app-bottom{height:44px;min-height:44px;}body:not(.in-battle) .app-bottom button{min-height:34px!important;}.home-portal-stage{top:5%;bottom:7%;left:41%;}.home-team-actions{top:53%;}body:not(.in-battle) #screen-home .home-team-actions .play-button{min-height:36px!important;padding:6px!important;font-size:21px!important;}.home-team-actions>span{font-size:9px;}.squad-heading .career-kicker{display:none;}body:not(.in-battle) #screen-squadpicker,body:not(.in-battle) #screen-posepicker{padding:6px 12px;gap:6px;}.squad-owned{grid-auto-rows:130px;}.portal-active-label{bottom:8%;font-size:7px;}body:not(.in-battle) #screen-home .watch-alien-name{min-height:22px!important;font-size:11px!important;}}
 
 .alien-lock-symbol[hidden]{display:none!important;}
+/* Foreground artwork never intercepts taps on rear portal controls. */
+.portal-slot,.ground-portal,.portal-alien{pointer-events:none;}
+.portal-slot .portal-add,.portal-slot .watch-alien-name{pointer-events:auto;}
