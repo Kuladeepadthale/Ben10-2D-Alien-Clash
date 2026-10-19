@@ -40,7 +40,7 @@ const detailScreenBase=showScreen;showScreen=function(name,remember=true){
 };
 openAlienUpgrades=function(id){if(!ownsAlien(id)){careerToast('Unlock this alien first.');return}select(id);showScreen('alieninfo');alienUpgradeOpen=true;renderAlienInfo();};
 $('alienList').onclick=()=>showScreen('characters');
-$('alienUse').onclick=()=>showScreen('setup');$('alienUnlock').onclick=()=>{buyAlien(selected);renderAlienInfo()};
+$('alienUse').onclick=()=>showScreen('modes');$('alienUnlock').onclick=()=>{buyAlien(selected);renderAlienInfo()};
 $('alienUpgrade').onclick=()=>{if(!ownsAlien(selected))return;alienUpgradeOpen=!alienUpgradeOpen;renderAlienInfo()};
 $('alienPowers').onclick=()=>showScreen('powers');
 // Collection cards are the entry to details. Remove duplicated details/actions and upgrade navigation.
