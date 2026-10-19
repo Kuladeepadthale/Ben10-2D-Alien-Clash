@@ -61,3 +61,46 @@ body:not(.in-battle) #screen-modes .mode-card h2{font-size:clamp(18px,2.5vw,25px
 body:not(.in-battle) #screen-modes .mode-card p{font-size:clamp(11px,1.4vw,15px)!important;line-height:1.3!important;margin:0!important;min-height:0;color:#d3e4d6;}
 @media(orientation:landscape){body:not(.in-battle) #screen-modes .mode-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:minmax(0,1fr)!important;}}
 @media(max-height:400px) and (orientation:landscape){body:not(.in-battle) #screen-modes{padding:5px 12px!important;gap:5px!important;}body:not(.in-battle) #screen-modes .mode-caption{padding:6px;}body:not(.in-battle) #screen-modes .mode-caption>span{font-size:8px;letter-spacing:.1px;}body:not(.in-battle) #screen-modes .mode-card h2{font-size:18px!important;}}
+
+/* Starter: three choices and both actions stay on one fitted screen. */
+body:not(.in-battle) #screen-starter{height:100%!important;min-height:0!important;overflow:hidden!important;padding:10px 16px!important;gap:8px!important;}
+body:not(.in-battle) #screen-starter .career-heading{flex:none;}
+body:not(.in-battle) #screen-starter h1{font-size:clamp(23px,3vw,32px)!important;margin:4px 0!important;}
+body:not(.in-battle) #screen-starter .career-heading p{font-size:14px!important;line-height:1.2!important;}
+body:not(.in-battle) #starterCards{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:minmax(0,1fr);flex:1;min-height:0;gap:8px;overflow:hidden;}
+body:not(.in-battle) #starterCards .career-alien{display:flex!important;flex-direction:column;min-height:0!important;min-width:0;padding:7px 4px!important;gap:4px;justify-content:flex-end;}
+body:not(.in-battle) #starterCards canvas{flex:1;min-height:0;width:100%;height:0;object-fit:contain;}
+body:not(.in-battle) #starterCards strong{font-size:clamp(13px,2vw,21px)!important;line-height:1.1;text-align:center;}
+body:not(.in-battle) #starterCards span{font-size:11px;line-height:1.1;}
+body:not(.in-battle) #screen-starter .career-footer{position:static;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:6px;flex:none;}
+body:not(.in-battle) #screen-starter .career-footer p{display:none!important;}
+body:not(.in-battle) #screen-starter .career-footer button{font-size:15px!important;line-height:1.15;min-height:40px;padding:8px!important;}
+/* Angular, Omnitrix-coloured titles use the same combat emblems as the controls. */
+body:not(.in-battle) #screen-characters .arena-heading,body:not(.in-battle) #screen-modes .arena-heading{display:block!important;flex:none;padding:5px 10px!important;border-left:4px solid #b9ff60;border-bottom:1px solid #a5f06c40;background:linear-gradient(110deg,#365c2b80,#12332630 70%,transparent);border-radius:4px 14px 4px 4px;}
+body:not(.in-battle) .arena-heading>p{display:none!important;}
+body:not(.in-battle) #screen-characters .arena-heading h1,body:not(.in-battle) #screen-modes .arena-heading h1{display:flex;align-items:center;gap:9px;margin:0!important;font-size:clamp(22px,3vw,30px)!important;line-height:1.05!important;letter-spacing:1px;font-weight:1000;font-style:italic;}
+.arena-heading-icon{display:grid;place-items:center;width:30px;height:30px;border:1px solid #c9ff8d90;border-radius:50%;background:#b9ff601a;color:#caff94;flex:none;box-shadow:0 0 14px #b9ff6030;}
+.arena-heading-icon svg{width:22px;height:22px;}
+.arena-heading-title{color:#f3ffe8;white-space:nowrap;}.arena-heading-title em{color:#c0ff6b;text-shadow:0 0 14px #9dff3140;}
+/* Mission HQ: short task rows, one period at a time, rewards at a glance. */
+body:not(.in-battle) #screen-missions{height:100%!important;min-height:0!important;overflow:hidden!important;padding:12px 18px!important;gap:10px!important;}
+body:not(.in-battle) #screen-missions h1{font-size:clamp(25px,3vw,34px)!important;margin:3px 0!important;}
+.mission-wallet{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:none;border:1px solid #c5ad5d60;background:linear-gradient(110deg,#49462970,#183324);border-radius:12px;padding:8px 12px;color:#ffe68e;}
+.mission-wallet strong{font-size:23px;}.mission-wallet>span{font-size:15px;}
+body:not(.in-battle) #screen-missions .mission-wallet button{padding:6px 10px!important;min-height:34px;font-size:15px!important;}
+.mission-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;flex:none;}
+body:not(.in-battle) #screen-missions .mission-tabs button{min-width:0;min-height:38px;padding:6px 2px!important;font-size:15px!important;border:1px solid #537340;background:#173324;}
+.mission-tabs button[aria-pressed=true]{background:#c3ff79!important;color:#16300d;font-weight:900;box-shadow:0 0 15px #c3ff7920;}
+.mission-reset{font-size:12px;color:#c0d7b6;flex:none;}
+body:not(.in-battle) #screen-missions .mission-grid{display:grid;grid-template-columns:1fr;grid-auto-rows:minmax(90px,max-content);align-content:start;gap:8px;flex:1;min-height:0;overflow-y:auto;touch-action:pan-y;}
+body:not(.in-battle) #screen-missions .mission-card{display:flex;flex-direction:row;align-items:center;gap:10px;padding:12px;border-radius:14px;min-width:0;}
+.mission-task-icon{display:grid;place-items:center;flex:none;width:36px;height:36px;color:#c8ff87;background:#a0fb6018;border-radius:10px;}.mission-task-icon svg{width:23px;height:23px;}
+.mission-task{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px;}
+body:not(.in-battle) #screen-missions .mission-task h2{font-size:17px!important;line-height:1.2;margin:0;overflow-wrap:anywhere;}
+.mission-task .mission-progress{height:6px;}.mission-task .mission-count{font-size:12px;}
+.mission-prize{display:flex;flex-direction:column;align-items:center;gap:6px;flex:none;min-width:78px;}.mission-prize strong{font-size:17px;color:#ffe18a;}
+body:not(.in-battle) #screen-missions .mission-prize button{min-height:32px;padding:5px 8px!important;font-size:15px!important;}
+@media(orientation:landscape){body:not(.in-battle) #screen-missions .mission-grid{grid-template-columns:repeat(3,minmax(0,1fr));}body:not(.in-battle) #screen-missions .mission-card{flex-direction:column;align-items:stretch;gap:7px;padding:10px;}body:not(.in-battle) #screen-missions .mission-task-icon{display:none;}.mission-prize{flex-direction:row;justify-content:space-between;min-width:0;}body:not(.in-battle) #screen-missions .mission-task h2{font-size:16px!important;}}
+@media(max-height:500px) and (orientation:landscape){body:not(.in-battle) #screen-starter,body:not(.in-battle) #screen-missions{padding:6px 12px!important;gap:5px!important;}body:not(.in-battle) #screen-starter .career-kicker{display:none;}body:not(.in-battle) #screen-starter .career-heading p{display:none!important;}body:not(.in-battle) #screen-starter .career-footer button{min-height:34px;padding:5px!important;}body:not(.in-battle) #screen-missions .career-kicker{display:none;}body:not(.in-battle) #screen-missions h1{font-size:24px!important;margin:0!important;}.mission-wallet{padding:4px 10px;}.mission-wallet strong{font-size:20px;}.mission-tabs{gap:5px;}body:not(.in-battle) #screen-missions .mission-tabs button{min-height:32px;padding:4px!important;}.arena-heading-icon{height:24px;width:24px;}.arena-heading-icon svg{height:18px;width:18px;}body:not(.in-battle) #screen-characters .arena-heading,body:not(.in-battle) #screen-modes .arena-heading{padding:3px 8px!important;}}
+
+body:not(.in-battle) #screen-characters .arena-heading>p,body:not(.in-battle) #screen-modes .arena-heading>p{display:none!important;}
