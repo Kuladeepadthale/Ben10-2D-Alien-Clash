@@ -8,16 +8,16 @@ upgradeDeck.options.portrait=2;upgradeDeck.options.landscape=3;upgradeDeck.optio
 let alienUpgradeOpen=false,alienPortraitToken=0;
 function renderAlienInfo(){
  const a=aliens[selected],owned=ownsAlien(selected),test=testingMode();
- $('alienTitle').textContent=a.name;$('alienSpecies').textContent=cardRank(selected).symbol+' '+cardRank(selected).name+' · '+a.species;
+ $('alienTitle').textContent=a.name;$('alienSpecies').textContent=cardRank(selected).symbol+' '+cardRank(selected).name+' · '+rarityHealth(selected).toLocaleString()+' HP · '+Math.round(rarityPower(selected)*100)+'% power';
  $('alienStory').textContent=a.desc;
  $('alienAbilities').replaceChildren(...[...a.skills,a.ultimate].map((s,i)=>{
   const row=document.createElement('div'),name=document.createElement('strong'),info=document.createElement('span');
-  name.textContent=s.name;info.textContent=i===3?'Ultimate · charged in combat':Math.round(s.damage)+' damage · '+s.cooldown+'s cooldown';
+  name.textContent=s.name;info.textContent=i===3?'Ultimate · charged in combat':Math.round(s.damage*rarityPower(selected))+' damage · '+s.cooldown+'s cooldown';
   row.append(name,info);return row;
  }));
  $('alienUse').textContent=test?'Test alien':'Select for battle';$('alienUse').disabled=isLocked()||(!owned&&!test);
- $('alienUnlock').hidden=owned||test;$('alienUnlock').textContent='Unlock · '+ALIEN_PRICES[selected].toLocaleString()+' points';
- $('alienUnlock').disabled=isLocked()||!career.owned.length||profile.credits<ALIEN_PRICES[selected];
+ $('alienUnlock').hidden=owned||test;$('alienUnlock').textContent='Unlock · '+ALIEN_PRICES[selected]+' diamonds';
+ $('alienUnlock').disabled=isLocked()||!career.owned.length||career.gems<ALIEN_PRICES[selected];
  $('alienUpgrade').disabled=isLocked()||!owned;$('alienUpgrade').textContent=alienUpgradeOpen?'Story & powers':'Upgrade';
  $('alienPowers').hidden=alienUpgradeOpen;$('alienPowers').disabled=isLocked()||(!owned&&!test);
  alienPage.querySelector('.alien-overview').hidden=alienUpgradeOpen;$('alienUpgradePanel').hidden=!alienUpgradeOpen;
