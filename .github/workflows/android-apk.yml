@@ -97,7 +97,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.2 — Illustrated Battle Modes' --notes 'Four illustrated Ben 10 battle modes fit one Play screen with no scrolling: Threat Ladder, Battle, Survival and Testing. Portrait 2x2 and landscape four-across layouts. Ranked alien cards, escalating villain difficulty and saved progress preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.3 — Four-Column Alien Collection' --notes 'Character collection now shows four cards per row and two visible rows with vertical swipe scrolling. Illustrated four-mode Play page, card ranks, unlocks, villain difficulty and saved progress preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
