@@ -63,11 +63,14 @@ bundle=ROOT/'builds/web'
 if bundle.exists():shutil.rmtree(bundle)
 bundle.mkdir(parents=True)
 html=(WEB/'index.html').read_text();files=['index.html']+re.findall(r'(?:src|href)="([^"?#]+\.(?:js|css))(?=[?"])',html)
-for file in files: shutil.copyfile(WEB/file,bundle/file)
+for file in files:
+    if file=='villain-data.js' and not (WEB/file).exists():continue
+    shutil.copyfile(WEB/file,bundle/file)
 shutil.copytree(OUT,bundle/'assets/cels',copy_function=shutil.copyfile)
 shutil.copytree(WEB/'assets/ui',bundle/'assets/ui',copy_function=shutil.copyfile)
 for file in ['assets/animation-manifest-example.json']:
     if (WEB/file).exists(): (bundle/file).parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(WEB/file,bundle/file)
 print('Exported',sum(len(c['frames']) for c in manifest['characters']),'native cels across',len(NAMES),'complete action sets.')
+
 
 

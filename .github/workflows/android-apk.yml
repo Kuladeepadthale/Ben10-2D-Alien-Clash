@@ -43,12 +43,14 @@ jobs:
         run: |
           python3 ci/prepare-alien-force.py
           python3 ci/build-cels.py
+          python3 ci/build-villains.py
       - name: Verify all 32 action sets and game controls
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
           python3 ci/check-full-poses.py
           node ci/check-cels.cjs
+          node ci/check-threat-ladder.cjs
           node ci/check-alien-force.cjs
           node ci/check-expansion.cjs
           node ci/check-footwork-dash.cjs
@@ -68,6 +70,10 @@ jobs:
           python3 - <<'PY'
           import zipfile,json
           z=zipfile.ZipFile('builds/Ben10-2D-Alien-Clash.apk');names=z.namelist()
+          assert 'assets/threat-ladder.js' in names and 'assets/villain-data.js' in names
+          villains=json.loads(z.read('assets/assets/villains/manifest.json'))
+          assert len(villains['characters'])==30
+          assert all('assets/'+v['src'] in names and 'assets/'+v['portrait'] in names for v in villains['characters'])
           assert 'assets/index.html' in names and 'assets/cel-player.js' in names
           assert 'assets/progression.js' in names and 'assets/progression.css' in names
           assert 'assets/expansion-effects.js' in names
@@ -89,7 +95,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 5.1 — Full-body animation fix' --notes 'Fixes disappearing faces, hands and feet by isolating complete poses before atlas packing. Repairs crossing grid boundaries, adds transparent margins to every frame, removes stray neighboring body fragments and separates overlapping Upchuck power poses. All 32 aliens and every action rebuilt and checked for source-pixel preservation. Saves, coins, unlocks and upgrades preserved. Debug-signed Android test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.0 — Plumber Threat Ladder' --notes 'Adds Plumber Threat Ladder: 30 sequential Classic villain battles, increasing difficulty, dedicated villain artwork and combat kits. Separate Hero Level and XP rewards for completed fights, missions, unlocks and upgrades. Existing saves and 32 playable aliens preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+
 
 
 

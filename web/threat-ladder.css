@@ -1,0 +1,36 @@
+body:not(.in-battle) #screen-modes .mode-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+body:not(.in-battle) .mode-card.mode-threat{border-color:#c7a55d;background:radial-gradient(circle at 100% 0,#ffcd6b35,transparent 65%),linear-gradient(150deg,#4e3820,#17271c)}
+.threat-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.threat-heading h1{margin:0}.threat-heading p{margin:6px 0;color:#bdd4bf}
+body:not(.in-battle) #screen-threats,body:not(.in-battle) #screen-threat{height:100%!important;min-height:0!important;overflow:hidden;gap:12px;padding:14px 20px}
+body:not(.in-battle) #screen-threats h1{font-size:28px!important}
+.threat-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));flex:1;min-height:0;gap:10px}
+body:not(.in-battle) .threat-card{min-height:0;padding:8px!important;display:flex;flex-direction:column;align-items:center;gap:5px;background:#153026;border:1px solid #67884e;min-width:0}
+.threat-card img{width:100%;height:100%;min-height:0;max-height:200px;flex:1;object-fit:contain}
+.threat-card>span{font-size:13px;color:#dfc489;font-weight:800}.threat-card strong{font-size:18px;overflow-wrap:anywhere;text-align:center}.threat-card small{font-size:13px;color:#bce0b4}.stage-locked{border-style:dashed!important}.stage-locked small{color:#e6c99b}
+.threat-pager{display:flex;align-items:center;justify-content:space-between;gap:10px;flex:none}
+.threat-detail{display:grid;grid-template-columns:35% 1fr;gap:20px;align-items:center;min-height:0;flex:1}
+.threat-portrait{height:100%;min-height:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse,#edbf5b20,transparent 70%)}
+.threat-portrait img{width:100%;height:100%;max-height:420px;object-fit:contain}
+.threat-brief{min-width:0}.threat-brief h1{margin:0 0 8px}.threat-brief h2{margin:12px 0 5px}.threat-brief p{margin:0 0 10px}
+#threatStats{padding:8px 10px;border:1px solid #697849;border-radius:10px;color:#e1edbb;font-size:16px}
+.threat-options,.threat-actions{display:flex;gap:8px;flex-wrap:wrap}.threat-options button{flex:1}.threat-actions{flex:none;align-items:center;justify-content:space-between}.threat-actions p{margin:0;flex:1}.threat-actions button{flex:1}
+body:not(.in-battle) #threatStatus{margin:0;font-size:15px!important;color:#e8dba8}
+.hero-level-card{border:1px solid #8ab76b;border-radius:20px;background:linear-gradient(135deg,#284a2b,#12271f);padding:24px;text-align:center}
+.hero-level-card>span{font-size:15px;letter-spacing:2px;color:#c4e8af}.hero-level-card>strong{display:block;font-size:72px;line-height:1.2;color:#deffae}
+.hero-xp-track{height:15px;background:#071a13;border-radius:20px;overflow:hidden;margin:16px 0}.hero-xp-track>i{height:100%;display:block;background:linear-gradient(90deg,#7bd580,#d0ff7c)}
+.hero-xp-rules{border:1px solid #41683f;border-radius:16px;padding:18px}.hero-result{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px;border:1px solid #8bb56a;border-radius:14px;background:#243c26}.hero-result strong{font-size:22px;color:#d6ff9a}.hero-result span{font-size:17px}
+@media(max-width:600px) and (orientation:portrait){
+ body:not(.in-battle) #screen-modes .mode-grid{grid-template-columns:1fr}
+ .threat-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+ .threat-detail{grid-template-columns:1fr;grid-template-rows:minmax(100px,1fr) auto;gap:8px}
+ .threat-portrait img{max-height:220px}.threat-heading{gap:6px}.threat-heading>div{width:100%}
+ body:not(.in-battle) #screen-threat h1{font-size:28px!important}.threat-options button{font-size:15px!important;padding:8px!important}
+}
+@media(max-height:500px) and (orientation:landscape){
+ body:not(.in-battle) #screen-threats,body:not(.in-battle) #screen-threat{padding:6px 12px;gap:5px}
+ body:not(.in-battle) #screen-threats h1{font-size:23px!important}.threat-heading .career-kicker{display:none}.threat-heading p{font-size:14px!important;line-height:1.2!important;margin:3px 0}
+ body:not(.in-battle) #screen-threats button,body:not(.in-battle) #screen-threat button{min-height:34px;padding:5px 8px!important;font-size:15px!important}
+ .threat-card img{max-height:100px}.threat-card strong{font-size:16px}.threat-card small{font-size:12px}
+ .threat-detail{grid-template-columns:25% 1fr;gap:10px}.threat-brief h1{font-size:24px!important;line-height:1.1!important;margin-bottom:3px}.threat-brief h2{display:none}.threat-brief p{font-size:15px!important;line-height:1.2!important;margin-bottom:5px}#threatStats{font-size:14px;padding:4px 6px}.threat-actions p{font-size:14px!important;line-height:1.2!important}.threat-options{gap:5px}
+}
