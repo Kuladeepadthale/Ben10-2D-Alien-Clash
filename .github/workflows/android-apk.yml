@@ -61,6 +61,7 @@ jobs:
           node ci/check-progression.cjs
           node ci/check-progression-layout.cjs
           node ci/check-alien-detail.cjs
+          node ci/check-home-team.cjs
           for script in web/*.js; do node --check "$script"; done
       - name: Build APK
         run: gradle -p android --no-daemon assembleDebug
@@ -97,7 +98,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.5 — Mission Control & Omnitrix Menus' --notes 'Three starter aliens fit on one screen. Omnitrix Roster and Battle Zone themed headings. Compact Mission Control with genuine daily, weekly and monthly goals plus saved Career milestones. Existing characters, ranks, modes and saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.6 — Three-Watch Home Team' --notes 'New title-only arena background without static aliens. Three Omnitrix watch slots with plus buttons to select owned aliens, saved unique team slots and active alien selection. Previous missions, starter improvements and game modes preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
