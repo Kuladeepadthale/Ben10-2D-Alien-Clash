@@ -40,3 +40,5 @@ body:not(.in-battle) #screen-missions .mission-grid[data-tab=career]{grid-templa
 @media(prefers-reduced-motion:reduce){.pack-result-card{animation:none;}}
 
 @media(orientation:portrait){body:not(.in-battle) .card-pack .buy-pack{padding:6px 4px!important;}}
+/* Keep rear-portal plus controls above tappable foreground characters. */
+body:not(.in-battle) #screen-home .portal-slot .portal-add{z-index:40!important;}
