@@ -15,11 +15,11 @@ async function boot(saved){const html=fs.readFileSync('web/index.html','utf8').r
  run('mode="menu";selectedMode="training"');await run('begin(true,true)');run("cast(player,'skill0');receiveHit(player,enemy,100,'Testing');quit()");assert.equal(run('heroProgress.xp'),beforeQuit);
  run('mode="menu";selectedMode="versus";showScreen("setup")');assert.equal(run('$("difficulty").value'),'normal');
  const beforeUpgrade=run('heroProgress.xp');run('mode="menu";selectedMode="versus";profile.credits=10000;upgrade("health")');assert.equal(run('heroProgress.xp'),beforeUpgrade+10);
- const owned=run('career.owned.length'),beforeUnlock=run('heroProgress.xp');run('buyAlien(aliens.findIndex((_,i)=>i<ALIEN_COUNT&&!ownsAlien(i)))');assert.equal(run('career.owned.length'),owned+1);assert.equal(run('heroProgress.xp'),beforeUnlock+25);
+ const owned=run('career.owned.length'),beforeUnlock=run('heroProgress.xp');run('career.gems=100;buyAlien(aliens.findIndex((_,i)=>i<ALIEN_COUNT&&!ownsAlien(i)))');assert.equal(run('career.owned.length'),owned+1);assert.equal(run('heroProgress.xp'),beforeUnlock+25);
  const beforeMission=run('heroProgress.xp');run("claimMission('battles')");assert.equal(run('heroProgress.xp'),beforeMission+20);run("claimMission('battles')");assert.equal(run('heroProgress.xp'),beforeMission+20);
  for(let i=1;i<30;i++){t.b.i=i;assert(run('threatTuning(i+1).hp>threatTuning(i).hp'));assert(run('threatTuning(i+1).damage>threatTuning(i).damage'));}
  assert.equal(run('new Set(ALIEN_PRICES).size'),5);
- for(let id=0;id<32;id++){t.b.rankId=id;assert.equal(run('ALIEN_PRICES[rankId]'),run('(ALIEN_RANKS[rankId]+1)*1000'));}
+ for(let id=0;id<32;id++){t.b.rankId=id;assert.equal(run('ALIEN_PRICES[rankId]'),run('(ALIEN_RANKS[rankId]+1)*5'));}
  for(let stage=2;stage<=30;stage++){t.b.scalingStage=stage;assert(run('threatTuning(scalingStage).playerCooldown>threatTuning(scalingStage-1).playerCooldown'));assert(run('threatTuning(scalingStage).enemyCooldown<threatTuning(scalingStage-1).enemyCooldown'));assert(run('threatTuning(scalingStage).reaction<threatTuning(scalingStage-1).reaction'));}
  run('mode="menu";selectedMode="campaign";threatProgress.cleared=29;threatStage=29');await run('begin(true,false)');run("cast(player,'skill0')");assert(Math.abs(run('player.cd[0]')-run('aliens[player.id].skills[player.loadout[0]].cooldown*threatTuning(30).playerCooldown'))<.00001);
  run('mode="menu";showScreen("characters");careerRefresh();refreshMenus()');assert.equal(w.document.querySelectorAll('#roster .card:not([hidden])').length,32);assert.equal(w.document.querySelectorAll('#roster .card-rank').length,32);assert.equal(run('rosterDeck.nav.hidden'),true);
