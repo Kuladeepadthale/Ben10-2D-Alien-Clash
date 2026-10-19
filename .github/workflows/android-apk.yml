@@ -52,6 +52,7 @@ jobs:
           node ci/check-cels.cjs
           node ci/check-threat-ladder.cjs
           node ci/check-card-shop.cjs
+          node ci/check-alien-combat.cjs
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
           node ci/check-threat-layout.cjs
           node ci/check-alien-force.cjs
@@ -100,7 +101,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.9 — Tap to Reveal' --notes 'Centred readable Play button and Aliens, Battle and Missions headings. Separate currency counters. Dedicated Card Packs tab with three original foil pack illustrations. Tap to reveal one card at a time, then view all five together. Reveal progress and rewards survive reloads. Duplicate Missions balance removed. Existing saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.0 — Combat and Collection Fixes' --notes 'Centred readable Play button and Aliens, Battle and Missions headings. Separate currency counters. Dedicated Card Packs tab with three original foil pack illustrations. Tap to reveal one card at a time, then view all five together. Reveal progress and rewards survive reloads. Duplicate Missions balance removed. Existing saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
