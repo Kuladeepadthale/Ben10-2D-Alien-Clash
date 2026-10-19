@@ -83,3 +83,19 @@ const ladderCastBase=cast;cast=function(f,type){const ok=ladderCastBase(f,type);
 const ladderAIBase=ai;ai=function(dt){const before=aiWait;ladderAIBase(dt);if(selectedMode==='campaign'&&aiWait>0&&aiWait>before-dt+.00001)aiWait*=threatTuning(threatStage+1).reaction;};
 renderHeroProgress();saveProfile();
 
+
+// Four illustrated choices share one fixed Play viewport.
+const modeScenes={
+ campaign:{title:'Threat Ladder',copy:'30 classic villain duels',tag:'STAGE CAMPAIGN',heroes:[0],villain:29,mark:'VS'},
+ versus:{title:'Battle',copy:'Alien vs alien · Best of 3',tag:'QUICK MATCH',heroes:[0,2],mark:'VS'},
+ survival:{title:'Survival',copy:'One life · Endless rivals',tag:'ENDURANCE',heroes:[1,3,10],mark:'∞'},
+ training:{title:'Testing',copy:'All 32 aliens · Free practice',tag:'TRAINING LAB',heroes:[7],mark:'⌖'}
+};
+for(const card of document.querySelectorAll('#screen-modes [data-mode]')){
+ const scene=modeScenes[card.dataset.mode];if(!scene)continue;
+ const art=document.createElement('div');art.className='mode-scene mode-scene-'+card.dataset.mode;art.setAttribute('aria-hidden','true');
+ scene.heroes.forEach((id,n)=>{const cv=document.createElement('canvas');cv.width=240;cv.height=280;cv.className='mode-fighter mode-fighter-'+n;art.appendChild(cv);classicReady.then(()=>drawClassicPortrait(cv.getContext('2d'),id,240,280)).catch(()=>{});});
+ if(Number.isInteger(scene.villain)){const img=document.createElement('img');img.src=VILLAIN_DATA.characters[scene.villain].portrait;img.alt='';img.className='mode-villain';art.appendChild(img);}
+ const mark=document.createElement('b');mark.className='mode-scene-mark';mark.textContent=scene.mark;art.appendChild(mark);
+ const text=document.createElement('div');text.className='mode-caption';const tag=document.createElement('span');tag.textContent=scene.tag;const title=document.createElement('h2');title.textContent=scene.title;const copy=document.createElement('p');copy.textContent=scene.copy;text.append(tag,title,copy);card.replaceChildren(art,text);card.setAttribute('aria-label',(card.dataset.mode==='campaign'?THREAT_NAME:scene.title)+' — '+scene.copy);
+}
