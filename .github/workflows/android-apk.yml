@@ -51,6 +51,7 @@ jobs:
           python3 ci/check-full-poses.py
           node ci/check-cels.cjs
           node ci/check-threat-ladder.cjs
+          node ci/check-card-shop.cjs
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
           node ci/check-threat-layout.cjs
           node ci/check-alien-force.cjs
@@ -62,6 +63,7 @@ jobs:
           node ci/check-progression-layout.cjs
           node ci/check-alien-detail.cjs
           node ci/check-home-team.cjs
+          node ci/check-card-shop-layout.cjs
           for script in web/*.js; do node --check "$script"; done
       - name: Build APK
         run: gradle -p android --no-daemon assembleDebug
@@ -98,7 +100,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.7 — Portal Poses' --notes 'Three ground portals with a front centre platform, owned-alien picker and five saved full-body poses per slot. Play below the title on the left, smaller four-button navigation, clearer Survival artwork, rarity-sorted cards and dimmed locked aliens with lock icons. Existing saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.8 — Alien Card Vault' --notes 'Omni Coins buy five-card packs with visible rarity odds. New alien cards unlock immediately; every duplicate grants one Taydenite diamond. Direct alien unlocks cost 5/10/15/20/25 diamonds by rarity, without Hero Level requirements. Rarity changes base health and attack power. Custom currency icons, tappable home aliens, refreshed Play button and even Career mission tiles. Existing saves and unlocked aliens preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
