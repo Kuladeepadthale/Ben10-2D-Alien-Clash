@@ -100,7 +100,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.8 — Alien Card Vault' --notes 'Omni Coins buy five-card packs with visible rarity odds. New alien cards unlock immediately; every duplicate grants one Taydenite diamond. Direct alien unlocks cost 5/10/15/20/25 diamonds by rarity, without Hero Level requirements. Rarity changes base health and attack power. Custom currency icons, tappable home aliens, refreshed Play button and even Career mission tiles. Existing saves and unlocked aliens preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.9 — Tap to Reveal' --notes 'Centred readable Play button and Aliens, Battle and Missions headings. Separate currency counters. Dedicated Card Packs tab with three original foil pack illustrations. Tap to reveal one card at a time, then view all five together. Reveal progress and rewards survive reloads. Duplicate Missions balance removed. Existing saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
