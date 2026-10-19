@@ -51,6 +51,8 @@ jobs:
           python3 ci/check-full-poses.py
           node ci/check-cels.cjs
           node ci/check-threat-ladder.cjs
+          /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
+          node ci/check-threat-layout.cjs
           node ci/check-alien-force.cjs
           node ci/check-expansion.cjs
           node ci/check-footwork-dash.cjs
