@@ -101,7 +101,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.0 — Combat and Collection Fixes' --notes 'Centred readable Play button and Aliens, Battle and Missions headings. Separate currency counters. Dedicated Card Packs tab with three original foil pack illustrations. Tap to reveal one card at a time, then view all five together. Reveal progress and rewards survive reloads. Duplicate Missions balance removed. Existing saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.0 — Combat and Collection Fixes' --notes 'Matching coin and diamond counters. Unlocked aliens appear first, followed by locked aliens grouped by rarity. Larger full foil pack images with a compact name and card-count footer. Alien selection opens battle-mode selection. Improved melee reach and hitboxes, aimed waves and lobbed attacks, and reliable landing-impact damage. All 32 aliens tested with native animation emitters at 30 and 60fps. Existing saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
