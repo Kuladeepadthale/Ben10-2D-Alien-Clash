@@ -8,7 +8,7 @@ upgradeDeck.options.portrait=2;upgradeDeck.options.landscape=3;upgradeDeck.optio
 let alienUpgradeOpen=false,alienPortraitToken=0;
 function renderAlienInfo(){
  const a=aliens[selected],owned=ownsAlien(selected),test=testingMode();
- $('alienTitle').textContent=a.name;$('alienSpecies').textContent=a.species;
+ $('alienTitle').textContent=a.name;$('alienSpecies').textContent=cardRank(selected).symbol+' '+cardRank(selected).name+' · '+a.species;
  $('alienStory').textContent=a.desc;
  $('alienAbilities').replaceChildren(...[...a.skills,a.ultimate].map((s,i)=>{
   const row=document.createElement('div'),name=document.createElement('strong'),info=document.createElement('span');
@@ -16,7 +16,7 @@ function renderAlienInfo(){
   row.append(name,info);return row;
  }));
  $('alienUse').textContent=test?'Test alien':'Select for battle';$('alienUse').disabled=isLocked()||(!owned&&!test);
- $('alienUnlock').hidden=owned||test;$('alienUnlock').textContent='Unlock · '+ALIEN_PRICES[selected]+' coins';
+ $('alienUnlock').hidden=owned||test;$('alienUnlock').textContent='Unlock · '+ALIEN_PRICES[selected].toLocaleString()+' points';
  $('alienUnlock').disabled=isLocked()||!career.owned.length||profile.credits<ALIEN_PRICES[selected];
  $('alienUpgrade').disabled=isLocked()||!owned;$('alienUpgrade').textContent=alienUpgradeOpen?'Story & powers':'Upgrade';
  $('alienPowers').hidden=alienUpgradeOpen;$('alienPowers').disabled=isLocked()||(!owned&&!test);
@@ -52,7 +52,6 @@ document.querySelector('.home-shortcuts').hidden=true;
 document.querySelector('.home-bottom').hidden=true;
 document.querySelector('.home-copy > p:not(.eyebrow)').textContent='Choose your alien. Enter the arena.';
 document.querySelector('.home-copy .eyebrow').hidden=true;
-rosterDeck.options.portrait=6;rosterDeck.options.landscape=6;rosterDeck.options.short=6;
-rosterDeck.options.columns=(p,n)=>p?Math.min(2,n):Math.min(6,n);
-rosterDeck.options.rows=(p,n)=>p?Math.ceil(n/2):1;
+// Keep every card mounted for native vertical touch scrolling.
+rosterDeck.options.scroll=true;
 rosterDeck.capacity=null;refreshMenus();
