@@ -34,3 +34,30 @@ body:not(.in-battle) #threatStatus{margin:0;font-size:15px!important;color:#e8db
  .threat-card img{max-height:100px}.threat-card strong{font-size:16px}.threat-card small{font-size:12px}
  .threat-detail{grid-template-columns:25% 1fr;gap:10px}.threat-brief h1{font-size:24px!important;line-height:1.1!important;margin-bottom:3px}.threat-brief h2{display:none}.threat-brief p{font-size:15px!important;line-height:1.2!important;margin-bottom:5px}#threatStats{font-size:14px;padding:4px 6px}.threat-actions p{font-size:14px!important;line-height:1.2!important}.threat-options{gap:5px}
 }
+
+/* Play is a fitted illustrated chooser: all four modes, no scroll or pagination. */
+body:not(.in-battle) #screen-modes{height:100%!important;min-height:0!important;overflow:hidden!important;padding:10px 16px!important;gap:8px!important;}
+body:not(.in-battle) #screen-modes .page-title{margin:0!important;flex:none;}
+body:not(.in-battle) #screen-modes .page-title h1{font-size:clamp(22px,3vw,30px)!important;line-height:1.1;}
+body:not(.in-battle) #screen-modes .page-title>p{display:none!important;}
+body:not(.in-battle) #screen-modes .screen-content{flex:1;min-height:0!important;overflow:hidden!important;}
+body:not(.in-battle) #screen-modes .screen-footer{display:none!important;}
+body:not(.in-battle) #screen-modes .mode-grid{height:100%;min-height:0!important;flex:1;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;gap:10px!important;overflow:hidden!important;}
+body:not(.in-battle) #screen-modes .mode-card{height:100%;width:100%;min-width:0;min-height:0!important;max-height:none;display:flex;flex-direction:column;justify-content:flex-start;padding:0!important;gap:0;border-radius:18px;overflow:hidden;text-align:left;box-shadow:inset 0 0 20px #ffffff0a;}
+.mode-scene{position:relative;flex:1;min-height:0;width:100%;isolation:isolate;background:radial-gradient(ellipse at 50% 75%,#a5ff744d,transparent 65%),repeating-linear-gradient(135deg,transparent 0 22px,#ffffff04 22px 24px);overflow:hidden;}
+.mode-scene:before{content:'';position:absolute;inset:12% 20%;border:2px solid #b7ff5640;border-radius:50%;box-shadow:0 0 25px #a7ff4425,inset 0 0 25px #a7ff4420;transform:rotate(-20deg);}
+.mode-scene-campaign{background:radial-gradient(ellipse,#e7a55255,transparent 70%),linear-gradient(135deg,#30241d,#12211c);}
+.mode-scene-survival{background:radial-gradient(ellipse,#b787ff55,transparent 70%),linear-gradient(135deg,#29203e,#111f2c);}
+.mode-scene-training{background:radial-gradient(ellipse,#5fe6ff55,transparent 70%),repeating-linear-gradient(0deg,#0e2e3c 0 18px,#245061 19px 20px);}
+.mode-fighter,.mode-villain{position:absolute;height:96%;width:60%;bottom:0;left:0;object-fit:contain;filter:drop-shadow(0 6px 9px #0009);z-index:1;}
+.mode-fighter-1,.mode-villain{left:auto;right:0;transform:scaleX(-1);}
+.mode-scene-survival .mode-fighter{width:48%;height:85%;}.mode-scene-survival .mode-fighter-1{left:26%;right:auto;transform:none;height:100%;z-index:2;}.mode-scene-survival .mode-fighter-2{left:auto;right:0;transform:scaleX(-1);}
+.mode-scene-training .mode-fighter{width:80%;left:10%;height:100%;}
+.mode-scene-mark{position:absolute;z-index:3;left:50%;top:48%;transform:translate(-50%,-50%) rotate(-9deg);font-size:clamp(22px,4vw,42px);color:#f1ffb6;text-shadow:0 3px 0 #112711,0 0 12px #000;font-style:italic;}
+.mode-scene-survival .mode-scene-mark,.mode-scene-training .mode-scene-mark{left:auto;right:7%;top:16%;transform:none;font-size:24px;}
+body:not(.in-battle) #screen-modes .mode-caption{width:100%;flex:none;padding:9px 10px;background:linear-gradient(135deg,#091c17ed,#10271fed);border-top:1px solid #b5ff5e30;box-sizing:border-box;}
+body:not(.in-battle) #screen-modes .mode-caption>span{display:block;font-size:9px;font-weight:800;letter-spacing:.8px;color:#d0f2a5;}
+body:not(.in-battle) #screen-modes .mode-card h2{font-size:clamp(18px,2.5vw,25px)!important;line-height:1.1;margin:4px 0!important;overflow-wrap:normal;}
+body:not(.in-battle) #screen-modes .mode-card p{font-size:clamp(11px,1.4vw,15px)!important;line-height:1.3!important;margin:0!important;min-height:0;color:#d3e4d6;}
+@media(orientation:landscape){body:not(.in-battle) #screen-modes .mode-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:minmax(0,1fr)!important;}}
+@media(max-height:400px) and (orientation:landscape){body:not(.in-battle) #screen-modes{padding:5px 12px!important;gap:5px!important;}body:not(.in-battle) #screen-modes .mode-caption{padding:6px;}body:not(.in-battle) #screen-modes .mode-caption>span{font-size:8px;letter-spacing:.1px;}body:not(.in-battle) #screen-modes .mode-card h2{font-size:18px!important;}}
