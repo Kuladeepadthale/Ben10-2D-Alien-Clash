@@ -72,3 +72,9 @@ body:not(.in-battle) #screen-characters .card .card-rank{color:var(--rank-color)
 body:not(.in-battle) #screen-characters .ownership{font-size:clamp(8px,1.25vw,12px)!important;padding:2px!important;white-space:normal;line-height:1.1;text-align:center;}
 body:not(.in-battle) #screen-characters .collection-notice{font-size:12px!important;line-height:1.15;}
 body:not(.in-battle) #screen-characters .deck-nav{display:none!important;}
+
+/* Prioritise artwork: compact card labels and a larger portrait surface. */
+body:not(.in-battle) #screen-characters .card{padding:2px!important;gap:1px!important;}
+body:not(.in-battle) #screen-characters .card canvas{width:100%!important;flex:1 1 0!important;min-height:0!important;object-fit:contain;}
+body:not(.in-battle) #screen-characters .card .card-rank{font-size:clamp(8px,1.25vw,12px);line-height:1.05;}
+body:not(.in-battle) #screen-characters .ownership{padding:1px 2px!important;line-height:1.05;}
