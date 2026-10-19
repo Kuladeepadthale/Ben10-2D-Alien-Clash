@@ -98,7 +98,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.6 — Three-Watch Home Team' --notes 'New title-only arena background without static aliens. Three Omnitrix watch slots with plus buttons to select owned aliens, saved unique team slots and active alien selection. Previous missions, starter improvements and game modes preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.7 — Portal Poses' --notes 'Three ground portals with a front centre platform, owned-alien picker and five saved full-body poses per slot. Play below the title on the left, smaller four-button navigation, clearer Survival artwork, rarity-sorted cards and dimmed locked aliens with lock icons. Existing saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
