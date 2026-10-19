@@ -97,7 +97,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.4 — Bigger Alien Portraits' --notes 'Larger close-up alien portraits on four-column character cards, with more space for artwork. Tap a card for the full character view, powers and upgrades. Scrolling, card ranks, battle modes and saved progress preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.5 — Mission Control & Omnitrix Menus' --notes 'Three starter aliens fit on one screen. Omnitrix Roster and Battle Zone themed headings. Compact Mission Control with genuine daily, weekly and monthly goals plus saved Career milestones. Existing characters, ranks, modes and saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
