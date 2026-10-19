@@ -97,7 +97,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.0 — Plumber Threat Ladder' --notes 'Adds Plumber Threat Ladder: 30 sequential Classic villain battles, increasing difficulty, dedicated villain artwork and combat kits. Separate Hero Level and XP rewards for completed fights, missions, unlocks and upgrades. Existing saves and 32 playable aliens preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 6.1 — Ranked Cards & Threat Escalation' --notes 'Five color-coded card ranks with 1000-5000 point unlocks. Five-column vertically scrolling collection with ten cards per viewport. Stronger villain health, damage and reactions at each stage; longer player power cooldowns and faster enemy cooldowns. Separate Hero XP and existing saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+
 
 
 
