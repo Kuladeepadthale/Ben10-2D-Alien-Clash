@@ -133,4 +133,4 @@ renderStarter();renderMissions();select(career.owned.includes(career.selected)?c
 for(const [screen,first,second,icon] of [['characters','ALIENS','','aliens'],['modes','BATTLE','','block']]){const heading=$('screen-'+screen).querySelector('.page-title');heading.classList.add('arena-heading');heading.querySelector('h1').innerHTML='<i class="arena-heading-icon">'+uiIcon(icon)+'</i><span class="arena-heading-title">'+first+' <em>'+second+'</em></span>';}
 
 // Sorting changes display order only; selection, prices and ownership use stable alien IDs.
-const categoryCards=[...$('roster').children];categoryCards.forEach((card,id)=>card.dataset.alien=id);categoryCards.sort((a,b)=>ALIEN_RANKS[Number(a.dataset.alien)]-ALIEN_RANKS[Number(b.dataset.alien)]||Number(a.dataset.alien)-Number(b.dataset.alien));$('roster').replaceChildren(...categoryCards);careerRefresh();
+const categoryCards=[...$('roster').children];categoryCards.sort((a,b)=>ALIEN_RANKS[Number(a.dataset.alien)]-ALIEN_RANKS[Number(b.dataset.alien)]||Number(a.dataset.alien)-Number(b.dataset.alien));$('roster').replaceChildren(...categoryCards);careerRefresh();
