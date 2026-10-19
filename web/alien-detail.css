@@ -59,3 +59,16 @@ body:not(.in-battle) .app-bottom button[hidden]{display:none!important}
  body:not(.in-battle) #screen-characters .card canvas{max-height:85px}
  body:not(.in-battle) #alienUpgradePanel .upgrade{padding:8px}
 }
+
+
+/* Five cards across, two complete rows per collection viewport. Swipe for the rest. */
+body:not(.in-battle) #characterContent>.deck-wrap{overflow:hidden;display:flex;flex-direction:column;height:100%;}
+body:not(.in-battle) #roster{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;grid-template-rows:none!important;grid-auto-rows:calc((100% - 6px)/2)!important;align-content:start;gap:6px!important;overflow-y:auto!important;overflow-x:hidden!important;touch-action:pan-y;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scroll-snap-type:y proximity;padding:0 2px 0 0!important;}
+body:not(.in-battle) #screen-characters .card{scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-width:0!important;padding:4px 2px!important;border:1px solid var(--rank-color,#a9bac7)!important;background:linear-gradient(155deg,color-mix(in srgb,var(--rank-color) 30%,#10191f),#091117)!important;gap:2px;overflow:hidden;}
+body:not(.in-battle) #screen-characters .card.active{outline:2px solid var(--rank-color);outline-offset:-3px;}
+body:not(.in-battle) #screen-characters .card canvas{width:100%!important;height:0;min-height:0;max-height:none;flex:1;object-fit:contain;}
+body:not(.in-battle) #screen-characters .card span{font-size:clamp(9px,1.6vw,16px)!important;line-height:1.12;white-space:normal;overflow-wrap:anywhere;text-align:center;flex:none;}
+body:not(.in-battle) #screen-characters .card .card-rank{color:var(--rank-color);font-size:clamp(8px,1.4vw,13px);line-height:1.15;text-align:center;white-space:normal;}
+body:not(.in-battle) #screen-characters .ownership{font-size:clamp(8px,1.25vw,12px)!important;padding:2px!important;white-space:normal;line-height:1.1;text-align:center;}
+body:not(.in-battle) #screen-characters .collection-notice{font-size:12px!important;line-height:1.15;}
+body:not(.in-battle) #screen-characters .deck-nav{display:none!important;}
