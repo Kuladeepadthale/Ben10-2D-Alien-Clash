@@ -89,3 +89,12 @@ body:not(.in-battle) #screen-packs .card-pack .pack-odds{font-size:18px!importan
 @media(orientation:portrait){body:not(.in-battle) #screen-packs .card-pack-list{display:flex!important;overflow-x:auto!important;scroll-snap-type:x mandatory;gap:12px;padding-bottom:6px;}body:not(.in-battle) #screen-packs .card-pack{flex:0 0 90%;scroll-snap-align:center;}.pack-bottom-row{padding:10px 5px 4px;}body:not(.in-battle) #screen-packs .card-pack h2{font-size:24px!important;}}
 @media(max-width:420px){body:not(.in-battle) .app-top{gap:4px!important;padding-left:8px!important;padding-right:8px!important;}body:not(.in-battle) .top-actions #wallet,body:not(.in-battle) .top-actions #diamondWallet{width:72px!important;min-width:72px!important;}}
 @media(prefers-reduced-motion:reduce){.pack-front{transition:none!important;}}
+
+/* A single compact caption row leaves the packet most of the screen. */
+body:not(.in-battle) #screen-packs .card-pack{position:relative;}
+body:not(.in-battle) #screen-packs .pack-bottom-row{padding:4px 2px 0;}
+body:not(.in-battle) #screen-packs .pack-bottom-row>div{display:flex;align-items:center;justify-content:space-between;gap:6px;width:100%;}
+body:not(.in-battle) #screen-packs .pack-card-count{margin:0;white-space:nowrap;letter-spacing:.5px;}
+body:not(.in-battle) #screen-packs .card-pack .buy-pack{position:absolute;right:7px;top:7px;z-index:2;box-shadow:0 3px 12px #000a;}
+body:not(.in-battle) #screen-packs .card-pack .pack-odds{position:absolute;left:7px;top:7px;z-index:2;color:#fff;background:#07180ed9;border:1px solid #91b97b;border-radius:50%;width:30px;}
+@media(max-height:500px) and (orientation:landscape){body:not(.in-battle) #screen-packs .card-pack{padding:4px!important;}body:not(.in-battle) #screen-packs .pack-bottom-row{padding:2px 1px 0;}}
