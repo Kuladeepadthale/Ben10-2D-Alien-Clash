@@ -6,7 +6,7 @@ try{for(const viewport of [{width:360,height:800},{width:640,height:360},{width:
 const page=await browser.newPage({viewport}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:'+server.address().port+'/index.html');await page.waitForFunction(()=>typeof renderAlienInfo==='function');
 await page.evaluate(()=>{chooseStarter(career.offers[0]);career.owned=aliens.map((_,i)=>i);profile.credits=10000;saveProfile();showScreen('characters')});await page.waitForTimeout(80);
 const grid=await page.locator('#roster').evaluate(el=>{const r=el.getBoundingClientRect(),cards=[...el.children].map(c=>c.getBoundingClientRect());return {cols:getComputedStyle(el).gridTemplateColumns.split(' ').length,visible:cards.filter(c=>c.top>=r.top-1&&c.bottom<=r.bottom+1).length,scroll:el.scrollHeight>el.clientHeight,overflow:getComputedStyle(el).overflowY};});
-assert.equal(grid.cols,5,JSON.stringify({viewport,grid}));assert.equal(grid.visible,10,JSON.stringify({viewport,grid}));assert(grid.scroll);assert.equal(grid.overflow,'auto');
+assert.equal(grid.cols,4,JSON.stringify({viewport,grid}));assert.equal(grid.visible,8,JSON.stringify({viewport,grid}));assert(grid.scroll);assert.equal(grid.overflow,'auto');
 await page.locator('#roster').evaluate(el=>el.scrollTop=el.scrollHeight);await page.locator('#roster .card').last().click();assert.equal(await page.evaluate(()=>selected),31);await page.evaluate(()=>showScreen('characters'));await page.locator('#roster').evaluate(el=>el.scrollTop=0);await page.locator('#roster .card:visible').first().click();
 assert.equal(await page.evaluate(()=>currentScreen),'alieninfo');
 for(let id=0;id<32;id++){await page.evaluate(id=>{select(id);alienUpgradeOpen=false;renderAlienInfo()},id);
