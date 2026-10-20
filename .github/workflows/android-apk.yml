@@ -69,6 +69,7 @@ jobs:
           node ci/check-alien-combat.cjs
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
           node ci/check-multiplayer-ui.cjs
+          node ci/check-accounts.cjs
           node ci/check-threat-layout.cjs
           node ci/check-alien-force.cjs
           node ci/check-expansion.cjs
@@ -81,7 +82,6 @@ jobs:
           node ci/check-home-team.cjs
           node ci/check-card-shop-layout.cjs
           node ci/check-power-icons.cjs
-          node ci/check-accounts.cjs
           for script in web/*.js; do node --check "$script"; done
       - name: Build standard and separate-install APKs
         run: |
@@ -102,7 +102,7 @@ jobs:
           assert len(villains['characters'])==30
           assert all('assets/'+v['src'] in names and 'assets/'+v['portrait'] in names for v in villains['characters'])
           assert 'assets/index.html' in names and 'assets/cel-player.js' in names
-          assert all('assets/'+f in names for f in ['account-boot.js','account-config.js','account-cloud.js','account.js','account.css','ranked-rules.js','multiplayer-config.js','multiplayer.js','multiplayer.css'])
+          assert all('assets/'+f in names for f in ['account-boot.js','account-config.js','account-cloud.js','account.js','account.css','ranked-rules.js','multiplayer-config.js','multiplayer.js','multiplayer.css','player-name.js','player-experience.js','player-experience.css'])
           assert b'wss://omnitrix-ranked-arena.kuladeepadthale.workers.dev/arena' in z.read('assets/multiplayer-config.js')
           assert 'assets/progression.js' in names and 'assets/progression.css' in names
           assert 'assets/expansion-effects.js' in names
@@ -125,10 +125,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.8 — Installation Conflict Recovery' --notes 'Installation recovery: choose Ben10-Alien-Clash-Online.apk to install Ben 10 Alien Clash Online beside the old game without deleting it. Guest data stays in the old app and is not automatically transferred; sign in to restore only previously cloud-synced progress. Both builds now use an explicitly pinned development signer for stable future updates. The standard Ben10-2D-Alien-Clash.apk cannot update an old differently signed installation. Default online server and all 7.7 gameplay retained. See ci/signing/README.md. Development test APKs.' --prerelease --target "$GITHUB_SHA"
-
-
-
-
-
-
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.9 — Player Identity and Results' --notes 'Choose Ben10-Alien-Clash-Online.apk to update Online 7.8 with the same pinned test signer. Adds account icon matching Settings, illustrated login/signup polish, required public player names saved through Firebase Auth and used by the battle server, player-name editing for existing accounts, animated connection dots, a simple opponent-search countdown, and a fitted results dashboard with coins/Hero XP/Rank Points. Bot status remains labelled in battles/results. Server source updated for verified Firebase names; Cloudflare must deploy the latest main commit. Existing Online progress retained. Legacy differently signed standard apps still require separate installation. Development test APKs.' --prerelease --target "$GITHUB_SHA"
