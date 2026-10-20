@@ -1,0 +1,1447 @@
+{
+  "version": 83,
+  "columns": 5,
+  "rows": 4,
+  "entries": [
+    {
+      "alien": 0,
+      "alienName": "Heatblast",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 0,
+      "alienName": "Heatblast",
+      "key": "skill0",
+      "name": "Fireball",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 0,
+      "alienName": "Heatblast",
+      "key": "skill1",
+      "name": "Flame jet",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 0,
+      "alienName": "Heatblast",
+      "key": "skill2",
+      "name": "Eruption",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 0,
+      "alienName": "Heatblast",
+      "key": "ultimate",
+      "name": "Inferno storm",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 1,
+      "alienName": "Four Arms",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 1,
+      "alienName": "Four Arms",
+      "key": "skill0",
+      "name": "Thunderclap",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 1,
+      "alienName": "Four Arms",
+      "key": "skill1",
+      "name": "Ground pound",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 1,
+      "alienName": "Four Arms",
+      "key": "skill2",
+      "name": "Four-fist barrage",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 1,
+      "alienName": "Four Arms",
+      "key": "ultimate",
+      "name": "Titan impact",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 2,
+      "alienName": "Diamondhead",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 2,
+      "alienName": "Diamondhead",
+      "key": "skill0",
+      "name": "Crystal volley",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 2,
+      "alienName": "Diamondhead",
+      "key": "skill1",
+      "name": "Crystal spikes",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 2,
+      "alienName": "Diamondhead",
+      "key": "skill2",
+      "name": "Crystal blade",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 2,
+      "alienName": "Diamondhead",
+      "key": "ultimate",
+      "name": "Crystal cascade",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 3,
+      "alienName": "XLR8",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 3,
+      "alienName": "XLR8",
+      "key": "skill0",
+      "name": "Velocity strike",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 3,
+      "alienName": "XLR8",
+      "key": "skill1",
+      "name": "Cyclone",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 3,
+      "alienName": "XLR8",
+      "key": "skill2",
+      "name": "Ricochet rush",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 3,
+      "alienName": "XLR8",
+      "key": "ultimate",
+      "name": "Mach-speed barrage",
+      "atlas": "ability-atlas-00-v83.png",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "alien": 4,
+      "alienName": "Wildmutt",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 4,
+      "alienName": "Wildmutt",
+      "key": "skill0",
+      "name": "Predator pounce",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 4,
+      "alienName": "Wildmutt",
+      "key": "skill1",
+      "name": "Claw flurry",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 4,
+      "alienName": "Wildmutt",
+      "key": "skill2",
+      "name": "Savage lunge",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 4,
+      "alienName": "Wildmutt",
+      "key": "ultimate",
+      "name": "Apex hunt",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 5,
+      "alienName": "Grey Matter",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 5,
+      "alienName": "Grey Matter",
+      "key": "skill0",
+      "name": "Shock gadget",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 5,
+      "alienName": "Grey Matter",
+      "key": "skill1",
+      "name": "Proximity trap",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 5,
+      "alienName": "Grey Matter",
+      "key": "skill2",
+      "name": "Scrap grenade",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 5,
+      "alienName": "Grey Matter",
+      "key": "ultimate",
+      "name": "Overclocked arsenal",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 6,
+      "alienName": "Upgrade",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 6,
+      "alienName": "Upgrade",
+      "key": "skill0",
+      "name": "Optic beam",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 6,
+      "alienName": "Upgrade",
+      "key": "skill1",
+      "name": "Liquid-metal strike",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 6,
+      "alienName": "Upgrade",
+      "key": "skill2",
+      "name": "Tech pulse",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 6,
+      "alienName": "Upgrade",
+      "key": "ultimate",
+      "name": "Overload beam",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 7,
+      "alienName": "Stinkfly",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 7,
+      "alienName": "Stinkfly",
+      "key": "skill0",
+      "name": "Goo shot",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 7,
+      "alienName": "Stinkfly",
+      "key": "skill1",
+      "name": "Acid volley",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 7,
+      "alienName": "Stinkfly",
+      "key": "skill2",
+      "name": "Stinger dive",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 7,
+      "alienName": "Stinkfly",
+      "key": "ultimate",
+      "name": "Swarm of slime",
+      "atlas": "ability-atlas-01-v83.png",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "alien": 8,
+      "alienName": "Ripjaws",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 8,
+      "alienName": "Ripjaws",
+      "key": "skill0",
+      "name": "Crushing bite",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 8,
+      "alienName": "Ripjaws",
+      "key": "skill1",
+      "name": "Raking claws",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 8,
+      "alienName": "Ripjaws",
+      "key": "skill2",
+      "name": "Predator leap",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 8,
+      "alienName": "Ripjaws",
+      "key": "ultimate",
+      "name": "Deep-sea frenzy",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 9,
+      "alienName": "Ghostfreak",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 9,
+      "alienName": "Ghostfreak",
+      "key": "skill0",
+      "name": "Phantom lunge",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 9,
+      "alienName": "Ghostfreak",
+      "key": "skill1",
+      "name": "Tentacle lash",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 9,
+      "alienName": "Ghostfreak",
+      "key": "skill2",
+      "name": "Spectral pulse",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 9,
+      "alienName": "Ghostfreak",
+      "key": "ultimate",
+      "name": "Nightmare sweep",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 10,
+      "alienName": "Cannonbolt",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 10,
+      "alienName": "Cannonbolt",
+      "key": "skill0",
+      "name": "Rolling strike",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 10,
+      "alienName": "Cannonbolt",
+      "key": "skill1",
+      "name": "Shell slam",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 10,
+      "alienName": "Cannonbolt",
+      "key": "skill2",
+      "name": "Rebound rush",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 10,
+      "alienName": "Cannonbolt",
+      "key": "ultimate",
+      "name": "Orbit breaker",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 11,
+      "alienName": "Wildvine",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 11,
+      "alienName": "Wildvine",
+      "key": "skill0",
+      "name": "Vine lash",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 11,
+      "alienName": "Wildvine",
+      "key": "skill1",
+      "name": "Seed bomb",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 11,
+      "alienName": "Wildvine",
+      "key": "skill2",
+      "name": "Root eruption",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 11,
+      "alienName": "Wildvine",
+      "key": "ultimate",
+      "name": "Overgrowth",
+      "atlas": "ability-atlas-02-v83.png",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "alien": 12,
+      "alienName": "Blitzwolfer",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 12,
+      "alienName": "Blitzwolfer",
+      "key": "skill0",
+      "name": "Sonic howl",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 12,
+      "alienName": "Blitzwolfer",
+      "key": "skill1",
+      "name": "Claw flurry",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 12,
+      "alienName": "Blitzwolfer",
+      "key": "skill2",
+      "name": "Predator pounce",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 12,
+      "alienName": "Blitzwolfer",
+      "key": "ultimate",
+      "name": "Moonlit howl",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 13,
+      "alienName": "Snare-oh",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 13,
+      "alienName": "Snare-oh",
+      "key": "skill0",
+      "name": "Bandage lash",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 13,
+      "alienName": "Snare-oh",
+      "key": "skill1",
+      "name": "Binding wrap",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 13,
+      "alienName": "Snare-oh",
+      "key": "skill2",
+      "name": "Sand rush",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 13,
+      "alienName": "Snare-oh",
+      "key": "ultimate",
+      "name": "Royal bind",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 14,
+      "alienName": "Frankenstrike",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 14,
+      "alienName": "Frankenstrike",
+      "key": "skill0",
+      "name": "Lightning discharge",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 14,
+      "alienName": "Frankenstrike",
+      "key": "skill1",
+      "name": "Charged fist",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 14,
+      "alienName": "Frankenstrike",
+      "key": "skill2",
+      "name": "Shockwave",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 14,
+      "alienName": "Frankenstrike",
+      "key": "ultimate",
+      "name": "Thunderstorm",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 15,
+      "alienName": "Upchuck",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 15,
+      "alienName": "Upchuck",
+      "key": "skill0",
+      "name": "Plasma spit",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 15,
+      "alienName": "Upchuck",
+      "key": "skill1",
+      "name": "Explosive burp",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 15,
+      "alienName": "Upchuck",
+      "key": "skill2",
+      "name": "Tongue lash",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 15,
+      "alienName": "Upchuck",
+      "key": "ultimate",
+      "name": "Digestive barrage",
+      "atlas": "ability-atlas-03-v83.png",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "alien": 16,
+      "alienName": "Ditto",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 16,
+      "alienName": "Ditto",
+      "key": "skill0",
+      "name": "Double trouble",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 16,
+      "alienName": "Ditto",
+      "key": "skill1",
+      "name": "Clone flurry",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 16,
+      "alienName": "Ditto",
+      "key": "skill2",
+      "name": "Tag-team rush",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 16,
+      "alienName": "Ditto",
+      "key": "ultimate",
+      "name": "Multiplicity",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 17,
+      "alienName": "Eye Guy",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 17,
+      "alienName": "Eye Guy",
+      "key": "skill0",
+      "name": "Optic shot",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 17,
+      "alienName": "Eye Guy",
+      "key": "skill1",
+      "name": "Chest beam",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 17,
+      "alienName": "Eye Guy",
+      "key": "skill2",
+      "name": "Omni pulse",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 17,
+      "alienName": "Eye Guy",
+      "key": "ultimate",
+      "name": "All-seeing beam",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 18,
+      "alienName": "Way Big",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 18,
+      "alienName": "Way Big",
+      "key": "skill0",
+      "name": "Cosmic ray",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 18,
+      "alienName": "Way Big",
+      "key": "skill1",
+      "name": "Titan stomp",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 18,
+      "alienName": "Way Big",
+      "key": "skill2",
+      "name": "Meteor strike",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 18,
+      "alienName": "Way Big",
+      "key": "ultimate",
+      "name": "Cosmic judgement",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 19,
+      "alienName": "Arctiguana",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 19,
+      "alienName": "Arctiguana",
+      "key": "skill0",
+      "name": "Frost breath",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 19,
+      "alienName": "Arctiguana",
+      "key": "skill1",
+      "name": "Ice shard",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 19,
+      "alienName": "Arctiguana",
+      "key": "skill2",
+      "name": "Glacial slam",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 19,
+      "alienName": "Arctiguana",
+      "key": "ultimate",
+      "name": "Absolute zero",
+      "atlas": "ability-atlas-04-v83.png",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "alien": 20,
+      "alienName": "Spitter",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 20,
+      "alienName": "Spitter",
+      "key": "skill0",
+      "name": "Pressure spit",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 20,
+      "alienName": "Spitter",
+      "key": "skill1",
+      "name": "Inflation blast",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 20,
+      "alienName": "Spitter",
+      "key": "skill2",
+      "name": "Tail sweep",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 20,
+      "alienName": "Spitter",
+      "key": "ultimate",
+      "name": "Pressure deluge",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 21,
+      "alienName": "Buzzshock",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 21,
+      "alienName": "Buzzshock",
+      "key": "skill0",
+      "name": "Spark bolt",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 21,
+      "alienName": "Buzzshock",
+      "key": "skill1",
+      "name": "Battery discharge",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 21,
+      "alienName": "Buzzshock",
+      "key": "skill2",
+      "name": "Live-wire rush",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 21,
+      "alienName": "Buzzshock",
+      "key": "ultimate",
+      "name": "Voltage overload",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 22,
+      "alienName": "Swampfire",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 22,
+      "alienName": "Swampfire",
+      "key": "skill0",
+      "name": "Fire seed",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 22,
+      "alienName": "Swampfire",
+      "key": "skill1",
+      "name": "Vine lash",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 22,
+      "alienName": "Swampfire",
+      "key": "skill2",
+      "name": "Root eruption",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 22,
+      "alienName": "Swampfire",
+      "key": "ultimate",
+      "name": "Wildfire bloom",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 23,
+      "alienName": "Echo Echo",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 23,
+      "alienName": "Echo Echo",
+      "key": "skill0",
+      "name": "Sonic shout",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 23,
+      "alienName": "Echo Echo",
+      "key": "skill1",
+      "name": "Echo barrage",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 23,
+      "alienName": "Echo Echo",
+      "key": "skill2",
+      "name": "Resonance pulse",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 23,
+      "alienName": "Echo Echo",
+      "key": "ultimate",
+      "name": "Sonic overload",
+      "atlas": "ability-atlas-05-v83.png",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "alien": 24,
+      "alienName": "Humungousaur",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 24,
+      "alienName": "Humungousaur",
+      "key": "skill0",
+      "name": "Seismic stomp",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 24,
+      "alienName": "Humungousaur",
+      "key": "skill1",
+      "name": "Titan fist",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 24,
+      "alienName": "Humungousaur",
+      "key": "skill2",
+      "name": "Dinosaur charge",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 24,
+      "alienName": "Humungousaur",
+      "key": "ultimate",
+      "name": "Colossal impact",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 25,
+      "alienName": "Jetray",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 25,
+      "alienName": "Jetray",
+      "key": "skill0",
+      "name": "Neuroshock ray",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 25,
+      "alienName": "Jetray",
+      "key": "skill1",
+      "name": "Aerial blitz",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 25,
+      "alienName": "Jetray",
+      "key": "skill2",
+      "name": "Tail bolt",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 25,
+      "alienName": "Jetray",
+      "key": "ultimate",
+      "name": "Hyperspeed barrage",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 26,
+      "alienName": "Big Chill",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 26,
+      "alienName": "Big Chill",
+      "key": "skill0",
+      "name": "Freezing breath",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 26,
+      "alienName": "Big Chill",
+      "key": "skill1",
+      "name": "Phasing lunge",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 26,
+      "alienName": "Big Chill",
+      "key": "skill2",
+      "name": "Ice wave",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 26,
+      "alienName": "Big Chill",
+      "key": "ultimate",
+      "name": "Deep freeze",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 27,
+      "alienName": "Chromastone",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 27,
+      "alienName": "Chromastone",
+      "key": "skill0",
+      "name": "Prismatic beam",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 27,
+      "alienName": "Chromastone",
+      "key": "skill1",
+      "name": "Crystal strike",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 27,
+      "alienName": "Chromastone",
+      "key": "skill2",
+      "name": "Radiant wave",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 27,
+      "alienName": "Chromastone",
+      "key": "ultimate",
+      "name": "Spectrum overload",
+      "atlas": "ability-atlas-06-v83.png",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "alien": 28,
+      "alienName": "Brainstorm",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 28,
+      "alienName": "Brainstorm",
+      "key": "skill0",
+      "name": "Neural bolt",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 28,
+      "alienName": "Brainstorm",
+      "key": "skill1",
+      "name": "Cerebral discharge",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 28,
+      "alienName": "Brainstorm",
+      "key": "skill2",
+      "name": "Static field",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 28,
+      "alienName": "Brainstorm",
+      "key": "ultimate",
+      "name": "Brainstorm surge",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 29,
+      "alienName": "Spidermonkey",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 29,
+      "alienName": "Spidermonkey",
+      "key": "skill0",
+      "name": "Web shot",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 29,
+      "alienName": "Spidermonkey",
+      "key": "skill1",
+      "name": "Four-arm flurry",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 29,
+      "alienName": "Spidermonkey",
+      "key": "skill2",
+      "name": "Acrobatic pounce",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 29,
+      "alienName": "Spidermonkey",
+      "key": "ultimate",
+      "name": "Webstorm rush",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 30,
+      "alienName": "Goop",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 30,
+      "alienName": "Goop",
+      "key": "skill0",
+      "name": "Acid glob",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 30,
+      "alienName": "Goop",
+      "key": "skill1",
+      "name": "Elastic strike",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 30,
+      "alienName": "Goop",
+      "key": "skill2",
+      "name": "Liquid rush",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 30,
+      "alienName": "Goop",
+      "key": "ultimate",
+      "name": "Acid deluge",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 31,
+      "alienName": "Alien X",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 31,
+      "alienName": "Alien X",
+      "key": "skill0",
+      "name": "Cosmic orb",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 31,
+      "alienName": "Alien X",
+      "key": "skill1",
+      "name": "Gravity pulse",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 31,
+      "alienName": "Alien X",
+      "key": "skill2",
+      "name": "Starstep",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 31,
+      "alienName": "Alien X",
+      "key": "ultimate",
+      "name": "Celestial judgement",
+      "atlas": "ability-atlas-07-v83.png",
+      "row": 3,
+      "col": 4
+    }
+  ]
+}

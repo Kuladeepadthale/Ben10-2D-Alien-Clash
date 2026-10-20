@@ -64,6 +64,7 @@ jobs:
           node ci/check-cels.cjs
           node ci/check-threat-ladder.cjs
           node ci/check-card-shop.cjs
+          python3 ci/check-ability-art.py
           node ci/check-account-cloud.cjs
           node server/build-engine.cjs
           node ci/check-multiplayer-server.mjs
@@ -105,6 +106,7 @@ jobs:
           assert 'assets/index.html' in names and 'assets/cel-player.js' in names
           assert all('assets/'+f in names for f in ['account-boot.js','account-config.js','account-cloud.js','account.js','account.css','ranked-rules.js','multiplayer-config.js','multiplayer.js','multiplayer.css','player-name.js','player-experience.js','player-experience.css'])
           assert b'wss://omnitrix-ranked-arena.kuladeepadthale.workers.dev/arena' in z.read('assets/multiplayer-config.js')
+          assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v83.png' in names for i in range(8))
           assert 'assets/progression.js' in names and 'assets/progression.css' in names
           assert 'assets/expansion-effects.js' in names
           m=json.loads(z.read('assets/assets/cels/manifest.json'))
@@ -126,7 +128,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 8.2 — Full Arena and Alien Artwork' --notes 'Update the Online app without uninstalling. Restores the full-screen fighting arena and retains arc controls. Replaces all 32 action poses for each of the ten lower-resolution Alien Force aliens with four larger native sheets per alien. Higher-resolution portrait exports and pose caching preserve the new detail. Retains 10/15/20/25/30 gem unlock prices, synchronized countdown and responsive input. Same pinned development signer and package identity.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 8.3 — Ability Artwork' --notes 'Update your existing Online app without uninstalling. Adds 160 dedicated ability illustrations for every basic strike, power and ultimate across all 32 aliens. Ability images replace pose thumbnails in equipment, alien details, setup and battle controls. Keeps full-screen fighting, arc controls, v8.2 alien art, progress and the same pinned test signer. Development test APKs.' --prerelease --target "$GITHUB_SHA"
 
 
 

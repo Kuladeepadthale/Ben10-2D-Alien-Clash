@@ -1,11 +1,8 @@
 .power-picture{position:relative;display:inline-block;width:56px;height:56px;flex:none;border-radius:50%;background:radial-gradient(ellipse at 70% 35%,var(--power-dark),#061411);border:1px solid var(--power-color);box-shadow:inset 0 0 12px #0008;overflow:hidden;vertical-align:middle;pointer-events:none;}
-.power-picture>svg{position:absolute;inset:3px 2px 3px 14px;width:calc(100% - 16px);height:calc(100% - 6px);filter:drop-shadow(0 1px 2px #000);}
-.power-picture>canvas{position:absolute;left:0;bottom:0;width:49%;height:86%;object-fit:contain;filter:drop-shadow(1px 1px 2px #000);}
 .ultimate-star{position:absolute;left:3px;top:0;color:#fff19a;font-size:15px;font-style:normal;text-shadow:0 1px 3px #000;}
 body.in-battle .touch button{border-radius:50%!important;gap:0!important;}
 body.in-battle .touch button>.power-picture{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 60% 30%,var(--power-dark),#071811);box-shadow:none;}
-body.in-battle .touch .power-picture>svg{width:calc(100% - 16px)!important;height:calc(100% - 6px)!important;}
-body.in-battle .touch .actions button{padding:3px!important;}
+body.in-battle .touch body.in-battle .touch .actions button{padding:3px!important;}
 body.in-battle .touch button::after{position:absolute;bottom:3px;left:50%;transform:translateX(-50%);padding:2px 4px;border-radius:6px;background:#06130edb;font-size:10px;line-height:1;color:#fff6b0;}
 body.in-battle .touch button[data-value=READY]::after,body.in-battle .touch button[data-value="ULT!"]::after{content:none!important;}
 body.in-battle .touch button[data-key=normal]{background:linear-gradient(145deg,#8ccf56,#183821);}
@@ -80,3 +77,7 @@ body:not(.in-battle) #alienAbilities>.ability-stat-row{display:grid;grid-templat
 .threat-card.stage-picked{border-color:#ffdc70!important;box-shadow:inset 0 0 0 2px #ffdc70;}
 @media(max-height:500px) and (orientation:landscape){body:not(.in-battle) #screen-setup .setup-panel{padding:6px!important;gap:4px;}#setupAlienArt{position:absolute;left:3%;bottom:4%;height:86%;width:35%;max-height:none;}body:not(.in-battle) #screen-setup .setup-panel:first-child{position:relative;padding-left:38%!important;}body:not(.in-battle) #setupPowers .power-picture{width:32px;height:32px;}body:not(.in-battle) #screen-setup .setup-panel>button{min-height:28px!important;padding:3px!important;}body:not(.in-battle) #screen-setup #optionControls label{margin:4px 0!important;}body:not(.in-battle) #alienAbilities .ability-stat-row>strong{font-size:14px;}body:not(.in-battle) #alienAbilities .ability-stat-row>.power-picture{width:30px;height:30px;}body:not(.in-battle) #alienAbilities>.ability-stat-row{grid-template-columns:30px minmax(0,1fr);gap:1px 5px;}}
 @media(max-height:500px) and (orientation:landscape){body:not(.in-battle) #screen-setup .setup-panel:first-child{display:grid!important;grid-template-columns:33% minmax(0,1fr);grid-template-rows:auto auto auto repeat(3,26px);padding:4px!important;gap:2px 5px;}body:not(.in-battle) #screen-setup .setup-panel:first-child h2{grid-column:2;grid-row:1;font-size:16px!important;}#setupAlienStats{grid-column:2;grid-row:2;font-size:11px;}body:not(.in-battle) #screen-setup #setupPowers{grid-column:2;grid-row:3;}body:not(.in-battle) #setupPowers .power-picture{width:24px;height:24px;}body:not(.in-battle) #screen-setup .setup-panel:first-child>button{grid-column:2;min-height:26px!important;padding:2px!important;}#setupAlienArt{width:30%;left:2%;}body:not(.in-battle) #screen-setup .setup-panel:first-child>button:nth-last-child(3){grid-row:4;}body:not(.in-battle) #screen-setup .setup-panel:first-child>button:nth-last-child(2){grid-row:5;}body:not(.in-battle) #screen-setup .setup-panel:first-child>button:last-child{grid-row:6;}}
+
+.power-picture.ability-picture{background-color:#071411!important;background-repeat:no-repeat!important;background-size:500% 400%!important;isolation:isolate}
+.power-picture .ability-load{display:none!important}
+body.in-battle .touch button>.power-picture.ability-picture{background-size:500% 400%!important;background-color:#071411!important}
