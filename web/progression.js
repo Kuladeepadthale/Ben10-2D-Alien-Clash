@@ -1,6 +1,6 @@
 'use strict';
 // Ownership, coins and mission claims share the existing atomic profile save.
-const CARD_RANKS=[{name:'Normal',symbol:'●',color:'#a9bac7',cost:5},{name:'Rare',symbol:'◆',color:'#55b9ff',cost:10},{name:'Epic',symbol:'✦',color:'#c28aff',cost:15},{name:'Heroic',symbol:'✪',color:'#ff954f',cost:20},{name:'Legendary',symbol:'♛',color:'#ffda65',cost:25}];
+const CARD_RANKS=[{name:'Normal',symbol:'●',color:'#a9bac7',cost:10},{name:'Rare',symbol:'◆',color:'#55b9ff',cost:15},{name:'Epic',symbol:'✦',color:'#c28aff',cost:20},{name:'Heroic',symbol:'✪',color:'#ff954f',cost:25},{name:'Legendary',symbol:'♛',color:'#ffda65',cost:30}];
 const ALIEN_RANKS=[2,1,2,1,0,0,1,1,0,2,1,0,1,0,2,0,1,2,4,1,0,0,2,1,3,2,2,2,1,2,1,4];
 const gemPrice=amount=>'<span class="gem-price" role="img" aria-label="'+amount+' diamonds"><i class="currency-icon gem" aria-hidden="true"></i><b>'+amount+'</b></span>';
 const cardRank=id=>CARD_RANKS[ALIEN_RANKS[id]??0];
@@ -135,3 +135,4 @@ for(const [screen,first,second,icon] of [['characters','ALIENS','','aliens'],['m
 
 // Sorting changes display order only; selection, prices and ownership use stable alien IDs.
 const categoryCards=[...$('roster').children];categoryCards.sort((a,b)=>ALIEN_RANKS[Number(a.dataset.alien)]-ALIEN_RANKS[Number(b.dataset.alien)]||Number(a.dataset.alien)-Number(b.dataset.alien));$('roster').replaceChildren(...categoryCards);careerRefresh();
+

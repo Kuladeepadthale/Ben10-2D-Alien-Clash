@@ -29,6 +29,7 @@ function updateBattleCountdown(){if(currentScreen!=='battle'){battleReady.hidden
 const readyAdvanceBase=advanceSimulation;advanceSimulation=function(dt){if(battleCountdownActive()){simulationCarry=0;return 0;}return readyAdvanceBase(dt);};
 const readyBeginBase=begin;begin=async function(newMatch=true,practice=false){const ok=await readyBeginBase(newMatch,practice);if(ok!==false&&mode==='fight'&&!online.active)startBattleCountdown();return ok;};
 const readyRenderBase=render;render=function(){updateBattleCountdown();readyRenderBase();};
-// Move jump beside attacks; movement and defence stay under the left thumb.
-document.querySelector('#touch .actions').prepend(document.querySelector('#touch [data-key=jump]'));
+// Jump, guard and dash sit above the left/right movement controls.
+document.querySelector('#touch .dpad').prepend(document.querySelector('#touch [data-key=jump]'));
+
 

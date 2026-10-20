@@ -13,11 +13,12 @@ for filename,package,label in artifacts:
  assert digests==[expected], (filename,digests)
  badging=subprocess.check_output([str(tools/'aapt'),'dump','badging',str(apk)],text=True)
  assert "package: name='"+package+"'" in badging,filename
- assert "versionCode='80'" in badging and "versionName='8.0'" in badging,filename
+ assert "versionCode='81'" in badging and "versionName='8.1'" in badging,filename
  assert "launchable-activity: name='org.alienclash.twod.MainActivity'" in badging,filename
  assert "application-label:'"+label+"'" in badging,filename
  with zipfile.ZipFile(apk) as z: configs.append(z.read('assets/multiplayer-config.js'))
- print(filename,package,'version 80; pinned signer',expected,'; launch activity verified')
+ print(filename,package,'version 81; pinned signer',expected,'; launch activity verified')
 assert configs[0]==configs[1]
 assert b'wss://omnitrix-ranked-arena.kuladeepadthale.workers.dev/arena' in configs[0]
+
 
