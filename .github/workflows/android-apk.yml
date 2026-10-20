@@ -103,7 +103,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.2 — Fitted Power and Battle Screens' --notes 'Larger power illustrations with horizontal swipe access to all powers. Power equipment and battle setup fit one screen without vertical scrolling. All match options and the Start button remain visible. Existing prices, icons, missions and saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.3 — Compact Battle Preview' --notes 'Compact left/right battle setup on phones and landscape screens. Native hero art, equipped power images and concise match settings. Swipe villain stages or use the stage finder slider; locked fights remain protected. Diamond prices use the Taydenite image throughout the collection and pack rewards. Alien ability stats include matching power illustrations. Existing progress preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
