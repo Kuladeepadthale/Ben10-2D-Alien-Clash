@@ -1,6 +1,6 @@
 # Activate email accounts and cloud progress
 
-Version 7.4 includes the finished welcome/account screens, guest mode and Firebase REST integration. **The shipped configuration is disabled. Email login and cloud restoration are not live until you connect your own Firebase project.** Guest play works offline and existing progress is preserved.
+Version 7.5 connects the welcome/account screens and Firebase REST integration to the owner's `omnitrix-alien-clash` project using its supplied public client configuration. Guest play works offline and existing progress is preserved. Email/Password must be enabled and the Firestore rules below must be published in that project. Automated tests mock Firebase; a live two-device signup/sync test remains necessary. Multiplayer matchmaking and ranked online battles are not included.
 
 ## Firebase console
 
