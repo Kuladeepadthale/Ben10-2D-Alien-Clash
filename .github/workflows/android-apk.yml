@@ -106,7 +106,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.4 — Hero Accounts Preparation' --notes 'New illustrated welcome screen with Log In, Sign Up and Play as Guest. Account menu in the top bar. Guest progress preserved. Firebase email/cloud-save integration, password reset, encrypted Android session storage and explicit save-conflict resolution are prepared. IMPORTANT: Email accounts and cloud saves remain disabled until the owner creates a Firebase project and completes firebase/SETUP.md. Offline guest play is available now. Existing gameplay and saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.5 — Firebase Accounts' --notes 'Connects email accounts and cloud progress to the owner-supplied Firebase project. Includes Login, Sign Up, Guest, password reset, encrypted Android sessions and save-conflict handling. Owner must enable Email/Password and publish firebase/firestore.rules; live two-device verification remains required. Existing guest progress preserved: install over the previous APK. Multiplayer is not included. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
