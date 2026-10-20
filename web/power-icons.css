@@ -1,0 +1,25 @@
+.power-picture{position:relative;display:inline-block;width:56px;height:56px;flex:none;border-radius:50%;background:radial-gradient(ellipse at 70% 35%,var(--power-dark),#061411);border:1px solid var(--power-color);box-shadow:inset 0 0 12px #0008;overflow:hidden;vertical-align:middle;pointer-events:none;}
+.power-picture>svg{position:absolute;inset:3px 2px 3px 14px;width:calc(100% - 16px);height:calc(100% - 6px);filter:drop-shadow(0 1px 2px #000);}
+.power-picture>canvas{position:absolute;left:0;bottom:0;width:49%;height:86%;object-fit:contain;filter:drop-shadow(1px 1px 2px #000);}
+.ultimate-star{position:absolute;left:3px;top:0;color:#fff19a;font-size:15px;font-style:normal;text-shadow:0 1px 3px #000;}
+body.in-battle .touch button{border-radius:50%!important;gap:0!important;}
+body.in-battle .touch button>.power-picture{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 60% 30%,var(--power-dark),#071811);box-shadow:none;}
+body.in-battle .touch .power-picture>svg{width:calc(100% - 16px)!important;height:calc(100% - 6px)!important;}
+body.in-battle .touch .actions button{padding:3px!important;}
+body.in-battle .touch button::after{position:absolute;bottom:3px;left:50%;transform:translateX(-50%);padding:2px 4px;border-radius:6px;background:#06130edb;font-size:10px;line-height:1;color:#fff6b0;}
+body.in-battle .touch button[data-value=READY]::after,body.in-battle .touch button[data-value="ULT!"]::after{content:none!important;}
+body.in-battle .touch button[data-key=normal]{background:linear-gradient(145deg,#8ccf56,#183821);}
+body:not(.in-battle) #powerCards .power-card>h3{display:flex;align-items:center;gap:10px;line-height:1.1!important;margin:0;}
+body:not(.in-battle) #powerCards .power-card>h3 .power-picture{width:54px;height:54px;}
+/* Yellow dots follow the same claimability predicate as the Claim button. */
+body:not(.in-battle) .app-bottom .has-reward::after,.mission-tabs .has-reward::after,.mission-card.reward-ready .mission-prize button::after{content:'';position:absolute;display:block;width:10px;height:10px;border:1px solid #fff7a0;border-radius:50%;background:#ffdf36;box-shadow:0 0 8px #ffd52c;top:3px;right:5px;z-index:3;}
+.mission-tabs button,.mission-card .mission-prize button{position:relative;}
+.mission-card.reward-ready{border-color:#d6bd39!important;box-shadow:inset 0 0 12px #e9cf3115;}
+@media(max-height:500px) and (orientation:landscape){body:not(.in-battle) #powerCards .power-card>h3 .power-picture{width:38px;height:38px;}body:not(.in-battle) #powerCards .power-card{gap:4px;padding:8px!important;}body:not(.in-battle) #powerCards .power-card>h3{gap:6px;font-size:20px!important;}body:not(.in-battle) #powerCards .power-card .damage{font-size:24px!important;}}
+body.in-battle .touch .actions button{width:clamp(48px,6vw,68px)!important;height:clamp(48px,6vw,68px)!important;min-height:0!important;flex:none;}
+body:not(.in-battle) #screen-powers .section-title{align-items:center;gap:8px;}
+body:not(.in-battle) #screen-powers .section-title>div{min-width:0;max-width:52%;}
+body:not(.in-battle) #screen-powers .section-title h2{font-size:clamp(20px,2.4vw,30px)!important;}
+body:not(.in-battle) #screen-powers #loadoutHint{display:flex;align-items:center;gap:6px;max-width:47%;font-size:12px!important;line-height:1.15!important;min-width:0;}
+body:not(.in-battle) #loadoutHint .power-picture{height:34px;width:34px;}
+body:not(.in-battle) #loadoutHint strong{font-size:12px;color:#f2eaa3;overflow-wrap:anywhere;}
