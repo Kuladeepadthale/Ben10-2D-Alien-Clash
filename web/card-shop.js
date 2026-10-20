@@ -1,9 +1,9 @@
 'use strict';
 // All pack rewards are committed together before any reveal UI is shown.
 const CARD_PACKS=[
- {id:'omni',name:'Omni Pack',cost:300,cards:5,weights:[60,25,10,4,1],color:'#b4f56d'},
- {id:'power',name:'Power Pack',cost:900,cards:5,weights:[25,35,25,12,3],color:'#be9aff'},
- {id:'master',name:'Master Pack',cost:1800,cards:5,weights:[0,15,40,30,15],color:'#ffd37a'}
+ {id:'omni',name:'Omni Pack',cost:500,cards:5,weights:[60,25,10,4,1],color:'#b4f56d'},
+ {id:'power',name:'Power Pack',cost:2000,cards:5,weights:[25,35,25,12,3],color:'#be9aff'},
+ {id:'master',name:'Master Pack',cost:5000,cards:5,weights:[0,15,40,30,15],color:'#ffd37a'}
 ];
 const currencyIcon=(kind)=>'<i class="currency-icon '+kind+'" aria-hidden="true"></i>';
 function normalisePackState(){const old=career.packState||{},serial=careerNumber(old.serial),last=old.last,pack=CARD_PACKS.find(p=>p.id===last?.packId);career.packState={version:1,serial,last:null};if(pack&&Number.isInteger(last.id)&&last.id>0&&last.id<=serial&&Array.isArray(last.results)&&last.results.length===5&&last.results.every(c=>Number.isInteger(c.id)&&c.id>=0&&c.id<ALIEN_COUNT&&typeof c.duplicate==='boolean'))career.packState.last={id:last.id,packId:pack.id,unseen:!!last.unseen,revealed:Number.isInteger(last.revealed)?Math.max(0,Math.min(5,last.revealed)):5,results:last.results.map(c=>({id:c.id,duplicate:c.duplicate}))};}
