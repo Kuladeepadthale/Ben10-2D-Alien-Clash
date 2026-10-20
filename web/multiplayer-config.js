@@ -1,4 +1,3 @@
 'use strict';
-// Set this public wss://.../arena endpoint after deploying server/wrangler.jsonc.
-// Empty means online matchmaking is unavailable; the app never pretends bots are people.
-window.OMNI_MULTIPLAYER_CONFIG=Object.freeze({url:''});
+// Public endpoint of the owner-deployed authenticated Ranked Arena Worker.
+window.OMNI_MULTIPLAYER_CONFIG=Object.freeze({url:'wss://omnitrix-ranked-arena.kuladeepadthale.workers.dev/arena'});

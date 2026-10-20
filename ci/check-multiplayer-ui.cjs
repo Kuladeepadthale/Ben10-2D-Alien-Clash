@@ -4,6 +4,8 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
  const executablePath=['/usr/bin/google-chrome','/usr/bin/chromium','/opt/google/chrome/chrome'].find(p=>fs.existsSync(p));const browser=await chromium.launch({headless:true,executablePath,args:['--no-sandbox','--disable-dev-shm-usage']});
  try{for(const viewport of [{width:640,height:360},{width:932,height:430},{width:1280,height:720},{width:360,height:800}]){
   const page=await browser.newPage({viewport}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+  // Keep mocked matchmaking isolated from the configured live service.
+  await page.route('**/multiplayer-config.js*',route=>route.fulfill({contentType:'application/javascript',body:"window.OMNI_MULTIPLAYER_CONFIG=Object.freeze({url:''});"}));
   await page.goto('http://127.0.0.1:'+server.address().port+'/index.html');await page.locator('#entryGuest').click();await page.waitForFunction(()=>typeof rankedFind==='function');
   await page.evaluate(()=>{chooseStarter(career.offers[0]);selectedMode='versus';showScreen('setup');});
   assert.equal(await page.locator('[data-mode="versus"] h2').textContent(),'Multiplayer');assert(await page.locator('#rankedPanel').isVisible());

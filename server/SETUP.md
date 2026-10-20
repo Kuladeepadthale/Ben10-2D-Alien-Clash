@@ -1,6 +1,6 @@
 # Deploy the real online battle server
 
-The Android 7.6 client and server are implemented, but online battles require this Worker to be deployed. The app keeps bot practice available and clearly says when no server is configured. An empty endpoint never simulates a real-player search.
+Android 7.7 includes the owner-deployed default endpoint `wss://omnitrix-ranked-arena.kuladeepadthale.workers.dev/arena`; players do not need to enter a server address. The service health check responded with protocol 1 during configuration. Real two-account fight/sync verification is still required before public distribution. Bot practice remains available. The setup instructions below also cover redeployment or migration to another address.
 
 ## From a phone using Cloudflare's GitHub integration
 
