@@ -55,7 +55,6 @@ jobs:
           node ci/check-account-cloud.cjs
           node server/build-engine.cjs
           node ci/check-multiplayer-server.mjs
-          WRANGLER_SEND_METRICS=false npx --yes wrangler@4 deploy --dry-run --outdir /tmp/omni-arena-worker --config server/wrangler.jsonc
           node ci/check-alien-combat.cjs
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
           node ci/check-threat-layout.cjs
@@ -73,6 +72,8 @@ jobs:
           node ci/check-accounts.cjs
           node ci/check-multiplayer-ui.cjs
           for script in web/*.js; do node --check "$script"; done
+      - name: Verify deployable multiplayer Worker
+        run: WRANGLER_SEND_METRICS=false npx --yes wrangler@4 deploy --dry-run --outdir /tmp/omni-arena-worker --config server/wrangler.jsonc
       - name: Build APK
         run: gradle -p android --no-daemon assembleDebug
       - name: Verify APK and downloads

@@ -1,1 +1,1 @@
-{"name":"omnitrix-ranked-arena","private":true,"type":"module","scripts":{"deploy":"wrangler deploy","dev":"wrangler dev"},"devDependencies":{"wrangler":"^4.0.0"}}
+{"name":"omnitrix-ranked-arena","private":true,"type":"module","scripts":{"deploy":"cd .. && wrangler deploy --config server/wrangler.jsonc","dev":"cd .. && wrangler dev --config server/wrangler.jsonc"},"devDependencies":{"wrangler":"^4.0.0"}}
