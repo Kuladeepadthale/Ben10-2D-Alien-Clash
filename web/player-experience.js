@@ -17,3 +17,18 @@ const experienceShowBase=showScreen;showScreen=function(name,remember=true){expe
 const experienceBeginBase=begin;begin=async function(newMatch=true,practice=false){if(newMatch&&!online.active)online.result=null;return experienceBeginBase(newMatch,practice);};
 // Add matching icon treatment to the header controls without a text label.
 accountNav.setAttribute('aria-label','Player account');accountNav.title='Player account';
+
+// Both sides prepare before any simulation or input is allowed to run.
+const battleReady=document.createElement('div');battleReady.id='battleReady';battleReady.hidden=true;battleReady.setAttribute('role','status');battleReady.setAttribute('aria-live','assertive');battleReady.innerHTML='<small>GET READY</small><strong>3</strong>';$('game').appendChild(battleReady);
+let battleReadyUntil=0,battleGoUntil=0;
+function battleCountdownActive(){return performance.now()<battleReadyUntil;}
+function cancelBattleCountdown(){battleReadyUntil=0;battleGoUntil=0;battleReady.hidden=true;}
+function startBattleCountdown(ms=3000){resetInputs();battleReadyUntil=performance.now()+Math.max(0,ms);battleGoUntil=battleReadyUntil+600;$('announcement').textContent='';announceTime=0;updateBattleCountdown();}
+function syncBattleCountdown(ms){if(ms>0){battleReadyUntil=performance.now()+ms;battleGoUntil=battleReadyUntil+600;}else if(battleCountdownActive()){battleReadyUntil=performance.now();battleGoUntil=performance.now()+600;}}
+function updateBattleCountdown(){if(currentScreen!=='battle'){battleReady.hidden=true;return;}const remaining=battleReadyUntil-performance.now();const visible=remaining>0||performance.now()<battleGoUntil;battleReady.hidden=!visible;if(!visible)return;const label=remaining>0?String(Math.ceil(remaining/1000)):'FIGHT!';if(battleReady.lastLabel!==label){battleReady.lastLabel=label;battleReady.querySelector('strong').textContent=label;battleReady.querySelector('small').textContent=remaining>0?'GET READY':'';}}
+const readyAdvanceBase=advanceSimulation;advanceSimulation=function(dt){if(battleCountdownActive()){simulationCarry=0;return 0;}return readyAdvanceBase(dt);};
+const readyBeginBase=begin;begin=async function(newMatch=true,practice=false){const ok=await readyBeginBase(newMatch,practice);if(ok!==false&&mode==='fight'&&!online.active)startBattleCountdown();return ok;};
+const readyRenderBase=render;render=function(){updateBattleCountdown();readyRenderBase();};
+// Move jump beside attacks; movement and defence stay under the left thumb.
+document.querySelector('#touch .actions').prepend(document.querySelector('#touch [data-key=jump]'));
+
