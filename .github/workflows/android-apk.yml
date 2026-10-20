@@ -126,6 +126,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 8.1 — Arc Controls and Clear Arena' --notes 'Update the Online app without uninstalling. Adds a large rightmost strike button with powers in an arc and ultimate directly above it. Movement, jump, guard and dash stay on the left. A dedicated control strip keeps fighters unobscured and preserves arena proportions. Unlock prices increase by 5 gems per category: 10/15/20/25/30. Retains synchronized countdown and responsive input. Same pinned development signer and package identity.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 8.2 — Full Arena and Alien Artwork' --notes 'Update the Online app without uninstalling. Restores the full-screen fighting arena and retains arc controls. Replaces all 32 action poses for each of the ten lower-resolution Alien Force aliens with four larger native sheets per alien. Higher-resolution portrait exports and pose caching preserve the new detail. Retains 10/15/20/25/30 gem unlock prices, synchronized countdown and responsive input. Same pinned development signer and package identity.' --prerelease --target "$GITHUB_SHA"
+
 
 

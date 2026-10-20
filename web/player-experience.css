@@ -38,9 +38,9 @@ body.in-battle #touch button.pressed{transform:scale(.91)!important;filter:brigh
 @media(max-width:420px){body.in-battle #touch .dpad,body.in-battle #touch .actions{grid-template-columns:repeat(2,46px)!important;grid-template-rows:repeat(2,46px)!important;gap:7px!important}body.in-battle #touch .actions{grid-template-columns:repeat(3,46px)!important}body.in-battle #touch button{width:46px!important;height:46px!important;min-width:46px!important;min-height:46px!important}}
 
 /* A separate thumb dock keeps the entire bounded world clear of buttons. */
-body.in-battle #game{--control-dock:142px;background:#061912!important}
+body.in-battle #game{--control-dock:0px;background:#061912!important}
 body.in-battle #game #arena{position:absolute!important;left:0!important;top:0!important;width:100%!important;height:calc(100% - var(--control-dock) - env(safe-area-inset-bottom))!important;object-fit:fill!important}
-body.in-battle #game:after{content:'';position:absolute;left:0;right:0;bottom:0;height:calc(var(--control-dock) + env(safe-area-inset-bottom));background:linear-gradient(180deg,#102c20,#05110c);border-top:1px solid #83c85b44;pointer-events:none}
+body.in-battle #game:after{content:none;position:absolute;left:0;right:0;bottom:0;height:calc(var(--control-dock) + env(safe-area-inset-bottom));background:linear-gradient(180deg,#102c20,#05110c);border-top:1px solid #83c85b44;pointer-events:none}
 body.in-battle #touch{z-index:12!important}
 body.in-battle #touch .dpad{grid-template-columns:repeat(3,54px)!important;grid-template-rows:repeat(2,54px)!important;gap:9px!important}
 body.in-battle #touch .dpad [data-key=jump]{grid-area:1 / 1!important}
@@ -53,5 +53,6 @@ body.in-battle #touch .actions [data-key=ultimate]{right:6px!important;top:0!imp
 body.in-battle #touch .actions [data-key=skill1]{right:70px!important;top:8px!important;left:auto!important;bottom:auto!important}
 body.in-battle #touch .actions [data-key=skill0]{right:108px!important;bottom:0!important;left:auto!important;top:auto!important}
 body.in-battle #battleReady{bottom:calc(var(--control-dock) + env(safe-area-inset-bottom))}
-@media(max-width:420px){body.in-battle #game{--control-dock:132px}body.in-battle #touch{gap:12px!important;left:8px!important;right:8px!important}body.in-battle #touch .dpad{grid-template-columns:repeat(3,44px)!important;grid-template-rows:repeat(2,44px)!important;gap:5px!important}body.in-battle #touch .dpad button{width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important}body.in-battle #touch .actions{width:160px!important;height:112px!important}body.in-battle #touch .actions [data-key=normal]{width:58px!important;height:58px!important;min-width:58px!important;min-height:58px!important}body.in-battle #touch .actions [data-key=ultimate]{right:5px!important}body.in-battle #touch .actions [data-key=skill1]{right:60px!important;top:5px!important}body.in-battle #touch .actions [data-key=skill0]{right:102px!important}}
+@media(max-width:420px){body.in-battle #game{--control-dock:0px}body.in-battle #touch{gap:12px!important;left:8px!important;right:8px!important}body.in-battle #touch .dpad{grid-template-columns:repeat(3,44px)!important;grid-template-rows:repeat(2,44px)!important;gap:5px!important}body.in-battle #touch .dpad button{width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important}body.in-battle #touch .actions{width:160px!important;height:112px!important}body.in-battle #touch .actions [data-key=normal]{width:58px!important;height:58px!important;min-width:58px!important;min-height:58px!important}body.in-battle #touch .actions [data-key=ultimate]{right:5px!important}body.in-battle #touch .actions [data-key=skill1]{right:60px!important;top:5px!important}body.in-battle #touch .actions [data-key=skill0]{right:102px!important}}
+
 

@@ -40,6 +40,8 @@ def extract(source):
 
 if __name__=='__main__':
     for name in NAMES:
+        if all((SRC/(name+'-'+kind+'-v82.png')).exists() for kind in ['walk','jump-strike','powers','states']):
+            print(name+': use four high-detail native sheets');continue
         rows=extract(SRC/(name+'-master.png'))
         for kind,frames in zip(['walk','jump-strike','powers','states'],rows):
             cw=max(im.width for im in frames)+32;ch=max(im.height for im in frames)+32
@@ -49,3 +51,4 @@ if __name__=='__main__':
                 sheet.paste(im,(i%4*side+(side-im.width)//2,i//4*side+side-16-im.height))
             sheet.save(SRC/(name+'-'+kind+'.png'),compress_level=3)
         print(name+': 32 whole poses isolated and packed with transparent padding')
+

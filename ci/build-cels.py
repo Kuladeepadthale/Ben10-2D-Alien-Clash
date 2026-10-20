@@ -29,6 +29,8 @@ for id,name in enumerate(NAMES):
         if not source.exists(): source=SRC/(name+'-'+kind+'.png')
         repaired=SRC/(name+'-'+kind+'-v51.png')
         if repaired.exists():source=repaired
+        enhanced=SRC/(name+'-'+kind+'-v82.png')
+        if enhanced.exists():source=enhanced
         from full_poses import whole_poses,pack_poses
         original=Image.open(source).convert('RGBA')
         clean,placements=pack_poses(whole_poses(original))
@@ -51,7 +53,7 @@ for id,name in enumerate(NAMES):
     else:
         character['clips']={'walk':list(range(8)),'jump':list(range(8,12)),'normal':list(range(12,16)),'skill0':[16,17,18],'skill1':[19,20,21],'skill2':[22,23],'ultimate':[24,25,26],'idle':[27],'guard':[28],'hit':[29],'ko':[30],'dash':[31]}
     idle=character['frames'][character['clips']['idle'][0]]; character['referenceHeight']=idle['rect'][3]-16
-    sheet=Image.open(processed[idle['sheet']]);x,y,w,h=idle['rect'];portrait=sheet.crop((x,y,x+w,y+h));portrait.thumbnail((300,400),Image.Resampling.LANCZOS);portrait_dest=save_native(portrait,folder/'portrait')
+    sheet=Image.open(processed[idle['sheet']]);x,y,w,h=idle['rect'];portrait=sheet.crop((x,y,x+w,y+h));portrait.thumbnail((640,800),Image.Resampling.LANCZOS);portrait_dest=save_native(portrait,folder/'portrait')
     character['portrait']='assets/cels/'+name+'/'+portrait_dest.name
     manifest['characters'].append(character)
 (WEB/'cel-data.js').write_text("'use strict';\nconst CEL_DATA="+json.dumps(manifest,separators=(',',':'))+';\n')
@@ -71,6 +73,7 @@ shutil.copytree(WEB/'assets/ui',bundle/'assets/ui',copy_function=shutil.copyfile
 for file in ['assets/animation-manifest-example.json']:
     if (WEB/file).exists(): (bundle/file).parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(WEB/file,bundle/file)
 print('Exported',sum(len(c['frames']) for c in manifest['characters']),'native cels across',len(NAMES),'complete action sets.')
+
 
 
 

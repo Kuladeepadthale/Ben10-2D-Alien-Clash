@@ -22,6 +22,11 @@ if __name__=='__main__':
     m=json.loads((ROOT/'web/assets/cels/manifest.json').read_text())
     assert len(m['characters'])==32
     count=sum(check_character(c) for c in m['characters'])
+    for c in m['characters'][22:]:
+        idle=c['frames'][c['clips']['idle'][0]]
+        assert max(idle['rect'][2:])>=300,(c['name'],'low-detail source regression')
+        assert len(c['frames'])==32 and len(c['sheets'])==4
+
     # Screenshot regressions: Frankenstrike's boots must extend below the old half-sheet cut;
     # Spitter's complete first pose extends past the old quarter-sheet cut.
     source=Image.open(ROOT/'ci/cel-sources/frankenstrike-states.webp')
@@ -38,3 +43,4 @@ if __name__=='__main__':
     packed,positions=pack_poses(whole_poses(image))
     assert len(positions)==8
     print('Passed:',count,'whole-body frames across 32 aliens; transparent frame margins; exact source-pixel preservation; Frankenstrike boots and Spitter tail regression checks.')
+
