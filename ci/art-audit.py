@@ -3,7 +3,8 @@ from PIL import Image,ImageDraw
 import json,base64,io,sys
 sys.path.insert(0,'ci')
 from full_poses import whole_poses
-from prepare_alien_force import extract
+import runpy
+extract=runpy.run_path('ci/prepare-alien-force.py')['extract']
 src=Path('ci/cel-sources');names=json.loads(Path('ci/roster.json').read_text())
 for group in range(4):
  canvas=Image.new('RGB',(660,8*180),(18,35,29));draw=ImageDraw.Draw(canvas)
