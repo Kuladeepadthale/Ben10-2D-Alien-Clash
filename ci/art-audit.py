@@ -23,3 +23,5 @@ for group in range(4):
    pose.thumbnail((152,150),Image.Resampling.LANCZOS);canvas.paste(pose,(col*165+(165-pose.width)//2,row*180+25+(150-pose.height)),pose)
  output=io.BytesIO();canvas.save(output,format='WEBP',quality=85)
  print('REVIEW'+str(group)+':'+base64.b64encode(output.getvalue()).decode())
+
+# Visual review of source poses before changing artwork.
