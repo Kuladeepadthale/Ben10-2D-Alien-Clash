@@ -8,19 +8,14 @@ assert(rules.changes(100,1000,0)[0]>rules.changes(1000,100,0)[0]);
 assert.deepEqual(rules.changes(100,100,-1),[0,0]);
 assert(rules.changes(100,100,0,true)[1]<rules.changes(100,100,0)[1]);
 let checked=0;
-for(let id=0;id<32;id++)for(const action of ['normal','skill0','skill1','ultimate']){
- const engine=createEngine([{alien:id,loadout:[0,1]},{alien:0,loadout:[0,1]}]);
+for(let id=0;id<32;id++)for(const action of ['normal','skill0','skill1','skill2','ultimate']){
+ const engine=createEngine([{alien:id,loadout:action==='skill2'?[2,1]:[0,1]},{alien:action==='ultimate'?31:0,loadout:[0,1]}]);
  engine.input(0,{right:true},[]);engine.input(1,{left:true},[]);
  for(let t=0;t<90;t++)engine.advance(1/30);
  engine.input(0,{},[]);engine.input(1,{},[]);
- if(action==='ultimate'){
-  // Charge through actual hits, never by accepting a client gauge value.
-  for(let t=0;t<1500&&!engine.done&&engine.snapshot().fighters[0].ult<100;t++){engine.input(1,{},['normal']);engine.advance(1/30);}
-  if(engine.done)continue;
- }
  const before=engine.snapshot().fighters[1].hp;
- engine.input(0,{},[action]);for(let t=0;t<150&&!engine.done;t++)engine.advance(1/30);
- if(action!=='ultimate')assert(engine.snapshot().fighters[1].hp<before,`No server damage: ${id} ${action}`);
+ engine.input(0,{},[action==='skill2'?'skill0':action]);for(let t=0;t<150&&!engine.done;t++)engine.advance(1/30);
+ if(action==='ultimate')assert.equal(engine.snapshot().fighters[1].hp,before,'Uncharged ultimate must be rejected');else assert(engine.snapshot().fighters[1].hp<before,`No server damage: ${id} ${action}`);
  checked++;
 }
 // No client HP, cooldown, gauge, rank or outcome is part of the input contract.

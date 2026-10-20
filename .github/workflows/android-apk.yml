@@ -55,6 +55,7 @@ jobs:
           node ci/check-account-cloud.cjs
           node server/build-engine.cjs
           node ci/check-multiplayer-server.mjs
+          WRANGLER_SEND_METRICS=false npx --yes wrangler@4 deploy --dry-run --outdir /tmp/omni-arena-worker --config server/wrangler.jsonc
           node ci/check-alien-combat.cjs
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
           node ci/check-threat-layout.cjs
