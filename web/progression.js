@@ -85,7 +85,7 @@ function renderStarter(){$('starterCards').replaceChildren(...career.offers.map(
 function renderGarage(){$('garageCards').replaceChildren(...aliens.map((_,id)=>portraitCard(id,'garage',id===garageAlien)));$('garageName').textContent=aliens[garageAlien].name;$('garageSelect').disabled=$('garageUpgrade').disabled=!ownsAlien(garageAlien)||isLocked();$('garageHint').textContent=ownsAlien(garageAlien)?'Unlocked • Choose what you want to do.':'Locked • Unlock this alien from the Aliens page first.';}
 function renderMissions(){
  syncMissionPeriods();const ready=MISSION_DEFS.filter(missionReady).length;$('missionBalance').textContent=profile.credits.toLocaleString();
- $('missionTabs').replaceChildren(...[['daily','Daily'],['weekly','Weekly'],['monthly','Monthly'],['career','Career']].map(([id,label])=>{const b=document.createElement('button');b.textContent=label;b.setAttribute('aria-pressed',String(id===missionTab));b.onclick=()=>{missionTab=id;renderMissions()};return b;}));
+ $('missionTabs').replaceChildren(...[['daily','Daily'],['weekly','Weekly'],['monthly','Monthly'],['career','Career']].map(([id,label])=>{const b=document.createElement('button');b.textContent=label;b.classList.toggle('has-reward',MISSION_DEFS.some(m=>(id==='career'?!m.period:m.period===id)&&missionReady(m)));b.setAttribute('aria-label',label+(b.classList.contains('has-reward')?' — reward ready':''));b.setAttribute('aria-pressed',String(id===missionTab));b.onclick=()=>{missionTab=id;renderMissions()};return b;}));
  if(missionTab==='career')$('missionReset').textContent='Career goals · progress stays saved';else {const hours=Math.max(1,Math.ceil((missionWindow(missionTab).end-Date.now())/3600000));$('missionReset').textContent='Resets in '+(hours>=24?Math.ceil(hours/24)+' days':hours+' hours')+' · Testing does not count';}
  const visible=MISSION_DEFS.filter(m=>missionTab==='career'?!m.period:m.period===missionTab);
  $('missionCards').dataset.tab=missionTab;
@@ -108,7 +108,7 @@ function careerRefresh(){const cards=[...$('roster').children],ordered=[...cards
  $('opponent').closest('label').firstChild.textContent='Choose your rival ';$('difficulty').closest('label').firstChild.textContent='Difficulty ';
  if(currentScreen==='garage')renderGarage();if(currentScreen==='missions')renderMissions();
  document.querySelector('.app-bottom [data-screen=upgrades]').setAttribute('aria-current',['garage','upgrades'].includes(currentScreen)?'page':'false');
- if(typeof refreshEconomyWallet==='function')refreshEconomyWallet();const ready=MISSION_DEFS.filter(missionReady).length;missionsNav.classList.toggle('has-reward',ready>0);
+ if(typeof refreshEconomyWallet==='function')refreshEconomyWallet();const ready=MISSION_DEFS.filter(missionReady).length;missionsNav.classList.toggle('has-reward',ready>0);missionsNav.setAttribute('aria-label','Missions'+(ready?' — '+ready+' rewards ready':''));
 }
 const careerSelectBase=select;select=function(id){careerSelectBase(id);if(!isLocked()&&ownsAlien(id)){career.selected=id;saveProfile()}careerRefresh();};
 const careerEquipBase=equip;equip=function(index,slot){if(!testingMode()&&!ownsAlien(selected)){careerToast('Unlock this alien first, or try it in Testing.');return}careerEquipBase(index,slot);};
