@@ -1,0 +1,12 @@
+name: Review alien artwork
+on:
+  push:
+    branches: [main]
+    paths: [ci/art-audit.py, .github/workflows/art-audit.yml]
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install Pillow numpy scipy
+      - run: python3 ci/art-audit.py
