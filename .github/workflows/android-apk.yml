@@ -52,6 +52,7 @@ jobs:
           node ci/check-cels.cjs
           node ci/check-threat-ladder.cjs
           node ci/check-card-shop.cjs
+          node ci/check-account-cloud.cjs
           node ci/check-alien-combat.cjs
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
           node ci/check-threat-layout.cjs
@@ -66,6 +67,7 @@ jobs:
           node ci/check-home-team.cjs
           node ci/check-card-shop-layout.cjs
           node ci/check-power-icons.cjs
+          node ci/check-accounts.cjs
           for script in web/*.js; do node --check "$script"; done
       - name: Build APK
         run: gradle -p android --no-daemon assembleDebug
@@ -103,7 +105,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.3 — Compact Battle Preview' --notes 'Compact left/right battle setup on phones and landscape screens. Native hero art, equipped power images and concise match settings. Swipe villain stages or use the stage finder slider; locked fights remain protected. Diamond prices use the Taydenite image throughout the collection and pack rewards. Alien ability stats include matching power illustrations. Existing progress preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.4 — Hero Accounts Preparation' --notes 'New illustrated welcome screen with Log In, Sign Up and Play as Guest. Account menu in the top bar. Guest progress preserved. Firebase email/cloud-save integration, password reset, encrypted Android session storage and explicit save-conflict resolution are prepared. IMPORTANT: Email accounts and cloud saves remain disabled until the owner creates a Firebase project and completes firebase/SETUP.md. Offline guest play is available now. Existing gameplay and saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
