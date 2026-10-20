@@ -93,6 +93,7 @@ jobs:
           PY
           sha256sum builds/*.apk > builds/SHA256SUMS.txt
       - uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: AlienClash2D-Android-APK
           path: |
