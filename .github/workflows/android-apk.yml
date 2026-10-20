@@ -65,6 +65,7 @@ jobs:
           node ci/check-alien-detail.cjs
           node ci/check-home-team.cjs
           node ci/check-card-shop-layout.cjs
+          node ci/check-power-icons.cjs
           for script in web/*.js; do node --check "$script"; done
       - name: Build APK
         run: gradle -p android --no-daemon assembleDebug
@@ -101,7 +102,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.0 — Combat and Collection Fixes' --notes 'Matching coin and diamond counters. Unlocked aliens appear first, followed by locked aliens grouped by rarity. Larger full foil pack images with a compact name and card-count footer. Alien selection opens battle-mode selection. Improved melee reach and hitboxes, aimed waves and lobbed attacks, and reliable landing-impact damage. All 32 aliens tested with native animation emitters at 30 and 60fps. Existing saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.1 — Illustrated Powers' --notes 'Pack prices are 500, 2000 and 5000 Omni Coins. Yellow claim indicators on Missions navigation, mission periods and completed reward buttons. All 32 aliens use illustrated attack and ultimate controls with native pose artwork; matching named images in power selection. Movement controls use clear image-only symbols. Cooldown and ultimate charge remain visible. Existing saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
