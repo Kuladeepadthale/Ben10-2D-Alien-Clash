@@ -1,0 +1,3 @@
+'use strict';
+// Finish a previously authorized save switch before the game reads its profile.
+(()=>{try{const key='omni-account-switch-v1',raw=localStorage.getItem(key);if(!raw)return;const change=JSON.parse(raw),p=JSON.parse(change.payload),s=change.state;if(p?.version!==2||!Array.isArray(p.aliens)||!s||!['guest','member'].includes(s.mode)||s.mode==='member'&&!/^[\w-]{1,128}$/.test(s.uid||''))return;localStorage.setItem('omnitrix-profile-v2',change.payload);localStorage.setItem('omni-account-state-v1',JSON.stringify(s));localStorage.removeItem(key);}catch{/* The previous save remains available if storage is unavailable. */}})();
