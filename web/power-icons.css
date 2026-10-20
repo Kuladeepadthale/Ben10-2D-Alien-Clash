@@ -23,3 +23,32 @@ body:not(.in-battle) #screen-powers .section-title h2{font-size:clamp(20px,2.4vw
 body:not(.in-battle) #screen-powers #loadoutHint{display:flex;align-items:center;gap:6px;max-width:47%;font-size:12px!important;line-height:1.15!important;min-width:0;}
 body:not(.in-battle) #loadoutHint .power-picture{height:34px;width:34px;}
 body:not(.in-battle) #loadoutHint strong{font-size:12px;color:#f2eaa3;overflow-wrap:anywhere;}
+
+/* Power equipment and match setup are fitted screens, never vertical documents. */
+body:not(.in-battle).fitted-flow #screens{overflow:hidden!important;}
+body:not(.in-battle) #screen-powers,body:not(.in-battle) #screen-setup{height:100%!important;min-height:0!important;overflow:hidden!important;padding:10px 16px!important;gap:8px!important;}
+body:not(.in-battle) #screen-powers .screen-content,body:not(.in-battle) #screen-setup .screen-content{display:flex;flex-direction:column;flex:1;min-height:0!important;overflow:hidden!important;}
+body:not(.in-battle) #screen-powers .loadout,body:not(.in-battle) #screen-powers .deck-wrap,body:not(.in-battle) #screen-setup .deck-wrap{flex:1;min-height:0!important;overflow:hidden!important;}
+body:not(.in-battle) #screen-powers .loadout{display:flex;flex-direction:column;gap:8px;}
+body:not(.in-battle) #screen-powers .section-title{flex:none;margin:0!important;}
+body:not(.in-battle) #screen-powers #powerCards{display:flex!important;flex:1;min-height:0;gap:12px;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory;touch-action:pan-x;padding-bottom:5px;}
+body:not(.in-battle) #powerCards .power-card{flex:0 0 calc((100% - 24px)/3);min-width:0;min-height:0!important;max-height:100%;scroll-snap-align:center;padding:12px!important;gap:8px!important;justify-content:center;}
+body:not(.in-battle) #powerCards .power-card>h3{flex-direction:column;gap:8px;font-size:23px!important;text-align:center;}
+body:not(.in-battle) #powerCards .power-card>h3 .power-picture{width:clamp(120px,13vw,180px)!important;height:clamp(120px,13vw,180px)!important;}
+body:not(.in-battle) #powerCards .power-title-name{font-size:inherit;line-height:1.1;color:#edffdd;}
+body:not(.in-battle) #screen-powers .screen-footer,body:not(.in-battle) #screen-setup .screen-footer{flex:none;overflow:hidden;padding:0!important;gap:4px;}
+body:not(.in-battle) #screen-powers .page-actions,body:not(.in-battle) #screen-setup .page-actions{margin:0!important;}
+body:not(.in-battle) #screen-setup .page-title{flex:none;gap:5px;margin:0!important;}
+body:not(.in-battle) #screen-setup .page-title h1{font-size:clamp(23px,3vw,32px)!important;margin:0!important;}
+body:not(.in-battle) #screen-setup .page-title>p{display:none!important;}
+body:not(.in-battle) #screen-setup .setup-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr);height:100%;min-height:0!important;gap:10px;margin:0!important;overflow:hidden!important;}
+body:not(.in-battle) #screen-setup .setup-panel{display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:0!important;min-width:0;padding:12px!important;overflow:hidden;}
+body:not(.in-battle) #screen-setup .setup-panel h2{font-size:22px!important;margin:0!important;}
+body:not(.in-battle) #screen-setup .setup-panel>p{font-size:15px!important;line-height:1.25!important;margin:0!important;}
+body:not(.in-battle) #screen-setup .setup-panel>button{font-size:15px!important;min-height:34px!important;padding:6px 8px!important;margin:0!important;}
+body:not(.in-battle) #screen-setup #optionControls label{font-size:15px!important;margin:5px 0!important;}
+body:not(.in-battle) #screen-setup #optionControls select{font-size:15px!important;min-height:34px!important;padding:5px!important;margin-top:3px!important;}
+body:not(.in-battle) #screen-setup #launchMatch{min-height:38px!important;padding:7px 16px!important;font-size:18px!important;}
+body:not(.in-battle) #screen-setup #launchStatus{font-size:12px!important;line-height:1.1;margin:0;}
+@media(orientation:portrait){body:not(.in-battle) #powerCards .power-card{flex-basis:92%;}body:not(.in-battle) #screen-setup .setup-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,1fr));}}
+@media(max-height:500px) and (orientation:landscape){body:not(.in-battle) #screen-powers,body:not(.in-battle) #screen-setup{padding:6px 12px!important;gap:5px!important;}body:not(.in-battle) #powerCards .power-card{flex-basis:75%;display:grid;grid-template-columns:minmax(112px,35%) minmax(0,1fr);grid-template-rows:auto auto auto minmax(0,1fr) auto;gap:3px 10px!important;padding:8px!important;}body:not(.in-battle) #powerCards .power-card>h3{display:contents;}body:not(.in-battle) #powerCards .power-card>h3 .power-picture{grid-column:1;grid-row:1/6;align-self:center;justify-self:center;width:112px!important;height:112px!important;}body:not(.in-battle) #powerCards .power-title-name{grid-column:2;grid-row:2;text-align:left;font-size:20px;}body:not(.in-battle) #powerCards .eyebrow{grid-column:2;grid-row:1;font-size:11px!important;}body:not(.in-battle) #powerCards .damage{grid-column:2;grid-row:3;font-size:24px!important;}body:not(.in-battle) #powerCards .power-card>p:not(.damage){grid-column:2;grid-row:4;font-size:13px!important;line-height:1.15!important;}body:not(.in-battle) #powerCards .equip-buttons{grid-column:2;grid-row:5;margin:0;}body:not(.in-battle) #powerCards .equip-buttons button{min-height:30px!important;padding:4px!important;font-size:15px!important;}body:not(.in-battle) #screen-setup .setup-panel{padding:8px!important;gap:4px;}body:not(.in-battle) #screen-setup .setup-panel h2{font-size:20px!important;}body:not(.in-battle) #screen-setup .setup-panel>button{min-height:30px!important;padding:4px 8px!important;}body:not(.in-battle) #screen-setup .muted-note{font-size:12px!important;}}
