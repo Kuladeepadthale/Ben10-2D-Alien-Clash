@@ -16,7 +16,7 @@ function renderAlienInfo(){
   row.append(name,info);return row;
  }));
  $('alienUse').textContent=test?'Test alien':'Select for battle';$('alienUse').disabled=isLocked()||(!owned&&!test);
- $('alienUnlock').hidden=owned||test;$('alienUnlock').textContent='Unlock · '+ALIEN_PRICES[selected]+' diamonds';
+ $('alienUnlock').hidden=owned||test;$('alienUnlock').innerHTML='Unlock · '+gemPrice(ALIEN_PRICES[selected]);
  $('alienUnlock').disabled=isLocked()||!career.owned.length||career.gems<ALIEN_PRICES[selected];
  $('alienUpgrade').disabled=isLocked()||!owned;$('alienUpgrade').textContent=alienUpgradeOpen?'Story & powers':'Upgrade';
  $('alienPowers').hidden=alienUpgradeOpen;$('alienPowers').disabled=isLocked()||(!owned&&!test);
