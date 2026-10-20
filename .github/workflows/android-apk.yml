@@ -30,11 +30,18 @@ jobs:
           gradle-version: '8.9'
       - name: Install Android platform
         run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
-      - name: Restore test signing key
-        uses: actions/cache@v4
-        with:
-          path: ~/.android/debug.keystore
-          key: alien-clash-test-key-v1
+      - name: Restore pinned development signing identity
+        run: python3 ci/prepare-test-signing.py
+      - name: Audit previous APK certificates
+        if: contains(github.event.head_commit.message, '[signing-audit]')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/alien-signing-audit/76 /tmp/alien-signing-audit/77
+          gh release download android-c906f01a6c9a --pattern Ben10-2D-Alien-Clash.apk --dir /tmp/alien-signing-audit/76
+          gh release download android-cdbc86e3036c --pattern Ben10-2D-Alien-Clash.apk --dir /tmp/alien-signing-audit/77
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --print-certs /tmp/alien-signing-audit/76/Ben10-2D-Alien-Clash.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --print-certs /tmp/alien-signing-audit/77/Ben10-2D-Alien-Clash.apk
       - name: Install asset and video tools
         run: |
           python3 -m pip install Pillow numpy scipy
@@ -76,11 +83,15 @@ jobs:
           node ci/check-power-icons.cjs
           node ci/check-accounts.cjs
           for script in web/*.js; do node --check "$script"; done
-      - name: Build APK
-        run: gradle -p android --no-daemon assembleDebug
+      - name: Build standard and separate-install APKs
+        run: |
+          gradle -p android --no-daemon assembleDebug
+          cp android/app/build/outputs/apk/debug/app-debug.apk builds/Ben10-2D-Alien-Clash.apk
+          gradle -p android --no-daemon -PparallelInstall=true assembleDebug
+          cp android/app/build/outputs/apk/debug/app-debug.apk builds/Ben10-Alien-Clash-Online.apk
       - name: Verify APK and downloads
         run: |
-          cp android/app/build/outputs/apk/debug/app-debug.apk builds/Ben10-2D-Alien-Clash.apk
+          python3 ci/check-apk-signing.py
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose builds/Ben10-2D-Alien-Clash.apk
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging builds/Ben10-2D-Alien-Clash.apk
           python3 - <<'PY'
@@ -114,7 +125,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.7 — Online Server Connected' --notes 'Connects Multiplayer to the owner-deployed omnitrix-ranked-arena.kuladeepadthale.workers.dev service by default. No server-address entry is needed. Firebase email login and cloud sync required for ranked matchmaking. Real-player queue, 30-second bot fallback and server-owned Rank Points retained. Bot practice gives no RP. Health check verified during configuration; live two-account fight verification remains required. Install over the previous APK to preserve guest progress. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.8 — Installation Conflict Recovery' --notes 'Installation recovery: choose Ben10-Alien-Clash-Online.apk to install Ben 10 Alien Clash Online beside the old game without deleting it. Guest data stays in the old app and is not automatically transferred; sign in to restore only previously cloud-synced progress. Both builds now use an explicitly pinned development signer for stable future updates. The standard Ben10-2D-Alien-Clash.apk cannot update an old differently signed installation. Default online server and all 7.7 gameplay retained. See ci/signing/README.md. Development test APKs.' --prerelease --target "$GITHUB_SHA"
 
 
 
