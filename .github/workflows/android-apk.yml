@@ -61,6 +61,7 @@ jobs:
           node ci/check-multiplayer-server.mjs
           node ci/check-alien-combat.cjs
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
+          node ci/check-multiplayer-ui.cjs
           node ci/check-threat-layout.cjs
           node ci/check-alien-force.cjs
           node ci/check-expansion.cjs
@@ -74,7 +75,6 @@ jobs:
           node ci/check-card-shop-layout.cjs
           node ci/check-power-icons.cjs
           node ci/check-accounts.cjs
-          node ci/check-multiplayer-ui.cjs
           for script in web/*.js; do node --check "$script"; done
       - name: Build APK
         run: gradle -p android --no-daemon assembleDebug
