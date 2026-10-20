@@ -103,7 +103,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.1 — Illustrated Powers' --notes 'Pack prices are 500, 2000 and 5000 Omni Coins. Yellow claim indicators on Missions navigation, mission periods and completed reward buttons. All 32 aliens use illustrated attack and ultimate controls with native pose artwork; matching named images in power selection. Movement controls use clear image-only symbols. Cooldown and ultimate charge remain visible. Existing saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.2 — Fitted Power and Battle Screens' --notes 'Larger power illustrations with horizontal swipe access to all powers. Power equipment and battle setup fit one screen without vertical scrolling. All match options and the Start button remain visible. Existing prices, icons, missions and saves preserved. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
