@@ -130,3 +130,5 @@ jobs:
 
 
 
+
+# v8.2: verify full-screen controls and all forty native replacement sheets.
