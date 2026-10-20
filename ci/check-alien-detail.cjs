@@ -10,7 +10,7 @@ assert.equal(grid.cols,4,JSON.stringify({viewport,grid}));assert.equal(grid.visi
 await page.locator('#roster').evaluate(el=>el.scrollTop=el.scrollHeight);await page.locator('#roster .card').last().click();assert.equal(await page.evaluate(()=>selected),31);await page.evaluate(()=>showScreen('characters'));await page.locator('#roster').evaluate(el=>el.scrollTop=0);await page.locator('#roster .card:visible').first().click();
 assert.equal(await page.evaluate(()=>currentScreen),'alieninfo');
 for(let id=0;id<32;id++){await page.evaluate(id=>{select(id);alienUpgradeOpen=false;renderAlienInfo()},id);
-for(const upgrades of [false,true]){await page.evaluate(up=>{alienUpgradeOpen=up;renderAlienInfo()},upgrades);await page.waitForTimeout(30);
+for(const upgrades of [false,true]){await page.evaluate(up=>{alienUpgradeOpen=up;renderAlienInfo()},upgrades);await page.waitForTimeout(30);if(!upgrades)assert.equal(await page.locator('#alienAbilities .power-picture').count(),4);
 const bad=await page.evaluate(()=>{const el=$('screen-alieninfo'),b=el.getBoundingClientRect();return {scroll:el.scrollHeight>el.clientHeight+2,items:[...el.querySelectorAll('button,p,strong,span,h1,h2,h3')].filter(e=>e.getClientRects().length&&e.clientWidth).filter(e=>{const r=e.getBoundingClientRect();return r.bottom>b.bottom+2||r.right>innerWidth+2||e.scrollWidth>e.clientWidth+3}).map(e=>e.textContent)}});
 assert.deepEqual(bad,{scroll:false,items:[]},JSON.stringify({viewport,id,upgrades,bad}));}}
 await page.evaluate(()=>{showScreen('home')});assert.equal(await page.locator('.home-shortcuts').isVisible(),false);assert.equal(await page.locator('.app-bottom [data-screen="upgrades"]').isVisible(),false);assert.deepEqual(errors,[]);await page.close();}
