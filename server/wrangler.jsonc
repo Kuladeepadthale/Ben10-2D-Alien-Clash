@@ -1,0 +1,12 @@
+{
+  "name": "omnitrix-ranked-arena",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-01",
+  "build": { "command": "node server/build-engine.cjs", "cwd": ".." },
+  "vars": {
+    "FIREBASE_PROJECT_ID": "omnitrix-alien-clash",
+    "FIREBASE_API_KEY": "AIzaSyAB48nw0eQs9PiFgvEnKSz1BqEaymHo6Zw"
+  },
+  "durable_objects": {"bindings": [{"name":"ARENA","class_name":"RankedArena"}]},
+  "migrations": [{"tag":"v1","new_sqlite_classes":["RankedArena"]}]
+}

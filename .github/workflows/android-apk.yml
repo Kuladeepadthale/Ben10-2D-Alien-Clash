@@ -53,6 +53,8 @@ jobs:
           node ci/check-threat-ladder.cjs
           node ci/check-card-shop.cjs
           node ci/check-account-cloud.cjs
+          node server/build-engine.cjs
+          node ci/check-multiplayer-server.mjs
           node ci/check-alien-combat.cjs
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
           node ci/check-threat-layout.cjs
@@ -68,6 +70,7 @@ jobs:
           node ci/check-card-shop-layout.cjs
           node ci/check-power-icons.cjs
           node ci/check-accounts.cjs
+          node ci/check-multiplayer-ui.cjs
           for script in web/*.js; do node --check "$script"; done
       - name: Build APK
         run: gradle -p android --no-daemon assembleDebug
@@ -84,7 +87,7 @@ jobs:
           assert len(villains['characters'])==30
           assert all('assets/'+v['src'] in names and 'assets/'+v['portrait'] in names for v in villains['characters'])
           assert 'assets/index.html' in names and 'assets/cel-player.js' in names
-          assert all('assets/'+f in names for f in ['account-boot.js','account-config.js','account-cloud.js','account.js','account.css'])
+          assert all('assets/'+f in names for f in ['account-boot.js','account-config.js','account-cloud.js','account.js','account.css','ranked-rules.js','multiplayer-config.js','multiplayer.js','multiplayer.css'])
           assert 'assets/progression.js' in names and 'assets/progression.css' in names
           assert 'assets/expansion-effects.js' in names
           m=json.loads(z.read('assets/assets/cels/manifest.json'))
@@ -106,7 +109,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.5 — Firebase Accounts' --notes 'Connects email accounts and cloud progress to the owner-supplied Firebase project. Includes Login, Sign Up, Guest, password reset, encrypted Android sessions and save-conflict handling. Owner must enable Email/Password and publish firebase/firestore.rules; live two-device verification remains required. Existing guest progress preserved: install over the previous APK. Multiplayer is not included. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 7.6 — Ranked Arena Client' --notes 'Replaces Quick Match with Multiplayer setup, Plumber-inspired ranked ladder and labelled bot practice. Includes real WebSocket matchmaking client and server-authoritative Worker source: Firebase identity checks, 30-second bot fallback, persistent RP and disconnect handling. IMPORTANT: The owner must deploy server/wrangler.jsonc and connect its wss endpoint before online battles are available; this APK does not claim an undeployed service is live. See server/SETUP.md. Firebase accounts retained. Install over the previous APK to preserve guest progress. Debug-signed test APK.' --prerelease --target "$GITHUB_SHA"
 
 
 
