@@ -15,6 +15,6 @@ class AlienCloudClient{
  async resetPassword(email){await this.auth('sendOobCode',{requestType:'PASSWORD_RESET',email});}
  async verifyEmail(){await this.auth('sendOobCode',{requestType:'VERIFY_EMAIL',idToken:await this.token()});}
 }
-function validAccountPayload(payload){if(typeof payload!=='string'||payload.length>120000)return false;try{const p=JSON.parse(payload);return p?.version===2&&Number.isFinite(p.credits)&&p.credits>=0&&p.credits<=10000000&&Array.isArray(p.aliens)&&p.aliens.length>0&&p.aliens.length<=32;}catch{return false;}}
+function validAccountPayload(payload){if(typeof payload!=='string'||payload.length>120000)return false;try{const p=JSON.parse(payload);return p?.version===2&&Number.isFinite(p.credits)&&p.credits>=0&&p.credits<=10000000&&Array.isArray(p.aliens)&&p.aliens.length>0&&p.aliens.length<=52;}catch{return false;}}
 
 function accountPayloadEqual(a,b){try{const stable=v=>Array.isArray(v)?'['+v.map(stable).join(',')+']':v&&typeof v==='object'?'{'+Object.keys(v).sort().map(k=>JSON.stringify(k)+':'+stable(v[k])).join(',')+'}':JSON.stringify(v);return stable(JSON.parse(a))===stable(JSON.parse(b));}catch{return false;}}
