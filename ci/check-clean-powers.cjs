@@ -1,12 +1,25 @@
-const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),{createCanvas}=require('@napi-rs/canvas');
-const image=createCanvas(500,400),g=image.getContext('2d');g.fillStyle='#ff6020';g.fillRect(100,0,100,100);
-const b=vm.createContext({console,Map,Promise,Math,Number,aliens:[{skills:[{name:'Fireball'}],ultimate:{name:'Inferno'},renderHeight:226,scale:1}],loadClassicImage:async()=>image,drawShot(){b.baseShots++},drawEffect(){b.baseEffects++},celEnsure:async()=>true,baseShots:0,baseEffects:0,time:.1,floor:510,powerTheme:()=> 'fire',powerColor:()=> '#ff6020',drawnAlienEmitter:()=>({x:100,y:200}),body:()=>({y:100,h:200}),other:()=>({x:600}),line(){throw Error('Unexpected launch streak')}});
-vm.runInContext(fs.readFileSync('web/ability-animations.js','utf8'),b);
-(async()=>{await vm.runInContext('ensureAbilityAnimation(0)',b);const calls=[];b.ctx={globalAlpha:1,save(){},restore(){},translate(){},rotate(){},scale(){},drawImage(...a){calls.push(a)},beginPath(){throw Error('Unexpected clipping')},rect(){throw Error('Unexpected clipping')},clip(){throw Error('Unexpected clipping')}};
- b.e={owner:{id:0},artKey:'normal',kind:'melee'};assert.equal(vm.runInContext('abilityAnimationSprite(e)',b),null);vm.runInContext('drawEffect(ctx,e)',b);assert.equal(b.baseEffects,1);assert.equal(calls.length,0);
- b.e={owner:{id:0},artKey:'skill0',kind:'projectile',name:'Fireball',x:200,y:200,emitterX:100,emitterY:200,r:20,vx:600,vy:0,life:2.38,maxLife:2.4,dir:1};const snapshot=JSON.stringify(b.e);vm.runInContext('drawShot(ctx,e)',b);assert.equal(calls.length,1);assert.equal(calls[0][3],98);assert.equal(calls[0][4],98);assert.equal(JSON.stringify(b.e),snapshot);
- calls.length=0;b.e.kind='afterimage';vm.runInContext('drawEffect(ctx,e)',b);assert.equal(calls.length,0);assert.equal(b.baseEffects,1);
- delete b.e.artKey;vm.runInContext('drawEffect(ctx,e)',b);assert.equal(b.baseEffects,2,'Normal dash silhouette remains');
- b.e={owner:{id:0},artKey:'skill0',kind:'beam',name:'Fireball',x:100,y:200,length:500,r:20,life:.99,maxLife:1,dir:1,hit:true};vm.runInContext('drawEffect(ctx,e)',b);assert.equal(calls.length,1,'Beam is one complete image with no duplicate covering impact');assert.equal(calls[0][3],98);assert.equal(calls[0][4],98);
- for(const dir of [-1,1]){calls.length=0;b.e={owner:{id:0},artKey:'skill0',kind:'beam',name:'Fireball',x:100,y:200,length:500,r:20,life:.99,maxLife:1,dir,hit:true,impactX:100-dir*20,impactY:200};vm.runInContext('drawEffect(ctx,e)',b);assert.equal(calls.length,0,'A short beam cannot flip behind the emitter');}
- console.log('Passed: normal strikes, one whole-image projectile draw, no launch streaks or strip seams, no rush power copies, original dash fallback, complete early beam artwork and immutable combat state.');})().catch(e=>{console.error(e);process.exit(1)});
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
+const {harness,declaration}=require('./cel-harness.cjs');
+const b=harness({metadataOnly:true}),run=s=>vm.runInContext(s,b),ctx=b.ctx;
+run(fs.readFileSync('web/art.js','utf8'));
+for(const n of ['drawShot','drawEffect'])run(declaration(fs.readFileSync('web/game.js','utf8'),n));
+for(const f of ['cartoon-power-effects','ability-animations'])run(fs.readFileSync('web/'+f+'.js','utf8'));
+ctx.drawImage=()=>{throw Error('Unexpected power image')};
+const visible=()=>ctx.getImageData(0,0,1280,640).data.some((v,i)=>i%4===3&&v>0);
+for(const dir of [-1,1]){
+ b.dir=dir;run("player=make(51,640,dir,true);enemy=make(9,640-dir*200,-dir);effect={id:1,owner:player,kind:'projectile',artKey:'ultimate',castId:77,name:'Stellar overdrive',x:640+dir*160,y:300,r:24,vx:600*dir,vy:0,dir,life:2.38,maxLife:2.4};");
+ ctx.clearRect(0,0,1280,640);run('drawShot(ctx,effect)');assert(visible());
+ const pixels=ctx.getImageData(0,0,1280,640).data;
+ for(let y=0;y<640;y++)for(let x=0;x<1280;x++)if(pixels[(y*1280+x)*4+3])assert(Math.abs(x-b.effect.x)<80,'Wake covers the path back to the caster');
+ run("effect={...effect,kind:'beam',x:640,y:300,length:300,r:20,life:.15,maxLife:.18};");
+ ctx.clearRect(0,0,1280,640);run('drawEffect(ctx,effect)');assert(visible());
+ run('effect.hit=true;effect.impactX=640-dir*20;effect.impactY=300');ctx.clearRect(0,0,1280,640);run('drawEffect(ctx,effect)');assert(!visible(),'Beam reversed behind the hand');
+ run("effect.hit=false;effect2={...effect,id:2};effects=[effect,effect2]");ctx.clearRect(0,0,1280,640);run('drawEffect(ctx,effect)');assert(!visible(),'Damage ticks duplicate the visible stream');
+ run('drawEffect(ctx,effect2)');assert(visible());
+ // A second combatant must not suppress or inherit the first combatant's beam.
+ run("enemy.config={type:'fire',light:'#ff9b38'};enemy.villain=0;enemy.dir=-dir;effect3={...effect2,id:3,owner:enemy,dir:-dir,x:640-dir*100,length:200};effects.push(effect3)");
+ assert.equal(run('animatedPowerStyle(effect3).theme'),'fire');ctx.clearRect(0,0,1280,640);run('drawEffect(ctx,effect2)');assert(visible(),'Other owner suppressed player beam');
+ ctx.clearRect(0,0,1280,640);run('drawEffect(ctx,effect3)');assert(visible(),'Villain beam missing');
+ run('effects=[]');
+}
+console.log('Passed: compact projectile wakes, both directions, no reversed beams, one stream per cast, separate opposing streams and correct villain element.');

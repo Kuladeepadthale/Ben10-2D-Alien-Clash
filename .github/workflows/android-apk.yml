@@ -146,11 +146,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.2 — 72 Aliens' --notes 'Adds input-controlled facing: passing the enemy no longer turns a character. Basic attacks, powers, dash, rushes and leaps follow the chosen direction. Projectiles and beams no longer auto-aim at the enemy; rain, traps and lobs are placed ahead. Retains all 72 characters, normal attack controls, clean power artwork and existing progress. Ranked uses server-authoritative controls and needs the updated Worker deployment.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.3 — 72 Aliens' --notes 'Replaces moving ability-icon pictures with procedural animated powers: flowing flames, electrical arcs, sound rings, water and energy. Compact projectile wakes, single continuous streams for repeated beam ticks, correct opposing direction and independent villain element. Keeps all 72 aliens, physical normal strikes and manual facing/dash controls. Ranked control simulation requires the matching Worker deployment.' --prerelease --target "$GITHUB_SHA"
 
 
 
 
 # v8.2: verify full-screen controls and all forty native replacement sheets.
+
 
 
