@@ -5,7 +5,7 @@ const animatedShotBase=drawShot,animatedEffectBase=drawEffect;
 function animatedPowerStyle(e){
  const f=e.owner||{},a=f.config||aliens[f.id]||{},map={frost:'ice',vine:'plant',pulse:'gadget',cosmic:'energy',phase:'energy',clone:'physical',slam:'physical',shell:'physical',dash:'wind',slime:'goo',digest:'plasma',beam:'tech'};
  const villain=Number.isInteger(f.villain),theme=a.effectTheme||(villain?map[a.type]||a.type:powerTheme(f.id,e.name))||'energy';
- return {theme,color:villain?a.light||e.color:f.id===70?'#70d5ff':powerColor(f.id,a.light||e.color),id:f.id};
+ return {theme,color:villain?a.light||e.color:f.id===51?'#91ff45':f.id===70?'#70d5ff':powerColor(f.id,a.light||e.color),id:f.id};
 }
 function powerBlob(ctx,x,y,rx,ry,color,phase){
  ctx.beginPath();for(let i=0;i<=24;i++){const a=i*Math.PI/12,k=1+.08*Math.sin(a*5+phase)+.04*Math.sin(a*9-phase*1.3),px=x+Math.cos(a)*rx*k,py=y+Math.sin(a)*ry*k;i?ctx.lineTo(px,py):ctx.moveTo(px,py);}ctx.closePath();ctx.fillStyle=color;ctx.fill();
@@ -129,4 +129,15 @@ drawPowerCharge=function(ctx,f,v){
  if(style.theme==='physical')return;
  ctx.save();ctx.translate(at.x,at.y);ctx.scale(v.dir||f.dir||1,1);ctx.globalAlpha=.2+progress*.6;
  animatedPowerHead(ctx,{id:v.id,r:(v.ultimate?12:8)*(.2+progress*.8)},style);ctx.restore();
+};
+
+// Continue Astrodactyl's green muzzle flare, not the old forehead landmark.
+const animatedEmitterBase=drawnAlienEmitter;
+drawnAlienEmitter=function(f,v){
+ if(f.id!==51||Number.isInteger(f.villain)||v.key!=='ultimate')return animatedEmitterBase(f,v);
+ const d=CEL_DATA.characters[51],frame=celPhase(f,'ultimate',time).frame;
+ const tip=({0:[190,73],1:[232,75],2:[174,53]})[frame.cell];
+ if(!tip)return animatedEmitterBase(f,v);
+ const scale=aliens[51].renderHeight*aliens[51].scale/d.referenceHeight;
+ return {x:f.x+(v.dir||f.dir||1)*(tip[0]-frame.origin[0])*scale,y:f.y+(tip[1]-frame.origin[1])*scale};
 };
