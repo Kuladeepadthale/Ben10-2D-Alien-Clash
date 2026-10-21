@@ -1,6 +1,6 @@
 """Export native cel sprites, registration metadata and a minimal Android web bundle."""
 from pathlib import Path
-import json, shutil, re, argparse
+import json, shutil, re, argparse, subprocess
 parser=argparse.ArgumentParser();parser.add_argument("--new-only",action="store_true");parser.add_argument("--skip-bundle",action="store_true");parser.add_argument("--from-id",type=int,default=None);args=parser.parse_args();start=args.from_id if args.from_id is not None else (10 if args.new_only else 0)
 import numpy as np
 from PIL import Image
@@ -8,6 +8,8 @@ from scipy import ndimage
 ROOT=Path(__file__).resolve().parents[1]
 WEB=ROOT/'web'; SRC=ROOT/'ci/cel-sources'; OUT=WEB/'assets/cels'
 NAMES=json.loads((ROOT/'ci/roster.json').read_text())
+emitter_profiles=json.loads(subprocess.check_output(['node','-e',"const fs=require('fs'),vm=require('vm');const b=vm.createContext({});console.log(vm.runInContext(fs.readFileSync('web/data.js','utf8')+';JSON.stringify(aliens.map(a=>({base:a.powerOrigin||[.94,.43],keys:a.powerOrigins||{}})))',b));"],cwd=ROOT,text=True))
+assert len(emitter_profiles)==len(NAMES)
 previous=json.loads((OUT/"manifest.json").read_text())["characters"] if start else []
 if OUT.exists() and not start: shutil.rmtree(OUT)
 OUT.mkdir(parents=True,exist_ok=True)
@@ -52,6 +54,17 @@ for id,name in enumerate(NAMES):
         character['clips']={'walk':list(range(8)),'jump':list(range(8,12)),'skill0':list(range(12,16)),'normal':list(range(16,20)),'skill1':list(range(20,24)),'skill2':[24,25,26],'ultimate':[27,28,29],'idle':[30,38,39],'guard':[31],'hit':[32,33],'ko':[34,35],'dash':[36,37]}
     else:
         character['clips']={'walk':list(range(8)),'jump':list(range(8,12)),'normal':list(range(12,16)),'skill0':[16,17,18],'skill1':[19,20,21],'skill2':[22,23],'ultimate':[24,25,26],'idle':[27],'guard':[28],'hit':[29],'ko':[30],'dash':[31]}
+    # Anchor each action to an opaque source pixel near its semantic body landmark.
+    # This retains the body's exact cel motion instead of emitting into transparent padding.
+    alpha_sheets=[np.array(Image.open(p).convert('RGBA'))[:,:,3] for p in processed]
+    for key in ['normal','skill0','skill1','skill2','ultimate']:
+        u,v=emitter_profiles[id]['keys'].get(key,emitter_profiles[id]['base'])
+        for fi in character['clips'][key]:
+            frame=character['frames'][fi];x,y,w,h=frame['rect']
+            yy,xx=np.where(alpha_sheets[frame['sheet']][y:y+h,x:x+w]>180)
+            assert len(xx),(name,key,fi,'missing opaque emitter surface')
+            nearest=int(np.argmin((xx-w*u)**2+(yy-h*v)**2))
+            frame.setdefault('emitters',{})[key]=[int(xx[nearest]),int(yy[nearest])]
     idle=character['frames'][character['clips']['idle'][0]]; character['referenceHeight']=idle['rect'][3]-16
     sheet=Image.open(processed[idle['sheet']]);x,y,w,h=idle['rect'];portrait=sheet.crop((x,y,x+w,y+h));portrait.thumbnail((640,800),Image.Resampling.LANCZOS);portrait_dest=save_native(portrait,folder/'portrait')
     character['portrait']='assets/cels/'+name+'/'+portrait_dest.name

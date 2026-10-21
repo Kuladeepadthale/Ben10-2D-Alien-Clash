@@ -15,7 +15,11 @@ def check_character(c):
         assert not a[:6].any() and not a[-6:].any() and not a[:,:6].any() and not a[:,-6:].any(),(c['name'],f['source'],f['cell'],'opaque frame edge')
         assert int((a>100).sum())==f['sourcePixels'],(c['name'],f['source'],f['cell'],'lost or foreign body pixels')
         assert len(f['sourceRect'])==4
+        for key,(ex,ey) in f.get('emitters',{}).items():
+            assert 0<=ex<w and 0<=ey<h and a[ey,ex]>180,(c['name'],key,'emitter outside drawn character')
         count+=1
+    for key in ['normal','skill0','skill1','skill2','ultimate']:
+        assert all(key in c['frames'][fi].get('emitters',{}) for fi in c['clips'][key]),(c['name'],key,'missing action emitter')
     return count
 
 if __name__=='__main__':
