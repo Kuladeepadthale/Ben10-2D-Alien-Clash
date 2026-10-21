@@ -1,8 +1,8 @@
 'use strict';
-// Battle effects and their buttons share the same 260 transparent illustrations.
+// Battle effects and their buttons share the same 360 transparent illustrations.
 // Artwork deformation is visual only; the combat engine owns damage and collisions.
 const abilityAnimationImages=new Map(),abilityAnimationPending=new Map();
-const abilityAnimationPaths=Array.from({length:13},(_,i)=>'assets/ui/abilities/ability-atlas-'+String(i).padStart(2,'0')+(i<8?'-v83.png':'-v90.webp'));
+const abilityAnimationPaths=Array.from({length:18},(_,i)=>'assets/ui/abilities/ability-atlas-'+String(i).padStart(2,'0')+(i<8?'-v83.png':i<13?'-v90.webp':'-v100.webp'));
 function ensureAbilityAnimation(id){
  const index=Math.floor(id/4);if(abilityAnimationImages.has(index))return Promise.resolve(true);
  if(abilityAnimationPending.has(index))return abilityAnimationPending.get(index);

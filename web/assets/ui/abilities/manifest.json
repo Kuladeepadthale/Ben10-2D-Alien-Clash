@@ -1,5 +1,5 @@
 {
-  "version": 90,
+  "version": 100,
   "columns": 5,
   "rows": 4,
   "entries": [
@@ -2340,6 +2340,906 @@
       "key": "ultimate",
       "name": "Stellar overdrive",
       "atlas": "ability-atlas-12-v90.webp",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "alien": 52,
+      "alienName": "Toepick",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 52,
+      "alienName": "Toepick",
+      "key": "skill0",
+      "name": "Terrifying gaze",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 52,
+      "alienName": "Toepick",
+      "key": "skill1",
+      "name": "Dread aura",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 52,
+      "alienName": "Toepick",
+      "key": "skill2",
+      "name": "Heavy grasp",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 52,
+      "alienName": "Toepick",
+      "key": "ultimate",
+      "name": "Nightmare exposure",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 53,
+      "alienName": "Pesky Dust",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 53,
+      "alienName": "Pesky Dust",
+      "key": "skill0",
+      "name": "Sleep dust",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 53,
+      "alienName": "Pesky Dust",
+      "key": "skill1",
+      "name": "Dream spiral",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 53,
+      "alienName": "Pesky Dust",
+      "key": "skill2",
+      "name": "Fairy flutter",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 53,
+      "alienName": "Pesky Dust",
+      "key": "ultimate",
+      "name": "Dreamscape",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 54,
+      "alienName": "Bullfrag",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 54,
+      "alienName": "Bullfrag",
+      "key": "skill0",
+      "name": "Tongue snare",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 54,
+      "alienName": "Bullfrag",
+      "key": "skill1",
+      "name": "Frog spring",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 54,
+      "alienName": "Bullfrag",
+      "key": "skill2",
+      "name": "Amphibian rush",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 54,
+      "alienName": "Bullfrag",
+      "key": "ultimate",
+      "name": "Incursean combination",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 55,
+      "alienName": "Kickin' Hawk",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 55,
+      "alienName": "Kickin' Hawk",
+      "key": "skill0",
+      "name": "Talon combination",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 55,
+      "alienName": "Kickin' Hawk",
+      "key": "skill1",
+      "name": "Roundhouse kick",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 55,
+      "alienName": "Kickin' Hawk",
+      "key": "skill2",
+      "name": "Aerial talon",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 55,
+      "alienName": "Kickin' Hawk",
+      "key": "ultimate",
+      "name": "Falcon flurry",
+      "atlas": "ability-atlas-13-v100.webp",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "alien": 56,
+      "alienName": "Whampire",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 56,
+      "alienName": "Whampire",
+      "key": "skill0",
+      "name": "Corruptura",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 56,
+      "alienName": "Whampire",
+      "key": "skill1",
+      "name": "Vladat shriek",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 56,
+      "alienName": "Whampire",
+      "key": "skill2",
+      "name": "Nocturnal lunge",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 56,
+      "alienName": "Whampire",
+      "key": "ultimate",
+      "name": "Nocturnal command",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 57,
+      "alienName": "Gutrot",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 57,
+      "alienName": "Gutrot",
+      "key": "skill0",
+      "name": "Sedative cloud",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 57,
+      "alienName": "Gutrot",
+      "key": "skill1",
+      "name": "Chemical cloud",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 57,
+      "alienName": "Gutrot",
+      "key": "skill2",
+      "name": "Pressure vent",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 57,
+      "alienName": "Gutrot",
+      "key": "ultimate",
+      "name": "Reactor cloud",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 58,
+      "alienName": "Atomix",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 58,
+      "alienName": "Atomix",
+      "key": "skill0",
+      "name": "Atomic burst",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 58,
+      "alienName": "Atomix",
+      "key": "skill1",
+      "name": "Fusion beam",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 58,
+      "alienName": "Atomix",
+      "key": "skill2",
+      "name": "Nuclear shockwave",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 58,
+      "alienName": "Atomix",
+      "key": "ultimate",
+      "name": "Fusion sun",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 59,
+      "alienName": "Walkatrout",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 59,
+      "alienName": "Walkatrout",
+      "key": "skill0",
+      "name": "Slippery escape",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 59,
+      "alienName": "Walkatrout",
+      "key": "skill1",
+      "name": "Fin slap",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 59,
+      "alienName": "Walkatrout",
+      "key": "skill2",
+      "name": "Fish flop",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 59,
+      "alienName": "Walkatrout",
+      "key": "ultimate",
+      "name": "Slipstream scramble",
+      "atlas": "ability-atlas-14-v100.webp",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "alien": 60,
+      "alienName": "The Worst",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 60,
+      "alienName": "The Worst",
+      "key": "skill0",
+      "name": "Stubborn charge",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 60,
+      "alienName": "The Worst",
+      "key": "skill1",
+      "name": "Belly bump",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 60,
+      "alienName": "The Worst",
+      "key": "skill2",
+      "name": "Unyielding landing",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 60,
+      "alienName": "The Worst",
+      "key": "ultimate",
+      "name": "Unbreakable impact",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 61,
+      "alienName": "Mole-Stache",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 61,
+      "alienName": "Mole-Stache",
+      "key": "skill0",
+      "name": "Moustache lash",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 61,
+      "alienName": "Mole-Stache",
+      "key": "skill1",
+      "name": "Whisker uppercut",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 61,
+      "alienName": "Mole-Stache",
+      "key": "skill2",
+      "name": "Propeller hop",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 61,
+      "alienName": "Mole-Stache",
+      "key": "ultimate",
+      "name": "Moustache cyclone",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 62,
+      "alienName": "Overflow",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 62,
+      "alienName": "Overflow",
+      "key": "skill0",
+      "name": "Water jet",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 62,
+      "alienName": "Overflow",
+      "key": "skill1",
+      "name": "Pressure shot",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 62,
+      "alienName": "Overflow",
+      "key": "skill2",
+      "name": "Water blade",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 62,
+      "alienName": "Overflow",
+      "key": "ultimate",
+      "name": "Tidal barrage",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 63,
+      "alienName": "Gax",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 63,
+      "alienName": "Gax",
+      "key": "skill0",
+      "name": "Laser vision",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 63,
+      "alienName": "Gax",
+      "key": "skill1",
+      "name": "Tentacle lash",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 63,
+      "alienName": "Gax",
+      "key": "skill2",
+      "name": "Conqueror slam",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 63,
+      "alienName": "Gax",
+      "key": "ultimate",
+      "name": "Vilgaxian charge",
+      "atlas": "ability-atlas-15-v100.webp",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "alien": 64,
+      "alienName": "Shock Rock",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 64,
+      "alienName": "Shock Rock",
+      "key": "skill0",
+      "name": "Energy blade",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 64,
+      "alienName": "Shock Rock",
+      "key": "skill1",
+      "name": "Fulmini beam",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 64,
+      "alienName": "Shock Rock",
+      "key": "skill2",
+      "name": "Rock discharge",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 64,
+      "alienName": "Shock Rock",
+      "key": "ultimate",
+      "name": "Energy hammer",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 65,
+      "alienName": "Slapback",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 65,
+      "alienName": "Slapback",
+      "key": "skill0",
+      "name": "Double trouble",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 65,
+      "alienName": "Slapback",
+      "key": "skill1",
+      "name": "Dense fist",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 65,
+      "alienName": "Slapback",
+      "key": "skill2",
+      "name": "Compact cannonball",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 65,
+      "alienName": "Slapback",
+      "key": "ultimate",
+      "name": "Mass multiplicity",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 66,
+      "alienName": "Surge",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 66,
+      "alienName": "Surge",
+      "key": "skill0",
+      "name": "Linked charge",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 66,
+      "alienName": "Surge",
+      "key": "skill1",
+      "name": "Cross slice",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 66,
+      "alienName": "Surge",
+      "key": "skill2",
+      "name": "Xerge formation",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 66,
+      "alienName": "Surge",
+      "key": "ultimate",
+      "name": "Swarm convergence",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 67,
+      "alienName": "Ultimate Humungousaur",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 67,
+      "alienName": "Ultimate Humungousaur",
+      "key": "skill0",
+      "name": "Bio-missile volley",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 67,
+      "alienName": "Ultimate Humungousaur",
+      "key": "skill1",
+      "name": "Armored stomp",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 67,
+      "alienName": "Ultimate Humungousaur",
+      "key": "skill2",
+      "name": "Heavy tail",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 67,
+      "alienName": "Ultimate Humungousaur",
+      "key": "ultimate",
+      "name": "Missile saturation",
+      "atlas": "ability-atlas-16-v100.webp",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "alien": 68,
+      "alienName": "Ultimate Big Chill",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "alien": 68,
+      "alienName": "Ultimate Big Chill",
+      "key": "skill0",
+      "name": "Freezing flame",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "alien": 68,
+      "alienName": "Ultimate Big Chill",
+      "key": "skill1",
+      "name": "Ice-fire shard",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "alien": 68,
+      "alienName": "Ultimate Big Chill",
+      "key": "skill2",
+      "name": "Phasing flame",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "alien": 68,
+      "alienName": "Ultimate Big Chill",
+      "key": "ultimate",
+      "name": "Subzero inferno",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "alien": 69,
+      "alienName": "Ultimate Echo Echo",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "alien": 69,
+      "alienName": "Ultimate Echo Echo",
+      "key": "skill0",
+      "name": "Sonic discs",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "alien": 69,
+      "alienName": "Ultimate Echo Echo",
+      "key": "skill1",
+      "name": "Focused resonance",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "alien": 69,
+      "alienName": "Ultimate Echo Echo",
+      "key": "skill2",
+      "name": "Disc ring",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "alien": 69,
+      "alienName": "Ultimate Echo Echo",
+      "key": "ultimate",
+      "name": "Sonic doom",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "alien": 70,
+      "alienName": "Ultimate Swampfire",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "alien": 70,
+      "alienName": "Ultimate Swampfire",
+      "key": "skill0",
+      "name": "Blue fireball",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "alien": 70,
+      "alienName": "Ultimate Swampfire",
+      "key": "skill1",
+      "name": "Armored roots",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "alien": 70,
+      "alienName": "Ultimate Swampfire",
+      "key": "skill2",
+      "name": "Methane bomb",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "alien": 70,
+      "alienName": "Ultimate Swampfire",
+      "key": "ultimate",
+      "name": "Blue-flame detonation",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "alien": 71,
+      "alienName": "Ultimate Cannonbolt",
+      "key": "normal",
+      "name": "Basic strike",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "alien": 71,
+      "alienName": "Ultimate Cannonbolt",
+      "key": "skill0",
+      "name": "Spiked roller",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "alien": 71,
+      "alienName": "Ultimate Cannonbolt",
+      "key": "skill1",
+      "name": "Steel-shell slam",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "alien": 71,
+      "alienName": "Ultimate Cannonbolt",
+      "key": "skill2",
+      "name": "Spiked rebound",
+      "atlas": "ability-atlas-17-v100.webp",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "alien": 71,
+      "alienName": "Ultimate Cannonbolt",
+      "key": "ultimate",
+      "name": "Wrecking orbit",
+      "atlas": "ability-atlas-17-v100.webp",
       "row": 3,
       "col": 4
     }

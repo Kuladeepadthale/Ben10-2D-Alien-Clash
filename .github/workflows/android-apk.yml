@@ -55,9 +55,10 @@ jobs:
         run: |
           python3 ci/prepare-alien-force.py
           python3 ci/prepare-next20.py
+          python3 ci/prepare-expansion100.py
           python3 ci/build-cels.py
           python3 ci/build-villains.py
-      - name: Verify all 52 action sets and game controls
+      - name: Verify all 72 action sets and game controls
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
@@ -71,6 +72,7 @@ jobs:
           node ci/check-multiplayer-server.mjs
           node ci/check-alien-combat.cjs
           node ci/check-next20.cjs
+          node ci/check-expansion100.cjs
           node ci/check-cartoon-powers.cjs
           node ci/check-ability-animations.cjs
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
@@ -116,8 +118,9 @@ jobs:
           assert 'assets/expansion-effects.js' in names
           assert 'assets/cartoon-power-effects.js' in names
           assert 'assets/ability-animations.js' in names
+          assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v100.webp' in names for i in range(13,18))
           m=json.loads(z.read('assets/assets/cels/manifest.json'))
-          assert len(m['characters'])==52
+          assert len(m['characters'])==72
           for c in m['characters']:
            assert all('assets/'+s['src'] in names for s in c['sheets'])
            assert set(c['clips'])=={'idle','walk','jump','normal','skill0','skill1','skill2','ultimate','guard','hit','ko','dash'}
@@ -135,10 +138,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 9.1 — Animated Power Artwork' --notes 'The actual battles now animate the same detailed illustrations shown on all 260 power buttons: flowing beams, flying projectiles, swinging blades and vines, rush trails, rising spikes and explosions. All 52 aliens retained. Uses the existing damage rules and pinned update signer. Development test APK; install over the Online app to retain its saved progress.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.0 — 72 Aliens' --notes 'Adds 20 playable entries: 15 new alien species and five Ultimate forms, 640 complete whole-body poses, 100 new matching power illustrations, and a separate collection reward. Now 72 aliens. All existing character IDs and progress are preserved. Uses pixel-preserving lossless textures and the existing pinned signer. New characters work in Testing, Survival and Threat Ladder; ranked availability depends on the deployed Worker roster.' --prerelease --target "$GITHUB_SHA"
 
 
 
 
 # v8.2: verify full-screen controls and all forty native replacement sheets.
+
 

@@ -1,6 +1,6 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),{harness}=require('./cel-harness.cjs');
 (async()=>{const b=harness(),run=s=>vm.runInContext(s,b),names=['Swampfire','Echo Echo','Humungousaur','Jetray','Big Chill','Chromastone','Brainstorm','Spidermonkey','Goop','Alien X'];
-assert.equal(run('ALIEN_COUNT'),52);assert.equal(run('CARTOON_GAITS.length'),52);
+assert.equal(run('ALIEN_COUNT'),72);assert.equal(run('CARTOON_GAITS.length'),72);
 for(let id=22;id<32;id++){b.id=id;assert.equal(run('aliens[id].name'),names[id-22]);run('celPinned=new Set([id])');await run('celEnsure(id)');
 for(const state of ['idle','walk','jump','normal','skill0','skill1','skill2','ultimate','guard','hit','ko','dash'])for(const dir of [-1,1]){
 run('player=make(id,640,'+dir+');enemy=make((id+1)%32,1000,-1);f=player');b.state=state;
@@ -10,3 +10,4 @@ for(const t of [0,.1,.3,.7,1.5,3]){b.t=t;if(b.f.cast)b.f.cast.elapsed=t;const pi
 }
 console.log('Passed: all ten Alien Force names, 32 gait profiles and 1,440 actual new-character cel frame draws across every action and facing.');
 })().catch(e=>{console.error(e);process.exit(1)});
+

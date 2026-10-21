@@ -9,12 +9,13 @@ const grid=await page.locator('#roster').evaluate(el=>{const r=el.getBoundingCli
 assert.equal(grid.cols,4,JSON.stringify({viewport,grid}));assert.equal(grid.visible,8,JSON.stringify({viewport,grid}));assert(grid.scroll);assert.equal(grid.overflow,'auto');
 await page.locator('#roster').evaluate(el=>el.scrollTop=el.scrollHeight);const lastCard=page.locator('#roster .card').last(),lastId=Number(await lastCard.getAttribute('data-alien'));await lastCard.click();assert.equal(await page.evaluate(()=>selected),lastId);await page.evaluate(()=>showScreen('characters'));await page.locator('#roster').evaluate(el=>el.scrollTop=0);await page.locator('#roster .card:visible').first().click();
 assert.equal(await page.evaluate(()=>currentScreen),'alieninfo');
-for(let id=0;id<52;id++){await page.evaluate(id=>{select(id);alienUpgradeOpen=false;renderAlienInfo()},id);
+for(let id=0;id<72;id++){await page.evaluate(id=>{select(id);alienUpgradeOpen=false;renderAlienInfo()},id);
 for(const upgrades of [false,true]){await page.evaluate(up=>{alienUpgradeOpen=up;renderAlienInfo()},upgrades);await page.waitForTimeout(30);if(!upgrades)assert.equal(await page.locator('#alienAbilities .power-picture').count(),4);
 const bad=await page.evaluate(()=>{const el=$('screen-alieninfo'),b=el.getBoundingClientRect();return {scroll:el.scrollHeight>el.clientHeight+2,items:[...el.querySelectorAll('button,p,strong,span,h1,h2,h3')].filter(e=>e.getClientRects().length&&e.clientWidth).filter(e=>{const r=e.getBoundingClientRect();return r.bottom>b.bottom+2||r.right>innerWidth+2||e.scrollWidth>e.clientWidth+3}).map(e=>e.textContent)}});
 assert.deepEqual(bad,{scroll:false,items:[]},JSON.stringify({viewport,id,upgrades,bad}));}}
 await page.evaluate(()=>{showScreen('home')});assert.equal(await page.locator('.home-shortcuts').isVisible(),false);assert.equal(await page.locator('.app-bottom [data-screen="upgrades"]').isVisible(),false);assert.deepEqual(errors,[]);await page.close();}
-console.log('Passed: all 52 alien stories, powers and upgrade panels fit four viewports without scrolling; collection entry and simple Home navigation work.');
+console.log('Passed: all 72 alien stories, powers and upgrade panels fit four viewports without scrolling; collection entry and simple Home navigation work.');
 }finally{await browser.close();await new Promise(r=>server.close(r))}})().catch(e=>{console.error(e);process.exit(1)});
+
 
 

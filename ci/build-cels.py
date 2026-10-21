@@ -15,7 +15,7 @@ if OUT.exists() and not start: shutil.rmtree(OUT)
 OUT.mkdir(parents=True,exist_ok=True)
 def save_native(im,base):
     from io import BytesIO
-    dest=base.with_suffix('.png');buffer=BytesIO();im.save(buffer,'PNG',compress_level=3)
+    dest=base.with_suffix('.webp');buffer=BytesIO();im.save(buffer,'WEBP',lossless=True,quality=100,method=4,exact=True)
     encoded=buffer.getvalue();Image.open(BytesIO(encoded)).load();dest.write_bytes(encoded)
     assert dest.stat().st_size==len(encoded)
     Image.open(dest).load();return dest
@@ -86,6 +86,7 @@ shutil.copytree(WEB/'assets/ui',bundle/'assets/ui',copy_function=shutil.copyfile
 for file in ['assets/animation-manifest-example.json']:
     if (WEB/file).exists(): (bundle/file).parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(WEB/file,bundle/file)
 print('Exported',sum(len(c['frames']) for c in manifest['characters']),'native cels across',len(NAMES),'complete action sets.')
+
 
 
 

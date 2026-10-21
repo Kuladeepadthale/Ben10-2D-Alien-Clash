@@ -3,6 +3,7 @@
 // Every beam tick uses the active cel's emitter; detached projectiles then travel independently.
 const cartoonShotBase=drawShot,cartoonEffectBase=drawEffect;
 function powerTheme(id,name=''){
+ if(id>=52)return aliens[id]?.effectTheme||'physical';
  if(id===1&&/clap/i.test(name))return'sonic';
  if(id===0||(id===22&&/fire|wildfire/i.test(name)))return'fire';
  if([19,26].includes(id))return'ice';
@@ -114,7 +115,7 @@ function drawPowerCharge(ctx,f,v){
  const progress=Math.max(0,Math.min(1,v.elapsed/Math.max(.001,v.cfg.windup))),r=(v.ultimate?19:11)*(.2+progress*.8),color=powerColor(f.id,(f.config||aliens[f.id]).light);
  ctx.save();ctx.translate(emitter.x,emitter.y);ctx.scale(v.dir||f.dir||1,1);ctx.globalAlpha=.25+progress*.65;ctx.shadowColor=color;ctx.shadowBlur=8+progress*10;
  if(theme==='fire'){
-  for(let i=0;i<4;i++){const x=(i-1.5)*r*.42,h=r*(1.1+.3*Math.sin(time*22+i));path(ctx,[[x-r*.42,r*.2],[x-r*.2,-h*.45],[x+r*.2,-h],[x+r*.52,-h*.2],[x+r*.44,r*.3]],i%2?'#ff9c2c':'#ffcf51',null);}
+  for(let i=0;i<4;i++){const x=(i-1.5)*r*.42,h=r*(1.1+.3*Math.sin(time*22+i));path(ctx,[[x-r*.42,r*.2],[x-r*.2,-h*.45],[x+r*.2,-h],[x+r*.52,-h*.2],[x+r*.44,r*.3]],i%2?(f.id===70?'#49bcff':'#ff9c2c'):(f.id===70?'#b7f4ff':'#ffcf51'),null);}
   oval(ctx,0,0,r*.5,r*.42,'#fff1a6',null);
  }else if(theme==='electric'){
   for(let i=0;i<4;i++){const a=i*Math.PI/2+time*3,dx=Math.cos(a)*r,dy=Math.sin(a)*r;line(ctx,[[0,0],[dx*.45-dy*.25,dy*.45+dx*.25],[dx,dy]],color,2);}

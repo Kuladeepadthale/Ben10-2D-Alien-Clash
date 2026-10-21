@@ -13,14 +13,14 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
   await page.evaluate(()=>rankedFind());assert.equal(await page.evaluate(()=>currentScreen),'account');
   await page.evaluate(()=>{
    accountState={mode:'member',uid:'test-player',email:'test@example.invalid',displayName:'Hero One'};accountClient.session={uid:'test-player',idToken:'test',displayName:'Hero One'};accountClient.token=async()=> 'test';accountSync=async()=>true;localStorage.setItem('omni-arena-endpoint','wss://arena.example/arena');showScreen('setup');
-   window.WebSocket=class{constructor(){this.readyState=1;this.sent=[];window.testSocket=this;setTimeout(()=>this.onopen?.(),0);}send(raw){const d=JSON.parse(raw);this.sent.push(d);if(d.type==='auth')this.deliver({type:'ready',protocol:1,rosterCount:52,rank:{points:240}});if(d.type==='join')this.deliver({type:'queued',rank:{points:240},wait:30});}deliver(d){this.onmessage?.({data:JSON.stringify(d)});}close(){this.readyState=3;this.onclose?.();}};
+   window.WebSocket=class{constructor(){this.readyState=1;this.sent=[];window.testSocket=this;setTimeout(()=>this.onopen?.(),0);}send(raw){const d=JSON.parse(raw);this.sent.push(d);if(d.type==='auth')this.deliver({type:'ready',protocol:1,rosterCount:72,rank:{points:240}});if(d.type==='join')this.deliver({type:'queued',rank:{points:240},wait:30});}deliver(d){this.onmessage?.({data:JSON.stringify(d)});}close(){this.readyState=3;this.onclose?.();}};
   });
   await page.evaluate(()=>rankedFind());await page.waitForFunction(()=>online.searching);assert(await page.locator('#rankedQueue').isVisible());assert.equal(await page.locator('#queueDetail').textContent(),'Finding opponents');assert.equal(await page.locator('#queueSeconds').textContent(),'30');assert(!(await page.locator('#rankedQueue').textContent()).toLowerCase().includes('bot'));
   await page.locator('#queueCancel').click();assert.equal(await page.evaluate(()=>online.searching),false);assert.equal(await page.locator('#rankedQueue').isVisible(),false);
   await page.evaluate(()=>{window.oldSocket=testSocket;oldSocket.deliver({type:'matched',snapshot:{}});});assert.equal(await page.evaluate(()=>online.active),false);
   await page.evaluate(()=>rankedFind());await page.waitForFunction(()=>online.searching);
   await page.evaluate(()=>{
-   const own=make(selected,370,1,true),rival=make((selected+1)%52,910,-1);window.testSnapshot=JSON.parse(JSON.stringify({fighters:[own,rival],shots:[],effects:[],clock:90,round:1,wins:[0,0],roundDelay:0,time:0}));testSocket.deliver({type:'matched',matchId:'test-match',seat:1,bot:false,names:['Plumber A','Plumber B'],ratings:[240,240],snapshot:testSnapshot});
+   const own=make(selected,370,1,true),rival=make((selected+1)%72,910,-1);window.testSnapshot=JSON.parse(JSON.stringify({fighters:[own,rival],shots:[],effects:[],clock:90,round:1,wins:[0,0],roundDelay:0,time:0}));testSocket.deliver({type:'matched',matchId:'test-match',seat:1,bot:false,names:['Plumber A','Plumber B'],ratings:[240,240],snapshot:testSnapshot});
   });await page.waitForFunction(()=>currentScreen==='battle'&&online.active);assert.equal(await page.evaluate(()=>player.id),await page.evaluate(()=>testSnapshot.fighters[1].id));
   await page.evaluate(()=>{window.beforeHP=enemy.hp;advanceSimulation(1);});assert.equal(await page.evaluate(()=>enemy.hp),await page.evaluate(()=>beforeHP));
   assert(await page.locator('#battleReady').isVisible());await page.evaluate(()=>down('normal'));assert.equal(await page.evaluate(()=>testSocket.sent.some(d=>d.type==='input'&&d.edges.includes('normal'))),false);await page.waitForFunction(()=>!battleCountdownActive());
@@ -36,5 +36,6 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
  }}finally{await browser.close();server.close();}
  console.log('Passed: four viewport layouts, guest gate, endpoint gate, queue/cancel/stale-message guards, real-player seat mapping, server snapshot authority, input sending, live pause/forfeit controls, single result rewards and other-mode preservation.');
 })().catch(e=>{console.error(e);process.exit(1);});
+
 
 

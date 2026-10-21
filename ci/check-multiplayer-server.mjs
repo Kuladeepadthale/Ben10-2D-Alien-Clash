@@ -8,7 +8,7 @@ assert(rules.changes(100,1000,0)[0]>rules.changes(1000,100,0)[0]);
 assert.deepEqual(rules.changes(100,100,-1),[0,0]);
 assert(rules.changes(100,100,0,true)[1]<rules.changes(100,100,0)[1]);
 let checked=0;
-for(let id=0;id<52;id++)for(const action of ['normal','skill0','skill1','skill2','ultimate']){
+for(let id=0;id<72;id++)for(const action of ['normal','skill0','skill1','skill2','ultimate']){
  const engine=createEngine([{alien:id,loadout:action==='skill2'?[2,1]:[0,1]},{alien:action==='ultimate'?31:0,loadout:[0,1]}]);
  engine.input(0,{right:true},[]);engine.input(1,{left:true},[]);
  for(let t=0;t<90;t++)engine.advance(1/30);
@@ -33,4 +33,5 @@ const claims={aud:'expected',iss:'https://securetoken.google.com/expected',exp:D
 const mock=async()=>({ok:true,json:async()=>({users:[{localId:'abc',displayName:'Galactic Hero',providerUserInfo:[{providerId:'password'}]}]})});
 assert.equal(await authenticate(token(claims),env,mock),'abc');assert.deepEqual(await authenticate(token(claims),env,mock,true),{uid:'abc',name:'Galactic Hero'});await assert.rejects(authenticate(token({...claims,aud:'wrong'}),env,mock));await assert.rejects(authenticate(token({...claims,exp:1}),env,mock));await assert.rejects(authenticate(token(claims),env,async()=>({ok:false,json:async()=>({})})));
 console.log(`Passed: ${checked} server casts, input authority, real-user pairing, 30-second bot boundary, bot rank exclusion, Elo strength factors, rank floor, transactional single settlement, forfeit penalty and Firebase identity guards.`);
+
 

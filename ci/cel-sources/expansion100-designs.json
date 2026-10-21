@@ -1,0 +1,1477 @@
+[
+  {
+    "slug": "toepick",
+    "name": "Toepick",
+    "species": "UNKNOWN",
+    "color": "#75823b",
+    "light": "#d6c776",
+    "dark": "#343826",
+    "type": "pulse",
+    "speed": 225,
+    "strength": 1.02,
+    "scale": 1.13,
+    "desc": "An intimidating alien whose hidden face terrifies opponents. Fear effects are balanced as slowing arena attacks.",
+    "skills": [
+      [
+        "Terrifying gaze",
+        "wave",
+        130,
+        5.5,
+        620,
+        {
+          "speed": 440,
+          "radius": 55,
+          "slow": 2
+        }
+      ],
+      [
+        "Dread aura",
+        "vortex",
+        150,
+        7,
+        220,
+        {
+          "ticks": 5,
+          "duration": 0.9,
+          "slow": 2
+        }
+      ],
+      [
+        "Heavy grasp",
+        "melee",
+        155,
+        6,
+        175,
+        {
+          "windup": 0.4
+        }
+      ]
+    ],
+    "ultimate": [
+      "Nightmare exposure",
+      "wave",
+      325,
+      0,
+      1000,
+      {
+        "speed": 500,
+        "radius": 90,
+        "ticks": 3,
+        "duration": 0.9,
+        "windup": 0.8,
+        "slow": 2.5
+      }
+    ],
+    "series": "Omniverse",
+    "artDescription": "Toepick, the stocky olive-green Ben 10 Omniverse monster with huge muscular arms, short thick legs, dark charcoal sleeveless suit, bronze riveted cage helmet with hinged front covering a terrifying mouth, green Omnitrix badge. Helmet closed normally; terrifying face exposed only in fear powers.",
+    "effectTheme": "energy",
+    "rank": 2,
+    "powerOrigin": [
+      0.7,
+      0.18
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "pesky-dust",
+    "name": "Pesky Dust",
+    "species": "NEMUINA",
+    "color": "#75cde1",
+    "light": "#f4a6ed",
+    "dark": "#3e376f",
+    "type": "sonic",
+    "speed": 320,
+    "strength": 0.7,
+    "scale": 0.68,
+    "desc": "A tiny winged Nemuina who scatters sleep-inducing dust and enters dreams. Dream effects slow targets in the arena.",
+    "skills": [
+      [
+        "Sleep dust",
+        "projectile",
+        105,
+        4.5,
+        700,
+        {
+          "speed": 480,
+          "radius": 20,
+          "slow": 2.5
+        }
+      ],
+      [
+        "Dream spiral",
+        "vortex",
+        140,
+        7,
+        220,
+        {
+          "ticks": 5,
+          "duration": 0.9,
+          "slow": 2
+        }
+      ],
+      [
+        "Fairy flutter",
+        "rush",
+        125,
+        6,
+        500,
+        {
+          "speed": 850,
+          "phase": true
+        }
+      ]
+    ],
+    "ultimate": [
+      "Dreamscape",
+      "wave",
+      305,
+      0,
+      950,
+      {
+        "speed": 450,
+        "radius": 80,
+        "ticks": 3,
+        "duration": 0.9,
+        "slow": 3,
+        "windup": 0.7
+      }
+    ],
+    "series": "Omniverse",
+    "artDescription": "Pesky Dust from Ben 10 Omniverse: tiny cyan-blue fairy alien, large pointed ears, big green eyes, tall swept blue hair, pink spots and pink-purple delicate butterfly wings, short purple-pink tunic, green Omnitrix. Cute agile face, slender limbs. Preserve translucent purple wings.",
+    "effectTheme": "energy",
+    "rank": 1,
+    "powerOrigin": [
+      0.88,
+      0.43
+    ],
+    "gait": {
+      "style": "Floating glide",
+      "stride": 0.85,
+      "hover": true
+    }
+  },
+  {
+    "slug": "bullfrag",
+    "name": "Bullfrag",
+    "species": "INCURSEAN",
+    "color": "#71994d",
+    "light": "#d8e89b",
+    "dark": "#29372c",
+    "type": "pounce",
+    "speed": 310,
+    "strength": 1.03,
+    "scale": 1.07,
+    "desc": "A powerful Incursean with an elastic tongue, strong legs and acrobatic combat skills.",
+    "skills": [
+      [
+        "Tongue snare",
+        "melee",
+        135,
+        5,
+        260,
+        {
+          "slow": 1.2
+        }
+      ],
+      [
+        "Frog spring",
+        "pounce",
+        150,
+        6.5,
+        480,
+        {
+          "speed": 790
+        }
+      ],
+      [
+        "Amphibian rush",
+        "rush",
+        155,
+        7,
+        590,
+        {
+          "speed": 900,
+          "duration": 0.7
+        }
+      ]
+    ],
+    "ultimate": [
+      "Incursean combination",
+      "rush",
+      325,
+      0,
+      850,
+      {
+        "speed": 1050,
+        "ticks": 6,
+        "duration": 1.7,
+        "windup": 0.6
+      }
+    ],
+    "series": "Omniverse",
+    "artDescription": "Bullfrag from Ben 10 Omniverse: muscular olive-green humanoid frog with broad frog head, black wraparound sunglasses, cream jaw, black-and-green fitted suit and green Omnitrix on chest, long strong frog legs and broad four-finger hands.",
+    "effectTheme": "physical",
+    "rank": 1,
+    "powerOrigin": [
+      0.91,
+      0.25
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "kickin-hawk",
+    "name": "Kickin' Hawk",
+    "species": "UNKNOWN",
+    "color": "#b97535",
+    "light": "#f3deab",
+    "dark": "#483223",
+    "type": "pounce",
+    "speed": 310,
+    "strength": 1.09,
+    "scale": 1.07,
+    "desc": "A skilled bird-like martial artist who combines strong kicks, arm blades and talons.",
+    "skills": [
+      [
+        "Talon combination",
+        "melee",
+        150,
+        5.5,
+        185,
+        {
+          "ticks": 3,
+          "duration": 0.5
+        }
+      ],
+      [
+        "Roundhouse kick",
+        "melee",
+        160,
+        6.5,
+        205,
+        {
+          "windup": 0.4
+        }
+      ],
+      [
+        "Aerial talon",
+        "pounce",
+        155,
+        7,
+        470,
+        {
+          "speed": 800
+        }
+      ]
+    ],
+    "ultimate": [
+      "Falcon flurry",
+      "rush",
+      335,
+      0,
+      850,
+      {
+        "speed": 1000,
+        "ticks": 6,
+        "duration": 1.7,
+        "windup": 0.6
+      }
+    ],
+    "series": "Omniverse",
+    "artDescription": "Kickin' Hawk from Ben 10 Omniverse: tall muscular brown-and-tan humanoid hawk, cream feathered chest and face, angular orange beak, swept white/tan crest, strong orange bird feet with talons, large feather blade projections on forearms, green Omnitrix belt. Faithful bird martial artist silhouette.",
+    "effectTheme": "physical",
+    "rank": 2,
+    "powerOrigin": [
+      0.91,
+      0.43
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "whampire",
+    "name": "Whampire",
+    "species": "VLADAT",
+    "color": "#3a6459",
+    "light": "#b5eb98",
+    "dark": "#172c2c",
+    "type": "phase",
+    "speed": 290,
+    "strength": 0.96,
+    "scale": 1.12,
+    "desc": "A Vladat with flight, a powerful sonic shriek and Corrupturas that influence opponents. Control is represented by slows.",
+    "skills": [
+      [
+        "Corruptura",
+        "projectile",
+        120,
+        5,
+        800,
+        {
+          "speed": 620,
+          "radius": 18,
+          "slow": 2
+        }
+      ],
+      [
+        "Vladat shriek",
+        "wave",
+        150,
+        7,
+        650,
+        {
+          "speed": 560,
+          "radius": 60
+        }
+      ],
+      [
+        "Nocturnal lunge",
+        "pounce",
+        155,
+        6.5,
+        500,
+        {
+          "speed": 800,
+          "phase": true
+        }
+      ]
+    ],
+    "ultimate": [
+      "Nocturnal command",
+      "wave",
+      330,
+      0,
+      1050,
+      {
+        "speed": 550,
+        "radius": 90,
+        "ticks": 3,
+        "duration": 0.9,
+        "windup": 0.8,
+        "slow": 2.5
+      }
+    ],
+    "series": "Omniverse",
+    "artDescription": "Whampire from Ben 10 Omniverse: tall slender vampiric bat alien, dark teal-black skin and fitted dark costume, pale grey face, pointed ears, sharp fangs, green eyes and green V-shaped chest pattern, bat-like wing membranes attached along arms, green Omnitrix centered on chest. Menacing elegant bat silhouette.",
+    "effectTheme": "energy",
+    "rank": 3,
+    "powerOrigin": [
+      0.83,
+      0.22
+    ],
+    "gait": {
+      "style": "Floating glide",
+      "stride": 0.85,
+      "hover": true
+    }
+  },
+  {
+    "slug": "gutrot",
+    "name": "Gutrot",
+    "species": "UNKNOWN",
+    "color": "#5b9c78",
+    "light": "#c4e779",
+    "dark": "#333749",
+    "type": "slime",
+    "speed": 235,
+    "strength": 1.0,
+    "scale": 1.15,
+    "desc": "A walking chemical laboratory who mixes gases inside his body and releases them through vents.",
+    "skills": [
+      [
+        "Sedative cloud",
+        "wave",
+        125,
+        5.5,
+        600,
+        {
+          "speed": 420,
+          "radius": 60,
+          "slow": 2
+        }
+      ],
+      [
+        "Chemical cloud",
+        "trap",
+        160,
+        8,
+        300,
+        {
+          "duration": 3.2,
+          "radius": 115,
+          "slow": 2
+        }
+      ],
+      [
+        "Pressure vent",
+        "beam",
+        145,
+        6.5,
+        550,
+        {
+          "ticks": 5,
+          "duration": 0.65,
+          "slow": 1.5
+        }
+      ]
+    ],
+    "ultimate": [
+      "Reactor cloud",
+      "vortex",
+      325,
+      0,
+      310,
+      {
+        "ticks": 8,
+        "duration": 1.7,
+        "windup": 0.8,
+        "slow": 2
+      }
+    ],
+    "series": "Omniverse",
+    "artDescription": "Gutrot from Ben 10 Omniverse: heavy stocky gas-laboratory alien, large translucent green domed torso/tank showing gaseous interior, dark purple/charcoal armor, circular shoulder and wrist gas vents, purple head with green eyes and short respirator-like mouth, thick limbs and green Omnitrix. Preserve distinctive round clear belly tank.",
+    "effectTheme": "goo",
+    "rank": 2,
+    "powerOrigin": [
+      0.9,
+      0.42
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "atomix",
+    "name": "Atomix",
+    "species": "UNKNOWN",
+    "color": "#dce6d9",
+    "light": "#aaff74",
+    "dark": "#364c3b",
+    "type": "cosmic",
+    "speed": 245,
+    "strength": 1.16,
+    "scale": 1.24,
+    "desc": "A powerful armored alien who channels nuclear energy into bright blasts and concentrated fusion attacks.",
+    "skills": [
+      [
+        "Atomic burst",
+        "projectile",
+        145,
+        6,
+        850,
+        {
+          "speed": 700,
+          "radius": 24
+        }
+      ],
+      [
+        "Fusion beam",
+        "beam",
+        170,
+        8,
+        800,
+        {
+          "ticks": 5,
+          "duration": 0.6,
+          "windup": 0.55
+        }
+      ],
+      [
+        "Nuclear shockwave",
+        "ground",
+        175,
+        8.5,
+        430,
+        {
+          "windup": 0.65
+        }
+      ]
+    ],
+    "ultimate": [
+      "Fusion sun",
+      "lob",
+      360,
+      0,
+      1050,
+      {
+        "speed": 600,
+        "radius": 125,
+        "windup": 0.95
+      }
+    ],
+    "series": "Omniverse",
+    "artDescription": "Atomix from Ben 10 Omniverse: towering humanoid nuclear robot alien with white and light-grey armor, black segmented joints and waist, vivid glowing green reactor windows in chest and wrists, blocky green visor face, big round shoulder pauldrons and gauntlets, large green Omnitrix chest. Crisp white armor and luminous green energy.",
+    "effectTheme": "energy",
+    "rank": 4,
+    "powerOrigin": [
+      0.91,
+      0.43
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "walkatrout",
+    "name": "Walkatrout",
+    "species": "UNKNOWN",
+    "color": "#67a5d0",
+    "light": "#d6ecf6",
+    "dark": "#335078",
+    "type": "dash",
+    "speed": 315,
+    "strength": 0.66,
+    "scale": 0.65,
+    "desc": "A small slippery fish alien. His arena kit uses slippery evasions and physical impacts, rather than invented water cannons.",
+    "skills": [
+      [
+        "Slippery escape",
+        "rush",
+        105,
+        4.5,
+        460,
+        {
+          "speed": 850,
+          "phase": true
+        }
+      ],
+      [
+        "Fin slap",
+        "melee",
+        115,
+        5,
+        145,
+        {
+          "ticks": 2,
+          "duration": 0.35
+        }
+      ],
+      [
+        "Fish flop",
+        "pounce",
+        125,
+        6,
+        380,
+        {
+          "speed": 690
+        }
+      ]
+    ],
+    "ultimate": [
+      "Slipstream scramble",
+      "rush",
+      295,
+      0,
+      750,
+      {
+        "speed": 1000,
+        "ticks": 5,
+        "duration": 1.5,
+        "windup": 0.5
+      }
+    ],
+    "series": "Omniverse",
+    "artDescription": "Walkatrout from Ben 10 Omniverse: tiny rotund bright blue fish alien, huge bulbous fish head/body, small yellow-green eyes, protruding fish lips, two short legs, small side fins instead of normal arms, tail fin, simple green Omnitrix on belly. Cute slippery small fish with legs, NOT a humanoid water warrior.",
+    "effectTheme": "physical",
+    "rank": 0,
+    "powerOrigin": [
+      0.91,
+      0.43
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "the-worst",
+    "name": "The Worst",
+    "species": "ATROCIAN",
+    "color": "#e5cc49",
+    "light": "#fff0a0",
+    "dark": "#82713a",
+    "type": "slam",
+    "speed": 215,
+    "strength": 0.83,
+    "scale": 0.88,
+    "desc": "An extraordinarily resilient Atrocian. Arena balancing turns his indestructibility into toughness and physical impact moves.",
+    "skills": [
+      [
+        "Stubborn charge",
+        "rush",
+        120,
+        5.5,
+        420,
+        {
+          "speed": 650,
+          "duration": 0.65
+        }
+      ],
+      [
+        "Belly bump",
+        "melee",
+        135,
+        6,
+        170,
+        {
+          "windup": 0.4
+        }
+      ],
+      [
+        "Unyielding landing",
+        "ground",
+        150,
+        7.5,
+        310,
+        {
+          "windup": 0.6
+        }
+      ]
+    ],
+    "ultimate": [
+      "Unbreakable impact",
+      "leapslam",
+      315,
+      0,
+      380,
+      {
+        "duration": 1.3,
+        "windup": 0.75
+      }
+    ],
+    "series": "Omniverse",
+    "artDescription": "The Worst from Ben 10 Omniverse: short round yellow alien with lumpy rubbery skin, large belly, small droopy green eyes, round head without hair, short thick arms and legs, green patterned briefs and green Omnitrix belt. Lovably weary expression, unmistakably yellow round resilient alien.",
+    "effectTheme": "physical",
+    "rank": 0,
+    "powerOrigin": [
+      0.91,
+      0.43
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "mole-stache",
+    "name": "Mole-Stache",
+    "species": "UNKNOWN",
+    "color": "#ab7847",
+    "light": "#f0cf8d",
+    "dark": "#4d3428",
+    "type": "bandage",
+    "speed": 275,
+    "strength": 0.81,
+    "scale": 0.7,
+    "desc": "A small burrowing alien whose strong prehensile moustache forms fists, lashes and a propeller for flight.",
+    "skills": [
+      [
+        "Moustache lash",
+        "melee",
+        135,
+        5,
+        250,
+        {
+          "ticks": 2,
+          "duration": 0.4
+        }
+      ],
+      [
+        "Whisker uppercut",
+        "melee",
+        145,
+        6,
+        190,
+        {
+          "windup": 0.35
+        }
+      ],
+      [
+        "Propeller hop",
+        "pounce",
+        140,
+        6.5,
+        440,
+        {
+          "speed": 750
+        }
+      ]
+    ],
+    "ultimate": [
+      "Moustache cyclone",
+      "vortex",
+      310,
+      0,
+      260,
+      {
+        "ticks": 7,
+        "duration": 1.3,
+        "windup": 0.7
+      }
+    ],
+    "series": "Omniverse",
+    "artDescription": "Mole-Stache from Ben 10 Omniverse: small stocky brown mole-like alien, tan face, round pinkish nose, small green eyes, enormously long golden-blond prehensile handlebar moustache, short brown fur, little limbs, simple dark green outfit and green Omnitrix belt. Moustache is the signature, can flex into fists and propeller; keep face recognizable.",
+    "effectTheme": "bandage",
+    "rank": 1,
+    "powerOrigin": [
+      0.91,
+      0.43
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "overflow",
+    "name": "Overflow",
+    "species": "CASCAN",
+    "color": "#c33b32",
+    "light": "#8de8ff",
+    "dark": "#432f3a",
+    "type": "frost",
+    "speed": 260,
+    "strength": 1.04,
+    "scale": 1.08,
+    "desc": "An armored Cascan whose water-filled arms create precise jets, blades and powerful aquatic blasts.",
+    "skills": [
+      [
+        "Water jet",
+        "beam",
+        140,
+        6,
+        680,
+        {
+          "ticks": 5,
+          "duration": 0.55
+        }
+      ],
+      [
+        "Pressure shot",
+        "projectile",
+        130,
+        5,
+        820,
+        {
+          "speed": 700,
+          "radius": 21
+        }
+      ],
+      [
+        "Water blade",
+        "melee",
+        150,
+        6.5,
+        220,
+        {
+          "windup": 0.4
+        }
+      ]
+    ],
+    "ultimate": [
+      "Tidal barrage",
+      "rain",
+      335,
+      0,
+      950,
+      {
+        "ticks": 8,
+        "duration": 2,
+        "windup": 0.8
+      }
+    ],
+    "series": "Reboot",
+    "artDescription": "Overflow from Ben 10 Reboot: compact bulky red armored humanoid robot-like aquatic alien, red helmet surrounding a dark face with green eyes, clear pale-blue cylindrical water tanks on forearms, red chest and boots, black joints, metallic silver trim, green Omnitrix on chest. Preserve large water-filled forearm tanks.",
+    "effectTheme": "water",
+    "rank": 2,
+    "powerOrigin": [
+      0.91,
+      0.43
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "gax",
+    "name": "Gax",
+    "species": "CHIMERA SUI GENERIS",
+    "color": "#769d82",
+    "light": "#d6e1c5",
+    "dark": "#333e3a",
+    "type": "cosmic",
+    "speed": 240,
+    "strength": 1.17,
+    "scale": 1.23,
+    "desc": "A Chimera Sui Generis with great strength, long facial tentacles and powerful laser vision.",
+    "skills": [
+      [
+        "Laser vision",
+        "beam",
+        155,
+        6.5,
+        780,
+        {
+          "ticks": 4,
+          "duration": 0.5
+        }
+      ],
+      [
+        "Tentacle lash",
+        "melee",
+        155,
+        6,
+        230,
+        {
+          "windup": 0.4
+        }
+      ],
+      [
+        "Conqueror slam",
+        "ground",
+        170,
+        8,
+        380,
+        {
+          "windup": 0.65
+        }
+      ]
+    ],
+    "ultimate": [
+      "Vilgaxian charge",
+      "rush",
+      345,
+      0,
+      820,
+      {
+        "speed": 900,
+        "ticks": 5,
+        "duration": 1.7,
+        "windup": 0.75
+      }
+    ],
+    "series": "Reboot",
+    "artDescription": "Gax from Ben 10 Reboot: massive green-skinned cephalopod humanoid, broad squid head with several chin tentacles, green eyes, huge muscular forearms, grey-black armored suit with dark green panels, heavy black boots, green Omnitrix on left chest. Ben transformation of the Vilgax species, heroic playable alien, not villain costume.",
+    "effectTheme": "energy",
+    "rank": 3,
+    "powerOrigin": [
+      0.71,
+      0.19
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "shock-rock",
+    "name": "Shock Rock",
+    "species": "FULMINI",
+    "color": "#6b8fa2",
+    "light": "#89e8ff",
+    "dark": "#293e54",
+    "type": "electric",
+    "speed": 255,
+    "strength": 1.1,
+    "scale": 1.17,
+    "desc": "A stone-armored Fulmini who shapes blue electrical energy into weapons and powerful constructs.",
+    "skills": [
+      [
+        "Energy blade",
+        "melee",
+        150,
+        5.5,
+        235,
+        {
+          "windup": 0.35
+        }
+      ],
+      [
+        "Fulmini beam",
+        "beam",
+        160,
+        7,
+        740,
+        {
+          "ticks": 5,
+          "duration": 0.55
+        }
+      ],
+      [
+        "Rock discharge",
+        "ground",
+        165,
+        8,
+        380,
+        {
+          "windup": 0.6
+        }
+      ]
+    ],
+    "ultimate": [
+      "Energy hammer",
+      "leapslam",
+      345,
+      0,
+      440,
+      {
+        "duration": 1.3,
+        "windup": 0.8
+      }
+    ],
+    "series": "Reboot",
+    "artDescription": "Shock Rock from Ben 10 Reboot: tall muscular humanoid made from bright electric-blue energy with chunky rough grey stone armor plates on shoulders, chest, forearms and shins, angular rock crest/head and glowing blue face, green Omnitrix set in chest rock. Exposed luminous blue electrical body between rock plates.",
+    "effectTheme": "electric",
+    "rank": 3,
+    "powerOrigin": [
+      0.91,
+      0.43
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "slapback",
+    "name": "Slapback",
+    "species": "EKOPLEKTOID",
+    "color": "#699d8b",
+    "light": "#d1edc5",
+    "dark": "#314448",
+    "type": "clone",
+    "speed": 285,
+    "strength": 0.93,
+    "scale": 0.9,
+    "desc": "An Ekoplektoid who divides into smaller, denser copies when struck on the back. Clone assists power his arena combinations.",
+    "skills": [
+      [
+        "Double trouble",
+        "rush",
+        135,
+        5.5,
+        480,
+        {
+          "speed": 820,
+          "ticks": 2,
+          "duration": 0.65
+        }
+      ],
+      [
+        "Dense fist",
+        "melee",
+        155,
+        6.5,
+        180,
+        {
+          "ticks": 3,
+          "duration": 0.55
+        }
+      ],
+      [
+        "Compact cannonball",
+        "pounce",
+        150,
+        7,
+        430,
+        {
+          "speed": 760
+        }
+      ]
+    ],
+    "ultimate": [
+      "Mass multiplicity",
+      "rush",
+      330,
+      0,
+      850,
+      {
+        "speed": 1050,
+        "ticks": 6,
+        "duration": 1.8,
+        "windup": 0.7
+      }
+    ],
+    "series": "Reboot",
+    "artDescription": "Slapback from Ben 10 Reboot: short stocky green-grey frog-like humanoid, smooth metallic skin, wide heavy jaw, green eyes, black-and-green fitted suit with strong white/silver chest pattern, broad big fists and thick boots, green Omnitrix at chest. Dense compact heavy build, no four arms.",
+    "effectTheme": "physical",
+    "rank": 2,
+    "powerOrigin": [
+      0.91,
+      0.43
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "surge",
+    "name": "Surge",
+    "species": "XERGE",
+    "color": "#45356c",
+    "light": "#c7a9f0",
+    "dark": "#181522",
+    "type": "clone",
+    "speed": 315,
+    "strength": 0.78,
+    "scale": 0.88,
+    "desc": "A Xerge who links with other members of his species to form coordinated shapes. Arena formations include supporting Xerge.",
+    "skills": [
+      [
+        "Linked charge",
+        "rush",
+        125,
+        5,
+        510,
+        {
+          "speed": 900,
+          "ticks": 2,
+          "duration": 0.6
+        }
+      ],
+      [
+        "Cross slice",
+        "melee",
+        135,
+        5.5,
+        185,
+        {
+          "ticks": 2,
+          "duration": 0.4
+        }
+      ],
+      [
+        "Xerge formation",
+        "vortex",
+        150,
+        7,
+        230,
+        {
+          "ticks": 5,
+          "duration": 0.9
+        }
+      ]
+    ],
+    "ultimate": [
+      "Swarm convergence",
+      "rush",
+      315,
+      0,
+      900,
+      {
+        "speed": 1100,
+        "ticks": 6,
+        "duration": 1.8,
+        "windup": 0.7
+      }
+    ],
+    "series": "Reboot",
+    "artDescription": "Surge the Xerge from Ben 10 Reboot: small robotic purple-and-black X-shaped alien, four angular splayed limbs forming a clear X, black central face with green eyes and vivid green Omnitrix in center. Thin flexible arms and legs, minimal purple segmented body, faithful X-shaped silhouette.",
+    "effectTheme": "physical",
+    "rank": 1,
+    "powerOrigin": [
+      0.66,
+      0.4
+    ],
+    "gait": {
+      "style": "Floating glide",
+      "stride": 0.85,
+      "hover": true
+    }
+  },
+  {
+    "slug": "ultimate-humungousaur",
+    "name": "Ultimate Humungousaur",
+    "species": "EVOLVED VAXASAURIAN",
+    "color": "#75964e",
+    "light": "#e3e9a0",
+    "dark": "#354233",
+    "type": "slam",
+    "speed": 210,
+    "strength": 1.25,
+    "scale": 1.3,
+    "desc": "An evolved armored Vaxasaurian whose hands transform into biological missile launchers.",
+    "skills": [
+      [
+        "Bio-missile volley",
+        "projectile",
+        160,
+        7,
+        900,
+        {
+          "speed": 740,
+          "radius": 18,
+          "ticks": 3,
+          "duration": 0.35
+        }
+      ],
+      [
+        "Armored stomp",
+        "ground",
+        180,
+        8,
+        420,
+        {
+          "windup": 0.7
+        }
+      ],
+      [
+        "Heavy tail",
+        "melee",
+        175,
+        7,
+        230,
+        {
+          "windup": 0.45
+        }
+      ]
+    ],
+    "ultimate": [
+      "Missile saturation",
+      "rain",
+      365,
+      0,
+      1000,
+      {
+        "ticks": 9,
+        "duration": 2.2,
+        "windup": 0.9
+      }
+    ],
+    "series": "Ultimate Alien",
+    "artDescription": "Ultimate Humungousaur from Ben 10 Ultimate Alien: giant green armored ankylosaurus humanoid, heavy dark blue-green segmented armor shell with crimson conical spikes on shoulders/back, thick dinosaur tail, broad muzzle and red eyes, immense fists that transform into multi-barrel biological missile cannons in ranged poses, green Ultimatrix chest badge.",
+    "effectTheme": "gadget",
+    "rank": 4,
+    "powerOrigin": [
+      0.91,
+      0.43
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "ultimate-big-chill",
+    "name": "Ultimate Big Chill",
+    "species": "EVOLVED NECROFRIGGIAN",
+    "color": "#e95739",
+    "light": "#ffd38d",
+    "dark": "#522d35",
+    "type": "frost",
+    "speed": 285,
+    "strength": 0.96,
+    "scale": 1.11,
+    "desc": "An evolved Necrofriggian whose red-orange flames consume heat and freeze targets.",
+    "skills": [
+      [
+        "Freezing flame",
+        "beam",
+        155,
+        6.5,
+        720,
+        {
+          "ticks": 5,
+          "duration": 0.6,
+          "slow": 2
+        }
+      ],
+      [
+        "Ice-fire shard",
+        "projectile",
+        140,
+        5.5,
+        850,
+        {
+          "speed": 750,
+          "radius": 20,
+          "slow": 1.5
+        }
+      ],
+      [
+        "Phasing flame",
+        "rush",
+        155,
+        7,
+        560,
+        {
+          "speed": 850,
+          "phase": true
+        }
+      ]
+    ],
+    "ultimate": [
+      "Subzero inferno",
+      "wave",
+      345,
+      0,
+      1100,
+      {
+        "speed": 620,
+        "radius": 95,
+        "ticks": 3,
+        "duration": 0.9,
+        "windup": 0.85,
+        "slow": 2.5
+      }
+    ],
+    "series": "Ultimate Alien",
+    "artDescription": "Ultimate Big Chill from Ben 10 Ultimate Alien: tall moth-like humanoid with red-orange body and long enormous flame-patterned wings, yellow-orange wing tips, dark black torso and face, glowing green eyes, clawed long hands and feet, green Ultimatrix chest badge. Ice-fire is orange/yellow flame that freezes, not normal blue Big Chill. Cloak wings can unfurl.",
+    "effectTheme": "fire",
+    "rank": 4,
+    "powerOrigin": [
+      0.78,
+      0.25
+    ],
+    "gait": {
+      "style": "Floating glide",
+      "stride": 0.85,
+      "hover": true
+    }
+  },
+  {
+    "slug": "ultimate-echo-echo",
+    "name": "Ultimate Echo Echo",
+    "species": "EVOLVED SONOROSIAN",
+    "color": "#3d88c4",
+    "light": "#d9f5ff",
+    "dark": "#23455a",
+    "type": "sonic",
+    "speed": 270,
+    "strength": 0.93,
+    "scale": 1.05,
+    "desc": "An evolved Sonorosian whose independently controlled sonic discs surround targets with powerful sound.",
+    "skills": [
+      [
+        "Sonic discs",
+        "projectile",
+        145,
+        6,
+        850,
+        {
+          "speed": 720,
+          "radius": 20,
+          "ticks": 3,
+          "duration": 0.4
+        }
+      ],
+      [
+        "Focused resonance",
+        "beam",
+        160,
+        7,
+        760,
+        {
+          "ticks": 5,
+          "duration": 0.55
+        }
+      ],
+      [
+        "Disc ring",
+        "vortex",
+        165,
+        8,
+        260,
+        {
+          "ticks": 6,
+          "duration": 1.1
+        }
+      ]
+    ],
+    "ultimate": [
+      "Sonic doom",
+      "rain",
+      350,
+      0,
+      1050,
+      {
+        "ticks": 8,
+        "duration": 2,
+        "windup": 0.85
+      }
+    ],
+    "series": "Ultimate Alien",
+    "artDescription": "Ultimate Echo Echo from Ben 10 Ultimate Alien: tall smooth blue robotic humanoid, round blue helmet with black faceplate and green eyes, broad shoulders, white circular sonic discs mounted on shoulders/chest/forearms/legs, black segmented joint details, green Ultimatrix center chest. Independent white-and-blue sonic discs may appear close to hands only during powers.",
+    "effectTheme": "sonic",
+    "rank": 4,
+    "powerOrigin": [
+      0.91,
+      0.43
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "ultimate-swampfire",
+    "name": "Ultimate Swampfire",
+    "species": "EVOLVED METHANOSIAN",
+    "color": "#725744",
+    "light": "#90dfff",
+    "dark": "#302a28",
+    "type": "vine",
+    "speed": 235,
+    "strength": 1.15,
+    "scale": 1.22,
+    "desc": "An evolved Methanosian with tough wooden armor, blue methane flames and explosive blue fire bombs.",
+    "skills": [
+      [
+        "Blue fireball",
+        "projectile",
+        150,
+        6,
+        850,
+        {
+          "speed": 680,
+          "radius": 23
+        }
+      ],
+      [
+        "Armored roots",
+        "spikes",
+        175,
+        8,
+        500,
+        {
+          "windup": 0.65
+        }
+      ],
+      [
+        "Methane bomb",
+        "lob",
+        175,
+        8,
+        750,
+        {
+          "speed": 510,
+          "radius": 90
+        }
+      ]
+    ],
+    "ultimate": [
+      "Blue-flame detonation",
+      "rain",
+      355,
+      0,
+      1000,
+      {
+        "ticks": 8,
+        "duration": 2.2,
+        "windup": 0.9
+      }
+    ],
+    "series": "Ultimate Alien",
+    "artDescription": "Ultimate Swampfire from Ben 10 Ultimate Alien: large broad brown living-tree humanoid, thick dark wooden bark armor and root feet, small blue flame head, enormous rounded blue methane seed bulbs on both shoulders, blue cracks and blue fire in hands, green Ultimatrix chest mark. Broad gorilla-like tree silhouette, clearly different from normal green Swampfire.",
+    "effectTheme": "fire",
+    "rank": 4,
+    "powerOrigin": [
+      0.91,
+      0.43
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  },
+  {
+    "slug": "ultimate-cannonbolt",
+    "name": "Ultimate Cannonbolt",
+    "species": "EVOLVED ARBURIAN PELAROTA",
+    "color": "#a3b6c7",
+    "light": "#eff7ff",
+    "dark": "#3a4651",
+    "type": "shell",
+    "speed": 245,
+    "strength": 1.19,
+    "scale": 1.2,
+    "desc": "An evolved Arburian Pelarota with metallic armor and heavy spikes that make his rolling attacks more destructive.",
+    "skills": [
+      [
+        "Spiked roller",
+        "rush",
+        155,
+        6,
+        580,
+        {
+          "speed": 850,
+          "duration": 0.7
+        }
+      ],
+      [
+        "Steel-shell slam",
+        "ground",
+        175,
+        8,
+        390,
+        {
+          "windup": 0.65
+        }
+      ],
+      [
+        "Spiked rebound",
+        "rush",
+        185,
+        8.5,
+        750,
+        {
+          "speed": 980,
+          "ticks": 3,
+          "duration": 1.2
+        }
+      ]
+    ],
+    "ultimate": [
+      "Wrecking orbit",
+      "rush",
+      355,
+      0,
+      1050,
+      {
+        "speed": 1180,
+        "ticks": 6,
+        "duration": 1.9,
+        "windup": 0.8
+      }
+    ],
+    "series": "Ultimate Alien",
+    "artDescription": "Ultimate Cannonbolt from Ben 10 Ultimate Alien: bulky round white and grey-blue armored alien, metallic blue-grey shell plates on shoulders/back/forearms, large dark cylindrical metal spikes protruding from armor, small face with green eyes, black limbs and stout feet, green Ultimatrix on chest. Curled powers form a complete blue-silver spiked ball; walking remains upright.",
+    "effectTheme": "physical",
+    "rank": 4,
+    "powerOrigin": [
+      0.91,
+      0.43
+    ],
+    "gait": {
+      "style": "Natural character strides",
+      "stride": 0.85,
+      "hover": false
+    }
+  }
+]

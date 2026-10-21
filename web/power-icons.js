@@ -1,6 +1,6 @@
 'use strict';
 // Ability-only artwork: five actions per alien, four aliens per native atlas.
-const ABILITY_ART_ATLASES=Object.freeze([...Array.from({length:8},(_,i)=>'assets/ui/abilities/ability-atlas-'+String(i).padStart(2,'0')+'-v83.png'),...Array.from({length:5},(_,i)=>'assets/ui/abilities/ability-atlas-'+String(i+8).padStart(2,'0')+'-v90.webp')]);
+const ABILITY_ART_ATLASES=Object.freeze([...Array.from({length:8},(_,i)=>'assets/ui/abilities/ability-atlas-'+String(i).padStart(2,'0')+'-v83.png'),...Array.from({length:5},(_,i)=>'assets/ui/abilities/ability-atlas-'+String(i+8).padStart(2,'0')+'-v90.webp'),...Array.from({length:5},(_,i)=>'assets/ui/abilities/ability-atlas-'+String(i+13).padStart(2,'0')+'-v100.webp')]);
 function powerSpec(id,key){const a=aliens[id];return key==='ultimate'?a.ultimate:key==='normal'?{name:'Basic strike',kind:'melee'}:a.skills[Number(key.slice(5))];}
 
 function powerPicture(id,key){const a=aliens[id],col=key==='normal'?0:key==='ultimate'?4:1+Number(key.slice(5)),row=id%4,atlas=ABILITY_ART_ATLASES[Math.floor(id/4)];return '<span class="power-picture ability-picture" data-power-alien="'+id+'" data-power-action="'+key+'" data-ability-id="'+id+':'+key+'" data-ability-col="'+col+'" data-ability-row="'+row+'" style="--power-color:'+a.light+';--power-dark:'+a.dark+';background-image:url('+atlas+');background-position:'+(col*25)+'% '+(row*100/3)+'%;" aria-hidden="true"><img class="ability-load" src="'+atlas+'" alt="" decoding="async"></span>';}
