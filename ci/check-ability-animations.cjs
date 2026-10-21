@@ -15,7 +15,7 @@ async function main(){
    b.time=t;run('effect.life=1-time');ctx.clearRect(0,0,1280,640);
    const sprite=run('abilityAnimationSprite(effect)');if(key==='normal')assert.equal(sprite,null,'Basic strikes must not use power art');else{assert.equal(sprite.key,key);assert(sprite.image.width>=1000&&sprite.image.height>=800);}
    run("['projectile','wave','lob','rain','ground'].includes(effect.kind)?drawShot(ctx,effect):drawEffect(ctx,effect)");
-   const pixels=ctx.getImageData(0,0,1280,640).data;if(effect.kind==='afterimage')assert(!pixels.some((v,i)=>i%4===3&&v>0),'Rush must not leave power-image copies');else assert(pixels.some((v,i)=>i%4===3&&v>0),`Empty ${id} ${key}`);signatures.push(crypto.createHash('sha256').update(pixels).digest('hex'));count++;
+   const pixels=ctx.getImageData(0,0,1280,640).data;if(b.effect.kind==='afterimage')assert(!pixels.some((v,i)=>i%4===3&&v>0),'Rush must not leave power-image copies');else assert(pixels.some((v,i)=>i%4===3&&v>0),`Empty ${id} ${key}`);signatures.push(crypto.createHash('sha256').update(pixels).digest('hex'));count++;
   }
   if(['beam','projectile','vortex','melee','eruption'].includes(run('effect.kind')))assert(new Set(signatures).size>1,'Animation must change over time');
   run('effect.life=.72');assert.equal(run('JSON.stringify(effect)'),before,'Artwork mutated combat state');
