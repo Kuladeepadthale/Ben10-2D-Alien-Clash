@@ -74,6 +74,7 @@ function cartoonBeam(ctx,e,id,theme){
  if(owner?.cast&&(e.castId!==undefined?owner.cast.id===e.castId:owner.cast.cfg.name===e.name)&&typeof drawnAlienEmitter==='function'){const emitter=drawnAlienEmitter(owner,owner.cast);x=emitter.x;y=emitter.y;}
  let end=e.x+e.dir*e.length,endY=e.endY??e.y;
  if(e.hit&&Number.isFinite(e.impactX)){end=e.impactX;endY=e.impactY??y;}
+ if((end-x)*(e.dir||1)<=0)return;
  const color=powerColor(id,e.color),dx=end-x,dy=endY-y,len=Math.hypot(dx,dy),angle=Math.atan2(dy,dx),width=e.r||18;
  ctx.save();ctx.globalAlpha=Math.max(0,Math.min(1,e.life/e.maxLife));ctx.translate(x,y);ctx.rotate(angle);
  if(['fire','ice','water'].includes(theme)){

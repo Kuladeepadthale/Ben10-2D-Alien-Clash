@@ -37,6 +37,7 @@ function drawAbilityBeam(ctx,e,s){
  let x=e.x,y=e.y;const f=e.owner,v=f?.cast;
  if(v&&(e.castId===undefined?v.cfg.name===e.name:e.castId===v.id)){const emitter=drawnAlienEmitter(f,v);if(emitter){x=emitter.x;y=emitter.y;}}
  let ex=e.x+e.dir*e.length,ey=e.endY??e.y;if(e.hit&&Number.isFinite(e.impactX)){ex=e.impactX;ey=e.impactY??y;}
+ if((ex-x)*(e.dir||1)<=0)return; // A moving hand must never reverse a short beam.
  const length=Math.hypot(ex-x,ey-y),angle=Math.atan2(ey-y,ex-x),age=e.maxLife-e.life,p=Math.min(1,age/.045),alpha=Math.min(1,e.life*18),height=(e.r||18)*(e.ultimate?3.5:3)*(1+Math.sin(time*30)*.035);
  const visibleLength=length*Math.max(.08,p);
  ctx.save();ctx.translate(x,y);ctx.rotate(angle);
