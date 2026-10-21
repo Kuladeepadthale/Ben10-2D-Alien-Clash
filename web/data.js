@@ -51,3 +51,13 @@ aliens.slice(32).forEach((a,i)=>a.powerOrigin=NEXT20_ORIGINS[i]);
 
 aliens[46].powerOrigins={skill1:[.62,.10],ultimate:[.65,.13]};
 aliens[51].powerOrigins={ultimate:[.67,.22]};
+
+// Impact-frame landmarks: head, mouth and chest emitters stay distinct from hand powers.
+const CLASSIC_POWER_ORIGINS=[[.91,.43],[.74,.40],[.93,.40],[.92,.43],[.88,.38],[.93,.55],[.60,.16],[.90,.32],[.91,.25],[.70,.40],[.90,.43],[.92,.43],[.91,.25],[.94,.44],[.91,.43],[.91,.25],[.91,.43],[.90,.43],[.69,.38],[.91,.25],[.91,.25],[.91,.43],[.91,.43],[.91,.25],[.91,.43],[.68,.20],[.78,.25],[.93,.43],[.58,.17],[.88,.43],[.91,.43],[.70,.40]];
+CLASSIC_POWER_ORIGINS.forEach((p,id)=>aliens[id].powerOrigin=p);
+aliens[6].powerOrigins={skill1:[.93,.43]};
+aliens[8].powerOrigins={skill1:[.92,.44]};
+aliens[12].powerOrigins={skill1:[.92,.43]};
+aliens[17].powerOrigins={skill1:[.56,.43],skill2:[.56,.43],ultimate:[.56,.43]};
+aliens[25].powerOrigins={skill2:[.13,.63]};
+aliens[29].powerOrigins={skill0:[.20,.40]};

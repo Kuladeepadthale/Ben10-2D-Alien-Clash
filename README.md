@@ -1,5 +1,7 @@
 # Ben 10 — Classic Alien Clash 2D
 
+**Version 9.0:** 52 playable aliens, including the 20-character expansion from Rath through Astrodactyl. Each new alien has 32 whole-body action poses, three powers, an ultimate, ability artwork, unlocks and upgrades. Cartoon power effects use distinct elemental visuals and active-frame emitters for hands, eyes, mouths, vents, chest and tail. Existing progress and the pinned APK signer are retained. These are game adaptations with arena-balanced damage, not animation extracted from the TV series.
+
 **Version 4.1:** 22 Classic aliens, including Cannonbolt, Wildvine, Blitzwolfer, Snare-oh, Frankenstrike, Upchuck, Ditto, Eye Guy, Way Big, Arctiguana, Spitter and Buzzshock. Full cel action sets, individual powers, coin unlocks and upgrades. Testing keeps all 22 available. Existing progress is preserved. See [EXPANSION.md](EXPANSION.md).
 
 An unofficial 22-alien arena game in `web/`, packaged as an offline landscape Android game in `android/`. The previous four-alien Godot source remains for reference.
