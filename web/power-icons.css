@@ -81,3 +81,6 @@ body:not(.in-battle) #alienAbilities>.ability-stat-row{display:grid;grid-templat
 .power-picture.ability-picture{background-color:#071411!important;background-repeat:no-repeat!important;background-size:500% 400%!important;isolation:isolate}
 .power-picture .ability-load{display:none!important}
 body.in-battle .touch button>.power-picture.ability-picture{background-size:500% 400%!important;background-color:#071411!important}
+
+/* Reviewed green neuroshock and internal-energy attacks match the battle streams. */
+.power-picture[data-power-alien="25"][data-power-action="skill0"],.power-picture[data-power-alien="25"][data-power-action="skill2"],.power-picture[data-power-alien="25"][data-power-action="ultimate"],.power-picture[data-power-alien="51"][data-power-action="skill0"],.power-picture[data-power-alien="51"][data-power-action="skill2"],.power-picture[data-power-alien="51"][data-power-action="ultimate"]{filter:hue-rotate(80deg);}

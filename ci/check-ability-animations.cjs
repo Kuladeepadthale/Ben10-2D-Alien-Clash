@@ -14,10 +14,10 @@ for(let id=0;id<72;id++)for(const key of ['normal','skill0','skill1','skill2','u
   b.time=t;run('effect.life=1-time');ctx.clearRect(0,0,1280,640);
   run("['projectile','wave','lob','rain','ground'].includes(effect.kind)?drawShot(ctx,effect):drawEffect(ctx,effect)");
   const pixels=ctx.getImageData(0,0,1280,640).data,visible=pixels.some((v,i)=>i%4===3&&v>0);
-  if(b.effect.kind==='afterimage')assert(!visible,'No copies during rush');else assert(visible,'Empty '+id+' '+key);
+  if(b.effect.kind==='afterimage'||b.effect.kind==='melee'&&key!=='normal')assert(!visible,'Close combat stays in the native character clip');else assert(visible,'Empty '+id+' '+key);
   signatures.push(crypto.createHash('sha256').update(pixels).digest('hex'));count++;
  }
- if(['beam','vortex','melee','eruption'].includes(b.effect.kind)){assert(new Set(signatures).size>1,'Effects must animate '+id+' '+key);animated++;}
+ if(['beam','vortex','eruption'].includes(b.effect.kind)){assert(new Set(signatures).size>1,'Effects must animate '+id+' '+key);animated++;}
  run('effect.life=.72');assert.equal(run('JSON.stringify(effect)'),before,'Renderer changed combat state');
 }
 console.log('Passed '+count+' image-free effect renders, '+animated+' animated streams/swings, 72 aliens, both facings, immutable combat state.');

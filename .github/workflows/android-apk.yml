@@ -82,6 +82,8 @@ jobs:
           node ci/check-cartoon-powers.cjs
           node ci/check-ability-animations.cjs
           node ci/check-clean-powers.cjs
+          node ci/check-power-origins.cjs
+          node ci/check-single-throws.cjs
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
           node ci/check-multiplayer-ui.cjs
           node ci/check-accounts.cjs
@@ -146,7 +148,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.3 — 72 Aliens' --notes 'Replaces moving ability-icon pictures with procedural animated powers: flowing flames, electrical arcs, sound rings, water and energy. Compact projectile wakes, single continuous streams for repeated beam ticks, correct opposing direction and independent villain element. Keeps all 72 aliens, physical normal strikes and manual facing/dash controls. Ranked control simulation requires the matching Worker deployment.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.4 — 72 Aliens' --notes 'Reviews all 72 aliens and 30 battle villains: 408 per-ability sources, colours and native-pose registrations. Green Jetray eye rays, separate tail launch, eye/chest/mouth/hand/weapon emitters, matching single-throw artwork, native close-combat poses and tail-strike follow-through. Keeps basic attacks, manual facing and the existing roster. Ranked requires the matching Worker deployment for shared anatomical origins and controls.' --prerelease --target "$GITHUB_SHA"
 
 
 

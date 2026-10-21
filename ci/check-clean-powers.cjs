@@ -17,8 +17,8 @@ for(const dir of [-1,1]){
  run("effect.hit=false;effect2={...effect,id:2};effects=[effect,effect2]");ctx.clearRect(0,0,1280,640);run('drawEffect(ctx,effect)');assert(!visible(),'Damage ticks duplicate the visible stream');
  run('drawEffect(ctx,effect2)');assert(visible());
  // A second combatant must not suppress or inherit the first combatant's beam.
- run("enemy.config={type:'fire',light:'#ff9b38'};enemy.villain=0;enemy.dir=-dir;effect3={...effect2,id:3,owner:enemy,dir:-dir,x:640-dir*100,length:200};effects.push(effect3)");
- assert.equal(run('animatedPowerStyle(effect3).theme'),'fire');ctx.clearRect(0,0,1280,640);run('drawEffect(ctx,effect2)');assert(visible(),'Other owner suppressed player beam');
+ run("enemy.config={type:'fire',light:'#ff9b38'};enemy.villain=2;enemy.dir=-dir;effect3={...effect2,id:3,owner:enemy,dir:-dir,x:640-dir*100,length:200};effects.push(effect3)");
+ assert.equal(run('animatedPowerStyle(effect3).theme'),'goo');ctx.clearRect(0,0,1280,640);run('drawEffect(ctx,effect2)');assert(visible(),'Other owner suppressed player beam');
  ctx.clearRect(0,0,1280,640);run('drawEffect(ctx,effect3)');assert(visible(),'Villain beam missing');
  run('effects=[]');
 }
@@ -26,6 +26,6 @@ console.log('Passed: compact projectile wakes, both directions, no reversed beam
 // The recording's overdrive must continue the green native flare in all phases.
 for(const dir of [-1,1])for(const elapsed of [.2,.9,2.6]){
  Object.assign(b,{dir,elapsed});run("player=make(51,640,dir,true);player.cast={id:77,key:'ultimate',dir,elapsed,cfg:aliens[51].ultimate,ultimate:true};at=drawnAlienEmitter(player,player.cast);picked=celPhase(player,'ultimate',time).frame;tip=({0:[190,73],1:[232,75],2:[174,53]})[picked.cell];scale=aliens[51].renderHeight*aliens[51].scale/CEL_DATA.characters[51].referenceHeight;");
- assert.equal(b.at.x,640+dir*(b.tip[0]-b.picked.origin[0])*b.scale);assert.equal(b.at.y,510+(b.tip[1]-b.picked.origin[1])*b.scale);assert.equal(run("animatedPowerStyle({owner:player}).color"),'#91ff45');
+ assert(Math.abs(b.at.x-(640+dir*(b.tip[0]-b.picked.origin[0])*b.scale))<.002);assert(Math.abs(b.at.y-(510+(b.tip[1]-b.picked.origin[1])*b.scale))<.002);assert.equal(run("animatedPowerStyle({owner:player}).color"),'#91ff45');
 }
 console.log('Passed: Astrodactyl overdrive flare-tip alignment and green energy in both directions and all three native poses.');

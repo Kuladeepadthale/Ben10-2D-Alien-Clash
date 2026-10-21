@@ -3,7 +3,7 @@
 // The simulation alone owns movement, collision and damage.
 const animatedShotBase=drawShot,animatedEffectBase=drawEffect;
 function animatedPowerStyle(e){
- const f=e.owner||{},a=f.config||aliens[f.id]||{},map={frost:'ice',vine:'plant',pulse:'gadget',cosmic:'energy',phase:'energy',clone:'physical',slam:'physical',shell:'physical',dash:'wind',slime:'goo',digest:'plasma',beam:'tech'};
+ const f=e.owner||{},reviewed=typeof powerProfileFor==='function'?powerProfileFor(f,e.artKey||e.name):null;if(reviewed)return {...reviewed,id:f.id};const a=f.config||aliens[f.id]||{},map={frost:'ice',vine:'plant',pulse:'gadget',cosmic:'energy',phase:'energy',clone:'physical',slam:'physical',shell:'physical',dash:'wind',slime:'goo',digest:'plasma',beam:'tech'};
  const villain=Number.isInteger(f.villain),theme=a.effectTheme||(villain?map[a.type]||a.type:powerTheme(f.id,e.name))||'energy';
  return {theme,color:villain?a.light||e.color:f.id===51?'#91ff45':f.id===70?'#70d5ff':powerColor(f.id,a.light||e.color),id:f.id};
 }
@@ -78,8 +78,10 @@ function animatedBeam(ctx,e,style){
  if(len<=0)return;
  ctx.save();ctx.translate(x,y);ctx.scale(dir,1);ctx.globalAlpha=Math.min(1,e.life*24);
  const width=Math.min(34,e.r||18),phase=time*32+(e.castId||0),theme=style.theme,col=style.color;
- if(theme==='fire')powerFlame(ctx,len,width,col,phase);
+ if(style.twin){for(const side of [-1,1]){const origin=side*2.2;line(ctx,[[0,origin],[Math.min(45,len*.25),side*.9],[len,0]],col,3.8+Math.sin(time*42)*.6);line(ctx,[[0,origin],[len,0]],'#f3ffda',1.3);}}
+ else if(theme==='fire')powerFlame(ctx,len,width,col,phase);
  else if(theme==='electric')powerBolt(ctx,len,width,col,phase);
+ else if(theme==='prism'){for(const [i,c]of ['#ff758c','#ffd46b','#7affb3','#7bdcff','#c691ff'].entries())line(ctx,[[0,0],[len,(i-2)*width*.24]],c,Math.max(2,width*(.17+.025*Math.sin(time*36+i))));}
  else if(theme==='sonic'||theme==='wind'||theme==='time'){
   for(let i=0;i<10;i++){const u=(i/10+time*1.5)%1;ctx.beginPath();ctx.ellipse(u*len,0,Math.max(2,width*.18),width*(.35+u*.65),0,-1.5,1.5);ctx.strokeStyle=i%2?'#ecffff':col;ctx.lineWidth=2;ctx.stroke();}
  }else{
@@ -101,9 +103,7 @@ drawEffect=function(ctx,e){
  if(e.artKey==='normal'||e.name==='Normal strike'){animatedEffectBase(ctx,e);return;}
  if(e.kind==='warning'){ctx.save();ctx.globalAlpha=.2;powerRing(ctx,e.x,floor,e.r,6,style.color,2);ctx.restore();return;}
  ctx.save();ctx.globalAlpha=Math.min(1,e.life*10);
- if(e.kind==='melee'){
-  ctx.translate(e.x,e.y);ctx.scale(e.dir||1,1);const reach=Math.min(210,e.range||130),swing=p*1.4;
-  for(let i=0;i<3;i++){ctx.beginPath();ctx.ellipse(18,0,reach*(.68-i*.07),45-i*6,-.2,-1.1+swing,.45+swing);ctx.strokeStyle=i===1?'#edffff':style.color;ctx.lineWidth=i===0?7:2;ctx.stroke();}
+ if(e.kind==='melee'){ctx.restore();return;
  }else if(e.kind==='explosion'){
   const r=(e.r||60)*(.35+p*.8);ctx.translate(e.x,Math.min(floor-r*.25,e.y));ctx.globalAlpha*=1-p;
   for(let i=0;i<9;i++){const a=i*2.4,d=r*(.5+p*.2),size=r*(.3-p*.15);powerBlob(ctx,Math.cos(a)*d,Math.sin(a)*d,size,size,style.color,time*25+i);}powerRing(ctx,0,0,r,r*.8,'#eaffd3',2);
@@ -131,13 +131,22 @@ drawPowerCharge=function(ctx,f,v){
  animatedPowerHead(ctx,{id:v.id,r:(v.ultimate?12:8)*(.2+progress*.8)},style);ctx.restore();
 };
 
-// Continue Astrodactyl's green muzzle flare, not the old forehead landmark.
-const animatedEmitterBase=drawnAlienEmitter;
-drawnAlienEmitter=function(f,v){
- if(f.id!==51||Number.isInteger(f.villain)||v.key!=='ultimate')return animatedEmitterBase(f,v);
- const d=CEL_DATA.characters[51],frame=celPhase(f,'ultimate',time).frame;
- const tip=({0:[190,73],1:[232,75],2:[174,53]})[frame.cell];
- if(!tip)return animatedEmitterBase(f,v);
- const scale=aliens[51].renderHeight*aliens[51].scale/d.referenceHeight;
- return {x:f.x+(v.dir||f.dir||1)*(tip[0]-frame.origin[0])*scale,y:f.y+(tip[1]-frame.origin[1])*scale};
-};
+// One thrown fireball, seed, grenade or glob may use its exact transparent icon.
+// Continuous lasers and repeated volleys always use the procedural stream renderer.
+const throwArtImages=new Map(),throwArtPending=new Map();
+function ensureThrowArt(id){
+ const profile=POWER_PROFILES.aliens[id]?.find(p=>p.icon);if(!profile)return Promise.resolve(false);const atlas=profile.icon.atlas;
+ if(throwArtImages.has(atlas))return Promise.resolve(true);if(throwArtPending.has(atlas))return throwArtPending.get(atlas);
+ const pending=loadClassicImage('assets/ui/abilities/'+atlas).then(image=>{throwArtImages.set(atlas,image);throwArtPending.delete(atlas);const keep=new Set(typeof celPinned!=='undefined'?[...celPinned].map(id=>POWER_PROFILES.aliens[id]?.[0]?.icon?.atlas):[]);for(const key of throwArtImages.keys())if(throwArtImages.size>3&&key!==atlas&&!keep.has(key))throwArtImages.delete(key);return true;},()=>{throwArtPending.delete(atlas);return false;});throwArtPending.set(atlas,pending);return pending;
+}
+function drawSingleThrow(ctx,e){
+ if(!e.singleThrow||!['projectile','lob'].includes(e.kind)||Number.isInteger(e.owner?.villain))return false;
+ const profile=powerProfileFor(e.owner,e.artKey||e.name),art=profile?.icon,image=art&&throwArtImages.get(art.atlas);if(!image)return false;
+ const [x,y,w,h]=art.rect,scale=Math.min((e.r||18)*2.7/Math.max(1,h),100/Math.max(1,w)),angle=Math.atan2(e.vy||0,e.vx||0);
+ ctx.save();ctx.translate(e.x,e.y);ctx.rotate(angle);ctx.globalAlpha=Math.min(1,e.life*12);ctx.imageSmoothingEnabled=true;
+ if(e.owner.id===25||e.owner.id===51)ctx.filter='hue-rotate(80deg)';
+ ctx.drawImage(image,x,y,w,h,-w*scale*.5,-h*scale*.5,w*scale,h*scale);ctx.restore();return true;
+}
+const nativeSingleShot=drawShot;drawShot=function(ctx,e){if(drawSingleThrow(ctx,e))return;nativeSingleShot(ctx,e);};
+const nativePowerEnsure=celEnsure;celEnsure=function(id){return Promise.all([nativePowerEnsure(id),ensureThrowArt(id)]).then(result=>result[0]);};
+ensureThrowArt(0);ensureThrowArt(2);
