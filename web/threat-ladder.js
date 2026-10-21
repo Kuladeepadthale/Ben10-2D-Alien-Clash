@@ -89,7 +89,7 @@ const modeScenes={
  campaign:{title:'Threat Ladder',copy:'30 classic villain duels',tag:'STAGE CAMPAIGN',heroes:[0],villain:29,mark:'VS'},
  versus:{title:'Battle',copy:'Alien vs alien · Best of 3',tag:'QUICK MATCH',heroes:[0,2],mark:'VS'},
  survival:{title:'Survival',copy:'One life · Endless rivals',tag:'ENDURANCE',heroes:[1,3,10],mark:'∞'},
- training:{title:'Testing',copy:'All 32 aliens · Free practice',tag:'TRAINING LAB',heroes:[7],mark:'⌖'}
+ training:{title:'Testing',copy:'All '+ALIEN_COUNT+' aliens · Free practice',tag:'TRAINING LAB',heroes:[7],mark:'⌖'}
 };
 for(const card of document.querySelectorAll('#screen-modes [data-mode]')){
  const scene=modeScenes[card.dataset.mode];if(!scene)continue;

@@ -12,7 +12,7 @@ jobs:
   build:
     if: "!contains(github.event.head_commit.message, '[art-audit]')"
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -109,7 +109,7 @@ jobs:
           assert all('assets/'+f in names for f in ['account-boot.js','account-config.js','account-cloud.js','account.js','account.css','ranked-rules.js','multiplayer-config.js','multiplayer.js','multiplayer.css','player-name.js','player-experience.js','player-experience.css'])
           assert b'wss://omnitrix-ranked-arena.kuladeepadthale.workers.dev/arena' in z.read('assets/multiplayer-config.js')
           assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v83.png' in names for i in range(8))
-          assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v90.png' in names for i in range(8,13))
+          assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v90.webp' in names for i in range(8,13))
           assert 'assets/progression.js' in names and 'assets/progression.css' in names
           assert 'assets/expansion-effects.js' in names
           m=json.loads(z.read('assets/assets/cels/manifest.json'))

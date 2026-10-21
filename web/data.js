@@ -46,5 +46,8 @@ CLASSIC_COLORS.push(...aliens.slice(32).map(a=>a.light));
 for(let id=32;id<ALIEN_COUNT;id++){const a=aliens[id];a.renderHeight=[34,44,50].includes(id)?160:226;a.bodyHeight=[34,44,50].includes(id)?140:205;}
 
 // Per-character emitter positions in the active illustrated frame: hands, vents, mouth, or chest.
-const NEXT20_ORIGINS=[[.90,.43],[.91,.43],[.90,.40],[.91,.43],[.90,.43],[.90,.43],[.60,.43],[.60,.18],[.90,.43],[.88,.44],[.72,.22],[.61,.43],[.90,.48],[.90,.43],[.91,.43],[.91,.43],[.61,.46],[.84,.30],[.75,.43],[.90,.43]];
+const NEXT20_ORIGINS=[[.90,.43],[.91,.43],[.90,.40],[.91,.43],[.90,.43],[.90,.43],[.60,.43],[.60,.18],[.90,.43],[.88,.44],[.72,.22],[.61,.43],[.90,.48],[.90,.43],[.91,.43],[.91,.43],[.61,.46],[.84,.30],[.91,.63],[.90,.43]];
 aliens.slice(32).forEach((a,i)=>a.powerOrigin=NEXT20_ORIGINS[i]);
+
+aliens[46].powerOrigins={skill1:[.62,.10],ultimate:[.65,.13]};
+aliens[51].powerOrigins={ultimate:[.67,.22]};

@@ -1,4 +1,4 @@
-import {createEngine} from './engine.generated.mjs';
+import {createEngine,ROSTER_COUNT} from './engine.generated.mjs';
 import '../web/ranked-rules.js';
 import '../web/player-name.js';
 const ranks=globalThis.AlienRankRules;
@@ -14,7 +14,7 @@ export async function authenticate(token,env,request=fetch,withProfile=false){
  if(!user.providerUserInfo?.some(p=>p.providerId==='password'))throw Error('An email account is required.');
  return withProfile?{uid:user.localId,name:AlienPlayerName.normalize(user.displayName)}:user.localId;
 }
-export default {fetch(request,env){const url=new URL(request.url);if(url.pathname==='/health')return Response.json({service:'Omnitrix Ranked Arena',protocol:1,playerNames:true,battleCountdown:true});if(url.pathname!=='/arena'||request.headers.get('Upgrade')?.toLowerCase()!=='websocket')return new Response('Not found',{status:404});return env.ARENA.get(env.ARENA.idFromName('ranked-v1')).fetch(request);}};
+export default {fetch(request,env){const url=new URL(request.url);if(url.pathname==='/health')return Response.json({service:'Omnitrix Ranked Arena',protocol:1,playerNames:true,battleCountdown:true,rosterCount:ROSTER_COUNT});if(url.pathname!=='/arena'||request.headers.get('Upgrade')?.toLowerCase()!=='websocket')return new Response('Not found',{status:404});return env.ARENA.get(env.ARENA.idFromName('ranked-v1')).fetch(request);}};
 export class RankedArena{
  constructor(ctx,env){this.ctx=ctx;this.env=env;this.clients=new Set();this.users=new Map();this.queue=[];this.matches=new Set();this.timer=null;}
  async fetch(){
@@ -30,11 +30,11 @@ export class RankedArena{
   if(!this.clients.has(c))return;if(typeof raw!=='string'||raw.length>16000){c.ws.close(1009,'Message too large');return;}
   const now=Date.now();if(now-c.window>=1000){c.window=now;c.messages=0;}if(++c.messages>80){c.ws.close(1008,'Too many messages');return;}
   let d;try{d=JSON.parse(raw);}catch{c.ws.close(1008,'Invalid message');return;}
-  if(d.type==='auth'&&!c.uid&&!c.busy){c.busy=true;try{const identity=await authenticate(d.token,this.env,fetch,true),uid=identity.uid;if(!this.clients.has(c))return;if(this.users.has(uid)){send(c,{type:'error',message:'This account is already online on another device.'});c.ws.close(1008,'Already online');return;}c.uid=uid;c.name=identity.name||title(uid);this.users.set(uid,c);clearTimeout(c.authTimer);c.rank=await this.ctx.storage.get('rank:'+uid)||{points:0,wins:0,losses:0};if(!this.clients.has(c))return;send(c,{type:'ready',protocol:1,rank:c.rank,name:c.name});}catch(e){send(c,{type:'error',message:e.message});c.ws.close(1008,'Login failed');}finally{c.busy=false;}return;}
+  if(d.type==='auth'&&!c.uid&&!c.busy){c.busy=true;try{const identity=await authenticate(d.token,this.env,fetch,true),uid=identity.uid;if(!this.clients.has(c))return;if(this.users.has(uid)){send(c,{type:'error',message:'This account is already online on another device.'});c.ws.close(1008,'Already online');return;}c.uid=uid;c.name=identity.name||title(uid);this.users.set(uid,c);clearTimeout(c.authTimer);c.rank=await this.ctx.storage.get('rank:'+uid)||{points:0,wins:0,losses:0};if(!this.clients.has(c))return;send(c,{type:'ready',protocol:1,rank:c.rank,name:c.name,rosterCount:ROSTER_COUNT});}catch(e){send(c,{type:'error',message:e.message});c.ws.close(1008,'Login failed');}finally{c.busy=false;}return;}
   if(!c.uid||c.busy)return;
   if(d.type==='ping'){c.lastInput=now;send(c,{type:'pong',stamp:d.stamp});return;}
   if(d.type==='join'&&!c.match&&!this.queue.includes(c)){
-   if(!Number.isInteger(d.alien)||d.alien<0||d.alien>=32||!Array.isArray(d.loadout)||d.loadout.length!==2||new Set(d.loadout).size!==2||d.loadout.some(n=>!Number.isInteger(n)||n<0||n>2))return;
+   if(!Number.isInteger(d.alien)||d.alien<0||d.alien>=ROSTER_COUNT||!Array.isArray(d.loadout)||d.loadout.length!==2||new Set(d.loadout).size!==2||d.loadout.some(n=>!Number.isInteger(n)||n<0||n>2))return;
    c.busy=true;try{
     // Ownership comes from this UID's cloud save, never from a client assertion.
     const token=d.token;if(await authenticate(token,this.env)!==c.uid)throw Error('Account changed. Reconnect.');
@@ -48,7 +48,7 @@ export class RankedArena{
   if(d.type==='forfeit'&&c.match){await this.settle(c.match,c.match.players.indexOf(c)===0?1:0,true);return;}
   if(d.type==='input'&&c.match&&!c.match.settling){if(now<c.match.readyAt)return;if(!Number.isSafeInteger(d.seq)||d.seq<=c.seq)return;c.seq=d.seq;c.lastInput=now;const i=c.match.players.indexOf(c);const edges=Array.isArray(d.edges)?d.edges.slice(0,6):[];c.match.engine.input(i,d.held||{},edges);}
  }
- pair(a,b){this.queue=this.queue.filter(c=>c!==a&&c!==b);const bot=!b;const players=bot?[a]:[a,b];const specs=bot?[a.spec,{alien:(a.spec.alien+1+Math.floor(Math.random()*31))%32,loadout:[0,1]}]:players.map(c=>c.spec);const m={id:crypto.randomUUID(),players,bot,engine:createEngine(specs,bot),settling:false,started:Date.now(),readyAt:Date.now()+3000};this.matches.add(m);players.forEach((c,seat)=>{c.match=m;c.seq=-1;c.lastInput=Date.now();send(c,{type:'matched',matchId:m.id,seat,bot,countdownMs:3000,names:bot?[a.name||title(a.uid),'Arena Challenger']:players.map(p=>p.name||title(p.uid)),ratings:bot?[points(a.rank),0]:players.map(p=>points(p.rank)),snapshot:m.engine.snapshot()});});}
+ pair(a,b){this.queue=this.queue.filter(c=>c!==a&&c!==b);const bot=!b;const players=bot?[a]:[a,b];const specs=bot?[a.spec,{alien:(a.spec.alien+1+Math.floor(Math.random()*(ROSTER_COUNT-1)))%ROSTER_COUNT,loadout:[0,1]}]:players.map(c=>c.spec);const m={id:crypto.randomUUID(),players,bot,engine:createEngine(specs,bot),settling:false,started:Date.now(),readyAt:Date.now()+3000};this.matches.add(m);players.forEach((c,seat)=>{c.match=m;c.seq=-1;c.lastInput=Date.now();send(c,{type:'matched',matchId:m.id,seat,bot,countdownMs:3000,names:bot?[a.name||title(a.uid),'Arena Challenger']:players.map(p=>p.name||title(p.uid)),ratings:bot?[points(a.rank),0]:players.map(p=>points(p.rank)),snapshot:m.engine.snapshot()});});}
  tick(){
   const now=Date.now();this.queue=this.queue.filter(c=>this.clients.has(c));
   for(const a of [...this.queue]){if(!this.queue.includes(a))continue;const range=now-a.joined>=28000?Infinity:150+Math.floor((now-a.joined)/1000)*20;const b=this.queue.find(c=>c!==a&&Math.abs(points(c.rank)-points(a.rank))<=range);if(b&&this.matches.size<16)this.pair(a,b);else if(now-a.joined>=30000&&this.matches.size<16)this.pair(a,null);}

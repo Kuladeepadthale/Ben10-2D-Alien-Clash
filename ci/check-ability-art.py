@@ -5,7 +5,7 @@ import numpy as np
 root=Path(__file__).resolve().parents[1]
 total=0
 for i in range(13):
- p=root/'web/assets/ui/abilities'/('ability-atlas-'+str(i).zfill(2)+('-v83.png' if i<8 else '-v90.png'))
+ p=root/'web/assets/ui/abilities'/('ability-atlas-'+str(i).zfill(2)+('-v83.png' if i<8 else '-v90.webp'))
  image=Image.open(p).convert('RGBA');w,h=image.size
  assert w>=1000 and h>=800,(p,'insufficient native icon detail')
  alpha=np.asarray(image)[:,:,3]
