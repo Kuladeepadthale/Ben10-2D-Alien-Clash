@@ -13,13 +13,13 @@ async function main(){
   const before=run('JSON.stringify(effect)'),signatures=[];
   for(const t of [.2,.4,.6]){
    b.time=t;run('effect.life=1-time');ctx.clearRect(0,0,1280,640);
-   const sprite=run('abilityAnimationSprite(effect)');assert.equal(sprite.key,key);assert(sprite.image.width>=1000&&sprite.image.height>=800);
+   const sprite=run('abilityAnimationSprite(effect)');if(key==='normal')assert.equal(sprite,null,'Basic strikes must not use power art');else{assert.equal(sprite.key,key);assert(sprite.image.width>=1000&&sprite.image.height>=800);}
    run("['projectile','wave','lob','rain','ground'].includes(effect.kind)?drawShot(ctx,effect):drawEffect(ctx,effect)");
-   const pixels=ctx.getImageData(0,0,1280,640).data;assert(pixels.some((v,i)=>i%4===3&&v>0),`Empty ${id} ${key}`);signatures.push(crypto.createHash('sha256').update(pixels).digest('hex'));count++;
+   const pixels=ctx.getImageData(0,0,1280,640).data;if(effect.kind==='afterimage')assert(!pixels.some((v,i)=>i%4===3&&v>0),'Rush must not leave power-image copies');else assert(pixels.some((v,i)=>i%4===3&&v>0),`Empty ${id} ${key}`);signatures.push(crypto.createHash('sha256').update(pixels).digest('hex'));count++;
   }
-  if(['beam','projectile','vortex','melee','afterimage','eruption'].includes(run('effect.kind')))assert(new Set(signatures).size>1,'Animation must change over time');
+  if(['beam','projectile','vortex','melee','eruption'].includes(run('effect.kind')))assert(new Set(signatures).size>1,'Animation must change over time');
   run('effect.life=.72');assert.equal(run('JSON.stringify(effect)'),before,'Artwork mutated combat state');
  }
- console.log(`Passed ${count} real-art renders: 360 power images, both facings, changing animation phases, immutable damage state.`);
+ console.log(`Passed ${count} real-art renders: normal physical strikes, 288 skill/ultimate images, clean rush paths, both facings, changing animation phases, immutable damage state.`);
 }
 main().catch(e=>{console.error(e);process.exit(1)});
