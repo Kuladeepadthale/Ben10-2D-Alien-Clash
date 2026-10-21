@@ -15,7 +15,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           python3 - <<'PY'
-          import json,os,urllib.request,urllib.error
+          import base64,json,os,urllib.request,urllib.error
           class NoRedirect(urllib.request.HTTPRedirectHandler):
               def redirect_request(self,*args,**kwargs): return None
           opener=urllib.request.build_opener(NoRedirect())
@@ -27,5 +27,5 @@ jobs:
                   response=error
               location=response.headers.get('Location')
               assert location and location.startswith('https://release-assets.githubusercontent.com/'), name
-              print('APK_DOWNLOAD_JSON='+json.dumps({'name':name,'url':location}))
+              print('APK_DOWNLOAD_JSON='+json.dumps({'name':name,'url_base64':base64.b64encode(location.encode()).decode()}))
           PY
