@@ -50,3 +50,18 @@ body:not(.in-battle) #screen-characters .card .ownership{max-width:100%;white-sp
 @media(max-width:760px) and (orientation:landscape){body:not(.in-battle) .mode-grid{grid-template-columns:1fr}body:not(.in-battle) .mode-card{min-height:280px}}
 @media(max-width:600px){body:not(.in-battle) .app-bottom{gap:4px;padding-left:6px;padding-right:6px}body:not(.in-battle) .app-bottom button{flex:1;width:auto;min-width:0;padding-left:2px;padding-right:2px}}
 
+
+
+/* Compact mission rows; full requirements live in Details. */
+#missionCards.mission-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:8px}
+#missionCards .mission-card{min-height:88px;padding:10px;grid-template-columns:28px minmax(0,1fr) auto;gap:9px}
+#missionCards .mission-task-icon{width:28px;height:28px}
+#missionCards .mission-task h2{font-size:13px;line-height:1.25;margin:0 0 6px}
+#missionCards .mission-progress{height:4px;margin:4px 0}
+#missionCards .mission-count{font-size:11px}
+#missionCards .mission-prize{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:5px;max-width:124px}
+#missionCards .mission-prize strong{font-size:12px;width:100%;text-align:right}
+#missionCards button{min-height:32px;padding:5px 8px;font-size:11px}
+#missionDetails{background:#142322;color:#ecffe4;border:1px solid #7be2aa;border-radius:18px;padding:24px;max-width:min(440px,90vw);max-height:85dvh;overflow:auto}
+#missionDetails::backdrop{background:#000b}#missionDetails p{line-height:1.6}#missionDetails h2{font-size:21px}.mission-dialog-actions{display:flex;gap:10px;margin-top:20px}
+#missionCards button{font-size:15px;min-height:36px}#missionCards .mission-prize{max-width:145px}

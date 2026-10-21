@@ -77,6 +77,9 @@ jobs:
           node ci/check-account-cloud.cjs
           node server/build-engine.cjs
           node ci/check-multiplayer-server.mjs
+          node ci/check-squads.mjs
+          node ci/check-friend-rooms.mjs
+          node ci/check-target-snapshot.cjs
           node ci/check-alien-combat.cjs
           node ci/check-next20.cjs
           node ci/check-expansion100.cjs
@@ -117,6 +120,9 @@ jobs:
           PYGUARD
           node server/build-engine.cjs
           node ci/check-multiplayer-server.mjs
+          node ci/check-squads.mjs
+          node ci/check-friend-rooms.mjs
+          node ci/check-target-snapshot.cjs
           node ci/check-alien-combat.cjs
           node ci/check-cartoon-powers.cjs
           node ci/check-ability-animations.cjs
@@ -127,6 +133,16 @@ jobs:
           node ci/check-facing.cjs
           node ci/check-footwork-dash.cjs
           for script in web/*.js; do node --check "$script"; done
+      - name: Deploy online Worker when owner credentials are configured
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -n "$CLOUDFLARE_API_TOKEN" ] && [ -n "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            WRANGLER_SEND_METRICS=false npx --yes wrangler@4 deploy --config server/wrangler.jsonc
+          else
+            echo "::notice::Online Worker deployment needs owner Cloudflare credentials. APK and server code are built and verified."
+          fi
       - name: Build standard and separate-install APKs
         run: |
           gradle -p android --no-daemon assembleDebug
@@ -146,7 +162,7 @@ jobs:
           assert len(villains['characters'])==30
           assert all('assets/'+v['src'] in names and 'assets/'+v['portrait'] in names for v in villains['characters'])
           assert 'assets/index.html' in names and 'assets/cel-player.js' in names
-          assert all('assets/'+f in names for f in ['account-boot.js','account-config.js','account-cloud.js','account.js','account.css','ranked-rules.js','multiplayer-config.js','multiplayer.js','multiplayer.css','player-name.js','player-experience.js','player-experience.css'])
+          assert all('assets/'+f in names for f in ['account-boot.js','account-config.js','account-cloud.js','account.js','account.css','ranked-rules.js','multiplayer-config.js','multiplayer.js','multiplayer.css','squad-multiplayer.js','player-name.js','player-experience.js','player-experience.css'])
           assert b'wss://omnitrix-ranked-arena.kuladeepadthale.workers.dev/arena' in z.read('assets/multiplayer-config.js')
           assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v83.png' in names for i in range(8))
           assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v90.webp' in names for i in range(8,13))
@@ -174,12 +190,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.4 — 72 Aliens' --notes 'Reviews all 72 aliens and 30 battle villains: 408 per-ability sources, colours and native-pose registrations. Green Jetray eye rays, separate tail launch, eye/chest/mouth/hand/weapon emitters, matching single-throw artwork, native close-combat poses and tail-strike follow-through. Keeps basic attacks, manual facing and the existing roster. Ranked requires the matching Worker deployment for shared anatomical origins and controls.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.5 — Squad Battles' --notes 'Frozen cast-time targeting and close slam impacts. Compact mission Details and Claim rows with new mode, alien and loadout goals. Three-alien ranked elimination with a ten-second draft, visible starter countdown and three-second reserve picks. Code-based friend duels with host rounds and 2v2 team relay. Normal coin rewards, ranked-only RP. Requires the matching v10.5 Worker deployment for online features.' --prerelease --target "$GITHUB_SHA"
 
 
 
 
 # v8.2: verify full-screen controls and all forty native replacement sheets.
+
 
 
 

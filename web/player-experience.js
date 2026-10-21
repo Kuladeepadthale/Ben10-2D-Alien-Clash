@@ -4,10 +4,10 @@ const resultSummary=document.createElement('section');resultSummary.id='matchSum
 document.querySelector('#screen-results .screen-content').prepend(resultSummary);
 const resultActions=document.querySelector('#screen-results .page-actions');resultActions.querySelector('[data-screen=upgrades]').hidden=true;resultActions.querySelector('[data-screen=setup]').textContent='Loadout';resultActions.querySelector('[data-screen=home]').textContent='Home';
 let resultRenderQueued=false;
-function renderMatchSummary(){if(currentScreen!=='results')return;const receipt=typeof online!=='undefined'?online.result:null,draw=receipt?.winner===-1,won=receipt?receipt.winner===receipt.seat:wins[0]>=2,campaign=selectedMode==='campaign',survival=selectedMode==='survival';
- const opponent=receipt?receipt.names?.[1-receipt.seat]:Number.isInteger(enemy?.villain)?VILLAIN_DATA.characters[enemy.villain].name:enemy?aliens[enemy.id].name:'Arena';
+function renderMatchSummary(){if(currentScreen!=='results')return;const receipt=typeof online!=='undefined'?online.result:null,draw=receipt?.winner===-1,won=receipt?receipt.winner===(receipt.team??receipt.seat):wins[0]>=2,campaign=selectedMode==='campaign',survival=selectedMode==='survival';
+ const opponent=receipt?receipt.relay?'Team '+(2-(receipt.team??receipt.seat)):receipt.names?.[1-receipt.seat]:Number.isInteger(enemy?.villain)?VILLAIN_DATA.characters[enemy.villain].name:enemy?aliens[enemy.id].name:'Arena';
  if(receipt)$('playAgain').textContent='Find Match';else if(!campaign)$('playAgain').textContent='Play Again';$('summaryPlayer').textContent=accountPlayerName()||'You';$('summaryOpponent').textContent=opponent||'Rival';$('summaryScore').textContent=campaign?'STAGE '+(threatStage+1):survival?String(survivalScore)+' KO':draw?'DRAW':wins.join(' : ');$('summaryOutcome').textContent=draw?'DRAW':survival?'RUN COMPLETE':won?'VICTORY':'DEFEAT';resultSummary.dataset.outcome=won?'win':draw?'draw':'loss';
- $('summaryMode').textContent=receipt?(receipt.bot?'Bot Practice':'Ranked Multiplayer'):campaign?'Plumber Threat Ladder':survival?'Survival':training?'Testing':'Bot Practice';
+ $('summaryMode').textContent=receipt?(receipt.friendly?(receipt.relay?'2v2 Team Relay':'Friend Duel'):receipt.bot?'Bot Practice':'Ranked Multiplayer'):campaign?'Plumber Threat Ladder':survival?'Survival':training?'Testing':'Bot Practice';
  const amount=rewardPanel.textContent.match(/\+([\d,]+)\s*(?:coins|credits)/i);$('summaryCoins').textContent='+'+(amount?Number(amount[1].replace(/,/g,'')).toLocaleString():0);$('summaryXP').textContent='+'+(Number(lastXPGain)||0);const delta=receipt&&!receipt.bot?receipt.delta[receipt.seat]:null;$('summaryRP').textContent=delta===null?'—':(delta>=0?'+':'')+delta;$('summaryRP').classList.toggle('negative',delta<0);
  $('summaryProgress').textContent='Hero Level '+heroStanding().level;$('summaryRank').textContent=receipt&&!receipt.bot?AlienRankRules.standing(online.points).name:campaign?threatProgress.cleared+' / 30 stages':receipt?.bot?'No RP change':'Keep transforming';
  const cv=$('resultAlienArt'),ctx=cv.getContext('2d');ctx.clearRect(0,0,cv.width,cv.height);drawClassicPortrait(ctx,player?.id??selected,cv.width,cv.height);cv.setAttribute('aria-label',aliens[player?.id??selected].name);}
@@ -31,5 +31,6 @@ const readyBeginBase=begin;begin=async function(newMatch=true,practice=false){co
 const readyRenderBase=render;render=function(){updateBattleCountdown();readyRenderBase();};
 // Jump, guard and dash sit above the left/right movement controls.
 document.querySelector('#touch .dpad').prepend(document.querySelector('#touch [data-key=jump]'));
+
 
 

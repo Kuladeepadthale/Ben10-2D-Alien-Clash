@@ -74,9 +74,9 @@ function animatedBeam(ctx,e,style){
  if(typeof effects!=='undefined'&&effects.some(v=>v!==e&&v.kind==='beam'&&v.owner===e.owner&&v.castId===e.castId&&v.name===e.name&&v.life>0&&(v.id||0)>(e.id||0)))return;
  const v=e.owner?.cast;let x=e.x,y=e.y;
  if(v&&(e.castId===undefined?v.cfg.name===e.name:v.id===e.castId)){const p=drawnAlienEmitter(e.owner,v);if(p){x=p.x;y=p.y;}}
- const dir=e.dir||1,endpoint=e.hit&&Number.isFinite(e.impactX)?e.impactX:e.x+dir*e.length,len=(endpoint-x)*dir;
- if(len<=0)return;
- ctx.save();ctx.translate(x,y);ctx.scale(dir,1);ctx.globalAlpha=Math.min(1,e.life*24);
+ const dir=e.rayDir||e.dir||1,endpoint=e.hit&&Number.isFinite(e.impactX)?e.impactX:e.x+dir*e.length,endY=e.hit&&Number.isFinite(e.impactY)?e.impactY:e.endY,len=Math.hypot(endpoint-x,endY-y);
+ if((endpoint-x)*dir<=0||len<=0)return;
+ ctx.save();ctx.translate(x,y);ctx.rotate(Math.atan2(endY-y,endpoint-x));ctx.globalAlpha=Math.min(1,e.life*24);
  const width=Math.min(34,e.r||18),phase=time*32+(e.castId||0),theme=style.theme,col=style.color;
  if(style.twin){for(const side of [-1,1]){const origin=side*2.2;line(ctx,[[0,origin],[Math.min(45,len*.25),side*.9],[len,0]],col,3.8+Math.sin(time*42)*.6);line(ctx,[[0,origin],[len,0]],'#f3ffda',1.3);}}
  else if(theme==='fire')powerFlame(ctx,len,width,col,phase);
@@ -150,3 +150,4 @@ function drawSingleThrow(ctx,e){
 const nativeSingleShot=drawShot;drawShot=function(ctx,e){if(drawSingleThrow(ctx,e))return;nativeSingleShot(ctx,e);};
 const nativePowerEnsure=celEnsure;celEnsure=function(id){return Promise.all([nativePowerEnsure(id),ensureThrowArt(id)]).then(result=>result[0]);};
 ensureThrowArt(0);ensureThrowArt(2);
+

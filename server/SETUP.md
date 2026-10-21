@@ -43,3 +43,12 @@ The existing collection/economy is client-owned cloud progress; checking it prev
 Run `node server/build-engine.cjs` then `node ci/check-multiplayer-server.mjs`. Android CI also runs the four-viewport WebSocket client tests. The generated engine is rebuilt from repository sources during deployment. These automated checks use mocked authentication/storage and browsers; they do not replace the live two-phone test.
 
 References: https://developers.cloudflare.com/durable-objects/examples/websocket-server/ and https://firebase.google.com/docs/reference/rest/auth#section-get-account-info
+
+
+## v10.5 squad protocol
+
+Deploy the matching Worker using `npx wrangler deploy --config server/wrangler.jsonc` from the repository root. The build command regenerates the shared combat engine. This version advertises protocol 2 and rejects old clients through the client handshake. An APK update alone does not deploy the Worker.
+
+Ranked: choose three owned aliens during the first ten seconds of the thirty-second search; matching cannot start sooner. Players with fewer than three unlocked aliens repeat owned aliens in spare slots. At match start, choose a starter for five seconds, followed by a three-second start countdown. Knockouts freeze combat for a three-second reserve choice, followed by a one-second restart. Missing reserve choices pick a random remaining slot. The surviving fighter keeps HP. Eliminate three alien slots to win; only genuine ranked matches change RP.
+
+Friend rooms: six-character code, authenticated players, host-controlled one round / best-of-three / best-of-five. 1v1 uses the ranked squad rules. 2v2 is a relay: seats 1 and 3 vs 2 and 4, three aliens per person, alternate to the teammate after a knockout while available. The inactive teammate watches. Eliminate six opposing slots to win a squad round. Coin rewards use normal match completion; friend rooms never change RP. Leaving counts as a team forfeit. Host departure before a match transfers host to the next player. Waiting rooms expire after fifteen minutes.

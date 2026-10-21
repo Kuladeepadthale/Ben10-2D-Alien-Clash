@@ -35,19 +35,28 @@ MISSION_DEFS.push(
  {id:'monthly-win',name:'Win 30 battles',text:'Win 30 battles',stat:'wins',goal:30,reward:2000,repeat:false,period:'monthly'},
  {id:'monthly-powers',name:'Use 200 powers',text:'Use 200 powers',stat:'powers',goal:200,reward:1500,repeat:false,period:'monthly'}
 );
+// Small goals across every rewarded battle mode and alien loadout.
+for(const [stat,label,base] of [['campaignBattles','Villain stages',1],['arenaBattles','Arena battles',1],['onlineBattles','Online duels',1],['friendBattles','Friend duels',1],['relayBattles','Team relay battles',1],['survivalRuns','Survival runs',1],['stages','Survival rivals',2],['equips','Power loadouts',1],['upgrades','Alien upgrades',1],['damage','Damage dealt',500],['powers','Powers used',5]]){
+ for(const [period,mult,reward] of [['daily',1,60],['weekly',5,250],['monthly',15,650]])MISSION_DEFS.push({id:'v105-'+period+'-'+stat,name:label,text:stat==='equips'?'Equip '+(base*mult)+' different owned alien power combinations.':label+': '+(base*mult)+'. Complete full battles; Testing and early quits do not count.',stat,goal:base*mult,reward,repeat:false,period});
+}
+for(let id=0;id<ALIEN_COUNT;id++){
+ MISSION_DEFS.push({id:'v105-equip-'+id,name:aliens[id].name+' loadout',text:'Own '+aliens[id].name+' and equip a different pair of powers in its loadout.',stat:'equipAlien'+id,goal:1,reward:40,repeat:false});
+ MISSION_DEFS.push({id:'v105-battle-'+id,name:aliens[id].name+' debut',text:'Complete one rewarded battle using '+aliens[id].name+'. Testing, early quits and friend rooms do not count.',stat:'battleAlien'+id,goal:1,reward:80,repeat:false});
+}
 let missionTab='daily';
 const careerNumber=(v,max=100000000)=>Number.isFinite(v)?Math.max(0,Math.min(max,Math.floor(v))):0;
 let storedCareer=null;try{storedCareer=JSON.parse(localStorage.getItem('omnitrix-profile-v2')||'null')?.collection}catch{}
-const career={version:1,owned:[],offers:[],selected:0,stats:{matches:0,wins:0,damage:0,powers:0,stages:0,upgrades:0},claims:{},lastMatches:profile.matches,lastWins:profile.wins};
+const career={version:1,owned:[],offers:[],selected:0,stats:{matches:0,wins:0,damage:0,powers:0,stages:0,upgrades:0,campaignBattles:0,arenaBattles:0,onlineBattles:0,friendBattles:0,relayBattles:0,survivalRuns:0,equips:0,...Object.fromEntries(Array.from({length:ALIEN_COUNT},(_,i)=>[['equipAlien'+i,0],['battleAlien'+i,0]]).flat())},claims:{},lastMatches:profile.matches,lastWins:profile.wins};
 if(storedCareer?.version===1){career.owned=[...new Set((Array.isArray(storedCareer.owned)?storedCareer.owned:[]).filter(n=>Number.isInteger(n)&&n>=0&&n<ALIEN_COUNT))];career.offers=[...new Set((Array.isArray(storedCareer.offers)?storedCareer.offers:[]).filter(n=>Number.isInteger(n)&&n>=0&&n<ALIEN_COUNT))];career.selected=careerNumber(storedCareer.selected,ALIEN_COUNT-1);for(const k in career.stats)career.stats[k]=careerNumber(storedCareer.stats?.[k]);for(const m of MISSION_DEFS)career.claims[m.id]=careerNumber(storedCareer.claims?.[m.id],m.repeat?100000:1);career.lastMatches=careerNumber(storedCareer.lastMatches);career.lastWins=careerNumber(storedCareer.lastWins);}
 if(career.offers.length!==3){const pool=Array.from({length:ALIEN_COUNT},(_,i)=>i);for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}career.offers=pool.slice(0,3);}
 career.gems=careerNumber(storedCareer?.gems,1000000);
 career.packState=storedCareer?.packState?.version===1?storedCareer.packState:{version:1,serial:0,last:null};
+career.equipSeen=Array.isArray(storedCareer?.equipSeen)?storedCareer.equipSeen.filter(x=>typeof x==='string').slice(0,432):[];
 career.periods={};
 for(const period of ['daily','weekly','monthly']){const old=storedCareer?.periods?.[period];if(old&&typeof old.key==='string'&&old.base){career.periods[period]={key:old.key,base:{}};for(const stat in career.stats)career.periods[period].base[stat]=careerNumber(old.base[stat]);}}
 syncMissionPeriods();
 profile.collection=career;
-const careerSaveBase=saveProfile;saveProfile=function(){syncMissionPeriods();career.stats.matches+=Math.max(0,profile.matches-career.lastMatches);career.stats.wins+=Math.max(0,profile.wins-career.lastWins);career.lastMatches=profile.matches;career.lastWins=profile.wins;profile.collection=career;careerSaveBase();};
+const careerSaveBase=saveProfile;saveProfile=function(){syncMissionPeriods();const completed=Math.max(0,profile.matches-career.lastMatches);if(completed){career.stats[selectedMode==='campaign'?'campaignBattles':selectedMode==='survival'?'survivalRuns':window.omniFriendMode==='relay'?'relayBattles':window.omniFriendMode==='duel'?'friendBattles':window.omniOnlineCompleted?'onlineBattles':'arenaBattles']+=completed;for(const id of window.omniBattleAliens||[selected])if(Number.isInteger(id)&&id>=0&&id<ALIEN_COUNT)career.stats['battleAlien'+id]+=completed;}career.stats.matches+=completed;career.stats.wins+=Math.max(0,profile.wins-career.lastWins);career.lastMatches=profile.matches;career.lastWins=profile.wins;profile.collection=career;careerSaveBase();};
 saveProfile();
 const ownsAlien=id=>career.owned.includes(id),testingMode=()=>selectedMode==='training';
 let garageAlien=career.owned.includes(career.selected)?career.selected:career.owned[0]??career.offers[0];
@@ -93,8 +102,8 @@ function renderMissions(){
  const visible=MISSION_DEFS.filter(m=>missionTab==='career'?!m.period:m.period===missionTab);
  $('missionCards').dataset.tab=missionTab;
  $('missionCards').replaceChildren(...visible.map(m=>{const progress=missionProgress(m),done=!m.repeat&&career.claims[m.id],ready=missionReady(m),card=document.createElement('article');card.className='mission-card'+(ready?' reward-ready':'')+(done?' reward-claimed':'');
- card.innerHTML='<span class="mission-task-icon">'+uiIcon(m.stat==='wins'?'ultimate':m.stat==='powers'?'skill0':m.stat==='matches'?'play':'aliens')+'</span><div class="mission-task"><h2>'+m.text.replace(/\.$/,'')+'</h2><div class="mission-progress" role="progressbar" aria-label="'+m.text+'" aria-valuemin="0" aria-valuemax="'+m.goal+'" aria-valuenow="'+progress+'"><i style="width:'+progress/m.goal*100+'%"></i></div><span class="mission-count">'+(done?'✓ Claimed':Math.floor(progress).toLocaleString()+' / '+m.goal.toLocaleString())+'</span></div><div class="mission-prize"><strong><i class="currency-icon coin" aria-hidden="true"></i> '+m.reward+'</strong><button '+(!ready||isLocked()?'disabled':'')+'>'+(done?'Done':ready?'Claim':'Pending')+'</button></div>';
- card.querySelector('button').onclick=()=>claimMission(m.id);return card;}));
+ card.innerHTML='<span class="mission-task-icon">'+uiIcon(m.stat==='wins'?'ultimate':m.stat==='powers'?'skill0':m.stat==='matches'?'play':'aliens')+'</span><div class="mission-task"><h2>'+m.name+'</h2><div class="mission-progress" role="progressbar" aria-label="'+m.text+'" aria-valuemin="0" aria-valuemax="'+m.goal+'" aria-valuenow="'+progress+'"><i style="width:'+progress/m.goal*100+'%"></i></div><span class="mission-count">'+(done?'✓ Claimed':Math.floor(progress).toLocaleString()+' / '+m.goal.toLocaleString())+'</span></div><div class="mission-prize"><strong><i class="currency-icon coin" aria-hidden="true"></i> '+m.reward+'</strong><button class="mission-details">Details</button>'+ (ready?'<button class="mission-claim" '+(isLocked()?'disabled':'')+'>Claim</button>':done?'<span>Claimed</span>':'') +'</div>';
+ card.querySelector('.mission-details').onclick=()=>openMissionDetails(m.id);if(card.querySelector('.mission-claim'))card.querySelector('.mission-claim').onclick=()=>claimMission(m.id);return card;}));
  missionsNav.classList.toggle('has-reward',ready>0);missionsNav.setAttribute('aria-label','Missions'+(ready?' — '+ready+' rewards ready':''));
 }
 function careerRefresh(){const cards=[...$('roster').children],ordered=[...cards].sort((a,b)=>Number(ownsAlien(Number(b.dataset.alien)))-Number(ownsAlien(Number(a.dataset.alien)))||ALIEN_RANKS[Number(a.dataset.alien)]-ALIEN_RANKS[Number(b.dataset.alien)]||Number(a.dataset.alien)-Number(b.dataset.alien));if(cards.some((c,i)=>c!==ordered[i]))$('roster').replaceChildren(...ordered);const test=testingMode(),owned=ownsAlien(selected),name=aliens[selected].name;
@@ -114,7 +123,7 @@ function careerRefresh(){const cards=[...$('roster').children],ordered=[...cards
  if(typeof refreshEconomyWallet==='function')refreshEconomyWallet();const ready=MISSION_DEFS.filter(missionReady).length;missionsNav.classList.toggle('has-reward',ready>0);missionsNav.setAttribute('aria-label','Missions'+(ready?' — '+ready+' rewards ready':''));
 }
 const careerSelectBase=select;select=function(id){careerSelectBase(id);if(!isLocked()&&ownsAlien(id)){career.selected=id;saveProfile()}careerRefresh();};
-const careerEquipBase=equip;equip=function(index,slot){if(!testingMode()&&!ownsAlien(selected)){careerToast('Unlock this alien first, or try it in Testing.');return}careerEquipBase(index,slot);};
+const careerEquipBase=equip;equip=function(index,slot){if(!testingMode()&&!ownsAlien(selected)){careerToast('Unlock this alien first, or try it in Testing.');return}const before=profile.aliens[selected].loadout.join(',');careerEquipBase(index,slot);const after=profile.aliens[selected].loadout.join(',');if(!testingMode()&&ownsAlien(selected)&&before!==after){const key=selected+':'+after;career.equipSeen??=[];if(!career.equipSeen.includes(key)){syncMissionPeriods();career.equipSeen.push(key);career.stats.equips++;career.stats['equipAlien'+selected]++;saveProfile();}}};
 const careerUpgradeBase=upgrade;upgrade=function(key){if(!ownsAlien(selected)||isLocked())return;const before=profile.aliens[selected].levels[key];careerUpgradeBase(key);if(profile.aliens[selected].levels[key]>before){career.stats.upgrades++;saveProfile();careerToast('Upgrade added to '+aliens[selected].name);careerRefresh();}};
 const careerRenderBase=renderSetup;renderSetup=function(){careerRenderBase();careerRefresh();};
 const careerScreenBase=showScreen;showScreen=function(name,remember=true){if(name==='upgrades')name='garage';if(!career.owned.length&&(['home','modes'].includes(name)||name==='setup'&&!testingMode()))name='starter';careerScreenBase(name,remember);if(name==='starter')renderStarter();if(name==='missions')renderMissions();if(name==='garage')renderGarage();careerRefresh();};
@@ -138,3 +147,8 @@ for(const [screen,first,second,icon] of [['characters','ALIENS','','aliens'],['m
 // Sorting changes display order only; selection, prices and ownership use stable alien IDs.
 const categoryCards=[...$('roster').children];categoryCards.sort((a,b)=>ALIEN_RANKS[Number(a.dataset.alien)]-ALIEN_RANKS[Number(b.dataset.alien)]||Number(a.dataset.alien)-Number(b.dataset.alien));$('roster').replaceChildren(...categoryCards);careerRefresh();
 
+
+
+const missionDialog=document.createElement('dialog');missionDialog.id='missionDetails';missionDialog.innerHTML='<h2></h2><p></p><strong></strong><div class="mission-dialog-actions"><button id="missionDetailClaim">Claim reward</button><button id="missionDetailClose">Close</button></div>';document.body.appendChild(missionDialog);
+function openMissionDetails(id){const m=MISSION_DEFS.find(x=>x.id===id);if(!m)return;missionDialog.querySelector('h2').textContent=m.name;missionDialog.querySelector('p').textContent=m.text+' '+(m.period?'Resets '+m.period+'.':'Career progress stays saved.')+' Testing gives no mission progress.';missionDialog.querySelector('strong').textContent=missionProgress(m)+' / '+m.goal+' · '+m.reward+' coins';$('missionDetailClaim').hidden=!missionReady(m);$('missionDetailClaim').onclick=()=>{claimMission(id);openMissionDetails(id)};if(!missionDialog.open)missionDialog.showModal();}
+$('missionDetailClose').onclick=()=>missionDialog.close();missionDialog.addEventListener('click',e=>{if(e.target===missionDialog)missionDialog.close()});
