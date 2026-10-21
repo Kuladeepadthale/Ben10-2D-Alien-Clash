@@ -73,7 +73,7 @@ function cartoonBeam(ctx,e,id,theme){
  let x=e.x,y=e.y;const owner=e.owner;
  if(owner?.cast&&(e.castId!==undefined?owner.cast.id===e.castId:owner.cast.cfg.name===e.name)&&typeof drawnAlienEmitter==='function'){const emitter=drawnAlienEmitter(owner,owner.cast);x=emitter.x;y=emitter.y;}
  let end=e.x+e.dir*e.length,endY=e.endY??e.y;
- if(e.hit&&typeof other==='function'&&typeof body==='function'){const target=other(owner),bounds=body(target);end=target.x;endY=bounds.y+bounds.h*.5;}
+ if(e.hit&&Number.isFinite(e.impactX)){end=e.impactX;endY=e.impactY??y;}
  const color=powerColor(id,e.color),dx=end-x,dy=endY-y,len=Math.hypot(dx,dy),angle=Math.atan2(dy,dx),width=e.r||18;
  ctx.save();ctx.globalAlpha=Math.max(0,Math.min(1,e.life/e.maxLife));ctx.translate(x,y);ctx.rotate(angle);
  if(['fire','ice','water'].includes(theme)){

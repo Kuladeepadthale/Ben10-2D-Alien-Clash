@@ -51,13 +51,13 @@ jobs:
         run: |
           node server/build-engine.cjs
           WRANGLER_SEND_METRICS=false npx --yes wrangler@4 deploy --dry-run --outdir /tmp/omni-arena-worker --config server/wrangler.jsonc
-      - name: Reuse verified unchanged art for renderer-only fixes
-        if: contains(github.event.head_commit.message, '[effects-only]')
+      - name: Reuse verified unchanged character art
+        if: contains(github.event.head_commit.message, '[reuse-art]')
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 ci/restore-verified-art.py
       - name: Export native cel assets and Android bundle
-        if: "!contains(github.event.head_commit.message, '[effects-only]')"
+        if: "!contains(github.event.head_commit.message, '[reuse-art]')"
         run: |
           python3 ci/prepare-alien-force.py
           python3 ci/prepare-next20.py
@@ -89,6 +89,7 @@ jobs:
           node ci/check-alien-force.cjs
           node ci/check-expansion.cjs
           node ci/check-footwork-dash.cjs
+          node ci/check-facing.cjs
           node ci/check-interface.cjs
           node ci/check-cel-ui.cjs
           node ci/check-progression.cjs
@@ -145,7 +146,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.1 — 72 Aliens' --notes 'Restores normal basic-attack animation and its standard button. Skills and ultimates keep their illustrated powers. Travelling effects now draw complete artwork without strip seams or launch streaks; rush attacks no longer leave overlapping power-image copies. Retains all 72 characters, existing progress and the pinned signer.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.2 — 72 Aliens' --notes 'Adds input-controlled facing: passing the enemy no longer turns a character. Basic attacks, powers, dash, rushes and leaps follow the chosen direction. Projectiles and beams no longer auto-aim at the enemy; rain, traps and lobs are placed ahead. Retains all 72 characters, normal attack controls, clean power artwork and existing progress. Ranked uses server-authoritative controls and needs the updated Worker deployment.' --prerelease --target "$GITHUB_SHA"
 
 
 

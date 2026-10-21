@@ -1,4 +1,4 @@
-"""Reuse unchanged, checksum-pinned v10.0 character art for renderer-only releases."""
+"""Reuse unchanged, checksum-pinned v10.0 character art when the roster and native art are unchanged."""
 from pathlib import Path
 import hashlib,json,shutil,subprocess,tempfile,zipfile
 R=Path(__file__).resolve().parents[1]

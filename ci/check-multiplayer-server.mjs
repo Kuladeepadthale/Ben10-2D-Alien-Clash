@@ -1,4 +1,7 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+const kits=vm.runInNewContext(fs.readFileSync('web/data.js','utf8')+';aliens');
 import {createEngine} from '../server/engine.generated.mjs';
 import {RankedArena,authenticate} from '../server/worker.mjs';
 const rules=globalThis.AlienRankRules;
@@ -11,12 +14,25 @@ let checked=0;
 for(let id=0;id<72;id++)for(const action of ['normal','skill0','skill1','skill2','ultimate']){
  const engine=createEngine([{alien:id,loadout:action==='skill2'?[2,1]:[0,1]},{alien:action==='ultimate'?31:0,loadout:[0,1]}]);
  engine.input(0,{right:true},[]);engine.input(1,{left:true},[]);
- for(let t=0;t<90;t++)engine.advance(1/30);
+ const cfg=action==='normal'?{kind:'melee'}:action==='ultimate'?kits[id].ultimate:kits[id].skills[Number(action.slice(5))];
+ const gap=cfg.kind==='rain'?Math.min(cfg.range*.65,380):['eruption','trap'].includes(cfg.kind)?Math.min(cfg.range*.65,360):cfg.kind==='lob'?Math.min(cfg.range,360):cfg.kind==='leapslam'?Math.min(cfg.range,420)+60:100;
+ for(let t=0;t<500&&engine.snapshot().fighters[1].x-engine.snapshot().fighters[0].x>gap;t++)engine.advance(1/120);
  engine.input(0,{},[]);engine.input(1,{},[]);
  const before=engine.snapshot().fighters[1].hp;
  engine.input(0,{},[action==='skill2'?'skill0':action]);for(let t=0;t<150&&!engine.done;t++)engine.advance(1/30);
  if(action==='ultimate')assert.equal(engine.snapshot().fighters[1].hp,before,'Uncharged ultimate must be rejected');else assert(engine.snapshot().fighters[1].hp<before,`No server damage: ${id} ${action}`);
  checked++;
+}
+// Both human seats retain facing after crossing; reverse+attack/dash in one packet uses new input.
+for(const seat of [0,1]){
+ const dir=seat===0?1:-1,engine=createEngine([{alien:0,loadout:[0,1]},{alien:2,loadout:[0,1]}]);
+ engine.input(seat,{right:dir>0,left:dir<0},[]);
+ for(let i=0;i<500&&Math.abs(engine.snapshot().fighters[0].x-engine.snapshot().fighters[1].x)>100;i++)engine.advance(1/120);
+ engine.input(seat,{},['dash']);for(let i=0;i<50;i++)engine.advance(1/120);
+ let state=engine.snapshot();assert((state.fighters[seat].x-state.fighters[1-seat].x)*dir>0);assert.equal(state.fighters[seat].dir,dir);
+ engine.input(seat,{right:dir<0,left:dir>0},['normal']);engine.advance(1/120);assert.equal(engine.snapshot().fighters[seat].cast.dir,-dir);
+ engine.input(seat,{},[]);engine.advance(1.5);
+ engine.input(seat,{right:dir>0,left:dir<0},['dash']);engine.advance(1/120);assert.equal(engine.snapshot().fighters[seat].dash.dir,dir);
 }
 // No client HP, cooldown, gauge, rank or outcome is part of the input contract.
 const e=createEngine([{alien:0,loadout:[0,1]},{alien:2,loadout:[0,1]}]);
