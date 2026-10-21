@@ -20,7 +20,7 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
   await page.evaluate(()=>{window.oldSocket=testSocket;oldSocket.deliver({type:'matched',snapshot:{}});});assert.equal(await page.evaluate(()=>online.active),false);
   await page.evaluate(()=>rankedFind());await page.waitForFunction(()=>online.searching);
   await page.evaluate(()=>{
-   const own=make(selected,370,1,true),rival=make((selected+1)%32,910,-1);window.testSnapshot=JSON.parse(JSON.stringify({fighters:[own,rival],shots:[],effects:[],clock:90,round:1,wins:[0,0],roundDelay:0,time:0}));testSocket.deliver({type:'matched',matchId:'test-match',seat:1,bot:false,names:['Plumber A','Plumber B'],ratings:[240,240],snapshot:testSnapshot});
+   const own=make(selected,370,1,true),rival=make((selected+1)%52,910,-1);window.testSnapshot=JSON.parse(JSON.stringify({fighters:[own,rival],shots:[],effects:[],clock:90,round:1,wins:[0,0],roundDelay:0,time:0}));testSocket.deliver({type:'matched',matchId:'test-match',seat:1,bot:false,names:['Plumber A','Plumber B'],ratings:[240,240],snapshot:testSnapshot});
   });await page.waitForFunction(()=>currentScreen==='battle'&&online.active);assert.equal(await page.evaluate(()=>player.id),await page.evaluate(()=>testSnapshot.fighters[1].id));
   await page.evaluate(()=>{window.beforeHP=enemy.hp;advanceSimulation(1);});assert.equal(await page.evaluate(()=>enemy.hp),await page.evaluate(()=>beforeHP));
   assert(await page.locator('#battleReady').isVisible());await page.evaluate(()=>down('normal'));assert.equal(await page.evaluate(()=>testSocket.sent.some(d=>d.type==='input'&&d.edges.includes('normal'))),false);await page.waitForFunction(()=>!battleCountdownActive());

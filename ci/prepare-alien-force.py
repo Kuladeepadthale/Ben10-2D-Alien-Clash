@@ -10,7 +10,7 @@ from scipy import ndimage
 
 ROOT=Path(__file__).resolve().parents[1]
 SRC=ROOT/'ci/cel-sources'
-NAMES=json.loads((ROOT/'ci/roster.json').read_text())[22:]
+NAMES=json.loads((ROOT/'ci/roster.json').read_text())[22:32]
 
 def extract(source):
     a=np.array(Image.open(source).convert('RGBA'));h,w=a.shape[:2]

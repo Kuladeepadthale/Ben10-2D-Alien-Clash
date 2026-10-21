@@ -1,7 +1,7 @@
 'use strict';
 // Ownership, coins and mission claims share the existing atomic profile save.
 const CARD_RANKS=[{name:'Normal',symbol:'●',color:'#a9bac7',cost:10},{name:'Rare',symbol:'◆',color:'#55b9ff',cost:15},{name:'Epic',symbol:'✦',color:'#c28aff',cost:20},{name:'Heroic',symbol:'✪',color:'#ff954f',cost:25},{name:'Legendary',symbol:'♛',color:'#ffda65',cost:30}];
-const ALIEN_RANKS=[2,1,2,1,0,0,1,1,0,2,1,0,1,0,2,0,1,2,4,1,0,0,2,1,3,2,2,2,1,2,1,4];
+const ALIEN_RANKS=[2,1,2,1,0,0,1,1,0,2,1,0,1,0,2,0,1,2,4,1,0,0,2,1,3,2,2,2,1,2,1,4,2,2,1,2,2,3,2,3,1,1,2,3,0,2,3,2,4,1,0,2];
 const gemPrice=amount=>'<span class="gem-price" role="img" aria-label="'+amount+' diamonds"><i class="currency-icon gem" aria-hidden="true"></i><b>'+amount+'</b></span>';
 const cardRank=id=>CARD_RANKS[ALIEN_RANKS[id]??0];
 const ALIEN_PRICES=Array.from({length:ALIEN_COUNT},(_,id)=>cardRank(id).cost);
@@ -19,6 +19,7 @@ const MISSION_DEFS=[
  {id:'complete',name:'Classic collector',text:'Own 20 aliens.',stat:'owned',goal:20,reward:800,repeat:false},
  {id:'originals',name:'Original-series master',text:'Own all 22 Original Series aliens.',stat:'originals',goal:22,reward:300,repeat:false},
  {id:'alienforce',name:'Alien Force team',text:'Own all 10 Alien Force aliens.',stat:'alienforce',goal:10,reward:650,repeat:false},
+ {id:'new20',name:'Beyond the Omnitrix',text:'Own all 20 new aliens.',stat:'new20',goal:20,reward:1000,repeat:false},
  {id:'upgrades',name:'Stronger together',text:'Buy 5 upgrades.',stat:'upgrades',goal:5,reward:150,repeat:false}
 ];
 // Timed goals use independent saved counters; career milestones keep their history.
@@ -58,7 +59,7 @@ function missionWindow(period,now=new Date()){
  return {key:[start.getFullYear(),start.getMonth()+1,start.getDate()].join('-'),end:end.getTime()};
 }
 function syncMissionPeriods(){for(const period of ['daily','weekly','monthly']){const window=missionWindow(period);if(career.periods[period]?.key!==window.key){career.periods[period]={key:window.key,base:{...career.stats}};for(const m of MISSION_DEFS)if(m.period===period)career.claims[m.id]=0;}}}
-function missionProgress(m){syncMissionPeriods();const total=m.stat==='owned'?career.owned.length:m.stat==='alienforce'?career.owned.filter(id=>id>=22).length:m.stat==='originals'?career.owned.filter(id=>id<22).length:career.stats[m.stat]||0,claims=career.claims[m.id]||0,baseline=m.period?career.periods[m.period].base[m.stat]||0:0;return Math.max(0,Math.min(m.goal,total-baseline-(m.repeat?claims*m.goal:0)));}
+function missionProgress(m){syncMissionPeriods();const total=m.stat==='owned'?career.owned.length:m.stat==='alienforce'?career.owned.filter(id=>id>=22&&id<32).length:m.stat==='new20'?career.owned.filter(id=>id>=32).length:m.stat==='originals'?career.owned.filter(id=>id<22).length:career.stats[m.stat]||0,claims=career.claims[m.id]||0,baseline=m.period?career.periods[m.period].base[m.stat]||0:0;return Math.max(0,Math.min(m.goal,total-baseline-(m.repeat?claims*m.goal:0)));}
 function missionReady(m){syncMissionPeriods();return (m.repeat||!career.claims[m.id])&&missionProgress(m)>=m.goal;}
 function claimMission(id){const m=MISSION_DEFS.find(x=>x.id===id);if(!m||!missionReady(m)||isLocked())return false;career.claims[id]=(career.claims[id]||0)+1;profile.credits+=m.reward;saveProfile();careerToast('Reward claimed! +'+m.reward+' coins');renderSetup();renderMissions();return true;}
 function chooseStarter(id){if(career.owned.length||!career.offers.includes(id)||isLocked())return false;career.owned=[id];career.selected=id;garageAlien=id;saveProfile();select(id);showScreen('home',false);screenHistory.length=0;careerToast(aliens[id].name+' is yours!');return true;}

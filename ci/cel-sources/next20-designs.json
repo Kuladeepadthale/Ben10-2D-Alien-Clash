@@ -1,0 +1,1200 @@
+[
+  {
+    "name": "Rath",
+    "species": "APPOPLEXIAN",
+    "color": "#e68c32",
+    "light": "#ffc679",
+    "dark": "#592b1e",
+    "type": "pounce",
+    "speed": 300,
+    "strength": 1.16,
+    "scale": 1.1,
+    "desc": "A fierce tiger-like brawler with retractable wrist claws.",
+    "skills": [
+      [
+        "Claw flurry",
+        "melee",
+        150,
+        6,
+        180,
+        {
+          "ticks": 3,
+          "duration": 0.55
+        }
+      ],
+      [
+        "Tiger pounce",
+        "pounce",
+        150,
+        6.5,
+        440,
+        {
+          "speed": 760
+        }
+      ],
+      [
+        "Rage slam",
+        "ground",
+        165,
+        8,
+        340,
+        {
+          "windup": 0.6
+        }
+      ]
+    ],
+    "ultimate": [
+      "Appoplexian fury",
+      "rush",
+      340,
+      0,
+      800,
+      {
+        "speed": 950,
+        "ticks": 6,
+        "duration": 1.8,
+        "windup": 0.7
+      }
+    ],
+    "series": "Alien Force"
+  },
+  {
+    "name": "Lodestar",
+    "species": "BIOT-SAVARTIAN",
+    "color": "#dac53e",
+    "light": "#fff098",
+    "dark": "#383a2a",
+    "type": "pulse",
+    "speed": 240,
+    "strength": 0.94,
+    "scale": 1.06,
+    "desc": "A magnetic alien with a floating head and powerful magnet claws.",
+    "skills": [
+      [
+        "Magnetic pulse",
+        "wave",
+        135,
+        5.5,
+        650,
+        {
+          "speed": 570,
+          "radius": 48
+        }
+      ],
+      [
+        "Metal storm",
+        "rain",
+        160,
+        8,
+        750,
+        {
+          "ticks": 5,
+          "duration": 1.3
+        }
+      ],
+      [
+        "Polarity field",
+        "vortex",
+        155,
+        7,
+        240,
+        {
+          "ticks": 5,
+          "duration": 0.9,
+          "slow": 1.5
+        }
+      ]
+    ],
+    "ultimate": [
+      "Magnetic maelstrom",
+      "rain",
+      330,
+      0,
+      950,
+      {
+        "ticks": 8,
+        "duration": 2.1,
+        "windup": 0.8
+      }
+    ],
+    "series": "Alien Force"
+  },
+  {
+    "name": "Nanomech",
+    "species": "NANOCHIP HYBRID",
+    "color": "#7b9b91",
+    "light": "#acff8b",
+    "dark": "#233b35",
+    "type": "electric",
+    "speed": 355,
+    "strength": 0.65,
+    "scale": 0.58,
+    "desc": "A tiny winged biomechanical alien with precise energy attacks.",
+    "skills": [
+      [
+        "Nano laser",
+        "beam",
+        120,
+        5,
+        750,
+        {
+          "ticks": 4,
+          "duration": 0.4
+        }
+      ],
+      [
+        "Micro blitz",
+        "rush",
+        135,
+        5.5,
+        560,
+        {
+          "speed": 1100,
+          "windup": 0.22
+        }
+      ],
+      [
+        "Nano discharge",
+        "wave",
+        145,
+        7,
+        500,
+        {
+          "speed": 620,
+          "radius": 35
+        }
+      ]
+    ],
+    "ultimate": [
+      "Nano overload",
+      "beam",
+      305,
+      0,
+      1000,
+      {
+        "ticks": 8,
+        "duration": 1.5,
+        "windup": 0.7
+      }
+    ],
+    "series": "Alien Force"
+  },
+  {
+    "name": "Water Hazard",
+    "species": "ORISHAN",
+    "color": "#c4473e",
+    "light": "#8ae5ff",
+    "dark": "#542e31",
+    "type": "water",
+    "speed": 250,
+    "strength": 1.03,
+    "scale": 1.04,
+    "desc": "An armored Orishan whose palm nozzles release pressurized water.",
+    "skills": [
+      [
+        "Palm water jet",
+        "beam",
+        140,
+        6,
+        720,
+        {
+          "ticks": 5,
+          "duration": 0.55
+        }
+      ],
+      [
+        "Pressure burst",
+        "wave",
+        150,
+        7,
+        560,
+        {
+          "speed": 610,
+          "radius": 55
+        }
+      ],
+      [
+        "Rising tide",
+        "ground",
+        155,
+        7.5,
+        350,
+        {
+          "windup": 0.6
+        }
+      ]
+    ],
+    "ultimate": [
+      "Ocean deluge",
+      "beam",
+      335,
+      0,
+      1050,
+      {
+        "ticks": 8,
+        "duration": 1.8,
+        "windup": 0.8
+      }
+    ],
+    "series": "Ultimate Alien"
+  },
+  {
+    "name": "AmpFibian",
+    "species": "AMPERI",
+    "color": "#428dd9",
+    "light": "#b4f4ff",
+    "dark": "#254372",
+    "type": "electric",
+    "speed": 285,
+    "strength": 0.82,
+    "scale": 1.02,
+    "desc": "A floating Amperi who channels electricity through his tentacles.",
+    "skills": [
+      [
+        "Tentacle bolt",
+        "projectile",
+        125,
+        4.5,
+        820,
+        {
+          "speed": 760,
+          "radius": 15
+        }
+      ],
+      [
+        "Phasing current",
+        "rush",
+        145,
+        6.5,
+        540,
+        {
+          "speed": 850,
+          "phase": true
+        }
+      ],
+      [
+        "Current field",
+        "vortex",
+        155,
+        7.5,
+        240,
+        {
+          "ticks": 5,
+          "duration": 0.9
+        }
+      ]
+    ],
+    "ultimate": [
+      "Amperi thunderstorm",
+      "rain",
+      325,
+      0,
+      950,
+      {
+        "ticks": 8,
+        "duration": 2,
+        "windup": 0.8
+      }
+    ],
+    "series": "Ultimate Alien"
+  },
+  {
+    "name": "Armodrillo",
+    "species": "TALPAEDAN",
+    "color": "#d5b53d",
+    "light": "#fff1a8",
+    "dark": "#4b4935",
+    "type": "slam",
+    "speed": 215,
+    "strength": 1.23,
+    "scale": 1.2,
+    "desc": "A heavily armored digger with piston arms that produce seismic shocks.",
+    "skills": [
+      [
+        "Piston drill",
+        "melee",
+        165,
+        6.5,
+        210,
+        {
+          "windup": 0.42
+        }
+      ],
+      [
+        "Seismic punch",
+        "ground",
+        170,
+        8,
+        390,
+        {
+          "windup": 0.65
+        }
+      ],
+      [
+        "Drill charge",
+        "rush",
+        165,
+        7.5,
+        550,
+        {
+          "speed": 740,
+          "duration": 0.7
+        }
+      ]
+    ],
+    "ultimate": [
+      "Tectonic breaker",
+      "leapslam",
+      350,
+      0,
+      460,
+      {
+        "windup": 0.8,
+        "duration": 1.4
+      }
+    ],
+    "series": "Ultimate Alien"
+  },
+  {
+    "name": "Terraspin",
+    "species": "GEOCHELONE AERIO",
+    "color": "#859757",
+    "light": "#deecab",
+    "dark": "#3d4d2b",
+    "type": "wind",
+    "speed": 240,
+    "strength": 1.02,
+    "scale": 1.04,
+    "desc": "A turtle-like alien who spins his flippers to drive powerful air currents.",
+    "skills": [
+      [
+        "Vent blast",
+        "wave",
+        135,
+        5.5,
+        680,
+        {
+          "speed": 630,
+          "radius": 58
+        }
+      ],
+      [
+        "Shell cyclone",
+        "vortex",
+        155,
+        7.5,
+        240,
+        {
+          "ticks": 5,
+          "duration": 0.9
+        }
+      ],
+      [
+        "Shell slam",
+        "ground",
+        155,
+        7,
+        350,
+        {
+          "windup": 0.6
+        }
+      ]
+    ],
+    "ultimate": [
+      "Cyclonic tempest",
+      "vortex",
+      330,
+      0,
+      420,
+      {
+        "ticks": 9,
+        "duration": 1.7,
+        "windup": 0.8
+      }
+    ],
+    "series": "Ultimate Alien"
+  },
+  {
+    "name": "NRG",
+    "species": "PRYPIATOSIAN-B",
+    "color": "#986a43",
+    "light": "#cfff73",
+    "dark": "#49382c",
+    "type": "fire",
+    "speed": 205,
+    "strength": 1.2,
+    "scale": 1.18,
+    "desc": "A radioactive energy alien protected by a heavy containment suit.",
+    "skills": [
+      [
+        "Vent heat ray",
+        "beam",
+        150,
+        6.5,
+        750,
+        {
+          "ticks": 5,
+          "duration": 0.55,
+          "windup": 0.5
+        }
+      ],
+      [
+        "Molten stomp",
+        "ground",
+        165,
+        8,
+        360,
+        {
+          "windup": 0.65
+        }
+      ],
+      [
+        "Radiation wave",
+        "wave",
+        155,
+        7.5,
+        620,
+        {
+          "speed": 500,
+          "radius": 60
+        }
+      ]
+    ],
+    "ultimate": [
+      "Reactor flare",
+      "rain",
+      350,
+      0,
+      950,
+      {
+        "ticks": 8,
+        "duration": 2.1,
+        "windup": 0.9
+      }
+    ],
+    "series": "Ultimate Alien"
+  },
+  {
+    "name": "Fasttrack",
+    "species": "CITRAKAYAH",
+    "color": "#3c83bd",
+    "light": "#a5e6ff",
+    "dark": "#182c45",
+    "type": "dash",
+    "speed": 390,
+    "strength": 0.8,
+    "scale": 1.0,
+    "desc": "An agile feline speedster with fast strikes and acrobatic movement.",
+    "skills": [
+      [
+        "Velocity rush",
+        "rush",
+        125,
+        4.5,
+        600,
+        {
+          "speed": 1050,
+          "windup": 0.22
+        }
+      ],
+      [
+        "Claw combo",
+        "melee",
+        150,
+        6,
+        180,
+        {
+          "ticks": 4,
+          "duration": 0.6
+        }
+      ],
+      [
+        "Cyclone kick",
+        "vortex",
+        150,
+        7,
+        210,
+        {
+          "ticks": 5,
+          "duration": 0.8
+        }
+      ]
+    ],
+    "ultimate": [
+      "Citrakayah blitz",
+      "rush",
+      320,
+      0,
+      1000,
+      {
+        "speed": 1400,
+        "ticks": 6,
+        "duration": 1.8,
+        "windup": 0.5
+      }
+    ],
+    "series": "Ultimate Alien"
+  },
+  {
+    "name": "Chamalien",
+    "species": "MERLINISAPIEN",
+    "color": "#9165ae",
+    "light": "#ead2ff",
+    "dark": "#423053",
+    "type": "phase",
+    "speed": 310,
+    "strength": 0.83,
+    "scale": 0.94,
+    "desc": "A stealthy three-eyed reptile with camouflage and a strong tail.",
+    "skills": [
+      [
+        "Cloaked lunge",
+        "rush",
+        130,
+        5.5,
+        530,
+        {
+          "speed": 870,
+          "phase": true
+        }
+      ],
+      [
+        "Claw swipe",
+        "melee",
+        145,
+        6,
+        190,
+        {
+          "ticks": 2,
+          "duration": 0.35
+        }
+      ],
+      [
+        "Tail sweep",
+        "melee",
+        155,
+        7,
+        260,
+        {
+          "windup": 0.45
+        }
+      ]
+    ],
+    "ultimate": [
+      "Invisible ambush",
+      "rush",
+      320,
+      0,
+      850,
+      {
+        "speed": 1100,
+        "ticks": 6,
+        "duration": 1.7,
+        "phase": true,
+        "windup": 0.65
+      }
+    ],
+    "series": "Ultimate Alien"
+  },
+  {
+    "name": "Eatle",
+    "species": "ORYCTINI",
+    "color": "#38444b",
+    "light": "#aeff83",
+    "dark": "#14242b",
+    "type": "digest",
+    "speed": 230,
+    "strength": 1.15,
+    "scale": 1.08,
+    "desc": "An armored beetle alien who converts consumed matter into energy beams.",
+    "skills": [
+      [
+        "Mouth blast",
+        "projectile",
+        135,
+        5.5,
+        850,
+        {
+          "speed": 720,
+          "radius": 20
+        }
+      ],
+      [
+        "Beetle charge",
+        "rush",
+        160,
+        7.5,
+        570,
+        {
+          "speed": 800,
+          "duration": 0.65
+        }
+      ],
+      [
+        "Horn uppercut",
+        "melee",
+        165,
+        7,
+        195,
+        {
+          "windup": 0.42
+        }
+      ]
+    ],
+    "ultimate": [
+      "Matter converter",
+      "beam",
+      340,
+      0,
+      1100,
+      {
+        "ticks": 8,
+        "duration": 1.8,
+        "windup": 0.85
+      }
+    ],
+    "series": "Ultimate Alien"
+  },
+  {
+    "name": "Clockwork",
+    "species": "CHRONOSAPIEN",
+    "color": "#b48a45",
+    "light": "#b8ff88",
+    "dark": "#5a432c",
+    "type": "time",
+    "speed": 220,
+    "strength": 1.02,
+    "scale": 1.02,
+    "desc": "A mechanical Chronosapien whose temporal rays slow opponents in the arena.",
+    "skills": [
+      [
+        "Temporal ray",
+        "beam",
+        135,
+        6.5,
+        740,
+        {
+          "ticks": 4,
+          "duration": 0.5,
+          "slow": 2
+        }
+      ],
+      [
+        "Time field",
+        "vortex",
+        150,
+        7.5,
+        250,
+        {
+          "ticks": 5,
+          "duration": 1,
+          "slow": 2.5
+        }
+      ],
+      [
+        "Clockwork stomp",
+        "ground",
+        155,
+        7,
+        350,
+        {
+          "windup": 0.65
+        }
+      ]
+    ],
+    "ultimate": [
+      "Temporal surge",
+      "wave",
+      330,
+      0,
+      1000,
+      {
+        "speed": 510,
+        "radius": 90,
+        "ticks": 3,
+        "duration": 0.9,
+        "slow": 2.5,
+        "windup": 0.9
+      }
+    ],
+    "series": "Ultimate Alien"
+  },
+  {
+    "name": "Jury Rigg",
+    "species": "PLANCHAKULE",
+    "color": "#c74f42",
+    "light": "#ffcf88",
+    "dark": "#5e2d31",
+    "type": "pulse",
+    "speed": 330,
+    "strength": 0.72,
+    "scale": 0.67,
+    "desc": "A quick-thinking mechanical specialist with improvised arena gadgets.",
+    "skills": [
+      [
+        "Scrap launcher",
+        "projectile",
+        115,
+        4.5,
+        780,
+        {
+          "speed": 650,
+          "radius": 16
+        }
+      ],
+      [
+        "Junk bomb",
+        "lob",
+        150,
+        7,
+        600,
+        {
+          "speed": 480,
+          "radius": 75
+        }
+      ],
+      [
+        "Gear trap",
+        "trap",
+        155,
+        7.5,
+        250,
+        {
+          "duration": 3,
+          "radius": 100
+        }
+      ]
+    ],
+    "ultimate": [
+      "Junkyard arsenal",
+      "rain",
+      310,
+      0,
+      900,
+      {
+        "ticks": 7,
+        "duration": 2,
+        "windup": 0.75
+      }
+    ],
+    "series": "Ultimate Alien"
+  },
+  {
+    "name": "Shocksquatch",
+    "species": "GIMLINOPITHECUS",
+    "color": "#dccb49",
+    "light": "#f6ffb2",
+    "dark": "#373c32",
+    "type": "electric",
+    "speed": 250,
+    "strength": 1.15,
+    "scale": 1.13,
+    "desc": "A powerful electric primate whose fists discharge stored electricity.",
+    "skills": [
+      [
+        "Charged fist",
+        "melee",
+        160,
+        6.5,
+        190,
+        {
+          "windup": 0.4
+        }
+      ],
+      [
+        "Lightning arc",
+        "beam",
+        145,
+        6,
+        680,
+        {
+          "ticks": 4,
+          "duration": 0.5
+        }
+      ],
+      [
+        "Electric stomp",
+        "ground",
+        165,
+        8,
+        370,
+        {
+          "windup": 0.65
+        }
+      ]
+    ],
+    "ultimate": [
+      "Thunderous fury",
+      "wave",
+      340,
+      0,
+      1000,
+      {
+        "speed": 630,
+        "radius": 85,
+        "ticks": 4,
+        "duration": 1,
+        "windup": 0.8
+      }
+    ],
+    "series": "Ultimate Alien"
+  },
+  {
+    "name": "Feedback",
+    "species": "CONDUCTOID",
+    "color": "#3d4143",
+    "light": "#faff9c",
+    "dark": "#151c24",
+    "type": "electric",
+    "speed": 280,
+    "strength": 1.0,
+    "scale": 1.08,
+    "desc": "A Conductoid who channels electricity through his head plugs and fingertips.",
+    "skills": [
+      [
+        "Finger bolt",
+        "projectile",
+        130,
+        5,
+        850,
+        {
+          "speed": 800,
+          "radius": 15
+        }
+      ],
+      [
+        "Plug discharge",
+        "beam",
+        155,
+        7,
+        780,
+        {
+          "ticks": 5,
+          "duration": 0.6
+        }
+      ],
+      [
+        "Current rush",
+        "rush",
+        150,
+        6.5,
+        560,
+        {
+          "speed": 900
+        }
+      ]
+    ],
+    "ultimate": [
+      "Conductoid overload",
+      "beam",
+      345,
+      0,
+      1100,
+      {
+        "ticks": 9,
+        "duration": 1.8,
+        "windup": 0.85
+      }
+    ],
+    "series": "Omniverse"
+  },
+  {
+    "name": "Bloxx",
+    "species": "SEGMENTASAPIEN",
+    "color": "#d45142",
+    "light": "#ffdf67",
+    "dark": "#3b4d82",
+    "type": "slam",
+    "speed": 245,
+    "strength": 1.12,
+    "scale": 1.08,
+    "desc": "A living construction-block alien who reshapes his arms into heavy weapons.",
+    "skills": [
+      [
+        "Block hammer",
+        "melee",
+        160,
+        6.5,
+        235,
+        {
+          "windup": 0.45
+        }
+      ],
+      [
+        "Brick volley",
+        "projectile",
+        140,
+        6,
+        780,
+        {
+          "speed": 650,
+          "radius": 18,
+          "ticks": 3,
+          "duration": 0.3
+        }
+      ],
+      [
+        "Construction slam",
+        "ground",
+        165,
+        8,
+        380,
+        {
+          "windup": 0.65
+        }
+      ]
+    ],
+    "ultimate": [
+      "Megablock impact",
+      "leapslam",
+      345,
+      0,
+      450,
+      {
+        "windup": 0.8,
+        "duration": 1.4
+      }
+    ],
+    "series": "Omniverse"
+  },
+  {
+    "name": "Gravattack",
+    "species": "GALILEAN",
+    "color": "#a35e42",
+    "light": "#ffb382",
+    "dark": "#512f29",
+    "type": "gravity",
+    "speed": 215,
+    "strength": 1.12,
+    "scale": 1.18,
+    "desc": "A living planetoid with a gravity core. Arena gravity fields slow and damage rivals.",
+    "skills": [
+      [
+        "Gravity orb",
+        "projectile",
+        140,
+        6,
+        820,
+        {
+          "speed": 580,
+          "radius": 24,
+          "slow": 1.5
+        }
+      ],
+      [
+        "Orbital field",
+        "vortex",
+        165,
+        8,
+        280,
+        {
+          "ticks": 6,
+          "duration": 1,
+          "slow": 2
+        }
+      ],
+      [
+        "Planetfall",
+        "ground",
+        175,
+        8.5,
+        420,
+        {
+          "windup": 0.75
+        }
+      ]
+    ],
+    "ultimate": [
+      "Gravity singularity",
+      "vortex",
+      350,
+      0,
+      440,
+      {
+        "ticks": 9,
+        "duration": 1.8,
+        "slow": 2.5,
+        "windup": 0.9
+      }
+    ],
+    "series": "Omniverse"
+  },
+  {
+    "name": "Crashhopper",
+    "species": "ORTHOPTERAN",
+    "color": "#76a944",
+    "light": "#dbf29a",
+    "dark": "#344b26",
+    "type": "pounce",
+    "speed": 345,
+    "strength": 0.96,
+    "scale": 1.02,
+    "desc": "A spring-legged insect alien who attacks with powerful leaps and head impacts.",
+    "skills": [
+      [
+        "Spring pounce",
+        "pounce",
+        145,
+        5.5,
+        500,
+        {
+          "speed": 830,
+          "windup": 0.25
+        }
+      ],
+      [
+        "Headlong rush",
+        "rush",
+        150,
+        6.5,
+        630,
+        {
+          "speed": 1000
+        }
+      ],
+      [
+        "Landing shock",
+        "ground",
+        160,
+        7.5,
+        350,
+        {
+          "windup": 0.6
+        }
+      ]
+    ],
+    "ultimate": [
+      "Meteor hopper",
+      "leapslam",
+      330,
+      0,
+      500,
+      {
+        "windup": 0.65,
+        "duration": 1.4
+      }
+    ],
+    "series": "Omniverse"
+  },
+  {
+    "name": "Ball Weevil",
+    "species": "INSECTOID",
+    "color": "#cfad42",
+    "light": "#baff8e",
+    "dark": "#55502b",
+    "type": "slime",
+    "speed": 300,
+    "strength": 0.7,
+    "scale": 0.58,
+    "desc": "A tiny insect who rolls sticky plasma balls that detonate on contact.",
+    "skills": [
+      [
+        "Plasma ball",
+        "projectile",
+        120,
+        4.5,
+        800,
+        {
+          "speed": 550,
+          "radius": 24,
+          "slow": 1.5
+        }
+      ],
+      [
+        "Sticky lob",
+        "lob",
+        150,
+        7,
+        650,
+        {
+          "speed": 480,
+          "radius": 80,
+          "slow": 2
+        }
+      ],
+      [
+        "Plasma trap",
+        "trap",
+        150,
+        7,
+        250,
+        {
+          "duration": 3,
+          "radius": 100
+        }
+      ]
+    ],
+    "ultimate": [
+      "Giant plasma burst",
+      "lob",
+      315,
+      0,
+      850,
+      {
+        "speed": 550,
+        "radius": 120,
+        "windup": 0.8
+      }
+    ],
+    "series": "Omniverse"
+  },
+  {
+    "name": "Astrodactyl",
+    "species": "PTEROSAURIAN",
+    "color": "#70934d",
+    "light": "#ffd07b",
+    "dark": "#33482c",
+    "type": "cosmic",
+    "speed": 335,
+    "strength": 0.88,
+    "scale": 1.02,
+    "desc": "A jet-powered flying reptile who forms energy whips from his wrists.",
+    "skills": [
+      [
+        "Energy whip",
+        "melee",
+        145,
+        6,
+        280,
+        {
+          "windup": 0.4
+        }
+      ],
+      [
+        "Jet blitz",
+        "rush",
+        150,
+        6.5,
+        650,
+        {
+          "speed": 1100,
+          "windup": 0.25
+        }
+      ],
+      [
+        "Star bolt",
+        "projectile",
+        130,
+        5.5,
+        850,
+        {
+          "speed": 780,
+          "radius": 16
+        }
+      ]
+    ],
+    "ultimate": [
+      "Stellar overdrive",
+      "beam",
+      330,
+      0,
+      1100,
+      {
+        "ticks": 8,
+        "duration": 1.7,
+        "windup": 0.8
+      }
+    ],
+    "series": "Omniverse"
+  }
+]

@@ -20,9 +20,9 @@ def check_character(c):
 
 if __name__=='__main__':
     m=json.loads((ROOT/'web/assets/cels/manifest.json').read_text())
-    assert len(m['characters'])==32
+    assert len(m['characters'])==52
     count=sum(check_character(c) for c in m['characters'])
-    for c in m['characters'][22:]:
+    for c in m['characters'][22:32]:
         idle=c['frames'][c['clips']['idle'][0]]
         assert max(idle['rect'][2:])>=300,(c['name'],'low-detail source regression')
         assert len(c['frames'])==32 and len(c['sheets'])==4
@@ -42,5 +42,5 @@ if __name__=='__main__':
             image.paste((90,180,90,255),(x+15,y+10,x+85,min(200,y+96)))
     packed,positions=pack_poses(whole_poses(image))
     assert len(positions)==8
-    print('Passed:',count,'whole-body frames across 32 aliens; transparent frame margins; exact source-pixel preservation; Frankenstrike boots and Spitter tail regression checks.')
+    print('Passed:',count,'whole-body frames across 52 aliens; transparent frame margins; exact source-pixel preservation; Frankenstrike boots and Spitter tail regression checks.')
 
