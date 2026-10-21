@@ -18,10 +18,33 @@ for(let id=0;id<52;id++)for(const kind of ['projectile','wave','lob','rain','gro
 }
 assert.equal(new Set(signatures.values()).size,signatures.size,'Elemental beams must be visually distinct');
 // Beam origins follow the active pose in both directions; launch metadata retains the actual emitter.
-const b=harness(),evaluate=s=>vm.runInContext(s,b);
+const b=harness({metadataOnly:true}),evaluate=s=>vm.runInContext(s,b);
 for(let id=0;id<52;id++)for(const dir of [-1,1]){
  b.id=id;b.dir=dir;evaluate('player=make(id,640,dir,true);enemy=make((id+1)%52,900,-dir);f=player;');
  evaluate("f.cast={key:'skill0',elapsed:aliens[id].skills[0].windup+.02,dir,cfg:aliens[id].skills[0],ultimate:false}");
  const pos=evaluate('drawnAlienEmitter(f,f.cast)');assert(Number.isFinite(pos.x)&&Number.isFinite(pos.y)&&pos.y<510);
 }
 console.log(`Passed: ${renders} projectile and beam renders; distinct elemental beams; immutable damage state; all 52 active-cel emitters in both facings.`);
+
+
+// Close opponents must not pull a projectile away from the live hand landmark.
+for(let id=0;id<52;id++)for(const dir of [-1,1])for(const distance of [70,400]){
+ b.id=id;b.dir=dir;b.distance=distance;
+ evaluate("player=make(id,640,dir,true);enemy=make((id+1)%52,640+dir*distance,-dir);player.y=450;shots=[];effects=[];f=player");
+ for(const kind of ['projectile','wave','lob','beam']){
+  b.kind=kind;evaluate("f.cast={id:77,key:'skill0',elapsed:.34,dir,cfg:{...aliens[id].skills[0],kind,windup:.32,speed:600},ultimate:false,damage:100,budget:{remaining:100}};spawnAttack(f,f.cast,0)");
+  const actual=evaluate("kind==='beam'?effects.at(-1):shots.at(-1)"),emitter=evaluate('drawnAlienEmitter(f,f.cast)');
+  assert.equal(actual.x,emitter.x,`Detached ${id} ${kind} x`);assert.equal(actual.y,emitter.y,`Detached ${id} ${kind} y`);assert.equal(actual.castId,77);
+ }
+}
+// Charge art must follow the live emitter without mutating any combat state.
+run('function drawnAlienEmitter(f){return {x:f.x+f.dir*38,y:f.y-90}}');
+for(let id=0;id<52;id++)for(const dir of [-1,1]){
+ const v={id:9,key:'skill0',dir,elapsed:.25,cfg:{kind:'beam',name:'Power',windup:.5}},f={id,dir,x:300,y:400,cast:v};box.f=f;box.v=v;
+ const before=JSON.stringify(f);ctx.clearRect(0,0,1000,600);run('drawPowerCharge(ctx,f,v)');assert.equal(JSON.stringify(f),before);
+ if(run("!['physical','blocks'].includes(powerTheme(f.id,v.cfg.name))")){
+  const pixels=ctx.getImageData(0,0,1000,600).data;assert(pixels.some((v,i)=>i%4===3&&v>0),`Empty charge ${id}`);
+  const emitterX=f.x+dir*38;for(let y=0;y<600;y++)for(let x=0;x<1000;x++)if(pixels[(y*1000+x)*4+3])assert(Math.abs(x-emitterX)<45&&Math.abs(y-310)<45,'Charge detached from hand');
+ }
+}
+console.log('Passed: exact cel launch origins at near/far ranges, both facings and airborne; hand charge renders and immutable combat state.');

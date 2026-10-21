@@ -70,7 +70,7 @@ drawShot=function(ctx,s){
 };
 function cartoonBeam(ctx,e,id,theme){
  let x=e.x,y=e.y;const owner=e.owner;
- if(owner?.cast?.cfg.name===e.name&&typeof drawnAlienEmitter==='function'){const emitter=drawnAlienEmitter(owner,owner.cast);x=emitter.x;y=emitter.y;}
+ if(owner?.cast&&(e.castId!==undefined?owner.cast.id===e.castId:owner.cast.cfg.name===e.name)&&typeof drawnAlienEmitter==='function'){const emitter=drawnAlienEmitter(owner,owner.cast);x=emitter.x;y=emitter.y;}
  let end=e.x+e.dir*e.length,endY=e.endY??e.y;
  if(e.hit&&typeof other==='function'&&typeof body==='function'){const target=other(owner),bounds=body(target);end=target.x;endY=bounds.y+bounds.h*.5;}
  const color=powerColor(id,e.color),dx=end-x,dy=endY-y,len=Math.hypot(dx,dy),angle=Math.atan2(dy,dx),width=e.r||18;
@@ -104,3 +104,27 @@ drawEffect=function(ctx,e){
  if(e.kind==='beam'&&theme!=='physical'){cartoonBeam(ctx,e,id,theme);return;}
  cartoonEffectBase(ctx,e);
 };
+
+
+// Charge builds at the same live cel landmark used for launch, then releases.
+function drawPowerCharge(ctx,f,v){
+ if(!['projectile','wave','lob','beam','rain'].includes(v.cfg.kind)||typeof drawnAlienEmitter!=='function')return;
+ const emitter=drawnAlienEmitter(f,v);if(!emitter)return;
+ const theme=powerTheme(f.id,v.cfg.name);if(theme==='physical'||theme==='blocks')return;
+ const progress=Math.max(0,Math.min(1,v.elapsed/Math.max(.001,v.cfg.windup))),r=(v.ultimate?19:11)*(.2+progress*.8),color=powerColor(f.id,(f.config||aliens[f.id]).light);
+ ctx.save();ctx.translate(emitter.x,emitter.y);ctx.scale(v.dir||f.dir||1,1);ctx.globalAlpha=.25+progress*.65;ctx.shadowColor=color;ctx.shadowBlur=8+progress*10;
+ if(theme==='fire'){
+  for(let i=0;i<4;i++){const x=(i-1.5)*r*.42,h=r*(1.1+.3*Math.sin(time*22+i));path(ctx,[[x-r*.42,r*.2],[x-r*.2,-h*.45],[x+r*.2,-h],[x+r*.52,-h*.2],[x+r*.44,r*.3]],i%2?'#ff9c2c':'#ffcf51',null);}
+  oval(ctx,0,0,r*.5,r*.42,'#fff1a6',null);
+ }else if(theme==='electric'){
+  for(let i=0;i<4;i++){const a=i*Math.PI/2+time*3,dx=Math.cos(a)*r,dy=Math.sin(a)*r;line(ctx,[[0,0],[dx*.45-dy*.25,dy*.45+dx*.25],[dx,dy]],color,2);}
+  oval(ctx,0,0,r*.3,r*.3,'#efffff',null);
+ }else if(theme==='ice'||theme==='crystal'){
+  for(let i=0;i<3;i++){const x=(i-1)*r*.55;path(ctx,[[x-r*.3,r*.3],[x,-r*(.7+i*.15)],[x+r*.3,r*.3]],color,'#f1ffff',1);}
+ }else if(theme==='goo'||theme==='plasma'||theme==='plant'){
+  oval(ctx,0,0,r,r*.8,color,null);oval(ctx,-r*.25,-r*.25,r*.22,r*.18,'#f4ffd9',null);
+ }else{
+  powerRing(ctx,0,0,r,r*.72,color,2,time*2);powerRing(ctx,0,0,r*.55,r*.8,color,1,-time*3);oval(ctx,0,0,r*.25,r*.25,'#efffff',null);
+ }
+ ctx.restore();
+}
