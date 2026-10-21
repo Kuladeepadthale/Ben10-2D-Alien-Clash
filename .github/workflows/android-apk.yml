@@ -65,7 +65,7 @@ jobs:
           python3 ci/build-cels.py
           python3 ci/build-villains.py
       - name: Verify all 72 action sets and game controls
-        if: "!contains(github.event.head_commit.message, '[landmarks-only]')"
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
@@ -105,6 +105,23 @@ jobs:
           node ci/check-home-team.cjs
           node ci/check-card-shop-layout.cjs
           node ci/check-power-icons.cjs
+          for script in web/*.js; do node --check "$script"; done
+      - name: Verify focused squad-screen correction after passed full suite
+        if: contains(github.event.head_commit.message, '[squad-ui-only]')
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          git fetch --depth=1 origin 8c33c8dca013a64bb2bb39b4c7f6444a318636a6
+          python3 - <<'PYGUARD'
+          import subprocess
+          changed=set(subprocess.check_output(['git','diff','--name-only','8c33c8dca013a64bb2bb39b4c7f6444a318636a6','HEAD'],text=True).splitlines())
+          allowed={'web/squad-multiplayer.js','web/multiplayer.css','ci/check-squad-ui.cjs','.github/workflows/android-apk.yml'}
+          assert changed<=allowed,changed-allowed
+          PYGUARD
+          /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
+          node ci/check-squad-ui.cjs
+          node ci/check-multiplayer-ui.cjs
+          node ci/check-progression-layout.cjs
           for script in web/*.js; do node --check "$script"; done
       - name: Verify final landmark-only correction after full-suite baseline
         if: contains(github.event.head_commit.message, '[landmarks-only]')
