@@ -72,6 +72,7 @@ jobs:
           node ci/check-alien-combat.cjs
           node ci/check-next20.cjs
           node ci/check-cartoon-powers.cjs
+          node ci/check-ability-animations.cjs
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
           node ci/check-multiplayer-ui.cjs
           node ci/check-accounts.cjs
@@ -114,6 +115,7 @@ jobs:
           assert 'assets/progression.js' in names and 'assets/progression.css' in names
           assert 'assets/expansion-effects.js' in names
           assert 'assets/cartoon-power-effects.js' in names
+          assert 'assets/ability-animations.js' in names
           m=json.loads(z.read('assets/assets/cels/manifest.json'))
           assert len(m['characters'])==52
           for c in m['characters']:
@@ -133,9 +135,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 9.0 — 52 Aliens' --notes 'Update your existing Online app without uninstalling. Adds 20 playable aliens with complete action sets, cartoon power effects from body emitters, and 100 new ability illustrations, expanding the roster to 52 aliens. Ability images replace pose thumbnails in equipment, alien details, setup and battle controls. Keeps full-screen fighting, arc controls, v8.2 alien art, progress and the same pinned test signer. Development test APKs. Physical-device play testing is still recommended.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 9.1 — Animated Power Artwork' --notes 'The actual battles now animate the same detailed illustrations shown on all 260 power buttons: flowing beams, flying projectiles, swinging blades and vines, rush trails, rising spikes and explosions. All 52 aliens retained. Uses the existing damage rules and pinned update signer. Development test APK; install over the Online app to retain its saved progress.' --prerelease --target "$GITHUB_SHA"
 
 
 
 
 # v8.2: verify full-screen controls and all forty native replacement sheets.
+
