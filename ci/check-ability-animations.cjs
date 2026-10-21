@@ -10,6 +10,7 @@ async function main(){
  for(let id=0;id<72;id++)for(const key of ['normal','skill0','skill1','skill2','ultimate'])for(const dir of [-1,1]){
   Object.assign(b,{id,key,dir});
   run("player=make(id,300,dir,true);enemy=make((id+1)%72,300+dir*250,-dir);cfg=key==='normal'?baseNormal(player):key==='ultimate'?aliens[id].ultimate:aliens[id].skills[Number(key.slice(5))];player.cast={id:72,key,dir,elapsed:cfg.windup+.02,cfg,ultimate:key==='ultimate'};effect={owner:player,artKey:key,castId:72,name:cfg.name,kind:cfg.kind,x:600,y:340,r:40,range:cfg.range,length:400,endY:380,dir,vx:600*dir,vy:0,life:.72,maxLife:1,height:150,delay:.1,color:aliens[id].light,budget:{remaining:100},damage:100};if(effect.kind==='spikes')effect.kind='spike';if(['rush','pounce','leapslam'].includes(effect.kind)){effect.kind='afterimage';effect.x=player.x;effect.y=player.y}");
+  run("if(effect.kind==='beam'){const muzzle=drawnAlienEmitter(player,player.cast);effect.x=muzzle.x;effect.y=muzzle.y;effect.endY=muzzle.y;}");
   const before=run('JSON.stringify(effect)'),signatures=[];
   for(const t of [.2,.4,.6]){
    b.time=t;run('effect.life=1-time');ctx.clearRect(0,0,1280,640);
