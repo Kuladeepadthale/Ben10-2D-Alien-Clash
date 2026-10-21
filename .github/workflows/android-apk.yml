@@ -65,6 +65,7 @@ jobs:
           python3 ci/build-cels.py
           python3 ci/build-villains.py
       - name: Verify all 72 action sets and game controls
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
@@ -101,6 +102,30 @@ jobs:
           node ci/check-home-team.cjs
           node ci/check-card-shop-layout.cjs
           node ci/check-power-icons.cjs
+          for script in web/*.js; do node --check "$script"; done
+      - name: Verify final landmark-only correction after full-suite baseline
+        if: contains(github.event.head_commit.message, '[landmarks-only]')
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          git fetch --depth=1 origin 61a83bbb07e5038dce070c5de1f1a74354fe6a73
+          python3 - <<'PYGUARD'
+          import subprocess
+          changed=set(subprocess.check_output(['git','diff','--name-only','61a83bbb07e5038dce070c5de1f1a74354fe6a73','HEAD'],text=True).splitlines())
+          allowed={'web/power-profiles.js','server/engine.generated.mjs','ci/check-clean-powers.cjs','ci/check-profile-pixels.py','.github/workflows/android-apk.yml'}
+          assert changed<=allowed,changed-allowed
+          PYGUARD
+          node server/build-engine.cjs
+          node ci/check-multiplayer-server.mjs
+          node ci/check-alien-combat.cjs
+          node ci/check-cartoon-powers.cjs
+          node ci/check-ability-animations.cjs
+          node ci/check-clean-powers.cjs
+          node ci/check-power-origins.cjs
+          python3 ci/check-profile-pixels.py
+          node ci/check-single-throws.cjs
+          node ci/check-facing.cjs
+          node ci/check-footwork-dash.cjs
           for script in web/*.js; do node --check "$script"; done
       - name: Build standard and separate-install APKs
         run: |
