@@ -7,7 +7,7 @@ Android 7.7 includes the owner-deployed default endpoint `wss://omnitrix-ranked-
 1. Open Cloudflare Dashboard. Use Chrome's Desktop site if needed.
 2. Open **Workers & Pages → Create application → Import a repository / Continue with GitHub**. Choose **Workers**, not Pages.
 3. Authorize access to `Kuladeepadthale/Ben10-2D-Alien-Clash` and select it. Branch: `main`.
-4. Keep the repository root as the build root. Build command: `node server/build-engine.cjs`. Deploy command: `npx wrangler deploy --config server/wrangler.jsonc`.
+4. Keep the repository root as the build root. Build command: `node server/build-engine.cjs`. Deploy command: `npx wrangler@4.151.3 deploy --config server/wrangler.jsonc`.
 5. Publish the Worker. Its configuration creates the SQLite-backed `ARENA` Durable Object binding and supplies the public Firebase project identifiers. No Firebase Admin private key is required.
 6. Open `https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev/health`. It should return `{"service":"Omnitrix Ranked Arena","protocol":1}`.
 7. Send that HTTPS address back in chat. The APK's final shared endpoint will be `wss://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev/arena`.
@@ -45,10 +45,12 @@ Run `node server/build-engine.cjs` then `node ci/check-multiplayer-server.mjs`. 
 References: https://developers.cloudflare.com/durable-objects/examples/websocket-server/ and https://firebase.google.com/docs/reference/rest/auth#section-get-account-info
 
 
-## v10.5 squad protocol
+## v10.6 squad protocol
 
-Deploy the matching Worker using `npx wrangler deploy --config server/wrangler.jsonc` from the repository root. The build command regenerates the shared combat engine. This version advertises protocol 2 and rejects old clients through the client handshake. An APK update alone does not deploy the Worker.
+Deploy the matching Worker using `npx wrangler deploy --config server/wrangler.jsonc` from the repository root. The build command regenerates the shared combat engine. This version advertises protocol 3 and rejects old clients through the client handshake. An APK update alone does not deploy the Worker.
 
-Ranked: choose three owned aliens during the first ten seconds of the thirty-second search; matching cannot start sooner. Players with fewer than three unlocked aliens repeat owned aliens in spare slots. At match start, choose a starter for five seconds, followed by a three-second start countdown. Knockouts freeze combat for a three-second reserve choice, followed by a one-second restart. Missing reserve choices pick a random remaining slot. The surviving fighter keeps HP. Eliminate three alien slots to win; only genuine ranked matches change RP.
+Ranked: pick three owned aliens using the horizontal portrait strip. Matching cannot start during the first ten seconds. Squad edits remain available until a match begins. If no opponent is found after thirty seconds, searching and editing continue; bot practice is an explicit player choice after that point. Players with fewer than three unlocked aliens repeat owned aliens in spare slots. At match start, choose a starter for five seconds, followed by a three-second start countdown. Knockouts freeze combat for a three-second reserve choice, followed by a one-second restart. Missing reserve choices pick a random remaining slot. The surviving fighter keeps HP. Eliminate three alien slots to win; only genuine ranked matches change RP.
 
 Friend rooms: six-character code, authenticated players, host-controlled one round / best-of-three / best-of-five. 1v1 uses the ranked squad rules. 2v2 is a relay: seats 1 and 3 vs 2 and 4, three aliens per person, alternate to the teammate after a knockout while available. The inactive teammate watches. Eliminate six opposing slots to win a squad round. Coin rewards use normal match completion; friend rooms never change RP. Leaving counts as a team forfeit. Host departure before a match transfers host to the next player. Waiting rooms expire after fifteen minutes.
+
+The client highlights starter and reserve card choices immediately; the authoritative server uses the selected index when the fight begins. Completed matches show a three-second victory, defeat or draw animation before the result summary. Mission requirements are opened from the circular info button; Claim appears at the right when a reward is ready.
