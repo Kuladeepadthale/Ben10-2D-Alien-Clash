@@ -19,7 +19,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          for run in 39713135389 39713323107 39713455183; do
+          for run in 39713135389 39713323107 39713455183 39714299994; do
             gh api -X POST repos/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/$run/cancel || true
           done
       - name: Prepare signed APK download
@@ -33,7 +33,7 @@ jobs:
           release=None
           for attempt in range(170):
               try:
-                  head='38e6859cd80c5ac47f24657201b3c45b13bc8e9f'
+                  head='4ed74da8d2458e8d5907d11dc48c0dde37434ff6'
                   with urllib.request.urlopen(urllib.request.Request(root+'/releases/tags/android-'+head[:12],headers=headers)) as response: release=json.load(response)
                   if any(a['name']=='Ben10-Alien-Clash-Online.apk' for a in release['assets']): break
               except urllib.error.HTTPError as error:
