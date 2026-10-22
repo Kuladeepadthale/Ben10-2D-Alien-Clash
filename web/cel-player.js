@@ -39,7 +39,7 @@ function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.g
    return {frame:RATH_CLOSE.frames[pose],state,index:pose};
   }
   const profile=typeof powerProfileFor==='function'?powerProfileFor(f,v):null;
-  if(beat&&beat.count>1&&['hands','claws'].includes(profile?.source)&&d.clips.normal?.length>=3){
+  if(beat&&beat.count>1&&['hands','claws'].includes(profile?.source)&&f.id!==41&&d.clips.normal?.length>=3){
    // Keep the native torso and guard consistent; retract the striking limb between contacts.
    frames=d.clips.normal;index=beat.phase<.55?1:2;
   }else if(beat&&beat.count>1){
