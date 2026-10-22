@@ -35,7 +35,7 @@ async function rankedFind(roomIntent=null){
  else if(d.type==='queued'){online.connecting=false;online.searching=true;online.waitUntil=Date.now()+30000;online.draftUntil=Date.now()+10000;renderSquadDraft();onlineRememberRank(d.rank.points);queueOverlay.dataset.phase='searching';$('queueTitle').textContent='Finding a match';$('queueSeconds').textContent='30';$('queueDetail').textContent='Finding opponents';rankedRender();}
  else if(d.type==='room'){online.connecting=false;online.room=d;online.draftUntil=Date.now()+(d.players.find(p=>p.seat===d.seat)?.remainingMs||0);renderFriendRoom(d);}
  else if(d.type==='notice'){careerToast(d.message);}
- else if(d.type==='drafted'){online.draft=d.squad;}
+ else if(d.type==='drafted'){if(!Number.isInteger(d.revision)||d.revision===(online.draftRevision||0))online.draft=d.squad;}
  else if(d.type==='matched'){online.searching=false;online.connecting=false;online.active=true;online.matchId=d.matchId;online.room=null;online.seat=d.seat;online.participant=d.participant??d.seat;online.friendly=!!d.friendly;online.relay=!!d.relay;online.bot=d.bot;online.names=d.names;online.result=null;online.seq=0;heroSession={mode:'versus',awarded:false,firstClear:false};lastXPGain=0;lastRankUp=0;totals={dealt:0,taken:0,blocked:0,hits:0};report=[];training=false;queueOverlay.hidden=true;celPinned=new Set(d.snapshot.squad.squads.flat().map(f=>f.alien));Promise.all([...celPinned].map(id=>celEnsure(id))).catch(()=>onlineError('Alien artwork could not load.'));onlineSnapshot(d.snapshot);mode='fight';$('overlay').classList.add('hidden');showScreen('battle',false);screenHistory.length=0;syncSquadScreen(d.snapshot);if(d.countdownMs)startBattleCountdown(d.countdownMs);}
  else if(d.type==='state'&&online.active){onlineSnapshot(d.snapshot);syncSquadScreen(d.snapshot);if(d.countdownMs>0)syncBattleCountdown(d.countdownMs);else cancelBattleCountdown();}
  else if(d.type==='result')onlineResult(d);
@@ -59,11 +59,12 @@ const rankedQuitBase=quit;quit=function(){if(online.active){onlineSend({type:'fo
 function onlineFlushInput(){if(!online.active||battleCountdownActive()||online.squadState?.phase!=='fight'||online.squadState.activeSeats[online.seat]!==online.participant)return;onlineSend({type:'input',seq:++online.seq,held:{left:!!keys.left,right:!!keys.right,block:!!keys.block},edges:Object.keys(presses).filter(k=>presses[k])});for(const k in presses)presses[k]=false;}
 const rankedDownBase=down;down=function(k){if(battleCountdownActive()||(online.active&&k==='pause'))return;rankedDownBase(k);onlineFlushInput();};
 const rankedUpBase=up;up=function(k){rankedUpBase(k);onlineFlushInput();};
-setInterval(()=>{if(online.searching){updateSquadDraft();$('queueSeconds').textContent=String(Math.max(0,Math.ceil((online.waitUntil-Date.now())/1000)));if(Date.now()>online.waitUntil+10000)onlineError('Matchmaking timed out. Please retry.');}if(online.active){if(Date.now()-online.lastState>10000){onlineError('Connection interrupted. Check your internet.');return;}onlineFlushInput();}},1000/30);
+setInterval(()=>{if(online.searching){updateSquadDraft();$('queueSeconds').textContent=String(Math.max(0,Math.ceil((online.waitUntil-Date.now())/1000)));if(Date.now()>=online.waitUntil)$('queueDetail').textContent='No opponent yet. Keep searching, edit your squad, or choose a bot.';}if(online.active){if(Date.now()-online.lastState>10000){onlineError('Connection interrupted. Check your internet.');return;}onlineFlushInput();}},1000/30);
 setInterval(()=>{if(online.socket)onlineSend({type:'ping',stamp:Date.now()});},3000);
 const rankedLogoutBase=accountLogout;accountLogout=function(){onlineClose();online.points=0;rankedLogoutBase();};
 window.addEventListener('pagehide',()=>onlineClose());window.addEventListener('offline',()=>{if(online.active||online.searching||online.connecting)onlineError('You are offline. Ranked battles require internet.');});
 const rankedAndroidBack=window.androidBack;window.androidBack=function(){if(!queueOverlay.hidden){onlineClose();return;}if(online.active){pause();return;}rankedAndroidBack?.();};
 const card=document.querySelector('[data-mode="versus"]');if(card){card.querySelector('.mode-caption span').textContent='ONLINE · RANKED';card.querySelector('h2').textContent='Multiplayer';card.querySelector('p').textContent='3-alien elimination · Friend rooms';card.setAttribute('aria-label','Multiplayer — Ranked online duels');}rankedRender();
+
 
 

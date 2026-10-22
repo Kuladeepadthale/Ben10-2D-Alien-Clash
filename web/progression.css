@@ -65,3 +65,13 @@ body:not(.in-battle) #screen-characters .card .ownership{max-width:100%;white-sp
 #missionDetails{background:#142322;color:#ecffe4;border:1px solid #7be2aa;border-radius:18px;padding:24px;max-width:min(440px,90vw);max-height:85dvh;overflow:auto}
 #missionDetails::backdrop{background:#000b}#missionDetails p{line-height:1.6}#missionDetails h2{font-size:21px}.mission-dialog-actions{display:flex;gap:10px;margin-top:20px}
 #missionCards button{font-size:15px;min-height:36px}#missionCards .mission-prize{max-width:145px}
+
+
+/* Explicitly override legacy flex cards and fixed Career tile heights. */
+body:not(.in-battle) #missionCards.mission-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr))!important;grid-auto-rows:auto!important;align-items:start!important;gap:8px!important}
+body:not(.in-battle) #missionCards .mission-card{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-rows:auto!important;align-items:center!important;align-content:center!important;height:auto!important;min-height:82px!important;max-height:none!important;padding:10px 12px!important;gap:10px!important;overflow:visible!important}
+#missionCards .mission-task-icon{display:none!important}#missionCards .mission-task{min-width:0!important;align-self:center!important}#missionCards .mission-task h2{font-size:14px!important;line-height:1.25!important;margin:0 0 7px!important;overflow-wrap:anywhere}
+body:not(.in-battle) #missionCards .mission-prize{display:grid!important;grid-template-columns:36px auto!important;grid-template-rows:auto 36px!important;gap:4px 6px!important;align-items:center!important;align-self:center!important;justify-self:end!important;max-width:126px!important;margin:0!important;padding:0!important;position:static!important}
+#missionCards .mission-prize strong{grid-column:1/-1;font-size:13px!important;width:auto!important;text-align:right!important;line-height:1.2!important}#missionCards .mission-prize>span{font-size:11px}
+body:not(.in-battle) #missionCards .mission-details{width:36px!important;height:36px!important;min-width:36px!important;min-height:36px!important;padding:7px!important;display:grid!important;place-items:center!important;border-radius:50%!important;background:#14352a!important;color:#c9f7b5!important}
+.mission-details svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}#missionCards .mission-details::after{display:none!important}#missionCards .mission-claim{height:36px!important;min-height:36px!important;padding:5px 10px!important;font-size:14px!important;width:auto!important}#missionCards .mission-count{font-size:12px!important}.mission-card.reward-claimed{opacity:.65}

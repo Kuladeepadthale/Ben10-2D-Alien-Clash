@@ -47,7 +47,8 @@ export class RankedArena{
     else{this.queue.push(c);send(c,{type:'queued',wait:30,draftMs:10000,squad:c.squad,rank:c.rank});}
    }catch(e){send(c,{type:'error',message:e.message});}finally{c.busy=false;}return;
   }
-  if(d.type==='draft'&&!c.match&&(this.queue.includes(c)||c.room)&&now-c.joined<10000&&validSquad(d.squad,c.owned)){c.squad=d.squad;send(c,{type:'drafted',squad:c.squad});if(c.room)this.roomState(c.room);return;}
+  if(d.type==='draft'&&!c.match&&(this.queue.includes(c)||c.room)&&validSquad(d.squad,c.owned)){c.squad=d.squad;send(c,{type:'drafted',revision:d.revision,squad:c.squad});if(c.room)this.roomState(c.room);return;}
+  if(d.type==='practice'&&!c.match&&this.queue.includes(c)&&now-c.joined>=30000){this.pair(c,null);return;}
   if(d.type==='roomSettings'&&c.room?.host===c){if([1,3,5].includes(d.rounds))c.room.rounds=d.rounds;this.roomState(c.room);return;}
   if(d.type==='roomStart'&&c.room?.host===c){const r=c.room;if(r.players.length!==(r.mode==='relay'?4:2)){send(c,{type:'notice',message:'Wait for all friends to join.'});return;}if(r.players.some(p=>now-p.joined<10000)){send(c,{type:'notice',message:'Let everyone finish the 10-second alien selection.'});return;}this.rooms.delete(r.code);r.players.forEach(p=>p.room=null);this.pair(r.players[0],r.players[1],r);return;}
   if(d.type==='choose'&&c.match){c.match.engine.choose(c.match.players.indexOf(c),d.index);return;}
@@ -60,7 +61,7 @@ export class RankedArena{
  pair(a,b,room=null){this.queue=this.queue.filter(c=>c!==a&&c!==b);const bot=!b;const players=room?room.players:bot?[a]:[a,b];const botSquad=Array.from({length:3},(_,i)=>({alien:(a.spec.alien+1+i)%ROSTER_COUNT,loadout:[0,1]}));const squads=bot?[a.squad||[a.spec,a.spec,a.spec],botSquad]:players.map(c=>c.squad||[c.spec,c.spec,c.spec]);const m={id:crypto.randomUUID(),players,bot,friendly:!!room,relay:room?.mode==='relay',engine:createSquadMatch(squads,{bot,rounds:room?.rounds||1}),settling:false,started:Date.now(),readyAt:0};this.matches.add(m);players.forEach((c,seat)=>{c.match=m;c.seq=-1;c.lastInput=Date.now();send(c,{type:'matched',matchId:m.id,seat:seat%2,participant:seat,friendly:m.friendly,relay:m.relay,bot,countdownMs:0,names:bot?[a.name||title(a.uid),'Arena Challenger']:players.map(p=>p.name||title(p.uid)),ratings:bot?[points(a.rank),0]:players.map(p=>points(p.rank)),snapshot:m.engine.snapshot(Date.now())});});}
  tick(){
   const now=Date.now();this.queue=this.queue.filter(c=>this.clients.has(c));
-  for(const a of [...this.queue]){if(!this.queue.includes(a)||now-a.joined<10000)continue;const range=now-a.joined>=28000?Infinity:150+Math.floor((now-a.joined)/1000)*20;const b=this.queue.find(c=>c!==a&&now-c.joined>=10000&&Math.abs(points(c.rank)-points(a.rank))<=range);if(b&&this.matches.size<16)this.pair(a,b);else if(now-a.joined>=30000&&this.matches.size<16)this.pair(a,null);}
+  for(const a of [...this.queue]){if(!this.queue.includes(a)||now-a.joined<10000)continue;const range=now-a.joined>=28000?Infinity:150+Math.floor((now-a.joined)/1000)*20;const b=this.queue.find(c=>c!==a&&now-c.joined>=10000&&Math.abs(points(c.rank)-points(a.rank))<=range);if(b&&this.matches.size<16)this.pair(a,b);}
   for(const m of this.matches){if(m.settling)continue;const lost=m.players.findIndex(c=>!this.clients.has(c)||now-c.lastInput>10000);if(lost>=0){this.settle(m,1-lost%2,true);continue;}if(now-m.started>(m.friendly?5400000:600000)){this.settle(m,-1);continue;}m.engine.step(now,1/30);const snapshot=m.engine.snapshot(now),countdownMs=snapshot.squad.phase==='countdown'?snapshot.squad.remainingMs:0;for(const c of m.players)send(c,{type:'state',snapshot,countdownMs});if(m.engine.done)this.settle(m,m.engine.winner);}
   for(const r of this.rooms.values())if(now-r.created>900000){for(const c of r.players){c.room=null;send(c,{type:'error',message:'Friend room expired. Create another room.'});}this.rooms.delete(r.code);}
   if(!this.clients.size&&!this.matches.size){clearInterval(this.timer);this.timer=null;}
@@ -74,5 +75,6 @@ export class RankedArena{
  }
  disconnect(c){if(!this.clients.delete(c))return;clearTimeout(c.authTimer);if(this.users.get(c.uid)===c)this.users.delete(c.uid);this.queue=this.queue.filter(x=>x!==c);this.leaveRoom(c);if(c.match)this.settle(c.match,1-c.match.players.indexOf(c)%2,true);}
 }
+
 
 
