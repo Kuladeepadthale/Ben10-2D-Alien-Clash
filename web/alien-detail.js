@@ -30,6 +30,14 @@ function renderAlienInfo(){
 const detailSelectBase=select;select=function(id){detailSelectBase(id);if(currentScreen==='characters')showScreen('alieninfo');if(currentScreen==='alieninfo')renderAlienInfo();};
 const detailRenderBase=renderSetup;renderSetup=function(){detailRenderBase();if(currentScreen==='alieninfo')renderAlienInfo();};
 const detailScreenBase=showScreen;showScreen=function(name,remember=true){
+ // Leaving the lab to change a fighter ends practice, not the selected Testing mode.
+ if(name==='characters'&&testingMode()&&isLocked()){
+  if(mode==='loading')++celBattleRequest;
+  mode='menu';training=false;shots=[];effects=[];particles=[];resetInputs();
+  if(typeof cancelBattleCountdown==='function')cancelBattleCountdown();
+  renderSetup();
+ }
+
  if(['garage','upgrades'].includes(name))name='characters';
  if(name==='alieninfo'&&currentScreen!=='alieninfo')alienUpgradeOpen=false;
  detailScreenBase(name,remember);
@@ -40,7 +48,12 @@ const detailScreenBase=showScreen;showScreen=function(name,remember=true){
 };
 openAlienUpgrades=function(id){if(!ownsAlien(id)){careerToast('Unlock this alien first.');return}select(id);showScreen('alieninfo');alienUpgradeOpen=true;renderAlienInfo();};
 $('alienList').onclick=()=>showScreen('characters');
-$('alienUse').onclick=()=>showScreen('modes');$('alienUnlock').onclick=()=>{buyAlien(selected);renderAlienInfo()};
+$('alienUse').onclick=async()=>{
+ if(!testingMode()){showScreen('modes');return;}
+ if(isLocked())return;
+ $('alienUse').disabled=true;
+ try{await launch();}finally{if(currentScreen==='alieninfo')renderAlienInfo();}
+};$('alienUnlock').onclick=()=>{buyAlien(selected);renderAlienInfo()};
 $('alienUpgrade').onclick=()=>{if(!ownsAlien(selected))return;alienUpgradeOpen=!alienUpgradeOpen;renderAlienInfo()};
 $('alienPowers').onclick=()=>showScreen('powers');
 // Collection cards are the entry to details. Remove duplicated details/actions and upgrade navigation.
@@ -55,3 +68,4 @@ document.querySelector('.home-copy .eyebrow').hidden=true;
 // Keep every card mounted for native vertical touch scrolling.
 rosterDeck.options.scroll=true;
 rosterDeck.capacity=null;refreshMenus();
+

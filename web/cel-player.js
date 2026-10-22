@@ -34,9 +34,15 @@ function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.g
  if(state==='idle'&&s.landUntil>t){frames=d.clips.jump;index=3}
  return {frame:d.frames[frames[Math.min(frames.length-1,index)]],state,index};
 }
-function celState(f){if(f.hp<=0)return'ko';if(f.dash)return'dash';if(f.stun>0)return'hit';if(f.block)return'guard';if(f.cast)return f.cast.ultimate?'ultimate':f.cast.key;if(f.jumpWindup>0||f.y<floor-2)return'jump';if(f.moving)return'walk';return'idle'}
+function celState(f){if(f.hp<=0)return'ko';if(f.dash)return'dash';if(f.stun>0)return'hit';if(f.block)return'guard';if(f.cast)return f.cast.ultimate?'ultimate':f.cast.cfg.poseKey||f.cast.key;if(f.jumpWindup>0||f.y<floor-2)return'jump';if(f.moving)return'walk';return'idle'}
 const celFallbackDraw=drawAlien;
 drawAlien=function(ctx,f,t,portrait=false){const d=CEL_DATA.characters[f.id],cache=celCache.get(f.id);if(!cache){if(!celPending.has(f.id))celEnsure(f.id).catch(()=>{});celFallbackDraw(ctx,f,t,portrait);return;}cache.used=++celUse;
+ // Use the sharper standing artwork at the same physical size and sole position.
+ if((portrait||celState(f)==='idle')&&f.id>=32&&f.id<52&&typeof classicPortraits!=='undefined'&&classicPortraits[f.id]){
+  const image=classicPortraits[f.id],frame=d.frames[d.clips.idle[0]],s=aliens[f.id].renderHeight*aliens[f.id].scale/d.referenceHeight,h=(frame.rect[3]-16)*s,ratio=h/image.height;
+  const hover=CARTOON_GAITS[f.id]?.hover?6+Math.sin(t*3)*1.5:0;
+  ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-hover);ctx.scale(f.dir||1,1);ctx.drawImage(image,-image.width*ratio/2,-h,image.width*ratio,h);ctx.restore();return;
+ }
  const picked=celPhase(f,portrait?'idle':celState(f),t),frame=picked.frame,[x,y,w,h]=frame.rect,[ox,oy]=frame.origin,scale=aliens[f.id].renderHeight*aliens[f.id].scale/d.referenceHeight;
  ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-(f.id===7||f.id===9||f.id>=52&&CARTOON_GAITS[f.id]?.hover?6+Math.sin(t*(f.id===7?8:3))*1.5:0));ctx.scale((f.dash?.dir||f.cast?.dir||f.dir||1)*scale,scale);if(!portrait&&f.cast&&typeof powerProfileFor==='function'&&powerProfileFor(f,f.cast)?.motion==='tail-strike'){const v=f.cast,wind=Math.max(.001,v.cfg.windup),active=v.cfg.duration||.08,age=v.elapsed-wind,u=Math.max(0,Math.min(1,age/active)),tilt=age<0?-.055*(v.elapsed/wind):age<active?Math.sin(u*Math.PI)*.13:.055*Math.max(0,1-(age-active)/Math.max(.001,v.cfg.recovery));ctx.translate(0,-h*.4);ctx.rotate(tilt);ctx.translate(0,h*.4);} if((f.id===10||f.id===71)&&f.cast&&f.cast.cfg.kind==='rush'&&f.cast.elapsed>=f.cast.cfg.windup&&f.cast.elapsed<f.cast.cfg.windup+Math.max(.42,f.cast.cfg.duration||.08)){const angle=(f.x-(f.cast.startX??f.x))*(f.cast.dir||f.dir||1)/Math.max(1,h*.5*scale);ctx.translate(0,-h*.5);ctx.rotate(angle);ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-w*.5,-h*.5,w,h);}else ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-ox,-oy,w,h);ctx.restore();
 };
@@ -51,5 +57,6 @@ begin=async function(newMatch=true,practice=false){const request=++celBattleRequ
 };
 const allAlienPosesReady=Promise.all([classicReady,celEnsure(0),celEnsure(2)]).then(()=>{allAlienPosesLoaded=true;return true}).catch(e=>{allAlienPoseError=e.message;return false});
 const diamondheadPuppetReady=Promise.resolve(true);
+
 
 

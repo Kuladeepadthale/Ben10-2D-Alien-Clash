@@ -79,7 +79,9 @@ jobs:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
           python3 ci/check-full-poses.py
+          python3 ci/check-portrait-quality.py
           node ci/check-cels.cjs
+          node ci/check-basic-attacks.cjs
           node ci/check-threat-ladder.cjs
           node ci/check-card-shop.cjs
           python3 ci/check-ability-art.py
@@ -112,6 +114,7 @@ jobs:
           node ci/check-progression.cjs
           node ci/check-progression-layout.cjs
           node ci/check-alien-detail.cjs
+          node ci/check-testing-flow.cjs
           node ci/check-home-team.cjs
           node ci/check-card-shop-layout.cjs
           node ci/check-power-icons.cjs
@@ -217,7 +220,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.6 — Image Squad Picker' --notes 'Compact mission rows with info icons and right-side Claim actions. Horizontal portrait squad picker, live edits while searching beyond thirty seconds, optional bot practice and three-second victory/defeat celebrations. Includes the previous combat and squad systems. Online features require deploying the matching updated Worker.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.7 — Ranged Basic Attacks & Testing' --notes 'Characteristic ranged basic attacks for 46 aliens, correct native poses and power emitters, unchanged close-combat basics for 26 aliens. Test alien opens unlimited practice directly and changing aliens preserves Testing. Clearer portraits and standing artwork for the 20 smallest source images. Online combat requires deployment of the matching updated Worker.' --prerelease --target "$GITHUB_SHA"
 
 
 

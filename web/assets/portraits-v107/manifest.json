@@ -1,0 +1,166 @@
+{
+  "version": 107,
+  "method": "New high-native-detail drawings; whole-figure atlas extraction, no image enlargement. Combat action clips preserved.",
+  "characters": [
+    {
+      "id": 32,
+      "name": "rath",
+      "src": "assets/portraits-v107/rath.webp",
+      "width": 424,
+      "height": 508,
+      "sha256": "0c04eaa6b252fb12c432b60269a324f36f33f3077ab9d9fb4088edabfc0ccdc0"
+    },
+    {
+      "id": 33,
+      "name": "lodestar",
+      "src": "assets/portraits-v107/lodestar.webp",
+      "width": 298,
+      "height": 516,
+      "sha256": "fc411d95e945c020ed5ec4bfbbce1cd4cb8549ad336648c890ac9f6629c04106"
+    },
+    {
+      "id": 34,
+      "name": "nanomech",
+      "src": "assets/portraits-v107/nanomech.webp",
+      "width": 271,
+      "height": 451,
+      "sha256": "d7eb939e78d582dd0c17764cfba0c340df7743f4108c06d8fd2f366dd31574d5"
+    },
+    {
+      "id": 35,
+      "name": "water-hazard",
+      "src": "assets/portraits-v107/water-hazard.webp",
+      "width": 389,
+      "height": 456,
+      "sha256": "bffc23ce6144652112e2db006a936045cf8124fd86b6c4e936c66fbfc08d9bcc"
+    },
+    {
+      "id": 36,
+      "name": "ampfibian",
+      "src": "assets/portraits-v107/ampfibian.webp",
+      "width": 331,
+      "height": 463,
+      "sha256": "22ec0fb48d23ee89135e1dec1130885dd8e8b0947175ece586830d61d5a64ce2"
+    },
+    {
+      "id": 37,
+      "name": "armodrillo",
+      "src": "assets/portraits-v107/armodrillo.webp",
+      "width": 412,
+      "height": 475,
+      "sha256": "2e02e54096bdc225b6acc40682ab5596313441cd93b6f520028e20337cb93e6f"
+    },
+    {
+      "id": 38,
+      "name": "terraspin",
+      "src": "assets/portraits-v107/terraspin.webp",
+      "width": 458,
+      "height": 442,
+      "sha256": "2b2b85759ea56d54c0e795024fc961a2190979586ef8404559a4010cec4f8b19"
+    },
+    {
+      "id": 39,
+      "name": "nrg",
+      "src": "assets/portraits-v107/nrg.webp",
+      "width": 415,
+      "height": 484,
+      "sha256": "c789f1c1d6ba2dee8229d6922b9f7dbebe6deb0420b06992861ab98938986c41"
+    },
+    {
+      "id": 40,
+      "name": "fasttrack",
+      "src": "assets/portraits-v107/fasttrack.webp",
+      "width": 292,
+      "height": 526,
+      "sha256": "ba8ae771166d66bb524a9bbfd17a78ebedcc4b7f9c62c09d238a5eabb5cf53b9"
+    },
+    {
+      "id": 41,
+      "name": "chamalien",
+      "src": "assets/portraits-v107/chamalien.webp",
+      "width": 368,
+      "height": 447,
+      "sha256": "7dac4e114c283b7ecccc5e6436c7db178b23d6ec92d4a5ea62a664fc14036458"
+    },
+    {
+      "id": 42,
+      "name": "eatle",
+      "src": "assets/portraits-v107/eatle.webp",
+      "width": 372,
+      "height": 504,
+      "sha256": "c3dbecf341f69f170e1c3719c0fbf90d3ca4ff33476c90cbaf2a224a07723204"
+    },
+    {
+      "id": 43,
+      "name": "clockwork",
+      "src": "assets/portraits-v107/clockwork.webp",
+      "width": 407,
+      "height": 486,
+      "sha256": "94353f92555c9b2603311e23b98dbd834412ca235e4befcfed4b2df4e958ee12"
+    },
+    {
+      "id": 44,
+      "name": "jury-rigg",
+      "src": "assets/portraits-v107/jury-rigg.webp",
+      "width": 272,
+      "height": 422,
+      "sha256": "4504ff72ce80a679bad0c4255b2f7453a5181b09639f7b2c78638a432dc95e49"
+    },
+    {
+      "id": 45,
+      "name": "shocksquatch",
+      "src": "assets/portraits-v107/shocksquatch.webp",
+      "width": 349,
+      "height": 482,
+      "sha256": "b30ca5ab40bcf8c3783b57f579399fe98190d74e4193a49f24027e9a6ef4ac09"
+    },
+    {
+      "id": 46,
+      "name": "feedback",
+      "src": "assets/portraits-v107/feedback.webp",
+      "width": 383,
+      "height": 483,
+      "sha256": "2dea1d83789f4f453c8b92412193d366b7819273d8696eb4c19cd3ecacf5920d"
+    },
+    {
+      "id": 47,
+      "name": "bloxx",
+      "src": "assets/portraits-v107/bloxx.webp",
+      "width": 358,
+      "height": 458,
+      "sha256": "40d44c6939673e60aade85c085933103478cd32f00e26c2960e65cab5e996865"
+    },
+    {
+      "id": 48,
+      "name": "gravattack",
+      "src": "assets/portraits-v107/gravattack.webp",
+      "width": 446,
+      "height": 479,
+      "sha256": "41a5138a0a2074e231f554cbac0b2a79d9426c7445d0b2dd28951bbe381ca36b"
+    },
+    {
+      "id": 49,
+      "name": "crashhopper",
+      "src": "assets/portraits-v107/crashhopper.webp",
+      "width": 326,
+      "height": 489,
+      "sha256": "90d7fb4e76007492ed32de3f3508c62fcd9e0fbbe4183b14449c1b8c47aaaaf5"
+    },
+    {
+      "id": 50,
+      "name": "ball-weevil",
+      "src": "assets/portraits-v107/ball-weevil.webp",
+      "width": 383,
+      "height": 303,
+      "sha256": "9922ca5a8e1a31264a01dc94e08ee85fd424754be26c04cfc1e96d73e365f80c"
+    },
+    {
+      "id": 51,
+      "name": "astrodactyl",
+      "src": "assets/portraits-v107/astrodactyl.webp",
+      "width": 369,
+      "height": 482,
+      "sha256": "572adc2e5d06d1a1f01aa859b14a046bb6215785ad815881fee3d8f71e7de483"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ const POWER_PROFILES={"version":104,"aliens":[[{"name":"Fireball","source":"hand
 function powerProfileFor(f,action){
  if(!f)return null;const villain=Number.isInteger(f.villain),rows=villain?POWER_PROFILES.villains:POWER_PROFILES.aliens,row=rows[villain?f.villain:f.id];if(!row)return null;
  const key=typeof action==='object'?(action.ultimate?'ultimate':action.key):action;
- if(key==='normal')return null;if(key==='ultimate')return row[3];if(/^skill[0-2]$/.test(key||''))return row[Number(key.slice(5))];
+ if(key==='normal'){const index=(f.config||aliens[f.id])?.basicSkillIndex;return Number.isInteger(index)?row[index]:null;}if(key==='ultimate')return row[3];if(/^skill[0-2]$/.test(key||''))return row[Number(key.slice(5))];
  return row.find(p=>p.name===key)||null;
 }
 function powerPoseIndex(f,v,count){
@@ -12,7 +12,7 @@ function powerPoseIndex(f,v,count){
  if(Number.isInteger(f.villain))return v.elapsed<wind?0:1;
  if(powerProfileFor(f,v)?.motion==='tail-strike'&&v.elapsed>=wind&&v.elapsed<wind+active+Math.min(.22,(v.cfg.recovery||.4)*.7))return count-1;
  let index=v.elapsed<wind?0:v.elapsed<wind+active?(count>=4?1+Math.min(1,Math.floor((v.elapsed-wind)/active*2)):1):count>=3?count-1:0;
- if(f.id===0&&v.key==='skill0')index=v.elapsed<wind?Math.min(1,Math.floor(v.elapsed/wind*2)):v.elapsed<wind+active?2:3;
+ if(f.id===0&&(v.cfg.poseKey||v.key)==='skill0')index=v.elapsed<wind?Math.min(1,Math.floor(v.elapsed/wind*2)):v.elapsed<wind+active?2:3;
  return Math.max(0,Math.min(count-1,index));
 }
 function profileEmitter(f,v,t=0){
@@ -20,3 +20,4 @@ function profileEmitter(f,v,t=0){
  const hover=!Number.isInteger(f.villain)&&POWER_PROFILES.hover[f.id]?6+Math.sin(t*POWER_PROFILES.hover[f.id])*1.5:0;
  return {x:f.x+dir*phase.offset[0],y:f.y+phase.offset[1]-hover};
 }
+
