@@ -22,7 +22,7 @@ function renderSetup(){let a=aliens[selected],conf=profile.aliens[selected],lock
  const upgrades=[['health','Vitality','health'],['normal','Normal strike','damage'],...a.skills.map((s,i)=>['skill'+i,s.name,'damage']),['ultimate',a.ultimate.name,'damage']];
  $('upgrades').innerHTML=upgrades.map(([k,n,type])=>{let l=conf.levels[k],cost=80+l*60;return `<div class="upgrade"><h3>${n}</h3><p>Level ${l} / 5 · +${l*(type==='health'?3:4)}% ${type}</p><button data-upgrade="${k}" ${locked||l>=5||profile.credits<cost?'disabled':''}>${l>=5?'MAX LEVEL':'UPGRADE · '+cost+' COINS'}</button></div>`}).join('');document.querySelectorAll('[data-upgrade]').forEach(b=>b.onclick=()=>upgrade(b.dataset.upgrade));$('credits').textContent=profile.credits;$('creditNav').textContent=profile.credits;$('record').textContent=profile.wins+' wins · '+profile.matches+' matches';$('storageStatus').textContent=storageOK?'Progress saved on this device':'Storage unavailable · progress lasts this visit';
 }
-function select(id){if(isLocked())return;selected=id;preloadClassic(id);player=make(id,370,1,true);enemy=make(id===2?0:2,910,-1);renderSetup();hud();$('assetStatus').textContent=imported[id]?'Original atlas loaded for '+aliens[id].name+'.':'Cel animation clips active for '+aliens[id].name+'.'}
+function select(id){if(isLocked())return;selected=id;preloadClassic(id);player=make(id,370,1,true);enemy=make(id===2?0:2,910,-1);renderSetup();hud();$('assetStatus').textContent=imported[id]?'Original atlas loaded for '+aliens[id].name+'.':'Ready.'}
 aliens.forEach((a,i)=>{let b=document.createElement('button');b.className='card';b.dataset.alien=i;b.setAttribute('aria-label',`Select ${a.name}`);b.innerHTML=`<small>${String(i+1).padStart(2,'0')}</small><canvas width="220" height="210"></canvas><span>${a.name}</span>`;b.onclick=()=>select(i);$('roster').appendChild(b);let portrait=b.querySelector('canvas');classicReady.then(()=>drawClassicPortrait(portrait.getContext('2d'),i,portrait.width,portrait.height)).catch(()=>{});let o=document.createElement('option');o.value=i;o.textContent=a.name;$('opponent').appendChild(o)});
 function sound(freq=100,dur=.08,type='triangle'){if(muted)return;try{audioCtx??=new(window.AudioContext||window.webkitAudioContext)();audioCtx.resume();let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.setValueAtTime(freq,audioCtx.currentTime);o.frequency.exponentialRampToValueAtTime(35,audioCtx.currentTime+dur);g.gain.setValueAtTime(.08,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+dur);o.connect(g).connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+dur)}catch{}}
 function burst(x,y,color,n=18){for(let i=0;i<n;i++)particles.push({x,y,vx:(Math.random()-.5)*420,vy:(Math.random()-.5)*400,life:.25+Math.random()*.4,max:.65,color,r:2+Math.random()*5});if(particles.length>600)particles.splice(0,particles.length-600)}
@@ -156,6 +156,7 @@ select(0);renderReport();$('start').disabled=true;$('start').textContent='LOADIN
 window.androidPause=()=>{if(mode==='fight')pause()};window.androidBack=()=>{if(mode==='fight')pause();else if(isLocked())quit();else window.scrollTo({top:0,behavior:'smooth'})};
 
 if(location.hostname==='appassets.androidplatform.net'){document.querySelector('.asset-import').style.display='none';$('full').style.display='none'}
+
 
 
 

@@ -24,7 +24,7 @@ function villainFrame(f){const d=VILLAIN_DATA.characters[f.villain],state=celSta
  else if(state==='normal')index=f.cast.elapsed<f.cast.cfg.windup?6:7;
  else if(['skill0','skill1','skill2','ultimate'].includes(state))index=f.cast.elapsed<f.cast.cfg.windup?6:state==='ultimate'?11:8+Number(state.slice(-1));
  else if(state==='guard')index=12;else if(state==='hit')index=13;else if(state==='ko')index=14;else if(state==='dash')index=15;
- if(f.cast&&['normal','skill0','skill1','skill2','ultimate'].includes(state)){const beat=typeof meleeComboBeat==='function'?meleeComboBeat(f,f.cast):null;if(beat&&beat.count>1&&beat.phase>=.3)index=6;}
+ if(f.cast&&['normal','skill0','skill1','skill2','ultimate'].includes(state)){const beat=typeof meleeComboBeat==='function'?meleeComboBeat(f,f.cast):null;if(beat&&beat.count>1&&beat.phase>=.55)index=6;}
  return d.frames[index];}
 function drawVillain(ctx,f,t){const d=VILLAIN_DATA.characters[f.villain],image=villainTextures.get(f.villain);if(!image)return;const frame=villainFrame(f),[x,y,w,h]=frame.rect,[ox,oy]=frame.origin,s=(d.height||226)/d.referenceHeight;
  ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-(d.type==='phase'?5+Math.sin(t*3)*1:0));ctx.scale((f.dash?.dir||f.cast?.dir||f.dir||1)*s,s);ctx.drawImage(image,x,y,w,h,-ox,-oy,w,h);ctx.restore();}

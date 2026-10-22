@@ -221,7 +221,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.8 — Card Collection & Fast Combos' --notes 'Packs collect matching alien cards instead of automatically unlocking. Common 5, Rare 10, Epic 15, Heroic 20 and Legendary 25; claim the unlock when ready. Existing unlocked aliens and diamond unlocks are preserved. Multi-hit close attacks now show a distinct native strike, recoil and reset for every timed hit, including villain combinations. Includes all v10.7 improvements.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.9 — Close Combat Polish' --notes 'Rath has a new eight-frame jab, cross and claw-hook sequence. Repeated hand/claw combinations use consistent native strike and retraction poses; removes forced body shake and unrelated guard resets. Character-specific tails, bites and kicks stay intact. Battle implementation labels are hidden. Preserves card collection and previous gameplay fixes.' --prerelease --target "$GITHUB_SHA"
 
 
 

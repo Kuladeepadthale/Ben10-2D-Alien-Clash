@@ -4,7 +4,7 @@ const celCache=new Map(),celPending=new Map(),celStates=new WeakMap();let celUse
 let allAlienPosesLoaded=false,allAlienPoseError='';
 function celTrim(){for(const [id]of [...celCache].sort((a,b)=>a[1].used-b[1].used)){if(celCache.size<=2)break;if(!celPinned.has(id))celCache.delete(id);}}
 function celEnsure(id){if(celCache.has(id)){celCache.get(id).used=++celUse;return Promise.resolve(true)}if(celPending.has(id))return celPending.get(id);const d=CEL_DATA.characters[id];
- const pending=Promise.all(d.sheets.map(s=>loadClassicImage(s.src))).then(images=>{celCache.set(id,{images,used:++celUse});celPending.delete(id);celTrim();return true},e=>{celPending.delete(id);throw e});celPending.set(id,pending);return pending;
+ const pending=Promise.all([...d.sheets.map(s=>loadClassicImage(s.src)),...(id===32&&typeof RATH_CLOSE!=='undefined'?[loadClassicImage(RATH_CLOSE.src)]:[])]).then(images=>{celCache.set(id,{images,used:++celUse});celPending.delete(id);celTrim();return true},e=>{celPending.delete(id);throw e});celPending.set(id,pending);return pending;
 }
 function celPreload(id){if(typeof mode!=='undefined'&&!['fight','paused','roundend','loading'].includes(mode))celPinned=new Set([id,typeof enemy!=='undefined'&&enemy?enemy.id:2]);celEnsure(id).catch(()=>{});}
 function hasDrawnAlien(id){return !!CEL_DATA.characters[id]}
@@ -14,7 +14,7 @@ function meleeComboBeat(f,v){
  const duration=Math.max(.001,v.cfg.duration||.08),age=v.elapsed-v.cfg.windup,count=Math.max(1,Math.floor(v.cfg.ticks||1));
  if(age<0||age>=duration)return null;
  const position=age/duration*count,tick=Math.min(count-1,Math.floor(position)),phase=position-tick;
- return {count,tick,phase,drive:Math.max(0,1-phase/.62)*(1+.1*(f.normalChain||0))};
+ return {count,tick,phase,drive:0};
 }
 function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.get(f);if(!s){s={x:f.x,distance:0,walking:false,state:'',start:t,landUntil:0,air:false};celStates.set(f,s)}
  const walking=state==='walk',air=f.y<floor-2;
@@ -33,10 +33,18 @@ function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.g
   else index=frames.length>=3?frames.length-1:0;
   if(f.id===0&&state==='skill0')index=v.elapsed<wind?Math.min(1,Math.floor(v.elapsed/wind*2)):v.elapsed<wind+active?2:3;
   const beat=meleeComboBeat(f,v);
-  if(beat&&beat.count>1&&frames.length===2&&d.clips.normal?.length){frames=[...frames,d.clips.normal[d.clips.normal.length-1]];}
-  if(beat&&beat.count>1&&frames.length>=3){
-   // Impact, follow-through, then retract before the next timed strike.
-   index=beat.phase<.3?1:beat.phase<.72?frames.length-1:0;
+  if(f.id===32&&typeof RATH_CLOSE!=='undefined'&&['normal','skill0'].includes(state)&&v.cfg.kind==='melee'){
+   const hit=beat?Math.min(2,beat.count>1?beat.tick:(f.normalChain||0)%3):0;
+   const pose=v.elapsed<wind?0:beat?(beat.phase<.55?1+hit*2:2+hit*2):7;
+   return {frame:RATH_CLOSE.frames[pose],state,index:pose};
+  }
+  const profile=typeof powerProfileFor==='function'?powerProfileFor(f,v):null;
+  if(beat&&beat.count>1&&['hands','claws'].includes(profile?.source)&&d.clips.normal?.length>=3){
+   // Keep the native torso and guard consistent; retract the striking limb between contacts.
+   frames=d.clips.normal;index=beat.phase<.55?1:2;
+  }else if(beat&&beat.count>1){
+   // Preserve character-specific bites, tendrils and weapons instead of borrowing a punch pose.
+   index=beat.phase<.55?Math.min(1,frames.length-1):Math.min(2,frames.length-1);
   }
   if(typeof powerProfileFor==='function'&&powerProfileFor(f,v)?.motion==='tail-strike')index=powerPoseIndex(f,v,frames.length);
   if(v.cfg.kind==='leapslam'&&f.y<floor-30){frames=d.clips.jump;index=2;}
@@ -57,10 +65,10 @@ drawAlien=function(ctx,f,t,portrait=false){const d=CEL_DATA.characters[f.id],cac
   const hover=CARTOON_GAITS[f.id]?.hover?6+Math.sin(t*3)*1.5:0;
   ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-hover);ctx.scale(f.dir||1,1);ctx.drawImage(image,-image.width*ratio/2,-h,image.width*ratio,h);ctx.restore();return;
  }
- const picked=celPhase(f,portrait?'idle':celState(f),t),frame=picked.frame,[x,y,w,h]=frame.rect,[ox,oy]=frame.origin,scale=aliens[f.id].renderHeight*aliens[f.id].scale/d.referenceHeight;
- ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-(f.id===7||f.id===9||f.id>=52&&CARTOON_GAITS[f.id]?.hover?6+Math.sin(t*(f.id===7?8:3))*1.5:0));ctx.scale((f.dash?.dir||f.cast?.dir||f.dir||1)*scale,scale);if(!portrait){const beat=meleeComboBeat(f,f.cast);if(beat){ctx.translate(beat.drive*Math.min(9,w*.025),0);ctx.rotate(-.018*beat.drive);}}if(!portrait&&f.cast&&typeof powerProfileFor==='function'&&powerProfileFor(f,f.cast)?.motion==='tail-strike'){const v=f.cast,wind=Math.max(.001,v.cfg.windup),active=v.cfg.duration||.08,age=v.elapsed-wind,u=Math.max(0,Math.min(1,age/active)),tilt=age<0?-.055*(v.elapsed/wind):age<active?Math.sin(u*Math.PI)*.13:.055*Math.max(0,1-(age-active)/Math.max(.001,v.cfg.recovery));ctx.translate(0,-h*.4);ctx.rotate(tilt);ctx.translate(0,h*.4);} if((f.id===10||f.id===71)&&f.cast&&f.cast.cfg.kind==='rush'&&f.cast.elapsed>=f.cast.cfg.windup&&f.cast.elapsed<f.cast.cfg.windup+Math.max(.42,f.cast.cfg.duration||.08)){const angle=(f.x-(f.cast.startX??f.x))*(f.cast.dir||f.dir||1)/Math.max(1,h*.5*scale);ctx.translate(0,-h*.5);ctx.rotate(angle);ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-w*.5,-h*.5,w,h);}else ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-ox,-oy,w,h);ctx.restore();
+ const picked=celPhase(f,portrait?'idle':celState(f),t),frame=picked.frame,[x,y,w,h]=frame.rect,[ox,oy]=frame.origin,scale=aliens[f.id].renderHeight*aliens[f.id].scale/(frame.referenceHeight||d.referenceHeight);
+ ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-(f.id===7||f.id===9||f.id>=52&&CARTOON_GAITS[f.id]?.hover?6+Math.sin(t*(f.id===7?8:3))*1.5:0));ctx.scale((f.dash?.dir||f.cast?.dir||f.dir||1)*scale,scale);if(!portrait&&f.cast&&typeof powerProfileFor==='function'&&powerProfileFor(f,f.cast)?.motion==='tail-strike'){const v=f.cast,wind=Math.max(.001,v.cfg.windup),active=v.cfg.duration||.08,age=v.elapsed-wind,u=Math.max(0,Math.min(1,age/active)),tilt=age<0?-.055*(v.elapsed/wind):age<active?Math.sin(u*Math.PI)*.13:.055*Math.max(0,1-(age-active)/Math.max(.001,v.cfg.recovery));ctx.translate(0,-h*.4);ctx.rotate(tilt);ctx.translate(0,h*.4);} if((f.id===10||f.id===71)&&f.cast&&f.cast.cfg.kind==='rush'&&f.cast.elapsed>=f.cast.cfg.windup&&f.cast.elapsed<f.cast.cfg.windup+Math.max(.42,f.cast.cfg.duration||.08)){const angle=(f.x-(f.cast.startX??f.x))*(f.cast.dir||f.dir||1)/Math.max(1,h*.5*scale);ctx.translate(0,-h*.5);ctx.rotate(angle);ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-w*.5,-h*.5,w,h);}else ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-ox,-oy,w,h);ctx.restore();
 };
-function drawnAlienEmitter(f,cast){if(typeof profileEmitter==='function'){const point=profileEmitter(f,cast,typeof time==='number'?time:0);if(point)return point;}const d=CEL_DATA.characters[f.id],frames=d.clips[cast.ultimate?'ultimate':cast.key]||d.clips.normal,frame=typeof celPhase==='function'?celPhase(f,cast.ultimate?'ultimate':cast.key,typeof time==='number'?time:0).frame:d.frames[frames[f.id===0&&cast.key==='skill0'?2:Math.min(1,frames.length-1)]],w=frame.rect[2],h=frame.rect[3],s=aliens[f.id].renderHeight*aliens[f.id].scale/d.referenceHeight;
+function drawnAlienEmitter(f,cast){if(f.id===32&&typeof RATH_CLOSE!=='undefined'&&cast.cfg.kind==='melee'&&['normal','skill0'].includes(cast.key)){const frame=celPhase(f,cast.key,typeof time==='number'?time:0).frame;if(frame.closeCombat){const s=aliens[f.id].renderHeight*aliens[f.id].scale/frame.referenceHeight;return{x:f.x+(cast.dir||f.dir||1)*(frame.hand[0]-frame.origin[0])*s,y:f.y+(frame.hand[1]-frame.origin[1])*s};}}if(typeof profileEmitter==='function'){const point=profileEmitter(f,cast,typeof time==='number'?time:0);if(point)return point;}const d=CEL_DATA.characters[f.id],frames=d.clips[cast.ultimate?'ultimate':cast.key]||d.clips.normal,frame=typeof celPhase==='function'?celPhase(f,cast.ultimate?'ultimate':cast.key,typeof time==='number'?time:0).frame:d.frames[frames[f.id===0&&cast.key==='skill0'?2:Math.min(1,frames.length-1)]],w=frame.rect[2],h=frame.rect[3],s=aliens[f.id].renderHeight*aliens[f.id].scale/d.referenceHeight;
  const marker=frame.emitters?.[cast.ultimate?'ultimate':cast.key],hover=f.id===7||f.id===9||f.id>=52&&CARTOON_GAITS[f.id]?.hover?6+Math.sin((typeof time==='number'?time:0)*(f.id===7?8:3))*1.5:0;
  if(marker)return{x:f.x+(cast.dir||f.dir||1)*(marker[0]-frame.origin[0])*s,y:f.y+(marker[1]-frame.origin[1])*s-hover};
  let u=.94,v=.43;if(aliens[f.id].powerOrigin){[u,v]=aliens[f.id].powerOrigins?.[cast.ultimate?'ultimate':cast.key]||aliens[f.id].powerOrigin;return{x:f.x+(cast.dir||f.dir||1)*(w*u-frame.origin[0])*s,y:f.y+(h*v-frame.origin[1])*s};}if(f.id===25){u=.68;v=.20}if(f.id===26){u=.78;v=.25}if(f.id===28){u=.58;v=.17}if(f.id===6){u=.60;v=.16}if(f.id===7){u=.92;v=.38}if(f.id===5){u=.93;v=.55}if([12,15,19,20].includes(f.id)){u=.91;v=.25}if(f.id===17&&cast.key!=='skill0'){u=.56;v=.43}if(f.id===18){u=.69;v=.38}return{x:f.x+(cast.dir||f.dir||1)*(w*u-frame.origin[0])*s,y:f.y+(h*v-frame.origin[1])*s-(f.id===7||f.id===9||f.id>=52&&CARTOON_GAITS[f.id]?.hover?6:0)};

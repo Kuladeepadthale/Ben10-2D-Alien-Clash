@@ -57,7 +57,7 @@ document.body.classList.remove('app-loading');
 // Initial battle pair is decoded; other pairs load before their match starts.
 $('launchMatch').disabled=true;
 if(!allAlienPosesLoaded)$('launchStatus').textContent='Preparing character animation…';
-Promise.all([allAlienPosesReady,diamondheadPuppetReady]).then(results=>{const ok=results.every(Boolean);$('launchMatch').disabled=!ok;$('launchStatus').textContent=ok?'Cel animations ready.':(allAlienPoseError||'Diamondhead movement artwork failed to load.')+' Close and reopen the app to retry.';});
+Promise.all([allAlienPosesReady,diamondheadPuppetReady]).then(results=>{const ok=results.every(Boolean);$('launchMatch').disabled=!ok;$('launchStatus').textContent=ok?'':(allAlienPoseError||'Diamondhead movement artwork failed to load.')+' Close and reopen the app to retry.';});
 
 
 
