@@ -1,4 +1,4 @@
-name: Prepare v10.5 download
+name: Prepare v10.6 download
 on:
   push:
     branches: [apk-delivery-v105]
@@ -22,7 +22,7 @@ jobs:
           release=None
           for attempt in range(170):
               try:
-                  head='f78a5bebdfe8a8dac00de71170b2ca5dad169c0c'
+                  head='6d018f33f9402046ee7e077af4ff4884dc7d654c'
                   with urllib.request.urlopen(urllib.request.Request(root+'/releases/tags/android-'+head[:12],headers=headers)) as response: release=json.load(response)
                   if any(a['name']=='Ben10-Alien-Clash-Online.apk' for a in release['assets']): break
               except urllib.error.HTTPError as error:
