@@ -15,7 +15,7 @@ export async function authenticate(token,env,request=fetch,withProfile=false){
  if(!user.providerUserInfo?.some(p=>p.providerId==='password'))throw Error('An email account is required.');
  return withProfile?{uid:user.localId,name:AlienPlayerName.normalize(user.displayName)}:user.localId;
 }
-export default {fetch(request,env){const url=new URL(request.url);if(url.pathname==='/health')return Response.json({service:'Omnitrix Ranked Arena',protocol:2,squads:true,friendRooms:true,teamRelay:true,playerNames:true,battleCountdown:true,rosterCount:ROSTER_COUNT});if(url.pathname!=='/arena'||request.headers.get('Upgrade')?.toLowerCase()!=='websocket')return new Response('Not found',{status:404});return env.ARENA.get(env.ARENA.idFromName('ranked-v1')).fetch(request);}};
+export default {fetch(request,env){const url=new URL(request.url);if(url.pathname==='/health')return Response.json({service:'Omnitrix Ranked Arena',protocol:3,squads:true,friendRooms:true,teamRelay:true,playerNames:true,battleCountdown:true,rosterCount:ROSTER_COUNT});if(url.pathname!=='/arena'||request.headers.get('Upgrade')?.toLowerCase()!=='websocket')return new Response('Not found',{status:404});return env.ARENA.get(env.ARENA.idFromName('ranked-v1')).fetch(request);}};
 export class RankedArena{
  constructor(ctx,env){this.ctx=ctx;this.env=env;this.clients=new Set();this.users=new Map();this.queue=[];this.matches=new Set();this.rooms=new Map();this.timer=null;}
  async fetch(){
@@ -31,7 +31,7 @@ export class RankedArena{
   if(!this.clients.has(c))return;if(typeof raw!=='string'||raw.length>16000){c.ws.close(1009,'Message too large');return;}
   const now=Date.now();if(now-c.window>=1000){c.window=now;c.messages=0;}if(++c.messages>80){c.ws.close(1008,'Too many messages');return;}
   let d;try{d=JSON.parse(raw);}catch{c.ws.close(1008,'Invalid message');return;}
-  if(d.type==='auth'&&!c.uid&&!c.busy){c.busy=true;try{const identity=await authenticate(d.token,this.env,fetch,true),uid=identity.uid;if(!this.clients.has(c))return;if(this.users.has(uid)){send(c,{type:'error',message:'This account is already online on another device.'});c.ws.close(1008,'Already online');return;}c.uid=uid;c.name=identity.name||title(uid);this.users.set(uid,c);clearTimeout(c.authTimer);c.rank=await this.ctx.storage.get('rank:'+uid)||{points:0,wins:0,losses:0};if(!this.clients.has(c))return;send(c,{type:'ready',protocol:2,rank:c.rank,name:c.name,rosterCount:ROSTER_COUNT});}catch(e){send(c,{type:'error',message:e.message});c.ws.close(1008,'Login failed');}finally{c.busy=false;}return;}
+  if(d.type==='auth'&&!c.uid&&!c.busy){c.busy=true;try{const identity=await authenticate(d.token,this.env,fetch,true),uid=identity.uid;if(!this.clients.has(c))return;if(this.users.has(uid)){send(c,{type:'error',message:'This account is already online on another device.'});c.ws.close(1008,'Already online');return;}c.uid=uid;c.name=identity.name||title(uid);this.users.set(uid,c);clearTimeout(c.authTimer);c.rank=await this.ctx.storage.get('rank:'+uid)||{points:0,wins:0,losses:0};if(!this.clients.has(c))return;send(c,{type:'ready',protocol:3,rank:c.rank,name:c.name,rosterCount:ROSTER_COUNT});}catch(e){send(c,{type:'error',message:e.message});c.ws.close(1008,'Login failed');}finally{c.busy=false;}return;}
   if(!c.uid||c.busy)return;
   if(d.type==='ping'){c.lastInput=now;send(c,{type:'pong',stamp:d.stamp});return;}
   if(d.type==='join'&&!c.match&&!c.room&&!this.queue.includes(c)){
