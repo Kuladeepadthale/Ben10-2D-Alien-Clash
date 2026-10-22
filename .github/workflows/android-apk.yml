@@ -73,6 +73,7 @@ jobs:
           python3 ci/prepare-expansion100.py
           python3 ci/build-cels.py
           python3 ci/build-villains.py
+          python3 ci/extend-villains110.py
       - name: Verify all 72 action sets and game controls
         if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]')"
         env:
@@ -83,6 +84,7 @@ jobs:
           node ci/check-cels.cjs
           node ci/check-basic-attacks.cjs
           node ci/check-melee-combos.cjs
+          node ci/check-villains110.cjs
           node ci/check-threat-ladder.cjs
           node ci/check-card-shop.cjs
           python3 ci/check-ability-art.py
@@ -190,7 +192,7 @@ jobs:
           z=zipfile.ZipFile('builds/Ben10-2D-Alien-Clash.apk');names=z.namelist()
           assert 'assets/threat-ladder.js' in names and 'assets/villain-data.js' in names
           villains=json.loads(z.read('assets/assets/villains/manifest.json'))
-          assert len(villains['characters'])==30
+          assert len(villains['characters'])==50
           assert all('assets/'+v['src'] in names and 'assets/'+v['portrait'] in names for v in villains['characters'])
           assert 'assets/index.html' in names and 'assets/cel-player.js' in names
           assert all('assets/'+f in names for f in ['account-boot.js','account-config.js','account-cloud.js','account.js','account.css','ranked-rules.js','multiplayer-config.js','multiplayer.js','multiplayer.css','squad-multiplayer.js','player-name.js','player-experience.js','player-experience.css'])
@@ -221,7 +223,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.9 — Close Combat Polish' --notes 'Rath has a new eight-frame jab, cross and claw-hook sequence. Repeated hand/claw combinations use consistent native strike and retraction poses; removes forced body shake and unrelated guard resets. Character-specific tails, bites and kicks stay intact. Battle implementation labels are hidden. Preserves card collection and previous gameplay fixes.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.0 — 50 Plumber Threats' --notes 'Adds 20 illustrated villains as stages 31–50 of Plumber Threat Ladder. Preserves all cleared stages. Existing villains receive improved attack, recoil and recovery timing, characteristic ranged basics and new close-combat clips. Includes the full previous alien roster and card progression.' --prerelease --target "$GITHUB_SHA"
 
 
 

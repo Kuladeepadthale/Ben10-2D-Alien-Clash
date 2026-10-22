@@ -6,7 +6,7 @@ async function boot(saved){const html=fs.readFileSync('web/index.html','utf8').r
  run("begin=async function(newMatch=true,practice=false){training=practice;player=make(selected,370,1,true);enemy=make(0,910,-1);mode='fight';return true}");
  for(const f of ['villain-data','threat-ladder'])run(fs.readFileSync('web/'+f+'.js','utf8'));
  await new Promise(r=>setTimeout(r,0));return {w,run,b};}
-(async()=>{let t=await boot(),{run,w}=t;assert.equal(run('heroStanding().level'),1);assert.equal(run('heroProgress.xp'),0);assert.equal(run('ALIEN_COUNT'),72);assert.equal(run('VILLAIN_COUNT'),30);run('chooseStarter(career.offers[0]);selectedMode="campaign";threatStage=2');assert.equal(await run('begin(true,false)'),false);assert.equal(run('threatProgress.cleared'),0);
+(async()=>{let t=await boot(),{run,w}=t;assert.equal(run('heroStanding().level'),1);assert.equal(run('heroProgress.xp'),0);assert.equal(run('ALIEN_COUNT'),72);assert.equal(run('VILLAIN_COUNT'),50);run('chooseStarter(career.offers[0]);selectedMode="campaign";threatStage=2');assert.equal(await run('begin(true,false)'),false);assert.equal(run('threatProgress.cleared'),0);
  run('mode="menu";threatStage=0');assert(await run('begin(true,false)'));assert.equal(run('enemy.config.name'),'Phil Billings');assert.equal(run('enemy.villain'),0);assert.equal(run('enemy.maxHp'),1200);const credits=run('profile.credits');run('enemy.hp=0');await run('finish()');assert.equal(run('threatProgress.cleared'),1);assert.equal(run('profile.credits'),credits+88);assert.equal(run('profile.matches'),1);assert.equal(run('heroProgress.xp'),175);assert.equal(run('heroStanding().level'),2);const xp=run('heroProgress.xp');await run('finish()');assert.equal(run('heroProgress.xp'),xp);assert.equal(run('profile.credits'),credits+88);
  const saved=w.localStorage.getItem('omnitrix-profile-v2');w.close();t=await boot(saved);run=t.run;w=t.w;assert.equal(run('heroProgress.xp'),175);assert.equal(run('threatProgress.cleared'),1);assert.equal(run('profile.matches'),1);assert.equal(run('career.owned.length'),1);
  run('mode="menu";selectedMode="campaign";threatStage=0');await run('begin(true,false)');run('enemy.hp=0');await run('finish()');assert.equal(run('threatProgress.cleared'),1);assert.equal(run('heroProgress.xp'),275);const replayXP=run('heroProgress.xp');
@@ -17,25 +17,27 @@ async function boot(saved){const html=fs.readFileSync('web/index.html','utf8').r
  const beforeUpgrade=run('heroProgress.xp');run('mode="menu";selectedMode="versus";profile.credits=10000;upgrade("health")');assert.equal(run('heroProgress.xp'),beforeUpgrade+10);
  const owned=run('career.owned.length'),beforeUnlock=run('heroProgress.xp');run('career.gems=100;buyAlien(aliens.findIndex((_,i)=>i<ALIEN_COUNT&&!ownsAlien(i)))');assert.equal(run('career.owned.length'),owned+1);assert.equal(run('heroProgress.xp'),beforeUnlock+25);
  const beforeMission=run('heroProgress.xp');run("claimMission('battles')");assert.equal(run('heroProgress.xp'),beforeMission+20);run("claimMission('battles')");assert.equal(run('heroProgress.xp'),beforeMission+20);
- for(let i=1;i<30;i++){t.b.i=i;assert(run('threatTuning(i+1).hp>threatTuning(i).hp'));assert(run('threatTuning(i+1).damage>threatTuning(i).damage'));}
+ for(let i=1;i<50;i++){t.b.i=i;assert(run('threatTuning(i+1).hp>threatTuning(i).hp'));assert(run('threatTuning(i+1).damage>threatTuning(i).damage'));}
  assert.equal(run('new Set(ALIEN_PRICES).size'),5);
  for(let id=0;id<72;id++){t.b.rankId=id;assert.equal(run('ALIEN_PRICES[rankId]'),run('(ALIEN_RANKS[rankId]+2)*5'));}
  for(let stage=2;stage<=30;stage++){t.b.scalingStage=stage;assert(run('threatTuning(scalingStage).playerCooldown>threatTuning(scalingStage-1).playerCooldown'));assert(run('threatTuning(scalingStage).enemyCooldown<threatTuning(scalingStage-1).enemyCooldown'));assert(run('threatTuning(scalingStage).reaction<threatTuning(scalingStage-1).reaction'));}
  run('mode="menu";selectedMode="campaign";threatProgress.cleared=29;threatStage=29');await run('begin(true,false)');run("cast(player,'skill0')");assert(Math.abs(run('player.cd[0]')-run('aliens[player.id].skills[player.loadout[0]].cooldown*threatTuning(30).playerCooldown'))<.00001);
  run('mode="menu";showScreen("characters");careerRefresh();refreshMenus()');assert.equal(w.document.querySelectorAll('#roster .card:not([hidden])').length,72);assert.equal(w.document.querySelectorAll('#roster .card-rank').length,72);assert.equal(run('rosterDeck.nav.hidden'),true);
- for(let id=0;id<30;id++){t.b.testId=id;assert.equal(run('villainKit(testId).skills.length'),3);run('villainKit(testId).skills.forEach(s=>{if(!Number.isFinite(s.damage)||!Number.isFinite(s.range))throw Error("Invalid kit")})');}
+ for(let id=0;id<50;id++){t.b.testId=id;assert.equal(run('villainKit(testId).skills.length'),3);run('villainKit(testId).skills.forEach(s=>{if(!Number.isFinite(s.damage)||!Number.isFinite(s.range))throw Error("Invalid kit")})');}
  // Exercise every villain's collision and damage budget using the real combat engine.
- for(let id=0;id<30;id++)for(const action of ['normal','skill0','skill1','skill2','ultimate']){t.b.combatId=id;t.b.combatAction=action;
+ for(let id=0;id<50;id++)for(const action of ['normal','skill0','skill1','skill2','ultimate']){t.b.combatId=id;t.b.combatAction=action;
  run("mode='fight';time=0;player=make(selected,460,1,true);enemy=make(0,560,-1);enemy.villain=combatId;enemy.config=villainKit(combatId);enemy.ult=100;enemy.loadout=combatAction==='skill2'?[2,1]:[0,1];shots=[];effects=[];particles=[];floating=[];cast(enemy,combatAction==='skill2'?'skill0':combatAction)");
  assert(run('!!enemy.cast'));const budget=run('enemy.cast.budget.remaining');run('for(let frame=0;frame<660;frame++){time+=1/120;updateF(player,1/120);updateF(enemy,1/120);updateEffects(1/120)}');const damage=run('player.maxHp-player.hp');assert(damage>=0&&damage<=budget+1e-5,id+' '+action+' damage budget');assert(run('Number.isFinite(enemy.x)&&Number.isFinite(enemy.y)'));
  }
- run('mode="menu";selectedMode="campaign";threatProgress.cleared=29;threatStage=29');assert(await run('begin(true,false)'));run('enemy.hp=0');await run('finish()');assert.equal(run('threatProgress.cleared'),30);assert(w.document.querySelector('#resultText').textContent.includes('complete'));
+ run('mode="menu";selectedMode="campaign";threatProgress.cleared=49;threatStage=49');assert(await run('begin(true,false)'));run('enemy.hp=0');await run('finish()');assert.equal(run('threatProgress.cleared'),50);assert(w.document.querySelector('#resultText').textContent.includes('complete'));
+ run('mode="menu";selectedMode="campaign";threatProgress.cleared=30;threatStage=30');assert(await run('begin(true,false)'));assert.equal(run('enemy.villain'),30);
  assert.equal(w.document.querySelectorAll('[id]').length,new Set([...w.document.querySelectorAll('[id]')].map(e=>e.id)).size);w.close();
  if(!process.argv.includes('--logic-only')){
- const {loadImage}=require('@napi-rs/canvas');const data=JSON.parse(fs.readFileSync('web/assets/villains/manifest.json'));assert.equal(data.characters.length,30);
+ const {loadImage}=require('@napi-rs/canvas');const data=JSON.parse(fs.readFileSync('web/assets/villains/manifest.json'));assert.equal(data.characters.length,50);
  for(const v of data.characters){assert.equal(v.frames.length,16);const image=await loadImage('web/'+v.src);assert(image.width>0);for(const f of v.frames){const [x,y,w,h]=f.rect;assert(x>=0&&y>=0&&x+w<=image.width&&y+h<=image.height);assert(f.sourcePixels>1000);assert(f.origin.every(Number.isFinite));}assert(fs.existsSync('web/'+v.portrait));}
  }
- console.log('Passed: sequential stages, lock guards, rising difficulty, dedicated villain opponents, first-clear/replay rewards, single payouts, loss/quit/testing rules, Hero Level formula, XP bonuses, save migration, final stage and 30 villain action atlases.');
+ console.log('Passed: sequential stages, lock guards, rising difficulty, dedicated villain opponents, first-clear/replay rewards, single payouts, loss/quit/testing rules, Hero Level formula, XP bonuses, save migration, final stage and 50 villain action atlases.');
 })().catch(e=>{console.error(e);process.exit(1)});
+
 
 

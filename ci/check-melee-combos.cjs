@@ -21,7 +21,7 @@ assert(combos>=10);console.log(`Passed: ${combos} multi-hit close-combat animati
 
 run(fs.readFileSync('web/villain-data.js','utf8'));run(declaration(fs.readFileSync('web/threat-ladder.js','utf8'),'villainFrame'));
 let villainCombos=0;
-for(let villain=0;villain<30;villain++)for(const key of ['skill0','skill1','skill2','ultimate']){
+for(let villain=0;villain<50;villain++)for(const key of ['skill0','skill1','skill2','ultimate']){
  Object.assign(b,{villain,key});run("player=make(0,640,1);player.villain=villain;cfg=key==='ultimate'?VILLAIN_DATA.characters[villain].kit.ultimate:VILLAIN_DATA.characters[villain].kit.skills[Number(key.slice(5))]");
  if(!b.cfg||b.cfg.kind!=='melee'||(b.cfg.ticks||1)<2)continue;
  run("player.cast={key,dir:1,ultimate:key==='ultimate',elapsed:0,cfg}");

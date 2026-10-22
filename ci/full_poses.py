@@ -3,9 +3,10 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage
 
-def whole_poses(sheet,columns=4,rows=2):
+def whole_poses(sheet,columns=4,rows=2,threshold=100,row_counts=None):
     a=np.array(sheet.convert('RGBA'));height,width=a.shape[:2]
-    labels,_=ndimage.label(a[:,:,3]>100,structure=np.ones((3,3)))
+    expected=row_counts or [columns]*rows
+    labels,_=ndimage.label(a[:,:,3]>threshold,structure=np.ones((3,3)))
     areas=np.bincount(labels.ravel());boxes=ndimage.find_objects(labels)
     candidates=[[] for _ in range(rows)]
     for label,box in enumerate(boxes,1):
@@ -15,10 +16,10 @@ def whole_poses(sheet,columns=4,rows=2):
         candidates[min(rows-1,int(cy/height*rows))].append((int(areas[label]),cx,label))
     selected=[]
     for row,items in enumerate(candidates):
-        assert len(items)>=columns,('Not enough whole poses',row,len(items))
-        main=sorted(items,reverse=True)[:columns]
+        assert len(items)>=expected[row],('Not enough whole poses',row,len(items))
+        main=sorted(items,reverse=True)[:expected[row]]
         selected.extend(label for _,_,label in sorted(main,key=lambda item:item[1]))
-    assert len(set(selected))==columns*rows
+    assert len(set(selected))==sum(expected)
     primary=set(selected);result=[]
     # A detached detail belongs to exactly one closest body.
     distance,indices=ndimage.distance_transform_edt(~np.isin(labels,selected),return_indices=True)
@@ -50,3 +51,4 @@ def pack_poses(poses,padding=20):
         x=i%4*side+(side-im.width)//2;y=i//4*side+side-padding-im.height
         sheet.paste(im,(x,y));placements.append((x,y,im.width,im.height,meta))
     return sheet,placements
+

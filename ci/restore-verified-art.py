@@ -30,7 +30,9 @@ with tempfile.TemporaryDirectory(prefix='verified-72-art-') as tmp:
                 dest=target/relative;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(z.read(entry))
         for file in ['cel-data.js','villain-data.js']:
             (R/'web'/file).write_bytes(z.read('assets/'+file))
+subprocess.run(['python3','ci/extend-villains110.py'],cwd=R,check=True)
 subprocess.run(['python3','ci/build-cels.py','--from-id','72'],cwd=R,check=True)
 shutil.copytree(R/'web/assets/villains',R/'builds/web/assets/villains',dirs_exist_ok=True)
 print('Reused verified, unchanged 72-character/30-villain art; current renderer bundled. Full regression suite still required.')
+
 
