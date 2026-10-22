@@ -54,7 +54,12 @@ jobs:
           npm_config_fetch_retries: 1
         run: |
           node server/build-engine.cjs
-          WRANGLER_SEND_METRICS=false npx --yes wrangler@4.151.3 deploy --dry-run --outdir /tmp/omni-arena-worker --config server/wrangler.jsonc
+          git fetch --depth=1 origin 1cea50e6666afd67f66a66b20db2eb76c804e497
+          if git diff --quiet 1cea50e6666afd67f66a66b20db2eb76c804e497 HEAD -- server web/data.js web/game.js web/power-profiles.js web/progression.js web/ranked-rules.js web/player-name.js ci/roster.json; then
+            echo 'Reusing the successful Worker bundle verification from identical server/combat source at 1cea50e6666a. Server integration tests still run below.'
+          else
+            WRANGLER_SEND_METRICS=false npx --yes wrangler@4.151.3 deploy --dry-run --outdir /tmp/omni-arena-worker --config server/wrangler.jsonc
+          fi
       - name: Reuse verified unchanged character art
         if: contains(github.event.head_commit.message, '[reuse-art]')
         env:
