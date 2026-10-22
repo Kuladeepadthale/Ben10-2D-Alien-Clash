@@ -8,6 +8,14 @@ function celEnsure(id){if(celCache.has(id)){celCache.get(id).used=++celUse;retur
 }
 function celPreload(id){if(typeof mode!=='undefined'&&!['fight','paused','roundend','loading'].includes(mode))celPinned=new Set([id,typeof enemy!=='undefined'&&enemy?enemy.id:2]);celEnsure(id).catch(()=>{});}
 function hasDrawnAlien(id){return !!CEL_DATA.characters[id]}
+// Match each native strike/recoil cycle to the simulation's existing hit cadence.
+function meleeComboBeat(f,v){
+ if(!v||v.cfg.kind!=='melee'||typeof powerProfileFor==='function'&&powerProfileFor(f,v)?.motion==='tail-strike')return null;
+ const duration=Math.max(.001,v.cfg.duration||.08),age=v.elapsed-v.cfg.windup,count=Math.max(1,Math.floor(v.cfg.ticks||1));
+ if(age<0||age>=duration)return null;
+ const position=age/duration*count,tick=Math.min(count-1,Math.floor(position)),phase=position-tick;
+ return {count,tick,phase,drive:Math.max(0,1-phase/.62)*(1+.1*(f.normalChain||0))};
+}
 function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.get(f);if(!s){s={x:f.x,distance:0,walking:false,state:'',start:t,landUntil:0,air:false};celStates.set(f,s)}
  const walking=state==='walk',air=f.y<floor-2;
  if(walking&&s.walking)s.distance+=(f.x-s.x)*(f.dir||1);
@@ -24,6 +32,12 @@ function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.g
   else if(v.elapsed<wind+active)index=frames.length>=4?1+Math.min(1,Math.floor((v.elapsed-wind)/active*2)):1;
   else index=frames.length>=3?frames.length-1:0;
   if(f.id===0&&state==='skill0')index=v.elapsed<wind?Math.min(1,Math.floor(v.elapsed/wind*2)):v.elapsed<wind+active?2:3;
+  const beat=meleeComboBeat(f,v);
+  if(beat&&beat.count>1&&frames.length===2&&d.clips.normal?.length){frames=[...frames,d.clips.normal[d.clips.normal.length-1]];}
+  if(beat&&beat.count>1&&frames.length>=3){
+   // Impact, follow-through, then retract before the next timed strike.
+   index=beat.phase<.3?1:beat.phase<.72?frames.length-1:0;
+  }
   if(typeof powerProfileFor==='function'&&powerProfileFor(f,v)?.motion==='tail-strike')index=powerPoseIndex(f,v,frames.length);
   if(v.cfg.kind==='leapslam'&&f.y<floor-30){frames=d.clips.jump;index=2;}
  }else if(state==='jump'){index=f.jumpWindup?0:f.vy< -100?1:f.vy<120?2:3;}
@@ -44,7 +58,7 @@ drawAlien=function(ctx,f,t,portrait=false){const d=CEL_DATA.characters[f.id],cac
   ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-hover);ctx.scale(f.dir||1,1);ctx.drawImage(image,-image.width*ratio/2,-h,image.width*ratio,h);ctx.restore();return;
  }
  const picked=celPhase(f,portrait?'idle':celState(f),t),frame=picked.frame,[x,y,w,h]=frame.rect,[ox,oy]=frame.origin,scale=aliens[f.id].renderHeight*aliens[f.id].scale/d.referenceHeight;
- ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-(f.id===7||f.id===9||f.id>=52&&CARTOON_GAITS[f.id]?.hover?6+Math.sin(t*(f.id===7?8:3))*1.5:0));ctx.scale((f.dash?.dir||f.cast?.dir||f.dir||1)*scale,scale);if(!portrait&&f.cast&&typeof powerProfileFor==='function'&&powerProfileFor(f,f.cast)?.motion==='tail-strike'){const v=f.cast,wind=Math.max(.001,v.cfg.windup),active=v.cfg.duration||.08,age=v.elapsed-wind,u=Math.max(0,Math.min(1,age/active)),tilt=age<0?-.055*(v.elapsed/wind):age<active?Math.sin(u*Math.PI)*.13:.055*Math.max(0,1-(age-active)/Math.max(.001,v.cfg.recovery));ctx.translate(0,-h*.4);ctx.rotate(tilt);ctx.translate(0,h*.4);} if((f.id===10||f.id===71)&&f.cast&&f.cast.cfg.kind==='rush'&&f.cast.elapsed>=f.cast.cfg.windup&&f.cast.elapsed<f.cast.cfg.windup+Math.max(.42,f.cast.cfg.duration||.08)){const angle=(f.x-(f.cast.startX??f.x))*(f.cast.dir||f.dir||1)/Math.max(1,h*.5*scale);ctx.translate(0,-h*.5);ctx.rotate(angle);ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-w*.5,-h*.5,w,h);}else ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-ox,-oy,w,h);ctx.restore();
+ ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-(f.id===7||f.id===9||f.id>=52&&CARTOON_GAITS[f.id]?.hover?6+Math.sin(t*(f.id===7?8:3))*1.5:0));ctx.scale((f.dash?.dir||f.cast?.dir||f.dir||1)*scale,scale);if(!portrait){const beat=meleeComboBeat(f,f.cast);if(beat){ctx.translate(beat.drive*Math.min(9,w*.025),0);ctx.rotate(-.018*beat.drive);}}if(!portrait&&f.cast&&typeof powerProfileFor==='function'&&powerProfileFor(f,f.cast)?.motion==='tail-strike'){const v=f.cast,wind=Math.max(.001,v.cfg.windup),active=v.cfg.duration||.08,age=v.elapsed-wind,u=Math.max(0,Math.min(1,age/active)),tilt=age<0?-.055*(v.elapsed/wind):age<active?Math.sin(u*Math.PI)*.13:.055*Math.max(0,1-(age-active)/Math.max(.001,v.cfg.recovery));ctx.translate(0,-h*.4);ctx.rotate(tilt);ctx.translate(0,h*.4);} if((f.id===10||f.id===71)&&f.cast&&f.cast.cfg.kind==='rush'&&f.cast.elapsed>=f.cast.cfg.windup&&f.cast.elapsed<f.cast.cfg.windup+Math.max(.42,f.cast.cfg.duration||.08)){const angle=(f.x-(f.cast.startX??f.x))*(f.cast.dir||f.dir||1)/Math.max(1,h*.5*scale);ctx.translate(0,-h*.5);ctx.rotate(angle);ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-w*.5,-h*.5,w,h);}else ctx.drawImage(cache.images[frame.sheet],x,y,w,h,-ox,-oy,w,h);ctx.restore();
 };
 function drawnAlienEmitter(f,cast){if(typeof profileEmitter==='function'){const point=profileEmitter(f,cast,typeof time==='number'?time:0);if(point)return point;}const d=CEL_DATA.characters[f.id],frames=d.clips[cast.ultimate?'ultimate':cast.key]||d.clips.normal,frame=typeof celPhase==='function'?celPhase(f,cast.ultimate?'ultimate':cast.key,typeof time==='number'?time:0).frame:d.frames[frames[f.id===0&&cast.key==='skill0'?2:Math.min(1,frames.length-1)]],w=frame.rect[2],h=frame.rect[3],s=aliens[f.id].renderHeight*aliens[f.id].scale/d.referenceHeight;
  const marker=frame.emitters?.[cast.ultimate?'ultimate':cast.key],hover=f.id===7||f.id===9||f.id>=52&&CARTOON_GAITS[f.id]?.hover?6+Math.sin((typeof time==='number'?time:0)*(f.id===7?8:3))*1.5:0;
@@ -57,6 +71,7 @@ begin=async function(newMatch=true,practice=false){const request=++celBattleRequ
 };
 const allAlienPosesReady=Promise.all([classicReady,celEnsure(0),celEnsure(2)]).then(()=>{allAlienPosesLoaded=true;return true}).catch(e=>{allAlienPoseError=e.message;return false});
 const diamondheadPuppetReady=Promise.resolve(true);
+
 
 
 

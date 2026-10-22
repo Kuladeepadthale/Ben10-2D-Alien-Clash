@@ -8,7 +8,7 @@ upgradeDeck.options.portrait=2;upgradeDeck.options.landscape=3;upgradeDeck.optio
 let alienUpgradeOpen=false,alienPortraitToken=0;
 function renderAlienInfo(){
  const a=aliens[selected],owned=ownsAlien(selected),test=testingMode();
- $('alienTitle').textContent=a.name;$('alienSpecies').textContent=cardRank(selected).symbol+' '+cardRank(selected).name+' · '+rarityHealth(selected).toLocaleString()+' HP · '+Math.round(rarityPower(selected)*100)+'% power';
+ $('alienTitle').textContent=a.name;$('alienSpecies').textContent=cardRank(selected).symbol+' '+cardRank(selected).name+' · '+rarityHealth(selected).toLocaleString()+' HP · '+(owned?Math.round(rarityPower(selected)*100)+'% power':cardProgressLabel(selected));
  $('alienStory').textContent=a.desc;
  $('alienAbilities').replaceChildren(...[...a.skills,a.ultimate].map((s,i)=>{
   const row=document.createElement('div'),name=document.createElement('strong'),info=document.createElement('span');
@@ -16,8 +16,8 @@ function renderAlienInfo(){
   row.append(name,info);return row;
  }));
  $('alienUse').textContent=test?'Test alien':'Select for battle';$('alienUse').disabled=isLocked()||(!owned&&!test);
- $('alienUnlock').hidden=owned||test;$('alienUnlock').innerHTML='Unlock · '+gemPrice(ALIEN_PRICES[selected]);
- $('alienUnlock').disabled=isLocked()||!career.owned.length||career.gems<ALIEN_PRICES[selected];
+ $('alienUnlock').hidden=owned||test;$('alienUnlock').innerHTML=cardsReady(selected)?'Unlock · '+collectedCards(selected)+'/'+cardRequirement(selected)+' cards':'Unlock · '+gemPrice(ALIEN_PRICES[selected]);
+ $('alienUnlock').disabled=isLocked()||!career.owned.length||(!cardsReady(selected)&&career.gems<ALIEN_PRICES[selected]);
  $('alienUpgrade').disabled=isLocked()||!owned;$('alienUpgrade').textContent=alienUpgradeOpen?'Story & powers':'Upgrade';
  $('alienPowers').hidden=alienUpgradeOpen;$('alienPowers').disabled=isLocked()||(!owned&&!test);
  alienPage.querySelector('.alien-overview').hidden=alienUpgradeOpen;$('alienUpgradePanel').hidden=!alienUpgradeOpen;
@@ -68,4 +68,5 @@ document.querySelector('.home-copy .eyebrow').hidden=true;
 // Keep every card mounted for native vertical touch scrolling.
 rosterDeck.options.scroll=true;
 rosterDeck.capacity=null;refreshMenus();
+
 
