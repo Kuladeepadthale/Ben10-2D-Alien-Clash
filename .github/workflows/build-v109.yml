@@ -1,0 +1,235 @@
+name: Build Android v10.9
+on:
+  push:
+    branches: [apk-build-v109]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: android-isolated-v109
+  cancel-in-progress: true
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[art-audit]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+          log-accepted-android-sdk-licenses: false
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Install Android platform
+        run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+      - name: Restore pinned development signing identity
+        run: python3 ci/prepare-test-signing.py
+      - name: Audit previous APK certificates
+        if: contains(github.event.head_commit.message, '[signing-audit]')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/alien-signing-audit/76 /tmp/alien-signing-audit/77
+          gh release download android-c906f01a6c9a --pattern Ben10-2D-Alien-Clash.apk --dir /tmp/alien-signing-audit/76
+          gh release download android-cdbc86e3036c --pattern Ben10-2D-Alien-Clash.apk --dir /tmp/alien-signing-audit/77
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --print-certs /tmp/alien-signing-audit/76/Ben10-2D-Alien-Clash.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --print-certs /tmp/alien-signing-audit/77/Ben10-2D-Alien-Clash.apk
+      - name: Install asset and video tools
+        run: |
+          python3 -m pip install Pillow numpy scipy
+          npm install --prefix /tmp/cel-tools --no-package-lock --no-save @napi-rs/canvas jsdom@30.1.3 css-tree playwright
+      - name: Verify deployable multiplayer Worker
+        timeout-minutes: 4
+        env:
+          npm_config_fetch_timeout: 30000
+          npm_config_fetch_retries: 1
+        run: |
+          node server/build-engine.cjs
+          git fetch --depth=1 origin 1cea50e6666afd67f66a66b20db2eb76c804e497
+          if git diff --quiet 1cea50e6666afd67f66a66b20db2eb76c804e497 HEAD -- server web/data.js web/game.js web/power-profiles.js web/progression.js web/ranked-rules.js web/player-name.js ci/roster.json; then
+            echo 'Reusing the successful Worker bundle verification from identical server/combat source at 1cea50e6666a. Server integration tests still run below.'
+          else
+            WRANGLER_SEND_METRICS=false npx --yes wrangler@4.151.3 deploy --dry-run --outdir /tmp/omni-arena-worker --config server/wrangler.jsonc
+          fi
+      - name: Reuse verified unchanged character art
+        if: contains(github.event.head_commit.message, '[reuse-art]')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 ci/restore-verified-art.py
+      - name: Export native cel assets and Android bundle
+        if: "!contains(github.event.head_commit.message, '[reuse-art]')"
+        run: |
+          python3 ci/prepare-alien-force.py
+          python3 ci/prepare-next20.py
+          python3 ci/prepare-expansion100.py
+          python3 ci/build-cels.py
+          python3 ci/build-villains.py
+      - name: Verify all 72 action sets and game controls
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]')"
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          python3 ci/check-full-poses.py
+          python3 ci/check-portrait-quality.py
+          node ci/check-cels.cjs
+          node ci/check-basic-attacks.cjs
+          node ci/check-melee-combos.cjs
+          node ci/check-threat-ladder.cjs
+          node ci/check-card-shop.cjs
+          python3 ci/check-ability-art.py
+          node ci/check-account-cloud.cjs
+          node server/build-engine.cjs
+          node ci/check-multiplayer-server.mjs
+          node ci/check-squads.mjs
+          node ci/check-friend-rooms.mjs
+          node ci/check-target-snapshot.cjs
+          node ci/check-alien-combat.cjs
+          node ci/check-next20.cjs
+          node ci/check-expansion100.cjs
+          node ci/check-cartoon-powers.cjs
+          node ci/check-ability-animations.cjs
+          node ci/check-clean-powers.cjs
+          node ci/check-power-origins.cjs
+          python3 ci/check-profile-pixels.py
+          node ci/check-single-throws.cjs
+          /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
+          node ci/check-multiplayer-ui.cjs
+          node ci/check-squad-ui.cjs
+          node ci/check-accounts.cjs
+          node ci/check-threat-layout.cjs
+          node ci/check-alien-force.cjs
+          node ci/check-expansion.cjs
+          node ci/check-footwork-dash.cjs
+          node ci/check-facing.cjs
+          node ci/check-interface.cjs
+          node ci/check-cel-ui.cjs
+          node ci/check-progression.cjs
+          node ci/check-progression-layout.cjs
+          node ci/check-alien-detail.cjs
+          node ci/check-testing-flow.cjs
+          node ci/check-home-team.cjs
+          node ci/check-card-shop-layout.cjs
+          node ci/check-power-icons.cjs
+          for script in web/*.js; do node --check "$script"; done
+      - name: Verify focused squad-screen correction after passed full suite
+        if: contains(github.event.head_commit.message, '[squad-ui-only]')
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          git fetch --depth=1 origin 8c33c8dca013a64bb2bb39b4c7f6444a318636a6
+          python3 - <<'PYGUARD'
+          import subprocess
+          changed=set(subprocess.check_output(['git','diff','--name-only','8c33c8dca013a64bb2bb39b4c7f6444a318636a6','HEAD'],text=True).splitlines())
+          allowed={'web/squad-multiplayer.js','web/multiplayer.css','ci/check-squad-ui.cjs','.github/workflows/android-apk.yml'}
+          assert changed<=allowed,changed-allowed
+          PYGUARD
+          /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
+          node ci/check-squad-ui.cjs
+          node ci/check-multiplayer-ui.cjs
+          node ci/check-progression-layout.cjs
+          for script in web/*.js; do node --check "$script"; done
+      - name: Verify final landmark-only correction after full-suite baseline
+        if: contains(github.event.head_commit.message, '[landmarks-only]')
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          git fetch --depth=1 origin 61a83bbb07e5038dce070c5de1f1a74354fe6a73
+          python3 - <<'PYGUARD'
+          import subprocess
+          changed=set(subprocess.check_output(['git','diff','--name-only','61a83bbb07e5038dce070c5de1f1a74354fe6a73','HEAD'],text=True).splitlines())
+          allowed={'web/power-profiles.js','server/engine.generated.mjs','ci/check-clean-powers.cjs','ci/check-profile-pixels.py','.github/workflows/android-apk.yml'}
+          assert changed<=allowed,changed-allowed
+          PYGUARD
+          node server/build-engine.cjs
+          node ci/check-multiplayer-server.mjs
+          node ci/check-squads.mjs
+          node ci/check-friend-rooms.mjs
+          node ci/check-target-snapshot.cjs
+          node ci/check-alien-combat.cjs
+          node ci/check-cartoon-powers.cjs
+          node ci/check-ability-animations.cjs
+          node ci/check-clean-powers.cjs
+          node ci/check-power-origins.cjs
+          python3 ci/check-profile-pixels.py
+          node ci/check-single-throws.cjs
+          node ci/check-facing.cjs
+          node ci/check-footwork-dash.cjs
+          for script in web/*.js; do node --check "$script"; done
+      - name: Deploy online Worker when owner credentials are configured
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -n "$CLOUDFLARE_API_TOKEN" ] && [ -n "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            WRANGLER_SEND_METRICS=false npx --yes wrangler@4.151.3 deploy --config server/wrangler.jsonc
+          else
+            echo "::notice::Online Worker deployment needs owner Cloudflare credentials. APK and server code are built and verified."
+          fi
+      - name: Build standard and separate-install APKs
+        run: |
+          gradle -p android --no-daemon assembleDebug
+          cp android/app/build/outputs/apk/debug/app-debug.apk builds/Ben10-2D-Alien-Clash.apk
+          gradle -p android --no-daemon -PparallelInstall=true assembleDebug
+          cp android/app/build/outputs/apk/debug/app-debug.apk builds/Ben10-Alien-Clash-Online.apk
+      - name: Verify APK and downloads
+        run: |
+          python3 ci/check-apk-signing.py
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose builds/Ben10-2D-Alien-Clash.apk
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging builds/Ben10-2D-Alien-Clash.apk
+          python3 - <<'PY'
+          import zipfile,json
+          z=zipfile.ZipFile('builds/Ben10-2D-Alien-Clash.apk');names=z.namelist()
+          assert 'assets/threat-ladder.js' in names and 'assets/villain-data.js' in names
+          villains=json.loads(z.read('assets/assets/villains/manifest.json'))
+          assert len(villains['characters'])==30
+          assert all('assets/'+v['src'] in names and 'assets/'+v['portrait'] in names for v in villains['characters'])
+          assert 'assets/index.html' in names and 'assets/cel-player.js' in names
+          assert all('assets/'+f in names for f in ['account-boot.js','account-config.js','account-cloud.js','account.js','account.css','ranked-rules.js','multiplayer-config.js','multiplayer.js','multiplayer.css','squad-multiplayer.js','player-name.js','player-experience.js','player-experience.css'])
+          assert b'wss://omnitrix-ranked-arena.kuladeepadthale.workers.dev/arena' in z.read('assets/multiplayer-config.js')
+          assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v83.png' in names for i in range(8))
+          assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v90.webp' in names for i in range(8,13))
+          assert 'assets/progression.js' in names and 'assets/progression.css' in names
+          assert 'assets/expansion-effects.js' in names
+          assert 'assets/cartoon-power-effects.js' in names
+          assert 'assets/ability-animations.js' in names
+          assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v100.webp' in names for i in range(13,18))
+          m=json.loads(z.read('assets/assets/cels/manifest.json'))
+          assert len(m['characters'])==72
+          for c in m['characters']:
+           assert all('assets/'+s['src'] in names for s in c['sheets'])
+           assert set(c['clips'])=={'idle','walk','jump','normal','skill0','skill1','skill2','ultimate','guard','hit','ko','dash'}
+          assert not any('alien-smooth' in n or 'heatblast-smooth' in n or 'footwork.js' in n for n in names)
+          PY
+          sha256sum builds/*.apk > builds/SHA256SUMS.txt
+      - uses: actions/upload-artifact@v4
+        continue-on-error: true
+        with:
+          name: AlienClash2D-Android-APK
+          path: |
+            builds/*.apk
+            builds/SHA256SUMS.txt
+      - name: Publish final APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 10.9 — Close Combat Polish' --notes 'Rath has a new eight-frame jab, cross and claw-hook sequence. Repeated hand/claw combinations use consistent native strike and retraction poses; removes forced body shake and unrelated guard resets. Character-specific tails, bites and kicks stay intact. Battle implementation labels are hidden. Preserves card collection and previous gameplay fixes.' --prerelease --target "$GITHUB_SHA"
+
+
+
+
+# v8.2: verify full-screen controls and all forty native replacement sheets.
+
+
+
+
+
+
