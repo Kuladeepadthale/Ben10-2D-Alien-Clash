@@ -1,20 +1,20 @@
 {
-  "version": "12.0",
-  "versionCode": 120,
-  "head": "70f4929ad1193fcdb036ae05562c857cd0dfab35",
-  "tag": "android-70f4929ad119",
-  "checks_passed": 60,
+  "version": "12.1",
+  "versionCode": 121,
+  "head": "e11186dbb966e6a37fb9443280c31bfaabb991a0",
+  "tag": "android-e11186dbb966",
+  "checks_passed": 62,
   "checks_failed": 0,
   "apk": "Ben10-Alien-Clash-Online.apk",
-  "size": 355846291,
-  "sha256": "bcc3727deb8c9fcc8b63526fa4715b76eeb4761160f82072512132fb05d4d5fe",
+  "size": 369082713,
+  "sha256": "0b5f415a3c41aedff668b0cc0f38b678ce8b93242e05cfdfe23aa07c866469b0",
   "analysed": 92,
-  "approved": 73,
-  "body_repairs_remaining": 19,
+  "approved": 77,
+  "body_repairs_remaining": 15,
   "next_batch": [
-    37,
-    38,
-    39,
-    40
+    41,
+    42,
+    43,
+    44
   ]
 }
