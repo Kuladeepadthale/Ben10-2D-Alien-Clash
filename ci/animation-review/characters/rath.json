@@ -1,0 +1,20 @@
+{
+  "id": 32,
+  "slug": "rath",
+  "status": "in_progress",
+  "stage": "State-sheet model proposal saved; remaining native clips and gameplay validation pending",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model.",
+    "Preserve single wrist claws, no tail, brawler weight transfer and distinct jab/cross/hook cadence. Old close-combat sheet also needs replacement to avoid model switching."
+  ],
+  "model_requirements": "Rath in his classic Alien Force/Ultimate Alien form: muscular orange bipedal tiger, black stripes, white jaw/neck/chest/abdomen/hands/feet, green eyes, ONE large black retractable claw from EACH wrist, NO TAIL. Green Omnitrix emblem on upper chest. Correct the reference's variant costume: NO green belt, NO wrestling shorts, NO clothing or belt emblem. Keep white abdomen as fur. Fierce expressive tiger face.",
+  "sources": {
+    "states": "ci/animation-review/characters/rath/source-states.webp"
+  },
+  "prompts": {
+    "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. Rath in his classic Alien Force/Ultimate Alien form: muscular orange bipedal tiger, black stripes, white jaw/neck/chest/abdomen/hands/feet, green eyes, ONE large black retractable claw from EACH wrist, NO TAIL. Green Omnitrix emblem on upper chest. Correct the reference's variant costume: NO green belt, NO wrestling shorts, NO clothing or belt emblem. Keep white abdomen as fur. Fierce expressive tiger face. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: both arms raised then braced forward in an aggressive wrestling rush;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: low powerful tiger-like forward lunge with claws ready. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024."
+  },
+  "changed_files": [],
+  "checks": []
+}

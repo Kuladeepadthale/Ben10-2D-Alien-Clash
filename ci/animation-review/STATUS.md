@@ -10,7 +10,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 1 | 24 | humungousaur | Reviewed — kept | All32 native frames inspected; brown hide, tan torso, chest emblem and tail remain consistent. |
 | 1 | 26 | big-chill | Reviewed — kept | All32 native frames inspected; blue/black body, hood, wing/cape forms and eye colors remain consistent. |
 | 1 | 0 | heatblast | Reviewed — kept | Inspected all40 native frames including the extended idle, dash, hurt and defeat clips. |
-| 2 | 32 | rath | Pending |  |
+| 2 | 32 | rath | In progress | Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model. |
 | 2 | 33 | lodestar | Pending |  |
 | 2 | 34 | nanomech | Pending |  |
 | 2 | 36 | ampfibian | Pending |  |
