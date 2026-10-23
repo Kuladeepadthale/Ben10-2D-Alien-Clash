@@ -16,7 +16,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 2 | 36 | ampfibian | In progress | Existing standing reference omits the extra arm pair visible in action designs; rebuild a coherent four-arm/two-leg-tentacle model. |
 | 3 | 37 | armodrillo | Needs revision | Native combat model is coherent, but shaded small action cels differ from the sharper standing portrait. |
 | 3 | 38 | terraspin | Needs revision | Wind rings are painted into multiple body cels and the portrait differs in detail from actions. |
-| 3 | 39 | nrg | Pending |  |
+| 3 | 39 | nrg | Needs revision | Painted radiation/glow and motion streaks obscure the armored body in multiple action cels. |
 | 3 | 40 | fasttrack | Pending |  |
 | 4 | 41 | chamalien | Pending |  |
 | 4 | 42 | eatle | Pending |  |

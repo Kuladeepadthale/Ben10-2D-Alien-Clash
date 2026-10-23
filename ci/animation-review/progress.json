@@ -466,10 +466,19 @@
       "id": 39,
       "slug": "nrg",
       "batch": 3,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Painted radiation/glow and motion streaks obscure the armored body in multiple action cels.",
+        "Retain containment suit and grille origin consistently; preserve the existing upright-hit/prone-defeat correction."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 40,
