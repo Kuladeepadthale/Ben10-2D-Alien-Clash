@@ -5,7 +5,7 @@
   "stage": "All32 native poses and matching portrait integrated; floating head and magnet-tip registration verified in browser",
   "reviewed_on": "2026-10-23",
   "findings": [
-    "Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures.",
+    "Rebuilt32 coherent body-only poses with floating head and magnet claws, replacing painted-field cels.",
     "Keep the head floating between shoulder prongs in every frame; do not introduce a solid neck.",
     "Rebuilt32 consistent body-only cels, preserving the floating head, horseshoe claws and grey tips without painted magnetic fields."
   ],
@@ -49,5 +49,10 @@
   },
   "renderHeight": 230,
   "scale": 1.05,
-  "attachmentRatio": 0.11
+  "attachmentRatio": 0.11,
+  "previous_findings": [
+    "Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures.",
+    "Keep the head floating between shoulder prongs in every frame; do not introduce a solid neck.",
+    "Rebuilt32 consistent body-only cels, preserving the floating head, horseshoe claws and grey tips without painted magnetic fields."
+  ]
 }

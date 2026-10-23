@@ -1,6 +1,6 @@
 # Animation review progress
 
-**72 / 92 characters approved.** Batch size: 4.
+**73 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -8,14 +8,14 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 
 | Batch | ID | Character | Status | Finding / outcome |
 | --- | --- | --- | --- | --- |
-| 1 | 35 | water-hazard | Reviewed — updated | Standing and attack artwork had inconsistent style/detail; old attack sheets included baked water effects. |
+| 1 | 35 | water-hazard | Reviewed — updated | Rebuilt32 coherent body-only native poses and a matching portrait, with water starting at visible palm ports. |
 | 1 | 24 | humungousaur | Reviewed — kept | All32 native frames inspected; brown hide, tan torso, chest emblem and tail remain consistent. |
 | 1 | 26 | big-chill | Reviewed — kept | All32 native frames inspected; blue/black body, hood, wing/cape forms and eye colors remain consistent. |
 | 1 | 0 | heatblast | Reviewed — kept | Inspected all40 native frames including the extended idle, dash, hurt and defeat clips. |
-| 2 | 32 | rath | Reviewed — updated | Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model. |
-| 2 | 33 | lodestar | Reviewed — updated | Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures. |
-| 2 | 34 | nanomech | In progress | Existing portrait and tiny action sheets differ in detail; maintain one insect/cyborg model through hover and laser poses. |
-| 2 | 36 | ampfibian | Reviewed — updated | Existing standing reference omits the extra arm pair visible in action designs; rebuild a coherent four-arm/two-leg-tentacle model. |
+| 2 | 32 | rath | Reviewed — updated | Rebuilt one classic chest-emblem tiger model across32 poses, matching portrait and8 jab/cross/hook cels. |
+| 2 | 33 | lodestar | Reviewed — updated | Rebuilt32 coherent body-only poses with floating head and magnet claws, replacing painted-field cels. |
+| 2 | 34 | nanomech | Reviewed — updated | Rebuilt32 consistent high-detail native poses with one pair of wings and matching standing portrait. |
+| 2 | 36 | ampfibian | Reviewed — updated | Rebuilt32 coherent high-detail poses with four arms, two leg tentacles and electricity generated separately. |
 | 3 | 37 | armodrillo | Needs revision | Native combat model is coherent, but shaded small action cels differ from the sharper standing portrait. |
 | 3 | 38 | terraspin | Needs revision | Wind rings are painted into multiple body cels and the portrait differs in detail from actions. |
 | 3 | 39 | nrg | Needs revision | Painted radiation/glow and motion streaks obscure the armored body in multiple action cels. |

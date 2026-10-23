@@ -1,12 +1,12 @@
 {
   "id": 34,
   "slug": "nanomech",
-  "status": "in_progress",
-  "stage": "Two-wing state model approved; remaining native clip generation underway",
+  "status": "verified_updated",
+  "stage": "All32 two-wing native cels and matching portrait integrated; hover, hand-beam origins and browser checked",
   "reviewed_on": "2026-10-23",
   "findings": [
-    "Existing portrait and tiny action sheets differ in detail; maintain one insect/cyborg model through hover and laser poses.",
-    "First proposed ultimate release draft has an extra wing pair and is rejected; corrected two-wing draft requested."
+    "Rebuilt32 consistent high-detail native poses with one pair of wings and matching standing portrait.",
+    "Rejected the initial extra-wing proposal; final sheets keep two antennae, one eye and two wings through hover, basic attack and all powers."
   ],
   "model_requirements": "Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor.",
   "sources": {
@@ -22,8 +22,25 @@
     "jump-strike": "Use case: stylized-concept. Production transparent BODY-ONLY sprite sheet for Nanomech. Reference image supplies exact approved identity: single large green eye, green/silver armor, two antennae, ONE PAIR OF EXACTLY TWO WINGS, two arms and two legs. Match the same head/body scale, colors, crisp black outlines and flat cel shading across all8 poses. Four-column/two-row grid with generous transparent gutters and complete bodies. Three-quarter side camera facing screen-right. No text, effects, lasers, sparks, glow, auras, motion trails, floor shadows or background. Two wings only; far wing may hide behind torso. Top row:1 crouch before leap;2 rising flight;3 airborne apex;4 landing. Bottom row:5 forearm blaster preparation;6 one hand extended to fire screen-right;7 arm retraction;8 guard.",
     "powers": "Use case: stylized-concept. Production transparent BODY-ONLY sprite sheet for Nanomech. Reference image supplies exact approved identity: single large green eye, green/silver armor, two antennae, ONE PAIR OF EXACTLY TWO WINGS, two arms and two legs. Match the same head/body scale, colors, crisp black outlines and flat cel shading across all8 poses. Four-column/two-row grid with generous transparent gutters and complete bodies. Three-quarter side camera facing screen-right. No text, effects, lasers, sparks, glow, auras, motion trails, floor shadows or background. Two wings only; far wing may hide behind torso. Top row:1 hand laser spark windup;2 one open hand aimed screen-right;3 hand recovery;4 micro-dodge compression. Bottom row:5 compact forward flight dodge;6 low hover recovery;7 two-arm nano-burst preparation;8 both open hands extended screen-right. Body only, absolutely NO colored glow or streaks around wings."
   },
-  "changed_files": [],
-  "checks": [],
+  "changed_files": [
+    "web/assets/reviewed-native/nanomech/",
+    "ci/animation-review/characters/nanomech/revision.json"
+  ],
+  "checks": {
+    "native_frames": 32,
+    "states": 12,
+    "facings": 2,
+    "actual_draws": 240,
+    "source_pixels_preserved": true,
+    "actual_browser_checked": [
+      "idle",
+      "normal",
+      "skill0",
+      "skill1",
+      "ultimate"
+    ],
+    "passed": true
+  },
   "referenceHeightBySource": {
     "walk": 470,
     "jump-strike": 470,

@@ -35,7 +35,7 @@ console.log('Passed villain multi-hit strike/recoil loops:',villainCombos);
 
 // Rath now uses actual forward jabs, crosses and hooks with stable full-body registration.
 run("player=make(32,640,1,true);cfg=aliens[32].skills[0];player.cast={key:'skill0',dir:1,elapsed:0,cfg}");
-const strikes=[];for(let hit=0;hit<3;hit++){b.elapsed=b.cfg.windup+(hit+.1)*b.cfg.duration/3;run('player.cast.elapsed=elapsed');const picked=run("celPhase(player,'skill0',time)");assert(picked.frame.closeCombat);strikes.push(picked.index);assert.equal(picked.frame.referenceHeight,380);}
+const strikes=[];for(let hit=0;hit<3;hit++){b.elapsed=b.cfg.windup+(hit+.1)*b.cfg.duration/3;run('player.cast.elapsed=elapsed');const picked=run("celPhase(player,'skill0',time)");assert(picked.frame.closeCombat);strikes.push(picked.index);assert.equal(picked.frame.referenceHeight,run('RATH_CLOSE.frames[0].referenceHeight'));assert(picked.frame.referenceHeight>=380);assert(picked.frame.rect[3]>=300);}
 assert.equal(new Set(strikes).size,3,'Rath needs three distinct forward strikes');
 const renderer=fs.readFileSync('web/cel-player.js','utf8');assert(!renderer.includes('ctx.rotate(-.018*beat.drive)'));
 assert(fs.readFileSync('web/index.html','utf8').includes('class="arena-label" hidden aria-hidden="true"'));
