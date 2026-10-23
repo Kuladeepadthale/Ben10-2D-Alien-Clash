@@ -1,0 +1,17 @@
+{
+  "id": 42,
+  "slug": "eatle",
+  "status": "needs_revision",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "Strike sheet uses a different flatter armor drawing from walk/state sheets; painted projectiles also overlap the mouth.",
+    "Unify beetle shell and horn silhouette, preserve existing strike-sheet scale correction, and separate mouth/horn effects."
+  ],
+  "changed_files": [],
+  "checks": {
+    "native_frames": 32,
+    "visual_review": true,
+    "passed": false
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+}

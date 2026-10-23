@@ -1,0 +1,19 @@
+{
+  "id": 28,
+  "slug": "brainstorm",
+  "status": "verified_unchanged",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "All32 frames inspected: orange shell, claws, four walking legs and green eyes retain one model.",
+    "Preserved deliberate shell opening to expose the brain for electrical attacks; body and claw proportions stay consistent."
+  ],
+  "changed_files": [],
+  "checks": {
+    "native_frames": 32,
+    "states": 12,
+    "facings": 2,
+    "actual_draws": 240,
+    "passed": true
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+}

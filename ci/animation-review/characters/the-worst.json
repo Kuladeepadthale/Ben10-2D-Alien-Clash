@@ -1,0 +1,21 @@
+{
+  "id": 60,
+  "slug": "the-worst",
+  "status": "verified_updated",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "All32 native frames inspected.",
+    "Removed generic spherical ultimate body; retained braced compact defensive posture and yellow body/green shorts."
+  ],
+  "changed_files": [
+    "ci/animation-review/characters/the-worst/revision.json"
+  ],
+  "checks": {
+    "native_frames": 32,
+    "states": 12,
+    "facings": 2,
+    "actual_draws": 240,
+    "passed": true
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+}

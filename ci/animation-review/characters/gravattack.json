@@ -1,0 +1,17 @@
+{
+  "id": 48,
+  "slug": "gravattack",
+  "status": "needs_revision",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "All32 frames inspected: rocky body and orange core persist, but small textured cels differ from portrait detail and painted black holes overlap actions.",
+    "Preserve rock anatomy and core location while rebuilding clean gravity-control gestures with separate effects."
+  ],
+  "changed_files": [],
+  "checks": {
+    "native_frames": 32,
+    "visual_review": true,
+    "passed": false
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+}

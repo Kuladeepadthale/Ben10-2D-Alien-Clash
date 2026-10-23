@@ -4,7 +4,7 @@
   "status": "verified_updated",
   "reviewed_on": "2026-10-23",
   "findings": [
-    "Standing and attack artwork had inconsistent style/detail; old attack sheets included baked water effects.",
+    "Rebuilt32 coherent body-only native poses and a matching portrait, with water starting at visible palm ports.",
     "Rebuilt32 whole-body poses around a single Water Hazard model; separating body artwork from procedural water.",
     "Generated sheets inspected; integration and gameplay validation are next."
   ],
@@ -51,5 +51,10 @@
     ],
     "passed": true
   },
-  "stage": "Native revision integrated; software-render and full-browser idle/basic/powers/ultimate review passed"
+  "stage": "Native revision integrated; software-render and full-browser idle/basic/powers/ultimate review passed",
+  "previous_findings": [
+    "Standing and attack artwork had inconsistent style/detail; old attack sheets included baked water effects.",
+    "Rebuilt32 whole-body poses around a single Water Hazard model; separating body artwork from procedural water.",
+    "Generated sheets inspected; integration and gameplay validation are next."
+  ]
 }

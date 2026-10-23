@@ -1,0 +1,19 @@
+{
+  "id": 55,
+  "slug": "kickin-hawk",
+  "status": "verified_unchanged",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "All32 native frames inspected.",
+    "Bird face, crest, forearm feathers and talons stay coherent; retained distinct kicks, wing-arm sweeps and crouched recovery."
+  ],
+  "changed_files": [],
+  "checks": {
+    "native_frames": 32,
+    "states": 12,
+    "facings": 2,
+    "actual_draws": 240,
+    "passed": true
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+}

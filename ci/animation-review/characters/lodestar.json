@@ -1,12 +1,13 @@
 {
   "id": 33,
   "slug": "lodestar",
-  "status": "in_progress",
-  "stage": "All native draft sheets saved; anatomy, registration, effects and runtime review pending",
+  "status": "verified_updated",
+  "stage": "All32 native poses and matching portrait integrated; floating head and magnet-tip registration verified in browser",
   "reviewed_on": "2026-10-23",
   "findings": [
-    "Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures.",
-    "Keep the head floating between shoulder prongs in every frame; do not introduce a solid neck."
+    "Rebuilt32 coherent body-only poses with floating head and magnet claws, replacing painted-field cels.",
+    "Keep the head floating between shoulder prongs in every frame; do not introduce a solid neck.",
+    "Rebuilt32 consistent body-only cels, preserving the floating head, horseshoe claws and grey tips without painted magnetic fields."
   ],
   "model_requirements": "Lodestar in Alien Force/Ultimate Alien form: lean black and rich yellow body, two enormous yellow horseshoe magnet claws with grey tips, split pointed shoulders and yellow shin/foot shapes. Metallic black/yellow head with green eyes FLOATS with a small visible gap above the torso between the shoulder prongs. No solid neck, no mouth, no human fingers. Keep floating head and body together as one full pose.",
   "sources": {
@@ -21,6 +22,37 @@
     "jump-strike": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent lodestar model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. Lodestar in Alien Force/Ultimate Alien form: lean black and rich yellow body, two enormous yellow horseshoe magnet claws with grey tips, split pointed shoulders and yellow shin/foot shapes. Metallic black/yellow head with green eyes FLOATS with a small visible gap above the torso between the shoulder prongs. No solid neck, no mouth, no human fingers. Keep floating head and body together as one full pose. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Top row:1 magnetic jump anticipation knee bend;2 rising levitation jump;3 aerial apex legs tucked;4 soft grounded landing. Bottom row:5 short magnet-claw strike windup;6 deliberate forward magnet claw shove;7 retraction;8 upright guard with floating head. No solid neck, no effects. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024.",
     "powers": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent lodestar model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. Lodestar in Alien Force/Ultimate Alien form: lean black and rich yellow body, two enormous yellow horseshoe magnet claws with grey tips, split pointed shoulders and yellow shin/foot shapes. Metallic black/yellow head with green eyes FLOATS with a small visible gap above the torso between the shoulder prongs. No solid neck, no mouth, no human fingers. Keep floating head and body together as one full pose. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Top row:1 Magnetic pulse preparation lifting one magnet claw;2 Magnetic pulse release with one horseshoe claw aimed screen-right;3 claw recovery;4 Metal storm preparation raising BOTH magnet claws. Bottom row:5 Metal storm hold with both claws overhead in magnetic pulling pose;6 arms recovering to guard;7 Polarity field preparation with claws spread to sides;8 Polarity field release pulling both claws toward the front chest. FLOATING HEAD at8-12pixel gap in every pose, stable grey magnet tips, no painted magnetic rings, metal projectiles, glow or trails. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024."
   },
-  "changed_files": [],
-  "checks": []
+  "changed_files": [
+    "web/assets/reviewed-native/lodestar/",
+    "ci/animation-review/characters/lodestar/revision.json"
+  ],
+  "checks": {
+    "native_frames": 32,
+    "states": 12,
+    "facings": 2,
+    "actual_draws": 240,
+    "source_pixels_preserved": true,
+    "actual_browser_checked": [
+      "idle",
+      "normal",
+      "skill0",
+      "skill1",
+      "ultimate"
+    ],
+    "passed": true
+  },
+  "referenceHeightBySource": {
+    "walk": 430,
+    "jump-strike": 430,
+    "powers": 430,
+    "states": 450
+  },
+  "renderHeight": 230,
+  "scale": 1.05,
+  "attachmentRatio": 0.11,
+  "previous_findings": [
+    "Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures.",
+    "Keep the head floating between shoulder prongs in every frame; do not introduce a solid neck.",
+    "Rebuilt32 consistent body-only cels, preserving the floating head, horseshoe claws and grey tips without painted magnetic fields."
+  ]
 }

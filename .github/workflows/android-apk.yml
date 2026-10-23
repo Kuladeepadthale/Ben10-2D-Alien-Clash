@@ -309,7 +309,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.8 — Water Hazard and Rath Animation Review' --notes 'Rebuilds Water Hazard as32 consistent high-detail body-only native poses with matching standing portrait and registered water ports. Also rebuilds Rath classic anatomy and8 jab/cross/hook cels, cleans Diamondhead ground-spike body pose. Adds resumable92-character review tracking; keeps approved Big Chill, Humungousaur and Heatblast animation. Preserves existing Plumber operations,92 aliens,50 villains and progression.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.9 — Animation Review Batches 1 and 2' --notes 'Rebuilds Water Hazard, Rath, Lodestar, Nanomech and AmpFibian with coherent high-detail native models and matching portraits. Adds8 Rath combo poses, cleans Diamondhead ground spikes and replaces11 incorrect spherical ultimate bodies with species-specific gestures. Adds resumable92-character review tracking; keeps approved Big Chill, Humungousaur and Heatblast animation. Preserves existing Plumber operations,92 aliens,50 villains and progression.' --prerelease --target "$GITHUB_SHA"
 
 
 

@@ -1,0 +1,19 @@
+{
+  "id": 25,
+  "slug": "jetray",
+  "status": "verified_unchanged",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "All32 frames inspected: red/yellow body, head horns, wing membranes and tail stay coherent.",
+    "Retained wing-spread gliding, low flight rush and stable head alignment for eye-ray attacks."
+  ],
+  "changed_files": [],
+  "checks": {
+    "native_frames": 32,
+    "states": 12,
+    "facings": 2,
+    "actual_draws": 240,
+    "passed": true
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+}

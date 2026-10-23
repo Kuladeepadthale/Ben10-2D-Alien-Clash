@@ -1,0 +1,17 @@
+{
+  "id": 21,
+  "slug": "buzzshock",
+  "status": "needs_revision",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "Native action and state sheets use heavier outlines and a more rounded face than the walk cycle.",
+    "Reconcile the battery head, eye proportions and line weight before approving a consistent full-fight model."
+  ],
+  "changed_files": [],
+  "checks": {
+    "native_frames": 32,
+    "visual_review": true,
+    "passed": false
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+}

@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 33,
-  "completed": 19,
+  "current_character": 37,
+  "completed": 73,
   "characters": [
     {
       "id": 35,
@@ -106,7 +106,7 @@
       "batch": 1,
       "status": "verified_updated",
       "findings": [
-        "Standing and attack artwork had inconsistent style/detail; old attack sheets included baked water effects.",
+        "Rebuilt32 coherent body-only native poses and a matching portrait, with water starting at visible palm ports.",
         "Rebuilt32 whole-body poses around a single Water Hazard model; separating body artwork from procedural water.",
         "Generated sheets inspected; integration and gameplay validation are next."
       ],
@@ -159,7 +159,12 @@
         "walk": "Use case: stylized-concept. Production transparent full-body sprite sheet for a Ben 10 2D game. Reference1 is the APPROVED Water Hazard model and drawing style: duplicate that same exact alien model, head/helmet, chest plate, black joints, gauntlets, blue ports, eyes, feet, proportions, outline thickness and red/black/green colors in every cel. Reference2 is only an additional identity reference. Clean sharp cartoon cel style, no photorealism or 3D. ALL frames face screen-right in the exact same three-quarter side camera. Exactly eight complete separate full-body poses in a four-column/two-row grid, generous transparent outer margins and gutters, no overlap, no text, no labels, no effects, no water images, no ground shadow. Keep the head and torso at the same native scale across poses; no model swapping. Preserve all limbs and helmet inside the canvas. Canvas wide 2:1 at high native resolution, crisp for downscaling. Eight consecutive chronological walking cycle frames left-to-right then next row: contact left foot forward; down/compression; passing legs; rising; opposite contact right foot forward; opposite down; opposite passing; opposite rising returning naturally to frame1. Weighty armored humanoid locomotion with small deliberate torso motion, natural opposite arm swing. Both big gauntlets stay attached, no duplicated limbs, no attack poses or hovering.",
         "jump-strike": "Use case: stylized-concept. Production transparent full-body sprite sheet for a Ben 10 2D game. Reference1 is the APPROVED Water Hazard model and drawing style: duplicate that same exact alien model, head/helmet, chest plate, black joints, gauntlets, blue ports, eyes, feet, proportions, outline thickness and red/black/green colors in every cel. Reference2 is only an additional identity reference. Clean sharp cartoon cel style, no photorealism or 3D. ALL frames face screen-right in the exact same three-quarter side camera. Exactly eight complete separate full-body poses in a four-column/two-row grid, generous transparent outer margins and gutters, no overlap, no text, no labels, no effects, no water images, no ground shadow. Keep the head and torso at the same native scale across poses; no model swapping. Preserve all limbs and helmet inside the canvas. Canvas wide 2:1 at high native resolution, crisp for downscaling. Top row four chronological jump poses: 1 compact knee bend anticipation with feet grounded;2 rising jump with rear leg bent and gauntlets balancing;3 aerial apex knees tucked;4 grounded soft landing knees bent. Bottom row four chronological single close-combat gauntlet strike poses:5 braced torso twist drawing right gauntlet back;6 deliberate forward right gauntlet strike with weight transferred to front leg;7 brief natural recoil drawing gauntlet back, same balance and feet;8 returned guarded stance. Water Hazard remains broad armored humanoid, no water or glow.",
         "powers": "Use case: stylized-concept. Production transparent full-body sprite sheet for a Ben 10 2D game. Reference1 is the APPROVED Water Hazard model and drawing style: duplicate that same exact alien model, head/helmet, chest plate, black joints, gauntlets, blue ports, eyes, feet, proportions, outline thickness and red/black/green colors in every cel. Reference2 is only an additional identity reference. Clean sharp cartoon cel style, no photorealism or 3D. ALL frames face screen-right in the exact same three-quarter side camera. Exactly eight complete separate full-body poses in a four-column/two-row grid, generous transparent outer margins and gutters, no overlap, no text, no labels, no effects, no water images, no ground shadow. Keep the head and torso at the same native scale across poses; no model swapping. Preserve all limbs and helmet inside the canvas. Canvas wide 2:1 at high native resolution, crisp for downscaling. Top row:1 Palm water jet anticipation lifting one gauntlet;2 Palm water jet RELEASE with right forearm aimed straight screen-right and its blue nozzle clearly exposed;3 Palm water jet recovery lowering that arm into guard;4 Pressure burst anticipation bringing both gauntlets near chest. Bottom row:5 Pressure burst RELEASE both gauntlets thrust screen-right in a braced stance, blue ports visible;6 Pressure burst recovery retracting both arms;7 Rising tide anticipation squatting with both gauntlets near knees;8 Rising tide RELEASE in a deeper grounded crouch with both gauntlets aimed down and forward. This is a BODY-ONLY animation sheet: absolutely NO painted water, liquid, glow, beams, rings or energy. The game will emit water separately from the visible blue gauntlet ports."
-      }
+      },
+      "previous_findings": [
+        "Standing and attack artwork had inconsistent style/detail; old attack sheets included baked water effects.",
+        "Rebuilt32 whole-body poses around a single Water Hazard model; separating body artwork from procedural water.",
+        "Generated sheets inspected; integration and gameplay validation are next."
+      ]
     },
     {
       "id": 24,
@@ -230,7 +235,7 @@
       "batch": 2,
       "status": "verified_updated",
       "findings": [
-        "Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model.",
+        "Rebuilt one classic chest-emblem tiger model across32 poses, matching portrait and8 jab/cross/hook cels.",
         "Preserve single wrist claws, no tail, brawler weight transfer and distinct jab/cross/hook cadence. Old close-combat sheet also needs replacement to avoid model switching.",
         "Replaced all32 poses, matching portrait and8 close-combat cels so idle, jab/cross/hook, pounce and ultimate use one classic model."
       ],
@@ -340,20 +345,43 @@
           0.81,
           0.51
         ]
-      }
+      },
+      "previous_findings": [
+        "Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model.",
+        "Preserve single wrist claws, no tail, brawler weight transfer and distinct jab/cross/hook cadence. Old close-combat sheet also needs replacement to avoid model switching.",
+        "Replaced all32 poses, matching portrait and8 close-combat cels so idle, jab/cross/hook, pounce and ultimate use one classic model."
+      ]
     },
     {
       "id": 33,
       "slug": "lodestar",
       "batch": 2,
-      "status": "in_progress",
+      "status": "verified_updated",
       "findings": [
-        "Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures.",
-        "Keep the head floating between shoulder prongs in every frame; do not introduce a solid neck."
+        "Rebuilt32 coherent body-only poses with floating head and magnet claws, replacing painted-field cels.",
+        "Keep the head floating between shoulder prongs in every frame; do not introduce a solid neck.",
+        "Rebuilt32 consistent body-only cels, preserving the floating head, horseshoe claws and grey tips without painted magnetic fields."
       ],
-      "changed_files": [],
-      "checks": [],
-      "stage": "All native draft sheets saved; anatomy, registration, effects and runtime review pending",
+      "changed_files": [
+        "web/assets/reviewed-native/lodestar/",
+        "ci/animation-review/characters/lodestar/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "source_pixels_preserved": true,
+        "actual_browser_checked": [
+          "idle",
+          "normal",
+          "skill0",
+          "skill1",
+          "ultimate"
+        ],
+        "passed": true
+      },
+      "stage": "All32 native poses and matching portrait integrated; floating head and magnet-tip registration verified in browser",
       "reviewed_on": "2026-10-23",
       "model_requirements": "Lodestar in Alien Force/Ultimate Alien form: lean black and rich yellow body, two enormous yellow horseshoe magnet claws with grey tips, split pointed shoulders and yellow shin/foot shapes. Metallic black/yellow head with green eyes FLOATS with a small visible gap above the torso between the shoulder prongs. No solid neck, no mouth, no human fingers. Keep floating head and body together as one full pose.",
       "sources": {
@@ -376,46 +404,164 @@
       },
       "renderHeight": 230,
       "scale": 1.05,
-      "attachmentRatio": 0.11
+      "attachmentRatio": 0.11,
+      "previous_findings": [
+        "Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures.",
+        "Keep the head floating between shoulder prongs in every frame; do not introduce a solid neck.",
+        "Rebuilt32 consistent body-only cels, preserving the floating head, horseshoe claws and grey tips without painted magnetic fields."
+      ]
     },
     {
       "id": 34,
       "slug": "nanomech",
       "batch": 2,
-      "status": "needs_revision",
+      "status": "verified_updated",
       "findings": [
-        "Existing portrait and tiny action sheets differ in detail; maintain one insect/cyborg model through hover and laser poses.",
-        "First proposed ultimate release draft has an extra wing pair and is rejected; corrected two-wing draft requested."
+        "Rebuilt32 consistent high-detail native poses with one pair of wings and matching standing portrait.",
+        "Rejected the initial extra-wing proposal; final sheets keep two antennae, one eye and two wings through hover, basic attack and all powers."
       ],
-      "changed_files": [],
-      "checks": [],
-      "stage": "State-sheet model proposal saved; remaining native clips and gameplay validation pending",
+      "changed_files": [
+        "web/assets/reviewed-native/nanomech/",
+        "ci/animation-review/characters/nanomech/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "source_pixels_preserved": true,
+        "actual_browser_checked": [
+          "idle",
+          "normal",
+          "skill0",
+          "skill1",
+          "ultimate"
+        ],
+        "passed": true
+      },
+      "stage": "All32 two-wing native cels and matching portrait integrated; hover, hand-beam origins and browser checked",
       "reviewed_on": "2026-10-23",
       "model_requirements": "Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor.",
       "sources": {
-        "states": "ci/animation-review/characters/nanomech/source-states-rejected.webp"
+        "states": "ci/animation-review/characters/nanomech/source-states.webp",
+        "walk": "ci/animation-review/characters/nanomech/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/nanomech/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/nanomech/source-powers.webp"
       },
       "prompts": {
-        "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: both small manipulator arms extended, wings spread for stable airborne electric overload, no drawn electricity;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: fast forward aerial dart with body tilted and wings swept back. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024."
+        "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: both small manipulator arms extended, wings spread for stable airborne electric overload, no drawn electricity;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: fast forward aerial dart with body tilted and wings swept back. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024.",
+        "states_correction": "Use case: precise-object-edit. Edit this transparent eight-pose Nanomech sprite sheet. Correct wing anatomy only: Nanomech has exactly ONE PAIR of TWO insect wings, one left wing and one right wing. In pose2 (top row second), REMOVE the two lower extra wings so only the two upper wings remain. In every other pose ensure at most those same two wings; a far wing may be hidden by the body. Keep head, single green eye, two antennae, entire body, armor, all poses, proportions, outline and palette unchanged. Preserve transparent background and all complete bodies. No glow or added effects.\n",
+        "walk": "Use case: stylized-concept. Production transparent BODY-ONLY sprite sheet for Nanomech. Reference image supplies exact approved identity: single large green eye, green/silver armor, two antennae, ONE PAIR OF EXACTLY TWO WINGS, two arms and two legs. Match the same head/body scale, colors, crisp black outlines and flat cel shading across all8 poses. Four-column/two-row grid with generous transparent gutters and complete bodies. Three-quarter side camera facing screen-right. No text, effects, lasers, sparks, glow, auras, motion trails, floor shadows or background. Two wings only; far wing may hide behind torso. Eight chronological low-hover locomotion frames ONLY. All8 airborne and alive, knees lightly bent, subtle arm counter-motion and two-wing flutter cycle. No lying pose, guard, hit, ultimate or dash mixed into this sheet.",
+        "jump-strike": "Use case: stylized-concept. Production transparent BODY-ONLY sprite sheet for Nanomech. Reference image supplies exact approved identity: single large green eye, green/silver armor, two antennae, ONE PAIR OF EXACTLY TWO WINGS, two arms and two legs. Match the same head/body scale, colors, crisp black outlines and flat cel shading across all8 poses. Four-column/two-row grid with generous transparent gutters and complete bodies. Three-quarter side camera facing screen-right. No text, effects, lasers, sparks, glow, auras, motion trails, floor shadows or background. Two wings only; far wing may hide behind torso. Top row:1 crouch before leap;2 rising flight;3 airborne apex;4 landing. Bottom row:5 forearm blaster preparation;6 one hand extended to fire screen-right;7 arm retraction;8 guard.",
+        "powers": "Use case: stylized-concept. Production transparent BODY-ONLY sprite sheet for Nanomech. Reference image supplies exact approved identity: single large green eye, green/silver armor, two antennae, ONE PAIR OF EXACTLY TWO WINGS, two arms and two legs. Match the same head/body scale, colors, crisp black outlines and flat cel shading across all8 poses. Four-column/two-row grid with generous transparent gutters and complete bodies. Three-quarter side camera facing screen-right. No text, effects, lasers, sparks, glow, auras, motion trails, floor shadows or background. Two wings only; far wing may hide behind torso. Top row:1 hand laser spark windup;2 one open hand aimed screen-right;3 hand recovery;4 micro-dodge compression. Bottom row:5 compact forward flight dodge;6 low hover recovery;7 two-arm nano-burst preparation;8 both open hands extended screen-right. Body only, absolutely NO colored glow or streaks around wings."
+      },
+      "referenceHeightBySource": {
+        "walk": 470,
+        "jump-strike": 470,
+        "powers": 470,
+        "states": 470
+      },
+      "renderHeight": 160,
+      "scale": 0.58,
+      "emitterTargets": {
+        "12": [
+          0.75,
+          0.55
+        ],
+        "13": [
+          0.93,
+          0.46
+        ],
+        "14": [
+          0.78,
+          0.52
+        ],
+        "15": [
+          0.8,
+          0.5
+        ],
+        "16": [
+          0.75,
+          0.45
+        ],
+        "17": [
+          0.93,
+          0.4
+        ],
+        "18": [
+          0.78,
+          0.55
+        ],
+        "19": [
+          0.8,
+          0.7
+        ],
+        "20": [
+          0.35,
+          0.55
+        ],
+        "21": [
+          0.91,
+          0.5
+        ],
+        "22": [
+          0.85,
+          0.55
+        ],
+        "23": [
+          0.93,
+          0.5
+        ],
+        "24": [
+          0.85,
+          0.6
+        ],
+        "25": [
+          0.93,
+          0.48
+        ],
+        "26": [
+          0.9,
+          0.6
+        ]
       }
     },
     {
       "id": 36,
       "slug": "ampfibian",
       "batch": 2,
-      "status": "in_progress",
+      "status": "verified_updated",
       "findings": [
-        "Existing standing reference omits the extra arm pair visible in action designs; rebuild a coherent four-arm/two-leg-tentacle model.",
-        "Keep swimming/hovering tentacle locomotion and separate electrical effects; no humanoid boots or generic punches."
+        "Rebuilt32 coherent high-detail poses with four arms, two leg tentacles and electricity generated separately.",
+        "Keep swimming/hovering tentacle locomotion and separate electrical effects; no humanoid boots or generic punches.",
+        "Discarded locomotion draft containing combat/defeat states; rebuilt hover loop from approved rising and low-hover native poses.",
+        "Rebuilt32 high-detail body-only cels with four arms/two leg tentacles, a hover loop, tentacle lash and independent electricity."
       ],
-      "changed_files": [],
-      "checks": [],
-      "stage": "All native draft sheets saved; anatomy, registration, effects and runtime review pending",
+      "changed_files": [
+        "web/assets/reviewed-native/ampfibian/",
+        "ci/animation-review/characters/ampfibian/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "source_pixels_preserved": true,
+        "actual_browser_checked": [
+          "idle",
+          "normal",
+          "skill0",
+          "skill1",
+          "ultimate"
+        ],
+        "passed": true
+      },
+      "stage": "All32 coherent native poses and matching portrait integrated; hover loop, tentacle origin and full browser reviewed",
       "reviewed_on": "2026-10-23",
       "model_requirements": "AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands.",
       "sources": {
         "states": "ci/animation-review/characters/ampfibian/source-states.webp",
-        "walk": "ci/animation-review/characters/ampfibian/source-walk.webp",
+        "walk": "ci/animation-review/characters/ampfibian/source-jump-strike.webp",
         "jump-strike": "ci/animation-review/characters/ampfibian/source-jump-strike.webp",
         "powers": "ci/animation-review/characters/ampfibian/source-powers.webp"
       },
@@ -424,142 +570,365 @@
         "walk": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent ampfibian model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Eight consecutive low hovering/swimming locomotion cels. Show a smooth traveling wave through FOUR arm tentacles and TWO leg tentacles, with subtle body lean and head stable; alternating extended and curled tentacle tips. Do not make human walking feet or add/remove limbs. Clearly preserve four arms and two leg tentacles in every pose. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024.",
         "jump-strike": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent ampfibian model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Top row:1 hover compression before rising;2 upward buoyant rise with four arms gently balancing;3 aerial apex four arms spread and two leg tentacles curled;4 return to low hover. Bottom row:5 tentacle-strike anticipation drawing one forearm tentacle back;6 one forward tentacle lash while other three arms balance;7 tentacle retraction;8 neutral low hover. Exactly four arms and two leg tentacles in every pose; do not become a humanoid with boots. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024.",
         "powers": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent ampfibian model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Top row:1 Tentacle bolt anticipation raising upper arm tentacles;2 Tentacle bolt release with two upper arm tips aimed screen-right while two lower arms curve below;3 arm-tip recovery;4 Phasing current anticipation body angled forward. Bottom row:5 forward swimming-like phasing rush with ALL FOUR arms and TWO leg tentacles trailing;6 phasing rush recovery into low hover;7 Current field preparation with all FOUR arms spread;8 Current field release bringing four tips forward around the chest. Exactly six limbs each pose, green chest Omnitrix, no mouth. No lightning bolts, electricity, auras, glow, rings or trails; those are separate game effects. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024."
-      }
+      },
+      "poseSelections": {
+        "walk": [
+          3,
+          0,
+          1,
+          2,
+          1,
+          3,
+          0,
+          3
+        ]
+      },
+      "referenceHeightBySource": {
+        "walk": 430,
+        "jump-strike": 430,
+        "powers": 450,
+        "states": 450
+      },
+      "renderHeight": 226,
+      "scale": 1.02,
+      "emitterTargets": {
+        "12": [
+          0.4,
+          0.24
+        ],
+        "13": [
+          0.94,
+          0.32
+        ],
+        "14": [
+          0.85,
+          0.5
+        ],
+        "15": [
+          0.9,
+          0.61
+        ],
+        "16": [
+          0.9,
+          0.35
+        ],
+        "17": [
+          0.93,
+          0.35
+        ],
+        "18": [
+          0.87,
+          0.55
+        ],
+        "19": [
+          0.88,
+          0.58
+        ],
+        "20": [
+          0.4,
+          0.6
+        ],
+        "21": [
+          0.88,
+          0.6
+        ],
+        "22": [
+          0.94,
+          0.43
+        ],
+        "23": [
+          0.94,
+          0.6
+        ],
+        "24": [
+          0.9,
+          0.56
+        ],
+        "25": [
+          0.94,
+          0.38
+        ],
+        "26": [
+          0.9,
+          0.55
+        ]
+      },
+      "previous_findings": [
+        "Existing standing reference omits the extra arm pair visible in action designs; rebuild a coherent four-arm/two-leg-tentacle model.",
+        "Keep swimming/hovering tentacle locomotion and separate electrical effects; no humanoid boots or generic punches.",
+        "Discarded locomotion draft containing combat/defeat states; rebuilt hover loop from approved rising and low-hover native poses.",
+        "Rebuilt32 high-detail body-only cels with four arms/two leg tentacles, a hover loop, tentacle lash and independent electricity."
+      ]
     },
     {
       "id": 37,
       "slug": "armodrillo",
       "batch": 3,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Native combat model is coherent, but shaded small action cels differ from the sharper standing portrait.",
+        "Rebuild one yellow/black armored drill-arm model, retaining heavy steps and two-arm ground pounding."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 38,
       "slug": "terraspin",
       "batch": 3,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Wind rings are painted into multiple body cels and the portrait differs in detail from actions.",
+        "Separate wind from the turtle model and preserve shell spin, flipper fan motion and stable head scale."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 39,
       "slug": "nrg",
       "batch": 3,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Painted radiation/glow and motion streaks obscure the armored body in multiple action cels.",
+        "Retain containment suit and grille origin consistently; preserve the existing upright-hit/prone-defeat correction."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 40,
       "slug": "fasttrack",
       "batch": 3,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Action sheets incorrectly add a long striped tail; standing design is tailless.",
+        "Remove the tail from every pose and retain blue/black feline silhouette and fast forward stride."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 41,
       "slug": "chamalien",
       "batch": 4,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Baked swipes, contact stars and duplicate translucent bodies overlap the character.",
+        "Retain three colored eyes, curved crest and prehensile tail; handle invisibility and trails separately from clean native body cels."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 42,
       "slug": "eatle",
       "batch": 4,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Strike sheet uses a different flatter armor drawing from walk/state sheets; painted projectiles also overlap the mouth.",
+        "Unify beetle shell and horn silhouette, preserve existing strike-sheet scale correction, and separate mouth/horn effects."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 43,
       "slug": "clockwork",
       "batch": 4,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Standing and movement models are coherent, but painted energy fields and floor bursts obscure multiple power poses.",
+        "Keep key-shaped head, brass body and chest clock; use body-only chest-release gestures with procedural time effects."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 44,
       "slug": "jury-rigg",
       "batch": 4,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "All32 frames inspected: mechanic identity is coherent, but low-detail cels and painted muzzle flashes differ from the sharp portrait.",
+        "Keep goggles, long ears and gremlin tail while separating gadget/projectile effects from the body."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 45,
       "slug": "shocksquatch",
       "batch": 5,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "All32 frames inspected: fur, face and bracers remain identifiable, but native detail differs from portrait and electricity is baked over hands/feet.",
+        "Rebuild one yellow/black model with weighty ape strikes and clean hand/ground electrical origins."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 46,
       "slug": "feedback",
       "batch": 5,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "All32 frames inspected: plug-ended antennae, tail and fingers persist, but painted electricity overlaps power cels.",
+        "Retain flexible cable motion and plug contacts; use one high-detail model and independent electrical effects."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 47,
       "slug": "bloxx",
       "batch": 5,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "All32 frames inspected: colored blocks and gorilla identity persist, but small cels differ in detail from the high-resolution standing portrait.",
+        "Rebuild one block model while retaining deliberate arm extension, block reshaping and ground-smash debris behavior."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 48,
       "slug": "gravattack",
       "batch": 5,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "All32 frames inspected: rocky body and orange core persist, but small textured cels differ from portrait detail and painted black holes overlap actions.",
+        "Preserve rock anatomy and core location while rebuilding clean gravity-control gestures with separate effects."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 49,
       "slug": "crashhopper",
       "batch": 6,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "All32 frames inspected: antennae, folded wings and long jump legs persist, but native detail is low and ground impacts are painted into body poses.",
+        "Retain deep jump anticipation, tucked aerial pose and hind-leg landing using one high-detail model."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 50,
       "slug": "ball-weevil",
       "batch": 6,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "All32 frames inspected: yellow beetle and antenna identity persist, but standing native cel is only138pixels tall and differs from the sharper portrait.",
+        "Rebuild coherent small insect locomotion and mouth/plasma-ball release; retain intentional defensive curl."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 51,
       "slug": "astrodactyl",
       "batch": 6,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "All32 frames inspected: wing membranes and jetpack persist, but whip loops, jets and energy bursts are painted into body cels.",
+        "Rebuild clean pterosaur model with stable beak/wings and separate jet/whip effects from their actual attachment points."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 1,
@@ -866,487 +1235,1102 @@
       "id": 16,
       "slug": "ditto",
       "batch": 10,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: three head nodes, black/white suit and small body remain coherent.",
+        "Retained springy gait, elastic crouches and recovery; hit reaction remains upright and separate from defeat."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 17,
       "slug": "eye-guy",
       "batch": 10,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: pointed ears, eyeless face and distributed body eyes retain one model.",
+        "Preserved open-arm/chest-eye gestures and eye opening/closing; no head-mounted substitute for body-eye attacks."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 18,
       "slug": "way-big",
       "batch": 11,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: red/white proportions, head fin and shoulder silhouette remain coherent.",
+        "Retained crossed-forearm cosmic-ray gesture, large stride and grounded strike; intentional crouches remain intact."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 19,
       "slug": "arctiguana",
       "batch": 11,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: blue lizard body, dorsal spikes, cheek fins and tail remain coherent.",
+        "Retained low quadruped travel and open-mouth freeze-breath pose; tail stays attached through jump and attacks."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 20,
       "slug": "spitter",
       "batch": 11,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: green body, pale throat and tail stay coherent.",
+        "Preserved deliberate throat/body inflation and mouth-expulsion poses; no normalization that would erase his swallowing/spitting movement."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 21,
       "slug": "buzzshock",
       "batch": 11,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Native action and state sheets use heavier outlines and a more rounded face than the walk cycle.",
+        "Reconcile the battery head, eye proportions and line weight before approving a consistent full-fight model."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 22,
       "slug": "swampfire",
       "batch": 12,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: red flame-shaped head, green plant body and black chest remain coherent.",
+        "Retained root-like stride, hand fire-release gestures and plant extension with stable face and emblem."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 23,
       "slug": "echo-echo",
       "batch": 12,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: white body, speaker disks and green eyes stay coherent.",
+        "Retained sonic-release mouth/hand gestures, short stride and distinct standing hit reaction."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 25,
       "slug": "jetray",
       "batch": 12,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: red/yellow body, head horns, wing membranes and tail stay coherent.",
+        "Retained wing-spread gliding, low flight rush and stable head alignment for eye-ray attacks."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 27,
       "slug": "chromastone",
       "batch": 12,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: purple crystalline body, magenta head/shoulder crystals and green eye remain coherent.",
+        "Retained crystalline hand charging and release gestures; spike layout and face stay stable through motion."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 28,
       "slug": "brainstorm",
       "batch": 13,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: orange shell, claws, four walking legs and green eyes retain one model.",
+        "Preserved deliberate shell opening to expose the brain for electrical attacks; body and claw proportions stay consistent."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 29,
       "slug": "spidermonkey",
       "batch": 13,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "All32 frames inspected: four arms and tail are retained, but walking blue/palette is darker than the attack and state artwork.",
+        "Unify palette and drawing weight while retaining four-arm web gestures, tail balance and springing locomotion."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 30,
       "slug": "goop",
       "batch": 13,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: green fluid body and hovering antigravity projector remain coherent.",
+        "Preserved deliberate fluid elongation, puddling, stretchy strikes and recovery; these are character-specific transformations."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 31,
       "slug": "alien-x",
       "batch": 13,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: black starfield body, white outline, green eyes and head crest retain one silhouette.",
+        "Retained slow controlled stride, open-hand reality-power gestures and separate upright hit/prone defeat."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 52,
       "slug": "toepick",
       "batch": 14,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Cage helmet, heavy green body and black straps stay consistent; retained deliberate cage opening and frightening-face release."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 53,
       "slug": "pesky-dust",
       "batch": 14,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Blue fairy model, pink wings, head markings and tiny limbs stay consistent; retained fluttering hover and sleep-dust blowing gestures."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 54,
       "slug": "bullfrag",
       "batch": 14,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Replaced generic ultimate ball with native frog leap/forward combination pose; preserved webbed hands, suit and springing movement."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/bullfrag/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 55,
       "slug": "kickin-hawk",
       "batch": 14,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Bird face, crest, forearm feathers and talons stay coherent; retained distinct kicks, wing-arm sweeps and crouched recovery."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 56,
       "slug": "whampire",
       "batch": 15,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Bat face, green chest and wing membranes stay coherent; lower hovering walk height is intentional flight posture, not model shrinkage."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 57,
       "slug": "gutrot",
       "batch": 15,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Replaced generic ultimate ball with venting stance for Reactor Cloud; retained pressure-vessel torso, visible gas and arm vents."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/gutrot/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 58,
       "slug": "atomix",
       "batch": 15,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Replaced generic ultimate ball with two raised hands for Fusion Sun; retained white/black armor and green reactor chambers."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/atomix/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 59,
       "slug": "walkatrout",
       "batch": 15,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Removed generic spherical ultimate body; retained fin-driven fish gesture, blue face and short-legged movement."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/walkatrout/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 60,
       "slug": "the-worst",
       "batch": 16,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Removed generic spherical ultimate body; retained braced compact defensive posture and yellow body/green shorts."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/the-worst/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 61,
       "slug": "mole-stache",
       "batch": 16,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Brown mole, suit and moustache remain consistent; retained deliberate moustache extension, curl and spinning moustache guard."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 62,
       "slug": "overflow",
       "batch": 16,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Replaced generic ultimate ball with both water gauntlets aimed forward; retained red armor, tank shapes and palm outlet positions."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/overflow/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 63,
       "slug": "gax",
       "batch": 16,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Green tentacled face, black armor and muscular proportions stay coherent; retained heavy strikes and tentacle motion."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 64,
       "slug": "shock-rock",
       "batch": 17,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Replaced generic ultimate ball with energy-shaping hand gesture; retained rock armor plates and blue energy body."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/shock-rock/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 65,
       "slug": "slapback",
       "batch": 17,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Removed generic ultimate ball; retained compact heavy-impact stance, green body, suit and cloning-ready gesture."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/slapback/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 66,
       "slug": "surge",
       "batch": 17,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Removed generic ultimate ball; retained X-shaped body, pointed limbs and compact horizontal swarm-charge gesture."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/surge/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 67,
       "slug": "ultimate-humungousaur",
       "batch": 17,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Replaced generic ultimate ball with missile-gauntlet firing stance; retained armored green body, red spikes and tail."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/ultimate-humungousaur/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 68,
       "slug": "ultimate-big-chill",
       "batch": 18,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Red/yellow flame-edged wings and insect body stay coherent; retained hovering wing cycle and open-wing breath-release pose."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 69,
       "slug": "ultimate-echo-echo",
       "batch": 18,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Replaced generic ultimate ball with sonic-disc arm release; retained blue armor and white speaker discs."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/ultimate-echo-echo/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 70,
       "slug": "ultimate-swampfire",
       "batch": 18,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Wooden body, blue head and shoulder pods stay coherent; retained rooted gait, flaming hand preparation and release."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 71,
       "slug": "ultimate-cannonbolt",
       "batch": 18,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "White/black body and spiked grey shell stay consistent; retained intentional spiked-ball transformation and armored ground impact."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 72,
       "slug": "ultimate-wildmutt",
       "batch": 19,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Red fur, mane, white claws and eyeless quadruped head remain consistent; retained pounce, bite-ready poses and tail balance."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 73,
       "slug": "ultimate-spidermonkey",
       "batch": 19,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Purple gorilla model and four long back spider legs remain consistent; retained knuckle travel, overhead strikes and web-ready poses."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 74,
       "slug": "ultimate-way-big",
       "batch": 19,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Blue/red/white body and head fin remain consistent; retained tall stride and crossed-arm beam gesture."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 75,
       "slug": "ultimate-arctiguana",
       "batch": 19,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Blue/white lizard model and paired shoulder cannons remain coherent; retained low gait, cannon elevation and braced firing."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 76,
       "slug": "ultimate-gravattack",
       "batch": 20,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Purple stone body, green core and detached orbiting stones remain coherent; retained heavy steps and gravity-control gestures."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 77,
       "slug": "ultimate-rath",
       "batch": 20,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Existing red/black variant, white chest and long claws remain coherent through all clips; retained forward claw swipes, low pounce and planted guard."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 78,
       "slug": "ultimate-grey-matter",
       "batch": 20,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Large head, mechanical supports and floating chair retain one model; retained chair hover and manipulator/gadget gestures."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 79,
       "slug": "bashmouth",
       "batch": 20,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Grey wolf model, metal forearms and tail remain coherent; retained existing sheet-specific scale registration, claw swipes and low lunge."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 80,
       "slug": "bootleg",
       "batch": 21,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Blue liquid/black cyborg model and red nodes remain coherent; retained elastic extension and morphing blade arms."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 81,
       "slug": "crystalfist",
       "batch": 21,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Purple crystal armor, angular head and red emblem remain coherent; retained crystal-arm growth and grounded strikes."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 82,
       "slug": "dark-matter",
       "batch": 21,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Walk/jump model is much darker than the bright red combat/state sheets.",
+        "Keep existing sheet-specific size fixes while unifying red palette, face detail and outlines."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 83,
       "slug": "hot-shot",
       "batch": 21,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Dark lava plates, orange seams and head flame remain coherent; retained hand-fire preparation and heavy forward release."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 84,
       "slug": "humungoraptor",
       "batch": 22,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Red dinosaur body, black back plates and long tail remain coherent; retained low forward gait, claw lunge and tail-sweep poses."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 85,
       "slug": "quad-smack",
       "batch": 22,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Four purple arms, spiked shoulders and black/red suit remain coherent; retained multi-arm guard, pounding and forward strikes."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 86,
       "slug": "rush",
       "batch": 22,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Black/green speedster body, striped tail and wheel feet remain coherent; retained low skate travel, tight turn/curl and forward speed strike."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 87,
       "slug": "skunkmoth",
       "batch": 22,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Red/gold insect body, wing pairs and head silhouette remain coherent; retained hover, wing-fold and diving lunge."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 88,
       "slug": "thornblade",
       "batch": 23,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Green plant body, red-tipped vines and blade forearms remain coherent; retained rooted stride, blade extension and tendril motion."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 89,
       "slug": "undertow",
       "batch": 23,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Green aquatic armor, fins and forearm cannons remain coherent; retained braced cannon release and low aquatic rush."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 90,
       "slug": "wreckingbolt",
       "batch": 23,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Red/black spiked shell and body remain coherent; retained intentional armored-ball transformation and grounded impact."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 91,
       "slug": "alien-v",
       "batch": 23,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Black starfield armor, green facial tentacles and red emblem remain coherent; retained heavy stride and open-hand energy release."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     }
-  ]
+  ],
+  "analysed": 92
 }

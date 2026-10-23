@@ -1,0 +1,17 @@
+{
+  "id": 51,
+  "slug": "astrodactyl",
+  "status": "needs_revision",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "All32 frames inspected: wing membranes and jetpack persist, but whip loops, jets and energy bursts are painted into body cels.",
+    "Rebuild clean pterosaur model with stable beak/wings and separate jet/whip effects from their actual attachment points."
+  ],
+  "changed_files": [],
+  "checks": {
+    "native_frames": 32,
+    "visual_review": true,
+    "passed": false
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+}

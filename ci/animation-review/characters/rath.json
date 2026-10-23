@@ -5,7 +5,7 @@
   "stage": "All native clips, classic chest emblem and eight close-combat cels integrated; actual browser checked",
   "reviewed_on": "2026-10-23",
   "findings": [
-    "Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model.",
+    "Rebuilt one classic chest-emblem tiger model across32 poses, matching portrait and8 jab/cross/hook cels.",
     "Preserve single wrist claws, no tail, brawler weight transfer and distinct jab/cross/hook cadence. Old close-combat sheet also needs replacement to avoid model switching.",
     "Replaced all32 poses, matching portrait and8 close-combat cels so idle, jab/cross/hook, pounce and ultimate use one classic model."
   ],
@@ -113,5 +113,10 @@
       0.81,
       0.51
     ]
-  }
+  },
+  "previous_findings": [
+    "Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model.",
+    "Preserve single wrist claws, no tail, brawler weight transfer and distinct jab/cross/hook cadence. Old close-combat sheet also needs replacement to avoid model switching.",
+    "Replaced all32 poses, matching portrait and8 close-combat cels so idle, jab/cross/hook, pounce and ultimate use one classic model."
+  ]
 }

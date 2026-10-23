@@ -1,16 +1,19 @@
 """Pack reviewed native artwork, retain source pixels and register body-only power origins."""
 from pathlib import Path
-import json,sys,hashlib
+import json,sys,hashlib,io,os
 import numpy as np
 from PIL import Image
 from scipy import ndimage
 from full_poses import whole_poses,pack_poses
 R=Path(__file__).resolve().parents[1];slug=sys.argv[1];recpath=R/'ci/animation-review/characters'/f'{slug}.json';rec=json.loads(recpath.read_text());id=rec['id'];out=R/'web/assets/reviewed-native'/slug;out.mkdir(parents=True,exist_ok=True)
+def save_native(image,path):
+ buffer=io.BytesIO();image.save(buffer,format='WEBP',lossless=True,quality=100,method=4,exact=True);data=buffer.getvalue();assert len(data)>100;temp=path.with_suffix('.writing');temp.write_bytes(data);os.replace(temp,path);assert path.read_bytes()==data
 c={'id':id,'name':slug,'sheets':[],'frames':[],'clips':{},'reviewedRevision':1}
 images=[]
 for si,kind in enumerate(['walk','jump-strike','powers','states']):
  src=R/rec['sources'][kind];poses=whole_poses(Image.open(src),attachment_ratio=rec.get('attachmentRatio',.05));assert len(poses)==8
- sheet,places=pack_poses(poses,padding=24);dest=out/(kind+'.webp');sheet.save(dest,lossless=True,quality=100,method=4,exact=True);images.append(sheet)
+ if kind in rec.get('poseSelections',{}):poses=[poses[i] for i in rec['poseSelections'][kind]]
+ sheet,places=pack_poses(poses,padding=24);dest=out/(kind+'.webp');save_native(sheet,dest);images.append(sheet)
  c['sheets'].append({'src':str(dest.relative_to(R/'web')),'width':sheet.width,'height':sheet.height,'sha256':hashlib.sha256(dest.read_bytes()).hexdigest()})
  for cell,(x,y,w,h,meta) in enumerate(places):
   im=poses[cell][0];a=np.array(im);yy,xx=np.indices(a.shape[:2]);mask=(a[:,:,3]>180)&(yy>h*.48)&(yy<h*.72);anchor=float(np.median(xx[mask])) if mask.any() else w/2
@@ -25,6 +28,12 @@ for key in ['normal','skill0','skill1','skill2','ultimate']:
    mask=(a[:,:,3]>180)&(rgb[:,:,2]>140)&(rgb[:,:,2]>rgb[:,:,0]*1.3)&(rgb[:,:,2]>rgb[:,:,1]*1.12)
   elif slug=='lodestar':
    mask=(a[:,:,3]>180)&(rgb.min(axis=2)>35)&(rgb.max(axis=2)-rgb.min(axis=2)<40)&(rgb.max(axis=2)<220)
+  elif slug=='nanomech':
+   yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)&(rgb[:,:,1]>80)&(rgb[:,:,1]>rgb[:,:,0]*1.05)&(rgb[:,:,1]>rgb[:,:,2]*1.05)
+   ys,xs=np.where(mask);assert len(xs)>0;near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
+  elif slug=='ampfibian':
+   yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)&(rgb[:,:,2]>100)&(rgb[:,:,2]>rgb[:,:,0]*1.2)
+   ys,xs=np.where(mask);assert len(xs)>0;near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
   elif slug=='rath':
    yy,xx=np.indices(a.shape[:2]);target=rec.get('emitterTargets',{}).get(str(fi),[.8,.45]);mask=(a[:,:,3]>180)&(rgb.min(axis=2)>150)&(yy<h*.78)
    ys,xs=np.where(mask);assert len(xs)>0
@@ -37,7 +46,7 @@ for key in ['normal','skill0','skill1','skill2','ultimate']:
    if len(xx)>=12:candidates.append((float(xx.mean()),float(yy.mean()),label))
   assert candidates,(slug,key,fi,'no visible blue gauntlet port')
   ex,ey,label=max(candidates);yy,xx=np.where(labels==label);nearest=int(np.argmin((xx-ex)**2+(yy-ey)**2));point=[int(xx[nearest]),int(yy[nearest])];f.setdefault('emitters',{})[key]=point
-idle=c['frames'][27];x,y,w,h=idle['rect'];portrait=images[idle['sheet']].crop((x+8,y+8,x+w-8,y+h-8));portrait.save(out/'portrait.webp',lossless=True,quality=100,method=4,exact=True);c['portrait']=str((out/'portrait.webp').relative_to(R/'web'))
+idle=c['frames'][27];x,y,w,h=idle['rect'];portrait=images[idle['sheet']].crop((x+8,y+8,x+w-8,y+h-8));save_native(portrait,out/'portrait.webp');c['portrait']=str((out/'portrait.webp').relative_to(R/'web'))
 # Actual emitter points are supplied to the same browser/server power-profile code.
 physical=rec['renderHeight']*rec['scale'];phases=[]
 for key in ['skill0','skill1','skill2','ultimate']:
