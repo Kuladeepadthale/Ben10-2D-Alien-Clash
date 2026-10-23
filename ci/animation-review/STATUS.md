@@ -1,6 +1,6 @@
 # Animation review progress
 
-**70 / 92 characters complete.** Batch size: 4.
+**71 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -97,4 +97,4 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 23 | 88 | thornblade | Reviewed — kept | All32 native frames inspected. |
 | 23 | 89 | undertow | Reviewed — kept | All32 native frames inspected. |
 | 23 | 90 | wreckingbolt | Reviewed — kept | All32 native frames inspected. |
-| 23 | 91 | alien-v | Pending |  |
+| 23 | 91 | alien-v | Reviewed — kept | All32 native frames inspected. |
