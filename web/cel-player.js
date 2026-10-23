@@ -7,7 +7,7 @@ for(const [id,indices,reference] of [[42,[8,9,10,11,12,13,14,15],414],[79,Array.
  const d=CEL_DATA.characters[id];for(const i of indices)d.frames[i].referenceHeight=reference;
 }
 // NRG's source labels had the standing hurt pose and prone defeat pose interchanged.
-CEL_DATA.characters[39].clips.hit=[30];CEL_DATA.characters[39].clips.ko=[29];
+if(!CEL_DATA.characters[39].reviewedRevision){CEL_DATA.characters[39].clips.hit=[30];CEL_DATA.characters[39].clips.ko=[29];}
 const celCache=new Map(),celPending=new Map(),celStates=new WeakMap();let celUse=0,celPinned=new Set([0,2]),celBattleRequest=0;
 let allAlienPosesLoaded=false,allAlienPoseError='';
 function celTrim(){for(const [id]of [...celCache].sort((a,b)=>a[1].used-b[1].used)){if(celCache.size<=2)break;if(!celPinned.has(id))celCache.delete(id);}}

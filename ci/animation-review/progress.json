@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 39,
-  "completed": 75,
+  "current_character": 40,
+  "completed": 76,
   "characters": [
     {
       "id": 35,
@@ -944,19 +944,146 @@
       "id": 39,
       "slug": "nrg",
       "batch": 3,
-      "status": "needs_revision",
+      "status": "verified_updated",
       "findings": [
-        "Painted radiation/glow and motion streaks obscure the armored body in multiple action cels.",
-        "Retain containment suit and grille origin consistently; preserve the existing upright-hit/prone-defeat correction."
+        "Rebuilt a coherent sealed bronze containment suit across walking, jumping, punch, grille ray, stomp, radiation wave, ultimate, guard and defeat.",
+        "Registered heat and radiation origins to the actual green face-grille pixels. Radiation is procedural and is not painted over the armor.",
+        "New native hit frame is upright and defeat frame alone lies down; legacy hit/KO swap is guarded for older source art only."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/nrg/revision.json",
+        "ci/animation-review/characters/nrg/model-reference.webp",
+        "ci/animation-review/characters/nrg/source-jump-strike.webp",
+        "ci/animation-review/characters/nrg/source-walk.webp",
+        "ci/animation-review/characters/nrg/source-states.webp",
+        "ci/animation-review/characters/nrg/source-powers.webp",
+        "web/assets/reviewed-native/nrg/powers.webp",
+        "web/assets/reviewed-native/nrg/walk.webp",
+        "web/assets/reviewed-native/nrg/jump-strike.webp",
+        "web/assets/reviewed-native/nrg/states.webp",
+        "web/assets/reviewed-native/nrg/portrait.webp",
+        "ci/export-reviewed-character.py",
+        "web/cel-player.js"
+      ],
       "checks": {
         "native_frames": 32,
+        "native_detail_and_margins": true,
+        "native_asset_hashes": true,
+        "emitter_registration": true,
+        "actual_draws": 240,
+        "facings": 2,
+        "hit_frame": 29,
+        "defeat_frame": 30,
         "visual_review": true,
-        "passed": false
+        "full_browser_review": true,
+        "browser_errors": [],
+        "passed": true
       },
       "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "renderHeight": 226,
+      "scale": 1.18,
+      "sources": {
+        "states": "ci/animation-review/characters/nrg/source-states.webp",
+        "walk": "ci/animation-review/characters/nrg/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/nrg/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/nrg/source-powers.webp"
+      },
+      "prompts": {
+        "states": "Production game sprite sheet of EXACT attached NRG armored containment-suit form from Ben 10. Preserve round sealed bronze-brown helmet with THREE vivid green vertical grille bars in a black rectangular face vent, no eyes/mouth/human face; bulky brown shoulder pauldrons, brown chest with green Omnitrix, segmented brown gauntlet fists, dark flexible elbows/hips, rounded brown armored boots. Compact heavy armored silhouette. Clean original cartoon black outlines, flat bronze-brown colors and one cel shadow tone, no painterly texture. Exactly EIGHT separate whole-body right-facing/three-quarter figures in 4 columns x 2 rows with clear transparent gutters and at least 25px margins. Row-major: 1 ultimate preparation widening stance and lifting fists; 2 ultimate active reactor flare posture, feet braced and arms spread, SEALED helmet and face grille still intact; 3 ultimate recover guard; 4 neutral standing fists low in guard; 5 blocking guard with forearms crossed; 6 UPRIGHT hit recoil leaning back but feet planted; 7 defeated lying on side, one connected intact armored body; 8 dash heavy forward lean with fists tucked and knees bent. ALL poses same helmet, grille, chest, limbs and scale. NO unarmored energy form. No radiation painted over body, flames, green beams, halos, motion trails, floor, dust, shadow, text or labels. Truly transparent background. Desired upright body height 350-430px in 1536x1024 or higher, do not clip helmet, gauntlets or boots.",
+        "walk": "EXACT attached NRG suit model. Make 8 distinct heavy WALK-cycle full-body drawings, all RIGHT-facing/three-quarter in a 4-column 2-row transparent sprite sheet. Keep same sealed round bronze-brown helmet with THREE green vertical bars in black grille, green chest Omnitrix, rounded brown shoulder armor, segmented gauntlet fists, dark joints/hips and broad brown armored boots. No eyes or human face. Match body, helmet and gauntlet proportions exactly in every frame. Crisp flat TV cartoon cel drawing with black outlines and one shadow color, no painterly shading. Left-foot contact, left compression, passing, right swing, right contact, right compression, passing opposite, left swing. Slow weighty steps with subtle fist counter-swing and SMALL vertical bob, no stomping attacks or effects. 350-430px upright figure heights in 1536x1024 or higher. At least 25px transparent safe margin around EACH entire helmet, hand and boot, no clipping or touching other figures. Body only on true transparency: NO rays, radioactive glow, flame, trails, dust, ground, shadow, text or labels.",
+        "jump-strike": "Use attached NRG containment suit as EXACT model for an eight-pose production sprite sheet. Sealed bronze-brown round helmet with THREE green vertical grille bars in black face vent, no eyes or face; green chest emblem; bulky brown shoulder armor and gauntlets; dark joints/hips; broad armored boots. Preserve model identity and physical proportions. Crisp black outlines, flat TV cel shading. Exactly 8 separate full-body right-facing/three-quarter figures, 4 columns by 2 rows. Row-major: 1 jump crouch with fists near torso; 2 rising heavy jump with knees tucked; 3 descending jump with boots ready below body; 4 crouched landing; 5 punch anticipation pulling armored fist back; 6 straight forward armored punch with front fist extended; 7 punch retraction; 8 standing guard recovery. SAME helmet/grille and body size across all cels. All limbs remain joined. Native standing figure height 350-430px in 1536x1024 or larger. Every entire helmet, extended fist and boot must fit inside canvas with clear transparent margins/gutters, no overlap or clipping. BODY ONLY: no energy body, radiation, painted rays, flames, dust, ground, shadows, trails, text or labels. Truly transparent background.",
+        "powers": "Create 8 body-only full-body NRG power animation cels from the EXACT attached sealed bronze-brown armored suit reference. Same rounded helmet with THREE green vertical grille bars inside black face vent, no human eyes/face; green chest Omnitrix; bulky brown shoulders/gauntlets, dark joints and hips, broad armored boots. Crisp black outlines and flat TV cartoon cel shading, same armor/helmet proportions in all eight. 4 columns x 2 rows, all RIGHT-facing/three-quarter. Row-major: 1 heat-ray windup, helmet aimed forward, fists braced beside chest; 2 heat-ray firing stance leaning helmet slightly forward, green grille clear and UNOBSCURED; 3 heat-ray recovery to guard; 4 molten-stomp windup raising one heavy boot; 5 molten-stomp impact, raised boot planted forcefully and knees bent, both feet visible; 6 stomp recovery; 7 radiation-wave windup leaning back with arms apart, grille visible; 8 radiation-wave release with arms spread and helmet aimed forward, intact sealed suit. Only the body poses: NO actual rays, flames, radiation overlays, green halos, explosions, rocks, motion trails, smoke, floor, shadow, text or labels. True transparent background. Native upright height 350-430px, 1536x1024 or higher. Clear 25px margins and gutters around all complete helmets, gauntlets and boots. Nothing clipped, no unarmored transformation."
+      },
+      "referenceHeightBySource": {
+        "states": 417,
+        "walk": 470,
+        "jump-strike": 434,
+        "powers": 432
+      },
+      "poseSelections": {
+        "powers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          1
+        ]
+      },
+      "excluded_poses": {
+        "powers/7": "Outer fingertip touches the right edge; use complete forward grille-firing pose for wave release."
+      },
+      "emitterTargets": {
+        "12": [
+          0.67,
+          0.2
+        ],
+        "13": [
+          0.67,
+          0.2
+        ],
+        "14": [
+          0.67,
+          0.2
+        ],
+        "15": [
+          0.67,
+          0.2
+        ],
+        "16": [
+          0.67,
+          0.2
+        ],
+        "17": [
+          0.67,
+          0.2
+        ],
+        "18": [
+          0.67,
+          0.2
+        ],
+        "19": [
+          0.67,
+          0.2
+        ],
+        "20": [
+          0.67,
+          0.2
+        ],
+        "21": [
+          0.67,
+          0.2
+        ],
+        "22": [
+          0.67,
+          0.2
+        ],
+        "23": [
+          0.67,
+          0.2
+        ],
+        "24": [
+          0.67,
+          0.2
+        ],
+        "25": [
+          0.67,
+          0.2
+        ],
+        "26": [
+          0.67,
+          0.2
+        ]
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/nrg/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/nrg/model-reference.webp",
+        "powers": "ci/animation-review/characters/nrg/model-reference.webp",
+        "states": "Shipped v11.9 NRG portrait"
+      }
     },
     {
       "id": 40,
