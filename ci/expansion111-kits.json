@@ -236,7 +236,7 @@
         "windup": 0.34,
         "recovery": 0.42,
         "speed": 720,
-        "radius": 15,
+        "radius": 65,
         "ticks": 1,
         "duration": 0.1
       },
@@ -977,15 +977,15 @@
   {
     "name": "Rush",
     "species": "ANTITRIX FORM",
-    "color": "#5cd8cf",
-    "light": "#5cd8cf",
-    "dark": "#192733",
+    "color": "#448750",
+    "light": "#92c36a",
+    "dark": "#132a22",
     "type": "dash",
     "effectTheme": "wind",
     "speed": 400,
     "strength": 1,
     "scale": 1,
-    "desc": "Dark teal sleek velociraptor humanoid speedster with pointed black helmet head and red eyes, long striped tail, black/red suit, wheel feet, black/red Antitrix chest badge.",
+    "desc": "An armored green speedster with gray-green plates, roller feet and red eyes.",
     "skills": [
       {
         "name": "Velocity tackle",
@@ -1073,7 +1073,7 @@
         "windup": 0.34,
         "recovery": 0.42,
         "speed": 720,
-        "radius": 15,
+        "radius": 65,
         "ticks": 1,
         "duration": 0.1
       },
@@ -1262,15 +1262,15 @@
   {
     "name": "Wreckingbolt",
     "species": "ANTITRIX FORM",
-    "color": "#ffe377",
-    "light": "#ffe377",
-    "dark": "#192733",
+    "color": "#992d35",
+    "light": "#e44848",
+    "dark": "#170f16",
     "type": "shell",
     "effectTheme": "physical",
     "speed": 245,
     "strength": 1,
     "scale": 1,
-    "desc": "Large squat yellow and black armored cannonbolt alien, red eyes, heavy spiked yellow back shell, large forearms, black/red Antitrix chest badge.",
+    "desc": "Black metallic armor, dark red limbs and red spiked plating form a powerful rolling shell.",
     "skills": [
       {
         "name": "Spiked shell roll",

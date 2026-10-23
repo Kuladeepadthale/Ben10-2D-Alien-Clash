@@ -7,11 +7,13 @@ from PIL import Image
 from full_poses import whole_poses,pack_poses
 R=Path(__file__).resolve().parents[1];W=R/'web';records=json.loads(Path(sys.argv[1]).read_text());kits=json.loads((R/'ci/expansion111-kits.json').read_text());designs=json.loads((R/'ci/expansion111-specs.json').read_text())
 def constant(path,name):return json.JSONDecoder().raw_decode(path.read_text().split('const '+name+'=',1)[1].lstrip())[0]
-base=constant(W/'cel-data.js','CEL_DATA');base['characters']=base['characters'][:72]
-profiles=constant(W/'power-profiles.js','POWER_PROFILES');profiles['aliens']=profiles['aliens'][:72];new=[]
+base=constant(W/'cel-data.js','CEL_DATA');old_characters=list(base['characters']);base['characters']=base['characters'][:72];selected=set(sys.argv[2].split(',')) if len(sys.argv)>2 else None
+profiles=constant(W/'power-profiles.js','POWER_PROFILES');old_profiles=list(profiles['aliens']);profiles['aliens']=profiles['aliens'][:72];new=[]
 standard_clips=dict(idle=[0],walk=list(range(1,9)),jump=list(range(9,13)),normal=[13,14,15],skill0=[16,17,18],skill1=[19,20,21],skill2=[22,23,24],ultimate=[25,26,27],guard=[28],hit=[29],ko=[30],dash=[31])
 for i,r in enumerate(records):
  id=72+i;name=r['slug'];clips={k:list(v) for k,v in standard_clips.items()};folder=W/'assets/cels'/name;folder.mkdir(parents=True,exist_ok=True);a=kits[i]
+ if selected and name not in selected:
+  new.append(old_characters[id]);profiles['aliens'].append(old_profiles[id]);continue
  parts=[]
  for key in ['a','b']:
   if key=='b' and name=='rush':part=whole_poses(Image.open(r[key]),rows=5,row_counts=[3,3,3,3,4])

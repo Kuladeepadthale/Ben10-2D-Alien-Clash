@@ -6,7 +6,7 @@ designs=json.loads((R/'ci/expansion111-specs.json').read_text())
 def s(name,kind,damage,range,**kw):
  d=dict(name=name,kind=kind,damage=damage,cooldown=6,range=range,windup=.34,recovery=.42);d.update(kw);return d
 def melee(n,d=150,ticks=3):return s(n,'melee',d,185,ticks=ticks,duration=.55)
-def shot(n,kind='projectile',d=130):return s(n,kind,d,820,speed=720,radius=15,ticks=4 if kind=='beam' else 1,duration=.48 if kind=='beam' else .1)
+def shot(n,kind='projectile',d=130):return s(n,kind,d,820,speed=720,radius=65 if kind=='lob' else 15,ticks=4 if kind=='beam' else 1,duration=.48 if kind=='beam' else .1)
 def ult(n,kind='rush',**kw):
  d=dict(cooldown=0,windup=.65,ticks=5,duration=1.5,speed=900);d.update(kw);return s(n,kind,325,d.pop('range',800),**d)
 kits=[
@@ -31,7 +31,7 @@ kits=[
  [s('Spiked shell roll','rush',145,570,speed=800),s('Wrecking crash','leapslam',170,420,duration=1.1),melee('Heavy shell strike',165,1),ult('Wreckingbolt rampage')],
  [shot('Cosmic hand blast','beam',150),melee('Celestial crusher',175,1),s('Void gravity field','vortex',165,260,ticks=5,duration=.85),ult('Celestial annihilation','beam',range=1000)]
 ]
-colors=['#b8292d','#8070b7','#7dc9ff','#a3eaff','#bd84f5','#efb3db','#ed5a60','#acbdd0','#66baff','#bd83ed','#ff7b87','#ffb84d','#df5d4e','#d4a4ed','#5cd8cf','#e6c74d','#a1dc65','#4cc8f3','#ffe377','#9ee8bf']
+colors=['#b8292d','#8070b7','#7dc9ff','#a3eaff','#bd84f5','#efb3db','#ed5a60','#acbdd0','#66baff','#bd83ed','#ff7b87','#ffb84d','#df5d4e','#d4a4ed','#92c36a','#e6c74d','#a1dc65','#4cc8f3','#e44848','#9ee8bf']
 themes=['physical','web','energy','ice','gravity','physical','energy','physical','tech','crystal','fire','fire','physical','physical','wind','goo','plant','water','physical','energy']
 types=['pounce','web','cosmic','frost','gravity','claw','cosmic','claw','beam','crystal','fire','fire','slam','slam','dash','slime','vine','water','shell','cosmic']
 ranks=[3,3,4,3,4,3,4,2,2,2,2,2,3,2,1,2,2,2,2,4]

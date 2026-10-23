@@ -88,6 +88,7 @@ jobs:
           node ci/check-next20.cjs
           node ci/check-expansion100.cjs
           node ci/check-expansion111.cjs
+          node ci/check-expansion111-hits.cjs
           node ci/check-cartoon-powers.cjs
           node --expose-gc ci/check-ability-animations.cjs
           node ci/check-clean-powers.cjs
