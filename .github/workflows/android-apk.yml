@@ -65,7 +65,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python3 ci/restore-verified-art.py
       - name: Verify all 92 action sets and game controls
-        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]')"
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
@@ -127,6 +127,27 @@ jobs:
           PYGUARD
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
           node ci/check-power-icons.cjs
+      - name: Verify final Plumber landscape refinement against full-suite baseline
+        if: contains(github.event.head_commit.message, '[plumber-layout-only]')
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          git fetch --depth=1 origin 35100a478edd9bb9d0099d517022f32bbc076073
+          python3 - <<'PYGUARD'
+          import subprocess
+          changed=set(subprocess.check_output(['git','diff','--name-only','35100a478edd9bb9d0099d517022f32bbc076073','HEAD'],text=True).splitlines())
+          allowed={'web/threat-ladder.js','web/threat-ladder.css','ci/check-threat-layout.cjs','ci/PLUMBER-v112.md','.github/workflows/android-apk.yml'}
+          assert changed<=allowed,changed-allowed
+          PYGUARD
+          /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
+          node ci/check-threat-layout.cjs
+          node ci/check-threat-ladder.cjs
+          node ci/check-progression.cjs
+          node ci/check-progression-layout.cjs
+          node ci/check-squad-ui.cjs
+          node ci/check-facing.cjs
+          node ci/check-footwork-dash.cjs
+          for script in web/*.js; do node --check "$script"; done
       - name: Deploy online Worker when owner credentials are configured
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
