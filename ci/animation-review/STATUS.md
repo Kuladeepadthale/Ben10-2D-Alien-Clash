@@ -21,7 +21,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 4 | 41 | chamalien | Needs revision | Baked swipes, contact stars and duplicate translucent bodies overlap the character. |
 | 4 | 42 | eatle | Needs revision | Strike sheet uses a different flatter armor drawing from walk/state sheets; painted projectiles also overlap the mouth. |
 | 4 | 43 | clockwork | Needs revision | Standing and movement models are coherent, but painted energy fields and floor bursts obscure multiple power poses. |
-| 4 | 44 | jury-rigg | Pending |  |
+| 4 | 44 | jury-rigg | Needs revision | All32 frames inspected: mechanic identity is coherent, but low-detail cels and painted muzzle flashes differ from the sharp portrait. |
 | 5 | 45 | shocksquatch | Pending |  |
 | 5 | 46 | feedback | Pending |  |
 | 5 | 47 | bloxx | Pending |  |
