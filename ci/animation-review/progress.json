@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 27,
+  "completed": 28,
   "characters": [
     {
       "id": 35,
@@ -1044,10 +1044,21 @@
       "id": 27,
       "slug": "chromastone",
       "batch": 12,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: purple crystalline body, magenta head/shoulder crystals and green eye remain coherent.",
+        "Retained crystalline hand charging and release gestures; spike layout and face stay stable through motion."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 28,
