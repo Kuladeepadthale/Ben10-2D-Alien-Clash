@@ -19,7 +19,14 @@ function profileEmitter(f,v,t=0){
  if(Number.isInteger(f.villain)&&typeof villainFrame==='function'){const d=VILLAIN_DATA.characters[f.villain],frame=villainFrame(f),key=v.ultimate?'ultimate':v.cfg.poseKey||v.key,marker=frame.emitters?.[key]||frame.contact;if(marker){const scale=(d.height||226)/(frame.referenceHeight||d.referenceHeight),hover=d.type==='phase'?5+Math.sin(t*3):0;return{x:f.x+(v.dir||f.dir||1)*(marker[0]-frame.origin[0])*scale,y:f.y+(marker[1]-frame.origin[1])*scale-hover};}}
  const p=powerProfileFor(f,v);if(!p)return null;let phase=p.phases[powerPoseIndex(f,v,p.phases.length)];if(p.comboPhases&&v.cfg.kind==='melee'){const age=v.elapsed-v.cfg.windup,duration=v.cfg.duration||.08;if(age>=0&&age<duration){const beat=(age/duration*Math.max(1,v.cfg.ticks||1))%1;phase=p.comboPhases[beat<.55?0:1];}}const dir=v.dir||f.dir||1;
  const hover=!Number.isInteger(f.villain)&&POWER_PROFILES.hover[f.id]?6+Math.sin(t*POWER_PROFILES.hover[f.id])*1.5:0;
- return {x:f.x+dir*phase.offset[0],y:f.y+phase.offset[1]-hover};
+ let registration=1;
+ // Keep source points attached when a reviewed sheet uses corrected physical registration.
+ if(!Number.isInteger(f.villain)){
+  if(f.id===42&&phase.frame>=12&&phase.frame<=15)registration=200/414;
+  if(f.id===79&&phase.frame>=16)registration=157/(phase.frame===25?347:229);
+  if(f.id===82&&phase.frame>=16)registration=190/(phase.frame===24?435:220);
+ }
+ return {x:f.x+dir*phase.offset[0]*registration,y:f.y+phase.offset[1]*registration-hover};
 }
 
 

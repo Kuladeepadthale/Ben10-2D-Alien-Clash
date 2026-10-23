@@ -10,3 +10,7 @@ const heroDetailXPBase=renderHeroProgress;renderHeroProgress=function(){heroDeta
 const battleCardArt={campaign:'classic',versus:'multiplayer',survival:'survival',training:'testing'};
 for(const card of document.querySelectorAll('#screen-modes [data-mode]')){const name=battleCardArt[card.dataset.mode];if(!name)continue;const art=card.querySelector('.mode-scene');if(!art)continue;const img=document.createElement('img');img.src='assets/modes-v112/'+name+'.webp';img.alt='';img.decoding='async';img.className='battle-card-illustration';art.replaceChildren(img);card.classList.add('illustrated-battle-card');}
 renderAccount();if(currentScreen==='results')renderMatchSummary();
+// Larger landscape cards keep full illustrations readable; native swiping and keyboard scrolling.
+const battleLane=document.querySelector('#screen-modes .mode-grid');battleLane.tabIndex=0;battleLane.setAttribute('role','region');battleLane.setAttribute('aria-label','Battle modes. Swipe or use arrow keys to explore.');
+battleLane.addEventListener('keydown',e=>{if(e.target!==battleLane||!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();battleLane.scrollBy({left:(e.key==='ArrowRight'?1:-1)*(battleLane.firstElementChild.getBoundingClientRect().width+12),behavior:'smooth'});});
+const battleSwipeHint=document.createElement('span');battleSwipeHint.className='battle-swipe-hint';battleSwipeHint.textContent='Swipe battles ↔';document.querySelector('#screen-modes .page-title').appendChild(battleSwipeHint);

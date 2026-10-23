@@ -25,3 +25,5 @@ body:not(.in-battle) #screen-characters .card.alien-locked{border-style:dashed!i
 /* Foreground artwork never intercepts taps on rear portal controls. */
 .portal-slot,.ground-portal,.portal-alien{pointer-events:none;}
 .portal-slot .portal-add,.portal-slot .watch-alien-name{pointer-events:auto;}
+
+.home-rarity-star{display:inline-block;font-size:.85em;line-height:1;text-shadow:0 1px 3px #000;vertical-align:baseline;margin-right:2px;}

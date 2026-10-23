@@ -287,7 +287,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.5 — Battle Cards and Hero XP' --notes 'Adds cinematic battle card illustrations and exact Hero XP progress meters in profile and results, including XP earned, remaining XP and level-ups. Preserves existing Plumber operations,92 aliens,50 villains and progression.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.6 — Home and Combat Fixes' --notes 'Fixes filled home slots and rarity stars; shows uncropped battle artwork with large swipeable landscape cards; improves melee enemy pursuit; fixes NRG hurt/KO poses and Eatle, Bashmouth, Dark Matter scale registration. Preserves existing Plumber operations,92 aliens,50 villains and progression.' --prerelease --target "$GITHUB_SHA"
 
 
 
