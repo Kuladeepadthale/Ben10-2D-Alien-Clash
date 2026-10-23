@@ -249,10 +249,22 @@
       "id": 33,
       "slug": "lodestar",
       "batch": 2,
-      "status": "pending",
-      "findings": [],
+      "status": "in_progress",
+      "findings": [
+        "Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures.",
+        "Keep the head floating between shoulder prongs in every frame; do not introduce a solid neck."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": [],
+      "stage": "State-sheet model proposal saved; remaining native clips and gameplay validation pending",
+      "reviewed_on": "2026-10-23",
+      "model_requirements": "Lodestar in Alien Force/Ultimate Alien form: lean black and rich yellow body, two enormous yellow horseshoe magnet claws with grey tips, split pointed shoulders and yellow shin/foot shapes. Metallic black/yellow head with green eyes FLOATS with a small visible gap above the torso between the shoulder prongs. No solid neck, no mouth, no human fingers. Keep floating head and body together as one full pose.",
+      "sources": {
+        "states": "ci/animation-review/characters/lodestar/source-states.webp"
+      },
+      "prompts": {
+        "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. Lodestar in Alien Force/Ultimate Alien form: lean black and rich yellow body, two enormous yellow horseshoe magnet claws with grey tips, split pointed shoulders and yellow shin/foot shapes. Metallic black/yellow head with green eyes FLOATS with a small visible gap above the torso between the shoulder prongs. No solid neck, no mouth, no human fingers. Keep floating head and body together as one full pose. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: both huge magnet claws extended out and forward, pulling with magnetic force, no drawn field;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: forward glide with trailing magnet claws and floating head stable. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024."
+      }
     },
     {
       "id": 34,
