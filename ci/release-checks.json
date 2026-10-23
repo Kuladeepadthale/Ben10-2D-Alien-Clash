@@ -51,5 +51,7 @@
   "node ci/check-clean-powers.cjs",
   "node ci/check-power-origins.cjs",
   "python3 ci/check-profile-pixels.py",
-  "node ci/check-single-throws.cjs"
+  "node ci/check-single-throws.cjs",
+  "node ci/check-reviewed-character.cjs 32",
+  "node ci/check-reviewed-character.cjs 2"
 ]

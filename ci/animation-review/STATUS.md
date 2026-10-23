@@ -1,6 +1,6 @@
 # Animation review progress
 
-**4 / 92 characters complete.** Batch size: 4.
+**19 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -10,10 +10,10 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 1 | 24 | humungousaur | Reviewed — kept | All32 native frames inspected; brown hide, tan torso, chest emblem and tail remain consistent. |
 | 1 | 26 | big-chill | Reviewed — kept | All32 native frames inspected; blue/black body, hood, wing/cape forms and eye colors remain consistent. |
 | 1 | 0 | heatblast | Reviewed — kept | Inspected all40 native frames including the extended idle, dash, hurt and defeat clips. |
-| 2 | 32 | rath | Pending |  |
-| 2 | 33 | lodestar | Pending |  |
-| 2 | 34 | nanomech | Pending |  |
-| 2 | 36 | ampfibian | Pending |  |
+| 2 | 32 | rath | Reviewed — updated | Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model. |
+| 2 | 33 | lodestar | In progress | Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures. |
+| 2 | 34 | nanomech | Needs revision | Existing portrait and tiny action sheets differ in detail; maintain one insect/cyborg model through hover and laser poses. |
+| 2 | 36 | ampfibian | In progress | Existing standing reference omits the extra arm pair visible in action designs; rebuild a coherent four-arm/two-leg-tentacle model. |
 | 3 | 37 | armodrillo | Pending |  |
 | 3 | 38 | terraspin | Pending |  |
 | 3 | 39 | nrg | Pending |  |
@@ -29,21 +29,21 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 6 | 49 | crashhopper | Pending |  |
 | 6 | 50 | ball-weevil | Pending |  |
 | 6 | 51 | astrodactyl | Pending |  |
-| 6 | 1 | four-arms | Pending |  |
-| 7 | 2 | diamondhead | Pending |  |
-| 7 | 3 | xlr8 | Pending |  |
-| 7 | 4 | wildmutt | Pending |  |
-| 7 | 5 | grey-matter | Pending |  |
-| 8 | 6 | upgrade | Pending |  |
-| 8 | 7 | stinkfly | Pending |  |
-| 8 | 8 | ripjaws | Pending |  |
-| 8 | 9 | ghostfreak | Pending |  |
-| 9 | 10 | cannonbolt | Pending |  |
-| 9 | 11 | wildvine | Pending |  |
-| 9 | 12 | blitzwolfer | Pending |  |
-| 9 | 13 | snare-oh | Pending |  |
-| 10 | 14 | frankenstrike | Pending |  |
-| 10 | 15 | upchuck | Pending |  |
+| 6 | 1 | four-arms | Reviewed — kept | All32 native frames inspected: four arms, black/white shirt, face and body proportions remain coherent. |
+| 7 | 2 | diamondhead | Reviewed — updated | Removed baked floor crystals from the active ground-spike body frame; procedural crystals now supply the effect once. |
+| 7 | 3 | xlr8 | Reviewed — kept | All32 native frames inspected: helmet/visor, long tail and wheeled feet stay coherent. |
+| 7 | 4 | wildmutt | Reviewed — kept | All32 frames inspected: eyeless orange quadruped identity, shoulder emblem and powerful forelimbs remain coherent. |
+| 7 | 5 | grey-matter | Reviewed — kept | All32 frames inspected: grey head, large yellow-green eyes and black/white suit stay consistent. |
+| 8 | 6 | upgrade | Reviewed — kept | All32 frames inspected: single green eye, green circuitry and black/white body stay coherent. |
+| 8 | 7 | stinkfly | Reviewed — kept | All32 frames inspected: insect head, eye stalks, wing pair, tail stinger and limb count stay coherent. |
+| 8 | 8 | ripjaws | Needs revision | Walk cycle omits the head lure visible in jump, attacks and idle; these models need reconciliation. |
+| 8 | 9 | ghostfreak | Reviewed — kept | All32 frames inspected: pale shroud, single side eye, black seams and tapering ghost tail remain coherent. |
+| 9 | 10 | cannonbolt | Reviewed — kept | All32 frames inspected: white/black body and yellow shell plates stay consistent. |
+| 9 | 11 | wildvine | Reviewed — kept | All32 frames inspected: flytrap collar, central eye, back pods and vine-root anatomy stay coherent. |
+| 9 | 12 | blitzwolfer | Reviewed — kept | All32 frames inspected: grey fur, mane, muzzle, tail and suit remain coherent. |
+| 9 | 13 | snare-oh | Reviewed — kept | All32 frames inspected: gold wrappings, black gaps, head silhouette and trailing bandages remain coherent. |
+| 10 | 14 | frankenstrike | Reviewed — kept | All32 frames inspected: face, shoulder generators, forearm armor and black/green legs stay coherent. |
+| 10 | 15 | upchuck | Reviewed — kept | All32 frames inspected: green/yellow round body, black/white suit and face remain coherent. |
 | 10 | 16 | ditto | Pending |  |
 | 10 | 17 | eye-guy | Pending |  |
 | 11 | 18 | way-big | Pending |  |

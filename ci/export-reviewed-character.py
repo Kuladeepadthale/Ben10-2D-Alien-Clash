@@ -9,7 +9,7 @@ R=Path(__file__).resolve().parents[1];slug=sys.argv[1];recpath=R/'ci/animation-r
 c={'id':id,'name':slug,'sheets':[],'frames':[],'clips':{},'reviewedRevision':1}
 images=[]
 for si,kind in enumerate(['walk','jump-strike','powers','states']):
- src=R/rec['sources'][kind];poses=whole_poses(Image.open(src));assert len(poses)==8
+ src=R/rec['sources'][kind];poses=whole_poses(Image.open(src),attachment_ratio=rec.get('attachmentRatio',.05));assert len(poses)==8
  sheet,places=pack_poses(poses,padding=24);dest=out/(kind+'.webp');sheet.save(dest,lossless=True,quality=100,method=4,exact=True);images.append(sheet)
  c['sheets'].append({'src':str(dest.relative_to(R/'web')),'width':sheet.width,'height':sheet.height,'sha256':hashlib.sha256(dest.read_bytes()).hexdigest()})
  for cell,(x,y,w,h,meta) in enumerate(places):
@@ -20,7 +20,16 @@ c['clips']={'walk':list(range(8)),'jump':list(range(8,12)),'normal':list(range(1
 c['referenceHeight']=rec['referenceHeightBySource']['states']
 for key in ['normal','skill0','skill1','skill2','ultimate']:
  for fi in c['clips'][key]:
-  f=c['frames'][fi];x,y,w,h=f['rect'];a=np.array(images[f['sheet']])[y:y+h,x:x+w];rgb=a[:,:,:3].astype(float);mask=(a[:,:,3]>180)&(rgb[:,:,2]>140)&(rgb[:,:,2]>rgb[:,:,0]*1.3)&(rgb[:,:,2]>rgb[:,:,1]*1.12)
+  f=c['frames'][fi];x,y,w,h=f['rect'];a=np.array(images[f['sheet']])[y:y+h,x:x+w];rgb=a[:,:,:3].astype(float)
+  if slug=='water-hazard':
+   mask=(a[:,:,3]>180)&(rgb[:,:,2]>140)&(rgb[:,:,2]>rgb[:,:,0]*1.3)&(rgb[:,:,2]>rgb[:,:,1]*1.12)
+  elif slug=='lodestar':
+   mask=(a[:,:,3]>180)&(rgb.min(axis=2)>35)&(rgb.max(axis=2)-rgb.min(axis=2)<40)&(rgb.max(axis=2)<220)
+  elif slug=='rath':
+   yy,xx=np.indices(a.shape[:2]);target=rec.get('emitterTargets',{}).get(str(fi),[.8,.45]);mask=(a[:,:,3]>180)&(rgb.min(axis=2)>150)&(yy<h*.78)
+   ys,xs=np.where(mask);assert len(xs)>0
+   near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
+  else:raise ValueError('Species-specific emitter registration required: '+slug)
   labels,n=ndimage.label(mask);objects=ndimage.find_objects(labels);candidates=[]
   for label,box in enumerate(objects,1):
    if box is None:continue

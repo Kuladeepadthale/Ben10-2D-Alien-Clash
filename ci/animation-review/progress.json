@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 32,
-  "completed": 4,
+  "current_character": 33,
+  "completed": 19,
   "characters": [
     {
       "id": 35,
@@ -228,37 +228,203 @@
       "id": 32,
       "slug": "rath",
       "batch": 2,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model.",
+        "Preserve single wrist claws, no tail, brawler weight transfer and distinct jab/cross/hook cadence. Old close-combat sheet also needs replacement to avoid model switching.",
+        "Replaced all32 poses, matching portrait and8 close-combat cels so idle, jab/cross/hook, pounce and ultimate use one classic model."
+      ],
+      "changed_files": [
+        "web/assets/reviewed-native/rath/",
+        "web/rath-close.js",
+        "ci/animation-review/characters/rath/revision.json"
+      ],
+      "checks": {
+        "native_frames": 40,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "source_pixels_preserved": true,
+        "actual_browser_checked": [
+          "idle",
+          "normal",
+          "skill0",
+          "skill1",
+          "ultimate"
+        ],
+        "passed": true
+      },
+      "stage": "All native clips, classic chest emblem and eight close-combat cels integrated; actual browser checked",
+      "reviewed_on": "2026-10-23",
+      "model_requirements": "Rath in his classic Alien Force/Ultimate Alien form: muscular orange bipedal tiger, black stripes, white jaw/neck/chest/abdomen/hands/feet, green eyes, ONE large black retractable claw from EACH wrist, NO TAIL. Green Omnitrix emblem on upper chest. Correct the reference's variant costume: NO green belt, NO wrestling shorts, NO clothing or belt emblem. Keep white abdomen as fur. Fierce expressive tiger face.",
+      "sources": {
+        "states": "ci/animation-review/characters/rath/source-states.webp",
+        "walk": "ci/animation-review/characters/rath/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/rath/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/rath/source-powers.webp",
+        "close": "ci/animation-review/characters/rath/source-close.webp"
+      },
+      "prompts": {
+        "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. Rath in his classic Alien Force/Ultimate Alien form: muscular orange bipedal tiger, black stripes, white jaw/neck/chest/abdomen/hands/feet, green eyes, ONE large black retractable claw from EACH wrist, NO TAIL. Green Omnitrix emblem on upper chest. Correct the reference's variant costume: NO green belt, NO wrestling shorts, NO clothing or belt emblem. Keep white abdomen as fur. Fierce expressive tiger face. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: both arms raised then braced forward in an aggressive wrestling rush;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: low powerful tiger-like forward lunge with claws ready. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024.",
+        "walk": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent rath model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. Rath in his classic Alien Force/Ultimate Alien form: muscular orange bipedal tiger, black stripes, white jaw/neck/chest/abdomen/hands/feet, green eyes, ONE large black retractable claw from EACH wrist, NO TAIL. Green Omnitrix emblem on upper chest. Correct the reference's variant costume: NO green belt, NO wrestling shorts, NO clothing or belt emblem. Keep white abdomen as fur. Fierce expressive tiger face. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Eight chronological walk cycle frames with weighty aggressive tiger-like bipedal strides, natural opposite arm swing, black wrist claws carried safely; four contact/down/passing/up phases then opposite-leg four phases, smooth loop. No tail, no belt, no shorts; upper-chest Omnitrix always. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024.",
+        "jump-strike": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent rath model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. Rath in his classic Alien Force/Ultimate Alien form: muscular orange bipedal tiger, black stripes, white jaw/neck/chest/abdomen/hands/feet, green eyes, ONE large black retractable claw from EACH wrist, NO TAIL. Green Omnitrix emblem on upper chest. Correct the reference's variant costume: NO green belt, NO wrestling shorts, NO clothing or belt emblem. Keep white abdomen as fur. Fierce expressive tiger face. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Top row:1 deep knee crouch preparing jump;2 upward powerful leap arms balancing;3 aerial tucked-knee apex;4 grounded knee-bend landing. Bottom row:5 braced claw jab preparation;6 forward single claw fist strike;7 natural arm retraction;8 guarded brawler stance. Correct classic Rath anatomy, chest Omnitrix, no pants or belt. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024.",
+        "powers": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent rath model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. Rath in his classic Alien Force/Ultimate Alien form: muscular orange bipedal tiger, black stripes, white jaw/neck/chest/abdomen/hands/feet, green eyes, ONE large black retractable claw from EACH wrist, NO TAIL. Green Omnitrix emblem on upper chest. Correct the reference's variant costume: NO green belt, NO wrestling shorts, NO clothing or belt emblem. Keep white abdomen as fur. Fierce expressive tiger face. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Top row:1 Claw flurry windup with two fists guarded;2 fast forward claw swipe with body weight shifted;3 claw/fist retraction;4 Tiger pounce low crouch anticipation. Bottom row:5 forward airborne tiger pounce with both black wrist claws aimed ahead and knees behind;6 grounded pounce landing;7 Rage slam with both fists raised over head;8 Rage slam grounded crouch with fists striking down. No energy, no trails, no painted effects; upper chest Omnitrix, no belt or shorts. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024.",
+        "close": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent rath model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. Rath in his classic Alien Force/Ultimate Alien form: muscular orange bipedal tiger, black stripes, white jaw/neck/chest/abdomen/hands/feet, green eyes, ONE large black retractable claw from EACH wrist, NO TAIL. Green Omnitrix emblem on upper chest. Correct the reference's variant costume: NO green belt, NO wrestling shorts, NO clothing or belt emblem. Keep white abdomen as fur. Fierce expressive tiger face. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Eight chronological boxer/wrestler close-combat poses. Top row:1 guarded anticipation;2 lead-hand straight jab screen-right;3 jab retraction;4 powerful rear-hand cross screen-right. Bottom row:5 cross retraction;6 compact forward hook/uppercut with torso rotation;7 hook retraction;8 relaxed fighting guard. All strikes have planted stable feet and weight transfer; keep claws attached to each wrist, one per wrist. No contact sparks or trails. Correct chest Omnitrix; no belt, shorts or clothing. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024."
+      },
+      "referenceHeightBySource": {
+        "walk": 430,
+        "jump-strike": 430,
+        "powers": 410,
+        "states": 450
+      },
+      "renderHeight": 220,
+      "scale": 1.04,
+      "emitterTargets": {
+        "12": [
+          0.7,
+          0.47
+        ],
+        "13": [
+          0.87,
+          0.35
+        ],
+        "14": [
+          0.82,
+          0.65
+        ],
+        "15": [
+          0.81,
+          0.35
+        ],
+        "16": [
+          0.72,
+          0.39
+        ],
+        "17": [
+          0.85,
+          0.24
+        ],
+        "18": [
+          0.83,
+          0.5
+        ],
+        "19": [
+          0.85,
+          0.79
+        ],
+        "20": [
+          0.87,
+          0.55
+        ],
+        "21": [
+          0.8,
+          0.8
+        ],
+        "22": [
+          0.8,
+          0.2
+        ],
+        "23": [
+          0.8,
+          0.8
+        ],
+        "24": [
+          0.9,
+          0.5
+        ],
+        "25": [
+          0.72,
+          0.12
+        ],
+        "26": [
+          0.81,
+          0.51
+        ]
+      }
     },
     {
       "id": 33,
       "slug": "lodestar",
       "batch": 2,
-      "status": "pending",
-      "findings": [],
+      "status": "in_progress",
+      "findings": [
+        "Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures.",
+        "Keep the head floating between shoulder prongs in every frame; do not introduce a solid neck."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": [],
+      "stage": "All native draft sheets saved; anatomy, registration, effects and runtime review pending",
+      "reviewed_on": "2026-10-23",
+      "model_requirements": "Lodestar in Alien Force/Ultimate Alien form: lean black and rich yellow body, two enormous yellow horseshoe magnet claws with grey tips, split pointed shoulders and yellow shin/foot shapes. Metallic black/yellow head with green eyes FLOATS with a small visible gap above the torso between the shoulder prongs. No solid neck, no mouth, no human fingers. Keep floating head and body together as one full pose.",
+      "sources": {
+        "states": "ci/animation-review/characters/lodestar/source-states.webp",
+        "walk": "ci/animation-review/characters/lodestar/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/lodestar/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/lodestar/source-powers.webp"
+      },
+      "prompts": {
+        "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. Lodestar in Alien Force/Ultimate Alien form: lean black and rich yellow body, two enormous yellow horseshoe magnet claws with grey tips, split pointed shoulders and yellow shin/foot shapes. Metallic black/yellow head with green eyes FLOATS with a small visible gap above the torso between the shoulder prongs. No solid neck, no mouth, no human fingers. Keep floating head and body together as one full pose. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: both huge magnet claws extended out and forward, pulling with magnetic force, no drawn field;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: forward glide with trailing magnet claws and floating head stable. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024.",
+        "walk": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent lodestar model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. Lodestar in Alien Force/Ultimate Alien form: lean black and rich yellow body, two enormous yellow horseshoe magnet claws with grey tips, split pointed shoulders and yellow shin/foot shapes. Metallic black/yellow head with green eyes FLOATS with a small visible gap above the torso between the shoulder prongs. No solid neck, no mouth, no human fingers. Keep floating head and body together as one full pose. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Eight chronological walking cycle frames with controlled deliberate steps and heavy magnet claw arm swing. Two legs step contact/down/passing/up then opposite four phases. Head floats with a small visible neck gap of8-12 native pixels in EVERY frame; do not attach a neck. Magnet claw shape never changes. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024.",
+        "jump-strike": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent lodestar model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. Lodestar in Alien Force/Ultimate Alien form: lean black and rich yellow body, two enormous yellow horseshoe magnet claws with grey tips, split pointed shoulders and yellow shin/foot shapes. Metallic black/yellow head with green eyes FLOATS with a small visible gap above the torso between the shoulder prongs. No solid neck, no mouth, no human fingers. Keep floating head and body together as one full pose. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Top row:1 magnetic jump anticipation knee bend;2 rising levitation jump;3 aerial apex legs tucked;4 soft grounded landing. Bottom row:5 short magnet-claw strike windup;6 deliberate forward magnet claw shove;7 retraction;8 upright guard with floating head. No solid neck, no effects. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024.",
+        "powers": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent lodestar model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. Lodestar in Alien Force/Ultimate Alien form: lean black and rich yellow body, two enormous yellow horseshoe magnet claws with grey tips, split pointed shoulders and yellow shin/foot shapes. Metallic black/yellow head with green eyes FLOATS with a small visible gap above the torso between the shoulder prongs. No solid neck, no mouth, no human fingers. Keep floating head and body together as one full pose. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Top row:1 Magnetic pulse preparation lifting one magnet claw;2 Magnetic pulse release with one horseshoe claw aimed screen-right;3 claw recovery;4 Metal storm preparation raising BOTH magnet claws. Bottom row:5 Metal storm hold with both claws overhead in magnetic pulling pose;6 arms recovering to guard;7 Polarity field preparation with claws spread to sides;8 Polarity field release pulling both claws toward the front chest. FLOATING HEAD at8-12pixel gap in every pose, stable grey magnet tips, no painted magnetic rings, metal projectiles, glow or trails. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024."
+      },
+      "referenceHeightBySource": {
+        "walk": 430,
+        "jump-strike": 430,
+        "powers": 430,
+        "states": 450
+      },
+      "renderHeight": 230,
+      "scale": 1.05,
+      "attachmentRatio": 0.11
     },
     {
       "id": 34,
       "slug": "nanomech",
       "batch": 2,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Existing portrait and tiny action sheets differ in detail; maintain one insect/cyborg model through hover and laser poses.",
+        "First proposed ultimate release draft has an extra wing pair and is rejected; corrected two-wing draft requested."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": [],
+      "stage": "State-sheet model proposal saved; remaining native clips and gameplay validation pending",
+      "reviewed_on": "2026-10-23",
+      "model_requirements": "Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor.",
+      "sources": {
+        "states": "ci/animation-review/characters/nanomech/source-states-rejected.webp"
+      },
+      "prompts": {
+        "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: both small manipulator arms extended, wings spread for stable airborne electric overload, no drawn electricity;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: fast forward aerial dart with body tilted and wings swept back. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024."
+      }
     },
     {
       "id": 36,
       "slug": "ampfibian",
       "batch": 2,
-      "status": "pending",
-      "findings": [],
+      "status": "in_progress",
+      "findings": [
+        "Existing standing reference omits the extra arm pair visible in action designs; rebuild a coherent four-arm/two-leg-tentacle model.",
+        "Keep swimming/hovering tentacle locomotion and separate electrical effects; no humanoid boots or generic punches."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": [],
+      "stage": "All native draft sheets saved; anatomy, registration, effects and runtime review pending",
+      "reviewed_on": "2026-10-23",
+      "model_requirements": "AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands.",
+      "sources": {
+        "states": "ci/animation-review/characters/ampfibian/source-states.webp",
+        "walk": "ci/animation-review/characters/ampfibian/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/ampfibian/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/ampfibian/source-powers.webp"
+      },
+      "prompts": {
+        "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: all FOUR tentacle arms spread and then pointed forward in a balanced electrical discharge stance, two leg tentacles hanging separately, no electric effects;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: forward swimming-like aerial glide, four arms swept back and two leg tentacles trailing. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024.",
+        "walk": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent ampfibian model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Eight consecutive low hovering/swimming locomotion cels. Show a smooth traveling wave through FOUR arm tentacles and TWO leg tentacles, with subtle body lean and head stable; alternating extended and curled tentacle tips. Do not make human walking feet or add/remove limbs. Clearly preserve four arms and two leg tentacles in every pose. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024.",
+        "jump-strike": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent ampfibian model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Top row:1 hover compression before rising;2 upward buoyant rise with four arms gently balancing;3 aerial apex four arms spread and two leg tentacles curled;4 return to low hover. Bottom row:5 tentacle-strike anticipation drawing one forearm tentacle back;6 one forward tentacle lash while other three arms balance;7 tentacle retraction;8 neutral low hover. Exactly four arms and two leg tentacles in every pose; do not become a humanoid with boots. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024.",
+        "powers": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent ampfibian model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Top row:1 Tentacle bolt anticipation raising upper arm tentacles;2 Tentacle bolt release with two upper arm tips aimed screen-right while two lower arms curve below;3 arm-tip recovery;4 Phasing current anticipation body angled forward. Bottom row:5 forward swimming-like phasing rush with ALL FOUR arms and TWO leg tentacles trailing;6 phasing rush recovery into low hover;7 Current field preparation with all FOUR arms spread;8 Current field release bringing four tips forward around the chest. Exactly six limbs each pose, green chest Omnitrix, no mouth. No lightning bolts, electricity, auras, glow, rings or trails; those are separate game effects. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024."
+      }
     },
     {
       "id": 37,
@@ -399,136 +565,302 @@
       "id": 1,
       "slug": "four-arms",
       "batch": 6,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected: four arms, black/white shirt, face and body proportions remain coherent.",
+        "Retained weighty gait, multi-fist attacks, thunderclap and grounded slam; standing hit reaction differs from defeat."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 2,
       "slug": "diamondhead",
       "batch": 7,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "Removed baked floor crystals from the active ground-spike body frame; procedural crystals now supply the effect once.",
+        "Reused clean native palm-to-ground pose and its matching launch point; preserved intentional crystal blades and hand growth."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/diamondhead/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 3,
       "slug": "xlr8",
       "batch": 7,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected: helmet/visor, long tail and wheeled feet stay coherent.",
+        "Retained low skating run, speed strike gestures and compact dash; no generic brawler replacement."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 4,
       "slug": "wildmutt",
       "batch": 7,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: eyeless orange quadruped identity, shoulder emblem and powerful forelimbs remain coherent.",
+        "Retained low gait, crouch/pounce, claw/bite-ready attacks and standing hit recoil; prone pose reserved for defeat."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 5,
       "slug": "grey-matter",
       "batch": 7,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: grey head, large yellow-green eyes and black/white suit stay consistent.",
+        "Retained small agile crouches, jump and gadget-use poses; no power effect obscures the body."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 6,
       "slug": "upgrade",
       "batch": 8,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: single green eye, green circuitry and black/white body stay coherent.",
+        "Retained elastic limb extension and shapeshifting gestures as intentional morphology, plus the separate defeated pose."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 7,
       "slug": "stinkfly",
       "batch": 8,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: insect head, eye stalks, wing pair, tail stinger and limb count stay coherent.",
+        "Retained hovering wing cycle, goo firing gestures and stinger/flight poses; powers remain separate from body."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 8,
       "slug": "ripjaws",
       "batch": 8,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Walk cycle omits the head lure visible in jump, attacks and idle; these models need reconciliation.",
+        "Preserve webbed limbs, dorsal fin and wide jaw bite animation when repairing the lure."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "stage": "Repair walk lure before approval"
     },
     {
       "id": 9,
       "slug": "ghostfreak",
       "batch": 8,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: pale shroud, single side eye, black seams and tapering ghost tail remain coherent.",
+        "Retained floating glide and intentional tentacle extension; standing hit recoil differs from prone defeat."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 10,
       "slug": "cannonbolt",
       "batch": 9,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: white/black body and yellow shell plates stay consistent.",
+        "Retained intentional ball curl for rush/ultimate and heavy uncurled gait; no size correction applied to the ball transformation."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 11,
       "slug": "wildvine",
       "batch": 9,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: flytrap collar, central eye, back pods and vine-root anatomy stay coherent.",
+        "Retained root-stepping gait, vine extension and elastic recovery; deliberate vines are part of the body animation."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 12,
       "slug": "blitzwolfer",
       "batch": 9,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: grey fur, mane, muzzle, tail and suit remain coherent.",
+        "Retained low wolf stride, claw actions and open-jaw howl release, with a distinct standing hit response."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 13,
       "slug": "snare-oh",
       "batch": 9,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: gold wrappings, black gaps, head silhouette and trailing bandages remain coherent.",
+        "Retained bandage elongation and wrapping gestures as specific morphology, without replacing them with a generic punch loop."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 14,
       "slug": "frankenstrike",
       "batch": 10,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: face, shoulder generators, forearm armor and black/green legs stay coherent.",
+        "Retained heavy gait, open-hand electrical release and two-fist ground slam; complete boots and generator silhouettes preserved."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 15,
       "slug": "upchuck",
       "batch": 10,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: green/yellow round body, black/white suit and face remain coherent.",
+        "Retained tongue extension, swallowing/body inflation and open-mouth expulsion; these deliberate changes preserve character identity."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 16,

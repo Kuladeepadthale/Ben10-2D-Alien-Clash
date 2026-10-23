@@ -8,6 +8,10 @@ for revfile in sorted((R/'ci/animation-review/characters').glob('*/revision.json
   asset=R/'web'/sheet['src'];assert asset.is_file();assert hashlib.sha256(asset.read_bytes()).hexdigest()==sheet['sha256']
  assert len(c['frames'])==32 and len(c['clips'])==12
  m['characters'][c['id']]=c;phases[str(c['id'])]=rev['power_phases']
+ if 'close_combat' in rev:
+  close=rev['close_combat'];asset=R/'web'/close['src'];assert hashlib.sha256(asset.read_bytes()).hexdigest()==close['sha256']
+  assert c['id']==32 and len(close['frames'])==8
+  (R/'web/rath-close.js').write_text("'use strict';\nconst RATH_CLOSE="+json.dumps(close,separators=(',',':'))+';\n')
 assert len(m['characters'])==92
 p.write_text(json.dumps(m,indent=2)+'\n');(R/'web/cel-data.js').write_text("'use strict';\nconst CEL_DATA="+json.dumps(m,separators=(',',':'))+';\n')
 profile=R/'web/power-profiles.js';source=profile.read_text().split('// BEGIN REVIEWED_NATIVE_PHASES')[0].rstrip()+'\n'
