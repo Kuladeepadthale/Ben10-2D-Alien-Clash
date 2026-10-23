@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 20,
+  "completed": 21,
   "characters": [
     {
       "id": 35,
@@ -886,10 +886,21 @@
       "id": 17,
       "slug": "eye-guy",
       "batch": 10,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: pointed ears, eyeless face and distributed body eyes retain one model.",
+        "Preserved open-arm/chest-eye gestures and eye opening/closing; no head-mounted substitute for body-eye attacks."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 18,
