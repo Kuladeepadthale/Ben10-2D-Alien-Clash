@@ -1,6 +1,6 @@
 # Animation review progress
 
-**29 / 92 characters complete.** Batch size: 4.
+**30 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -56,7 +56,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 12 | 27 | chromastone | Reviewed — kept | All32 frames inspected: purple crystalline body, magenta head/shoulder crystals and green eye remain coherent. |
 | 13 | 28 | brainstorm | Reviewed — kept | All32 frames inspected: orange shell, claws, four walking legs and green eyes retain one model. |
 | 13 | 29 | spidermonkey | Pending |  |
-| 13 | 30 | goop | Pending |  |
+| 13 | 30 | goop | Reviewed — kept | All32 frames inspected: green fluid body and hovering antigravity projector remain coherent. |
 | 13 | 31 | alien-x | Pending |  |
 | 14 | 52 | toepick | Pending |  |
 | 14 | 53 | pesky-dust | Pending |  |
