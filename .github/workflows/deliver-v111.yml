@@ -1,0 +1,49 @@
+name: Prepare v11.1 download
+on:
+  push:
+    branches: [apk-delivery-v111]
+    paths: [.github/workflows/deliver-v111.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: apk-download
+  cancel-in-progress: true
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Prepare signed APK download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import urllib.request,urllib.error,json,time,os,base64
+          root='https://api.github.com/repos/Kuladeepadthale/Ben10-2D-Alien-Clash'
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'}
+          release=None
+          for attempt in range(170):
+              try:
+                  head='36130677db6c88e295baa8ca80bc5f2bdc41cb0f'
+                  with urllib.request.urlopen(urllib.request.Request(root+'/releases/tags/android-'+head[:12],headers=headers)) as response: release=json.load(response)
+                  if any(a['name']=='Ben10-Alien-Clash-Online.apk' for a in release['assets']): break
+              except urllib.error.HTTPError as error:
+                  if error.code!=404: raise
+              time.sleep(10)
+          assert release,'APK release not yet available'
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self,*args,**kwargs): return None
+          opener=urllib.request.build_opener(NoRedirect)
+          for asset in release['assets']:
+              if asset['name'] not in ['Ben10-Alien-Clash-Online.apk','SHA256SUMS.txt']: continue
+              request=urllib.request.Request(asset['url'],headers={**headers,'Accept':'application/octet-stream'})
+              try:
+                  with opener.open(request) as response:
+                      if asset['name']=='SHA256SUMS.txt': print('CHECKSUMS '+response.read().decode(),flush=True)
+              except urllib.error.HTTPError as error:
+                  assert error.code in [301,302,303,307,308],error
+                  location=error.headers['Location']
+                  assert location.startswith('https://release-assets.githubusercontent.com/'),location[:50]
+                  print('ASSET '+asset['name']+' '+str(asset['size'])+' '+base64.b64encode(location.encode()).decode(),flush=True)
+          PY
