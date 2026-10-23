@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 57,
+  "completed": 58,
   "characters": [
     {
       "id": 35,
@@ -1819,10 +1819,21 @@
       "id": 77,
       "slug": "ultimate-rath",
       "batch": 20,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Existing red/black variant, white chest and long claws remain coherent through all clips; retained forward claw swipes, low pounce and planted guard."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 78,
