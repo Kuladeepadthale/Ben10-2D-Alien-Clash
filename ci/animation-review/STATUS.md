@@ -15,7 +15,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 2 | 34 | nanomech | Needs revision | Existing portrait and tiny action sheets differ in detail; maintain one insect/cyborg model through hover and laser poses. |
 | 2 | 36 | ampfibian | In progress | Existing standing reference omits the extra arm pair visible in action designs; rebuild a coherent four-arm/two-leg-tentacle model. |
 | 3 | 37 | armodrillo | Needs revision | Native combat model is coherent, but shaded small action cels differ from the sharper standing portrait. |
-| 3 | 38 | terraspin | Pending |  |
+| 3 | 38 | terraspin | Needs revision | Wind rings are painted into multiple body cels and the portrait differs in detail from actions. |
 | 3 | 39 | nrg | Pending |  |
 | 3 | 40 | fasttrack | Pending |  |
 | 4 | 41 | chamalien | Pending |  |

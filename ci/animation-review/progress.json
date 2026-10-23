@@ -448,10 +448,19 @@
       "id": 38,
       "slug": "terraspin",
       "batch": 3,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Wind rings are painted into multiple body cels and the portrait differs in detail from actions.",
+        "Separate wind from the turtle model and preserve shell spin, flipper fan motion and stable head scale."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 39,
