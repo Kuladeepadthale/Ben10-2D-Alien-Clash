@@ -65,7 +65,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python3 ci/restore-verified-art.py
       - name: Verify all 92 action sets and game controls
-        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]')"
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]') && !contains(github.event.head_commit.message, '[package116]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
@@ -225,6 +225,24 @@ jobs:
           node ci/check-multiplayer-server.mjs
           node ci/check-target-snapshot.cjs
           for script in web/*.js; do node --check "$script"; done
+      - name: Verify packaging-only repair after 51 passed checks
+        if: contains(github.event.head_commit.message, '[package116]')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --depth=1 origin 6f6fa28d5d39746d15911a90e4d4869dac46282f
+          gh api repos/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/jobs/120300208852 > /tmp/verified-game-checks.json
+          python3 - <<'PY'
+          import json,subprocess,pathlib
+          job=json.load(open('/tmp/verified-game-checks.json'))
+          assert any(s['name']=='Verify all 92 action sets and game controls' and s['conclusion']=='success' for s in job['steps'])
+          changed=set(subprocess.check_output(['git','diff','--name-only','6f6fa28d5d39746d15911a90e4d4869dac46282f','HEAD'],text=True).splitlines())
+          assert changed <= {'android/app/build.gradle','.github/workflows/android-apk.yml'},changed
+          build=pathlib.Path('android/app/build.gradle').read_text()
+          assert "plugins { id 'com.android.application' }" in build
+          assert 'versionCode 116' in build and "versionName '11.6'" in build
+          print('All game, server and art files exactly match the build with 51 passed checks; verified Android packaging repair.')
+          PY
       - name: Deploy online Worker when owner credentials are configured
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
