@@ -1,6 +1,6 @@
 # Animation review progress
 
-**61 / 92 characters complete.** Batch size: 4.
+**62 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -87,7 +87,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 20 | 78 | ultimate-grey-matter | Reviewed — kept | All32 native frames inspected. |
 | 20 | 79 | bashmouth | Reviewed — kept | All32 native frames inspected. |
 | 21 | 80 | bootleg | Reviewed — kept | All32 native frames inspected. |
-| 21 | 81 | crystalfist | Pending |  |
+| 21 | 81 | crystalfist | Reviewed — kept | All32 native frames inspected. |
 | 21 | 82 | dark-matter | Pending |  |
 | 21 | 83 | hot-shot | Pending |  |
 | 22 | 84 | humungoraptor | Pending |  |
