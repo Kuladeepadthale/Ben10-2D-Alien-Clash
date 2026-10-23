@@ -16,8 +16,8 @@ for(const villain of [false,true])for(let id=0;id<(villain?50:92);id++)for(const
   b.beforePos={...b.pos};run('enemy.x=640+dir*400;enemy.y=180');const after=run('drawnAlienEmitter(player,player.cast)');assert.equal(after.x,b.beforePos.x);assert.equal(after.y,b.beforePos.y);count++;
  }
  if(['beam','wave','projectile','lob'].includes(b.cfg.kind)){
-  run("player.cast.elapsed=cfg.windup+.001;shots=[];effects=[];spawnAttack(player,player.cast,0);actual=cfg.kind==='beam'?effects.at(-1):shots.at(-1);pos=drawnAlienEmitter(player,player.cast)");
-  assert.equal(b.actual.x,b.pos.x);assert.equal(b.actual.y,b.pos.y);
+  run("player.cast.elapsed=cfg.windup+.001;shots=[];effects=[];spawnAttack(player,player.cast,0);actual=cfg.kind==='beam'?effects.at(-1):(shots.at(-1)||effects.find(e=>e.sonicDeployment));pos=drawnAlienEmitter(player,player.cast)");
+  assert.equal(b.actual.sonicDeployment?b.actual.launchX:b.actual.x,b.pos.x);assert.equal(b.actual.sonicDeployment?b.actual.launchY:b.actual.y,b.pos.y);if(b.actual.sonicDeployment)assert(b.actual.delay>0);
   assert.equal(b.actual.dir,dir);if(b.actual.vx)assert(b.actual.vx*dir>0);assert.equal(b.actual.powerSource,b.review.source);ranged++;
  }
 }
@@ -31,4 +31,5 @@ for(const [id,key,source]of [[6,'skill0','eye'],[17,'skill1','chest'],[19,'skill
 const game=fs.readFileSync('web/game.js','utf8');assert(game.includes("if(s.powerSource==='tail'||s.powerSource==='weapon')drawShot(c,s);renderFighter(enemy)"),'Tail-launched shots must pass behind their own fighter');
 for(const id of [20,41,67]){b.id=id;assert.equal(run("powerProfileFor({id},'skill2').motion"),'tail-strike');assert(run("new Set(CEL_DATA.characters[id].clips.skill2).size>=2"),'A tail strike needs distinct native poses');}
 console.log('Passed '+count+' pose/side registrations and '+ranged+' real ranged launches across 72 aliens and 50 villains; Jetray eyes/green rays, chest/mouth/tail sources, native tail strikes and opponent independence.');
+
 

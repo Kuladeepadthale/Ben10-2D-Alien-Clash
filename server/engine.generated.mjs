@@ -144,12 +144,12 @@ function cast(f,type){if(mode!=='fight'||f.cool>0||f.stun>0||f.block||f.dash||f.
 function other(f){return f===player?enemy:player}
 function spawnAttack(f,cast,index){const s=cast.cfg,o=other(f),col=(typeof powerProfileFor==='function'?powerProfileFor(f,cast)?.color:null)||(f.config?.light||CLASSIC_COLORS[f.id]),dir=cast.dir,source=body(f),hand=typeof drawnAlienEmitter==='function'?drawnAlienEmitter(f,cast):f.id===0&&typeof heatblastAtlas!=='undefined'&&heatblastAtlas?heatblastHand(f):null,originX=hand?hand.x:f.x+dir*35,originY=hand?hand.y:source.y+source.h*.42,shotBase={id:++uid,owner:f,damage:cast.damage,ultimate:cast.ultimate,name:s.name,color:col,budget:cast.budget,life:2.4,maxLife:2.4,dir,slow:s.slow||0,type:(f.config||aliens[f.id]).type,emitterX:hand?.x,emitterY:hand?.y,castId:cast.id,artKey:cast.key,powerSource:typeof powerProfileFor==='function'?powerProfileFor(f,cast)?.source:undefined,singleThrow:cast.key!=='normal'&&['projectile','lob'].includes(s.kind)&&(s.ticks||1)===1};
  if(!Number.isInteger(f.villain)&&cast.key!=='normal'&&((f.id===69&&((cast.key==='skill0'&&s.kind==='projectile'&&s.name===aliens[69].skills[0].name)||(cast.ultimate&&s.kind==='rain'&&s.name===aliens[69].ultimate.name)))||(f.id===23&&cast.ultimate&&s.name===aliens[23].ultimate.name))){
- const source=drawnAlienEmitter(f,cast),s=cast.cfg,dir=cast.dir||f.dir||1;
+ const source=hand||{x:originX,y:originY},s=cast.cfg,dir=cast.dir||f.dir||1;
  const x=cast.targetX??f.x+dir*Math.min(s.range,400),y=cast.targetY??f.y-80;
  const travel=Math.max(.22,Math.min(.65,Math.hypot(x-source.x,y-source.y)/850));
  effects.push({id:++uid,owner:f,kind:'explosion',sonicDeployment:f.id===69?'discs':'clones',artKey:cast.key,castId:cast.id,name:s.name,
   x,y,launchX:source.x,launchY:source.y,dir,r:f.id===69?76:88,delay:travel,life:travel+.4,maxLife:travel+.4,
-  damage:cast.damage,ultimate:cast.ultimate,budget:cast.budget,color:'#a9f4ff',hit:false,index});
+  damage:cast.damage,ultimate:cast.ultimate,budget:cast.budget,powerSource:shotBase.powerSource,color:'#a9f4ff',hit:false,index});
  return;
  }
  if(['rush','pounce','leapslam'].includes(s.kind))return;

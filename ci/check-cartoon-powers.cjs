@@ -33,8 +33,8 @@ for(let id=0;id<92;id++)for(const dir of [-1,1])for(const distance of [70,400]){
  evaluate("player=make(id,640,dir,true);enemy=make((id+1)%92,640+dir*distance,-dir);player.y=450;shots=[];effects=[];f=player");
  for(const kind of ['projectile','wave','lob','beam']){
   b.kind=kind;evaluate("f.cast={id:77,key:'skill0',elapsed:.34,dir,cfg:{...aliens[id].skills[0],kind,windup:.32,speed:600},ultimate:false,damage:100,budget:{remaining:100}};spawnAttack(f,f.cast,0)");
-  const actual=evaluate("kind==='beam'?effects.at(-1):shots.at(-1)"),emitter=evaluate('drawnAlienEmitter(f,f.cast)');
-  assert.equal(actual.x,emitter.x,`Detached ${id} ${kind} x`);assert.equal(actual.y,emitter.y,`Detached ${id} ${kind} y`);assert.equal(actual.castId,77);
+  const actual=evaluate("kind==='beam'?effects.at(-1):(shots.at(-1)||effects.find(e=>e.sonicDeployment))"),emitter=evaluate('drawnAlienEmitter(f,f.cast)');
+  assert.equal(actual.sonicDeployment?actual.launchX:actual.x,emitter.x,`Detached ${id} ${kind} x`);assert.equal(actual.sonicDeployment?actual.launchY:actual.y,emitter.y,`Detached ${id} ${kind} y`);if(actual.sonicDeployment)assert(actual.delay>0,"Deployed units must travel before contact");assert.equal(actual.castId,77);
  }
 }
 // Charge art must follow the live emitter without mutating any combat state.
@@ -48,4 +48,5 @@ for(let id=0;id<92;id++)for(const dir of [-1,1]){
  }
 }
 console.log('Passed: exact cel launch origins at near/far ranges, both facings and airborne; hand charge renders and immutable combat state.');
+
 
