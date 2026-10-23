@@ -25,7 +25,7 @@ jobs:
           release=None
           for attempt in range(170):
               try:
-                  head='6259954f16d13805b026d886d05e3db5572d30b1'
+                  head='b1467614250f8aec78675acc8963a1dde4840f59'
                   with urllib.request.urlopen(urllib.request.Request(root+'/releases/tags/android-'+head[:12],headers=headers)) as response: release=json.load(response)
                   if any(a['name']=='Ben10-Alien-Clash-Online.apk' for a in release['assets']): break
               except urllib.error.HTTPError as error:
