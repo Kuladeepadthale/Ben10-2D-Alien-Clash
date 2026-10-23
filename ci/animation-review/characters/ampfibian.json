@@ -1,0 +1,20 @@
+{
+  "id": 36,
+  "slug": "ampfibian",
+  "status": "in_progress",
+  "stage": "State-sheet model proposal saved; remaining native clips and gameplay validation pending",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "Existing standing reference omits the extra arm pair visible in action designs; rebuild a coherent four-arm/two-leg-tentacle model.",
+    "Keep swimming/hovering tentacle locomotion and separate electrical effects; no humanoid boots or generic punches."
+  ],
+  "model_requirements": "AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands.",
+  "sources": {
+    "states": "ci/animation-review/characters/ampfibian/source-states.webp"
+  },
+  "prompts": {
+    "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: all FOUR tentacle arms spread and then pointed forward in a balanced electrical discharge stance, two leg tentacles hanging separately, no electric effects;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: forward swimming-like aerial glide, four arms swept back and two leg tentacles trailing. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024."
+  },
+  "changed_files": [],
+  "checks": []
+}
