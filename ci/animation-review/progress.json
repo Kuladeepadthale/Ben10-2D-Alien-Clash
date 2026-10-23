@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 35,
-  "completed": 0,
+  "completed": 1,
   "characters": [
     {
       "id": 35,
@@ -115,10 +115,22 @@
       "id": 24,
       "slug": "humungousaur",
       "batch": 1,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected; brown hide, tan torso, chest emblem and tail remain consistent.",
+        "Heavy gait, overhead ground strike, tail sweep, standing recoil and prone defeat are distinct.",
+        "User-approved artwork retained."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 26,
