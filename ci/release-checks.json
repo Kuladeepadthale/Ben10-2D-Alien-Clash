@@ -1,6 +1,8 @@
 [
   "/tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium",
   "python3 ci/check-reviewed-assets.py",
+  "node ci/check-review-batch3.cjs",
+  "for id in 37 38 39 40; do node ci/check-reviewed-character.cjs \"$id\" || exit; done",
   "node ci/check-reviewed-character.cjs 35",
   "node ci/check-roster-fixes116.cjs",
   "node ci/check-ui-fixes116.cjs",

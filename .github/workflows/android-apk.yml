@@ -310,7 +310,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.0 — Battle Readability and Sonic Attacks' --notes 'Makes battle announcements compact and moves them into the HUD gutter. Adds native strike and recoil cycles to non-rolling rush attacks, Rath jab/cross/hook ultimate and a captured-target approach stop. Echo Echo deploys native clones; Ultimate Echo Echo sends procedural sonic discs around the captured target with delayed, dodgeable sonic pulses. Retains 92 aliens, 50 villains and existing reviewed artwork. Includes resumable animation-review records; 19 body-model repairs remain.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.1 — Native Animation Review Batch 3' --notes 'Adds coherent high-detail native models for Armodrillo, Terraspin, NRG and tailless Fasttrack. Includes piston-arm motion, three-position flipper fans, registered NRG grille rays with upright hit recoil, alternating Fasttrack sprint and roundhouse contacts. Preserves v12.0 compact edge announcements, sonic deployments and native rush combos. All92 aliens analysed;77 approved and15 body repairs queued. Per-character checkpoints and source prompts saved.' --prerelease --target "$GITHUB_SHA"
 
 
 
