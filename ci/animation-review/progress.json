@@ -1,0 +1,934 @@
+{
+  "version": 1,
+  "baseline_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "scope": "Character-by-character identity, cartoon-specific movement, power-pose and rendering review",
+  "batch_size": 4,
+  "order": [
+    35,
+    24,
+    26,
+    0,
+    32,
+    33,
+    34,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    25,
+    27,
+    28,
+    29,
+    30,
+    31,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91
+  ],
+  "current_character": 35,
+  "completed": 0,
+  "characters": [
+    {
+      "id": 35,
+      "slug": "water-hazard",
+      "batch": 1,
+      "status": "in_progress",
+      "findings": [
+        "Standing portrait and action sheets differ in sharpness/style; baked water effects overlap procedural effects."
+      ],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 24,
+      "slug": "humungousaur",
+      "batch": 1,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 26,
+      "slug": "big-chill",
+      "batch": 1,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 0,
+      "slug": "heatblast",
+      "batch": 1,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 32,
+      "slug": "rath",
+      "batch": 2,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 33,
+      "slug": "lodestar",
+      "batch": 2,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 34,
+      "slug": "nanomech",
+      "batch": 2,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 36,
+      "slug": "ampfibian",
+      "batch": 2,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 37,
+      "slug": "armodrillo",
+      "batch": 3,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 38,
+      "slug": "terraspin",
+      "batch": 3,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 39,
+      "slug": "nrg",
+      "batch": 3,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 40,
+      "slug": "fasttrack",
+      "batch": 3,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 41,
+      "slug": "chamalien",
+      "batch": 4,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 42,
+      "slug": "eatle",
+      "batch": 4,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 43,
+      "slug": "clockwork",
+      "batch": 4,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 44,
+      "slug": "jury-rigg",
+      "batch": 4,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 45,
+      "slug": "shocksquatch",
+      "batch": 5,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 46,
+      "slug": "feedback",
+      "batch": 5,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 47,
+      "slug": "bloxx",
+      "batch": 5,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 48,
+      "slug": "gravattack",
+      "batch": 5,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 49,
+      "slug": "crashhopper",
+      "batch": 6,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 50,
+      "slug": "ball-weevil",
+      "batch": 6,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 51,
+      "slug": "astrodactyl",
+      "batch": 6,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 1,
+      "slug": "four-arms",
+      "batch": 6,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 2,
+      "slug": "diamondhead",
+      "batch": 7,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 3,
+      "slug": "xlr8",
+      "batch": 7,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 4,
+      "slug": "wildmutt",
+      "batch": 7,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 5,
+      "slug": "grey-matter",
+      "batch": 7,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 6,
+      "slug": "upgrade",
+      "batch": 8,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 7,
+      "slug": "stinkfly",
+      "batch": 8,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 8,
+      "slug": "ripjaws",
+      "batch": 8,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 9,
+      "slug": "ghostfreak",
+      "batch": 8,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 10,
+      "slug": "cannonbolt",
+      "batch": 9,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 11,
+      "slug": "wildvine",
+      "batch": 9,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 12,
+      "slug": "blitzwolfer",
+      "batch": 9,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 13,
+      "slug": "snare-oh",
+      "batch": 9,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 14,
+      "slug": "frankenstrike",
+      "batch": 10,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 15,
+      "slug": "upchuck",
+      "batch": 10,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 16,
+      "slug": "ditto",
+      "batch": 10,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 17,
+      "slug": "eye-guy",
+      "batch": 10,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 18,
+      "slug": "way-big",
+      "batch": 11,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 19,
+      "slug": "arctiguana",
+      "batch": 11,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 20,
+      "slug": "spitter",
+      "batch": 11,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 21,
+      "slug": "buzzshock",
+      "batch": 11,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 22,
+      "slug": "swampfire",
+      "batch": 12,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 23,
+      "slug": "echo-echo",
+      "batch": 12,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 25,
+      "slug": "jetray",
+      "batch": 12,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 27,
+      "slug": "chromastone",
+      "batch": 12,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 28,
+      "slug": "brainstorm",
+      "batch": 13,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 29,
+      "slug": "spidermonkey",
+      "batch": 13,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 30,
+      "slug": "goop",
+      "batch": 13,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 31,
+      "slug": "alien-x",
+      "batch": 13,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 52,
+      "slug": "toepick",
+      "batch": 14,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 53,
+      "slug": "pesky-dust",
+      "batch": 14,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 54,
+      "slug": "bullfrag",
+      "batch": 14,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 55,
+      "slug": "kickin-hawk",
+      "batch": 14,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 56,
+      "slug": "whampire",
+      "batch": 15,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 57,
+      "slug": "gutrot",
+      "batch": 15,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 58,
+      "slug": "atomix",
+      "batch": 15,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 59,
+      "slug": "walkatrout",
+      "batch": 15,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 60,
+      "slug": "the-worst",
+      "batch": 16,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 61,
+      "slug": "mole-stache",
+      "batch": 16,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 62,
+      "slug": "overflow",
+      "batch": 16,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 63,
+      "slug": "gax",
+      "batch": 16,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 64,
+      "slug": "shock-rock",
+      "batch": 17,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 65,
+      "slug": "slapback",
+      "batch": 17,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 66,
+      "slug": "surge",
+      "batch": 17,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 67,
+      "slug": "ultimate-humungousaur",
+      "batch": 17,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 68,
+      "slug": "ultimate-big-chill",
+      "batch": 18,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 69,
+      "slug": "ultimate-echo-echo",
+      "batch": 18,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 70,
+      "slug": "ultimate-swampfire",
+      "batch": 18,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 71,
+      "slug": "ultimate-cannonbolt",
+      "batch": 18,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 72,
+      "slug": "ultimate-wildmutt",
+      "batch": 19,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 73,
+      "slug": "ultimate-spidermonkey",
+      "batch": 19,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 74,
+      "slug": "ultimate-way-big",
+      "batch": 19,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 75,
+      "slug": "ultimate-arctiguana",
+      "batch": 19,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 76,
+      "slug": "ultimate-gravattack",
+      "batch": 20,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 77,
+      "slug": "ultimate-rath",
+      "batch": 20,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 78,
+      "slug": "ultimate-grey-matter",
+      "batch": 20,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 79,
+      "slug": "bashmouth",
+      "batch": 20,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 80,
+      "slug": "bootleg",
+      "batch": 21,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 81,
+      "slug": "crystalfist",
+      "batch": 21,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 82,
+      "slug": "dark-matter",
+      "batch": 21,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 83,
+      "slug": "hot-shot",
+      "batch": 21,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 84,
+      "slug": "humungoraptor",
+      "batch": 22,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 85,
+      "slug": "quad-smack",
+      "batch": 22,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 86,
+      "slug": "rush",
+      "batch": 22,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 87,
+      "slug": "skunkmoth",
+      "batch": 22,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 88,
+      "slug": "thornblade",
+      "batch": 23,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 89,
+      "slug": "undertow",
+      "batch": 23,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 90,
+      "slug": "wreckingbolt",
+      "batch": 23,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    },
+    {
+      "id": 91,
+      "slug": "alien-v",
+      "batch": 23,
+      "status": "pending",
+      "findings": [],
+      "changed_files": [],
+      "checks": []
+    }
+  ]
+}
