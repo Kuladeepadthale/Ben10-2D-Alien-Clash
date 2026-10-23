@@ -1,0 +1,21 @@
+{
+  "id": 69,
+  "slug": "ultimate-echo-echo",
+  "status": "verified_updated",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "All32 native frames inspected.",
+    "Replaced generic ultimate ball with sonic-disc arm release; retained blue armor and white speaker discs."
+  ],
+  "changed_files": [
+    "ci/animation-review/characters/ultimate-echo-echo/revision.json"
+  ],
+  "checks": {
+    "native_frames": 32,
+    "states": 12,
+    "facings": 2,
+    "actual_draws": 240,
+    "passed": true
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+}
