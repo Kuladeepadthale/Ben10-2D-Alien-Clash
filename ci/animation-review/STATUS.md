@@ -1,6 +1,6 @@
 # Animation review progress
 
-**16 / 92 characters complete.** Batch size: 4.
+**17 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -41,7 +41,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 9 | 10 | cannonbolt | Reviewed — kept | All32 frames inspected: white/black body and yellow shell plates stay consistent. |
 | 9 | 11 | wildvine | Reviewed — kept | All32 frames inspected: flytrap collar, central eye, back pods and vine-root anatomy stay coherent. |
 | 9 | 12 | blitzwolfer | Reviewed — kept | All32 frames inspected: grey fur, mane, muzzle, tail and suit remain coherent. |
-| 9 | 13 | snare-oh | Pending |  |
+| 9 | 13 | snare-oh | Reviewed — kept | All32 frames inspected: gold wrappings, black gaps, head silhouette and trailing bandages remain coherent. |
 | 10 | 14 | frankenstrike | Pending |  |
 | 10 | 15 | upchuck | Pending |  |
 | 10 | 16 | ditto | Pending |  |
