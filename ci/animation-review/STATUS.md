@@ -23,7 +23,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 4 | 43 | clockwork | Needs revision | Standing and movement models are coherent, but painted energy fields and floor bursts obscure multiple power poses. |
 | 4 | 44 | jury-rigg | Needs revision | All32 frames inspected: mechanic identity is coherent, but low-detail cels and painted muzzle flashes differ from the sharp portrait. |
 | 5 | 45 | shocksquatch | Needs revision | All32 frames inspected: fur, face and bracers remain identifiable, but native detail differs from portrait and electricity is baked over hands/feet. |
-| 5 | 46 | feedback | Pending |  |
+| 5 | 46 | feedback | Needs revision | All32 frames inspected: plug-ended antennae, tail and fingers persist, but painted electricity overlaps power cels. |
 | 5 | 47 | bloxx | Pending |  |
 | 5 | 48 | gravattack | Pending |  |
 | 6 | 49 | crashhopper | Pending |  |
