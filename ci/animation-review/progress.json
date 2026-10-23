@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 69,
+  "completed": 70,
   "characters": [
     {
       "id": 35,
@@ -2151,10 +2151,21 @@
       "id": 90,
       "slug": "wreckingbolt",
       "batch": 23,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Red/black spiked shell and body remain coherent; retained intentional armored-ball transformation and grounded impact."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 91,
