@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 32,
-  "completed": 5,
+  "completed": 6,
   "characters": [
     {
       "id": 35,
@@ -496,10 +496,21 @@
       "id": 3,
       "slug": "xlr8",
       "batch": 7,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected: helmet/visor, long tail and wheeled feet stay coherent.",
+        "Retained low skating run, speed strike gestures and compact dash; no generic brawler replacement."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 4,
