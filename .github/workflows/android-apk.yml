@@ -69,6 +69,25 @@ jobs:
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
+          /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
+          node ci/check-multiplayer-ui.cjs
+          node ci/check-squad-ui.cjs
+          node ci/check-accounts.cjs
+          node ci/check-threat-layout.cjs
+          node ci/check-alien-force.cjs
+          node ci/check-expansion.cjs
+          node ci/check-footwork-dash.cjs
+          node ci/check-facing.cjs
+          node ci/check-interface.cjs
+          node ci/check-cel-ui.cjs
+          node ci/check-progression.cjs
+          node ci/check-progression-layout.cjs
+          node ci/check-alien-detail.cjs
+          node ci/check-testing-flow.cjs
+          node ci/check-home-team.cjs
+          node ci/check-card-shop-layout.cjs
+          node ci/check-power-icons.cjs
+          for script in web/*.js; do node --check "$script"; done
           python3 ci/check-full-poses.py
           python3 ci/check-portrait-quality.py
           node ci/check-cels.cjs
@@ -95,25 +114,6 @@ jobs:
           node ci/check-power-origins.cjs
           python3 ci/check-profile-pixels.py
           node ci/check-single-throws.cjs
-          /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
-          node ci/check-multiplayer-ui.cjs
-          node ci/check-squad-ui.cjs
-          node ci/check-accounts.cjs
-          node ci/check-threat-layout.cjs
-          node ci/check-alien-force.cjs
-          node ci/check-expansion.cjs
-          node ci/check-footwork-dash.cjs
-          node ci/check-facing.cjs
-          node ci/check-interface.cjs
-          node ci/check-cel-ui.cjs
-          node ci/check-progression.cjs
-          node ci/check-progression-layout.cjs
-          node ci/check-alien-detail.cjs
-          node ci/check-testing-flow.cjs
-          node ci/check-home-team.cjs
-          node ci/check-card-shop-layout.cjs
-          node ci/check-power-icons.cjs
-          for script in web/*.js; do node --check "$script"; done
       - name: Verify focused squad-screen correction after passed full suite
         if: contains(github.event.head_commit.message, '[squad-ui-only]')
         env:
