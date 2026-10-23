@@ -1,12 +1,13 @@
 {
   "id": 32,
   "slug": "rath",
-  "status": "in_progress",
-  "stage": "All native draft sheets saved; anatomy, registration, effects and runtime review pending",
+  "status": "verified_updated",
+  "stage": "All native clips, classic chest emblem and eight close-combat cels integrated; actual browser checked",
   "reviewed_on": "2026-10-23",
   "findings": [
     "Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model.",
-    "Preserve single wrist claws, no tail, brawler weight transfer and distinct jab/cross/hook cadence. Old close-combat sheet also needs replacement to avoid model switching."
+    "Preserve single wrist claws, no tail, brawler weight transfer and distinct jab/cross/hook cadence. Old close-combat sheet also needs replacement to avoid model switching.",
+    "Replaced all32 poses, matching portrait and8 close-combat cels so idle, jab/cross/hook, pounce and ultimate use one classic model."
   ],
   "model_requirements": "Rath in his classic Alien Force/Ultimate Alien form: muscular orange bipedal tiger, black stripes, white jaw/neck/chest/abdomen/hands/feet, green eyes, ONE large black retractable claw from EACH wrist, NO TAIL. Green Omnitrix emblem on upper chest. Correct the reference's variant costume: NO green belt, NO wrestling shorts, NO clothing or belt emblem. Keep white abdomen as fur. Fierce expressive tiger face.",
   "sources": {
@@ -23,8 +24,26 @@
     "powers": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent rath model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. Rath in his classic Alien Force/Ultimate Alien form: muscular orange bipedal tiger, black stripes, white jaw/neck/chest/abdomen/hands/feet, green eyes, ONE large black retractable claw from EACH wrist, NO TAIL. Green Omnitrix emblem on upper chest. Correct the reference's variant costume: NO green belt, NO wrestling shorts, NO clothing or belt emblem. Keep white abdomen as fur. Fierce expressive tiger face. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Top row:1 Claw flurry windup with two fists guarded;2 fast forward claw swipe with body weight shifted;3 claw/fist retraction;4 Tiger pounce low crouch anticipation. Bottom row:5 forward airborne tiger pounce with both black wrist claws aimed ahead and knees behind;6 grounded pounce landing;7 Rage slam with both fists raised over head;8 Rage slam grounded crouch with fists striking down. No energy, no trails, no painted effects; upper chest Omnitrix, no belt or shorts. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024.",
     "close": "Use case: stylized-concept. Production transparent BODY-ONLY cartoon animation sprite sheet. Reference is the approved consistent rath model: duplicate precisely its same face, colors, anatomy, emblem placement, head/torso proportions and clean outline/shading style in every cel. Rath in his classic Alien Force/Ultimate Alien form: muscular orange bipedal tiger, black stripes, white jaw/neck/chest/abdomen/hands/feet, green eyes, ONE large black retractable claw from EACH wrist, NO TAIL. Green Omnitrix emblem on upper chest. Correct the reference's variant costume: NO green belt, NO wrestling shorts, NO clothing or belt emblem. Keep white abdomen as fur. Fierce expressive tiger face. Exactly eight separate full-body poses in four columns and two rows, read left-to-right then next row. Same screen-right three-quarter side camera in every pose. Large transparent outer margins and gutters, no overlap, no clipped limbs. Eight chronological boxer/wrestler close-combat poses. Top row:1 guarded anticipation;2 lead-hand straight jab screen-right;3 jab retraction;4 powerful rear-hand cross screen-right. Bottom row:5 cross retraction;6 compact forward hook/uppercut with torso rotation;7 hook retraction;8 relaxed fighting guard. All strikes have planted stable feet and weight transfer; keep claws attached to each wrist, one per wrist. No contact sparks or trails. Correct chest Omnitrix; no belt, shorts or clothing. Keep native head and torso scale constant, never resize the character to fit a different stance. Simple flat TV cel colors with one hard-edged shade. No background, ground shadows, text, grids, gradients, 3D textures, contact sparks or power effects. Crisp high-resolution native bodies on wide2:1 canvas around2048x1024."
   },
-  "changed_files": [],
-  "checks": [],
+  "changed_files": [
+    "web/assets/reviewed-native/rath/",
+    "web/rath-close.js",
+    "ci/animation-review/characters/rath/revision.json"
+  ],
+  "checks": {
+    "native_frames": 40,
+    "states": 12,
+    "facings": 2,
+    "actual_draws": 240,
+    "source_pixels_preserved": true,
+    "actual_browser_checked": [
+      "idle",
+      "normal",
+      "skill0",
+      "skill1",
+      "ultimate"
+    ],
+    "passed": true
+  },
   "referenceHeightBySource": {
     "walk": 430,
     "jump-strike": 430,

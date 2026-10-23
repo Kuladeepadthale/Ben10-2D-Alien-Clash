@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 32,
-  "completed": 10,
+  "completed": 11,
   "characters": [
     {
       "id": 35,
@@ -228,14 +228,33 @@
       "id": 32,
       "slug": "rath",
       "batch": 2,
-      "status": "in_progress",
+      "status": "verified_updated",
       "findings": [
         "Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model.",
-        "Preserve single wrist claws, no tail, brawler weight transfer and distinct jab/cross/hook cadence. Old close-combat sheet also needs replacement to avoid model switching."
+        "Preserve single wrist claws, no tail, brawler weight transfer and distinct jab/cross/hook cadence. Old close-combat sheet also needs replacement to avoid model switching.",
+        "Replaced all32 poses, matching portrait and8 close-combat cels so idle, jab/cross/hook, pounce and ultimate use one classic model."
       ],
-      "changed_files": [],
-      "checks": [],
-      "stage": "All native draft sheets saved; anatomy, registration, effects and runtime review pending",
+      "changed_files": [
+        "web/assets/reviewed-native/rath/",
+        "web/rath-close.js",
+        "ci/animation-review/characters/rath/revision.json"
+      ],
+      "checks": {
+        "native_frames": 40,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "source_pixels_preserved": true,
+        "actual_browser_checked": [
+          "idle",
+          "normal",
+          "skill0",
+          "skill1",
+          "ultimate"
+        ],
+        "passed": true
+      },
+      "stage": "All native clips, classic chest emblem and eight close-combat cels integrated; actual browser checked",
       "reviewed_on": "2026-10-23",
       "model_requirements": "Rath in his classic Alien Force/Ultimate Alien form: muscular orange bipedal tiger, black stripes, white jaw/neck/chest/abdomen/hands/feet, green eyes, ONE large black retractable claw from EACH wrist, NO TAIL. Green Omnitrix emblem on upper chest. Correct the reference's variant costume: NO green belt, NO wrestling shorts, NO clothing or belt emblem. Keep white abdomen as fur. Fierce expressive tiger face.",
       "sources": {
