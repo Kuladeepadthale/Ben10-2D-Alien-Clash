@@ -1,0 +1,15 @@
+/* Large illustrations keep every battle choice readable on small screens. */
+#screen-modes .illustrated-battle-card .mode-scene:before{display:none;}
+#screen-modes .battle-card-illustration{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 35%;}
+#screen-modes .illustrated-battle-card .mode-scene:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#071b1c66,transparent 45%);pointer-events:none;}
+body:not(.in-battle) #screen-modes .illustrated-battle-card{border-color:#a5e98a66;box-shadow:0 5px 16px #0006;}
+body:not(.in-battle) #screen-modes .illustrated-battle-card:focus-visible{outline:3px solid #d6ff8f;outline-offset:2px;}
+.hero-xp-meter{min-width:0;display:flex;flex-direction:column;gap:7px;padding:11px 12px;border:1px solid #b0ee743d;border-radius:12px;background:linear-gradient(120deg,#19382a,#0a231f);box-sizing:border-box;}
+#profileXPMeter{grid-column:1 / -1;}
+.xp-meter-head,.xp-meter-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;min-width:0;}
+.hero-xp-meter .xp-meter-head strong{font-size:15px;color:#f1ffe8;}.hero-xp-meter .xp-meter-head span{font-size:12px;color:#d2ff94;font-weight:800;}
+.xp-line{height:9px;overflow:hidden;border-radius:10px;background:#040f12;border:1px solid #759f5b4d;}
+.xp-line i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#3bc6a4,#bbf663);box-shadow:0 0 10px #a8f87966;}
+.hero-xp-meter .xp-meter-foot span,.hero-xp-meter .xp-meter-foot strong{font-size:12px;line-height:1.2;color:#b5d1be;font-weight:500;}.hero-xp-meter .xp-meter-foot strong{color:#e1ffbf;text-align:right;}
+#resultXPMeter{flex:none;gap:5px;padding:8px 10px;}.xp-remaining{color:#d7ffa0;}
+@media(max-height:500px) and (orientation:landscape){#profileXPMeter{padding:6px 8px;gap:4px;}#resultXPMeter{padding:5px 8px;gap:3px;} .hero-xp-meter .xp-meter-head strong{font-size:12px;}.hero-xp-meter .xp-meter-head span,.hero-xp-meter .xp-meter-foot span,.hero-xp-meter .xp-meter-foot strong{font-size:10px;}.xp-line{height:7px;}#matchSummary .result-overview{gap:4px;}}

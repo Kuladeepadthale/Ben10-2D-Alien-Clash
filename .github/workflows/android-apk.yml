@@ -65,7 +65,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python3 ci/restore-verified-art.py
       - name: Verify all 92 action sets and game controls
-        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]')"
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
@@ -198,6 +198,33 @@ jobs:
           node ci/check-multiplayer-server.mjs
           node ci/check-target-snapshot.cjs
           for script in web/*.js; do node --check "$script"; done
+      - name: Verify battle cards and XP against verified v11.4
+        if: contains(github.event.head_commit.message, '[battle115]')
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          git fetch --depth=1 origin 3939737eeba12aa57c534fd37b9d7d9cbecc2504
+          python3 - <<'PYGUARD'
+          import subprocess
+          changed=set(subprocess.check_output(['git','diff','--name-only','3939737eeba12aa57c534fd37b9d7d9cbecc2504','HEAD'],text=True).splitlines())
+          allowed={'web/battle-polish.js','web/battle-polish.css','web/index.html','web/assets/modes-v112/multiplayer.webp','web/assets/modes-v112/survival.webp','web/assets/modes-v112/testing.webp','ci/check-battle-polish.cjs','ci/BATTLE-v115.md','android/app/build.gradle','.github/workflows/android-apk.yml'}
+          assert changed<=allowed,changed-allowed
+          PYGUARD
+          /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
+          node ci/check-battle-polish.cjs
+          node ci/check-expedition.cjs
+          node ci/check-expedition-ui.cjs
+          node ci/check-threat-layout.cjs
+          node ci/check-containment.cjs
+          node ci/check-threat-ladder.cjs
+          node ci/check-progression.cjs
+          node ci/check-squad-ui.cjs
+          node ci/check-testing-flow.cjs
+          node ci/check-facing.cjs
+          node ci/check-footwork-dash.cjs
+          node ci/check-multiplayer-server.mjs
+          node ci/check-target-snapshot.cjs
+          for script in web/*.js; do node --check "$script"; done
       - name: Deploy online Worker when owner credentials are configured
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -226,6 +253,7 @@ jobs:
           villains=json.loads(z.read('assets/assets/villains/manifest.json'))
           assert len(villains['characters'])==50
           assert all('assets/'+v['src'] in names and 'assets/'+v['portrait'] in names for v in villains['characters'])
+          assert 'assets/battle-polish.js' in names and 'assets/battle-polish.css' in names
           assert 'assets/index.html' in names and 'assets/cel-player.js' in names
           assert all('assets/'+f in names for f in ['account-boot.js','account-config.js','account-cloud.js','account.js','account.css','ranked-rules.js','multiplayer-config.js','multiplayer.js','multiplayer.css','squad-multiplayer.js','player-name.js','player-experience.js','player-experience.css'])
           assert b'wss://omnitrix-ranked-arena.kuladeepadthale.workers.dev/arena' in z.read('assets/multiplayer-config.js')
@@ -240,7 +268,7 @@ jobs:
           assert len(m['characters'])==92
           assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v111.webp' in names for i in range(18,23))
           icons=json.loads(z.read('assets/assets/ui/abilities/manifest.json'));assert len(icons['entries'])==460
-          assert all('assets/assets/modes-v112/'+p+'.webp' in names for p in ['classic','galactic','boss-rush','null-void','expedition'])
+          assert all('assets/assets/modes-v112/'+p+'.webp' in names for p in ['classic','galactic','boss-rush','null-void','expedition','multiplayer','survival','testing'])
           assert b'Plumber Missions' in z.read('assets/threat-ladder.js') and 'assets/plumber-containment.js' in names and 'assets/expedition.js' in names and 'assets/expedition.css' in names
           for c in m['characters']:
            assert all('assets/'+s['src'] in names for s in c['sheets'])
@@ -259,12 +287,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.4 — Omnitrix Expedition' --notes 'Adds Omnitrix Expedition as a main mode: six encounters across three regions with survival health carry, run-only bonus choices, safe/risky routes, journey loot and six reward missions. Preserves existing Plumber operations,92 aliens,50 villains and progression.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.5 — Battle Cards and Hero XP' --notes 'Adds cinematic battle card illustrations and exact Hero XP progress meters in profile and results, including XP earned, remaining XP and level-ups. Preserves existing Plumber operations,92 aliens,50 villains and progression.' --prerelease --target "$GITHUB_SHA"
 
 
 
 
 # v8.2: verify full-screen controls and all forty native replacement sheets.
+
 
 
 

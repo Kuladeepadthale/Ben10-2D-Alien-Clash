@@ -1,0 +1,12 @@
+'use strict';
+// Presentation only: XP awards, thresholds and saved progress remain authoritative.
+function heroXPView(gain=0){const r=heroStanding();return {...r,gain:Math.max(0,Number(gain)||0),remaining:Math.max(0,r.needed-r.xp),percent:Math.min(100,Math.max(0,r.xp/r.needed*100))};}
+function heroXPMeterMarkup(gain=0,result=false){const r=heroXPView(gain),fmt=n=>n.toLocaleString();return '<div class="xp-meter-head"><strong>Hero Level '+r.level+(result&&lastRankUp>0?' · LEVEL UP!':'')+'</strong><span>'+(result?'+'+fmt(r.gain)+' XP earned':'NEXT: LEVEL '+(r.level+1))+'</span></div><div class="xp-line" role="progressbar" aria-label="Hero XP towards level '+(r.level+1)+'" aria-valuemin="0" aria-valuemax="'+r.needed+'" aria-valuenow="'+r.xp+'"><i style="width:'+r.percent+'%"></i></div><div class="xp-meter-foot"><span>'+fmt(r.xp)+' / '+fmt(r.needed)+' XP</span><strong>'+fmt(r.remaining)+' XP to Level '+(r.level+1)+'</strong></div>';}
+const profileXPMeter=document.createElement('section');profileXPMeter.id='profileXPMeter';profileXPMeter.className='hero-xp-meter';document.querySelector('.account-metrics').appendChild(profileXPMeter);
+const profileXPBase=renderAccount;renderAccount=function(){profileXPBase();profileXPMeter.innerHTML=heroXPMeterMarkup();};
+const resultXPMeter=document.createElement('section');resultXPMeter.id='resultXPMeter';resultXPMeter.className='hero-xp-meter';document.querySelector('#matchSummary .result-overview').appendChild(resultXPMeter);
+const summaryXPBase=renderMatchSummary;renderMatchSummary=function(){summaryXPBase();if(currentScreen==='results')resultXPMeter.innerHTML=heroXPMeterMarkup(lastXPGain,true);};
+const heroDetailXPBase=renderHeroProgress;renderHeroProgress=function(){heroDetailXPBase();const r=heroXPView();const p=document.createElement('p');p.className='xp-remaining';p.textContent=r.remaining.toLocaleString()+' XP remaining to Hero Level '+(r.level+1);$('heroLevelCard').appendChild(p);};
+const battleCardArt={campaign:'classic',versus:'multiplayer',survival:'survival',training:'testing'};
+for(const card of document.querySelectorAll('#screen-modes [data-mode]')){const name=battleCardArt[card.dataset.mode];if(!name)continue;const art=card.querySelector('.mode-scene');if(!art)continue;const img=document.createElement('img');img.src='assets/modes-v112/'+name+'.webp';img.alt='';img.decoding='async';img.className='battle-card-illustration';art.replaceChildren(img);card.classList.add('illustrated-battle-card');}
+renderAccount();if(currentScreen==='results')renderMatchSummary();
