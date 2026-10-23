@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 44,
+  "completed": 45,
   "characters": [
     {
       "id": 35,
@@ -1549,10 +1549,23 @@
       "id": 64,
       "slug": "shock-rock",
       "batch": 17,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Replaced generic ultimate ball with energy-shaping hand gesture; retained rock armor plates and blue energy body."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/shock-rock/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 65,
