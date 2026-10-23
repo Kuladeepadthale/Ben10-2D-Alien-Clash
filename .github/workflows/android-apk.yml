@@ -136,7 +136,7 @@ jobs:
           python3 - <<'PYGUARD'
           import subprocess
           changed=set(subprocess.check_output(['git','diff','--name-only','35100a478edd9bb9d0099d517022f32bbc076073','HEAD'],text=True).splitlines())
-          allowed={'web/threat-ladder.js','web/threat-ladder.css','ci/check-threat-layout.cjs','ci/PLUMBER-v112.md','.github/workflows/android-apk.yml'}
+          allowed={'web/threat-ladder.js','web/threat-ladder.css','ci/check-threat-layout.cjs','ci/PLUMBER-v112.md','ci/build-cels.py','.github/workflows/android-apk.yml'}
           assert changed<=allowed,changed-allowed
           PYGUARD
           /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
