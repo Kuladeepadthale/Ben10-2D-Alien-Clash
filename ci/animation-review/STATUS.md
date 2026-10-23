@@ -1,6 +1,6 @@
 # Animation review progress
 
-**33 / 92 characters complete.** Batch size: 4.
+**34 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -59,7 +59,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 13 | 30 | goop | Reviewed — kept | All32 frames inspected: green fluid body and hovering antigravity projector remain coherent. |
 | 13 | 31 | alien-x | Reviewed — kept | All32 frames inspected: black starfield body, white outline, green eyes and head crest retain one silhouette. |
 | 14 | 52 | toepick | Reviewed — kept | All32 native frames inspected. |
-| 14 | 53 | pesky-dust | Pending |  |
+| 14 | 53 | pesky-dust | Reviewed — kept | All32 native frames inspected. |
 | 14 | 54 | bullfrag | Pending |  |
 | 14 | 55 | kickin-hawk | Pending |  |
 | 15 | 56 | whampire | Pending |  |
