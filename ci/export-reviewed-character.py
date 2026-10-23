@@ -36,6 +36,11 @@ for key in ['normal','skill0','skill1','skill2','ultimate']:
   elif slug=='ampfibian':
    yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)&(rgb[:,:,2]>100)&(rgb[:,:,2]>rgb[:,:,0]*1.2)
    ys,xs=np.where(mask);assert len(xs)>0;near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
+  elif slug=='fasttrack':
+   yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)
+   if fi not in [16,17,18,24,25,26]:mask=mask&(rgb[:,:,2]>90)&(rgb[:,:,2]>rgb[:,:,0]*1.5)&(rgb[:,:,2]>rgb[:,:,1]*1.2)
+   else:target=[.55,.5]
+   ys,xs=np.where(mask);assert len(xs)>0;near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
   elif slug=='nrg':
    yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)&(rgb[:,:,1]>120)&(rgb[:,:,1]>rgb[:,:,0]*1.35)&(rgb[:,:,1]>rgb[:,:,2]*1.3)&(yy<h*.36)
    ys,xs=np.where(mask);assert len(xs)>0,(fi,'missing grille');near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue

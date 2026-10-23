@@ -56,6 +56,8 @@ function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.g
   }
   // Terraspin drives his air currents with actual alternating native flipper poses.
   if(f.id===38&&d.reviewedRevision&&v.cfg.kind==='vortex'&&v.elapsed>=wind&&v.elapsed<wind+active)index=Math.floor((v.elapsed-wind)*9)%frames.length;
+  // Fasttrack retracts and extends the real roundhouse leg at every cyclone-kick contact.
+  if(f.id===40&&d.reviewedRevision&&v.cfg.kind==='vortex'&&v.elapsed>=wind&&v.elapsed<wind+active){const phase=((v.elapsed-wind)/active*(v.cfg.ticks||1))%1;index=phase<.55?1:0;}
   // Each rush contact gets native strike/retraction poses. Keep intentional shell rolling.
   if(['rush','pounce'].includes(v.cfg.kind)&&![10,71,90].includes(f.id)&&v.elapsed>=wind&&v.elapsed<wind+active){
    const cycle=(v.elapsed-wind)/active*Math.max(1,v.cfg.ticks||1),tick=Math.floor(cycle),phase=cycle-tick;

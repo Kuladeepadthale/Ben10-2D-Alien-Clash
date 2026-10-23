@@ -1,6 +1,6 @@
 # Animation review progress
 
-**76 / 92 characters approved.** Batch size: 4.
+**77 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -19,7 +19,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 3 | 37 | armodrillo | Reviewed — updated | Rebuilt one coherent yellow/black piston-arm model for standing, heavy walking, jump, normal strike, piston punch, seismic punch, charge, ultimate, guard, hit and defeat. |
 | 3 | 38 | terraspin | Reviewed — updated | Rebuilt one coherent olive/tan turtle model with brown shell, visible chest vents and long fingerless flippers across all 32 cels. |
 | 3 | 39 | nrg | Reviewed — updated | Rebuilt a coherent sealed bronze containment suit across walking, jumping, punch, grille ray, stomp, radiation wave, ultimate, guard and defeat. |
-| 3 | 40 | fasttrack | Needs revision | Action sheets incorrectly add a long striped tail; standing design is tailless. |
+| 3 | 40 | fasttrack | Reviewed — updated | Rebuilt one tailless blue/black feline model across all 32 native cels, preserving yellow eyes, pointed ears and white chest badge. |
 | 4 | 41 | chamalien | Needs revision | Baked swipes, contact stars and duplicate translucent bodies overlap the character. |
 | 4 | 42 | eatle | Needs revision | Strike sheet uses a different flatter armor drawing from walk/state sheets; painted projectiles also overlap the mouth. |
 | 4 | 43 | clockwork | Needs revision | Standing and movement models are coherent, but painted energy fields and floor bursts obscure multiple power poses. |

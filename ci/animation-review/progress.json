@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 40,
-  "completed": 76,
+  "current_character": 41,
+  "completed": 77,
   "characters": [
     {
       "id": 35,
@@ -1089,19 +1089,137 @@
       "id": 40,
       "slug": "fasttrack",
       "batch": 3,
-      "status": "needs_revision",
+      "status": "verified_updated",
       "findings": [
-        "Action sheets incorrectly add a long striped tail; standing design is tailless.",
-        "Remove the tail from every pose and retain blue/black feline silhouette and fast forward stride."
+        "Rebuilt one tailless blue/black feline model across all 32 native cels, preserving yellow eyes, pointed ears and white chest badge.",
+        "Corrected sprint draft to alternate near/far arm drive in its second half; no tail, helmet, wheels or duplicated motion-body art.",
+        "Cyclone kick retracts the lifted leg and extends a native roundhouse per configured contact. Rush/blitz use native strike/recovery, not static sliding.",
+        "Pose reference heights match native model proportions; testing/idle and attacks retain the same model."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/fasttrack/revision.json",
+        "ci/animation-review/characters/fasttrack/draft-walk.webp",
+        "ci/animation-review/characters/fasttrack/model-reference.webp",
+        "ci/animation-review/characters/fasttrack/source-jump-strike.webp",
+        "ci/animation-review/characters/fasttrack/source-walk.webp",
+        "ci/animation-review/characters/fasttrack/source-states.webp",
+        "ci/animation-review/characters/fasttrack/source-powers.webp",
+        "web/assets/reviewed-native/fasttrack/powers.webp",
+        "web/assets/reviewed-native/fasttrack/walk.webp",
+        "web/assets/reviewed-native/fasttrack/jump-strike.webp",
+        "web/assets/reviewed-native/fasttrack/states.webp",
+        "web/assets/reviewed-native/fasttrack/portrait.webp",
+        "ci/export-reviewed-character.py",
+        "web/cel-player.js"
+      ],
       "checks": {
         "native_frames": 32,
+        "native_detail_and_margins": true,
+        "native_asset_hashes": true,
+        "emitter_registration": true,
+        "actual_draws": 240,
+        "facings": 2,
+        "tail_absent_visual_review_all_32": true,
+        "alternate_sprint_arm_review": true,
+        "kick_retraction_extension": true,
+        "damaging_roster_casts": 2760,
         "visual_review": true,
-        "passed": false
+        "full_browser_review": true,
+        "browser_errors": [],
+        "passed": true
       },
       "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "renderHeight": 226,
+      "scale": 1,
+      "sources": {
+        "states": "ci/animation-review/characters/fasttrack/source-states.webp",
+        "walk": "ci/animation-review/characters/fasttrack/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/fasttrack/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/fasttrack/source-powers.webp"
+      },
+      "prompts": {
+        "states": "Create EXACT Fasttrack from attached Ben 10 reference as a clean 2D production game sprite sheet. Identity: slim athletic BLUE feline humanoid speedster, two tall pointed ear/head fins, small yellow eyes in black eye markings, blue feline face and cheeks, black fitted torso/shoulders/hips/upper thighs, blue forearms with clawed hands and blue lower legs/three-toed feet, white circular chest badge with black hourglass matching reference. STRICTLY NO TAIL in ANY pose. No stripes, no helmet, no wheels, no additional limbs. Crisp black outlines, flat vivid blue/black TV-cartoon cel art with one shadow tone. Exactly EIGHT fully separate whole-body right-facing/three-quarter poses, 4 columns x 2 rows, generous transparent gutters, all ears/hands/toes fully inside canvas. Row-major: 1 ultimate wind-up low sprinter brace; 2 ultimate active forward speed punch/claw drive; 3 ultimate recover guard; 4 neutral upright relaxed athletic guard; 5 defensive crossed-arm guard; 6 UPRIGHT hit recoil with feet planted; 7 defeated lying sideways as one connected body; 8 low forward sprint dash with rear leg lifted and arms driving. SAME tailless body, ears, face, badge and proportions throughout. Native upright bodies about 350-430px in 1536x1024 or higher. BODY ONLY: no speed streaks, painted motion lines, glows, power balls, ghost copies, ground, shadows, dust, labels or text. True transparent background. Keep at least 25px margin around each FULL silhouette, do not clip extended fists or feet.",
+        "walk": "EXACT attached Fasttrack model, slim BLUE feline humanoid speedster with tall pointed ears/head fins, yellow eyes/black eye markings, blue feline face/cheeks, black fitted torso/shoulders/hips/upper thighs, blue forearms/clawed hands and blue lower legs/three-toed feet, white circular chest badge/black hourglass. STRICT NO TAIL, no helmet, no wheels. Make a production RUNNING cycle sprite sheet: exactly EIGHT separate full-body right-facing/three-quarter drawings in 4 columns x 2 rows. Fast athletic bipedal sprint phases: left foot front contact, left push off, airborne passing, right knee driving forward, right contact, right push off, airborne passing opposite, left knee driving forward. Bent elbows with alternating arm drive, forward torso lean, SMALL head bob, no punches or attack stance. SAME tailless model, ears, face, blue/black color map and scale throughout. Crisp flat TV cel art, black outlines and one shadow tone. All entire ears, claws and feet inside canvas, 25px transparent safe margins and separate gutters. Native upright-equivalent body detail 400-480px in 1536x1024 or higher; running crouches are intentionally shorter but head size must stay consistent. NO streaks, energy, dust, trails, duplicated limbs, floor, shadow, text, labels or background. Truly transparent.",
+        "jump-strike": "Production eight-pose sprite sheet from EXACT attached Fasttrack model. Tailless slim BLUE feline humanoid speedster, tall pointed ears/head fins, yellow eyes in black eye markings, blue face/cheeks, black fitted torso/shoulders/hips/upper thighs, blue clawed hands and lower legs/three-toed feet, WHITE circular chest badge with black hourglass. NO TAIL in any pose, no helmet, no wheels. Same head/ear shape, anatomy, colors and body scale throughout; crisp flat TV-cartoon cel art with black outlines. 4 columns x 2 rows, eight complete right-facing/three-quarter figures. Row-major: 1 crouched jump preparation; 2 rising agile jump with knees tucked and hands up; 3 descending jump feet ready below body; 4 crouched soft landing; 5 claw/punch windup pulling near arm back; 6 forward claw strike/punch with near blue arm extended toward RIGHT; 7 retraction with opposite hand guarding; 8 balanced recovery guard. Natural connected shoulder/elbow/wrist and hips/knees/ankles, no floating hands. Native upright-equivalent height about 430-490px in 1536x1024 or larger. Give every full ear, hand, claw and toe at least 25px transparent safe margin; don't crop or touch neighboring figures. BODY ONLY: no streaks, ghosts, trails, dust, effects, floor, shadow, text or labels. True transparency.",
+        "powers": "EXACT attached Fasttrack tailless blue/black feline speedster model. Slim athletic humanoid, tall pointed ears/head fins, yellow eyes in black markings, blue face and cheeks, black fitted torso/shoulders/hips/upper thighs, blue clawed hands/lower legs/three-toed feet, white chest circle with black hourglass. Absolutely NO TAIL, NO helmet or wheels. Crisp flat TV cartoon cel art, same anatomy, ear/head size and colors in all poses. 8 distinct FULL-BODY right-facing/three-quarter poses in 4 columns x 2 rows with transparent gutters and safe margins. Row-major: 1 velocity-rush sprinter brace, arms driving opposite directions; 2 velocity-rush forward punching drive; 3 low guard recovery; 4 claw-combo windup pulling near claw back; 5 claw-combo forward swiping claw fully extended; 6 claw-combo opposite-hand follow-through with near hand guarding; 7 cyclone-kick anticipation, knee lifted and torso turned slightly, one foot planted; 8 cyclone-kick EXTENDED ROUNDHOUSE, long BLUE front leg kicks to RIGHT at torso height with clawed foot fully visible, rear foot planted as pivot and arms balance. Keep every whole ear, hand and kicking foot ON canvas with clear margin; don't crop or merge figures. Native upright-equivalent detail about 430-490px in 1536x1024 or higher, crouches intentionally shorter at SAME head scale. BODY ONLY: no speed streaks, air rings, trails, ghost copies, glows, dust, ground, shadow, text or labels. True transparent background.",
+        "walk-correction": "Correct ONLY the bottom row of this Fasttrack running sprite sheet. Keep the top four figures unchanged and keep the exact same tailless blue/black feline body, head facing RIGHT, yellow eyes, pointed ears, white chest badge and flat cel art. In EVERY bottom-row pose, reverse which limbs lead: the NEAR arm (on the left side of each pictured torso, currently stretched backward/down) must swing FORWARD, elbow bent, blue fist held in front near chin/chest on the RIGHT side of that body. The FAR arm must swing BACK behind the torso toward the LEFT. Reverse the leading leg relative to the corresponding top-row pose: near thigh goes behind while opposite knee drives forward. This is the second half of a normal alternate-arm alternate-leg sprint cycle. Do not merely copy the top row, do not mirror entire figures, do not turn heads left. Keep 8 separate complete figures in same 4x2 grid, same body/head scale, transparent background, all fingers/toes/ears within canvas. No tail in any frame. No effects, streaks, text, shadows or background."
+      },
+      "referenceHeightBySource": {
+        "states": 492,
+        "walk": 492,
+        "jump-strike": 475,
+        "powers": 475
+      },
+      "emitterTargets": {
+        "12": [
+          0.85,
+          0.38
+        ],
+        "13": [
+          0.96,
+          0.3
+        ],
+        "14": [
+          0.85,
+          0.38
+        ],
+        "15": [
+          0.85,
+          0.38
+        ],
+        "16": [
+          0.85,
+          0.38
+        ],
+        "17": [
+          0.85,
+          0.38
+        ],
+        "18": [
+          0.85,
+          0.38
+        ],
+        "19": [
+          0.3,
+          0.25
+        ],
+        "20": [
+          0.96,
+          0.3
+        ],
+        "21": [
+          0.93,
+          0.35
+        ],
+        "22": [
+          0.8,
+          0.65
+        ],
+        "23": [
+          0.97,
+          0.26
+        ],
+        "24": [
+          0.85,
+          0.38
+        ],
+        "25": [
+          0.85,
+          0.38
+        ],
+        "26": [
+          0.85,
+          0.38
+        ]
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/fasttrack/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/fasttrack/model-reference.webp",
+        "powers": "ci/animation-review/characters/fasttrack/model-reference.webp",
+        "walk-correction": "ci/animation-review/characters/fasttrack/draft-walk.webp",
+        "states": "Shipped v11.9 tailless Fasttrack portrait"
+      }
     },
     {
       "id": 41,
