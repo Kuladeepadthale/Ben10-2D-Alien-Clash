@@ -8,6 +8,12 @@ def constant(path,name):
     text=(R/path).read_text().split('const '+name+'=',1)[1].lstrip()
     return json.JSONDecoder().raw_decode(text)[0]
 profiles=constant('web/power-profiles.js','POWER_PROFILES')
+# Match the runtime registration overrides applied after the pinned base constant.
+source=(R/'web/power-profiles.js').read_text()
+if 'const REVIEWED_NATIVE_PHASES=' in source:
+    for fighter,rows in constant('web/power-profiles.js','REVIEWED_NATIVE_PHASES').items():
+        for slot,phases in enumerate(rows):
+            profiles['aliens'][int(fighter)][slot]['phases']=phases
 cels=constant('web/cel-data.js','CEL_DATA')
 villains=constant('web/villain-data.js','VILLAIN_DATA')
 @lru_cache(maxsize=16)
@@ -26,4 +32,5 @@ for is_villain in [False,True]:
                 assert sheet(path).getpixel((x+px,y+py))[3]>180,(fighter,ability['name'],'detached emitter')
                 checked+=1
 print('Passed',checked,'native-pixel launch registrations across 92 aliens and 50 villains.')
+
 
