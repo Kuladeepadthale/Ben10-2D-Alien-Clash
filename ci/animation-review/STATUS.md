@@ -1,6 +1,6 @@
 # Animation review progress
 
-**24 / 92 characters complete.** Batch size: 4.
+**25 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -50,7 +50,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 11 | 19 | arctiguana | Reviewed — kept | All32 frames inspected: blue lizard body, dorsal spikes, cheek fins and tail remain coherent. |
 | 11 | 20 | spitter | Reviewed — kept | All32 frames inspected: green body, pale throat and tail stay coherent. |
 | 11 | 21 | buzzshock | Pending |  |
-| 12 | 22 | swampfire | Pending |  |
+| 12 | 22 | swampfire | Reviewed — kept | All32 frames inspected: red flame-shaped head, green plant body and black chest remain coherent. |
 | 12 | 23 | echo-echo | Pending |  |
 | 12 | 25 | jetray | Pending |  |
 | 12 | 27 | chromastone | Pending |  |
