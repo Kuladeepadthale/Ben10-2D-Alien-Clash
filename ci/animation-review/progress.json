@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 33,
-  "completed": 71,
+  "current_character": 34,
+  "completed": 72,
   "characters": [
     {
       "id": 35,
@@ -400,36 +400,55 @@
       "id": 34,
       "slug": "nanomech",
       "batch": 2,
-      "status": "needs_revision",
+      "status": "in_progress",
       "findings": [
         "Existing portrait and tiny action sheets differ in detail; maintain one insect/cyborg model through hover and laser poses.",
         "First proposed ultimate release draft has an extra wing pair and is rejected; corrected two-wing draft requested."
       ],
       "changed_files": [],
       "checks": [],
-      "stage": "State-sheet model proposal saved; remaining native clips and gameplay validation pending",
+      "stage": "Two-wing state model approved; remaining native clip generation underway",
       "reviewed_on": "2026-10-23",
       "model_requirements": "Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor.",
       "sources": {
-        "states": "ci/animation-review/characters/nanomech/source-states-rejected.webp"
+        "states": "ci/animation-review/characters/nanomech/source-states.webp"
       },
       "prompts": {
-        "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: both small manipulator arms extended, wings spread for stable airborne electric overload, no drawn electricity;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: fast forward aerial dart with body tilted and wings swept back. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024."
+        "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: both small manipulator arms extended, wings spread for stable airborne electric overload, no drawn electricity;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: fast forward aerial dart with body tilted and wings swept back. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024.",
+        "states_correction": "Use case: precise-object-edit. Edit this transparent eight-pose Nanomech sprite sheet. Correct wing anatomy only: Nanomech has exactly ONE PAIR of TWO insect wings, one left wing and one right wing. In pose2 (top row second), REMOVE the two lower extra wings so only the two upper wings remain. In every other pose ensure at most those same two wings; a far wing may be hidden by the body. Keep head, single green eye, two antennae, entire body, armor, all poses, proportions, outline and palette unchanged. Preserve transparent background and all complete bodies. No glow or added effects.\n"
       }
     },
     {
       "id": 36,
       "slug": "ampfibian",
       "batch": 2,
-      "status": "in_progress",
+      "status": "verified_updated",
       "findings": [
         "Existing standing reference omits the extra arm pair visible in action designs; rebuild a coherent four-arm/two-leg-tentacle model.",
         "Keep swimming/hovering tentacle locomotion and separate electrical effects; no humanoid boots or generic punches.",
-        "Discarded locomotion draft containing combat/defeat states; rebuilt hover loop from approved rising and low-hover native poses."
+        "Discarded locomotion draft containing combat/defeat states; rebuilt hover loop from approved rising and low-hover native poses.",
+        "Rebuilt32 high-detail body-only cels with four arms/two leg tentacles, a hover loop, tentacle lash and independent electricity."
       ],
-      "changed_files": [],
-      "checks": [],
-      "stage": "All native draft sheets saved; anatomy, registration, effects and runtime review pending",
+      "changed_files": [
+        "web/assets/reviewed-native/ampfibian/",
+        "ci/animation-review/characters/ampfibian/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "source_pixels_preserved": true,
+        "actual_browser_checked": [
+          "idle",
+          "normal",
+          "skill0",
+          "skill1",
+          "ultimate"
+        ],
+        "passed": true
+      },
+      "stage": "All32 coherent native poses and matching portrait integrated; hover loop, tentacle origin and full browser reviewed",
       "reviewed_on": "2026-10-23",
       "model_requirements": "AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands.",
       "sources": {
@@ -2198,5 +2217,6 @@
       "reviewed_on": "2026-10-23",
       "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     }
-  ]
+  ],
+  "analysed": 92
 }
