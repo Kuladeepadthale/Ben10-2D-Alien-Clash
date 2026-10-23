@@ -1,0 +1,18 @@
+{
+  "id": 8,
+  "slug": "ripjaws",
+  "status": "needs_revision",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "Walk cycle omits the head lure visible in jump, attacks and idle; these models need reconciliation.",
+    "Preserve webbed limbs, dorsal fin and wide jaw bite animation when repairing the lure."
+  ],
+  "changed_files": [],
+  "checks": {
+    "native_frames": 32,
+    "visual_review": true,
+    "passed": false
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "stage": "Repair walk lure before approval"
+}

@@ -36,7 +36,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 7 | 5 | grey-matter | Reviewed — kept | All32 frames inspected: grey head, large yellow-green eyes and black/white suit stay consistent. |
 | 8 | 6 | upgrade | Reviewed — kept | All32 frames inspected: single green eye, green circuitry and black/white body stay coherent. |
 | 8 | 7 | stinkfly | Reviewed — kept | All32 frames inspected: insect head, eye stalks, wing pair, tail stinger and limb count stay coherent. |
-| 8 | 8 | ripjaws | Pending |  |
+| 8 | 8 | ripjaws | Needs revision | Walk cycle omits the head lure visible in jump, attacks and idle; these models need reconciliation. |
 | 8 | 9 | ghostfreak | Reviewed — kept | All32 frames inspected: pale shroud, single side eye, black seams and tapering ghost tail remain coherent. |
 | 9 | 10 | cannonbolt | Pending |  |
 | 9 | 11 | wildvine | Pending |  |
