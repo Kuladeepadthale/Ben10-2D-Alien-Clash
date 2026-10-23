@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 65,
+  "completed": 66,
   "characters": [
     {
       "id": 35,
@@ -2071,10 +2071,21 @@
       "id": 86,
       "slug": "rush",
       "batch": 22,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Black/green speedster body, striped tail and wheel feet remain coherent; retained low skate travel, tight turn/curl and forward speed strike."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 87,
