@@ -69,51 +69,7 @@ jobs:
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
-          /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
-          node ci/check-multiplayer-ui.cjs
-          node ci/check-squad-ui.cjs
-          node ci/check-accounts.cjs
-          node ci/check-threat-layout.cjs
-          node ci/check-alien-force.cjs
-          node ci/check-expansion.cjs
-          node ci/check-footwork-dash.cjs
-          node ci/check-facing.cjs
-          node ci/check-interface.cjs
-          node ci/check-cel-ui.cjs
-          node ci/check-progression.cjs
-          node ci/check-progression-layout.cjs
-          node ci/check-alien-detail.cjs
-          node ci/check-testing-flow.cjs
-          node ci/check-home-team.cjs
-          node ci/check-card-shop-layout.cjs
-          node ci/check-power-icons.cjs
-          for script in web/*.js; do node --check "$script"; done
-          python3 ci/check-full-poses.py
-          python3 ci/check-portrait-quality.py
-          node ci/check-cels.cjs
-          node ci/check-basic-attacks.cjs
-          node ci/check-melee-combos.cjs
-          node ci/check-villains110.cjs
-          node ci/check-threat-ladder.cjs
-          node ci/check-card-shop.cjs
-          python3 ci/check-ability-art.py
-          node ci/check-account-cloud.cjs
-          node server/build-engine.cjs
-          node ci/check-multiplayer-server.mjs
-          node ci/check-squads.mjs
-          node ci/check-friend-rooms.mjs
-          node ci/check-target-snapshot.cjs
-          node ci/check-alien-combat.cjs
-          node ci/check-next20.cjs
-          node ci/check-expansion100.cjs
-          node ci/check-expansion111.cjs
-          node ci/check-expansion111-hits.cjs
-          node ci/check-cartoon-powers.cjs
-          node --expose-gc ci/check-ability-animations.cjs
-          node ci/check-clean-powers.cjs
-          node ci/check-power-origins.cjs
-          python3 ci/check-profile-pixels.py
-          node ci/check-single-throws.cjs
+          python3 ci/run-release-checks.py
       - name: Verify focused squad-screen correction after passed full suite
         if: contains(github.event.head_commit.message, '[squad-ui-only]')
         env:
