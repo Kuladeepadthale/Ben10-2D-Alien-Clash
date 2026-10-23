@@ -39,7 +39,8 @@
       "skill1",
       "ultimate"
     ],
-    "passed": true
+    "passed": true,
+    "actual_configured_scale": true
   },
   "referenceHeightBySource": {
     "walk": 430,
@@ -47,8 +48,8 @@
     "powers": 430,
     "states": 450
   },
-  "renderHeight": 230,
-  "scale": 1.05,
+  "renderHeight": 226,
+  "scale": 1.06,
   "attachmentRatio": 0.11,
   "previous_findings": [
     "Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures.",

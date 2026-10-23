@@ -42,7 +42,8 @@
       "skill1",
       "ultimate"
     ],
-    "passed": true
+    "passed": true,
+    "actual_configured_scale": true
   },
   "referenceHeightBySource": {
     "walk": 430,
@@ -50,8 +51,8 @@
     "powers": 410,
     "states": 450
   },
-  "renderHeight": 220,
-  "scale": 1.04,
+  "renderHeight": 226,
+  "scale": 1.1,
   "emitterTargets": {
     "12": [
       0.7,
