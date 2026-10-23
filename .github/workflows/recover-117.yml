@@ -1,0 +1,40 @@
+name: Recover animation checkpoint and verified APK
+on:
+  push:
+    branches: [animation-recovery-117]
+    paths: [.github/workflows/recover-117.yml]
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: animation-review
+      - name: Package checkpoint
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          zip -qr /tmp/animation-checkpoint117.zip ci web/assets/reviewed-native web/rath-close.js web/power-profiles.js web/cel-player.js web/classic-art.js .github/workflows/android-apk.yml android
+          gh release create animation-checkpoint117 /tmp/animation-checkpoint117.zip --title "Animation review checkpoint" --notes "Resumable native animation review:13 approved characters." --target animation-review
+      - name: Prepare download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import urllib.request,urllib.error,json,os,base64
+          root='https://api.github.com/repos/Kuladeepadthale/Ben10-2D-Alien-Clash'
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'}
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self,*args,**kwargs): return None
+          opener=urllib.request.build_opener(NoRedirect)
+          for tag,names in [('animation-checkpoint117',['animation-checkpoint117.zip']),('android-e5a75f04a7d6',['Ben10-Alien-Clash-Online.apk'])]:
+              with urllib.request.urlopen(urllib.request.Request(root+'/releases/tags/'+tag,headers=headers)) as response: release=json.load(response)
+              for asset in release['assets']:
+                  if asset['name'] not in names: continue
+                  try: opener.open(urllib.request.Request(asset['url'],headers={**headers,'Accept':'application/octet-stream'}))
+                  except urllib.error.HTTPError as error:
+                      assert error.code in [301,302,303,307,308]
+                      print('ASSET '+asset['name']+' '+str(asset['size'])+' '+base64.b64encode(error.headers['Location'].encode()).decode(),flush=True)
+          PY
