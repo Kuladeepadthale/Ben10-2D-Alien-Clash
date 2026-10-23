@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 19,
+  "completed": 20,
   "characters": [
     {
       "id": 35,
@@ -866,10 +866,21 @@
       "id": 16,
       "slug": "ditto",
       "batch": 10,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: three head nodes, black/white suit and small body remain coherent.",
+        "Retained springy gait, elastic crouches and recovery; hit reaction remains upright and separate from defeat."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 17,

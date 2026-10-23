@@ -1,6 +1,6 @@
 # Animation review progress
 
-**19 / 92 characters complete.** Batch size: 4.
+**20 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -44,7 +44,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 9 | 13 | snare-oh | Reviewed — kept | All32 frames inspected: gold wrappings, black gaps, head silhouette and trailing bandages remain coherent. |
 | 10 | 14 | frankenstrike | Reviewed — kept | All32 frames inspected: face, shoulder generators, forearm armor and black/green legs stay coherent. |
 | 10 | 15 | upchuck | Reviewed — kept | All32 frames inspected: green/yellow round body, black/white suit and face remain coherent. |
-| 10 | 16 | ditto | Pending |  |
+| 10 | 16 | ditto | Reviewed — kept | All32 frames inspected: three head nodes, black/white suit and small body remain coherent. |
 | 10 | 17 | eye-guy | Pending |  |
 | 11 | 18 | way-big | Pending |  |
 | 11 | 19 | arctiguana | Pending |  |
