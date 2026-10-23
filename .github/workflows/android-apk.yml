@@ -285,6 +285,9 @@ jobs:
           assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v100.webp' in names for i in range(13,18))
           m=json.loads(z.read('assets/assets/cels/manifest.json'))
           assert len(m['characters'])==92
+          reviewed=m['characters'][35];assert reviewed.get('reviewedRevision')==1
+          assert all('assets/'+sheet['src'] in names for sheet in reviewed['sheets'])
+          assert 'assets/'+reviewed['portrait'] in names
           assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v111.webp' in names for i in range(18,23))
           icons=json.loads(z.read('assets/assets/ui/abilities/manifest.json'));assert len(icons['entries'])==460
           assert all('assets/assets/modes-v112/'+p+'.webp' in names for p in ['classic','galactic','boss-rush','null-void','expedition','multiplayer','survival','testing'])
@@ -306,7 +309,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.6 — Home and Combat Fixes' --notes 'Fixes filled home slots and rarity stars; shows uncropped battle artwork with large swipeable landscape cards; improves melee enemy pursuit; fixes NRG hurt/KO poses and Eatle, Bashmouth, Dark Matter scale registration. Preserves existing Plumber operations,92 aliens,50 villains and progression.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.7 — Animation Review Batch 1' --notes 'Rebuilds Water Hazard as32 consistent high-detail body-only native poses with matching standing portrait and registered water ports. Adds resumable92-character review tracking; keeps approved Big Chill, Humungousaur and Heatblast animation. Preserves existing Plumber operations,92 aliens,50 villains and progression.' --prerelease --target "$GITHUB_SHA"
 
 
 
