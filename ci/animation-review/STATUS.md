@@ -1,6 +1,6 @@
 # Animation review progress
 
-**12 / 92 characters complete.** Batch size: 4.
+**13 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -37,7 +37,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 8 | 6 | upgrade | Reviewed — kept | All32 frames inspected: single green eye, green circuitry and black/white body stay coherent. |
 | 8 | 7 | stinkfly | Reviewed — kept | All32 frames inspected: insect head, eye stalks, wing pair, tail stinger and limb count stay coherent. |
 | 8 | 8 | ripjaws | Pending |  |
-| 8 | 9 | ghostfreak | Pending |  |
+| 8 | 9 | ghostfreak | Reviewed — kept | All32 frames inspected: pale shroud, single side eye, black seams and tapering ghost tail remain coherent. |
 | 9 | 10 | cannonbolt | Pending |  |
 | 9 | 11 | wildvine | Pending |  |
 | 9 | 12 | blitzwolfer | Pending |  |
