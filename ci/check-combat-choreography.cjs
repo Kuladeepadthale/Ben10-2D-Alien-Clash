@@ -24,5 +24,5 @@ for(let id=0;id<92;id++)for(const key of ['skill0','skill1','skill2','ultimate']
 // Rath approaches the captured location, holds striking distance and keeps manual facing.
 run("player=make(32,300,1,true);enemy=make(2,550,-1);player.ult=100;mode='fight';cast(player,'ultimate');target=player.cast.plannedTarget;for(let i=0;i<100;i++)updateF(player,.01)");
 assert(b.player.x<=b.target-50);assert.equal(b.player.dir,1);
-const css=fs.readFileSync('web/battle-polish.css','utf8');assert(css.includes('pointer-events:none!important'));assert(css.includes('--battle-notice-top:68px'));
+const css=fs.readFileSync('web/battle-polish.css','utf8');assert(css.includes('pointer-events:none!important'));assert(css.includes('--battle-notice-top:96px'));
 console.log(`Passed sonic deployment delay/dodge/budget for both facings, ${reviewed} native rush/pounce cycles and Rath approach distance.`);

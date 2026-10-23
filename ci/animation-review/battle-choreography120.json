@@ -1,0 +1,2772 @@
+{
+  "version": "12.0",
+  "scope": "All 92 kits inspected for rush, pounce, projectile and deployment routing. This is not a claim that all body-model repairs are complete.",
+  "remaining_body_repairs": 19,
+  "changes": {
+    "23": "Native jumping clones land and project inward sonic pulses at captured target",
+    "32": "Ultimate approach stops at captured striking distance and alternates native jab/cross/hook",
+    "69": "Procedural discs travel around captured target before sonic pulses"
+  },
+  "roster": [
+    {
+      "id": 0,
+      "name": "Heatblast",
+      "actions": [
+        {
+          "name": "Fireball",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Flame jet",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Eruption",
+          "kind": "eruption",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Inferno storm",
+          "kind": "rain",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Four Arms",
+      "actions": [
+        {
+          "name": "Thunderclap",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Ground pound",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Four-fist barrage",
+          "kind": "melee",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Titan impact",
+          "kind": "leapslam",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Diamondhead",
+      "actions": [
+        {
+          "name": "Crystal volley",
+          "kind": "projectile",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Crystal spikes",
+          "kind": "spikes",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Crystal blade",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Crystal cascade",
+          "kind": "spikes",
+          "ticks": 6,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "XLR8",
+      "actions": [
+        {
+          "name": "Velocity strike",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Cyclone",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Ricochet rush",
+          "kind": "rush",
+          "ticks": 3,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Mach-speed barrage",
+          "kind": "rush",
+          "ticks": 6,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Wildmutt",
+      "actions": [
+        {
+          "name": "Predator pounce",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Claw flurry",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Savage lunge",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Apex hunt",
+          "kind": "rush",
+          "ticks": 5,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Grey Matter",
+      "actions": [
+        {
+          "name": "Shock gadget",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Proximity trap",
+          "kind": "trap",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Scrap grenade",
+          "kind": "lob",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Overclocked arsenal",
+          "kind": "rain",
+          "ticks": 6,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Upgrade",
+      "actions": [
+        {
+          "name": "Optic beam",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Liquid-metal strike",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Tech pulse",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Overload beam",
+          "kind": "beam",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Stinkfly",
+      "actions": [
+        {
+          "name": "Goo shot",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Acid volley",
+          "kind": "lob",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Stinger dive",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Swarm of slime",
+          "kind": "rain",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Ripjaws",
+      "actions": [
+        {
+          "name": "Crushing bite",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Raking claws",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Predator leap",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Deep-sea frenzy",
+          "kind": "rush",
+          "ticks": 5,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Ghostfreak",
+      "actions": [
+        {
+          "name": "Phantom lunge",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Tentacle lash",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Spectral pulse",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Nightmare sweep",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Cannonbolt",
+      "actions": [
+        {
+          "name": "Rolling strike",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Retain species rolling"
+        },
+        {
+          "name": "Shell slam",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Rebound rush",
+          "kind": "rush",
+          "ticks": 3,
+          "review": "Retain species rolling"
+        },
+        {
+          "name": "Orbit breaker",
+          "kind": "rush",
+          "ticks": 6,
+          "review": "Retain species rolling"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Wildvine",
+      "actions": [
+        {
+          "name": "Vine lash",
+          "kind": "melee",
+          "ticks": 2,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Seed bomb",
+          "kind": "lob",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Root eruption",
+          "kind": "spikes",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Overgrowth",
+          "kind": "spikes",
+          "ticks": 6,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Blitzwolfer",
+      "actions": [
+        {
+          "name": "Sonic howl",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Claw flurry",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Predator pounce",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Moonlit howl",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Snare-oh",
+      "actions": [
+        {
+          "name": "Bandage lash",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Binding wrap",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Sand rush",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Royal bind",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Frankenstrike",
+      "actions": [
+        {
+          "name": "Lightning discharge",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Charged fist",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Shockwave",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Thunderstorm",
+          "kind": "rain",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Upchuck",
+      "actions": [
+        {
+          "name": "Plasma spit",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Explosive burp",
+          "kind": "lob",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Tongue lash",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Digestive barrage",
+          "kind": "rain",
+          "ticks": 7,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Ditto",
+      "actions": [
+        {
+          "name": "Double trouble",
+          "kind": "rush",
+          "ticks": 2,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Clone flurry",
+          "kind": "melee",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Tag-team rush",
+          "kind": "rush",
+          "ticks": 3,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Multiplicity",
+          "kind": "rush",
+          "ticks": 6,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Eye Guy",
+      "actions": [
+        {
+          "name": "Optic shot",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Chest beam",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Omni pulse",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "All-seeing beam",
+          "kind": "beam",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Way Big",
+      "actions": [
+        {
+          "name": "Cosmic ray",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Titan stomp",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Meteor strike",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Cosmic judgement",
+          "kind": "beam",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Arctiguana",
+      "actions": [
+        {
+          "name": "Frost breath",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Ice shard",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Glacial slam",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Absolute zero",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Spitter",
+      "actions": [
+        {
+          "name": "Pressure spit",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Inflation blast",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Tail sweep",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Pressure deluge",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Buzzshock",
+      "actions": [
+        {
+          "name": "Spark bolt",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Battery discharge",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Live-wire rush",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Voltage overload",
+          "kind": "wave",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Swampfire",
+      "actions": [
+        {
+          "name": "Fire seed",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Vine lash",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Root eruption",
+          "kind": "spikes",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Wildfire bloom",
+          "kind": "rain",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Echo Echo",
+      "actions": [
+        {
+          "name": "Sonic shout",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Echo barrage",
+          "kind": "projectile",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Resonance pulse",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Sonic overload",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Captured-target sonic deployment"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Humungousaur",
+      "actions": [
+        {
+          "name": "Seismic stomp",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Titan fist",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Dinosaur charge",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Colossal impact",
+          "kind": "leapslam",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Jetray",
+      "actions": [
+        {
+          "name": "Neuroshock ray",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Aerial blitz",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Tail bolt",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Hyperspeed barrage",
+          "kind": "beam",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Big Chill",
+      "actions": [
+        {
+          "name": "Freezing breath",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Phasing lunge",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Ice wave",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Deep freeze",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Chromastone",
+      "actions": [
+        {
+          "name": "Prismatic beam",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Crystal strike",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Radiant wave",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Spectrum overload",
+          "kind": "beam",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Brainstorm",
+      "actions": [
+        {
+          "name": "Neural bolt",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Cerebral discharge",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Static field",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Brainstorm surge",
+          "kind": "rain",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Spidermonkey",
+      "actions": [
+        {
+          "name": "Web shot",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Four-arm flurry",
+          "kind": "melee",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Acrobatic pounce",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Webstorm rush",
+          "kind": "rush",
+          "ticks": 6,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Goop",
+      "actions": [
+        {
+          "name": "Acid glob",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Elastic strike",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Liquid rush",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Acid deluge",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Alien X",
+      "actions": [
+        {
+          "name": "Cosmic orb",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Gravity pulse",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Starstep",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Celestial judgement",
+          "kind": "rain",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Rath",
+      "actions": [
+        {
+          "name": "Claw flurry",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Tiger pounce",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Rage slam",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Appoplexian fury",
+          "kind": "rush",
+          "ticks": 6,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Lodestar",
+      "actions": [
+        {
+          "name": "Magnetic pulse",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Metal storm",
+          "kind": "rain",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Polarity field",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Magnetic maelstrom",
+          "kind": "rain",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Nanomech",
+      "actions": [
+        {
+          "name": "Nano laser",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Micro blitz",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Nano discharge",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Nano overload",
+          "kind": "beam",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Water Hazard",
+      "actions": [
+        {
+          "name": "Palm water jet",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Pressure burst",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Rising tide",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Ocean deluge",
+          "kind": "beam",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "AmpFibian",
+      "actions": [
+        {
+          "name": "Tentacle bolt",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Phasing current",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Current field",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Amperi thunderstorm",
+          "kind": "rain",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Armodrillo",
+      "actions": [
+        {
+          "name": "Piston drill",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Seismic punch",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Drill charge",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Tectonic breaker",
+          "kind": "leapslam",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Terraspin",
+      "actions": [
+        {
+          "name": "Vent blast",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Shell cyclone",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Shell slam",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Cyclonic tempest",
+          "kind": "vortex",
+          "ticks": 9,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "NRG",
+      "actions": [
+        {
+          "name": "Vent heat ray",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Molten stomp",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Radiation wave",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Reactor flare",
+          "kind": "rain",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Fasttrack",
+      "actions": [
+        {
+          "name": "Velocity rush",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Claw combo",
+          "kind": "melee",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Cyclone kick",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Citrakayah blitz",
+          "kind": "rush",
+          "ticks": 6,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Chamalien",
+      "actions": [
+        {
+          "name": "Cloaked lunge",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Claw swipe",
+          "kind": "melee",
+          "ticks": 2,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Tail sweep",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Invisible ambush",
+          "kind": "rush",
+          "ticks": 6,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Eatle",
+      "actions": [
+        {
+          "name": "Mouth blast",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Beetle charge",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Horn uppercut",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Matter converter",
+          "kind": "beam",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Clockwork",
+      "actions": [
+        {
+          "name": "Temporal ray",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Time field",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Clockwork stomp",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Temporal surge",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Jury Rigg",
+      "actions": [
+        {
+          "name": "Scrap launcher",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Junk bomb",
+          "kind": "lob",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Gear trap",
+          "kind": "trap",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Junkyard arsenal",
+          "kind": "rain",
+          "ticks": 7,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Shocksquatch",
+      "actions": [
+        {
+          "name": "Charged fist",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Lightning arc",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Electric stomp",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Thunderous fury",
+          "kind": "wave",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Feedback",
+      "actions": [
+        {
+          "name": "Finger bolt",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Plug discharge",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Current rush",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Conductoid overload",
+          "kind": "beam",
+          "ticks": 9,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Bloxx",
+      "actions": [
+        {
+          "name": "Block hammer",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Brick volley",
+          "kind": "projectile",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Construction slam",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Megablock impact",
+          "kind": "leapslam",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "name": "Gravattack",
+      "actions": [
+        {
+          "name": "Gravity orb",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Orbital field",
+          "kind": "vortex",
+          "ticks": 6,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Planetfall",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Gravity singularity",
+          "kind": "vortex",
+          "ticks": 9,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Crashhopper",
+      "actions": [
+        {
+          "name": "Spring pounce",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Headlong rush",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Landing shock",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Meteor hopper",
+          "kind": "leapslam",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Ball Weevil",
+      "actions": [
+        {
+          "name": "Plasma ball",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Sticky lob",
+          "kind": "lob",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Plasma trap",
+          "kind": "trap",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Giant plasma burst",
+          "kind": "lob",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Astrodactyl",
+      "actions": [
+        {
+          "name": "Energy whip",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Jet blitz",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Star bolt",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Stellar overdrive",
+          "kind": "beam",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Toepick",
+      "actions": [
+        {
+          "name": "Terrifying gaze",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Dread aura",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Heavy grasp",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Nightmare exposure",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "name": "Pesky Dust",
+      "actions": [
+        {
+          "name": "Sleep dust",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Dream spiral",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Fairy flutter",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Dreamscape",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Bullfrag",
+      "actions": [
+        {
+          "name": "Tongue snare",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Frog spring",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Amphibian rush",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Incursean combination",
+          "kind": "rush",
+          "ticks": 6,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "name": "Kickin' Hawk",
+      "actions": [
+        {
+          "name": "Talon combination",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Roundhouse kick",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Aerial talon",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Falcon flurry",
+          "kind": "rush",
+          "ticks": 6,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "name": "Whampire",
+      "actions": [
+        {
+          "name": "Corruptura",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Vladat shriek",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Nocturnal lunge",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Nocturnal command",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Gutrot",
+      "actions": [
+        {
+          "name": "Sedative cloud",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Chemical cloud",
+          "kind": "trap",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Pressure vent",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Reactor cloud",
+          "kind": "vortex",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Atomix",
+      "actions": [
+        {
+          "name": "Atomic burst",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Fusion beam",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Nuclear shockwave",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Fusion sun",
+          "kind": "lob",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Walkatrout",
+      "actions": [
+        {
+          "name": "Slippery escape",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Fin slap",
+          "kind": "melee",
+          "ticks": 2,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Fish flop",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Slipstream scramble",
+          "kind": "rush",
+          "ticks": 5,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "name": "The Worst",
+      "actions": [
+        {
+          "name": "Stubborn charge",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Belly bump",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Unyielding landing",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Unbreakable impact",
+          "kind": "leapslam",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Mole-Stache",
+      "actions": [
+        {
+          "name": "Moustache lash",
+          "kind": "melee",
+          "ticks": 2,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Whisker uppercut",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Propeller hop",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Moustache cyclone",
+          "kind": "vortex",
+          "ticks": 7,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "name": "Overflow",
+      "actions": [
+        {
+          "name": "Water jet",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Pressure shot",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Water blade",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Tidal barrage",
+          "kind": "rain",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Gax",
+      "actions": [
+        {
+          "name": "Laser vision",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Tentacle lash",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Conqueror slam",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Vilgaxian charge",
+          "kind": "rush",
+          "ticks": 5,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "name": "Shock Rock",
+      "actions": [
+        {
+          "name": "Energy blade",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Fulmini beam",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Rock discharge",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Energy hammer",
+          "kind": "leapslam",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "name": "Slapback",
+      "actions": [
+        {
+          "name": "Double trouble",
+          "kind": "rush",
+          "ticks": 2,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Dense fist",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Compact cannonball",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Mass multiplicity",
+          "kind": "rush",
+          "ticks": 6,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "name": "Surge",
+      "actions": [
+        {
+          "name": "Linked charge",
+          "kind": "rush",
+          "ticks": 2,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Cross slice",
+          "kind": "melee",
+          "ticks": 2,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Xerge formation",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Swarm convergence",
+          "kind": "rush",
+          "ticks": 6,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "name": "Ultimate Humungousaur",
+      "actions": [
+        {
+          "name": "Bio-missile volley",
+          "kind": "projectile",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Armored stomp",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Heavy tail",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Missile saturation",
+          "kind": "rain",
+          "ticks": 9,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "name": "Ultimate Big Chill",
+      "actions": [
+        {
+          "name": "Freezing flame",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Ice-fire shard",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Phasing flame",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Subzero inferno",
+          "kind": "wave",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "name": "Ultimate Echo Echo",
+      "actions": [
+        {
+          "name": "Sonic discs",
+          "kind": "projectile",
+          "ticks": 3,
+          "review": "Captured-target sonic deployment"
+        },
+        {
+          "name": "Focused resonance",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Disc ring",
+          "kind": "vortex",
+          "ticks": 6,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Sonic doom",
+          "kind": "rain",
+          "ticks": 8,
+          "review": "Captured-target sonic deployment"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "name": "Ultimate Swampfire",
+      "actions": [
+        {
+          "name": "Blue fireball",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Armored roots",
+          "kind": "spikes",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Methane bomb",
+          "kind": "lob",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Blue-flame detonation",
+          "kind": "rain",
+          "ticks": 8,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "name": "Ultimate Cannonbolt",
+      "actions": [
+        {
+          "name": "Spiked roller",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Retain species rolling"
+        },
+        {
+          "name": "Steel-shell slam",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Spiked rebound",
+          "kind": "rush",
+          "ticks": 3,
+          "review": "Retain species rolling"
+        },
+        {
+          "name": "Wrecking orbit",
+          "kind": "rush",
+          "ticks": 6,
+          "review": "Retain species rolling"
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "name": "Ultimate Wildmutt",
+      "actions": [
+        {
+          "name": "Apex claw flurry",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Predator lunge",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Tail sweep",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Feral onslaught",
+          "kind": "rush",
+          "ticks": 5,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "name": "Ultimate Spidermonkey",
+      "actions": [
+        {
+          "name": "Mouth web snare",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Gorilla ground smash",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Spider-leg rake",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Arachnid rampage",
+          "kind": "rush",
+          "ticks": 5,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "name": "Ultimate Way Big",
+      "actions": [
+        {
+          "name": "Cosmic forearm ray",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Colossal stomp",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Giant uppercut",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Ultimate cosmic ray",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "name": "Ultimate Arctiguana",
+      "actions": [
+        {
+          "name": "Shoulder frost cannon",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Ice cannon shell",
+          "kind": "lob",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Glacial field",
+          "kind": "spikes",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Twin cannon blizzard",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "name": "Ultimate Gravattack",
+      "actions": [
+        {
+          "name": "Gravity core pulse",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Orbital gravity well",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Moonfall",
+          "kind": "lob",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Planetary compression",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "name": "Ultimate Rath",
+      "actions": [
+        {
+          "name": "Twin-claw frenzy",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Appoplexian pounce",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Savage uppercut",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Ultimate claw rampage",
+          "kind": "rush",
+          "ticks": 5,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "name": "Ultimate Grey Matter",
+      "actions": [
+        {
+          "name": "Third-eye beam",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Psychic barrier",
+          "kind": "vortex",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Hoverchair cannon",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Cerebral overload",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "name": "Bashmouth",
+      "actions": [
+        {
+          "name": "Metal-claw barrage",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Steel-jaw bite",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Wolf pounce",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Armored wolf frenzy",
+          "kind": "rush",
+          "ticks": 5,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "name": "Bootleg",
+      "actions": [
+        {
+          "name": "Optic corruption beam",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Liquid spike strike",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Circuit pulse",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Corruption overload",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "name": "Crystalfist",
+      "actions": [
+        {
+          "name": "Violet crystal shard",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Crystalline eruption",
+          "kind": "spikes",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Crystal-fist combo",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Purple crystal cascade",
+          "kind": "spikes",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "name": "Dark Matter",
+      "actions": [
+        {
+          "name": "Crystallizing flame",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Dark crystal trap",
+          "kind": "trap",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Crystalline claw",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Matter crystallization",
+          "kind": "spikes",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "name": "Hot Shot",
+      "actions": [
+        {
+          "name": "Magma fireball",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Flame stream",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Volcanic eruption",
+          "kind": "eruption",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Magma storm",
+          "kind": "rain",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "name": "Humungoraptor",
+      "actions": [
+        {
+          "name": "Raptor claw combo",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Spiked tail sweep",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Raptor stomp",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Raptor stampede",
+          "kind": "rush",
+          "ticks": 5,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "name": "Quad Smack",
+      "actions": [
+        {
+          "name": "Four-fist barrage",
+          "kind": "melee",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Four-arm thunderclap",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Quad ground pound",
+          "kind": "ground",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Four-arm fury",
+          "kind": "rush",
+          "ticks": 5,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "name": "Rush",
+      "actions": [
+        {
+          "name": "Velocity tackle",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Wheel cyclone",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "High-speed kick",
+          "kind": "melee",
+          "ticks": 3,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Maximum velocity",
+          "kind": "rush",
+          "ticks": 5,
+          "review": "Native strike/recovery cadence"
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Skunkmoth",
+      "actions": [
+        {
+          "name": "Mouth slime shot",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Toxic goo arc",
+          "kind": "lob",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Armored moth dive",
+          "kind": "pounce",
+          "ticks": 1,
+          "review": "Native strike/recovery cadence"
+        },
+        {
+          "name": "Slime bombardment",
+          "kind": "rain",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "name": "Thornblade",
+      "actions": [
+        {
+          "name": "Thorn dart",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Twin-vine lash",
+          "kind": "melee",
+          "ticks": 2,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Thorn-root eruption",
+          "kind": "spikes",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Thorn forest",
+          "kind": "spikes",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "name": "Undertow",
+      "actions": [
+        {
+          "name": "Forearm water jet",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Pressure globule",
+          "kind": "projectile",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Undertow surge",
+          "kind": "wave",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Hydro-pressure torrent",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "name": "Wreckingbolt",
+      "actions": [
+        {
+          "name": "Spiked shell roll",
+          "kind": "rush",
+          "ticks": 1,
+          "review": "Retain species rolling"
+        },
+        {
+          "name": "Wrecking crash",
+          "kind": "leapslam",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Heavy shell strike",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Wreckingbolt rampage",
+          "kind": "rush",
+          "ticks": 5,
+          "review": "Retain species rolling"
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "name": "Alien V",
+      "actions": [
+        {
+          "name": "Cosmic hand blast",
+          "kind": "beam",
+          "ticks": 4,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Celestial crusher",
+          "kind": "melee",
+          "ticks": 1,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Void gravity field",
+          "kind": "vortex",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        },
+        {
+          "name": "Celestial annihilation",
+          "kind": "beam",
+          "ticks": 5,
+          "review": "Retain existing procedural species effect"
+        }
+      ]
+    }
+  ]
+}
