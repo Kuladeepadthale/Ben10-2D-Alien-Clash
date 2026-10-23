@@ -15,5 +15,8 @@ for revfile in sorted((R/'ci/animation-review/characters').glob('*/revision.json
 assert len(m['characters'])==92
 p.write_text(json.dumps(m,indent=2)+'\n');(R/'web/cel-data.js').write_text("'use strict';\nconst CEL_DATA="+json.dumps(m,separators=(',',':'))+';\n')
 profile=R/'web/power-profiles.js';source=profile.read_text().split('// BEGIN REVIEWED_NATIVE_PHASES')[0].rstrip()+'\n'
-source+='// BEGIN REVIEWED_NATIVE_PHASES\n// Native body-only cel registration, shared by browser and authoritative server.\nconst REVIEWED_NATIVE_PHASES='+json.dumps(phases,separators=(',',':'))+';\nfor(const [id,rows] of Object.entries(REVIEWED_NATIVE_PHASES)){for(let slot=0;slot<4;slot++)POWER_PROFILES.aliens[Number(id)][slot].phases=rows[slot];}\n// END REVIEWED_NATIVE_PHASES\n';profile.write_text(source)
+source+='// BEGIN REVIEWED_NATIVE_PHASES\n// Native body-only cel registration, shared by browser and authoritative server.\nconst REVIEWED_NATIVE_PHASES='+json.dumps(phases,separators=(',',':'))+';\nfor(const [id,rows] of Object.entries(REVIEWED_NATIVE_PHASES)){for(let slot=0;slot<4;slot++)POWER_PROFILES.aliens[Number(id)][slot].phases=rows[slot];}\n// END REVIEWED_NATIVE_PHASES\n';
+for hover_id in ['34','36']:
+ if hover_id in phases:source+=f'POWER_PROFILES.hover[{hover_id}]=3;\n'
+profile.write_text(source)
 print('Applied reviewed native character revisions:',','.join(phases) or 'none')
