@@ -31,8 +31,8 @@ source+=`(async()=>{
  run('Object.getPrototypeOf(localStorage).setItem=originalStorageSet');assert(run('buyAlien(4)'));assert.equal(run('career.gems'),4);
  // Existing diamond purchases remain an alternative, and old ownership is never revoked.
  run('career.gems=15');assert(run('buyAlien(1)'));assert.equal(run('career.gems'),0);
- run('career.owned=aliens.map((_,id)=>id);career.gems=47;saveProfile()');const legacy=JSON.parse(t.w.localStorage.getItem('omnitrix-profile-v2'));delete legacy.collection.cardCopies;t.w.close();
- t=await start(JSON.stringify(legacy));run=t.run;assert.equal(run('career.owned.length'),72);assert.equal(run('career.gems'),47);assert.equal(run('career.cardCopies.length'),72);assert(run('career.cardCopies.every(c=>c===0)'));
+ run('career.owned=aliens.slice(0,72).map((_,id)=>id);career.gems=47;saveProfile()');const legacy=JSON.parse(t.w.localStorage.getItem('omnitrix-profile-v2'));delete legacy.collection.cardCopies;t.w.close();
+ t=await start(JSON.stringify(legacy));run=t.run;assert.equal(run('career.owned.length'),72);assert.equal(run('career.gems'),47);assert.equal(run('career.cardCopies.length'),92);assert(run('career.cardCopies.every(c=>c===0)'));
  for(const pack of run('CARD_PACKS'))assert.equal(pack.weights.reduce((a,b)=>a+b,0),100);
  t.w.close();console.log('Passed: 5/10/15/20/25 card thresholds, no automatic unlocks or early XP, manual unlock exactly once, capped progress, duplicate conversion, saved partial receipts, complete rollback and old ownership migration.');
 })().catch(e=>{console.error(e);process.exit(1)});`;

@@ -2,9 +2,9 @@
 const fs=require('fs'),vm=require('vm');
 let source=fs.readFileSync('ci/check-threat-ladder.cjs','utf8');source=source.slice(0,source.indexOf('(async()=>'));
 source+=`(async()=>{const {run,b,w}=await boot();run('chooseStarter(career.offers[0]);drawnAlienEmitter=undefined');
- run(fs.readFileSync('web/power-profiles.js','utf8'));const data=fs.readFileSync('web/cel-data.js','utf8');run(data);const native=run('CEL_DATA.characters.length===72');if(native){run(fs.readFileSync('web/cartoon-gaits.js','utf8'));const playerSource=fs.readFileSync('web/cel-player.js','utf8');run(playerSource.slice(playerSource.indexOf('function drawnAlienEmitter('),playerSource.indexOf('const celOriginalBegin')));}
+ run(fs.readFileSync('web/power-profiles.js','utf8'));const data=fs.readFileSync('web/cel-data.js','utf8');run(data);const native=run('CEL_DATA.characters.length===92');if(native){run(fs.readFileSync('web/cartoon-gaits.js','utf8'));const playerSource=fs.readFileSync('web/cel-player.js','utf8');run(playerSource.slice(playerSource.indexOf('function drawnAlienEmitter('),playerSource.indexOf('const celOriginalBegin')));}
  const failures=[];let checked=0;
- for(const fps of [30,60])for(let id=0;id<72;id++)for(const target of [0,5,22])for(const action of ['normal','skill0','skill1','skill2','ultimate']){
+ for(const fps of [30,60])for(let id=0;id<92;id++)for(const target of [0,5,22])for(const action of ['normal','skill0','skill1','skill2','ultimate']){
  b.testId=id;b.targetId=target;b.testAction=action;b.testFps=fps;
  run("selectedMode='versus';mode='fight';time=0;player=make(testId,460,1,true);enemy=make(targetId,580,-1);player.ult=100;player.loadout=testAction==='skill2'?[2,1]:[0,1];shots=[];effects=[];particles=[];floating=[];cast(player,testAction==='skill2'?'skill0':testAction)");
  assert(run('!!player.cast'));const budget=run('player.cast.budget.remaining');run('for(let frame=0;frame<testFps*5;frame++){time+=1/testFps;updateF(player,1/testFps);updateEffects(1/testFps)}');const damage=run('enemy.maxHp-enemy.hp');if(!(damage>0&&damage<=budget+1e-5))failures.push({id,name:run('aliens[testId].name'),target,action,fps,damage,budget});checked++;

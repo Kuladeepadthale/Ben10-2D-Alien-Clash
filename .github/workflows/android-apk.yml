@@ -60,21 +60,11 @@ jobs:
           else
             WRANGLER_SEND_METRICS=false npx --yes wrangler@4.151.3 deploy --dry-run --outdir /tmp/omni-arena-worker --config server/wrangler.jsonc
           fi
-      - name: Reuse verified unchanged character art
-        if: contains(github.event.head_commit.message, '[reuse-art]')
+      - name: Restore pinned base and reviewed92-alien art
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 ci/restore-verified-art.py
-      - name: Export native cel assets and Android bundle
-        if: "!contains(github.event.head_commit.message, '[reuse-art]')"
-        run: |
-          python3 ci/prepare-alien-force.py
-          python3 ci/prepare-next20.py
-          python3 ci/prepare-expansion100.py
-          python3 ci/build-cels.py
-          python3 ci/build-villains.py
-          python3 ci/extend-villains110.py
-      - name: Verify all 72 action sets and game controls
+      - name: Verify all 92 action sets and game controls
         if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
@@ -97,8 +87,9 @@ jobs:
           node ci/check-alien-combat.cjs
           node ci/check-next20.cjs
           node ci/check-expansion100.cjs
+          node ci/check-expansion111.cjs
           node ci/check-cartoon-powers.cjs
-          node ci/check-ability-animations.cjs
+          node --expose-gc ci/check-ability-animations.cjs
           node ci/check-clean-powers.cjs
           node ci/check-power-origins.cjs
           python3 ci/check-profile-pixels.py
@@ -158,7 +149,7 @@ jobs:
           node ci/check-target-snapshot.cjs
           node ci/check-alien-combat.cjs
           node ci/check-cartoon-powers.cjs
-          node ci/check-ability-animations.cjs
+          node --expose-gc ci/check-ability-animations.cjs
           node ci/check-clean-powers.cjs
           node ci/check-power-origins.cjs
           python3 ci/check-profile-pixels.py
@@ -205,7 +196,9 @@ jobs:
           assert 'assets/ability-animations.js' in names
           assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v100.webp' in names for i in range(13,18))
           m=json.loads(z.read('assets/assets/cels/manifest.json'))
-          assert len(m['characters'])==72
+          assert len(m['characters'])==92
+          assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v111.webp' in names for i in range(18,23))
+          icons=json.loads(z.read('assets/assets/ui/abilities/manifest.json'));assert len(icons['entries'])==460
           for c in m['characters']:
            assert all('assets/'+s['src'] in names for s in c['sheets'])
            assert set(c['clips'])=={'idle','walk','jump','normal','skill0','skill1','skill2','ultimate','guard','hit','ko','dash'}
@@ -223,7 +216,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.0 — 50 Plumber Threats' --notes 'Adds 20 illustrated villains as stages 31–50 of Plumber Threat Ladder. Preserves all cleared stages. Existing villains receive improved attack, recoil and recovery timing, characteristic ranged basics and new close-combat clips. Includes the full previous alien roster and card progression.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.1 — 92 Playable Aliens' --notes 'Adds seven Ultimate forms, twelve Antitrix forms and Alien V, with native movement and combat poses, characteristic attacks, ability artwork and card progression. Preserves all72 previous alien IDs and50 villain stages.' --prerelease --target "$GITHUB_SHA"
 
 
 

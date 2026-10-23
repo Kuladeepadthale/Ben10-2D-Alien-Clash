@@ -29,7 +29,7 @@ function animatedPowerHead(ctx,e,style){
  if(theme==='fire'){ctx.save();ctx.translate(-r*1.5,0);powerFlame(ctx,r*2.6,r*.8,color,phase);ctx.restore();}
  else if(theme==='electric'){ctx.save();ctx.translate(-r,0);powerBolt(ctx,r*2,r*.7,color,phase);ctx.restore();powerRing(ctx,0,0,r*.7,r*.7,color,2);}
  else if(theme==='ice'||theme==='crystal'){
-  path(ctx,[[-r*1.2,-r*.3],[r*.2,-r*.65],[r*1.3,0],[r*.15,r*.65],[-r*1.2,r*.3]],theme==='ice'?'#9cddf7':'#65cbaa','#efffff',2);
+  path(ctx,[[-r*1.2,-r*.3],[r*.2,-r*.65],[r*1.3,0],[r*.15,r*.65],[-r*1.2,r*.3]],theme==='ice'?'#9cddf7':id>=72?color:'#65cbaa','#efffff',2);
   path(ctx,[[-r*.9,0],[r*.2,-r*.65],[r*1.3,0]],'#d9ffff',null);line(ctx,[[-r*.9,0],[r*1.3,0]],'#f4ffff',1.5);
  }else if(theme==='sonic'||theme==='wind'){
   for(let k=0;k<3;k++){ctx.beginPath();ctx.ellipse(-k*r*.35,0,r*(.2+k*.07),r*(.62+k*.16),0,-1.5,1.5);ctx.strokeStyle=k===1?'#f1ffff':color;ctx.lineWidth=2.2;ctx.stroke();}

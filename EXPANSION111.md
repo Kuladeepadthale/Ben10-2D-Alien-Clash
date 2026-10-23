@@ -1,0 +1,11 @@
+# Ben 10 Alien Clash 11.1
+
+Adds 20 playable forms, bringing the roster to 92. Existing alien IDs, owned cards, upgrades, currencies, mission claims and all 50 Plumber Threat Ladder stages are retained. New cards follow the existing rarity thresholds and require manual unlock after enough matching cards have been collected. All 92 fighters are free to try in Testing.
+
+New forms: Ultimate Wildmutt, Ultimate Spidermonkey, Ultimate Way Big, Ultimate Arctiguana, Ultimate Gravattack, Ultimate Rath, Ultimate Grey Matter, Bashmouth, Bootleg, Crystalfist, Dark Matter, Hot Shot, Humungoraptor, Quad Smack, Rush, Skunkmoth, Thornblade, Undertow, Wreckingbolt and Alien V.
+
+Each new fighter has 32 native full-body poses covering walking, jumping, basic attacks, three skills, an ultimate, guard, hit, knockout and dash. Native strike/retraction cycles follow the configured melee hit timing. Tail, vine, mouth, forehead, chest, eye, shoulder-cannon and hand powers have separate launch registrations. Battle effects are drawn as changing geometry; the 100 new ability pictures are button artwork. Movement, facing, dash direction and cast-time target snapshots retain their existing input behavior.
+
+Artwork was generated with the built-in image tool. Character design prompts are retained in ci/expansion111-specs.json. Movement prompt template: exactly16 isolated whole-body right-facing poses, idle, eight walk phases, four jump phases, basic windup/contact/recoil, transparent background, clean cartoon cel shading, no emitted powers. Combat template: twelve move windup/contact/recoil poses followed by guard, hit, knockout and dash, using the movement sheet as identity reference, no detached limbs or emitted effects. Production extraction preserves complete silhouettes before padded atlas packing; Rush and Thornblade use their actual source row arrangements. Power-button prompts request5columns by4rows of isolated ability-only artwork matching the ordered kits in ci/expansion111-kits.json.
+
+Validation includes the prior full regression suite plus 20-actor native rendering, pixel-level emitters, all 92 combat kits, facing and dash, card thresholds, legacy72-actor ownership and account payload sizes32/52/72/92. APK signing and both package identities are verified in the Android build workflow.

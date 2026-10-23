@@ -11,7 +11,7 @@ assert(rules.changes(100,1000,0)[0]>rules.changes(1000,100,0)[0]);
 assert.deepEqual(rules.changes(100,100,-1),[0,0]);
 assert(rules.changes(100,100,0,true)[1]<rules.changes(100,100,0)[1]);
 let checked=0;
-for(let id=0;id<72;id++)for(const action of ['normal','skill0','skill1','skill2','ultimate']){
+for(let id=0;id<92;id++)for(const action of ['normal','skill0','skill1','skill2','ultimate']){
  const cfg=action==='normal'?{kind:'melee'}:action==='ultimate'?kits[id].ultimate:kits[id].skills[Number(action.slice(5))];
  // A straight head-height ray can pass above a shorter fighter. Use a tall grounded
  // target for ranged cast coverage instead of forcing an anatomical ray downwards.

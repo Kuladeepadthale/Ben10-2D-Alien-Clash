@@ -4,7 +4,7 @@ const {harness,declaration}=require('./cel-harness.cjs');
 const b=harness({metadataOnly:true}),run=s=>vm.runInContext(s,b);
 run(fs.readFileSync('web/villain-data.js','utf8'));
 let count=0,ranged=0;
-for(const villain of [false,true])for(let id=0;id<(villain?50:72);id++)for(const key of ['skill0','skill1','skill2','ultimate'])for(const dir of [-1,1]){
+for(const villain of [false,true])for(let id=0;id<(villain?50:92);id++)for(const key of ['skill0','skill1','skill2','ultimate'])for(const dir of [-1,1]){
  Object.assign(b,{id,key,dir,villain});
  run("player=make(villain?0:id,640,dir,true);enemy=make(0,640-dir*300,-dir);if(villain){const d=VILLAIN_DATA.characters[id];player.villain=id;player.config={...d.kit,type:d.type,name:d.name,light:d.color,renderHeight:d.height||226,bodyHeight:d.bodyHeight||205,scale:1};}cfg=key==='ultimate'?(player.config||aliens[id]).ultimate:(player.config||aliens[id]).skills[Number(key.slice(5))];review=powerProfileFor(player,key);");
  assert(b.review&&b.review.source&&b.review.color,'Missing ability profile');assert.equal(b.review.name,b.cfg.name);

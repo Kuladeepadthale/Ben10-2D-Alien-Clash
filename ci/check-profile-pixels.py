@@ -25,5 +25,5 @@ for is_villain in [False,True]:
                 assert 0<=px<w and 0<=py<h,(fighter,ability['name'],phase)
                 assert sheet(path).getpixel((x+px,y+py))[3]>180,(fighter,ability['name'],'detached emitter')
                 checked+=1
-print('Passed',checked,'native-pixel launch registrations across 72 aliens and 50 villains.')
+print('Passed',checked,'native-pixel launch registrations across 92 aliens and 50 villains.')
 

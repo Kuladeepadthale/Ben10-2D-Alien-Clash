@@ -6,8 +6,9 @@ const {harness,declaration}=require('./cel-harness.cjs');
  for(const f of ['cartoon-power-effects','ability-animations'])run(fs.readFileSync('web/'+f+'.js','utf8'));
  const draws=[],ctx={globalAlpha:1,imageSmoothingEnabled:false,save(){},restore(){},translate(){},rotate(){},drawImage(...a){draws.push(a)}};
  b.ctx=ctx;let count=0;
- for(let id=0;id<72;id++)for(const key of ['skill0','skill1','skill2','ultimate']){
+ for(let id=0;id<92;id++)for(const key of ['skill0','skill1','skill2','ultimate']){
   Object.assign(b,{id,key});const p=run('powerProfileFor({id},key)');if(!['projectile','lob'].includes(p.kind)||p.ticks!==1)continue;
+  if(!p.icon){assert(id>=72,'Missing legacy throw art');b.id=id;b.key=key;run("e={owner:{id},artKey:key,kind:powerProfileFor({id},key).kind,singleThrow:true}");assert.equal(run('drawSingleThrow(ctx,e)'),false,'New forms use animated geometry');continue;}
   b.image=await loadImage('web/assets/ui/abilities/'+p.icon.atlas);run('throwArtImages.set(powerProfileFor({id},key).icon.atlas,image)');
   for(const dir of [-1,1]){
    b.dir=dir;run("e={owner:{id},artKey:key,kind:powerProfileFor({id},key).kind,x:500,y:300,r:20,vx:600*dir,vy:0,dir,life:2,maxLife:2.4,singleThrow:true}");draws.length=0;

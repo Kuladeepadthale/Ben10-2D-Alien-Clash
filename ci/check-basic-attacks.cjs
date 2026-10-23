@@ -3,7 +3,7 @@ const {harness,declaration}=require('./cel-harness.cjs');
 const b=harness({metadataOnly:true}),run=s=>vm.runInContext(s,b);
 for(const name of ['updateEffects','overlap','segmentRect','hitboxCircle'])run(declaration(fs.readFileSync('web/game.js','utf8'),name));
 let ranged=0,melee=0;
-for(let id=0;id<72;id++)for(const dir of [-1,1]){
+for(let id=0;id<92;id++)for(const dir of [-1,1]){
  Object.assign(b,{id,dir});run("mode='fight';time=0;shots=[];effects=[];player=make(id,640,dir,true);enemy=make(0,640+dir*310,-dir);cfg=baseNormal(player)");
  const isRanged=run("Number.isInteger(aliens[id].basicSkillIndex)");
  assert.equal(b.cfg.damage,52*run('aliens[id].strength'));

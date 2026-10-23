@@ -1,7 +1,7 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
 const {harness,declaration}=require('./cel-harness.cjs');const b=harness({metadataOnly:true}),run=s=>vm.runInContext(s,b);
 let combos=0;
-for(let id=0;id<72;id++)for(const key of ['skill0','skill1','skill2','ultimate'])for(const dir of [-1,1]){
+for(let id=0;id<92;id++)for(const key of ['skill0','skill1','skill2','ultimate'])for(const dir of [-1,1]){
  Object.assign(b,{id,key,dir});run("player=make(id,640,dir,true);cfg=key==='ultimate'?aliens[id].ultimate:aliens[id].skills[Number(key.slice(5))]");
  if(b.cfg.kind!=='melee'||(b.cfg.ticks||1)<2)continue;
  run("player.cast={key,dir,ultimate:key==='ultimate',elapsed:0,cfg};before=JSON.stringify(player)");

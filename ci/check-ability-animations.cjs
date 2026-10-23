@@ -1,3 +1,6 @@
+// Bound native pixel readback allocations by checking the same roster in four fresh processes.
+if(process.argv.length<4){const {spawnSync}=require('child_process');for(let start=0;start<92;start+=23){const result=spawnSync(process.execPath,[...process.execArgv,__filename,String(start),String(Math.min(92,start+23))],{stdio:'inherit'});if(result.status!==0)process.exit(result.status||1);}process.exit(0);}
+const firstAlien=Number(process.argv[2]),lastAlien=Number(process.argv[3]);
 const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),crypto=require('crypto');
 const {harness,declaration}=require('./cel-harness.cjs');
 const b=harness({metadataOnly:true}),run=s=>vm.runInContext(s,b),ctx=b.ctx;
@@ -6,9 +9,9 @@ for(const n of ['drawShot','drawEffect'])run(declaration(fs.readFileSync('web/ga
 for(const f of ['expansion-effects','alien-force-effects','next20-effects','cartoon-power-effects','ability-animations'])run(fs.readFileSync('web/'+f+'.js','utf8'));
 ctx.drawImage=()=>{throw Error('A battle effect must not draw an icon or image')};
 let count=0,animated=0;
-for(let id=0;id<72;id++)for(const key of ['normal','skill0','skill1','skill2','ultimate'])for(const dir of [-1,1]){
+for(let id=firstAlien;id<lastAlien;id++)for(const key of ['normal','skill0','skill1','skill2','ultimate'])for(const dir of [-1,1]){
  Object.assign(b,{id,key,dir});
- run("player=make(id,640,dir,true);enemy=make((id+1)%72,640+dir*250,-dir);cfg=key==='normal'?baseNormal(player):key==='ultimate'?aliens[id].ultimate:aliens[id].skills[Number(key.slice(5))];player.cast={id:72,key,dir,elapsed:cfg.windup+.02,cfg,ultimate:key==='ultimate'};effect={id:100,owner:player,artKey:key,castId:72,name:cfg.name,kind:cfg.kind,x:640,y:330,r:40,range:cfg.range,length:400,endY:330,dir,vx:600*dir,vy:0,life:.72,maxLife:1,height:150,delay:.1,color:aliens[id].light,budget:{remaining:100},damage:100};if(effect.kind==='spikes')effect.kind='spike';if(['rush','pounce','leapslam'].includes(effect.kind))effect.kind='afterimage';if(effect.kind==='beam'){const p=drawnAlienEmitter(player,player.cast);effect.x=p.x;effect.y=p.y;}");
+ run("player=make(id,640,dir,true);enemy=make((id+1)%92,640+dir*250,-dir);cfg=key==='normal'?baseNormal(player):key==='ultimate'?aliens[id].ultimate:aliens[id].skills[Number(key.slice(5))];player.cast={id:72,key,dir,elapsed:cfg.windup+.02,cfg,ultimate:key==='ultimate'};effect={id:100,owner:player,artKey:key,castId:72,name:cfg.name,kind:cfg.kind,x:640,y:330,r:40,range:cfg.range,length:400,endY:330,dir,vx:600*dir,vy:0,life:.72,maxLife:1,height:150,delay:.1,color:aliens[id].light,budget:{remaining:100},damage:100};if(effect.kind==='spikes')effect.kind='spike';if(['rush','pounce','leapslam'].includes(effect.kind))effect.kind='afterimage';if(effect.kind==='beam'){const p=drawnAlienEmitter(player,player.cast);effect.x=p.x;effect.y=p.y;}");
  const before=run('JSON.stringify(effect)'),signatures=[];
  for(const t of [.2,.4,.6]){
   b.time=t;run('effect.life=1-time');ctx.clearRect(0,0,1280,640);
@@ -18,6 +21,7 @@ for(let id=0;id<72;id++)for(const key of ['normal','skill0','skill1','skill2','u
   signatures.push(crypto.createHash('sha256').update(pixels).digest('hex'));count++;
  }
  if(['beam','vortex','eruption'].includes(b.effect.kind)){assert(new Set(signatures).size>1,'Effects must animate '+id+' '+key);animated++;}
+ if(count%60===0&&global.gc)global.gc();
  run('effect.life=.72');assert.equal(run('JSON.stringify(effect)'),before,'Renderer changed combat state');
 }
-console.log('Passed '+count+' image-free effect renders, '+animated+' animated streams/swings, 72 aliens, both facings, immutable combat state.');
+console.log('Passed '+count+' image-free effect renders, '+animated+' animated streams/swings, aliens '+firstAlien+'–'+(lastAlien-1)+', both facings, immutable combat state.');

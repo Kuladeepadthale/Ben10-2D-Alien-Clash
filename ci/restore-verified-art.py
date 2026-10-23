@@ -1,38 +1,32 @@
-"""Reuse unchanged, checksum-pinned v10.6 character art when the roster and native art are unchanged."""
+"""Restore a pinned release, preserve the first72 fighters, append reviewed native forms."""
 from pathlib import Path
 import hashlib,json,shutil,subprocess,tempfile,zipfile
 R=Path(__file__).resolve().parents[1]
-with tempfile.TemporaryDirectory(prefix='verified-72-art-') as tmp:
-    subprocess.run(['gh','release','download','android-6052f6e69dca','--repo','Kuladeepadthale/Ben10-2D-Alien-Clash','--pattern','Ben10-Alien-Clash-Online.apk','--dir',tmp],check=True)
-    apk=Path(tmp)/'Ben10-Alien-Clash-Online.apk'
-    with apk.open('rb') as stream: assert hashlib.file_digest(stream,'sha256').hexdigest()=='c579f6ce69c024f07e6b6d3c9822fb9658ffe02b24c118f60d8773eda77f81ff'
-    with zipfile.ZipFile(apk) as z:
-        assert z.testzip() is None
-        # The only data change is a runtime basic-attack mapping. It does not change
-        # artwork, roster identity, rendering size or any emitter geometry.
-        current=(R/'web/data.js').read_text()
-        marker='\n// Frequent ranged users keep their characteristic emitter and pose for a lighter basic shot.'
-        unchanged,separator,addition=current.partition(marker)
-        assert separator and addition.strip().startswith('for(const [id,index] of Object.entries(')
-        assert addition.strip().endswith('aliens[Number(id)].basicSkillIndex=index;')
-        assert len(addition.strip().splitlines())==1,'Unexpected extra data mutation'
-        assert z.read('assets/data.js').decode().strip()==unchanged.strip(),'Art-affecting roster source changed: use full art export'
-        names=json.loads((R/'ci/roster.json').read_text())
-        manifest=json.loads(z.read('assets/assets/cels/manifest.json'))
-        assert [c['name'] for c in manifest['characters']]==names and len(names)==72
-        for folder in ['cels','villains']:
-            target=R/'web/assets'/folder
-            if target.exists(): shutil.rmtree(target)
-            prefix='assets/assets/'+folder+'/'
-            for entry in z.namelist():
-                if not entry.startswith(prefix) or entry.endswith('/'): continue
-                relative=Path(entry[len(prefix):]);assert not relative.is_absolute() and '..' not in relative.parts
-                dest=target/relative;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(z.read(entry))
-        for file in ['cel-data.js','villain-data.js']:
-            (R/'web'/file).write_bytes(z.read('assets/'+file))
-subprocess.run(['python3','ci/extend-villains110.py'],cwd=R,check=True)
-subprocess.run(['python3','ci/build-cels.py','--from-id','72'],cwd=R,check=True)
+def constant(text,name):return json.JSONDecoder().raw_decode(text.split('const '+name+'=',1)[1].lstrip())[0]
+with tempfile.TemporaryDirectory(prefix='verified-v110-art-') as tmp:
+ subprocess.run(['gh','release','download','android-c2dd350dc748','--repo','Kuladeepadthale/Ben10-2D-Alien-Clash','--pattern','Ben10-Alien-Clash-Online.apk','--dir',tmp],check=True)
+ apk=Path(tmp)/'Ben10-Alien-Clash-Online.apk'
+ with apk.open('rb') as f:assert hashlib.file_digest(f,'sha256').hexdigest()=='1fda897b48bdbf83465cfa9f26707bf7a6d1ae0a4e214bcb166b3e3a0eb5364e'
+ with zipfile.ZipFile(apk) as z:
+  assert z.testzip() is None
+  # Compare actual fighter configuration, including emitter locations and body size.
+  node="const vm=require('vm');let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const b=vm.createContext({});console.log(vm.runInContext(s+';JSON.stringify(aliens.slice(0,72))',b))})"
+  old=subprocess.check_output(['node','-e',node],input=z.read('assets/data.js'))
+  current=subprocess.check_output(['node','-e',node],input=(R/'web/data.js').read_bytes());assert old==current,'Existing fighter configuration changed'
+  names=json.loads((R/'ci/roster.json').read_text());base=json.loads(z.read('assets/assets/cels/manifest.json'));assert len(names)==92 and names[:72]==[c['name'] for c in base['characters']]
+  for n in z.namelist():
+   if not n.startswith(('assets/assets/cels/','assets/assets/villains/')) or n.endswith('/'):continue
+   relative=Path(n[len('assets/'):]);assert '..' not in relative.parts
+   dest=R/'web'/relative;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(z.read(n))
+  (R/'web/villain-data.js').write_bytes(z.read('assets/villain-data.js'))
+  profiles=constant((R/'web/power-profiles.js').read_text(),'POWER_PROFILES');oldprofiles=constant(z.read('assets/power-profiles.js').decode(),'POWER_PROFILES');assert profiles['aliens'][:72]==oldprofiles['aliens'] and profiles['villains']==oldprofiles['villains']
+extra=json.loads((R/'ci/expansion111-cels.json').read_text());assert [c['name'] for c in extra]==names[72:]
+for c in extra:
+ for s in c['sheets']:
+  p=R/'web'/s['src'];assert p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==s['sha256']
+base['characters']+=extra
+(R/'web/assets/cels/manifest.json').write_text(json.dumps(base,indent=2))
+(R/'web/cel-data.js').write_text("'use strict';\nconst CEL_DATA="+json.dumps(base,separators=(',',':'))+';\n')
+subprocess.run(['python3','ci/build-cels.py','--from-id','92'],cwd=R,check=True)
 shutil.copytree(R/'web/assets/villains',R/'builds/web/assets/villains',dirs_exist_ok=True)
-print('Reused verified, unchanged 72-character/30-villain art; current renderer bundled. Full regression suite still required.')
-
-
+print('Verified previous72 fighters and50 villains; appended20 reviewed native fighters.')

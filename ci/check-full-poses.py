@@ -24,7 +24,7 @@ def check_character(c):
 
 if __name__=='__main__':
     m=json.loads((ROOT/'web/assets/cels/manifest.json').read_text())
-    assert len(m['characters'])==72
+    assert len(m['characters'])==92
     count=sum(check_character(c) for c in m['characters'])
     for c in m['characters'][22:32]:
         idle=c['frames'][c['clips']['idle'][0]]

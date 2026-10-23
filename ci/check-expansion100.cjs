@@ -2,8 +2,8 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),{harness}=require('./cel-harness.cjs');
 (async()=>{
  const b=harness(),run=s=>vm.runInContext(s,b),specs=JSON.parse(fs.readFileSync('ci/cel-sources/expansion100-designs.json','utf8'));
- assert.equal(run('ALIEN_COUNT'),72);assert.equal(specs.length,20);assert.equal(run('CARTOON_GAITS.length'),72);
- assert.equal(new Set(run('aliens.map(a=>a.name)')).size,72);
+ assert.equal(run('ALIEN_COUNT'),92);assert.equal(specs.length,20);assert.equal(run('CARTOON_GAITS.length'),92);
+ assert.equal(new Set(run('aliens.map(a=>a.name)')).size,92);
  for(let i=0;i<20;i++){
   b.id=i+52;assert.equal(run('aliens[id].name'),specs[i].name);assert.equal(run('aliens[id].skills.length'),3);
   run('celPinned=new Set([id])');await run('celEnsure(id)');
@@ -16,6 +16,6 @@ const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),{harness
   }
  }
  const progression=fs.readFileSync('web/progression.js','utf8');assert(progression.includes('id>=32&&id<52'));assert(progression.includes('id>=52&&id<72'));assert(progression.includes("id:'new20ii'"));
- const icons=JSON.parse(fs.readFileSync('web/assets/ui/abilities/manifest.json','utf8'));assert.equal(icons.entries.length,360);assert.equal(icons.entries.filter(e=>e.alien>=52).length,100);
+ const icons=JSON.parse(fs.readFileSync('web/assets/ui/abilities/manifest.json','utf8'));assert.equal(icons.entries.length,460);assert.equal(icons.entries.filter(e=>e.alien>=52&&e.alien<72).length,100);
  console.log('Passed: 20 new identities, 640 detailed whole poses, all 12 action states in both facings, live emitters, 100 matching ability images and unchanged previous collection boundaries.');
 })().catch(e=>{console.error(e);process.exit(1)});

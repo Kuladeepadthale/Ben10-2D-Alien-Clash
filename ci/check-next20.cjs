@@ -2,7 +2,7 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),{harness}=require('./cel-harness.cjs');
 (async()=>{
  const b=harness(),run=s=>vm.runInContext(s,b),designs=JSON.parse(fs.readFileSync('ci/cel-sources/next20-designs.json','utf8'));
- assert.equal(run('ALIEN_COUNT'),72);assert.equal(designs.length,20);assert.equal(run('CARTOON_GAITS.length'),72);
+ assert.equal(run('ALIEN_COUNT'),92);assert.equal(designs.length,20);assert.equal(run('CARTOON_GAITS.length'),92);
  for(let id=32;id<52;id++){
   b.id=id;assert.equal(run('aliens[id].name'),designs[id-32].name);assert.equal(run('aliens[id].skills.length'),3);
   run('celPinned=new Set([id])');await run('celEnsure(id)');

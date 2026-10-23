@@ -7,8 +7,8 @@ android {
   applicationId (parallelInstall ? 'org.alienclash.twod.online' : 'org.alienclash.twod')
   minSdk 23
   targetSdk 35
-  versionCode 110
-  versionName '11.0'
+  versionCode 111
+  versionName '11.1'
   manifestPlaceholders = [appLabel: (parallelInstall ? 'Ben 10 Alien Clash Online' : 'Ben 10 Alien Clash')]
  }
  signingConfigs {

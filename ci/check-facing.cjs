@@ -4,7 +4,7 @@ const b=harness({metadataOnly:true}),run=s=>vm.runInContext(s,b),source=fs.readF
 for(const n of ['overlap','segmentRect','hitboxCircle','updateEffects'])run(declaration(source,n));
 run('drawnAlienEmitter=(f,c)=>({x:f.x+c.dir*38,y:f.y-90})');
 let cases=0;
-for(let id=0;id<72;id++)for(const dir of [-1,1]){
+for(let id=0;id<92;id++)for(const dir of [-1,1]){
  Object.assign(b,{id,dir});
  run('mode="fight";player=make(id,640,dir,true);enemy=make(0,640+dir*30,-dir);move(player,dir,.6);updateF(player,1/120)');
  assert.equal(b.player.dir,dir,'Crossing must retain input facing');assert((b.player.x-b.enemy.x)*dir>0);
