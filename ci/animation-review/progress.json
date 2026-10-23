@@ -109,7 +109,13 @@
         "Standing portrait and action sheets differ in sharpness/style; baked water effects overlap procedural effects."
       ],
       "changed_files": [],
-      "checks": []
+      "checks": [],
+      "stage": "32 native poses generated, packed and structural checks passed; in-game transition validation next",
+      "checkpoint_files": [
+        "ci/animation-review/characters/water-hazard.json",
+        "ci/animation-review/characters/water-hazard/revision.json",
+        "web/assets/reviewed-native/water-hazard/"
+      ]
     },
     {
       "id": 24,
