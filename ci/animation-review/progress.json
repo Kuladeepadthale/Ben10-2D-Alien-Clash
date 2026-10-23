@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 32,
-  "completed": 13,
+  "current_character": 33,
+  "completed": 14,
   "characters": [
     {
       "id": 35,
@@ -382,27 +382,21 @@
       "id": 34,
       "slug": "nanomech",
       "batch": 2,
-      "status": "in_progress",
+      "status": "needs_revision",
       "findings": [
         "Existing portrait and tiny action sheets differ in detail; maintain one insect/cyborg model through hover and laser poses.",
         "First proposed ultimate release draft has an extra wing pair and is rejected; corrected two-wing draft requested."
       ],
       "changed_files": [],
       "checks": [],
-      "stage": "Two-wing model and hover/action sheets approved; powers sheet glow cleanup pending",
+      "stage": "State-sheet model proposal saved; remaining native clips and gameplay validation pending",
       "reviewed_on": "2026-10-23",
       "model_requirements": "Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor.",
       "sources": {
-        "states": "ci/animation-review/characters/nanomech/source-states.webp",
-        "walk": "ci/animation-review/characters/nanomech/source-walk.webp",
-        "jump-strike": "ci/animation-review/characters/nanomech/source-jump-strike.webp",
-        "powers": "ci/animation-review/characters/nanomech/source-powers-rejected-glow.webp"
+        "states": "ci/animation-review/characters/nanomech/source-states-rejected.webp"
       },
       "prompts": {
-        "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: both small manipulator arms extended, wings spread for stable airborne electric overload, no drawn electricity;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: fast forward aerial dart with body tilted and wings swept back. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024.",
-        "walk": "Use case: stylized-concept. Transparent body-only production sprite sheet, exactly eight complete separate poses in4columns2rows with large transparent gutters. Reference image is the approved Nanomech model; preserve its head/body proportions, white/silver and lime green cyborg armor, single large green eye, two antennae, EXACTLY ONE PAIR OF TWO WINGS (one left and one right; far wing can be occluded). Clean TV cartoon cel flat colors, crisp black outlines, consistent three-quarter side camera facing screen-right. Eight chronological low hover locomotion cels, slight mechanical arm and leg counter-motion with a smooth flutter of exactly TWO wings, maintain cyclopean green eye and two antennae. No text, labels, shadows on floor, power effects or background. Wide2:1 landscape ~2048x1024; entire bodies inside each cell.",
-        "jump-strike": "Use case: stylized-concept. Transparent body-only production sprite sheet, exactly eight complete separate poses in4columns2rows with large transparent gutters. Reference image is the approved Nanomech model; preserve its head/body proportions, white/silver and lime green cyborg armor, single large green eye, two antennae, EXACTLY ONE PAIR OF TWO WINGS (one left and one right; far wing can be occluded). Clean TV cartoon cel flat colors, crisp black outlines, consistent three-quarter side camera facing screen-right. Top row:1 crouch before leap,2 rising flight,3 airborne apex,4 landing. Bottom row:5 small forearm blaster/hand preparation,6 forward hand aiming,7 arm retraction,8 guard. Exactly TWO wings in all poses, never4. No text, labels, shadows on floor, power effects or background. Wide2:1 landscape ~2048x1024; entire bodies inside each cell.",
-        "powers": "Use case: stylized-concept. Transparent body-only production sprite sheet, exactly eight complete separate poses in4columns2rows with large transparent gutters. Reference image is the approved Nanomech model; preserve its head/body proportions, white/silver and lime green cyborg armor, single large green eye, two antennae, EXACTLY ONE PAIR OF TWO WINGS (one left and one right; far wing can be occluded). Clean TV cartoon cel flat colors, crisp black outlines, consistent three-quarter side camera facing screen-right. Top row:1 Laser spark windup with one hand raised,2 forward hand laser firing gesture screen-right,3 arm recovery,4 Micro dodge preparation. Bottom row:5 forward compact flying dodge,6 low hover recovery,7 Nano burst windup with both arms,8 both hands aimed forward. Body only, no lasers, sparks, glow, projectiles or trails. Exactly TWO wings at all times. No text, labels, shadows on floor, power effects or background. Wide2:1 landscape ~2048x1024; entire bodies inside each cell."
+        "states": "Use case: stylized-concept. Production body-only transparent full-body animation sprite sheet for a Ben10 fan fighting game. Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor. Reference image supplies identity/colors only; follow the explicit classic anatomy corrections. Clean authentic TV cartoon cel style: crisp black outlines, simple flat colors with ONE hard-edged shade, consistent model proportions in every pose, no photorealism, gradients, surface texture, water, glow or power effects. Exactly EIGHT separate complete full-body poses in a four-column/two-row grid; generous transparent gutters and outer margins; same three-quarter side camera facing SCREEN-RIGHT throughout. Top row:1 ultimate preparation stance;2 ultimate release: both small manipulator arms extended, wings spread for stable airborne electric overload, no drawn electricity;3 recovery to guarded rest;4 neutral standing/hovering hero stance. Bottom row:5 character-specific defensive guard;6 nonlethal standing/hovering hit recoil (still alive, never lying down);7 defeated prone on ground;8 dash: fast forward aerial dart with body tilted and wings swept back. Do not change head size, torso width, palette, emblem placement or limb count between poses. No text, no labels, no grids. High native detail; wide2:1 landscape canvas about2048x1024."
       }
     },
     {
@@ -752,10 +746,21 @@
       "id": 10,
       "slug": "cannonbolt",
       "batch": 9,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: white/black body and yellow shell plates stay consistent.",
+        "Retained intentional ball curl for rush/ultimate and heavy uncurled gait; no size correction applied to the ball transformation."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 11,

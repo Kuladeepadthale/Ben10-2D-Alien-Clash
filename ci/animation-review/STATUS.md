@@ -1,6 +1,6 @@
 # Animation review progress
 
-**13 / 92 characters complete.** Batch size: 4.
+**14 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -12,7 +12,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 1 | 0 | heatblast | Reviewed — kept | Inspected all40 native frames including the extended idle, dash, hurt and defeat clips. |
 | 2 | 32 | rath | Reviewed — updated | Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model. |
 | 2 | 33 | lodestar | In progress | Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures. |
-| 2 | 34 | nanomech | In progress | Existing portrait and tiny action sheets differ in detail; maintain one insect/cyborg model through hover and laser poses. |
+| 2 | 34 | nanomech | Needs revision | Existing portrait and tiny action sheets differ in detail; maintain one insect/cyborg model through hover and laser poses. |
 | 2 | 36 | ampfibian | In progress | Existing standing reference omits the extra arm pair visible in action designs; rebuild a coherent four-arm/two-leg-tentacle model. |
 | 3 | 37 | armodrillo | Pending |  |
 | 3 | 38 | terraspin | Pending |  |
@@ -38,7 +38,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 8 | 7 | stinkfly | Reviewed — kept | All32 frames inspected: insect head, eye stalks, wing pair, tail stinger and limb count stay coherent. |
 | 8 | 8 | ripjaws | Needs revision | Walk cycle omits the head lure visible in jump, attacks and idle; these models need reconciliation. |
 | 8 | 9 | ghostfreak | Reviewed — kept | All32 frames inspected: pale shroud, single side eye, black seams and tapering ghost tail remain coherent. |
-| 9 | 10 | cannonbolt | Pending |  |
+| 9 | 10 | cannonbolt | Reviewed — kept | All32 frames inspected: white/black body and yellow shell plates stay consistent. |
 | 9 | 11 | wildvine | Pending |  |
 | 9 | 12 | blitzwolfer | Pending |  |
 | 9 | 13 | snare-oh | Pending |  |
