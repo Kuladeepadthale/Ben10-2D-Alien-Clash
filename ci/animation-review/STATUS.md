@@ -55,7 +55,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 12 | 25 | jetray | Reviewed — kept | All32 frames inspected: red/yellow body, head horns, wing membranes and tail stay coherent. |
 | 12 | 27 | chromastone | Reviewed — kept | All32 frames inspected: purple crystalline body, magenta head/shoulder crystals and green eye remain coherent. |
 | 13 | 28 | brainstorm | Reviewed — kept | All32 frames inspected: orange shell, claws, four walking legs and green eyes retain one model. |
-| 13 | 29 | spidermonkey | Pending |  |
+| 13 | 29 | spidermonkey | Needs revision | All32 frames inspected: four arms and tail are retained, but walking blue/palette is darker than the attack and state artwork. |
 | 13 | 30 | goop | Reviewed — kept | All32 frames inspected: green fluid body and hovering antigravity projector remain coherent. |
 | 13 | 31 | alien-x | Reviewed — kept | All32 frames inspected: black starfield body, white outline, green eyes and head crest retain one silhouette. |
 | 14 | 52 | toepick | Pending |  |

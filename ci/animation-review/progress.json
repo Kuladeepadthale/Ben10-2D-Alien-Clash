@@ -1084,10 +1084,21 @@
       "id": 29,
       "slug": "spidermonkey",
       "batch": 13,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "All32 frames inspected: four arms and tail are retained, but walking blue/palette is darker than the attack and state artwork.",
+        "Unify palette and drawing weight while retaining four-arm web gestures, tail balance and springing locomotion."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 30,
