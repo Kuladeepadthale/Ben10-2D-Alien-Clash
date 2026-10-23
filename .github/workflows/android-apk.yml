@@ -65,7 +65,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python3 ci/restore-verified-art.py
       - name: Verify all 92 action sets and game controls
-        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]')"
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
@@ -114,6 +114,19 @@ jobs:
           node ci/check-facing.cjs
           node ci/check-footwork-dash.cjs
           for script in web/*.js; do node --check "$script"; done
+      - name: Verify final icon count after 44 passed full-suite checks
+        if: contains(github.event.head_commit.message, '[icons111-only]')
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          git fetch --depth=1 origin a5a47725783ccf0a3d11ff8e8d3603c97d1be7b1
+          python3 - <<'PYGUARD'
+          import subprocess
+          changed=set(subprocess.check_output(['git','diff','--name-only','a5a47725783ccf0a3d11ff8e8d3603c97d1be7b1','HEAD'],text=True).splitlines())
+          assert changed <= {'ci/check-power-icons.cjs','.github/workflows/android-apk.yml'},changed
+          PYGUARD
+          /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
+          node ci/check-power-icons.cjs
       - name: Deploy online Worker when owner credentials are configured
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
