@@ -538,10 +538,19 @@
       "id": 43,
       "slug": "clockwork",
       "batch": 4,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Standing and movement models are coherent, but painted energy fields and floor bursts obscure multiple power poses.",
+        "Keep key-shaped head, brass body and chest clock; use body-only chest-release gestures with procedural time effects."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 44,
