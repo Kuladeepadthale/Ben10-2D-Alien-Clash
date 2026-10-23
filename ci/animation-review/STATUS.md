@@ -26,7 +26,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 5 | 46 | feedback | Needs revision | All32 frames inspected: plug-ended antennae, tail and fingers persist, but painted electricity overlaps power cels. |
 | 5 | 47 | bloxx | Needs revision | All32 frames inspected: colored blocks and gorilla identity persist, but small cels differ in detail from the high-resolution standing portrait. |
 | 5 | 48 | gravattack | Needs revision | All32 frames inspected: rocky body and orange core persist, but small textured cels differ from portrait detail and painted black holes overlap actions. |
-| 6 | 49 | crashhopper | Pending |  |
+| 6 | 49 | crashhopper | Needs revision | All32 frames inspected: antennae, folded wings and long jump legs persist, but native detail is low and ground impacts are painted into body poses. |
 | 6 | 50 | ball-weevil | Pending |  |
 | 6 | 51 | astrodactyl | Pending |  |
 | 6 | 1 | four-arms | Reviewed — kept | All32 native frames inspected: four arms, black/white shirt, face and body proportions remain coherent. |
