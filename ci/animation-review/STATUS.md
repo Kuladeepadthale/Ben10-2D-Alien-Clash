@@ -49,7 +49,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 11 | 18 | way-big | Reviewed — kept | All32 frames inspected: red/white proportions, head fin and shoulder silhouette remain coherent. |
 | 11 | 19 | arctiguana | Reviewed — kept | All32 frames inspected: blue lizard body, dorsal spikes, cheek fins and tail remain coherent. |
 | 11 | 20 | spitter | Reviewed — kept | All32 frames inspected: green body, pale throat and tail stay coherent. |
-| 11 | 21 | buzzshock | Pending |  |
+| 11 | 21 | buzzshock | Needs revision | Native action and state sheets use heavier outlines and a more rounded face than the walk cycle. |
 | 12 | 22 | swampfire | Reviewed — kept | All32 frames inspected: red flame-shaped head, green plant body and black chest remain coherent. |
 | 12 | 23 | echo-echo | Reviewed — kept | All32 frames inspected: white body, speaker disks and green eyes stay coherent. |
 | 12 | 25 | jetray | Reviewed — kept | All32 frames inspected: red/yellow body, head horns, wing membranes and tail stay coherent. |
