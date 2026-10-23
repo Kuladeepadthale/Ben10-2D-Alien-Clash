@@ -1,6 +1,6 @@
 # Animation review progress
 
-**35 / 92 characters complete.** Batch size: 4.
+**36 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -61,7 +61,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 14 | 52 | toepick | Reviewed — kept | All32 native frames inspected. |
 | 14 | 53 | pesky-dust | Reviewed — kept | All32 native frames inspected. |
 | 14 | 54 | bullfrag | Reviewed — updated | All32 native frames inspected. |
-| 14 | 55 | kickin-hawk | Pending |  |
+| 14 | 55 | kickin-hawk | Reviewed — kept | All32 native frames inspected. |
 | 15 | 56 | whampire | Pending |  |
 | 15 | 57 | gutrot | Pending |  |
 | 15 | 58 | atomix | Pending |  |
