@@ -54,6 +54,15 @@ function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.g
    // Preserve character-specific bites, tendrils and weapons instead of borrowing a punch pose.
    index=beat.phase<.55?Math.min(1,frames.length-1):Math.min(2,frames.length-1);
   }
+  // Each rush contact gets native strike/retraction poses. Keep intentional shell rolling.
+  if(['rush','pounce'].includes(v.cfg.kind)&&![10,71,90].includes(f.id)&&v.elapsed>=wind&&v.elapsed<wind+active){
+   const cycle=(v.elapsed-wind)/active*Math.max(1,v.cfg.ticks||1),tick=Math.floor(cycle),phase=cycle-tick;
+   if(f.id===32&&typeof RATH_CLOSE!=='undefined'){
+    const pose=phase<.18?0:phase<.64?1+(tick%3)*2:2+(tick%3)*2;
+    return {frame:RATH_CLOSE.frames[pose],state,index:pose};
+   }
+   frames=d.clips.normal||frames;index=phase<.18?0:phase<.64?Math.min(1,frames.length-1):Math.min(2,frames.length-1);
+  }
   if(typeof powerProfileFor==='function'&&powerProfileFor(f,v)?.motion==='tail-strike')index=powerPoseIndex(f,v,frames.length);
   if(v.cfg.kind==='leapslam'&&f.y<floor-30){frames=d.clips.jump;index=2;}
  }else if(state==='jump'){index=f.jumpWindup?0:f.vy< -100?1:f.vy<120?2:3;}
@@ -87,6 +96,7 @@ begin=async function(newMatch=true,practice=false){const request=++celBattleRequ
 };
 const allAlienPosesReady=Promise.all([classicReady,celEnsure(0),celEnsure(2)]).then(()=>{allAlienPosesLoaded=true;return true}).catch(e=>{allAlienPoseError=e.message;return false});
 const diamondheadPuppetReady=Promise.resolve(true);
+
 
 
 

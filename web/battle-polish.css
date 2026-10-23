@@ -29,3 +29,9 @@ body:not(.in-battle) #screen-modes .mode-card h2{font-size:clamp(15px,2.3vw,22px
  #screen-modes .page-title{position:relative;}.battle-swipe-hint{position:absolute;right:5px;bottom:8px;font-size:11px;color:#cfffa2;}
 }
 @media(orientation:portrait){.battle-swipe-hint{display:none;}}
+
+
+/* Notices occupy the HUD gutter rather than the fighting area. */
+body #game #announcement{position:absolute!important;top:var(--battle-notice-top,86px)!important;bottom:auto!important;left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:max-content!important;max-width:48%!important;padding:3px 9px!important;border-radius:5px;background:#071b20c9;font:600 clamp(10px,1.5vw,13px)/1.25 Arial,sans-serif!important;letter-spacing:.3px!important;text-shadow:none!important;pointer-events:none!important;white-space:normal;overflow-wrap:anywhere;z-index:4!important;}
+body #game #announcement:empty{display:none!important;}
+@media(max-height:500px) and (orientation:landscape){body #game #announcement{--battle-notice-top:68px;max-width:42%!important;font-size:10px!important;}}
