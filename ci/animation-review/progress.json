@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 31,
+  "completed": 32,
   "characters": [
     {
       "id": 35,
@@ -346,14 +346,32 @@
       "id": 33,
       "slug": "lodestar",
       "batch": 2,
-      "status": "in_progress",
+      "status": "verified_updated",
       "findings": [
         "Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures.",
-        "Keep the head floating between shoulder prongs in every frame; do not introduce a solid neck."
+        "Keep the head floating between shoulder prongs in every frame; do not introduce a solid neck.",
+        "Rebuilt32 consistent body-only cels, preserving the floating head, horseshoe claws and grey tips without painted magnetic fields."
       ],
-      "changed_files": [],
-      "checks": [],
-      "stage": "All native draft sheets saved; anatomy, registration, effects and runtime review pending",
+      "changed_files": [
+        "web/assets/reviewed-native/lodestar/",
+        "ci/animation-review/characters/lodestar/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "source_pixels_preserved": true,
+        "actual_browser_checked": [
+          "idle",
+          "normal",
+          "skill0",
+          "skill1",
+          "ultimate"
+        ],
+        "passed": true
+      },
+      "stage": "All32 native poses and matching portrait integrated; floating head and magnet-tip registration verified in browser",
       "reviewed_on": "2026-10-23",
       "model_requirements": "Lodestar in Alien Force/Ultimate Alien form: lean black and rich yellow body, two enormous yellow horseshoe magnet claws with grey tips, split pointed shoulders and yellow shin/foot shapes. Metallic black/yellow head with green eyes FLOATS with a small visible gap above the torso between the shoulder prongs. No solid neck, no mouth, no human fingers. Keep floating head and body together as one full pose.",
       "sources": {

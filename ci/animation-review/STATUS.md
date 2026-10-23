@@ -1,6 +1,6 @@
 # Animation review progress
 
-**31 / 92 characters complete.** Batch size: 4.
+**32 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -11,7 +11,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 1 | 26 | big-chill | Reviewed — kept | All32 native frames inspected; blue/black body, hood, wing/cape forms and eye colors remain consistent. |
 | 1 | 0 | heatblast | Reviewed — kept | Inspected all40 native frames including the extended idle, dash, hurt and defeat clips. |
 | 2 | 32 | rath | Reviewed — updated | Standing and combat references use a belt/shorts variant; rebuilding toward the requested classic chest-emblem tiger model. |
-| 2 | 33 | lodestar | In progress | Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures. |
+| 2 | 33 | lodestar | Reviewed — updated | Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures. |
 | 2 | 34 | nanomech | Needs revision | Existing portrait and tiny action sheets differ in detail; maintain one insect/cyborg model through hover and laser poses. |
 | 2 | 36 | ampfibian | In progress | Existing standing reference omits the extra arm pair visible in action designs; rebuild a coherent four-arm/two-leg-tentacle model. |
 | 3 | 37 | armodrillo | Needs revision | Native combat model is coherent, but shaded small action cels differ from the sharper standing portrait. |

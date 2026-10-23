@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage
 
-def whole_poses(sheet,columns=4,rows=2,threshold=100,row_counts=None):
+def whole_poses(sheet,columns=4,rows=2,threshold=100,row_counts=None,attachment_ratio=.05):
     a=np.array(sheet.convert('RGBA'));height,width=a.shape[:2]
     expected=row_counts or [columns]*rows
     labels,_=ndimage.label(a[:,:,3]>threshold,structure=np.ones((3,3)))
@@ -24,7 +24,7 @@ def whole_poses(sheet,columns=4,rows=2,threshold=100,row_counts=None):
     # A detached detail belongs to exactly one closest body.
     distance,indices=ndimage.distance_transform_edt(~np.isin(labels,selected),return_indices=True)
     nearest=labels[tuple(indices)];groups={label:[label] for label in selected}
-    radius=max(3,round(min(width/columns,height/rows)*.05))
+    radius=max(3,round(min(width/columns,height/rows)*attachment_ratio))
     for label,box in enumerate(boxes,1):
         if box is None or label in primary:continue
         pixels=labels[box]==label;d=distance[box][pixels]
