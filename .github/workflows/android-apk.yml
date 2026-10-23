@@ -169,6 +169,8 @@ jobs:
           assert len(m['characters'])==92
           assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v111.webp' in names for i in range(18,23))
           icons=json.loads(z.read('assets/assets/ui/abilities/manifest.json'));assert len(icons['entries'])==460
+          assert all('assets/assets/modes-v112/'+p+'.webp' in names for p in ['classic','galactic','boss-rush'])
+          assert b'Plumber Missions' in z.read('assets/threat-ladder.js')
           for c in m['characters']:
            assert all('assets/'+s['src'] in names for s in c['sheets'])
            assert set(c['clips'])=={'idle','walk','jump','normal','skill0','skill1','skill2','ultimate','guard','hit','ko','dash'}
@@ -186,7 +188,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.1 — 92 Playable Aliens' --notes 'Adds seven Ultimate forms, twelve Antitrix forms and Alien V, with native movement and combat poses, characteristic attacks, ability artwork and card progression. Preserves all72 previous alien IDs and50 villain stages.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.2 — Plumber Missions' --notes 'Plumber Missions now has separate Classic and Galactic campaigns plus a five-boss endurance run. Adds illustrated operation cards, independent saved progress and18 new reward missions. Preserves92 aliens and50 villains.' --prerelease --target "$GITHUB_SHA"
 
 
 
