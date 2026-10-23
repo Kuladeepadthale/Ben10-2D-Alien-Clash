@@ -25,6 +25,7 @@
   "node ci/check-melee-combos.cjs",
   "node ci/check-villains110.cjs",
   "node ci/check-threat-ladder.cjs",
+  "node ci/check-containment.cjs",
   "node ci/check-card-shop.cjs",
   "python3 ci/check-ability-art.py",
   "node ci/check-account-cloud.cjs",

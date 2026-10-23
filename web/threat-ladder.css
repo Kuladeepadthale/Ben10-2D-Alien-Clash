@@ -120,3 +120,22 @@ body:not(.in-battle) .plumber-mode{display:flex;flex-direction:column;padding:0!
  .rush-brief>div>p:first-of-type,.rush-brief>div>p:nth-of-type(2),.rush-brief>div>strong,.rush-brief .threat-options{grid-column:1 / -1;}
  body:not(.in-battle) #screen-plumberRush .threat-heading button{font-size:14px!important;min-height:32px;padding:5px 8px!important;}
 }
+/* Four operations in one touch-scroll lane, with snap and keyboard controls. */
+body:not(.in-battle) #screen-plumber .plumber-modes{display:flex!important;flex-direction:row;gap:12px;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory;scroll-padding-inline:2px;overscroll-behavior-x:contain;touch-action:pan-x;min-height:0;padding:2px 2px 8px;scrollbar-width:thin;scrollbar-color:#b7ef82 #10271f;}
+body:not(.in-battle) #screen-plumber .plumber-mode{flex:0 0 clamp(250px,31vw,340px);height:100%;scroll-snap-align:start;flex-direction:column!important;}
+body:not(.in-battle) #screen-plumber .plumber-mode>img{width:100%!important;height:0!important;min-height:0;flex:1!important;object-fit:cover;}
+body:not(.in-battle) #screen-plumber .plumber-mode>div{flex:none!important;display:block;padding:10px;}
+.plumber-lane-controls{display:flex;align-items:center;gap:6px;flex:none;}.plumber-lane-controls>span{flex:1;font-size:12px;color:#bfd4c8;}body:not(.in-battle) #screen-plumber .plumber-lane-controls button{min-height:30px;width:40px;padding:3px!important;font-size:18px!important;}
+.plumber-containment{background:#192d3c!important;border-color:#a497ff99!important;}.plumber-containment span{color:#c9c0ff;}
+body:not(.in-battle) #screen-containment{height:100%!important;min-height:0!important;overflow:hidden!important;padding:12px 18px!important;gap:10px!important;}
+body:not(.in-battle) #screen-containment h1{font-size:25px!important;margin:0!important;}.rush-brief strong{display:block;}
+body:not(.in-battle) #screen-containment .rush-brief h2{font-size:22px!important;margin:4px 0!important;}body:not(.in-battle) #screen-containment .rush-brief p{font-size:15px!important;line-height:1.3!important;margin:7px 0!important;}#containmentStatus{font-size:13px!important;margin:0!important;}
+@media(orientation:portrait){body:not(.in-battle) #screen-plumber .plumber-mode{flex-basis:82%;}body:not(.in-battle) #screen-containment .rush-brief{grid-template-rows:minmax(90px,1fr) auto;}body:not(.in-battle) #screen-containment .rush-brief p{font-size:14px!important;margin:4px 0!important;}}
+@media(max-height:500px) and (orientation:landscape){body:not(.in-battle) #screen-plumber .plumber-mode{flex-basis:260px;}body:not(.in-battle) #screen-plumber .plumber-mode>div{padding:6px;}body:not(.in-battle) #screen-containment{padding:6px 12px!important;gap:5px!important;}body:not(.in-battle) #screen-containment h1{font-size:20px!important;}body:not(.in-battle) #screen-containment .threat-heading button{font-size:13px!important;min-height:30px;padding:4px!important;}body:not(.in-battle) #screen-containment .rush-brief h2{display:none;}body:not(.in-battle) #screen-containment .rush-brief p{font-size:12px!important;margin:0!important;}body:not(.in-battle) #startContainment{min-height:32px;padding:5px!important;font-size:16px!important;}}
+@media(max-height:500px) and (orientation:landscape){
+ body:not(.in-battle) #screen-plumber .plumber-mode{flex-basis:310px;flex-direction:row!important;}
+ body:not(.in-battle) #screen-plumber .plumber-mode>img{flex:0 0 40%!important;width:40%!important;height:100%!important;object-position:40% center;}
+ body:not(.in-battle) #screen-plumber .plumber-mode>div{flex:1!important;min-width:0;display:flex;flex-direction:column;justify-content:center;padding:7px;}
+ body:not(.in-battle) #screen-plumber .plumber-mode h2{font-size:17px!important;}
+ body:not(.in-battle) #screen-plumber .plumber-mode p{font-size:11px!important;}
+}
