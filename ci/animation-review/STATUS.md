@@ -1,6 +1,6 @@
 # Animation review progress
 
-**22 / 92 characters complete.** Batch size: 4.
+**23 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -47,7 +47,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 10 | 16 | ditto | Reviewed — kept | All32 frames inspected: three head nodes, black/white suit and small body remain coherent. |
 | 10 | 17 | eye-guy | Reviewed — kept | All32 frames inspected: pointed ears, eyeless face and distributed body eyes retain one model. |
 | 11 | 18 | way-big | Reviewed — kept | All32 frames inspected: red/white proportions, head fin and shoulder silhouette remain coherent. |
-| 11 | 19 | arctiguana | Pending |  |
+| 11 | 19 | arctiguana | Reviewed — kept | All32 frames inspected: blue lizard body, dorsal spikes, cheek fins and tail remain coherent. |
 | 11 | 20 | spitter | Pending |  |
 | 11 | 21 | buzzshock | Pending |  |
 | 12 | 22 | swampfire | Pending |  |
