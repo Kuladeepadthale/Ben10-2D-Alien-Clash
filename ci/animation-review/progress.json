@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 15,
+  "completed": 16,
   "characters": [
     {
       "id": 35,
@@ -786,10 +786,21 @@
       "id": 12,
       "slug": "blitzwolfer",
       "batch": 9,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: grey fur, mane, muzzle, tail and suit remain coherent.",
+        "Retained low wolf stride, claw actions and open-jaw howl release, with a distinct standing hit response."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 13,
