@@ -1,0 +1,1255 @@
+{
+  "id": 58,
+  "slug": "atomix",
+  "character": {
+    "id": 58,
+    "name": "atomix",
+    "sheets": [
+      {
+        "src": "assets/cels/atomix/walk.webp",
+        "width": 1896,
+        "height": 948,
+        "sha256": "0d96cd0fd50cbdce834d219c5c1f23eac3f4e0bfac856e48edc182d8aba7bc19"
+      },
+      {
+        "src": "assets/cels/atomix/jump-strike.webp",
+        "width": 2168,
+        "height": 1084,
+        "sha256": "e468fbe70b2523400847df44a9da0135985252d293ef58377a7d0012cf0edb4c"
+      },
+      {
+        "src": "assets/cels/atomix/powers.webp",
+        "width": 2000,
+        "height": 1000,
+        "sha256": "3f9f92e745ff4b31fcd9be88abc7bb3de071dee7f4f1e474194942a8d47ceefc"
+      },
+      {
+        "src": "assets/cels/atomix/states.webp",
+        "width": 2156,
+        "height": 1078,
+        "sha256": "b4af22c963b2c1b4f1e8d3343ea029931686532a702bae647e54180e85fbf485"
+      }
+    ],
+    "frames": [
+      {
+        "sheet": 0,
+        "rect": [
+          51,
+          16,
+          372,
+          446
+        ],
+        "origin": [
+          180.0,
+          438
+        ],
+        "source": "walk",
+        "cell": 0,
+        "bounds": [
+          0,
+          0,
+          356,
+          430
+        ],
+        "sourceRect": [
+          71,
+          36,
+          427,
+          466
+        ],
+        "sourcePixels": 80850,
+        "component": 2
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          508,
+          19,
+          406,
+          443
+        ],
+        "origin": [
+          162.0,
+          435
+        ],
+        "source": "walk",
+        "cell": 1,
+        "bounds": [
+          0,
+          0,
+          390,
+          427
+        ],
+        "sourceRect": [
+          552,
+          39,
+          942,
+          466
+        ],
+        "sourcePixels": 78121,
+        "component": 4
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          973,
+          16,
+          423,
+          446
+        ],
+        "origin": [
+          194.0,
+          438
+        ],
+        "source": "walk",
+        "cell": 2,
+        "bounds": [
+          0,
+          0,
+          407,
+          430
+        ],
+        "sourceRect": [
+          1041,
+          36,
+          1448,
+          466
+        ],
+        "sourcePixels": 78398,
+        "component": 3
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          1483,
+          15,
+          351,
+          447
+        ],
+        "origin": [
+          162.0,
+          439
+        ],
+        "source": "walk",
+        "cell": 3,
+        "bounds": [
+          0,
+          0,
+          335,
+          431
+        ],
+        "sourceRect": [
+          1575,
+          35,
+          1910,
+          466
+        ],
+        "sourcePixels": 72631,
+        "component": 1
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          31,
+          486,
+          411,
+          450
+        ],
+        "origin": [
+          174.0,
+          442
+        ],
+        "source": "walk",
+        "cell": 4,
+        "bounds": [
+          0,
+          0,
+          395,
+          434
+        ],
+        "sourceRect": [
+          51,
+          530,
+          446,
+          964
+        ],
+        "sourcePixels": 76802,
+        "component": 5
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          506,
+          495,
+          409,
+          441
+        ],
+        "origin": [
+          170.0,
+          433
+        ],
+        "source": "walk",
+        "cell": 5,
+        "bounds": [
+          0,
+          0,
+          393,
+          425
+        ],
+        "sourceRect": [
+          550,
+          539,
+          943,
+          964
+        ],
+        "sourcePixels": 76701,
+        "component": 7
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          977,
+          493,
+          415,
+          443
+        ],
+        "origin": [
+          195.0,
+          435
+        ],
+        "source": "walk",
+        "cell": 6,
+        "bounds": [
+          0,
+          0,
+          399,
+          427
+        ],
+        "sourceRect": [
+          1045,
+          537,
+          1444,
+          964
+        ],
+        "sourcePixels": 73393,
+        "component": 6
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          1440,
+          498,
+          437,
+          438
+        ],
+        "origin": [
+          205.0,
+          430
+        ],
+        "source": "walk",
+        "cell": 7,
+        "bounds": [
+          0,
+          0,
+          421,
+          422
+        ],
+        "sourceRect": [
+          1532,
+          542,
+          1953,
+          964
+        ],
+        "sourcePixels": 76414,
+        "component": 8
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          69,
+          215,
+          403,
+          315
+        ],
+        "origin": [
+          199.0,
+          307
+        ],
+        "source": "jump-strike",
+        "cell": 0,
+        "bounds": [
+          0,
+          0,
+          387,
+          299
+        ],
+        "sourceRect": [
+          89,
+          235,
+          476,
+          534
+        ],
+        "sourcePixels": 69119,
+        "component": 4
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          630,
+          82,
+          365,
+          448
+        ],
+        "origin": [
+          194.0,
+          440
+        ],
+        "source": "jump-strike",
+        "cell": 1,
+        "bounds": [
+          0,
+          0,
+          349,
+          432
+        ],
+        "sourceRect": [
+          674,
+          102,
+          1023,
+          534
+        ],
+        "sourcePixels": 67681,
+        "component": 1
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          1149,
+          123,
+          412,
+          407
+        ],
+        "origin": [
+          227.0,
+          457.65
+        ],
+        "source": "jump-strike",
+        "cell": 2,
+        "bounds": [
+          0,
+          0,
+          396,
+          391
+        ],
+        "sourceRect": [
+          1217,
+          143,
+          1613,
+          534
+        ],
+        "sourcePixels": 67115,
+        "component": 3
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          1704,
+          216,
+          385,
+          314
+        ],
+        "origin": [
+          206.0,
+          306
+        ],
+        "source": "jump-strike",
+        "cell": 3,
+        "bounds": [
+          0,
+          0,
+          369,
+          298
+        ],
+        "sourceRect": [
+          1796,
+          236,
+          2165,
+          534
+        ],
+        "sourcePixels": 68874,
+        "component": 5
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          60,
+          638,
+          421,
+          434
+        ],
+        "origin": [
+          199.0,
+          426
+        ],
+        "source": "jump-strike",
+        "cell": 4,
+        "bounds": [
+          0,
+          0,
+          405,
+          418
+        ],
+        "sourceRect": [
+          80,
+          682,
+          485,
+          1100
+        ],
+        "sourcePixels": 79129,
+        "component": 8,
+        "emitters": {
+          "normal": [
+            381,
+            185
+          ]
+        }
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          554,
+          641,
+          518,
+          431
+        ],
+        "origin": [
+          216.0,
+          423
+        ],
+        "source": "jump-strike",
+        "cell": 5,
+        "bounds": [
+          0,
+          0,
+          502,
+          415
+        ],
+        "sourceRect": [
+          598,
+          685,
+          1100,
+          1100
+        ],
+        "sourcePixels": 81828,
+        "component": 9,
+        "emitters": {
+          "normal": [
+            471,
+            159
+          ]
+        }
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          1136,
+          641,
+          437,
+          431
+        ],
+        "origin": [
+          188.0,
+          423
+        ],
+        "source": "jump-strike",
+        "cell": 6,
+        "bounds": [
+          0,
+          0,
+          421,
+          415
+        ],
+        "sourceRect": [
+          1204,
+          685,
+          1625,
+          1100
+        ],
+        "sourcePixels": 70331,
+        "component": 10,
+        "emitters": {
+          "normal": [
+            398,
+            183
+          ]
+        }
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          1710,
+          636,
+          374,
+          436
+        ],
+        "origin": [
+          180.0,
+          428
+        ],
+        "source": "jump-strike",
+        "cell": 7,
+        "bounds": [
+          0,
+          0,
+          358,
+          420
+        ],
+        "sourceRect": [
+          1802,
+          680,
+          2160,
+          1100
+        ],
+        "sourcePixels": 80964,
+        "component": 7,
+        "emitters": {
+          "normal": [
+            340,
+            187
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          26,
+          46,
+          447,
+          442
+        ],
+        "origin": [
+          220.0,
+          434
+        ],
+        "source": "powers",
+        "cell": 0,
+        "bounds": [
+          0,
+          0,
+          431,
+          426
+        ],
+        "sourceRect": [
+          46,
+          66,
+          477,
+          492
+        ],
+        "sourcePixels": 88811,
+        "component": 1,
+        "emitters": {
+          "skill0": [
+            407,
+            190
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          513,
+          48,
+          473,
+          440
+        ],
+        "origin": [
+          178.0,
+          432
+        ],
+        "source": "powers",
+        "cell": 1,
+        "bounds": [
+          0,
+          0,
+          457,
+          424
+        ],
+        "sourceRect": [
+          557,
+          68,
+          1014,
+          492
+        ],
+        "sourcePixels": 73770,
+        "component": 2,
+        "emitters": {
+          "skill0": [
+            401,
+            159
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          1050,
+          49,
+          399,
+          439
+        ],
+        "origin": [
+          211.0,
+          431
+        ],
+        "source": "powers",
+        "cell": 2,
+        "bounds": [
+          0,
+          0,
+          383,
+          423
+        ],
+        "sourceRect": [
+          1118,
+          69,
+          1501,
+          492
+        ],
+        "sourcePixels": 79707,
+        "component": 3,
+        "emitters": {
+          "skill0": [
+            357,
+            198
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          1538,
+          60,
+          424,
+          428
+        ],
+        "origin": [
+          232.5,
+          420
+        ],
+        "source": "powers",
+        "cell": 3,
+        "bounds": [
+          0,
+          0,
+          408,
+          412
+        ],
+        "sourceRect": [
+          1630,
+          80,
+          2038,
+          492
+        ],
+        "sourcePixels": 76635,
+        "component": 5,
+        "emitters": {
+          "skill1": [
+            358,
+            156
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          24,
+          575,
+          451,
+          413
+        ],
+        "origin": [
+          250.0,
+          405
+        ],
+        "source": "powers",
+        "cell": 4,
+        "bounds": [
+          0,
+          0,
+          435,
+          397
+        ],
+        "sourceRect": [
+          44,
+          619,
+          479,
+          1016
+        ],
+        "sourcePixels": 82406,
+        "component": 13,
+        "emitters": {
+          "skill1": [
+            400,
+            162
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          560,
+          552,
+          380,
+          436
+        ],
+        "origin": [
+          184.0,
+          428
+        ],
+        "source": "powers",
+        "cell": 5,
+        "bounds": [
+          0,
+          0,
+          364,
+          420
+        ],
+        "sourceRect": [
+          604,
+          596,
+          968,
+          1016
+        ],
+        "sourcePixels": 79749,
+        "component": 9,
+        "emitters": {
+          "skill1": [
+            340,
+            193
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          1027,
+          601,
+          445,
+          387
+        ],
+        "origin": [
+          217.0,
+          379
+        ],
+        "source": "powers",
+        "cell": 6,
+        "bounds": [
+          0,
+          0,
+          429,
+          371
+        ],
+        "sourceRect": [
+          1095,
+          645,
+          1524,
+          1016
+        ],
+        "sourcePixels": 70052,
+        "component": 15,
+        "emitters": {
+          "skill2": [
+            386,
+            164
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          1512,
+          589,
+          476,
+          399
+        ],
+        "origin": [
+          243.0,
+          391
+        ],
+        "source": "powers",
+        "cell": 7,
+        "bounds": [
+          0,
+          0,
+          460,
+          383
+        ],
+        "sourceRect": [
+          1604,
+          633,
+          2064,
+          1016
+        ],
+        "sourcePixels": 83642,
+        "component": 14,
+        "emitters": {
+          "skill2": [
+            427,
+            145
+          ],
+          "ultimate": [
+            427,
+            145
+          ]
+        }
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          47,
+          80,
+          444,
+          447
+        ],
+        "origin": [
+          279.0,
+          439
+        ],
+        "source": "states",
+        "cell": 0,
+        "bounds": [
+          0,
+          0,
+          428,
+          431
+        ],
+        "sourceRect": [
+          67,
+          100,
+          495,
+          531
+        ],
+        "sourcePixels": 81498,
+        "component": 2,
+        "emitters": {
+          "ultimate": [
+            406,
+            192
+          ]
+        }
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          631,
+          167,
+          355,
+          360
+        ],
+        "origin": [
+          176.0,
+          352
+        ],
+        "source": "states",
+        "cell": 1,
+        "bounds": [
+          0,
+          0,
+          339,
+          344
+        ],
+        "sourceRect": [
+          675,
+          187,
+          1014,
+          531
+        ],
+        "sourcePixels": 89521,
+        "component": 3,
+        "emitters": {
+          "ultimate": [
+            323,
+            155
+          ]
+        }
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          1102,
+          181,
+          490,
+          346
+        ],
+        "origin": [
+          230.0,
+          338
+        ],
+        "source": "states",
+        "cell": 2,
+        "bounds": [
+          0,
+          0,
+          474,
+          330
+        ],
+        "sourceRect": [
+          1170,
+          201,
+          1644,
+          531
+        ],
+        "sourcePixels": 81824,
+        "component": 4,
+        "emitters": {
+          "ultimate": [
+            410,
+            195
+          ]
+        }
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          1728,
+          58,
+          316,
+          469
+        ],
+        "origin": [
+          151.0,
+          461
+        ],
+        "source": "states",
+        "cell": 3,
+        "bounds": [
+          0,
+          0,
+          300,
+          453
+        ],
+        "sourceRect": [
+          1820,
+          78,
+          2120,
+          531
+        ],
+        "sourcePixels": 77486,
+        "component": 1
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          56,
+          660,
+          426,
+          406
+        ],
+        "origin": [
+          199.0,
+          398
+        ],
+        "source": "states",
+        "cell": 4,
+        "bounds": [
+          0,
+          0,
+          410,
+          390
+        ],
+        "sourceRect": [
+          76,
+          704,
+          486,
+          1094
+        ],
+        "sourcePixels": 68292,
+        "component": 5
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          623,
+          661,
+          370,
+          405
+        ],
+        "origin": [
+          201.0,
+          397
+        ],
+        "source": "states",
+        "cell": 5,
+        "bounds": [
+          0,
+          0,
+          354,
+          389
+        ],
+        "sourceRect": [
+          667,
+          705,
+          1021,
+          1094
+        ],
+        "sourcePixels": 70077,
+        "component": 6
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          1090,
+          851,
+          515,
+          215
+        ],
+        "origin": [
+          267.0,
+          207
+        ],
+        "source": "states",
+        "cell": 6,
+        "bounds": [
+          0,
+          0,
+          499,
+          199
+        ],
+        "sourceRect": [
+          1158,
+          895,
+          1657,
+          1094
+        ],
+        "sourcePixels": 66199,
+        "component": 8
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          1698,
+          726,
+          377,
+          340
+        ],
+        "origin": [
+          189.0,
+          332
+        ],
+        "source": "states",
+        "cell": 7,
+        "bounds": [
+          0,
+          0,
+          361,
+          324
+        ],
+        "sourceRect": [
+          1790,
+          770,
+          2151,
+          1094
+        ],
+        "sourcePixels": 64878,
+        "component": 7
+      }
+    ],
+    "clips": {
+      "walk": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "jump": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "normal": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "skill0": [
+        16,
+        17,
+        18
+      ],
+      "skill1": [
+        19,
+        20,
+        21
+      ],
+      "skill2": [
+        22,
+        23
+      ],
+      "ultimate": [
+        24,
+        23,
+        26
+      ],
+      "idle": [
+        27
+      ],
+      "guard": [
+        28
+      ],
+      "hit": [
+        29
+      ],
+      "ko": [
+        30
+      ],
+      "dash": [
+        31
+      ]
+    },
+    "referenceHeight": 453,
+    "portrait": "assets/cels/atomix/portrait.webp",
+    "reviewedRevision": 1
+  },
+  "power_phases": [
+    [
+      {
+        "frame": 16,
+        "pixel": [
+          407,
+          190
+        ],
+        "offset": [
+          115.684,
+          -150.946
+        ]
+      },
+      {
+        "frame": 17,
+        "pixel": [
+          401,
+          159
+        ],
+        "offset": [
+          137.955,
+          -168.886
+        ]
+      },
+      {
+        "frame": 18,
+        "pixel": [
+          357,
+          198
+        ],
+        "offset": [
+          90.32,
+          -144.141
+        ]
+      }
+    ],
+    [
+      {
+        "frame": 19,
+        "pixel": [
+          358,
+          156
+        ],
+        "offset": [
+          77.638,
+          -163.319
+        ]
+      },
+      {
+        "frame": 20,
+        "pixel": [
+          400,
+          162
+        ],
+        "offset": [
+          92.795,
+          -150.327
+        ]
+      },
+      {
+        "frame": 21,
+        "pixel": [
+          340,
+          193
+        ],
+        "offset": [
+          96.506,
+          -145.378
+        ]
+      }
+    ],
+    [
+      {
+        "frame": 22,
+        "pixel": [
+          386,
+          164
+        ],
+        "offset": [
+          104.549,
+          -133.006
+        ]
+      },
+      {
+        "frame": 23,
+        "pixel": [
+          427,
+          145
+        ],
+        "offset": [
+          113.828,
+          -152.183
+        ]
+      }
+    ],
+    [
+      {
+        "frame": 24,
+        "pixel": [
+          406,
+          192
+        ],
+        "offset": [
+          78.566,
+          -152.802
+        ]
+      },
+      {
+        "frame": 23,
+        "pixel": [
+          427,
+          145
+        ],
+        "offset": [
+          113.828,
+          -152.183
+        ]
+      },
+      {
+        "frame": 26,
+        "pixel": [
+          410,
+          195
+        ],
+        "offset": [
+          111.354,
+          -88.464
+        ]
+      }
+    ]
+  ],
+  "sources": {},
+  "generated_with": "Inspected existing native cel reuse; no image generation",
+  "notes": [
+    "Replace generic spherical ultimate body with character-specific native gesture; preserve configured ability and effects."
+  ]
+}

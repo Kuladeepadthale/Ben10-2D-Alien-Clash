@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 38,
+  "completed": 39,
   "characters": [
     {
       "id": 35,
@@ -1421,10 +1421,23 @@
       "id": 58,
       "slug": "atomix",
       "batch": 15,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Replaced generic ultimate ball with two raised hands for Fusion Sun; retained white/black armor and green reactor chambers."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/atomix/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 59,
