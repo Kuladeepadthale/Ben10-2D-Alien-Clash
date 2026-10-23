@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 62,
+  "completed": 63,
   "characters": [
     {
       "id": 35,
@@ -2011,10 +2011,21 @@
       "id": 83,
       "slug": "hot-shot",
       "batch": 21,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 native frames inspected.",
+        "Dark lava plates, orange seams and head flame remain coherent; retained hand-fire preparation and heavy forward release."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 84,
