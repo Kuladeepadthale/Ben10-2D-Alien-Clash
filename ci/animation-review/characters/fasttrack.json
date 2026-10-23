@@ -1,0 +1,17 @@
+{
+  "id": 40,
+  "slug": "fasttrack",
+  "status": "needs_revision",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "Action sheets incorrectly add a long striped tail; standing design is tailless.",
+    "Remove the tail from every pose and retain blue/black feline silhouette and fast forward stride."
+  ],
+  "changed_files": [],
+  "checks": {
+    "native_frames": 32,
+    "visual_review": true,
+    "passed": false
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+}

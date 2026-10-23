@@ -17,7 +17,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 3 | 37 | armodrillo | Needs revision | Native combat model is coherent, but shaded small action cels differ from the sharper standing portrait. |
 | 3 | 38 | terraspin | Needs revision | Wind rings are painted into multiple body cels and the portrait differs in detail from actions. |
 | 3 | 39 | nrg | Needs revision | Painted radiation/glow and motion streaks obscure the armored body in multiple action cels. |
-| 3 | 40 | fasttrack | Pending |  |
+| 3 | 40 | fasttrack | Needs revision | Action sheets incorrectly add a long striped tail; standing design is tailless. |
 | 4 | 41 | chamalien | Pending |  |
 | 4 | 42 | eatle | Pending |  |
 | 4 | 43 | clockwork | Pending |  |
