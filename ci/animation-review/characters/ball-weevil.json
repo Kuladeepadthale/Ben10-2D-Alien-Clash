@@ -1,0 +1,17 @@
+{
+  "id": 50,
+  "slug": "ball-weevil",
+  "status": "needs_revision",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "All32 frames inspected: yellow beetle and antenna identity persist, but standing native cel is only138pixels tall and differs from the sharper portrait.",
+    "Rebuild coherent small insect locomotion and mouth/plasma-ball release; retain intentional defensive curl."
+  ],
+  "changed_files": [],
+  "checks": {
+    "native_frames": 32,
+    "visual_review": true,
+    "passed": false
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+}
