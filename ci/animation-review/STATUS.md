@@ -1,6 +1,6 @@
 # Animation review progress
 
-**47 / 92 characters complete.** Batch size: 4.
+**48 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -73,7 +73,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 17 | 64 | shock-rock | Reviewed — updated | All32 native frames inspected. |
 | 17 | 65 | slapback | Reviewed — updated | All32 native frames inspected. |
 | 17 | 66 | surge | Reviewed — updated | All32 native frames inspected. |
-| 17 | 67 | ultimate-humungousaur | Pending |  |
+| 17 | 67 | ultimate-humungousaur | Reviewed — updated | All32 native frames inspected. |
 | 18 | 68 | ultimate-big-chill | Pending |  |
 | 18 | 69 | ultimate-echo-echo | Pending |  |
 | 18 | 70 | ultimate-swampfire | Pending |  |
