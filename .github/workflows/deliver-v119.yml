@@ -47,3 +47,5 @@ jobs:
                   assert location.startswith('https://release-assets.githubusercontent.com/'),location[:50]
                   print('ASSET '+asset['name']+' '+str(asset['size'])+' '+base64.b64encode(location.encode()).decode(),flush=True)
           PY
+
+# Refresh download for completed v11.9 release, 2026-10-23.
