@@ -430,10 +430,19 @@
       "id": 37,
       "slug": "armodrillo",
       "batch": 3,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "Native combat model is coherent, but shaded small action cels differ from the sharper standing portrait.",
+        "Rebuild one yellow/black armored drill-arm model, retaining heavy steps and two-arm ground pounding."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 38,
