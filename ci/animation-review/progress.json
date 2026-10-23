@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 30,
+  "completed": 31,
   "characters": [
     {
       "id": 35,
@@ -1113,10 +1113,21 @@
       "id": 31,
       "slug": "alien-x",
       "batch": 13,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: black starfield body, white outline, green eyes and head crest retain one silhouette.",
+        "Retained slow controlled stride, open-hand reality-power gestures and separate upright hit/prone defeat."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 52,
