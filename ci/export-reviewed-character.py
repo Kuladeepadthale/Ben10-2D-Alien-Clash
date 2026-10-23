@@ -1,6 +1,6 @@
 """Pack reviewed native artwork, retain source pixels and register body-only power origins."""
 from pathlib import Path
-import json,sys,hashlib,io,os
+import json,sys,hashlib,io,os,subprocess
 import numpy as np
 from PIL import Image
 from scipy import ndimage
@@ -8,6 +8,8 @@ from full_poses import whole_poses,pack_poses
 R=Path(__file__).resolve().parents[1];slug=sys.argv[1];recpath=R/'ci/animation-review/characters'/f'{slug}.json';rec=json.loads(recpath.read_text());id=rec['id'];out=R/'web/assets/reviewed-native'/slug;out.mkdir(parents=True,exist_ok=True)
 def save_native(image,path):
  buffer=io.BytesIO();image.save(buffer,format='WEBP',lossless=True,quality=100,method=4,exact=True);data=buffer.getvalue();assert len(data)>100;temp=path.with_suffix('.writing');temp.write_bytes(data);os.replace(temp,path);assert path.read_bytes()==data
+cfg=json.loads(subprocess.check_output(['node','-e',"const fs=require('fs'),vm=require('vm'),b=vm.createContext({});vm.runInContext(fs.readFileSync('web/data.js','utf8'),b);console.log(vm.runInContext('JSON.stringify(aliens["+str(id)+"])',b))"],cwd=R))
+assert rec['renderHeight']==cfg['renderHeight'] and rec['scale']==cfg['scale'],'Exporter must use configured body size'
 c={'id':id,'name':slug,'sheets':[],'frames':[],'clips':{},'reviewedRevision':1}
 images=[]
 for si,kind in enumerate(['walk','jump-strike','powers','states']):

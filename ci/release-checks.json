@@ -55,5 +55,6 @@
   "node ci/check-reviewed-character.cjs 32",
   "node ci/check-reviewed-character.cjs 2",
   "for id in 33 34 36 54 57 58 59 60 62 64 65 66 67 69; do node ci/check-reviewed-character.cjs \"$id\" || exit; done",
-  "node ci/check-reviewed-hover.cjs"
+  "node ci/check-reviewed-hover.cjs",
+  "python3 ci/check-reviewed-registration.py"
 ]

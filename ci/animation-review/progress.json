@@ -257,7 +257,8 @@
           "skill1",
           "ultimate"
         ],
-        "passed": true
+        "passed": true,
+        "actual_configured_scale": true
       },
       "stage": "All native clips, classic chest emblem and eight close-combat cels integrated; actual browser checked",
       "reviewed_on": "2026-10-23",
@@ -282,8 +283,8 @@
         "powers": 410,
         "states": 450
       },
-      "renderHeight": 220,
-      "scale": 1.04,
+      "renderHeight": 226,
+      "scale": 1.1,
       "emitterTargets": {
         "12": [
           0.7,
@@ -379,7 +380,8 @@
           "skill1",
           "ultimate"
         ],
-        "passed": true
+        "passed": true,
+        "actual_configured_scale": true
       },
       "stage": "All32 native poses and matching portrait integrated; floating head and magnet-tip registration verified in browser",
       "reviewed_on": "2026-10-23",
@@ -402,8 +404,8 @@
         "powers": 430,
         "states": 450
       },
-      "renderHeight": 230,
-      "scale": 1.05,
+      "renderHeight": 226,
+      "scale": 1.06,
       "attachmentRatio": 0.11,
       "previous_findings": [
         "Existing magnetic effects obscure body silhouettes in multiple native attacks; remove baked fields and retain magnet-claw gestures.",
