@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 45,
+  "completed": 46,
   "characters": [
     {
       "id": 35,
@@ -1571,10 +1571,23 @@
       "id": 65,
       "slug": "slapback",
       "batch": 17,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "All32 native frames inspected.",
+        "Removed generic ultimate ball; retained compact heavy-impact stance, green body, suit and cloning-ready gesture."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/slapback/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 66,
