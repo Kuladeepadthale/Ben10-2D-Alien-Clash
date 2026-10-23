@@ -139,3 +139,27 @@ body:not(.in-battle) #screen-containment .rush-brief h2{font-size:22px!important
  body:not(.in-battle) #screen-plumber .plumber-mode h2{font-size:17px!important;}
  body:not(.in-battle) #screen-plumber .plumber-mode p{font-size:11px!important;}
 }
+/* The five opponents are the centerpiece of Boss Rush preparation. */
+.boss-rush-banner{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap;flex:none;}.boss-rush-banner>strong{font-size:19px;color:#ffe19a;}.boss-rush-banner>span{font-size:13px;color:#c8decf;}
+body:not(.in-battle) #screen-plumberRush .rush-bosses{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:10px;min-height:0;flex:1;}
+body:not(.in-battle) #screen-plumberRush .rush-boss-card{position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;min-height:0;padding:10px;border:1px solid #dfae7290;border-radius:15px;background:radial-gradient(ellipse at 50% 35%,#d98a4e35,transparent 65%),linear-gradient(150deg,#382626,#132920);overflow:hidden;}
+body:not(.in-battle) #screen-plumberRush .rush-boss-card img{width:100%;height:0;min-height:90px;flex:1;object-fit:contain;filter:drop-shadow(0 5px 7px #000b);}
+.boss-order{flex:none;font-size:11px;letter-spacing:1px;color:#ffdfa1;}.rush-boss-card strong{flex:none;font-size:19px;line-height:1.1;text-align:center;color:#fff4dc;}
+.rush-rules{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:none;}.rush-rules>div{min-width:0;}.rush-rules strong{font-size:16px;color:#ffe3a0;}.rush-rules p{font-size:13px!important;line-height:1.15!important;margin:3px 0!important;}.rush-rules .threat-options{flex:1;max-width:420px;}body:not(.in-battle) #screen-plumberRush .rush-rules button{min-height:34px;font-size:14px!important;padding:7px!important;}
+@media(orientation:portrait){body:not(.in-battle) #screen-plumberRush .rush-bosses{display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;touch-action:pan-x;padding:3px 2px 8px;scrollbar-width:thin;}body:not(.in-battle) #screen-plumberRush .rush-boss-card{flex:0 0 62%;height:100%;scroll-snap-align:start;}.rush-boss-card strong{font-size:22px;}.rush-rules{flex-direction:column;align-items:stretch;gap:6px;}.rush-rules .threat-options{max-width:none;}.boss-rush-banner:after{content:'Swipe to view all five bosses →';font-size:12px;color:#ead0a7;}}
+@media(max-height:500px) and (orientation:landscape){.boss-rush-banner{gap:4px;}.boss-rush-banner>strong{font-size:15px;}.boss-rush-banner>span{font-size:10px;}body:not(.in-battle) #screen-plumberRush .rush-bosses{gap:6px;}body:not(.in-battle) #screen-plumberRush .rush-boss-card{padding:5px;gap:3px;}.rush-boss-card strong{font-size:14px;}.boss-order{font-size:9px;}.rush-rules{gap:8px;}.rush-rules strong{font-size:12px;}.rush-rules p{font-size:11px!important;margin:1px 0!important;}body:not(.in-battle) #screen-plumberRush .rush-rules button{min-height:28px;font-size:12px!important;padding:4px!important;}}
+@media(max-height:500px) and (orientation:landscape){
+ body:not(.in-battle) #screen-plumberRush .rush-boss-card img{min-height:0;}
+ .rush-rules>div:first-child{display:grid;grid-template-columns:1fr 1fr;gap:0 7px;}
+ .rush-rules>div:first-child>strong{grid-column:1 / -1;}
+}
+body:not(.in-battle) #screen-plumberRush .rush-boss-card{background:radial-gradient(ellipse at 50% 35%,#dccba155,transparent 70%),linear-gradient(150deg,#584933,#1c392c);}
+body:not(.in-battle) #screen-plumberRush .rush-boss-card img{filter:brightness(1.12) drop-shadow(0 6px 7px #0009);}
+#rushRulesDialog{max-width:min(90vw,520px);border:1px solid #d9b77c;border-radius:18px;background:#163127;color:#f1ffe6;padding:22px;}#rushRulesDialog::backdrop{background:#000a;}#rushRulesDialog p{font-size:16px;line-height:1.4;}#rushRulesDialog button{width:100%;}
+@media(max-height:500px) and (orientation:landscape){
+ body:not(.in-battle) #screen-plumberRush .boss-rush-banner{display:none;}
+ body:not(.in-battle) #screen-plumberRush .rush-rules p{font-size:11px!important;line-height:1.1!important;margin:0!important;}
+ body:not(.in-battle) #screen-plumberRush .rush-rules button{min-height:28px!important;padding:4px!important;}
+ body:not(.in-battle) #screen-plumberRush .rush-rules{align-items:center;}
+ body:not(.in-battle) #screen-plumberRush .rush-rules .threat-options{gap:4px;}
+}

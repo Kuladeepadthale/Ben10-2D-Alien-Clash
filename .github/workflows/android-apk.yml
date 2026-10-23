@@ -65,7 +65,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python3 ci/restore-verified-art.py
       - name: Verify all 92 action sets and game controls
-        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]')"
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
@@ -172,6 +172,32 @@ jobs:
           node ci/check-multiplayer-server.mjs
           node ci/check-target-snapshot.cjs
           for script in web/*.js; do node --check "$script"; done
+      - name: Verify adventure journey and existing modes against verified v11.3
+        if: contains(github.event.head_commit.message, '[expedition114]')
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          git fetch --depth=1 origin 34d0a10351e7321d0f215cf376e93121ae8b12c9
+          python3 - <<'PYGUARD'
+          import subprocess
+          changed=set(subprocess.check_output(['git','diff','--name-only','34d0a10351e7321d0f215cf376e93121ae8b12c9','HEAD'],text=True).splitlines())
+          allowed={'web/threat-ladder.js','web/threat-ladder.css','web/expedition.js','web/expedition.css','web/progression.js','web/player-experience.js','web/index.html','web/assets/modes-v112/expedition.webp','ci/check-expedition.cjs','ci/check-expedition-ui.cjs','ci/check-threat-layout.cjs','ci/check-progression.cjs','ci/check-squad-ui.cjs','ci/release-checks.json','ci/EXPEDITION-v114.md','android/app/build.gradle','.github/workflows/android-apk.yml'}
+          assert changed<=allowed,changed-allowed
+          PYGUARD
+          /tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium
+          node ci/check-expedition.cjs
+          node ci/check-expedition-ui.cjs
+          node ci/check-threat-layout.cjs
+          node ci/check-containment.cjs
+          node ci/check-threat-ladder.cjs
+          node ci/check-progression.cjs
+          node ci/check-squad-ui.cjs
+          node ci/check-testing-flow.cjs
+          node ci/check-facing.cjs
+          node ci/check-footwork-dash.cjs
+          node ci/check-multiplayer-server.mjs
+          node ci/check-target-snapshot.cjs
+          for script in web/*.js; do node --check "$script"; done
       - name: Deploy online Worker when owner credentials are configured
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -214,8 +240,8 @@ jobs:
           assert len(m['characters'])==92
           assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v111.webp' in names for i in range(18,23))
           icons=json.loads(z.read('assets/assets/ui/abilities/manifest.json'));assert len(icons['entries'])==460
-          assert all('assets/assets/modes-v112/'+p+'.webp' in names for p in ['classic','galactic','boss-rush','null-void'])
-          assert b'Plumber Missions' in z.read('assets/threat-ladder.js') and 'assets/plumber-containment.js' in names
+          assert all('assets/assets/modes-v112/'+p+'.webp' in names for p in ['classic','galactic','boss-rush','null-void','expedition'])
+          assert b'Plumber Missions' in z.read('assets/threat-ladder.js') and 'assets/plumber-containment.js' in names and 'assets/expedition.js' in names and 'assets/expedition.css' in names
           for c in m['characters']:
            assert all('assets/'+s['src'] in names for s in c['sheets'])
            assert set(c['clips'])=={'idle','walk','jump','normal','skill0','skill1','skill2','ultimate','guard','hit','ko','dash'}
@@ -233,7 +259,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.3 — Null Void Lockdown' --notes 'Adds Null Void Lockdown, a portal-defense objective before Boss Rush, with its own illustration and six reward missions. Plumber operation cards now swipe horizontally with snap and arrow controls. Preserves all92 aliens,50 villains and existing progression.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.4 — Omnitrix Expedition' --notes 'Adds Omnitrix Expedition as a main mode: six encounters across three regions with survival health carry, run-only bonus choices, safe/risky routes, journey loot and six reward missions. Preserves existing Plumber operations,92 aliens,50 villains and progression.' --prerelease --target "$GITHUB_SHA"
 
 
 
