@@ -28,5 +28,8 @@ function profileEmitter(f,v,t=0){
  }
  return {x:f.x+dir*phase.offset[0]*registration,y:f.y+phase.offset[1]*registration-hover};
 }
-
-
+// BEGIN REVIEWED_NATIVE_PHASES
+// Native body-only cel registration, shared by browser and authoritative server.
+const REVIEWED_NATIVE_PHASES={"35":[[{"frame":16,"pixel":[431,52],"offset":[131.185,-212.083]},{"frame":17,"pixel":[489,127],"offset":[154.143,-164.528]},{"frame":18,"pixel":[392,242],"offset":[84.724,-100.029]}],[{"frame":19,"pixel":[360,215],"offset":[76.525,-116.427]},{"frame":20,"pixel":[455,113],"offset":[137.744,-163.435]},{"frame":21,"pixel":[391,176],"offset":[109.868,-130.092]}],[{"frame":22,"pixel":[388,251],"offset":[74.885,-54.66]},{"frame":23,"pixel":[425,239],"offset":[79.804,-34.436]}],[{"frame":24,"pixel":[412,256],"offset":[64.198,-77.462]},{"frame":25,"pixel":[480,119],"offset":[145.375,-156.516]},{"frame":26,"pixel":[403,232],"offset":[82.237,-92.318]}]]};
+for(const [id,rows] of Object.entries(REVIEWED_NATIVE_PHASES)){for(let slot=0;slot<4;slot++)POWER_PROFILES.aliens[Number(id)][slot].phases=rows[slot];}
+// END REVIEWED_NATIVE_PHASES

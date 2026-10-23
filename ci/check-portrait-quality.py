@@ -8,8 +8,9 @@ assert len(m['characters'])==20
 for r in m['characters']:
  p=root/r['src'];im=Image.open(p).convert('RGBA');old=Image.open(root/base[r['id']]['portrait'])
  assert im.size==(r['width'],r['height'])
- assert im.height>old.height*1.8,(r['name'],im.height,old.height)
+ if base[r['id']].get('reviewedRevision'):assert old.height>=300,(r['name'],'reviewed native portrait lost detail')
+ else:assert im.height>old.height*1.8,(r['name'],im.height,old.height)
  assert im.getchannel('A').getextrema()[0]==0
  assert hashlib.sha256(p.read_bytes()).hexdigest()==r['sha256']
  assert im.getchannel('A').getbbox()
-print('Passed: 20 newly drawn native portraits with transparent alpha, complete bounds, pinned hashes and more than 1.8x previous source height.')
+print('Passed: legacy portrait hashes, transparent bounds and improved native detail, including reviewed replacement portraits.')

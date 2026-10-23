@@ -87,6 +87,7 @@ shutil.copytree(WEB/'assets/portraits-v107',bundle/'assets/portraits-v107',copy_
 shutil.copytree(WEB/'assets/close-combat',bundle/'assets/close-combat',copy_function=shutil.copyfile)
 shutil.copytree(WEB/'assets/villains-expansion110',bundle/'assets/villains-expansion110',copy_function=shutil.copyfile)
 shutil.copytree(WEB/'assets/modes-v112',bundle/'assets/modes-v112',copy_function=shutil.copyfile)
+if (WEB/'assets/reviewed-native').exists():shutil.copytree(WEB/'assets/reviewed-native',bundle/'assets/reviewed-native',copy_function=shutil.copyfile)
 for file in ['assets/animation-manifest-example.json']:
     if (WEB/file).exists(): (bundle/file).parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(WEB/file,bundle/file)
 print('Exported',sum(len(c['frames']) for c in manifest['characters']),'native cels across',len(NAMES),'complete action sets.')

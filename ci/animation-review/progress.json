@@ -97,20 +97,43 @@
     90,
     91
   ],
-  "current_character": 35,
-  "completed": 3,
+  "current_character": 32,
+  "completed": 4,
   "characters": [
     {
       "id": 35,
       "slug": "water-hazard",
       "batch": 1,
-      "status": "in_progress",
+      "status": "verified_updated",
       "findings": [
-        "Standing portrait and action sheets differ in sharpness/style; baked water effects overlap procedural effects."
+        "Standing and attack artwork had inconsistent style/detail; old attack sheets included baked water effects.",
+        "Rebuilt32 whole-body poses around a single Water Hazard model; separating body artwork from procedural water.",
+        "Generated sheets inspected; integration and gameplay validation are next."
       ],
-      "changed_files": [],
-      "checks": [],
-      "stage": "32 native poses generated, packed and structural checks passed; in-game transition validation next",
+      "changed_files": [
+        "web/assets/reviewed-native/water-hazard/",
+        "web/classic-art.js",
+        "web/power-profiles.js",
+        "ci/animation-review/characters/water-hazard/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "portrait_matches_native_idle": true,
+        "preserved_source_pixels": true,
+        "no_baked_water": true,
+        "actual_browser_checked": [
+          "idle",
+          "normal",
+          "skill0",
+          "skill1",
+          "ultimate"
+        ],
+        "passed": true
+      },
+      "stage": "Native revision integrated; software-render and full-browser idle/basic/powers/ultimate review passed",
       "checkpoint_files": [
         "ci/animation-review/characters/water-hazard.json",
         "ci/animation-review/characters/water-hazard/revision.json",

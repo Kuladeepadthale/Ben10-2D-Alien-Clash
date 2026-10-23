@@ -1,6 +1,6 @@
 'use strict';
 // Larger, newly drawn portraits replace the twenty smallest source images.
-for(let id=32;id<52;id++)CEL_DATA.characters[id].portrait='assets/portraits-v107/'+CEL_DATA.characters[id].name+'.webp';
+for(let id=32;id<52;id++)if(!CEL_DATA.characters[id].reviewedRevision)CEL_DATA.characters[id].portrait='assets/portraits-v107/'+CEL_DATA.characters[id].name+'.webp';
 const CLASSIC_NAMES=CEL_DATA.characters.map(c=>c.name),classicPortraits=[];
 function loadClassicImage(src){return new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=()=>reject(Error('Could not load '+src));image.src=src+(src.includes("?")?"&":"?")+"art=82"})}
 function preloadClassic(id){if(typeof celPreload==='function')celPreload(id);}

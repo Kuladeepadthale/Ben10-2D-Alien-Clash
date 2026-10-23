@@ -27,6 +27,7 @@ for c in extra:
 base['characters']+=extra
 (R/'web/assets/cels/manifest.json').write_text(json.dumps(base,indent=2))
 (R/'web/cel-data.js').write_text("'use strict';\nconst CEL_DATA="+json.dumps(base,separators=(',',':'))+';\n')
+subprocess.run(['python3','ci/apply-reviewed-animations.py'],cwd=R,check=True)
 subprocess.run(['python3','ci/build-cels.py','--from-id','92'],cwd=R,check=True)
 shutil.copytree(R/'web/assets/villains',R/'builds/web/assets/villains',dirs_exist_ok=True)
 print('Verified previous72 fighters and50 villains; appended20 reviewed native fighters.')
