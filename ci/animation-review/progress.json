@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 37,
-  "completed": 73,
+  "current_character": 38,
+  "completed": 74,
   "characters": [
     {
       "id": 35,
@@ -670,19 +670,146 @@
       "id": 37,
       "slug": "armodrillo",
       "batch": 3,
-      "status": "needs_revision",
+      "status": "verified_updated",
       "findings": [
-        "Native combat model is coherent, but shaded small action cels differ from the sharper standing portrait.",
-        "Rebuild one yellow/black armored drill-arm model, retaining heavy steps and two-arm ground pounding."
+        "Rebuilt one coherent yellow/black piston-arm model for standing, heavy walking, jump, normal strike, piston punch, seismic punch, charge, ultimate, guard, hit and defeat.",
+        "Power effects remain procedural and detached from clean native body cels. Gray fist-end emitters are registered per pose.",
+        "Rejected the clipped dash draft; uses the complete native low recovery/charge brace instead.",
+        "Drill charge alternates its own braced/drive poses instead of substituting a generic punch."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/armodrillo/draft-states.webp",
+        "ci/animation-review/characters/armodrillo/revision.json",
+        "ci/animation-review/characters/armodrillo/model-reference.webp",
+        "ci/animation-review/characters/armodrillo/source-jump-strike.webp",
+        "ci/animation-review/characters/armodrillo/source-walk.webp",
+        "ci/animation-review/characters/armodrillo/source-states.webp",
+        "ci/animation-review/characters/armodrillo/source-powers.webp",
+        "web/assets/reviewed-native/armodrillo/powers.webp",
+        "web/assets/reviewed-native/armodrillo/walk.webp",
+        "web/assets/reviewed-native/armodrillo/jump-strike.webp",
+        "web/assets/reviewed-native/armodrillo/states.webp",
+        "web/assets/reviewed-native/armodrillo/portrait.webp",
+        "ci/export-reviewed-character.py",
+        "web/cel-player.js"
+      ],
       "checks": {
         "native_frames": 32,
+        "native_detail_and_margins": true,
+        "native_asset_hashes": true,
+        "emitter_registration": true,
+        "actual_draws": 240,
+        "facings": 2,
         "visual_review": true,
-        "passed": false
+        "full_browser_review": true,
+        "browser_errors": [],
+        "passed": true
       },
       "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "renderHeight": 226,
+      "scale": 1.2,
+      "sources": {
+        "states": "ci/animation-review/characters/armodrillo/source-states.webp",
+        "walk": "ci/animation-review/characters/armodrillo/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/armodrillo/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/armodrillo/source-powers.webp"
+      },
+      "referenceHeightBySource": {
+        "states": 382,
+        "walk": 414,
+        "jump-strike": 387,
+        "powers": 411
+      },
+      "poseSelections": {
+        "states": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          2
+        ]
+      },
+      "emitterTargets": {
+        "12": [
+          0.84,
+          0.5
+        ],
+        "13": [
+          0.95,
+          0.3
+        ],
+        "14": [
+          0.84,
+          0.5
+        ],
+        "15": [
+          0.84,
+          0.5
+        ],
+        "16": [
+          0.84,
+          0.5
+        ],
+        "17": [
+          0.95,
+          0.3
+        ],
+        "18": [
+          0.84,
+          0.5
+        ],
+        "19": [
+          0.45,
+          0.08
+        ],
+        "20": [
+          0.6,
+          0.92
+        ],
+        "21": [
+          0.35,
+          0.65
+        ],
+        "22": [
+          0.84,
+          0.5
+        ],
+        "23": [
+          0.95,
+          0.4
+        ],
+        "24": [
+          0.7,
+          0.08
+        ],
+        "25": [
+          0.7,
+          0.9
+        ],
+        "26": [
+          0.8,
+          0.8
+        ]
+      },
+      "prompts": {
+        "states": "Edit this Armodrillo sprite sheet for production. Preserve the exact yellow/black/gray cartoon body model and the eight pose meanings. Give EVERY figure at least 35 pixels clear transparent margin on all sides: shrink each pose slightly into its grid cell. In particular show the ENTIRE forward gray fist of bottom-right dash pose inside canvas, and every raised fist and toe. Keep 4 columns x 2 rows, 8 clearly separated full-body right-facing figures. Completely remove ALL gold haze/glow/background, floor shadows and scattered white debris. Actual fully transparent background, crisp opaque clean cels only, flat colors, black outlines, one cel-shadow tone, no aura, no gradients. Neutral standing pose top row fourth remains the reference model for all others. No words or labels. No added props, powers, extra arms, tail or effects. Increase resolution/detail if possible while keeping whole silhouettes.",
+        "walk": "Production 2D game sprite sheet of the EXACT attached Armodrillo model. Input is identity/model reference, not the output pose. Preserve narrow green-eyed armored head, yellow plates, black flexible body, gray piston elbows and huge gray-ended cylindrical forearms, green chest emblem, broad armored 3-toed feet. Crisp TV cartoon black outlines, flat cel colors and one shadow tone. EXACTLY EIGHT distinct WALK-cycle full-body drawings facing RIGHT in 4 columns by 2 rows. Heavy deliberate bipedal steps: left contact, left compression, passing feet, right foot lifting, right contact, right compression, passing feet opposite, left foot lifting. Subtle counter-swing of heavy forearms; small head/body bob, no vibration, no attack poses, no duplicated limbs, no tail. Every figure same physical model, same head size. Each full figure centered WITHIN its cell with at least 25px clear transparent margin around head, hands and toes; no clipping even when arms swing. Upright silhouettes around 360-420 pixels tall, generous empty gutters, widescreen 1536x1024 or higher. True transparent background, NO text, haze, effects, dust, shadows or props. All eight complete bodies, no contact between figures.",
+        "jump-strike": "Use attached Armodrillo as STRICT character model reference. Make a production animation sprite sheet, 4 columns x 2 rows, EXACTLY 8 separate FULL-BODY poses, all facing RIGHT. Same narrow armored snout, green eyes, yellow plates, black body, gray piston elbows, massive gray-ended forearms, chest Omnitrix and broad three-toed feet in every pose. Crisp flat TV cartoon cel art. Read row-major: 1 crouched jump preparation; 2 airborne rising with knees bent, arms near body; 3 airborne descending with two piston fists pointing down; 4 soft crouched landing; 5 basic punch anticipation arm pulled back; 6 basic straight forward heavy piston punch with ONE front forearm extended horizontally; 7 basic punch retraction; 8 return to balanced guard. All anatomy connected. Do not replace fists with drills, spikes, blades or spheres. BODY ONLY, NO effects, motion streaks, ground, rocks, shadows, aura, duplicated limbs, text or labels. Actual transparent background. Generous 25px margin on ALL sides of EVERY pose; do not crop extended hands or raised feet. Each upright body about 360-420px tall in a 1536x1024 sheet; full native drawings, consistent body/head scale. Make room for extended fist by tucking rear arm, not by clipping the front fist.",
+        "powers": "Production sprite sheet using the EXACT attached Armodrillo character model, full-body crisp flat TV cel animation. Yellow segmented armor, black body, narrow armored snout with green eyes, gray piston elbows, huge yellow cylindrical forearms with gray fist ends, green chest emblem, three-toed feet. 8 FULL-BODY figures in 4 columns x 2 rows, every figure facing RIGHT, separated transparent gutters, 25px safe margin including hands and toes. Read row-major: 1 piston punch wind-up, pull right forearm back; 2 piston punch extended straight forward, torso twisting; 3 retract to guard; 4 seismic punch anticipation, raised piston forearm; 5 deep low seismic punch, one gray fist planted at own floor and other arm bracing; 6 recovery from ground punch; 7 drill-charge brace leaning forward, both forearms tucked in front, feet low; 8 drill-charge drive with forward stepping foot and both gray fists thrust forward. Same identity and head size all poses. Each body 350-420px tall or equivalent model scale for crouches in 1536x1024 or higher image. NOTHING besides eight clean bodies. No actual drill bits, no dust, no rocks, NO painted shockwaves, explosions, trails, aura, ground plane, shadows, text or labels. All powers will be drawn separately in code. TRUE transparent background. Make extended poses narrower to fit cell, do not cut off or merge any fist or toe."
+      },
+      "excluded_poses": {
+        "states/7": "Forward fist touches the source border; use complete native recovery crouch for braced dash."
+      },
+      "generation_inputs": {
+        "states": "ci/animation-review/characters/armodrillo/draft-states.webp",
+        "walk": "ci/animation-review/characters/armodrillo/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/armodrillo/model-reference.webp",
+        "powers": "ci/animation-review/characters/armodrillo/model-reference.webp"
+      }
     },
     {
       "id": 38,

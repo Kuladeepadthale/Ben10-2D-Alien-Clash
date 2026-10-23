@@ -1,6 +1,6 @@
 # Animation review progress
 
-**73 / 92 characters approved.** Batch size: 4.
+**74 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -16,7 +16,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 2 | 33 | lodestar | Reviewed — updated | Rebuilt32 coherent body-only poses with floating head and magnet claws, replacing painted-field cels. |
 | 2 | 34 | nanomech | Reviewed — updated | Rebuilt32 consistent high-detail native poses with one pair of wings and matching standing portrait. |
 | 2 | 36 | ampfibian | Reviewed — updated | Rebuilt32 coherent high-detail poses with four arms, two leg tentacles and electricity generated separately. |
-| 3 | 37 | armodrillo | Needs revision | Native combat model is coherent, but shaded small action cels differ from the sharper standing portrait. |
+| 3 | 37 | armodrillo | Reviewed — updated | Rebuilt one coherent yellow/black piston-arm model for standing, heavy walking, jump, normal strike, piston punch, seismic punch, charge, ultimate, guard, hit and defeat. |
 | 3 | 38 | terraspin | Needs revision | Wind rings are painted into multiple body cels and the portrait differs in detail from actions. |
 | 3 | 39 | nrg | Needs revision | Painted radiation/glow and motion streaks obscure the armored body in multiple action cels. |
 | 3 | 40 | fasttrack | Needs revision | Action sheets incorrectly add a long striped tail; standing design is tailless. |

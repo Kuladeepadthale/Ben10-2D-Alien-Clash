@@ -61,7 +61,7 @@ function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.g
     const pose=phase<.18?0:phase<.64?1+(tick%3)*2:2+(tick%3)*2;
     return {frame:RATH_CLOSE.frames[pose],state,index:pose};
    }
-   frames=d.clips.normal||frames;index=phase<.18?0:phase<.64?Math.min(1,frames.length-1):Math.min(2,frames.length-1);
+   frames=f.id===37&&d.reviewedRevision?d.clips.skill2:d.clips.normal||frames;index=frames.length===2?(phase<.64?1:0):phase<.18?0:phase<.64?Math.min(1,frames.length-1):Math.min(2,frames.length-1);
   }
   if(typeof powerProfileFor==='function'&&powerProfileFor(f,v)?.motion==='tail-strike')index=powerPoseIndex(f,v,frames.length);
   if(v.cfg.kind==='leapslam'&&f.y<floor-30){frames=d.clips.jump;index=2;}
