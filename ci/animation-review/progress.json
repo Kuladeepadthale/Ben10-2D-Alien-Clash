@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 33,
-  "completed": 18,
+  "completed": 19,
   "characters": [
     {
       "id": 35,
@@ -846,10 +846,21 @@
       "id": 15,
       "slug": "upchuck",
       "batch": 10,
-      "status": "pending",
-      "findings": [],
+      "status": "verified_unchanged",
+      "findings": [
+        "All32 frames inspected: green/yellow round body, black/white suit and face remain coherent.",
+        "Retained tongue extension, swallowing/body inflation and open-mouth expulsion; these deliberate changes preserve character identity."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 16,
