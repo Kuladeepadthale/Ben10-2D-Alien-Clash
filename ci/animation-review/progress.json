@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 32,
-  "completed": 6,
+  "completed": 7,
   "characters": [
     {
       "id": 35,
@@ -487,10 +487,23 @@
       "id": 2,
       "slug": "diamondhead",
       "batch": 7,
-      "status": "pending",
-      "findings": [],
-      "changed_files": [],
-      "checks": []
+      "status": "verified_updated",
+      "findings": [
+        "Removed baked floor crystals from the active ground-spike body frame; procedural crystals now supply the effect once.",
+        "Reused clean native palm-to-ground pose and its matching launch point; preserved intentional crystal blades and hand growth."
+      ],
+      "changed_files": [
+        "ci/animation-review/characters/diamondhead/revision.json"
+      ],
+      "checks": {
+        "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
+        "passed": true
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 3,

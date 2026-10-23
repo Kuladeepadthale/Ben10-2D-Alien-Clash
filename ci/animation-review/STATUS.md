@@ -1,6 +1,6 @@
 # Animation review progress
 
-**6 / 92 characters complete.** Batch size: 4.
+**7 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -30,7 +30,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 6 | 50 | ball-weevil | Pending |  |
 | 6 | 51 | astrodactyl | Pending |  |
 | 6 | 1 | four-arms | Reviewed — kept | All32 native frames inspected: four arms, black/white shirt, face and body proportions remain coherent. |
-| 7 | 2 | diamondhead | Pending |  |
+| 7 | 2 | diamondhead | Reviewed — updated | Removed baked floor crystals from the active ground-spike body frame; procedural crystals now supply the effect once. |
 | 7 | 3 | xlr8 | Reviewed — kept | All32 native frames inspected: helmet/visor, long tail and wheeled feet stay coherent. |
 | 7 | 4 | wildmutt | Pending |  |
 | 7 | 5 | grey-matter | Pending |  |
