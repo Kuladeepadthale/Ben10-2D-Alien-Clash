@@ -24,7 +24,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 4 | 44 | jury-rigg | Needs revision | All32 frames inspected: mechanic identity is coherent, but low-detail cels and painted muzzle flashes differ from the sharp portrait. |
 | 5 | 45 | shocksquatch | Needs revision | All32 frames inspected: fur, face and bracers remain identifiable, but native detail differs from portrait and electricity is baked over hands/feet. |
 | 5 | 46 | feedback | Needs revision | All32 frames inspected: plug-ended antennae, tail and fingers persist, but painted electricity overlaps power cels. |
-| 5 | 47 | bloxx | Pending |  |
+| 5 | 47 | bloxx | Needs revision | All32 frames inspected: colored blocks and gorilla identity persist, but small cels differ in detail from the high-resolution standing portrait. |
 | 5 | 48 | gravattack | Pending |  |
 | 6 | 49 | crashhopper | Pending |  |
 | 6 | 50 | ball-weevil | Pending |  |

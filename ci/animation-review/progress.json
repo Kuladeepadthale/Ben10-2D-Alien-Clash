@@ -610,10 +610,19 @@
       "id": 47,
       "slug": "bloxx",
       "batch": 5,
-      "status": "pending",
-      "findings": [],
+      "status": "needs_revision",
+      "findings": [
+        "All32 frames inspected: colored blocks and gorilla identity persist, but small cels differ in detail from the high-resolution standing portrait.",
+        "Rebuild one block model while retaining deliberate arm extension, block reshaping and ground-smash debris behavior."
+      ],
       "changed_files": [],
-      "checks": []
+      "checks": {
+        "native_frames": 32,
+        "visual_review": true,
+        "passed": false
+      },
+      "reviewed_on": "2026-10-23",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
     },
     {
       "id": 48,
