@@ -8,7 +8,8 @@
     "Rebuilt32 coherent high-detail poses with four arms, two leg tentacles and electricity generated separately.",
     "Keep swimming/hovering tentacle locomotion and separate electrical effects; no humanoid boots or generic punches.",
     "Discarded locomotion draft containing combat/defeat states; rebuilt hover loop from approved rising and low-hover native poses.",
-    "Rebuilt32 high-detail body-only cels with four arms/two leg tentacles, a hover loop, tentacle lash and independent electricity."
+    "Rebuilt32 high-detail body-only cels with four arms/two leg tentacles, a hover loop, tentacle lash and independent electricity.",
+    "Aligned idle/attack hover offset and matching power origin so entering a cast does not drop the body."
   ],
   "model_requirements": "AmpFibian in Ultimate Alien cartoon form: blue jellyfish alien with angular hood/head, green pupil-less eyes, NO MOUTH, white lightning-like streak markings on three skirt-like head/chest/abdomen sections, green Omnitrix on chest. Exactly SIX long tapering tentacle limbs: FOUR ARMS (two upper arms and two lower arms) plus TWO hanging leg tentacles. Correct the reference's missing extra arms: ALL poses must keep FOUR clearly attached tentacle arms. No humanoid feet, boots or hands.",
   "sources": {
@@ -40,7 +41,8 @@
       "skill1",
       "ultimate"
     ],
-    "passed": true
+    "passed": true,
+    "hover_transition": true
   },
   "poseSelections": {
     "walk": [

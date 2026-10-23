@@ -6,7 +6,8 @@
   "reviewed_on": "2026-10-23",
   "findings": [
     "Rebuilt32 consistent high-detail native poses with one pair of wings and matching standing portrait.",
-    "Rejected the initial extra-wing proposal; final sheets keep two antennae, one eye and two wings through hover, basic attack and all powers."
+    "Rejected the initial extra-wing proposal; final sheets keep two antennae, one eye and two wings through hover, basic attack and all powers.",
+    "Aligned idle/attack hover offset and matching power origin so entering a cast does not drop the body."
   ],
   "model_requirements": "Nanomech in Ben 10 Alien Swarm/Ultimate Alien cartoon form: small lean green/silver biomechanical insect humanoid, large green eyes, two thin antennae with green tips, two translucent insect wings, narrow silver/green body, small claw-like manipulator hands and slim insect feet, chest Omnitrix. Maintain the exact same tiny insect anatomy and wing design throughout; no bulky robot armor.",
   "sources": {
@@ -39,7 +40,8 @@
       "skill1",
       "ultimate"
     ],
-    "passed": true
+    "passed": true,
+    "hover_transition": true
   },
   "referenceHeightBySource": {
     "walk": 470,

@@ -418,7 +418,8 @@
       "status": "verified_updated",
       "findings": [
         "Rebuilt32 consistent high-detail native poses with one pair of wings and matching standing portrait.",
-        "Rejected the initial extra-wing proposal; final sheets keep two antennae, one eye and two wings through hover, basic attack and all powers."
+        "Rejected the initial extra-wing proposal; final sheets keep two antennae, one eye and two wings through hover, basic attack and all powers.",
+        "Aligned idle/attack hover offset and matching power origin so entering a cast does not drop the body."
       ],
       "changed_files": [
         "web/assets/reviewed-native/nanomech/",
@@ -437,7 +438,8 @@
           "skill1",
           "ultimate"
         ],
-        "passed": true
+        "passed": true,
+        "hover_transition": true
       },
       "stage": "All32 two-wing native cels and matching portrait integrated; hover, hand-beam origins and browser checked",
       "reviewed_on": "2026-10-23",
@@ -535,7 +537,8 @@
         "Rebuilt32 coherent high-detail poses with four arms, two leg tentacles and electricity generated separately.",
         "Keep swimming/hovering tentacle locomotion and separate electrical effects; no humanoid boots or generic punches.",
         "Discarded locomotion draft containing combat/defeat states; rebuilt hover loop from approved rising and low-hover native poses.",
-        "Rebuilt32 high-detail body-only cels with four arms/two leg tentacles, a hover loop, tentacle lash and independent electricity."
+        "Rebuilt32 high-detail body-only cels with four arms/two leg tentacles, a hover loop, tentacle lash and independent electricity.",
+        "Aligned idle/attack hover offset and matching power origin so entering a cast does not drop the body."
       ],
       "changed_files": [
         "web/assets/reviewed-native/ampfibian/",
@@ -554,7 +557,8 @@
           "skill1",
           "ultimate"
         ],
-        "passed": true
+        "passed": true,
+        "hover_transition": true
       },
       "stage": "All32 coherent native poses and matching portrait integrated; hover loop, tentacle origin and full browser reviewed",
       "reviewed_on": "2026-10-23",
