@@ -19,7 +19,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 3 | 39 | nrg | Needs revision | Painted radiation/glow and motion streaks obscure the armored body in multiple action cels. |
 | 3 | 40 | fasttrack | Needs revision | Action sheets incorrectly add a long striped tail; standing design is tailless. |
 | 4 | 41 | chamalien | Needs revision | Baked swipes, contact stars and duplicate translucent bodies overlap the character. |
-| 4 | 42 | eatle | Pending |  |
+| 4 | 42 | eatle | Needs revision | Strike sheet uses a different flatter armor drawing from walk/state sheets; painted projectiles also overlap the mouth. |
 | 4 | 43 | clockwork | Pending |  |
 | 4 | 44 | jury-rigg | Pending |  |
 | 5 | 45 | shocksquatch | Pending |  |
