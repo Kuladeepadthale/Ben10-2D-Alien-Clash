@@ -36,6 +36,15 @@ function cast(f,type){if(mode!=='fight'||f.cool>0||f.stun>0||f.block||f.dash||f.
  cfg={...cfg};const sequence=imported[f.id]?.map.animations[key];if(sequence&&Number.isInteger(sequence.impactFrame))cfg.windup=sequence.impactFrame/sequence.fps;const ticks=cfg.ticks||1,target=other(f),targetBody=body(target),inFront=(target.x-f.x)*f.dir>=0,reach=Math.max(0,cfg.range||0),targetX=Math.max(65,Math.min(W-65,inFront?f.x+f.dir*Math.min(Math.abs(target.x-f.x),reach):f.x+f.dir*Math.min(reach,420))),targetY=inFront?targetBody.y+targetBody.h*.5:body(f).y+body(f).h*.42;f.cast={id:++uid,cfg:{...cfg},key,elapsed:0,emitted:0,ultimate:isUlt,damage:damageValue(f,cfg,key)/ticks,budget:{remaining:damageValue(f,cfg,key)},startX:f.x,startY:f.y,dir:f.dir,rushHits:new Set(),plannedTarget:targetX,targetX,targetY,targeted:inFront};f.cool=cfg.windup+(cfg.duration||.08)+cfg.recovery;f.action=type==='normal'?'punch':'power';f.anim=0;f.block=false;f.jumpWindup=0;if(isUlt){announce(cfg.name.toUpperCase(),1.25);sound(320,.3,'sine')}if(type!=='normal')f.powerCasts=(f.powerCasts||0)+1;return true}
 function other(f){return f===player?enemy:player}
 function spawnAttack(f,cast,index){const s=cast.cfg,o=other(f),col=(typeof powerProfileFor==='function'?powerProfileFor(f,cast)?.color:null)||(f.config?.light||CLASSIC_COLORS[f.id]),dir=cast.dir,source=body(f),hand=typeof drawnAlienEmitter==='function'?drawnAlienEmitter(f,cast):f.id===0&&typeof heatblastAtlas!=='undefined'&&heatblastAtlas?heatblastHand(f):null,originX=hand?hand.x:f.x+dir*35,originY=hand?hand.y:source.y+source.h*.42,shotBase={id:++uid,owner:f,damage:cast.damage,ultimate:cast.ultimate,name:s.name,color:col,budget:cast.budget,life:2.4,maxLife:2.4,dir,slow:s.slow||0,type:(f.config||aliens[f.id]).type,emitterX:hand?.x,emitterY:hand?.y,castId:cast.id,artKey:cast.key,powerSource:typeof powerProfileFor==='function'?powerProfileFor(f,cast)?.source:undefined,singleThrow:cast.key!=='normal'&&['projectile','lob'].includes(s.kind)&&(s.ticks||1)===1};
+ if(!Number.isInteger(f.villain)&&cast.key!=='normal'&&((f.id===69&&((cast.key==='skill0'&&s.kind==='projectile'&&s.name===aliens[69].skills[0].name)||(cast.ultimate&&s.kind==='rain'&&s.name===aliens[69].ultimate.name)))||(f.id===23&&cast.ultimate&&s.name===aliens[23].ultimate.name))){
+ const source=hand||{x:originX,y:originY},s=cast.cfg,dir=cast.dir||f.dir||1;
+ const x=cast.targetX??f.x+dir*Math.min(s.range,400),y=cast.targetY??f.y-80;
+ const travel=Math.max(.22,Math.min(.65,Math.hypot(x-source.x,y-source.y)/850));
+ effects.push({id:++uid,owner:f,kind:'explosion',sonicDeployment:f.id===69?'discs':'clones',artKey:cast.key,castId:cast.id,name:s.name,
+  x,y,launchX:source.x,launchY:source.y,dir,r:f.id===69?76:88,delay:travel,life:travel+.4,maxLife:travel+.4,
+  damage:cast.damage,ultimate:cast.ultimate,budget:cast.budget,powerSource:shotBase.powerSource,color:'#a9f4ff',hit:false,index});
+ return;
+ }
  if(['rush','pounce','leapslam'].includes(s.kind))return;
  const tx=cast.targetX??f.x+dir*Math.min(s.range,360),ty=cast.targetY??originY,dx=tx-originX,dy=ty-originY,aimed=!!cast.targeted,angle=aimed?Math.atan2(dy,dx):dir>0?0:Math.PI;
  if(s.kind==='projectile'||s.kind==='wave'){shots.push({...shotBase,kind:s.kind,x:originX,spawnFromX:hand?f.x+dir*35:undefined,y:originY,vx:Math.cos(angle)*s.speed,vy:aimed?Math.sin(angle)*s.speed:0,r:s.radius||25,travel:0,range:aimed&&dx*dir<0?Math.hypot(dx,dy)+(s.radius||25):s.range});sound(320,.1,'sine')}
@@ -53,7 +62,7 @@ function updateF(f,dt){let a=(f.config||aliens[f.id]),o=other(f);f.cool=Math.max
  if(s.kind==='leapslam'&&active>=0&&!v.emitted){let p=Math.min(1,active/duration);f.x=v.startX+(v.plannedTarget-v.startX)*Math.min(1,p*1.5);f.y=floor-Math.sin(p*Math.PI)*250;f.vy=0;if(p>.985&&!v.emitted){v.emitted=1;effects.push({id:++uid,owner:f,artKey:v.key,castId:v.id,kind:'explosion',x:f.x,y:floor-35,r:s.radius||110,life:.36,maxLife:.36,damage:v.damage,ultimate:v.ultimate,name:s.name,budget:v.budget,color:(f.config?.light||CLASSIC_COLORS[f.id]),hit:false});for(let side of [v.dir])shots.push({id:++uid,owner:f,artKey:v.key,kind:'ground',x:f.x,y:floor-15,vx:side*600,vy:0,r:55,dir:side,damage:v.damage,ultimate:v.ultimate,name:s.name,budget:v.budget,color:(f.config?.light||CLASSIC_COLORS[f.id]),life:1.2,maxLife:1.2,travel:0,range:s.range});shake=16;burst(f.x,floor,(f.config?.light||CLASSIC_COLORS[f.id]),35)}}
  else if(['rush','pounce'].includes(s.kind)&&active>=0&&active<Math.max(duration,.42)){
  const segment=Math.floor(active/(Math.max(duration,.42)/(s.ticks||1)));if(segment!==v.segment){v.segment=segment;v.rushHits.clear()}
- if(Math.abs(f.x-v.startX)<s.range){f.x+=v.dir*(s.speed||650)*dt;f.x=Math.max(65,Math.min(W-65,f.x))}if(s.kind==='pounce'){f.y=floor-Math.sin(Math.min(1,active/.5)*Math.PI)*110;f.vy=0}if(s.phase)f.inv=.05;
+ if(Math.abs(f.x-v.startX)<s.range){const step=v.dir*(s.speed||650)*dt;if(f.id===32&&!Number.isInteger(f.villain)&&v.targeted){const stop=v.startX+v.dir*Math.max(0,(v.plannedTarget-v.startX)*v.dir-60*a.scale);f.x=v.dir>0?Math.min(stop,f.x+step):Math.max(stop,f.x+step);}else f.x+=step;f.x=Math.max(65,Math.min(W-65,f.x))}if(s.kind==='pounce'){f.y=floor-Math.sin(Math.min(1,active/.5)*Math.PI)*110;f.vy=0}if(s.phase)f.inv=.05;
  const reach=65*a.scale;if(Math.abs(f.x-o.x)<reach+35&&Math.abs(f.y-o.y)<155&&!v.rushHits.has(o.uid)){v.rushHits.add(o.uid);receiveHit(f,o,v.damage,s.name,v.ultimate,12,v.budget)}
  effects.push({kind:'afterimage',x:f.x-v.dir*35,y:f.y,dir:v.dir,alien:f.id,owner:f,artKey:v.key,name:s.name,color:(f.config?.light||CLASSIC_COLORS[f.id]),life:.18,maxLife:.18,harmless:true});
  }else if(!['rush','pounce','leapslam'].includes(s.kind)){let ticks=s.ticks||1;while(v.emitted<ticks&&active>=v.emitted*(duration/ticks)){spawnAttack(f,v,v.emitted);v.emitted++}}
@@ -175,6 +184,7 @@ select(0);renderReport();$('start').disabled=true;$('start').textContent='LOADIN
 window.androidPause=()=>{if(mode==='fight')pause()};window.androidBack=()=>{if(mode==='fight')pause();else if(isLocked())quit();else window.scrollTo({top:0,behavior:'smooth'})};
 
 if(location.hostname==='appassets.androidplatform.net'){document.querySelector('.asset-import').style.display='none';$('full').style.display='none'}
+
 
 
 

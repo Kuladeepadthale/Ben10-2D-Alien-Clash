@@ -282,6 +282,7 @@ jobs:
           assert 'assets/expansion-effects.js' in names
           assert 'assets/cartoon-power-effects.js' in names
           assert 'assets/ability-animations.js' in names
+          assert 'assets/combat-choreography.js' in names
           assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v100.webp' in names for i in range(13,18))
           m=json.loads(z.read('assets/assets/cels/manifest.json'))
           assert len(m['characters'])==92
@@ -309,12 +310,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 11.7 — Animation Review Batch 1' --notes 'Rebuilds Water Hazard as32 consistent high-detail body-only native poses with matching standing portrait and registered water ports. Adds resumable92-character review tracking; keeps approved Big Chill, Humungousaur and Heatblast animation. Preserves existing Plumber operations,92 aliens,50 villains and progression.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.0 — Battle Readability and Sonic Attacks' --notes 'Makes battle announcements compact and moves them into the HUD gutter. Adds native strike and recoil cycles to non-rolling rush attacks, Rath jab/cross/hook ultimate and a captured-target approach stop. Echo Echo deploys native clones; Ultimate Echo Echo sends procedural sonic discs around the captured target with delayed, dodgeable sonic pulses. Retains 92 aliens, 50 villains and existing reviewed artwork. Includes resumable animation-review records; 19 body-model repairs remain.' --prerelease --target "$GITHUB_SHA"
 
 
 
 
 # v8.2: verify full-screen controls and all forty native replacement sheets.
+
 
 
 
