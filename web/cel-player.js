@@ -68,7 +68,7 @@ function celState(f){if(f.hp<=0)return'ko';if(f.dash)return'dash';if(f.stun>0)re
 const celFallbackDraw=drawAlien;
 drawAlien=function(ctx,f,t,portrait=false){const d=CEL_DATA.characters[f.id],cache=celCache.get(f.id);if(!cache){if(!celPending.has(f.id))celEnsure(f.id).catch(()=>{});celFallbackDraw(ctx,f,t,portrait);return;}cache.used=++celUse;
  // Use the sharper standing artwork at the same physical size and sole position.
- if((portrait||celState(f)==='idle')&&f.id>=32&&f.id<52&&typeof classicPortraits!=='undefined'&&classicPortraits[f.id]){
+ if(!d.reviewedRevision&&(portrait||celState(f)==='idle')&&f.id>=32&&f.id<52&&typeof classicPortraits!=='undefined'&&classicPortraits[f.id]){
   const image=classicPortraits[f.id],frame=d.frames[d.clips.idle[0]],s=aliens[f.id].renderHeight*aliens[f.id].scale/d.referenceHeight,h=(frame.rect[3]-16)*s,ratio=h/image.height;
   const hover=CARTOON_GAITS[f.id]?.hover?6+Math.sin(t*3)*1.5:0;
   ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-hover);ctx.scale(f.dir||1,1);ctx.drawImage(image,-image.width*ratio/2,-h,image.width*ratio,h);ctx.restore();return;
