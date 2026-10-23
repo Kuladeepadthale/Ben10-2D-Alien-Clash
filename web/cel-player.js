@@ -54,6 +54,8 @@ function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.g
    // Preserve character-specific bites, tendrils and weapons instead of borrowing a punch pose.
    index=beat.phase<.55?Math.min(1,frames.length-1):Math.min(2,frames.length-1);
   }
+  // Terraspin drives his air currents with actual alternating native flipper poses.
+  if(f.id===38&&d.reviewedRevision&&v.cfg.kind==='vortex'&&v.elapsed>=wind&&v.elapsed<wind+active)index=Math.floor((v.elapsed-wind)*9)%frames.length;
   // Each rush contact gets native strike/retraction poses. Keep intentional shell rolling.
   if(['rush','pounce'].includes(v.cfg.kind)&&![10,71,90].includes(f.id)&&v.elapsed>=wind&&v.elapsed<wind+active){
    const cycle=(v.elapsed-wind)/active*Math.max(1,v.cfg.ticks||1),tick=Math.floor(cycle),phase=cycle-tick;

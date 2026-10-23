@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 38,
-  "completed": 74,
+  "current_character": 39,
+  "completed": 75,
   "characters": [
     {
       "id": 35,
@@ -815,19 +815,130 @@
       "id": 38,
       "slug": "terraspin",
       "batch": 3,
-      "status": "needs_revision",
+      "status": "verified_updated",
       "findings": [
-        "Wind rings are painted into multiple body cels and the portrait differs in detail from actions.",
-        "Separate wind from the turtle model and preserve shell spin, flipper fan motion and stable head scale."
+        "Rebuilt one coherent olive/tan turtle model with brown shell, visible chest vents and long fingerless flippers across all 32 cels.",
+        "Vent origins registered to actual chest vent pixels; no painted wind or opaque trails remain on body sprites.",
+        "Shell cyclone and ultimate cycle through distinct native flipper fan poses while the simulation retains its damage cadence."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/terraspin/revision.json",
+        "ci/animation-review/characters/terraspin/model-reference.webp",
+        "ci/animation-review/characters/terraspin/source-jump-strike.webp",
+        "ci/animation-review/characters/terraspin/source-walk.webp",
+        "ci/animation-review/characters/terraspin/source-states.webp",
+        "ci/animation-review/characters/terraspin/source-powers.webp",
+        "web/assets/reviewed-native/terraspin/powers.webp",
+        "web/assets/reviewed-native/terraspin/walk.webp",
+        "web/assets/reviewed-native/terraspin/jump-strike.webp",
+        "web/assets/reviewed-native/terraspin/states.webp",
+        "web/assets/reviewed-native/terraspin/portrait.webp",
+        "ci/export-reviewed-character.py",
+        "web/cel-player.js"
+      ],
       "checks": {
         "native_frames": 32,
+        "native_detail_and_margins": true,
+        "native_asset_hashes": true,
+        "emitter_registration": true,
+        "actual_draws": 240,
+        "facings": 2,
+        "fan_cycle_poses": 3,
         "visual_review": true,
-        "passed": false
+        "full_browser_review": true,
+        "browser_errors": [],
+        "passed": true
       },
       "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "renderHeight": 226,
+      "scale": 1.04,
+      "sources": {
+        "states": "ci/animation-review/characters/terraspin/source-states.webp",
+        "walk": "ci/animation-review/characters/terraspin/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/terraspin/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/terraspin/source-powers.webp"
+      },
+      "prompts": {
+        "states": "Create a production game animation sheet of EXACT Terraspin character in the attached reference. Preserve olive-green turtle head with small eyes and beak-like mouth, broad brown domed shell behind shoulders, tan/olive front chest plate with black oval ventilation holes, green circular chest Omnitrix, TWO long flat tapered flipper arms (no fingers), two sturdy short turtle legs with blunt toes, NO tail. Clean original-TV cartoon cel style, crisp black outlines, flat colors with one shadow tone, not painted. Exactly 8 SEPARATE full-body right-facing/three-quarter figures in a 4-column 2-row grid on truly transparent background. Each entire body, shell, flippers and toes visible, generous clear margins and gutters, no cropping. Row-major poses: 1 ultimate preparation lifting both long flippers sideways; 2 ultimate active fan stance with head visible and flippers extended diagonally in opposite directions, chest vents clear; 3 ultimate return/recovery; 4 neutral upright resting stance, flippers relaxed down; 5 guard curling flippers around front of shell; 6 upright hit recoil, not prone; 7 knocked out lying sideways, shell and head connected; 8 forward dash lean with long flippers swept backward. SAME head, shell, chest vents, colors and body scale in every frame. BODY ONLY: no wind rings, air swirls, clouds, motion streaks, floor, dust, shadows, text or labels. Desired native figure height 350-430px in 1536x1024 or higher. All animations will get separate code-generated wind effects.",
+        "walk": "Strictly preserve the attached Terraspin body model. Production transparent 2D cel-animation WALK cycle sheet: EXACTLY eight whole figures, 4 columns x 2 rows, every figure facing RIGHT. Same olive turtle head, brown domed shell, tan front plate with black oval vents, green chest emblem, TWO long tapering fingerless flippers, short sturdy legs with blunt toes, no tail. Clean black outlines, flat original TV-cartoon colors and one shade, identical anatomy/head/chest design in all frames. Eight distinct heavy walking phases from left-foot contact through passing to right-foot contact then passing back. Feet lift alternately, torso bob SMALL, long flippers counter-swing modestly beside body rather than becoming human arms. No fighting poses, no wind effects. Center every FULL figure within its cell, keep at least 25px transparent gap from frame edges and other figures, shell/flippers/toes fully visible. Native upright body height about 350-420px in 1536x1024 sheet or larger. True transparency, body-only silhouettes; no floor, aura, blurred trails, haze, dust, duplicate limbs, text or labels.",
+        "jump-strike": "STRICT attached Terraspin model, same olive turtle head, brown shell, tan front plate with black oval vents and green chest emblem, two LONG fingerless flippers, short blunt-toed legs, NO tail. Clean crisp flat TV cartoon cel art. Make exactly 8 SEPARATE FULL-BODY right-facing/three-quarter drawings in a 4x2 sprite grid. First row: 1 jump crouch preparation; 2 rising jump with feet tucked and flippers slightly spread; 3 descending jump bracing feet and shell; 4 crouched soft landing. Second row: 5 anticipation for a flipper swipe, rear flipper drawn back; 6 full forward flipper swipe, long front flipper extended forward but entire tip stays inside canvas; 7 retract front flipper; 8 neutral recovery guard. Preserve exact head/chest/shell identity and model scale from the reference, body detail about 350-420px high for upright poses in 1536x1024 or larger. At least 25px clear transparent margin around every full body and no touching other figures. All limbs connected naturally, flippers have NO fingers or human fists. NO wind rings, trails, power balls, painted air, shadows, floor, text or labels. Actual transparent background with clean opaque body silhouettes.",
+        "powers": "Production body-only animation sprite sheet for EXACT attached Terraspin. Same olive turtle head, brown domed shell, tan chest with black oval vents and green emblem, TWO long fingerless tapered flippers, short broad turtle legs, no tail. Crisp black outlines and flat cel shading, no painted textures. Eight separate FULL-BODY figures facing RIGHT/three-quarter in a 4-column 2-row grid. Row-major: 1 chest-vent blast anticipation with flippers lifted a little; 2 chest-vent blast open stance with torso leaned back slightly, chest unobscured, flippers swept sideways; 3 recovery lowering flippers; 4 fan phase A: one flipper pointing upward/back, opposite flipper downward/front, head and vents clear; 5 fan phase B: REVERSE flipper positions, front flipper up and rear flipper down; 6 fan phase C: both flippers horizontally spread, same shell/head scale; 7 shell-slam windup with knees bent and flippers bracing; 8 shell-slam low impact crouch, body tilted down with flipper ends near own floor. Important: fan phases use actual changed flipper positions, NO multiple exposure or extra flippers. Keep whole shell, head, toes and EVERY flipper tip on canvas with 25px clear transparent safety margins, no overlap between characters. Desired upright height 350-420px, 1536x1024 or higher. No wind spirals, air rings, energy, motion trails, dust, shadows, floor, text, labels or props. Truly transparent background. Powers will be animated separately in code."
+      },
+      "referenceHeightBySource": {
+        "states": 362,
+        "walk": 415,
+        "jump-strike": 400,
+        "powers": 413
+      },
+      "emitterTargets": {
+        "12": [
+          0.63,
+          0.48
+        ],
+        "13": [
+          0.63,
+          0.48
+        ],
+        "14": [
+          0.63,
+          0.48
+        ],
+        "15": [
+          0.63,
+          0.48
+        ],
+        "16": [
+          0.63,
+          0.48
+        ],
+        "17": [
+          0.63,
+          0.48
+        ],
+        "18": [
+          0.63,
+          0.48
+        ],
+        "19": [
+          0.63,
+          0.48
+        ],
+        "20": [
+          0.63,
+          0.48
+        ],
+        "21": [
+          0.63,
+          0.48
+        ],
+        "22": [
+          0.63,
+          0.48
+        ],
+        "23": [
+          0.63,
+          0.48
+        ],
+        "24": [
+          0.63,
+          0.48
+        ],
+        "25": [
+          0.63,
+          0.48
+        ],
+        "26": [
+          0.63,
+          0.48
+        ]
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/terraspin/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/terraspin/model-reference.webp",
+        "powers": "ci/animation-review/characters/terraspin/model-reference.webp",
+        "states": "reference-38.png from shipped v11.9 portrait"
+      }
     },
     {
       "id": 39,
