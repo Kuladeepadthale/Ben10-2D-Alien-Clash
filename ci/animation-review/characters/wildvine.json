@@ -1,0 +1,19 @@
+{
+  "id": 11,
+  "slug": "wildvine",
+  "status": "verified_unchanged",
+  "reviewed_on": "2026-10-23",
+  "findings": [
+    "All32 frames inspected: flytrap collar, central eye, back pods and vine-root anatomy stay coherent.",
+    "Retained root-stepping gait, vine extension and elastic recovery; deliberate vines are part of the body animation."
+  ],
+  "changed_files": [],
+  "checks": {
+    "native_frames": 32,
+    "states": 12,
+    "facings": 2,
+    "actual_draws": 240,
+    "passed": true
+  },
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+}

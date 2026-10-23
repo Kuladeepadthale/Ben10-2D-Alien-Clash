@@ -1,6 +1,6 @@
 # Animation review progress
 
-**14 / 92 characters complete.** Batch size: 4.
+**15 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -39,7 +39,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 8 | 8 | ripjaws | Needs revision | Walk cycle omits the head lure visible in jump, attacks and idle; these models need reconciliation. |
 | 8 | 9 | ghostfreak | Reviewed — kept | All32 frames inspected: pale shroud, single side eye, black seams and tapering ghost tail remain coherent. |
 | 9 | 10 | cannonbolt | Reviewed — kept | All32 frames inspected: white/black body and yellow shell plates stay consistent. |
-| 9 | 11 | wildvine | Pending |  |
+| 9 | 11 | wildvine | Reviewed — kept | All32 frames inspected: flytrap collar, central eye, back pods and vine-root anatomy stay coherent. |
 | 9 | 12 | blitzwolfer | Pending |  |
 | 9 | 13 | snare-oh | Pending |  |
 | 10 | 14 | frankenstrike | Pending |  |
