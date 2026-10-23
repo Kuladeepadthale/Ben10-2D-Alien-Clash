@@ -1,6 +1,6 @@
 # Animation review progress
 
-**11 / 92 characters complete.** Batch size: 4.
+**12 / 92 characters complete.** Batch size: 4.
 
 Each completed entry has an individual record and Git checkpoint. Pending/revision entries are not counted as complete.
 
@@ -35,7 +35,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 7 | 4 | wildmutt | Reviewed — kept | All32 frames inspected: eyeless orange quadruped identity, shoulder emblem and powerful forelimbs remain coherent. |
 | 7 | 5 | grey-matter | Reviewed — kept | All32 frames inspected: grey head, large yellow-green eyes and black/white suit stay consistent. |
 | 8 | 6 | upgrade | Reviewed — kept | All32 frames inspected: single green eye, green circuitry and black/white body stay coherent. |
-| 8 | 7 | stinkfly | Pending |  |
+| 8 | 7 | stinkfly | Reviewed — kept | All32 frames inspected: insect head, eye stalks, wing pair, tail stinger and limb count stay coherent. |
 | 8 | 8 | ripjaws | Pending |  |
 | 8 | 9 | ghostfreak | Pending |  |
 | 9 | 10 | cannonbolt | Pending |  |
