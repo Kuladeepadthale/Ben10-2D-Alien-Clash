@@ -88,7 +88,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 20 | 79 | bashmouth | Reviewed — kept | All32 native frames inspected. |
 | 21 | 80 | bootleg | Reviewed — kept | All32 native frames inspected. |
 | 21 | 81 | crystalfist | Reviewed — kept | All32 native frames inspected. |
-| 21 | 82 | dark-matter | Pending |  |
+| 21 | 82 | dark-matter | Needs revision | Walk/jump model is much darker than the bright red combat/state sheets. |
 | 21 | 83 | hot-shot | Reviewed — kept | All32 native frames inspected. |
 | 22 | 84 | humungoraptor | Reviewed — kept | All32 native frames inspected. |
 | 22 | 85 | quad-smack | Reviewed — kept | All32 native frames inspected. |
