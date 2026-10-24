@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 49,
-  "completed": 81,
+  "completed": 82,
   "characters": [
     {
       "id": 35,
@@ -3246,17 +3246,27 @@
       "id": 11,
       "slug": "wildvine",
       "batch": 9,
-      "status": "in_progress",
+      "status": "verified_updated",
       "findings": [
-        "All32 frames inspected: flytrap collar, central eye, back pods and vine-root anatomy stay coherent.",
-        "Retained root-stepping gait, vine extension and elastic recovery; deliberate vines are part of the body animation."
+        "Preserved the original standing pose, Vine Lash and Seed Bomb; replaced only root-channeling and Overgrowth body gestures.",
+        "Root eruption grows tapered leafy/thorny roots; Overgrowth forms a twisting captured-position forest. Visible growth and fade match collision height."
       ],
       "changed_files": [],
       "checks": {
-        "passed": false
+        "native_frames": 32,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "actual_draws": 240,
+        "facings": 2,
+        "standing_pixels_and_registration_preserved": true,
+        "visual_review": true,
+        "full_browser_review": true,
+        "browser_errors": [],
+        "requested_gameplay_regressions": true,
+        "passed": true
       },
       "reviewed_on": "2026-10-24",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "basis_commit": "5e0dfbe0b97ed5ede2e1e365b064f67aa205ce51",
       "revision": 1,
       "requestedRepair124": true,
       "renderHeight": 226,
@@ -3313,11 +3323,11 @@
         "19": 442,
         "20": 442,
         "21": 442,
-        "22": 439.0,
-        "23": 439.0,
-        "24": 441.0,
-        "25": 441.0,
-        "26": 441.0,
+        "22": 439,
+        "23": 439,
+        "24": 441,
+        "25": 441,
+        "26": 441,
         "27": 442,
         "28": 442,
         "29": 442,
@@ -3579,7 +3589,7 @@
         "walk": 442,
         "jump-strike": 442,
         "powers": 442,
-        "states": 441.0
+        "states": 441
       },
       "requested_changes": [
         "states",

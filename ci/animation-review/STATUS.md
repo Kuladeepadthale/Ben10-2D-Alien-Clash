@@ -1,6 +1,6 @@
 # Animation review progress
 
-**81 / 92 characters approved.** Batch size: 4.
+**82 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -41,7 +41,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 8 | 8 | ripjaws | Reviewed — updated | Preserved the original standing model and unrelated actions; Deep-sea Frenzy now has jaw-first windup, bite/lunge and recovery. |
 | 8 | 9 | ghostfreak | Reviewed — kept | All32 frames inspected: pale shroud, single side eye, black seams and tapering ghost tail remain coherent. |
 | 9 | 10 | cannonbolt | Reviewed — kept | All32 frames inspected: white/black body and yellow shell plates stay consistent. |
-| 9 | 11 | wildvine | In progress | All32 frames inspected: flytrap collar, central eye, back pods and vine-root anatomy stay coherent. |
+| 9 | 11 | wildvine | Reviewed — updated | Preserved the original standing pose, Vine Lash and Seed Bomb; replaced only root-channeling and Overgrowth body gestures. |
 | 9 | 12 | blitzwolfer | Reviewed — kept | All32 frames inspected: grey fur, mane, muzzle, tail and suit remain coherent. |
 | 9 | 13 | snare-oh | In progress | All32 frames inspected: gold wrappings, black gaps, head silhouette and trailing bandages remain coherent. |
 | 10 | 14 | frankenstrike | Reviewed — kept | All32 frames inspected: face, shoulder generators, forearm armor and black/green legs stay coherent. |
