@@ -1,11 +1,11 @@
 {
   "id": 19,
   "slug": "arctiguana",
-  "status": "verified_unchanged",
-  "reviewed_on": "2026-10-23",
+  "status": "verified_updated",
+  "reviewed_on": "2026-10-24",
   "findings": [
-    "All32 frames inspected: blue lizard body, dorsal spikes, cheek fins and tail remain coherent.",
-    "Retained low quadruped travel and open-mouth freeze-breath pose; tail stays attached through jump and attacks."
+    "Rebuilt low four-paw crawl, forepaw glacial slam and braced open-mouth freezing ultimate.",
+    "Procedural ice fronts and mouth-attached gusts replace generic wave presentation."
   ],
   "changed_files": [],
   "checks": {
@@ -13,7 +13,339 @@
     "states": 12,
     "facings": 2,
     "actual_draws": 240,
+    "native_asset_hashes": true,
+    "native_detail_and_margins": true,
+    "standing_pixels_anchors_heights_preserved": true,
+    "full_browser_review": true,
+    "browser_errors": [],
     "passed": true
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "revision": 1,
+  "requestedRepair125": true,
+  "renderHeight": 170,
+  "scale": 1,
+  "sources": {
+    "walk": "ci/animation-review/characters/arctiguana/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/arctiguana/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/arctiguana/source-powers.webp",
+    "states": "ci/animation-review/characters/arctiguana/source-states.webp"
+  },
+  "prompts": {
+    "walk": "Exact attached Arctiguana: BLUE low reptilian quadruped, two massive front forelegs and two shorter rear legs, long attached blue striped tail, THREE large dark blue dorsal shark-like fins, white cheek gills/frills, angular reptile face with TWO yellow eyes and teeth, black-and-white harness/chest Omnitrix, black wrist cuffs with white trim and black claws. Eight consecutive smooth FOUR-LEGGED walking poses, left forepaw/right hindpaw advance, weight transfer, passing, planted push, right forepaw/left hindpaw advance, weight transfer, passing, planted push. Belly remains low, head level, tail counterbalances fluidly. Every four paws stays anatomically connected; no standing on two legs and no punching. Same face, dorsal fins and leg lengths. Eight full-body right-facing poses in4x2 transparent sheet; crisp cartoon cel style, no effects.",
+    "freeze": "EXACT attached BLUE quadruped reptile: low body, powerful forelegs/shorter hindlegs, attached striped blue tail, three large dorsal blue fins, white gill frills, black/white chest harness and wrists, yellow eyes, toothy angular face and black claws. 1 Glacial slam windup: rear legs supporting low body, both large front paws lifted slightly, neck pulled back, all four legs connected. 2 Glacial slam contact both forepaws planted DOWN firmly in deep low crouch, mouth open directed downward and RIGHT; head, fins and tail remain same model. 3 recovering upward from paw slam with mouth closing. 4 Absolute zero windup inhales, cheeks/throat subtly drawn back and all four paws wide planted. 5 Absolute zero sustained freezing BREATH: wide OPEN mouth angledRIGHT at opponent torso level, jaw and teeth visible, head forward, forelegs braced, tail balances. 6 sustained breath with same open mouth/head, slight different neck extension and paw loading. 7 exhale recovery jaw closing and posture relaxing. 8 neutral reference quadruped stance. NO actual emitted ice, vapor, snow, projectiles, crystals or external effects; mouth remains empty for procedural effects. Eight full-body right-facing poses in4x2 transparent sheet; crisp cartoon cel style, no effects."
+  },
+  "accepted_generated_sources": {
+    "walk": "ci/animation-review/characters/arctiguana/generated-walk125.webp",
+    "freeze": "ci/animation-review/characters/arctiguana/generated-freeze125.webp"
+  },
+  "generated_frame_selections": {
+    "walk": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    },
+    "freeze": {
+      "22": 0,
+      "23": 1,
+      "21": 2,
+      "24": 3,
+      "25": 4,
+      "26": 6
+    }
+  },
+  "frameReferenceHeights": {
+    "0": 319.5,
+    "1": 319.5,
+    "2": 319.5,
+    "3": 319.5,
+    "4": 319.5,
+    "5": 319.5,
+    "6": 319.5,
+    "7": 319.5,
+    "8": 313,
+    "9": 313,
+    "10": 313,
+    "11": 313,
+    "12": 313,
+    "13": 313,
+    "14": 313,
+    "15": 313,
+    "16": 313,
+    "17": 313,
+    "18": 313,
+    "19": 313,
+    "20": 313,
+    "21": 320.0,
+    "22": 320.0,
+    "23": 320.0,
+    "24": 320.0,
+    "25": 320.0,
+    "26": 320.0,
+    "27": 313,
+    "28": 313,
+    "29": 313,
+    "30": 313,
+    "31": 313
+  },
+  "frameOrigins": {
+    "8": [
+      256,
+      294
+    ],
+    "9": [
+      262,
+      380
+    ],
+    "10": [
+      155,
+      451.9
+    ],
+    "11": [
+      264,
+      365
+    ],
+    "12": [
+      239,
+      289
+    ],
+    "13": [
+      231,
+      284
+    ],
+    "14": [
+      266,
+      294
+    ],
+    "15": [
+      216,
+      287
+    ],
+    "16": [
+      252,
+      354
+    ],
+    "17": [
+      232,
+      309
+    ],
+    "18": [
+      244,
+      304
+    ],
+    "19": [
+      208,
+      278
+    ],
+    "20": [
+      230,
+      290
+    ],
+    "27": [
+      193,
+      321
+    ],
+    "28": [
+      219,
+      318
+    ],
+    "29": [
+      184,
+      320
+    ],
+    "30": [
+      246,
+      231
+    ],
+    "31": [
+      255,
+      260
+    ],
+    "0": [
+      287.0,
+      331
+    ],
+    "1": [
+      292.0,
+      331
+    ],
+    "2": [
+      294.0,
+      322
+    ],
+    "3": [
+      288.0,
+      322
+    ],
+    "4": [
+      290.0,
+      317
+    ],
+    "5": [
+      293.0,
+      330
+    ],
+    "6": [
+      288.0,
+      326
+    ],
+    "7": [
+      287.0,
+      329
+    ]
+  },
+  "preservedEmitters": {
+    "8": {},
+    "9": {},
+    "10": {},
+    "11": {},
+    "12": {
+      "normal": [
+        388,
+        101
+      ]
+    },
+    "13": {
+      "normal": [
+        489,
+        99
+      ]
+    },
+    "14": {
+      "normal": [
+        375,
+        113
+      ]
+    },
+    "15": {
+      "normal": [
+        369,
+        98
+      ]
+    },
+    "16": {
+      "skill0": [
+        429,
+        90
+      ]
+    },
+    "17": {
+      "skill0": [
+        428,
+        79
+      ]
+    },
+    "18": {
+      "skill0": [
+        408,
+        104
+      ]
+    },
+    "19": {
+      "skill1": [
+        358,
+        98
+      ]
+    },
+    "20": {
+      "skill1": [
+        450,
+        80
+      ]
+    },
+    "27": {},
+    "28": {},
+    "29": {},
+    "30": {},
+    "31": {}
+  },
+  "emitterTargets": {
+    "12": [
+      0.88,
+      0.4
+    ],
+    "13": [
+      0.88,
+      0.4
+    ],
+    "14": [
+      0.88,
+      0.4
+    ],
+    "15": [
+      0.88,
+      0.4
+    ],
+    "16": [
+      0.88,
+      0.4
+    ],
+    "17": [
+      0.88,
+      0.4
+    ],
+    "18": [
+      0.88,
+      0.4
+    ],
+    "19": [
+      0.88,
+      0.4
+    ],
+    "20": [
+      0.88,
+      0.4
+    ],
+    "21": [
+      0.9,
+      0.39
+    ],
+    "22": [
+      0.78,
+      0.9
+    ],
+    "23": [
+      0.8,
+      0.93
+    ],
+    "24": [
+      0.88,
+      0.4
+    ],
+    "25": [
+      0.96,
+      0.38
+    ],
+    "26": [
+      0.9,
+      0.38
+    ]
+  },
+  "referenceHeightBySource": {
+    "walk": 319.5,
+    "jump-strike": 313,
+    "powers": 313,
+    "states": 320.0
+  },
+  "changed_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ]
 }
