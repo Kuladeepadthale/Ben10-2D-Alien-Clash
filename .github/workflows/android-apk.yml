@@ -310,7 +310,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.1 — Native Animation Review Batch 3' --notes 'Adds coherent high-detail native models for Armodrillo, Terraspin, NRG and tailless Fasttrack. Includes piston-arm motion, three-position flipper fans, registered NRG grille rays with upright hit recoil, alternating Fasttrack sprint and roundhouse contacts. Preserves v12.0 compact edge announcements, sonic deployments and native rush combos. All92 aliens analysed;77 approved and15 body repairs queued. Per-character checkpoints and source prompts saved.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.2 — Native Animation Review Batch 4' --notes 'Rebuilds Chamalien, Eatle, Clockwork and Jury Rigg with coherent native models across32 poses each. Adds readable Chamalien cloak and forward tail motion, native Eatle horn charge and uppercut recovery, Clockwork chest-clock registration and connected Jury Rigg gadget gestures. Preserves compact battle notices, manual facing, targeted powers and earlier animation repairs. All92 aliens analysed;81 approved and11 repairs queued. Exact prompts, sources and individual checkpoints saved.' --prerelease --target "$GITHUB_SHA"
 
 
 

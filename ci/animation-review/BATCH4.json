@@ -1,0 +1,30 @@
+{
+  "version": "12.2",
+  "versionCode": 122,
+  "approved": 81,
+  "remaining": 11,
+  "characters": [
+    "chamalien",
+    "eatle",
+    "clockwork",
+    "jury-rigg"
+  ],
+  "native_frames": 128,
+  "total_reviewed_native_frames": 800,
+  "checks": [
+    "All4 models:240 actual draws,12 states,both facings",
+    "Complete source pixels,transparent margins,hashes and matching portraits",
+    "Mobile browser for all4,zero page errors",
+    "Readable cloak, native horn charge/recovery, chest-clock and weapon origins",
+    "Manual facing, cast-time targeting,136 rush/pounce combinations and all92 AI pursuit"
+  ],
+  "image_tool": "built-in image_gen",
+  "sources_and_exact_prompts": "characters/<name>.json and characters/<name>/revision.json",
+  "next_batch": [
+    45,
+    46,
+    47,
+    48
+  ],
+  "online_worker": "Source engine updated; live deployment requires owner Cloudflare credentials."
+}

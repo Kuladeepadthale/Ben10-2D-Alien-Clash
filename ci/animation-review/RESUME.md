@@ -1,11 +1,11 @@
 # Resume the character animation review
 
-Canonical branch: animation-review. Read progress.json, STATUS.md and the individual character JSON before editing.
+Canonical branch: `animation-review`. Read progress.json, STATUS.md and individual character JSON before editing.
 
-All92 characters analysed. Batches1-3 approved:77 approved,15 repairs remain. Keep v12.0 compact edge text, sonic deployments and native rush combos. Armodrillo37, Terraspin38, NRG39 and Fasttrack40 now have coherent native bodies. Preserve conditional NRG legacy hit/KO mapping, Terraspin fan cycles and tailless Fasttrack sprint/kick poses.
+All92 characters have analysis records. Batches1–4 are approved:81 characters approved,11 need repair. Chamalien41, Eatle42, Clockwork43 and Jury Rigg44 now use coherent native models. Preserve compact edge notices, sonic deployments, native rush combos, manual facing and cast-time target capture. Preserve Chamalien cloak visibility, per-frame head-size registration, Eatle horn charge/uppercut recovery, Clockwork chest clock and Jury Rigg weapon markers.
 
-Next batch: Chamalien41, Eatle42, Clockwork43, Jury Rigg44. Other remaining IDs:45,46,47,48,49,50,51,8,21,29,82. Individual records contain their findings.
+Next repair batch: **Shocksquatch45, Feedback46, Bloxx47, Gravattack48**. Other queued repairs: Crashhopper49, BallWeevil50, Astrodactyl51, Ripjaws8, Buzzshock21, Spidermonkey29, DarkMatter82.
 
-After each character: save exact prompts and raw sources,32 native body-only cels and matching portrait; register actual species emitters and configured physical sizes; reject clipped poses; run native-pixel/margin/hash/detail checks,240 actual draws in both facings and browser review. Mark verified only when checks pass, regenerate progress and commit to animation-review before continuing. Preserve intentional transformations.
+For each character: use identity reference; save exact prompts and raw accepted sources; pack 32 body-only native cels plus matching portrait; register actual species emitters and correct physical reference sizes. Reject clipped poses. Run native source-pixel, margin, hash and emitter checks; 240 actual native draws in both facings; inspect browser. Mark verified only after all checks pass, regenerate progress and commit the checkpoint to animation-review before beginning another character. Do not erase intentional forms such as Cannonbolt rolling, Goop stretching or Brainstorm shell opening.
 
-Release information is in last-release.json. Do not claim a new APK until the main build and publication succeed. Multiplayer Worker deployment needs owner Cloudflare credentials.
+Release data is in last-release.json. Do not claim a new APK is available until the main build and release publication succeed. Live multiplayer Worker deployment needs owner Cloudflare credentials.
