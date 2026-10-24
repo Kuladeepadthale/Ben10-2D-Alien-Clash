@@ -37,6 +37,17 @@ for key in ['normal','skill0','skill1','skill2','ultimate']:
   elif slug=='ampfibian':
    yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)&(rgb[:,:,2]>100)&(rgb[:,:,2]>rgb[:,:,0]*1.2)
    ys,xs=np.where(mask);assert len(xs)>0;near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
+  elif slug=='clockwork':
+   yy,xx=np.indices(a.shape[:2]);mask=(a[:,:,3]>180)
+   if fi in [22,23]:
+    target=rec['emitterTargets'][str(fi)];ys,xs=np.where(mask);near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));point=[int(xs[near]),int(ys[near])]
+   else:
+    green=mask&(rgb[:,:,1]>100)&(rgb[:,:,1]>rgb[:,:,0]*1.12)&(rgb[:,:,1]>rgb[:,:,2]*1.12)&(yy>h*.25)&(yy<h*.70);gy,gx=np.where(green);assert len(gx)>0;ys,xs=np.where(mask);near=int(np.argmin((xs-gx.mean())**2+(ys-gy.mean())**2));point=[int(xs[near]),int(ys[near])]
+   f.setdefault('emitters',{})[key]=point;continue
+  elif slug=='jury-rigg':
+   yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)
+   if fi in [16,17,18,19,22,23,24,25,26]:mask=mask&(rgb[:,:,1]>100)&(rgb[:,:,1]>rgb[:,:,0]*1.15)&(rgb[:,:,1]>rgb[:,:,2]*1.05)
+   ys,xs=np.where(mask);assert len(xs)>0;near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
   elif slug=='eatle':
    yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)
    if fi in [19,20,21] and key!='skill2':target=[.55,.55]

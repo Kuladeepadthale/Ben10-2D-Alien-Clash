@@ -1,17 +1,123 @@
 {
   "id": 43,
   "slug": "clockwork",
-  "status": "needs_revision",
-  "reviewed_on": "2026-10-23",
+  "status": "verified_updated",
+  "reviewed_on": "2026-10-24",
   "findings": [
-    "Standing and movement models are coherent, but painted energy fields and floor bursts obscure multiple power poses.",
-    "Keep key-shaped head, brass body and chest clock; use body-only chest-release gestures with procedural time effects."
+    "Rebuilt32 coherent brass/key-head poses with an unobscured green chest clock and matching native portrait.",
+    "Registered temporal emissions to the chest clock and stomp impact to the boot; energy is rendered separately from the body."
   ],
-  "changed_files": [],
+  "changed_files": [
+    "ci/animation-review/characters/clockwork/source-jump-strike.webp",
+    "ci/animation-review/characters/clockwork/revision.json",
+    "ci/animation-review/characters/clockwork/source-powers.webp",
+    "ci/animation-review/characters/clockwork/source-walk.webp",
+    "ci/animation-review/characters/clockwork/source-states.webp",
+    "ci/animation-review/characters/clockwork/model-reference.webp",
+    "web/assets/reviewed-native/clockwork/powers.webp",
+    "web/assets/reviewed-native/clockwork/portrait.webp",
+    "web/assets/reviewed-native/clockwork/jump-strike.webp",
+    "web/assets/reviewed-native/clockwork/states.webp",
+    "web/assets/reviewed-native/clockwork/walk.webp"
+  ],
   "checks": {
     "native_frames": 32,
+    "native_asset_hashes": true,
+    "native_detail_and_margins": true,
+    "actual_draws": 240,
+    "facings": 2,
     "visual_review": true,
-    "passed": false
+    "full_browser_review": true,
+    "browser_errors": [],
+    "passed": true
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "renderHeight": 226,
+  "scale": 1.02,
+  "sources": {
+    "states": "ci/animation-review/characters/clockwork/source-states.webp",
+    "walk": "ci/animation-review/characters/clockwork/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/clockwork/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/clockwork/source-powers.webp"
+  },
+  "prompts": {
+    "states": "Production game sprite sheet of EXACT attached Clockwork reference. Bulky BRASS/GOLD mechanical humanoid, barrel-shaped torso, bright GREEN round chest clock/core with dark central clock/hourglass markings, small green face slit under a short neck and a distinctive TWO-LOBE winding-KEY-shaped brass head/top with dark oval holes, gold rounded shoulder/forearm armor and thick fists/boots, black flexible elbows/hips. Preserve the key head, chest clock and body proportions in ALL poses. Crisp black outlines and flat original TV-cartoon cel shading, no painted texture. Exactly8 separate complete RIGHT-facing/three-quarter full-body figures in4columns x2rows with25px transparent margins/gutters. Row-major:1 ultimate chest-release preparation arms drawn back;2 ultimate release arms spread with GREEN CHEST CLOCK CLEAR;3 recovery guard;4 neutral upright clockwork stance fists lowered;5 crossed-forearm guard;6 UPRIGHT hit recoil feet planted;7 defeated lying sideways, connected key head/body intact;8 low dash brace with fists tucked. No human face, extra limbs or detached key parts. Native upright figure400-480px in1536x1024 or higher, all key lobes, fists and boots fully visible, no clipping. Fully opaque body-only cels on true transparency: NO time rings, clock fields, beams, energy spheres, halos, floor bursts, trails, floor, shadows, text or labels. Effects are drawn in code.",
+    "walk": "EXACT attached Clockwork model: bulky brass-gold mechanical body, barrel torso, green round CHEST CLOCK/core with dark central markings, small green neck-face slit, attached TWO-LOBE winding-KEY head with dark oval holes, gold armored fists/boots and black flexible joints/hips. Preserve head/key/chest/body proportions, no human face or extra/detached parts. Crisp flat TV-cartoon cel shading and black outlines. Production sheet, exactly8 SEPARATE full-body RIGHT-facing/three-quarter figures in4columns x2rows. All key tips, fists and boots fully visible with25px clear transparent margins/gutters, no cropped or touching figures. Native upright detail380-450px in1536x1024 or higher. OPAQUE BODY ONLY on true transparency: no beams, time fields/rings, energy spheres, bursts, aura, trails, floor, shadows, dust, labels or text. Eight mechanical WALK phases: left contact, left compression, feet passing, right swing, right contact, right compression, feet passing opposite, left swing. Weighty bipedal gait with natural opposite arm/leg movement, SMALL head/key bob, chest clock consistent; no attacks.",
+    "jump-strike": "EXACT attached Clockwork model: bulky brass-gold mechanical body, barrel torso, green round CHEST CLOCK/core with dark central markings, small green neck-face slit, attached TWO-LOBE winding-KEY head with dark oval holes, gold armored fists/boots and black flexible joints/hips. Preserve head/key/chest/body proportions, no human face or extra/detached parts. Crisp flat TV-cartoon cel shading and black outlines. Production sheet, exactly8 SEPARATE full-body RIGHT-facing/three-quarter figures in4columns x2rows. All key tips, fists and boots fully visible with25px clear transparent margins/gutters, no cropped or touching figures. Native upright detail380-450px in1536x1024 or higher. OPAQUE BODY ONLY on true transparency: no beams, time fields/rings, energy spheres, bursts, aura, trails, floor, shadows, dust, labels or text. Row-major:1 crouched jump preparation fists braced;2 rising heavy jump knees tucked;3 descending jump boots below body;4 crouched landing;5 punch windup drawing near gold fist back;6 extended forward gold-fist punch;7 retract striking arm;8 guard recovery. All limbs remain naturally connected; no effects over the fist or chest.",
+    "powers": "EXACT attached Clockwork model: bulky brass-gold mechanical body, barrel torso, green round CHEST CLOCK/core with dark central markings, small green neck-face slit, attached TWO-LOBE winding-KEY head with dark oval holes, gold armored fists/boots and black flexible joints/hips. Preserve head/key/chest/body proportions, no human face or extra/detached parts. Crisp flat TV-cartoon cel shading and black outlines. Production sheet, exactly8 SEPARATE full-body RIGHT-facing/three-quarter figures in4columns x2rows. All key tips, fists and boots fully visible with25px clear transparent margins/gutters, no cropped or touching figures. Native upright detail380-450px in1536x1024 or higher. OPAQUE BODY ONLY on true transparency: no beams, time fields/rings, energy spheres, bursts, aura, trails, floor, shadows, dust, labels or text. Row-major:1 temporal-ray windup arms near torso but chest clock clear;2 temporal-ray RELEASE with arms spread and chest aimedRIGHT, clock unobscured;3 recovery lowering arms;4 time-field preparation lifting forearms slightly;5 time-field active stance both arms sideways, chest clock clear;6 time-field recovery;7 stomp anticipation lifting one armored boot;8 stomp impact planting that boot with bent knees and braced arms. The green core stays on the SAME body; no actual rays/fields or ground bursts."
+  },
+  "referenceHeightBySource": {
+    "states": 403,
+    "walk": 470,
+    "jump-strike": 410,
+    "powers": 450
+  },
+  "emitterTargets": {
+    "12": [
+      0.85,
+      0.43
+    ],
+    "13": [
+      0.85,
+      0.43
+    ],
+    "14": [
+      0.85,
+      0.43
+    ],
+    "15": [
+      0.85,
+      0.43
+    ],
+    "16": [
+      0.85,
+      0.43
+    ],
+    "17": [
+      0.85,
+      0.43
+    ],
+    "18": [
+      0.85,
+      0.43
+    ],
+    "19": [
+      0.85,
+      0.43
+    ],
+    "20": [
+      0.85,
+      0.43
+    ],
+    "21": [
+      0.85,
+      0.43
+    ],
+    "22": [
+      0.7,
+      0.82
+    ],
+    "23": [
+      0.72,
+      0.96
+    ],
+    "24": [
+      0.85,
+      0.43
+    ],
+    "25": [
+      0.85,
+      0.43
+    ],
+    "26": [
+      0.85,
+      0.43
+    ]
+  },
+  "generation_inputs": {
+    "walk": "ci/animation-review/characters/clockwork/model-reference.webp",
+    "jump-strike": "ci/animation-review/characters/clockwork/model-reference.webp",
+    "powers": "ci/animation-review/characters/clockwork/model-reference.webp",
+    "states": "Shipped v11.9 identity portrait"
+  }
 }

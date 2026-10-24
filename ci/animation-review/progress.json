@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 43,
-  "completed": 79,
+  "current_character": 44,
+  "completed": 80,
   "characters": [
     {
       "id": 35,
@@ -1527,25 +1527,131 @@
       "id": 43,
       "slug": "clockwork",
       "batch": 4,
-      "status": "needs_revision",
+      "status": "verified_updated",
       "findings": [
-        "Standing and movement models are coherent, but painted energy fields and floor bursts obscure multiple power poses.",
-        "Keep key-shaped head, brass body and chest clock; use body-only chest-release gestures with procedural time effects."
+        "Rebuilt32 coherent brass/key-head poses with an unobscured green chest clock and matching native portrait.",
+        "Registered temporal emissions to the chest clock and stomp impact to the boot; energy is rendered separately from the body."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/clockwork/source-jump-strike.webp",
+        "ci/animation-review/characters/clockwork/revision.json",
+        "ci/animation-review/characters/clockwork/source-powers.webp",
+        "ci/animation-review/characters/clockwork/source-walk.webp",
+        "ci/animation-review/characters/clockwork/source-states.webp",
+        "ci/animation-review/characters/clockwork/model-reference.webp",
+        "web/assets/reviewed-native/clockwork/powers.webp",
+        "web/assets/reviewed-native/clockwork/portrait.webp",
+        "web/assets/reviewed-native/clockwork/jump-strike.webp",
+        "web/assets/reviewed-native/clockwork/states.webp",
+        "web/assets/reviewed-native/clockwork/walk.webp"
+      ],
       "checks": {
         "native_frames": 32,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "actual_draws": 240,
+        "facings": 2,
         "visual_review": true,
-        "passed": false
+        "full_browser_review": true,
+        "browser_errors": [],
+        "passed": true
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "renderHeight": 226,
+      "scale": 1.02,
+      "sources": {
+        "states": "ci/animation-review/characters/clockwork/source-states.webp",
+        "walk": "ci/animation-review/characters/clockwork/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/clockwork/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/clockwork/source-powers.webp"
+      },
+      "prompts": {
+        "states": "Production game sprite sheet of EXACT attached Clockwork reference. Bulky BRASS/GOLD mechanical humanoid, barrel-shaped torso, bright GREEN round chest clock/core with dark central clock/hourglass markings, small green face slit under a short neck and a distinctive TWO-LOBE winding-KEY-shaped brass head/top with dark oval holes, gold rounded shoulder/forearm armor and thick fists/boots, black flexible elbows/hips. Preserve the key head, chest clock and body proportions in ALL poses. Crisp black outlines and flat original TV-cartoon cel shading, no painted texture. Exactly8 separate complete RIGHT-facing/three-quarter full-body figures in4columns x2rows with25px transparent margins/gutters. Row-major:1 ultimate chest-release preparation arms drawn back;2 ultimate release arms spread with GREEN CHEST CLOCK CLEAR;3 recovery guard;4 neutral upright clockwork stance fists lowered;5 crossed-forearm guard;6 UPRIGHT hit recoil feet planted;7 defeated lying sideways, connected key head/body intact;8 low dash brace with fists tucked. No human face, extra limbs or detached key parts. Native upright figure400-480px in1536x1024 or higher, all key lobes, fists and boots fully visible, no clipping. Fully opaque body-only cels on true transparency: NO time rings, clock fields, beams, energy spheres, halos, floor bursts, trails, floor, shadows, text or labels. Effects are drawn in code.",
+        "walk": "EXACT attached Clockwork model: bulky brass-gold mechanical body, barrel torso, green round CHEST CLOCK/core with dark central markings, small green neck-face slit, attached TWO-LOBE winding-KEY head with dark oval holes, gold armored fists/boots and black flexible joints/hips. Preserve head/key/chest/body proportions, no human face or extra/detached parts. Crisp flat TV-cartoon cel shading and black outlines. Production sheet, exactly8 SEPARATE full-body RIGHT-facing/three-quarter figures in4columns x2rows. All key tips, fists and boots fully visible with25px clear transparent margins/gutters, no cropped or touching figures. Native upright detail380-450px in1536x1024 or higher. OPAQUE BODY ONLY on true transparency: no beams, time fields/rings, energy spheres, bursts, aura, trails, floor, shadows, dust, labels or text. Eight mechanical WALK phases: left contact, left compression, feet passing, right swing, right contact, right compression, feet passing opposite, left swing. Weighty bipedal gait with natural opposite arm/leg movement, SMALL head/key bob, chest clock consistent; no attacks.",
+        "jump-strike": "EXACT attached Clockwork model: bulky brass-gold mechanical body, barrel torso, green round CHEST CLOCK/core with dark central markings, small green neck-face slit, attached TWO-LOBE winding-KEY head with dark oval holes, gold armored fists/boots and black flexible joints/hips. Preserve head/key/chest/body proportions, no human face or extra/detached parts. Crisp flat TV-cartoon cel shading and black outlines. Production sheet, exactly8 SEPARATE full-body RIGHT-facing/three-quarter figures in4columns x2rows. All key tips, fists and boots fully visible with25px clear transparent margins/gutters, no cropped or touching figures. Native upright detail380-450px in1536x1024 or higher. OPAQUE BODY ONLY on true transparency: no beams, time fields/rings, energy spheres, bursts, aura, trails, floor, shadows, dust, labels or text. Row-major:1 crouched jump preparation fists braced;2 rising heavy jump knees tucked;3 descending jump boots below body;4 crouched landing;5 punch windup drawing near gold fist back;6 extended forward gold-fist punch;7 retract striking arm;8 guard recovery. All limbs remain naturally connected; no effects over the fist or chest.",
+        "powers": "EXACT attached Clockwork model: bulky brass-gold mechanical body, barrel torso, green round CHEST CLOCK/core with dark central markings, small green neck-face slit, attached TWO-LOBE winding-KEY head with dark oval holes, gold armored fists/boots and black flexible joints/hips. Preserve head/key/chest/body proportions, no human face or extra/detached parts. Crisp flat TV-cartoon cel shading and black outlines. Production sheet, exactly8 SEPARATE full-body RIGHT-facing/three-quarter figures in4columns x2rows. All key tips, fists and boots fully visible with25px clear transparent margins/gutters, no cropped or touching figures. Native upright detail380-450px in1536x1024 or higher. OPAQUE BODY ONLY on true transparency: no beams, time fields/rings, energy spheres, bursts, aura, trails, floor, shadows, dust, labels or text. Row-major:1 temporal-ray windup arms near torso but chest clock clear;2 temporal-ray RELEASE with arms spread and chest aimedRIGHT, clock unobscured;3 recovery lowering arms;4 time-field preparation lifting forearms slightly;5 time-field active stance both arms sideways, chest clock clear;6 time-field recovery;7 stomp anticipation lifting one armored boot;8 stomp impact planting that boot with bent knees and braced arms. The green core stays on the SAME body; no actual rays/fields or ground bursts."
+      },
+      "referenceHeightBySource": {
+        "states": 403,
+        "walk": 470,
+        "jump-strike": 410,
+        "powers": 450
+      },
+      "emitterTargets": {
+        "12": [
+          0.85,
+          0.43
+        ],
+        "13": [
+          0.85,
+          0.43
+        ],
+        "14": [
+          0.85,
+          0.43
+        ],
+        "15": [
+          0.85,
+          0.43
+        ],
+        "16": [
+          0.85,
+          0.43
+        ],
+        "17": [
+          0.85,
+          0.43
+        ],
+        "18": [
+          0.85,
+          0.43
+        ],
+        "19": [
+          0.85,
+          0.43
+        ],
+        "20": [
+          0.85,
+          0.43
+        ],
+        "21": [
+          0.85,
+          0.43
+        ],
+        "22": [
+          0.7,
+          0.82
+        ],
+        "23": [
+          0.72,
+          0.96
+        ],
+        "24": [
+          0.85,
+          0.43
+        ],
+        "25": [
+          0.85,
+          0.43
+        ],
+        "26": [
+          0.85,
+          0.43
+        ]
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/clockwork/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/clockwork/model-reference.webp",
+        "powers": "ci/animation-review/characters/clockwork/model-reference.webp",
+        "states": "Shipped v11.9 identity portrait"
+      }
     },
     {
       "id": 44,
       "slug": "jury-rigg",
       "batch": 4,
-      "status": "needs_revision",
+      "status": "in_progress",
       "findings": [
         "All32 frames inspected: mechanic identity is coherent, but low-detail cels and painted muzzle flashes differ from the sharp portrait.",
         "Keep goggles, long ears and gremlin tail while separating gadget/projectile effects from the body."
@@ -1557,7 +1663,95 @@
         "passed": false
       },
       "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "renderHeight": 160,
+      "scale": 0.67,
+      "sources": {
+        "states": "ci/animation-review/characters/jury-rigg/source-states.webp",
+        "walk": "ci/animation-review/characters/jury-rigg/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/jury-rigg/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/jury-rigg/source-powers.webp"
+      },
+      "prompts": {
+        "states": "Production game sprite sheet of EXACT attached Jury Rigg reference: small wiry RED gremlin mechanic, huge long pointed ears, long pointed red nose and little toothy grin, short red hair crest, round GREEN goggles with black strap, dark GREEN mechanic vest with small green chest Omnitrix, black cropped trousers, brown utility belt/tool pouches, oversized black gloves, red bare clawed feet, ONE thin red pointed gremlin tail curled close behind hip. Same face, goggles, ears, outfit and proportions throughout, no human skin. Clean original TV-cartoon cel art, black outlines, flat colors/one shadow. Exactly8 separate RIGHT-facing/three-quarter whole-body figures in4columns x2rows, full ears/tail/fingers/toes visible with25px clear transparent gutters/margins. Row-major:1 ultimate windup lifting a compact improvised GREY scrap-tube launcher with green lens in both gloves;2 ultimate firing posture with SAME launcher angled upward/right, muzzle clear but NO muzzle flash;3 recovering with launcher lowered;4 neutral upright cheeky mechanic stance, empty gloved hands beside body and belt tools;5 defensive crossed-glove guard;6 UPRIGHT hit recoil feet planted;7 defeated lying sideways, complete connected body/ears/tail;8 low forward dash with gloves driving. Gadgets must remain held and connected to gloves, never floating. Upright-equivalent native detail400-470px in1536x1024 or higher. Bodies fully opaque on true transparency. NO painted shots, muzzle flashes, explosions, sparks, speed streaks, ghosts, floor, shadows, text or labels.",
+        "walk": "EXACT attached Jury Rigg model: small wiry RED gremlin mechanic, huge pointed ears, long pointed red nose/toothy grin, short red crest, round GREEN goggles/black strap, dark GREEN mechanic vest with small chest Omnitrix, black cropped trousers, brown tool belt/pouches, oversized black gloves, red clawed feet and ONE thin red pointed tail curled near hip. Consistent face, goggles, outfit, limbs and scale. Clean TV-cartoon cel art, crisp black outlines, flat colors. Production sheet: exactly8 SEPARATE whole-body RIGHT-facing/three-quarter figures in4columns x2rows. Every full ear, nose, tail tip, glove and toe safely inside canvas with25px clear transparent margins/gutters. Native upright-equivalent detail400-470px in1536x1024 or higher. Bodies opaque on TRUE transparent background. No actual emitted shots, muzzle flashes, sparks, blasts, aura, trails, ghost copies, floor, shadows, dust, words or labels. Held props must stay naturally joined to gloves. Eight quick nimble WALK/RUN cycle phases: left contact, left push-off, passing feet, right swing, right contact, right push-off, passing opposite, left swing. Natural opposite arm/leg drive with empty gloves and belt tools secured; tail gently balances, SMALL head bob, no attack poses or floating gadgets.",
+        "jump-strike": "EXACT attached Jury Rigg model: small wiry RED gremlin mechanic, huge pointed ears, long pointed red nose/toothy grin, short red crest, round GREEN goggles/black strap, dark GREEN mechanic vest with small chest Omnitrix, black cropped trousers, brown tool belt/pouches, oversized black gloves, red clawed feet and ONE thin red pointed tail curled near hip. Consistent face, goggles, outfit, limbs and scale. Clean TV-cartoon cel art, crisp black outlines, flat colors. Production sheet: exactly8 SEPARATE whole-body RIGHT-facing/three-quarter figures in4columns x2rows. Every full ear, nose, tail tip, glove and toe safely inside canvas with25px clear transparent margins/gutters. Native upright-equivalent detail400-470px in1536x1024 or higher. Bodies opaque on TRUE transparent background. No actual emitted shots, muzzle flashes, sparks, blasts, aura, trails, ghost copies, floor, shadows, dust, words or labels. Held props must stay naturally joined to gloves. Row-major:1 jump-preparation crouch;2 rising agile jump knees tucked and gloves up;3 descending jump feet ready;4 soft crouched landing;5 glove-punch anticipation drawing near arm back;6 forward black-glove punch;7 punch retraction;8 guard recovery. Keep limbs connected and goggles on. No launcher needed for these close-combat body poses; belt tools remain secured.",
+        "powers": "EXACT attached Jury Rigg model: small wiry RED gremlin mechanic, huge pointed ears, long pointed red nose/toothy grin, short red crest, round GREEN goggles/black strap, dark GREEN mechanic vest with small chest Omnitrix, black cropped trousers, brown tool belt/pouches, oversized black gloves, red clawed feet and ONE thin red pointed tail curled near hip. Consistent face, goggles, outfit, limbs and scale. Clean TV-cartoon cel art, crisp black outlines, flat colors. Production sheet: exactly8 SEPARATE whole-body RIGHT-facing/three-quarter figures in4columns x2rows. Every full ear, nose, tail tip, glove and toe safely inside canvas with25px clear transparent margins/gutters. Native upright-equivalent detail400-470px in1536x1024 or higher. Bodies opaque on TRUE transparent background. No actual emitted shots, muzzle flashes, sparks, blasts, aura, trails, ghost copies, floor, shadows, dust, words or labels. Held props must stay naturally joined to gloves. Row-major:1 scrap-launcher windup holding compact GREY improvised scrap-tube launcher with GREEN muzzle lens in both gloves;2 firing posture SAME launcher aimed horizontallyRIGHT with muzzle clear but no flash/projectile;3 lowering SAME launcher in recovery;4 junk-bomb windup holding ONE small grey mechanical bomb/green LED near rear shoulder in glove;5 bomb-release posture with now-EMPTY throwing glove extended up/forwardRIGHT, no hovering bomb;6 throwing follow-through with empty glove forward/down;7 gear-trap preparation crouching with ONE grey gear-shaped plate/green LED held between gloves;8 gear-trap placement kneeling, gloves touching SAME gear plate at own front foot/floor level. Gadgets have consistent sensible metallic construction and remain held/touched by gloves; no duplicate props or painted flying objects."
+      },
+      "referenceHeightBySource": {
+        "states": 428,
+        "walk": 465,
+        "jump-strike": 445,
+        "powers": 445
+      },
+      "emitterTargets": {
+        "12": [
+          0.85,
+          0.43
+        ],
+        "13": [
+          0.85,
+          0.43
+        ],
+        "14": [
+          0.85,
+          0.43
+        ],
+        "15": [
+          0.85,
+          0.43
+        ],
+        "16": [
+          0.96,
+          0.46
+        ],
+        "17": [
+          0.96,
+          0.34
+        ],
+        "18": [
+          0.94,
+          0.7
+        ],
+        "19": [
+          0.16,
+          0.25
+        ],
+        "20": [
+          0.9,
+          0.1
+        ],
+        "21": [
+          0.95,
+          0.65
+        ],
+        "22": [
+          0.72,
+          0.73
+        ],
+        "23": [
+          0.72,
+          0.92
+        ],
+        "24": [
+          0.94,
+          0.58
+        ],
+        "25": [
+          0.95,
+          0.12
+        ],
+        "26": [
+          0.95,
+          0.8
+        ]
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/jury-rigg/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/jury-rigg/model-reference.webp",
+        "powers": "ci/animation-review/characters/jury-rigg/model-reference.webp",
+        "states": "Shipped v11.9 identity portrait"
+      }
     },
     {
       "id": 45,
