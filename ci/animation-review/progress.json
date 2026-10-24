@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 41,
-  "completed": 77,
+  "current_character": 42,
+  "completed": 78,
   "characters": [
     {
       "id": 35,
@@ -1225,19 +1225,170 @@
       "id": 41,
       "slug": "chamalien",
       "batch": 4,
-      "status": "needs_revision",
+      "status": "verified_updated",
       "findings": [
-        "Baked swipes, contact stars and duplicate translucent bodies overlap the character.",
-        "Retain three colored eyes, curved crest and prehensile tail; handle invisibility and trails separately from clean native body cels."
+        "Rebuilt a consistent purple reptilian model with exactly three red/blue/green eyes, crest, green front stripe and connected tail across32 cels.",
+        "Removed painted swipes, contact stars and duplicate translucent bodies; native tail sweep uncoils the connected tail to the front.",
+        "Cloaking is applied procedurally, with a readable own-player silhouette, opaque portraits and opaque defeat state.",
+        "Per-frame crest/upper-head registration keeps physical head scale stable without deforming native pixels."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/chamalien/source-jump-strike.webp",
+        "ci/animation-review/characters/chamalien/revision.json",
+        "ci/animation-review/characters/chamalien/source-powers.webp",
+        "ci/animation-review/characters/chamalien/measure-head.py",
+        "ci/animation-review/characters/chamalien/source-walk.webp",
+        "ci/animation-review/characters/chamalien/source-states.webp",
+        "ci/animation-review/characters/chamalien/model-reference.webp",
+        "web/assets/reviewed-native/chamalien/powers.webp",
+        "web/assets/reviewed-native/chamalien/portrait.webp",
+        "web/assets/reviewed-native/chamalien/jump-strike.webp",
+        "web/assets/reviewed-native/chamalien/states.webp",
+        "web/assets/reviewed-native/chamalien/walk.webp",
+        "ci/export-reviewed-character.py",
+        "web/cel-player.js"
+      ],
       "checks": {
         "native_frames": 32,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "actual_draws": 240,
+        "facings": 2,
+        "three_eyes_visual_review_all_32": true,
+        "tail_windup_and_forward_whip": true,
+        "native_head_scale_visual_review": true,
+        "readable_cloak_portrait_ko_and_immutable_state": true,
         "visual_review": true,
-        "passed": false
+        "full_browser_review": true,
+        "browser_errors": [],
+        "passed": true
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "renderHeight": 226,
+      "scale": 0.94,
+      "sources": {
+        "states": "ci/animation-review/characters/chamalien/source-states.webp",
+        "walk": "ci/animation-review/characters/chamalien/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/chamalien/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/chamalien/source-powers.webp"
+      },
+      "prompts": {
+        "states": "Production game animation sheet of Chamalien from the attached identity reference. Purple slender reptilian humanoid, narrow torso with green front stripe and green chest Omnitrix, long curved backward cranial crest, EXACTLY THREE circular coloured eyes in a triangular cluster: one RED, one BLUE, one GREEN (no fourth/yellow eye), thin clawed hands and three-toed feet, one long connected prehensile purple tail that curls. Clean original TV-cartoon black outlines, flat purple/green/black colours and one cel-shadow tone, no painted scales. Eight SEPARATE complete whole-body right-facing/three-quarter figures in 4 columns x 2 rows, consistent head, THREE eyes, crest, anatomy and scale. Row-major:1 ambush windup low crouch, claws drawn back;2 ambush forward claw drive;3 ambush recovery guard;4 neutral upright stealth stance, arms relaxed and tail curled behind;5 defensive forearms-up guard;6 UPRIGHT hit recoil with feet planted;7 defeated lying sideways, complete connected tail and body;8 low forward dash with claws tucked. ALL poses are fully opaque clean bodies. No invisibility baked into pixels, duplicate bodies, contact stars, slash marks, power balls, aura, trails, floor, dust, shadows, text or labels. Truly transparent background. Keep ENTIRE crest, curled tail tip, claws and toes safely within canvas and at least25px from neighbours/edges. Pose tails compactly to fit. Desired upright height350-450px in1536x1024 or higher. Match the purple identity, but correct eye count to exactly3.",
+        "walk": "EXACT attached Chamalien model for a production WALK cycle: slender purple reptile, long curved backward crest, EXACTLY three round eyes RED/BLUE/GREEN, green chest Omnitrix and front stripe, dark claws/three-toed feet, ONE connected long curled purple tail. Crisp flat original TV cel art, black outlines, consistent model proportions and eye count. Eight separate FULL-BODY right-facing/three-quarter figures in4 columns x2 rows. Stealthy bipedal walk: left contact, left compression, feet passing, right swing, right contact, right compression, feet passing opposite, left swing. Arms counter-swing naturally and tail curls stay close behind hips with a slight gentle sway; SMALL head bob. Do not draw attacks. Keep head size consistent with reference and upright-equivalent figure detail around430-480px in1536x1024 or higher. Entire crest, tail tip, claws and toes must be visible with at least25px clear transparent margins and gutters; curl tail compactly to fit, no cropping or contacting neighbours. Fully opaque clean body cels on truly transparent background. NO invisibility, ghosts, trails, painted motion lines, wind, effects, stars, floor, shadows, dust, labels or text.",
+        "jump-strike": "Production body-only sprite sheet from EXACT attached Chamalien model. Slender purple three-eyed reptile, long curved backward crest, EXACTLY RED/BLUE/GREEN eye circles, green chest badge and green torso stripe, dark claws/toes, one long connected curled tail. Consistent head/eye/crest/limb/tail anatomy and physical scale in every pose, flat crisp TV cel shading and black outlines. Exactly8 separate complete right-facing/three-quarter figures in a4x2 grid. Row-major:1 low jump-preparation crouch with tail compact;2 rising jump knees tucked and tail curled;3 descending jump with feet ready below body and tail balancing;4 soft landing crouch;5 claw-swipe anticipation drawing near arm back;6 extended forward claw strike toward RIGHT, torso turns but head/eyes unchanged;7 retract striking arm to guard;8 balanced recovery guard. All shoulders/elbows/wrists and hips/knees/ankles connected. Keep all three eyes visible when natural for the view. Whole crest, tail tip, fingers and toes safely within canvas with25px clear transparent gutters/margins; no overlapping figures. Native upright-equivalent detail430-480px in1536x1024 or higher. Fully opaque bodies on real transparent background. NO invisibility, translucent copies, contact stars, slash trails, effects, floor, shadows, dust, words or labels.",
+        "powers": "Production eight-pose body-only sprite sheet from EXACT attached Chamalien model: slender purple three-eyed reptile, curved backward crest, exactlyRED/BLUE/GREEN eye circles, green chest badge/front stripe, dark claws/toes, ONE connected prehensile purple tail. Clean flat TV cel art and black outlines, all right-facing/three-quarter, consistent head size and anatomy.4 columns x2 rows, each full silhouette separated and unclipped. Row-major:1 cloaked-lunge crouched anticipation, claws back;2 lunge extended forward claw drive;3 lunge recovery guard;4 claw-swipe windup drawing near arm back;5 extended forward claw swipe;6 opposite-hand claw follow-through;7 TAIL-SWEEP windup: side-on braced stance with long tail coiled behind hips to LEFT;8 TAIL-SWEEP active: feet braced, hips twisting, the SAME single tail uncoils from rear hip, bends down behind legs then lashes in a big smooth curve UNDER/beside legs to the FRONT/RIGHT, its pointed purple TIP clearly farther RIGHT than front knee. Tail must be connected continuously to hip; keep head facingRIGHT and arms balancing. No extra tail, no disconnected tail-tip projectile. Fit full active tail inside its space with safety margin; compress pose width if needed. Keep whole crest, tail tips, claws and toes inside1536x1024 or higher sheet with25px clear transparent gutters/margins. Upright-equivalent detail430-480px. Fully opaque bodies on true transparency. NO painted motion arcs, slash marks, trails, stars, ghost duplicates, invisibility, floor, dust, shadows, text or labels. Code adds powers separately."
+      },
+      "referenceHeightBySource": {
+        "states": 473,
+        "walk": 473,
+        "jump-strike": 473,
+        "powers": 473
+      },
+      "frameReferenceHeights": {
+        "0": 560.73,
+        "1": 560.73,
+        "2": 553.1,
+        "3": 545.48,
+        "4": 564.55,
+        "5": 572.18,
+        "6": 560.73,
+        "7": 560.73,
+        "8": 526.4,
+        "9": 587.44,
+        "10": 518.77,
+        "11": 499.7,
+        "12": 534.03,
+        "13": 526.4,
+        "14": 534.03,
+        "15": 526.4,
+        "16": 499.7,
+        "17": 514.96,
+        "18": 499.7,
+        "19": 488.26,
+        "20": 495.89,
+        "21": 492.07,
+        "22": 453.93,
+        "23": 465.37,
+        "24": 568.36,
+        "25": 526.4,
+        "26": 503.52,
+        "27": 473.0,
+        "28": 518.77,
+        "29": 537.85,
+        "30": 473,
+        "31": 549.29
+      },
+      "emitterTargets": {
+        "12": [
+          0.84,
+          0.42
+        ],
+        "13": [
+          0.95,
+          0.3
+        ],
+        "14": [
+          0.84,
+          0.42
+        ],
+        "15": [
+          0.84,
+          0.42
+        ],
+        "16": [
+          0.84,
+          0.42
+        ],
+        "17": [
+          0.84,
+          0.42
+        ],
+        "18": [
+          0.84,
+          0.42
+        ],
+        "19": [
+          0.84,
+          0.42
+        ],
+        "20": [
+          0.96,
+          0.3
+        ],
+        "21": [
+          0.95,
+          0.35
+        ],
+        "22": [
+          0.12,
+          0.7
+        ],
+        "23": [
+          0.97,
+          0.72
+        ],
+        "24": [
+          0.84,
+          0.42
+        ],
+        "25": [
+          0.84,
+          0.42
+        ],
+        "26": [
+          0.84,
+          0.42
+        ]
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/chamalien/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/chamalien/model-reference.webp",
+        "powers": "ci/animation-review/characters/chamalien/model-reference.webp",
+        "states": "Shipped v11.9 Chamalien portrait, corrected to three red/blue/green eyes"
+      },
+      "registration_method": "Native per-frame physical reference heights calibrated from crest/upper-head width; no eye-size proxy or pixel deformation.",
+      "registration_script": "ci/animation-review/characters/chamalien/measure-head.py"
     },
     {
       "id": 42,

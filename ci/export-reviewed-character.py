@@ -20,7 +20,7 @@ for si,kind in enumerate(['walk','jump-strike','powers','states']):
  for cell,(x,y,w,h,meta) in enumerate(places):
   im=poses[cell][0];a=np.array(im);yy,xx=np.indices(a.shape[:2]);mask=(a[:,:,3]>180)&(yy>h*.48)&(yy<h*.72);anchor=float(np.median(xx[mask])) if mask.any() else w/2
   ground=h+(h*.15 if kind=='jump-strike' and cell==2 else 0)
-  c['frames'].append({'sheet':si,'rect':[x-8,y-8,w+16,h+16],'origin':[round(anchor+8,2),round(ground+8,2)],'source':kind,'cell':cell,'bounds':[0,0,w,h],**meta,'referenceHeight':rec['referenceHeightBySource'][kind]})
+  c['frames'].append({'sheet':si,'rect':[x-8,y-8,w+16,h+16],'origin':[round(anchor+8,2),round(ground+8,2)],'source':kind,'cell':cell,'bounds':[0,0,w,h],**meta,'referenceHeight':rec.get('frameReferenceHeights',{}).get(str(si*8+cell),rec['referenceHeightBySource'][kind])})
 c['clips']={'walk':list(range(8)),'jump':list(range(8,12)),'normal':list(range(12,16)),'skill0':[16,17,18],'skill1':[19,20,21],'skill2':[22,23],'ultimate':[24,25,26],'idle':[27],'guard':[28],'hit':[29],'ko':[30],'dash':[31]}
 c['referenceHeight']=rec['referenceHeightBySource']['states']
 for key in ['normal','skill0','skill1','skill2','ultimate']:
@@ -35,6 +35,11 @@ for key in ['normal','skill0','skill1','skill2','ultimate']:
    ys,xs=np.where(mask);assert len(xs)>0;near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
   elif slug=='ampfibian':
    yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)&(rgb[:,:,2]>100)&(rgb[:,:,2]>rgb[:,:,0]*1.2)
+   ys,xs=np.where(mask);assert len(xs)>0;near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
+  elif slug=='chamalien':
+   yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)
+   if fi in [16,17,18,24,25,26]:target=[.55,.5]
+   else:mask=mask&(rgb[:,:,0]>55)&(rgb[:,:,2]>rgb[:,:,0]*1.1)&(rgb[:,:,1]<rgb[:,:,0]*.8)
    ys,xs=np.where(mask);assert len(xs)>0;near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
   elif slug=='fasttrack':
    yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)

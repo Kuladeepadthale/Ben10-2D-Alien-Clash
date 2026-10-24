@@ -1,6 +1,6 @@
 # Animation review progress
 
-**77 / 92 characters approved.** Batch size: 4.
+**78 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -20,7 +20,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 3 | 38 | terraspin | Reviewed — updated | Rebuilt one coherent olive/tan turtle model with brown shell, visible chest vents and long fingerless flippers across all 32 cels. |
 | 3 | 39 | nrg | Reviewed — updated | Rebuilt a coherent sealed bronze containment suit across walking, jumping, punch, grille ray, stomp, radiation wave, ultimate, guard and defeat. |
 | 3 | 40 | fasttrack | Reviewed — updated | Rebuilt one tailless blue/black feline model across all 32 native cels, preserving yellow eyes, pointed ears and white chest badge. |
-| 4 | 41 | chamalien | Needs revision | Baked swipes, contact stars and duplicate translucent bodies overlap the character. |
+| 4 | 41 | chamalien | Reviewed — updated | Rebuilt a consistent purple reptilian model with exactly three red/blue/green eyes, crest, green front stripe and connected tail across32 cels. |
 | 4 | 42 | eatle | Needs revision | Strike sheet uses a different flatter armor drawing from walk/state sheets; painted projectiles also overlap the mouth. |
 | 4 | 43 | clockwork | Needs revision | Standing and movement models are coherent, but painted energy fields and floor bursts obscure multiple power poses. |
 | 4 | 44 | jury-rigg | Needs revision | All32 frames inspected: mechanic identity is coherent, but low-detail cels and painted muzzle flashes differ from the sharp portrait. |
