@@ -108,7 +108,7 @@ function drawScrapRocket(ctx,e){
  ctx.save();ctx.translate(e.x,e.y);ctx.rotate(Math.atan2(e.vy||0,e.vx||e.dir||1));path(ctx,[[-20,-8],[10,-8],[20,0],[10,8],[-20,8]],'#8e9995','#263435',2);line(ctx,[[-6,-7],[-6,7]],'#c4cebc',2);path(ctx,[[-17,-7],[-25,-14],[-24,-2]],'#6a756f','#263435',1.5);path(ctx,[[-17,7],[-25,14],[-24,2]],'#6a756f','#263435',1.5);oval(ctx,6,0,4,3,'#9acf66','#32432e',1);ctx.restore();
 }
 function drawFreezeGust(ctx,e){
- const dir=e.dir||Math.sign(e.vx)||1,owner=e.owner,v=owner.cast,source=v&&v.id===e.castId?drawnAlienEmitter(owner,v):null,tail=source&&Math.abs(e.x-source.x)<550?source:{x:e.x-dir*95,y:e.y},dx=e.x-tail.x,dy=e.y-tail.y;
+ const dir=e.dir||Math.sign(e.vx)||1,owner=e.owner,v=owner.cast,source=v&&v.id===e.castId&&v.elapsed>=v.cfg.windup&&v.elapsed<v.cfg.windup+(v.cfg.castDuration??(v.cfg.duration||.08))?drawnAlienEmitter(owner,v):null,tail=source&&Math.abs(e.x-source.x)<550?source:{x:e.x-dir*95,y:e.y},dx=e.x-tail.x,dy=e.y-tail.y;
  ctx.save();ctx.globalAlpha=speciesClamp(e.life*7)*.72;
  const length=Math.hypot(dx,dy),count=Math.max(8,Math.min(28,Math.ceil(length/15)));for(let k=0;k<count;k++){const u=k/(count-1),x=tail.x+dx*u,y=tail.y+dy*u,w=3+u*Math.min(30,e.r*.38);line(ctx,[[x-dir*12,y+Math.sin(time*17+k)*w*.4],[x+dir*9,y+Math.sin(time*17+k+1)*w*.4]],k%3?'#bceeff':'#ecfcff',2+u*3);if(k%3===0){const cy=y+Math.sin(k*3.4+time*6)*w;line(ctx,[[x-3,cy],[x+3,cy]],'#e5fcff',1.2);line(ctx,[[x,cy-3],[x,cy+3]],'#e5fcff',1.2);}}
  for(let k=0;k<5;k++){const y=e.y+(k-2)*Math.min(11,e.r*.13),x=e.x+Math.sin(time*9+k)*9;path(ctx,[[x-11*dir,y+3],[x+7*dir,y-5],[x+13*dir,y],[x,y+5]],k%2?'#c5f4ff':'#82cde5','#e2faff',1);}ctx.restore();
