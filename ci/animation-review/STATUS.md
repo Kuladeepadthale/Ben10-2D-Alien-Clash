@@ -1,6 +1,6 @@
 # Animation review progress
 
-**79 / 92 characters approved.** Batch size: 4.
+**80 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -34,7 +34,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 6 | 1 | four-arms | Reviewed — kept | All32 native frames inspected: four arms, black/white shirt, face and body proportions remain coherent. |
 | 7 | 2 | diamondhead | Reviewed — updated | Removed baked floor crystals from the active ground-spike body frame; procedural crystals now supply the effect once. |
 | 7 | 3 | xlr8 | Reviewed — kept | All32 native frames inspected: helmet/visor, long tail and wheeled feet stay coherent. |
-| 7 | 4 | wildmutt | In progress | All32 frames inspected: eyeless orange quadruped identity, shoulder emblem and powerful forelimbs remain coherent. |
+| 7 | 4 | wildmutt | Reviewed — updated | Preserved the original standing model while replacing walking with eight four-paw trot cels and a steadier travel cadence. |
 | 7 | 5 | grey-matter | Reviewed — kept | All32 frames inspected: grey head, large yellow-green eyes and black/white suit stay consistent. |
 | 8 | 6 | upgrade | Reviewed — kept | All32 frames inspected: single green eye, green circuitry and black/white body stay coherent. |
 | 8 | 7 | stinkfly | Reviewed — kept | All32 frames inspected: insect head, eye stalks, wing pair, tail stinger and limb count stay coherent. |
