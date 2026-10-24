@@ -1,6 +1,6 @@
 # Animation review progress
 
-**83 / 92 characters approved.** Batch size: 4.
+**84 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -45,7 +45,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 9 | 12 | blitzwolfer | Reviewed — kept | All32 frames inspected: grey fur, mane, muzzle, tail and suit remain coherent. |
 | 9 | 13 | snare-oh | Reviewed — updated | Preserved the original standing model and unrelated attacks; Binding Wrap and Royal Bind use dedicated wrist release/retraction poses. |
 | 10 | 14 | frankenstrike | Reviewed — kept | All32 frames inspected: face, shoulder generators, forearm armor and black/green legs stay coherent. |
-| 10 | 15 | upchuck | In progress | All32 frames inspected: green/yellow round body, black/white suit and face remain coherent. |
+| 10 | 15 | upchuck | Reviewed — updated | Preserved the original standing image and spit/burp/ultimate poses; walking now uses eight short-legged waddle cels. |
 | 10 | 16 | ditto | Reviewed — kept | All32 frames inspected: three head nodes, black/white suit and small body remain coherent. |
 | 10 | 17 | eye-guy | Reviewed — kept | All32 frames inspected: pointed ears, eyeless face and distributed body eyes retain one model. |
 | 11 | 18 | way-big | Reviewed — kept | All32 frames inspected: red/white proportions, head fin and shoulder silhouette remain coherent. |

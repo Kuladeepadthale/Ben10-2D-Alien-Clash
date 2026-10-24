@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 49,
-  "completed": 83,
+  "completed": 84,
   "characters": [
     {
       "id": 35,
@@ -4000,17 +4000,28 @@
       "id": 15,
       "slug": "upchuck",
       "batch": 10,
-      "status": "in_progress",
+      "status": "verified_updated",
       "findings": [
-        "All32 frames inspected: green/yellow round body, black/white suit and face remain coherent.",
-        "Retained tongue extension, swallowing/body inflation and open-mouth expulsion; these deliberate changes preserve character identity."
+        "Preserved the original standing image and spit/burp/ultimate poses; walking now uses eight short-legged waddle cels.",
+        "Tongue Lash reaches460 game units with four elastic pink strands, extension/contact/retraction and narrow captured-target collision."
       ],
       "changed_files": [],
       "checks": {
-        "passed": false
+        "native_frames": 32,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "actual_draws": 240,
+        "facings": 2,
+        "standing_pixels_and_registration_preserved": true,
+        "visual_review": true,
+        "full_browser_review": true,
+        "browser_errors": [],
+        "requested_gameplay_regressions": true,
+        "passed": true,
+        "actual_gait_cells_verified": 8
       },
       "reviewed_on": "2026-10-24",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "basis_commit": "5e0dfbe0b97ed5ede2e1e365b064f67aa205ce51",
       "revision": 1,
       "requestedRepair124": true,
       "renderHeight": 226,
@@ -4050,14 +4061,14 @@
         }
       },
       "frameReferenceHeights": {
-        "0": 420.0,
-        "1": 420.0,
-        "2": 420.0,
-        "3": 420.0,
-        "4": 420.0,
-        "5": 420.0,
-        "6": 420.0,
-        "7": 420.0,
+        "0": 420,
+        "1": 420,
+        "2": 420,
+        "3": 420,
+        "4": 420,
+        "5": 420,
+        "6": 420,
+        "7": 420,
         "8": 370,
         "9": 370,
         "10": 370,
@@ -4072,8 +4083,8 @@
         "19": 370,
         "20": 370,
         "21": 370,
-        "22": 427.0,
-        "23": 427.0,
+        "22": 427,
+        "23": 427,
         "24": 370,
         "25": 370,
         "26": 370,
@@ -4084,6 +4095,38 @@
         "31": 370
       },
       "frameOrigins": {
+        "0": [
+          252,
+          428
+        ],
+        "1": [
+          237,
+          406
+        ],
+        "2": [
+          256,
+          420
+        ],
+        "3": [
+          273,
+          419
+        ],
+        "4": [
+          263,
+          416
+        ],
+        "5": [
+          215,
+          407
+        ],
+        "6": [
+          263,
+          416
+        ],
+        "7": [
+          268,
+          414
+        ],
         "8": [
           203,
           345
@@ -4140,6 +4183,14 @@
           180,
           370
         ],
+        "22": [
+          295,
+          426
+        ],
+        "23": [
+          288,
+          418
+        ],
         "24": [
           226,
           416
@@ -4171,46 +4222,6 @@
         "31": [
           219,
           374
-        ],
-        "0": [
-          252.0,
-          428
-        ],
-        "1": [
-          237.0,
-          406
-        ],
-        "2": [
-          256.0,
-          420
-        ],
-        "3": [
-          273.0,
-          419
-        ],
-        "4": [
-          263.0,
-          416
-        ],
-        "5": [
-          215.0,
-          407
-        ],
-        "6": [
-          263.0,
-          416
-        ],
-        "7": [
-          268.0,
-          414
-        ],
-        "22": [
-          295.0,
-          426
-        ],
-        "23": [
-          288.0,
-          418
         ]
       },
       "preservedEmitters": {
@@ -4365,7 +4376,7 @@
         ]
       },
       "referenceHeightBySource": {
-        "walk": 420.0,
+        "walk": 420,
         "jump-strike": 370,
         "powers": 370,
         "states": 370
