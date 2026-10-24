@@ -4,8 +4,8 @@
   "status": "verified_updated",
   "reviewed_on": "2026-10-24",
   "findings": [
-    "Rebuilt32 coherent red mechanic poses and a matching native portrait, preserving goggles, vest, connected tail and species proportions.",
-    "Launcher, bomb and gear gestures use connected hands; registered muzzle/hand/ground origins replace painted flashes and detached projectile art."
+    "Native gear assembly/retraction and held-launcher ultimate poses preserve the existing mechanic design.",
+    "Visible gear deployment/arming and ballistic scrap rockets from the muzzle replace generic glowing trap and sky-spawned rain."
   ],
   "changed_files": [
     "ci/animation-review/characters/jury-rigg/source-jump-strike.webp",
@@ -22,11 +22,12 @@
   ],
   "checks": {
     "native_frames": 32,
+    "states": 12,
+    "facings": 2,
+    "actual_draws": 240,
     "native_asset_hashes": true,
     "native_detail_and_margins": true,
-    "actual_draws": 240,
-    "facings": 2,
-    "visual_review": true,
+    "standing_pixels_anchors_heights_preserved": true,
     "full_browser_review": true,
     "browser_errors": [],
     "passed": true
@@ -35,83 +36,80 @@
   "renderHeight": 160,
   "scale": 0.67,
   "sources": {
-    "states": "ci/animation-review/characters/jury-rigg/source-states.webp",
     "walk": "ci/animation-review/characters/jury-rigg/source-walk.webp",
     "jump-strike": "ci/animation-review/characters/jury-rigg/source-jump-strike.webp",
-    "powers": "ci/animation-review/characters/jury-rigg/source-powers.webp"
+    "powers": "ci/animation-review/characters/jury-rigg/source-powers.webp",
+    "states": "ci/animation-review/characters/jury-rigg/source-states.webp"
   },
   "prompts": {
-    "states": "Production game sprite sheet of EXACT attached Jury Rigg reference: small wiry RED gremlin mechanic, huge long pointed ears, long pointed red nose and little toothy grin, short red hair crest, round GREEN goggles with black strap, dark GREEN mechanic vest with small green chest Omnitrix, black cropped trousers, brown utility belt/tool pouches, oversized black gloves, red bare clawed feet, ONE thin red pointed gremlin tail curled close behind hip. Same face, goggles, ears, outfit and proportions throughout, no human skin. Clean original TV-cartoon cel art, black outlines, flat colors/one shadow. Exactly8 separate RIGHT-facing/three-quarter whole-body figures in4columns x2rows, full ears/tail/fingers/toes visible with25px clear transparent gutters/margins. Row-major:1 ultimate windup lifting a compact improvised GREY scrap-tube launcher with green lens in both gloves;2 ultimate firing posture with SAME launcher angled upward/right, muzzle clear but NO muzzle flash;3 recovering with launcher lowered;4 neutral upright cheeky mechanic stance, empty gloved hands beside body and belt tools;5 defensive crossed-glove guard;6 UPRIGHT hit recoil feet planted;7 defeated lying sideways, complete connected body/ears/tail;8 low forward dash with gloves driving. Gadgets must remain held and connected to gloves, never floating. Upright-equivalent native detail400-470px in1536x1024 or higher. Bodies fully opaque on true transparency. NO painted shots, muzzle flashes, explosions, sparks, speed streaks, ghosts, floor, shadows, text or labels.",
-    "walk": "EXACT attached Jury Rigg model: small wiry RED gremlin mechanic, huge pointed ears, long pointed red nose/toothy grin, short red crest, round GREEN goggles/black strap, dark GREEN mechanic vest with small chest Omnitrix, black cropped trousers, brown tool belt/pouches, oversized black gloves, red clawed feet and ONE thin red pointed tail curled near hip. Consistent face, goggles, outfit, limbs and scale. Clean TV-cartoon cel art, crisp black outlines, flat colors. Production sheet: exactly8 SEPARATE whole-body RIGHT-facing/three-quarter figures in4columns x2rows. Every full ear, nose, tail tip, glove and toe safely inside canvas with25px clear transparent margins/gutters. Native upright-equivalent detail400-470px in1536x1024 or higher. Bodies opaque on TRUE transparent background. No actual emitted shots, muzzle flashes, sparks, blasts, aura, trails, ghost copies, floor, shadows, dust, words or labels. Held props must stay naturally joined to gloves. Eight quick nimble WALK/RUN cycle phases: left contact, left push-off, passing feet, right swing, right contact, right push-off, passing opposite, left swing. Natural opposite arm/leg drive with empty gloves and belt tools secured; tail gently balances, SMALL head bob, no attack poses or floating gadgets.",
-    "jump-strike": "EXACT attached Jury Rigg model: small wiry RED gremlin mechanic, huge pointed ears, long pointed red nose/toothy grin, short red crest, round GREEN goggles/black strap, dark GREEN mechanic vest with small chest Omnitrix, black cropped trousers, brown tool belt/pouches, oversized black gloves, red clawed feet and ONE thin red pointed tail curled near hip. Consistent face, goggles, outfit, limbs and scale. Clean TV-cartoon cel art, crisp black outlines, flat colors. Production sheet: exactly8 SEPARATE whole-body RIGHT-facing/three-quarter figures in4columns x2rows. Every full ear, nose, tail tip, glove and toe safely inside canvas with25px clear transparent margins/gutters. Native upright-equivalent detail400-470px in1536x1024 or higher. Bodies opaque on TRUE transparent background. No actual emitted shots, muzzle flashes, sparks, blasts, aura, trails, ghost copies, floor, shadows, dust, words or labels. Held props must stay naturally joined to gloves. Row-major:1 jump-preparation crouch;2 rising agile jump knees tucked and gloves up;3 descending jump feet ready;4 soft crouched landing;5 glove-punch anticipation drawing near arm back;6 forward black-glove punch;7 punch retraction;8 guard recovery. Keep limbs connected and goggles on. No launcher needed for these close-combat body poses; belt tools remain secured.",
-    "powers": "EXACT attached Jury Rigg model: small wiry RED gremlin mechanic, huge pointed ears, long pointed red nose/toothy grin, short red crest, round GREEN goggles/black strap, dark GREEN mechanic vest with small chest Omnitrix, black cropped trousers, brown tool belt/pouches, oversized black gloves, red clawed feet and ONE thin red pointed tail curled near hip. Consistent face, goggles, outfit, limbs and scale. Clean TV-cartoon cel art, crisp black outlines, flat colors. Production sheet: exactly8 SEPARATE whole-body RIGHT-facing/three-quarter figures in4columns x2rows. Every full ear, nose, tail tip, glove and toe safely inside canvas with25px clear transparent margins/gutters. Native upright-equivalent detail400-470px in1536x1024 or higher. Bodies opaque on TRUE transparent background. No actual emitted shots, muzzle flashes, sparks, blasts, aura, trails, ghost copies, floor, shadows, dust, words or labels. Held props must stay naturally joined to gloves. Row-major:1 scrap-launcher windup holding compact GREY improvised scrap-tube launcher with GREEN muzzle lens in both gloves;2 firing posture SAME launcher aimed horizontallyRIGHT with muzzle clear but no flash/projectile;3 lowering SAME launcher in recovery;4 junk-bomb windup holding ONE small grey mechanical bomb/green LED near rear shoulder in glove;5 bomb-release posture with now-EMPTY throwing glove extended up/forwardRIGHT, no hovering bomb;6 throwing follow-through with empty glove forward/down;7 gear-trap preparation crouching with ONE grey gear-shaped plate/green LED held between gloves;8 gear-trap placement kneeling, gloves touching SAME gear plate at own front foot/floor level. Gadgets have consistent sensible metallic construction and remain held/touched by gloves; no duplicate props or painted flying objects."
+    "mechanic": "EXACT attached red gremlin mechanic: huge pointed ears, long red pointed nose, green goggles, dark green vest/chest badge, tool belt, black cropped trousers, black gloves, red feet and connected red pointed tail. 1 Gear trap anticipation crouching, one black glove holding a small metal cog base and other glove with a wrench. 2 rapid assembly crouch BOTH gloves pressing a small low grey metal gear trap into ground, green central switch. 3 withdrawing gloved hands from finished compact trap, same crouch. 4 Junkyard arsenal anticipation assembling a compact improvised grey scrap launcher held in BOTH gloves at chest height. 5 launcher fully assembled, aiming RIGHT slightly upward with elbow braced, muzzle clear. 6 same launcher FIRING posture with subtle shoulder recoil, empty clear muzzle NO blast. 7 lowering launcher and recovering. 8 neutral upright reference stance. Gadgets are connected to fingers, same grey tube weapon across4-7. Never green magical energy; he builds mechanical devices. Eight full-body right-facing poses in4x2 transparent sheet; crisp cartoon cel style, no effects."
   },
   "referenceHeightBySource": {
-    "states": 428,
     "walk": 465,
     "jump-strike": 445,
-    "powers": 445
+    "powers": 445,
+    "states": 478.0
   },
   "emitterTargets": {
     "12": [
-      0.85,
-      0.43
+      0.88,
+      0.4
     ],
     "13": [
-      0.85,
-      0.43
+      0.88,
+      0.4
     ],
     "14": [
-      0.85,
-      0.43
+      0.88,
+      0.4
     ],
     "15": [
-      0.85,
-      0.43
+      0.88,
+      0.4
     ],
     "16": [
-      0.96,
-      0.46
+      0.88,
+      0.4
     ],
     "17": [
-      0.96,
-      0.34
+      0.88,
+      0.4
     ],
     "18": [
-      0.94,
-      0.7
+      0.88,
+      0.4
     ],
     "19": [
-      0.16,
-      0.25
+      0.88,
+      0.4
     ],
     "20": [
-      0.9,
-      0.1
+      0.88,
+      0.4
     ],
     "21": [
-      0.95,
-      0.65
+      0.83,
+      0.6
     ],
     "22": [
-      0.72,
-      0.73
+      0.68,
+      0.75
     ],
     "23": [
-      0.72,
-      0.92
+      0.78,
+      0.86
     ],
     "24": [
       0.94,
-      0.58
+      0.4
     ],
     "25": [
-      0.95,
-      0.12
+      0.98,
+      0.31
     ],
     "26": [
-      0.95,
-      0.8
+      0.98,
+      0.56
     ]
   },
   "generation_inputs": {
@@ -119,5 +117,241 @@
     "jump-strike": "ci/animation-review/characters/jury-rigg/model-reference.webp",
     "powers": "ci/animation-review/characters/jury-rigg/model-reference.webp",
     "states": "Shipped v11.9 identity portrait"
-  }
+  },
+  "revision": 2,
+  "requestedRepair125": true,
+  "accepted_generated_sources": {
+    "mechanic": "ci/animation-review/characters/jury-rigg/generated-mechanic125.webp"
+  },
+  "generated_frame_selections": {
+    "mechanic": {
+      "22": 0,
+      "23": 1,
+      "21": 7,
+      "24": 3,
+      "25": 5,
+      "26": 6
+    }
+  },
+  "frameReferenceHeights": {
+    "0": 465,
+    "1": 465,
+    "2": 465,
+    "3": 465,
+    "4": 465,
+    "5": 465,
+    "6": 465,
+    "7": 465,
+    "8": 445,
+    "9": 445,
+    "10": 445,
+    "11": 445,
+    "12": 445,
+    "13": 445,
+    "14": 445,
+    "15": 445,
+    "16": 445,
+    "17": 445,
+    "18": 445,
+    "19": 445,
+    "20": 445,
+    "21": 478.0,
+    "22": 478.0,
+    "23": 478.0,
+    "24": 478.0,
+    "25": 478.0,
+    "26": 478.0,
+    "27": 428,
+    "28": 428,
+    "29": 428,
+    "30": 428,
+    "31": 428
+  },
+  "frameOrigins": {
+    "0": [
+      153,
+      448
+    ],
+    "1": [
+      175,
+      461
+    ],
+    "2": [
+      161,
+      466
+    ],
+    "3": [
+      187,
+      457
+    ],
+    "4": [
+      160,
+      460
+    ],
+    "5": [
+      166,
+      456
+    ],
+    "6": [
+      165,
+      467
+    ],
+    "7": [
+      175,
+      461
+    ],
+    "8": [
+      182,
+      366
+    ],
+    "9": [
+      165,
+      473
+    ],
+    "10": [
+      210,
+      477.2
+    ],
+    "11": [
+      189,
+      327
+    ],
+    "12": [
+      197,
+      439
+    ],
+    "13": [
+      161,
+      424
+    ],
+    "14": [
+      164,
+      447
+    ],
+    "15": [
+      152,
+      452
+    ],
+    "16": [
+      178,
+      464
+    ],
+    "17": [
+      148,
+      440
+    ],
+    "18": [
+      187,
+      443
+    ],
+    "19": [
+      218,
+      452
+    ],
+    "20": [
+      153,
+      445
+    ],
+    "27": [
+      142,
+      436
+    ],
+    "28": [
+      144,
+      382
+    ],
+    "29": [
+      212,
+      414
+    ],
+    "30": [
+      249,
+      214
+    ],
+    "31": [
+      175,
+      354
+    ]
+  },
+  "preservedEmitters": {
+    "0": {},
+    "1": {},
+    "2": {},
+    "3": {},
+    "4": {},
+    "5": {},
+    "6": {},
+    "7": {},
+    "8": {},
+    "9": {},
+    "10": {},
+    "11": {},
+    "12": {
+      "normal": [
+        331,
+        195
+      ]
+    },
+    "13": {
+      "normal": [
+        403,
+        177
+      ]
+    },
+    "14": {
+      "normal": [
+        319,
+        175
+      ]
+    },
+    "15": {
+      "normal": [
+        305,
+        198
+      ]
+    },
+    "16": {
+      "skill0": [
+        363,
+        217
+      ]
+    },
+    "17": {
+      "skill0": [
+        413,
+        156
+      ]
+    },
+    "18": {
+      "skill0": [
+        341,
+        314
+      ]
+    },
+    "19": {
+      "skill1": [
+        84,
+        126
+      ]
+    },
+    "20": {
+      "skill1": [
+        415,
+        45
+      ]
+    },
+    "27": {},
+    "28": {},
+    "29": {},
+    "30": {},
+    "31": {}
+  },
+  "changed_frames": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ]
 }
