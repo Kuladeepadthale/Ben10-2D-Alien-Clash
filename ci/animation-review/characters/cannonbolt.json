@@ -322,5 +322,9 @@
     24,
     25,
     26
-  ]
+  ],
+  "generation_inputs": {
+    "walk": "ci/animation-review/characters/cannonbolt/model-reference125.webp",
+    "shell": "ci/animation-review/characters/cannonbolt/model-reference125.webp"
+  }
 }

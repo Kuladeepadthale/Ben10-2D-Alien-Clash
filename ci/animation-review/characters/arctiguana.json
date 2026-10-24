@@ -361,5 +361,9 @@
     24,
     25,
     26
-  ]
+  ],
+  "generation_inputs": {
+    "walk": "ci/animation-review/characters/arctiguana/model-reference125.webp",
+    "freeze": "ci/animation-review/characters/arctiguana/model-reference125.webp"
+  }
 }

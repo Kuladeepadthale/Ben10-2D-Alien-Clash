@@ -3,14 +3,54 @@
   "versionCode": 125,
   "source_commit": "e3f941c1511393776e001599146dc225bb5f6740",
   "run_id": 40099113167,
-  "status": "final_ci_running",
-  "requested": [
+  "job_id": 120887606637,
+  "build": "success",
+  "release_checks": {
+    "passed": 72,
+    "failed": 0
+  },
+  "reviewed_native_frames": 1216,
+  "requested_repairs_complete": [
     "Jury Rigg",
     "Four Arms",
     "Cannonbolt",
     "Arctiguana"
   ],
-  "local_validation": "Passed native/standing preservation,960 draws in both facings,10 browser scenes with zero page errors, targeted behavior/point-blank/placement lifetime checks and2760 damaging casts.",
-  "previous_release": "12.4",
-  "next_step": "Wait for final CI, APK/signature verification and published assets; then record final release metadata."
+  "original_standing_pixels_preserved": 4,
+  "new_or_repaired_native_cels": 47,
+  "approved": 86,
+  "remaining": 6,
+  "release_url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/tag/android-e3f941c15113",
+  "assets": [
+    {
+      "name": "Ben10-2D-Alien-Clash.apk",
+      "size": 437740182,
+      "sha256": "sha256:9e45c72106171db01f8e705aa757011b50027dd20002376e3bae830fd6835d85",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-e3f941c15113/Ben10-2D-Alien-Clash.apk"
+    },
+    {
+      "name": "Ben10-Alien-Clash-Online.apk",
+      "size": 437740202,
+      "sha256": "sha256:6bbc302255180daa2c8b94afdacfd9199b41bcd3f13f326c2d3f349fd0d35aca",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-e3f941c15113/Ben10-Alien-Clash-Online.apk"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 200,
+      "sha256": "sha256:3abfac2ede34ee66ddefb93e5b15cc3a62b5632f498c8087a7c1df48216f8f98",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-e3f941c15113/SHA256SUMS.txt"
+    }
+  ],
+  "pinned_signer": "a52a570180898607ffdf736b6189244b73b2c1666ba5a63b34cd7015773c8a94",
+  "online_worker": "Updated engine source and bundle verified. Live deployment needs owner Cloudflare credentials.",
+  "next_batch": [
+    49,
+    50,
+    51,
+    21
+  ],
+  "final_pending": [
+    29,
+    82
+  ]
 }

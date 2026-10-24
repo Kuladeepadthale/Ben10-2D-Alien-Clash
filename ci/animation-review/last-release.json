@@ -1,48 +1,47 @@
 {
-  "version": "12.4",
-  "versionCode": 124,
-  "source_commit": "8c6b6ecb1d04fcc48c5f00021cb3dff7309d767b",
-  "run_id": 40094050128,
-  "job_id": 120872491071,
+  "version": "12.5",
+  "versionCode": 125,
+  "source_commit": "e3f941c1511393776e001599146dc225bb5f6740",
+  "run_id": 40099113167,
+  "job_id": 120887606637,
   "build": "success",
   "release_checks": {
-    "passed": 69,
+    "passed": 72,
     "failed": 0
   },
-  "reviewed_native_frames": 1120,
+  "reviewed_native_frames": 1216,
   "requested_repairs_complete": [
-    "Wildmutt",
-    "Ripjaws",
-    "Wildvine",
-    "Snare-oh",
-    "Upchuck",
-    "Spitter",
-    "The Worst"
+    "Jury Rigg",
+    "Four Arms",
+    "Cannonbolt",
+    "Arctiguana"
   ],
-  "original_standing_pixels_preserved": 7,
+  "original_standing_pixels_preserved": 4,
+  "new_or_repaired_native_cels": 47,
   "approved": 86,
   "remaining": 6,
-  "release_url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/tag/android-8c6b6ecb1d04",
+  "release_url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/tag/android-e3f941c15113",
   "assets": [
     {
       "name": "Ben10-2D-Alien-Clash.apk",
-      "size": 426579873,
-      "sha256": "sha256:bdc10c085404d58a4efa8cfd218b161585c3b4ce5b908317499f885c1970e45b",
-      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-8c6b6ecb1d04/Ben10-2D-Alien-Clash.apk"
+      "size": 437740182,
+      "sha256": "sha256:9e45c72106171db01f8e705aa757011b50027dd20002376e3bae830fd6835d85",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-e3f941c15113/Ben10-2D-Alien-Clash.apk"
     },
     {
       "name": "Ben10-Alien-Clash-Online.apk",
-      "size": 426579887,
-      "sha256": "sha256:cd040a75b94622e9acdc7ea9c34f54210976377fc6ee16bc44d01a2d4b0cff5b",
-      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-8c6b6ecb1d04/Ben10-Alien-Clash-Online.apk"
+      "size": 437740202,
+      "sha256": "sha256:6bbc302255180daa2c8b94afdacfd9199b41bcd3f13f326c2d3f349fd0d35aca",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-e3f941c15113/Ben10-Alien-Clash-Online.apk"
     },
     {
       "name": "SHA256SUMS.txt",
       "size": 200,
-      "sha256": "sha256:0487028106fa9d10cbf88af654f5439003cc31464b63077b848d86067187a637",
-      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-8c6b6ecb1d04/SHA256SUMS.txt"
+      "sha256": "sha256:3abfac2ede34ee66ddefb93e5b15cc3a62b5632f498c8087a7c1df48216f8f98",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-e3f941c15113/SHA256SUMS.txt"
     }
   ],
+  "pinned_signer": "a52a570180898607ffdf736b6189244b73b2c1666ba5a63b34cd7015773c8a94",
   "online_worker": "Updated engine source and bundle verified. Live deployment needs owner Cloudflare credentials.",
   "next_batch": [
     49,

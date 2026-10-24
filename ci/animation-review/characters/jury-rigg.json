@@ -117,10 +117,7 @@
     ]
   },
   "generation_inputs": {
-    "walk": "ci/animation-review/characters/jury-rigg/model-reference.webp",
-    "jump-strike": "ci/animation-review/characters/jury-rigg/model-reference.webp",
-    "powers": "ci/animation-review/characters/jury-rigg/model-reference.webp",
-    "states": "Shipped v11.9 identity portrait"
+    "mechanic": "ci/animation-review/characters/jury-rigg/model-reference125.webp"
   },
   "revision": 2,
   "requestedRepair125": true,

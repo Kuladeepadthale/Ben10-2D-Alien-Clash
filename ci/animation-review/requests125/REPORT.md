@@ -20,3 +20,11 @@ Overall review remains86 of92 approved;6 unrelated queued repairs remain. This r
 The updated authoritative engine is generated from the same combat code. Live multiplayer deployment still needs owner Cloudflare credentials; offline/training uses the new behavior immediately.
 
 The native-detail guard accepts the longer axis for Arctiguana’s original low quadruped cels, preserving the existing286px-high, wide crouched basic attack without artificial enlargement. All other native detail, pixel, hash and margin checks remain active.
+
+## Verified release
+
+[Download v12.5 APK](https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-e3f941c15113/Ben10-Alien-Clash-Online.apk) · [Release page](https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/tag/android-e3f941c15113) · [Successful CI run](https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/40099113167)
+
+Source `e3f941c1511393776e001599146dc225bb5f6740`. Final full suite: **72 passed,0 failed**; **1216 reviewed native frames**. Both APKs verified as version12.5/code125 with their existing package IDs, launch activities and pinned signer. Online APK:437740202bytes, SHA256 `6bbc302255180daa2c8b94afdacfd9199b41bcd3f13f326c2d3f349fd0d35aca`.
+
+Final added checks cover the trap releasing Jury Rigg while keeping its armed lifetime and point-blank launcher hits in both directions. Frozen gusts detach after exhalation instead of remaining attached to a closed mouth. Live Worker deployment is still pending owner credentials; the release log confirms this explicitly.

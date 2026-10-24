@@ -1767,10 +1767,7 @@
         ]
       },
       "generation_inputs": {
-        "walk": "ci/animation-review/characters/jury-rigg/model-reference.webp",
-        "jump-strike": "ci/animation-review/characters/jury-rigg/model-reference.webp",
-        "powers": "ci/animation-review/characters/jury-rigg/model-reference.webp",
-        "states": "Shipped v11.9 identity portrait"
+        "mechanic": "ci/animation-review/characters/jury-rigg/model-reference125.webp"
       },
       "revision": 2,
       "requestedRepair125": true,
@@ -2968,7 +2965,10 @@
         6,
         7
       ],
-      "request125": true
+      "request125": true,
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/four-arms/model-reference125.webp"
+      }
     },
     {
       "id": 2,
@@ -4176,7 +4176,11 @@
         25,
         26
       ],
-      "request125": true
+      "request125": true,
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/cannonbolt/model-reference125.webp",
+        "shell": "ci/animation-review/characters/cannonbolt/model-reference125.webp"
+      }
     },
     {
       "id": 11,
@@ -5759,7 +5763,11 @@
         25,
         26
       ],
-      "request125": true
+      "request125": true,
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/arctiguana/model-reference125.webp",
+        "freeze": "ci/animation-review/characters/arctiguana/model-reference125.webp"
+      }
     },
     {
       "id": 20,
