@@ -8,7 +8,7 @@ function powerProfileFor(f,action){
  return row.find(p=>p.name===key)||null;
 }
 function powerPoseIndex(f,v,count){
- const wind=Math.max(.001,v.cfg.windup),active=['rush','pounce'].includes(v.cfg.kind)?Math.max(.42,v.cfg.duration||.08):v.cfg.duration||.08;
+ const wind=Math.max(.001,v.cfg.windup),active=['rush','pounce'].includes(v.cfg.kind)?Math.max(.42,v.cfg.duration||.08):(v.cfg.castDuration??(v.cfg.duration||.08));
  if(Number.isInteger(f.villain))return v.elapsed<wind?0:1;
  if(f.id===44&&v.key==='skill2'&&count===3)return v.elapsed<wind?Math.min(1,Math.floor(v.elapsed/wind*2)):v.elapsed<wind+active?1:2;
  if(powerProfileFor(f,v)?.motion==='tail-strike'&&v.elapsed>=wind&&v.elapsed<wind+active+Math.min(.22,(v.cfg.recovery||.4)*.7))return f.id===20&&count===3?1:count-1;

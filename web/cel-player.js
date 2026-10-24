@@ -35,7 +35,7 @@ function celPhase(f,state,t){const d=CEL_DATA.characters[f.id];let s=celStates.g
   const profile=CARTOON_GAITS[f.id],h=aliens[f.id].renderHeight*aliens[f.id].scale;
   let phase=((s.distance/(h*profile.stride))%1+1)%1;if(profile.skate)phase=cartoonSkatePhase(phase);index=Math.floor(phase*frames.length)%frames.length;
  }else if(f.cast&&['normal','skill0','skill1','skill2','ultimate'].includes(state)){
-  const v=f.cast,wind=Math.max(.001,v.cfg.windup),active=['rush','pounce'].includes(v.cfg.kind)?Math.max(.42,v.cfg.duration||.08):(v.cfg.duration||.08),recovery=Math.max(.001,v.cfg.recovery);
+  const v=f.cast,wind=Math.max(.001,v.cfg.windup),active=['rush','pounce'].includes(v.cfg.kind)?Math.max(.42,v.cfg.duration||.08):(v.cfg.castDuration??(v.cfg.duration||.08)),recovery=Math.max(.001,v.cfg.recovery);
   if(v.elapsed<wind)index=0;
   else if(v.elapsed<wind+active)index=frames.length>=4?1+Math.min(1,Math.floor((v.elapsed-wind)/active*2)):1;
   else index=frames.length>=3?frames.length-1:0;
