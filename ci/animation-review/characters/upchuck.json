@@ -1,19 +1,390 @@
 {
   "id": 15,
   "slug": "upchuck",
-  "status": "verified_unchanged",
-  "reviewed_on": "2026-10-23",
+  "status": "in_progress",
+  "reviewed_on": "2026-10-24",
   "findings": [
     "All32 frames inspected: green/yellow round body, black/white suit and face remain coherent.",
     "Retained tongue extension, swallowing/body inflation and open-mouth expulsion; these deliberate changes preserve character identity."
   ],
   "changed_files": [],
   "checks": {
-    "native_frames": 32,
-    "states": 12,
-    "facings": 2,
-    "actual_draws": 240,
-    "passed": true
+    "passed": false
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "revision": 1,
+  "requestedRepair124": true,
+  "renderHeight": 226,
+  "scale": 0.78,
+  "sources": {
+    "walk": "ci/animation-review/characters/upchuck/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/upchuck/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/upchuck/source-powers.webp",
+    "states": "ci/animation-review/characters/upchuck/source-states.webp"
+  },
+  "prompts": {
+    "walk": "Use attached image as EXACT identity reference for production 2D game animation. EXACT round olive-green Perk Gourmand from reference: cream lower face and huge cream belly, half-lidded lime eyes, small uneven white teeth, short dark-green back/head nubs, black side vest with white border, green-black Omnitrix on upper arm, short thick arms, tiny stout legs and broad green feet. Same big belly/head, not humanoid skinny legs. 8 distinct smooth SHORT-LEG WADDLE cycle poses: left contact; slight compression; left passing; right reach; right contact; slight compression; right passing; left reach. Small natural belly weight shift and arm swing, feet stay close to body, only SMALL vertical bob. Mouth closed, no attack. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4columns x2rows. Crisp TV-cartoon black outlines, flat original-series cel shading, same character throughout. Body only, no motion trails, auras, electricity, saliva, attacks, floor, cast shadows, words or labels. Opaque artwork on true transparent background. Every paw, spine, tail, hand and toe fully inside canvas,25px transparent gutters and safe outer margins. Target native upright-equivalent detail400-470px; for quadruped native body height330-400px and enough width for complete limbs. Never crop or overlap poses.",
+    "powers": "Production BODY-ONLY native sprite sheet using attached current upchuck image as exact identity reference. Same olive-green round Gourmand, cream face/belly, short dark back nubs, uneven white teeth, black side vest/white trim, upper-arm Omnitrix and short thick legs as reference. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses, 4columns x2rows. Row-major: 1 plasma-spit windup puffing cheeks;2 spit-release with mouth OPEN towardRIGHT and visible deep red inner mouth, feet braced;3 mouth-closing recovery;4 explosive-burp windup belly/cheeks puffed slightly;5 burp release tilting head slightly up, mouth WIDE open with pink tongue base INSIDE;6 recovery lowering head;7 Tongue-lash windup, mouth partly OPEN aimedRIGHT, pink tongue tip INSIDE lips;8 tongue-lash release, mouth OPEN aimedRIGHT, pink tongue bases visible only INSIDE mouth, arms balancing and body braced. NO actual long external tongue: game animates stretching/retraction separately. Same proportions, face and costume across all poses; crisp black TV-cartoon outlines, flat original-series cel shading, high native detail. True transparent background, opaque bodies,30px clear safe outer margins/gutters. All head spines, tail, hands, root feet and toes fully visible; never crop/overlap. Desired native body detail400-470px tall. NO emitted spit, projectiles, aura, full external tongues, long launched ribbons, roots/forest outside body, sparks, trails, floor, cast shadow, dust, text or labels."
+  },
+  "generation_inputs": {
+    "walk": "ci/animation-review/characters/upchuck/model-reference.webp",
+    "powers": "ci/animation-review/characters/upchuck/model-reference.webp"
+  },
+  "accepted_generated_sources": {
+    "walk": "ci/animation-review/characters/upchuck/generated-walk.webp",
+    "powers": "ci/animation-review/characters/upchuck/generated-powers.webp"
+  },
+  "generated_frame_selections": {
+    "walk": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    },
+    "powers": {
+      "22": 6,
+      "23": 7
+    }
+  },
+  "frameReferenceHeights": {
+    "0": 420.0,
+    "1": 420.0,
+    "2": 420.0,
+    "3": 420.0,
+    "4": 420.0,
+    "5": 420.0,
+    "6": 420.0,
+    "7": 420.0,
+    "8": 370,
+    "9": 370,
+    "10": 370,
+    "11": 370,
+    "12": 370,
+    "13": 370,
+    "14": 370,
+    "15": 370,
+    "16": 370,
+    "17": 370,
+    "18": 370,
+    "19": 370,
+    "20": 370,
+    "21": 370,
+    "22": 427.0,
+    "23": 427.0,
+    "24": 370,
+    "25": 370,
+    "26": 370,
+    "27": 370,
+    "28": 370,
+    "29": 370,
+    "30": 370,
+    "31": 370
+  },
+  "frameOrigins": {
+    "8": [
+      203,
+      345
+    ],
+    "9": [
+      194,
+      422
+    ],
+    "10": [
+      220,
+      411.65
+    ],
+    "11": [
+      214,
+      370
+    ],
+    "12": [
+      216,
+      351
+    ],
+    "13": [
+      244,
+      353
+    ],
+    "14": [
+      199,
+      334
+    ],
+    "15": [
+      178,
+      362
+    ],
+    "16": [
+      180,
+      368
+    ],
+    "17": [
+      187,
+      378
+    ],
+    "18": [
+      184,
+      374
+    ],
+    "19": [
+      185,
+      387
+    ],
+    "20": [
+      188,
+      388
+    ],
+    "21": [
+      180,
+      370
+    ],
+    "24": [
+      226,
+      416
+    ],
+    "25": [
+      232,
+      393
+    ],
+    "26": [
+      189,
+      401
+    ],
+    "27": [
+      156,
+      378
+    ],
+    "28": [
+      190,
+      377
+    ],
+    "29": [
+      212,
+      333
+    ],
+    "30": [
+      258,
+      228
+    ],
+    "31": [
+      219,
+      374
+    ],
+    "0": [
+      252.0,
+      428
+    ],
+    "1": [
+      237.0,
+      406
+    ],
+    "2": [
+      256.0,
+      420
+    ],
+    "3": [
+      273.0,
+      419
+    ],
+    "4": [
+      263.0,
+      416
+    ],
+    "5": [
+      215.0,
+      407
+    ],
+    "6": [
+      263.0,
+      416
+    ],
+    "7": [
+      268.0,
+      414
+    ],
+    "22": [
+      295.0,
+      426
+    ],
+    "23": [
+      288.0,
+      418
+    ]
+  },
+  "preservedEmitters": {
+    "8": {},
+    "9": {},
+    "10": {},
+    "11": {},
+    "12": {
+      "normal": [
+        355,
+        107
+      ]
+    },
+    "13": {
+      "normal": [
+        530,
+        90
+      ]
+    },
+    "14": {
+      "normal": [
+        386,
+        91
+      ]
+    },
+    "15": {
+      "normal": [
+        319,
+        94
+      ]
+    },
+    "16": {
+      "skill0": [
+        315,
+        107
+      ]
+    },
+    "17": {
+      "skill0": [
+        348,
+        96
+      ]
+    },
+    "18": {
+      "skill0": [
+        316,
+        106
+      ]
+    },
+    "19": {
+      "skill1": [
+        289,
+        133
+      ]
+    },
+    "20": {
+      "skill1": [
+        306,
+        72
+      ]
+    },
+    "21": {
+      "skill1": [
+        326,
+        104
+      ]
+    },
+    "24": {
+      "ultimate": [
+        344,
+        134
+      ]
+    },
+    "25": {
+      "ultimate": [
+        574,
+        100
+      ]
+    },
+    "26": {
+      "ultimate": [
+        324,
+        111
+      ]
+    },
+    "27": {},
+    "28": {},
+    "29": {},
+    "30": {},
+    "31": {}
+  },
+  "emitterTargets": {
+    "12": [
+      0.88,
+      0.4
+    ],
+    "13": [
+      0.88,
+      0.4
+    ],
+    "14": [
+      0.88,
+      0.4
+    ],
+    "15": [
+      0.88,
+      0.4
+    ],
+    "16": [
+      0.92,
+      0.25
+    ],
+    "17": [
+      0.92,
+      0.25
+    ],
+    "18": [
+      0.92,
+      0.25
+    ],
+    "19": [
+      0.92,
+      0.25
+    ],
+    "20": [
+      0.82,
+      0.2
+    ],
+    "21": [
+      0.92,
+      0.25
+    ],
+    "22": [
+      0.88,
+      0.32
+    ],
+    "23": [
+      0.88,
+      0.32
+    ],
+    "24": [
+      0.92,
+      0.25
+    ],
+    "25": [
+      0.92,
+      0.25
+    ],
+    "26": [
+      0.92,
+      0.25
+    ]
+  },
+  "referenceHeightBySource": {
+    "walk": 420.0,
+    "jump-strike": 370,
+    "powers": 370,
+    "states": 370
+  },
+  "requested_changes": [
+    "walk",
+    "powers"
+  ],
+  "changed_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    22,
+    23
+  ]
 }

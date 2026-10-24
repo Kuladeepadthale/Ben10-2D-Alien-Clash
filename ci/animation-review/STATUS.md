@@ -1,6 +1,6 @@
 # Animation review progress
 
-**85 / 92 characters approved.** Batch size: 4.
+**79 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -34,23 +34,23 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 6 | 1 | four-arms | Reviewed — kept | All32 native frames inspected: four arms, black/white shirt, face and body proportions remain coherent. |
 | 7 | 2 | diamondhead | Reviewed — updated | Removed baked floor crystals from the active ground-spike body frame; procedural crystals now supply the effect once. |
 | 7 | 3 | xlr8 | Reviewed — kept | All32 native frames inspected: helmet/visor, long tail and wheeled feet stay coherent. |
-| 7 | 4 | wildmutt | Reviewed — kept | All32 frames inspected: eyeless orange quadruped identity, shoulder emblem and powerful forelimbs remain coherent. |
+| 7 | 4 | wildmutt | In progress | All32 frames inspected: eyeless orange quadruped identity, shoulder emblem and powerful forelimbs remain coherent. |
 | 7 | 5 | grey-matter | Reviewed — kept | All32 frames inspected: grey head, large yellow-green eyes and black/white suit stay consistent. |
 | 8 | 6 | upgrade | Reviewed — kept | All32 frames inspected: single green eye, green circuitry and black/white body stay coherent. |
 | 8 | 7 | stinkfly | Reviewed — kept | All32 frames inspected: insect head, eye stalks, wing pair, tail stinger and limb count stay coherent. |
-| 8 | 8 | ripjaws | Needs revision | Walk cycle omits the head lure visible in jump, attacks and idle; these models need reconciliation. |
+| 8 | 8 | ripjaws | In progress | Walk cycle omits the head lure visible in jump, attacks and idle; these models need reconciliation. |
 | 8 | 9 | ghostfreak | Reviewed — kept | All32 frames inspected: pale shroud, single side eye, black seams and tapering ghost tail remain coherent. |
 | 9 | 10 | cannonbolt | Reviewed — kept | All32 frames inspected: white/black body and yellow shell plates stay consistent. |
-| 9 | 11 | wildvine | Reviewed — kept | All32 frames inspected: flytrap collar, central eye, back pods and vine-root anatomy stay coherent. |
+| 9 | 11 | wildvine | In progress | All32 frames inspected: flytrap collar, central eye, back pods and vine-root anatomy stay coherent. |
 | 9 | 12 | blitzwolfer | Reviewed — kept | All32 frames inspected: grey fur, mane, muzzle, tail and suit remain coherent. |
-| 9 | 13 | snare-oh | Reviewed — kept | All32 frames inspected: gold wrappings, black gaps, head silhouette and trailing bandages remain coherent. |
+| 9 | 13 | snare-oh | In progress | All32 frames inspected: gold wrappings, black gaps, head silhouette and trailing bandages remain coherent. |
 | 10 | 14 | frankenstrike | Reviewed — kept | All32 frames inspected: face, shoulder generators, forearm armor and black/green legs stay coherent. |
-| 10 | 15 | upchuck | Reviewed — kept | All32 frames inspected: green/yellow round body, black/white suit and face remain coherent. |
+| 10 | 15 | upchuck | In progress | All32 frames inspected: green/yellow round body, black/white suit and face remain coherent. |
 | 10 | 16 | ditto | Reviewed — kept | All32 frames inspected: three head nodes, black/white suit and small body remain coherent. |
 | 10 | 17 | eye-guy | Reviewed — kept | All32 frames inspected: pointed ears, eyeless face and distributed body eyes retain one model. |
 | 11 | 18 | way-big | Reviewed — kept | All32 frames inspected: red/white proportions, head fin and shoulder silhouette remain coherent. |
 | 11 | 19 | arctiguana | Reviewed — kept | All32 frames inspected: blue lizard body, dorsal spikes, cheek fins and tail remain coherent. |
-| 11 | 20 | spitter | Reviewed — kept | All32 frames inspected: green body, pale throat and tail stay coherent. |
+| 11 | 20 | spitter | In progress | All32 frames inspected: green body, pale throat and tail stay coherent. |
 | 11 | 21 | buzzshock | Needs revision | Native action and state sheets use heavier outlines and a more rounded face than the walk cycle. |
 | 12 | 22 | swampfire | Reviewed — kept | All32 frames inspected: red flame-shaped head, green plant body and black chest remain coherent. |
 | 12 | 23 | echo-echo | Reviewed — kept | All32 frames inspected: white body, speaker disks and green eyes stay coherent. |
@@ -68,7 +68,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 15 | 57 | gutrot | Reviewed — updated | All32 native frames inspected. |
 | 15 | 58 | atomix | Reviewed — updated | All32 native frames inspected. |
 | 15 | 59 | walkatrout | Reviewed — updated | All32 native frames inspected. |
-| 16 | 60 | the-worst | Reviewed — updated | All32 native frames inspected. |
+| 16 | 60 | the-worst | In progress | All32 native frames inspected. |
 | 16 | 61 | mole-stache | Reviewed — kept | All32 native frames inspected. |
 | 16 | 62 | overflow | Reviewed — updated | All32 native frames inspected. |
 | 16 | 63 | gax | Reviewed — kept | All32 native frames inspected. |

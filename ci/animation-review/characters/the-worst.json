@@ -1,8 +1,8 @@
 {
   "id": 60,
   "slug": "the-worst",
-  "status": "verified_updated",
-  "reviewed_on": "2026-10-23",
+  "status": "in_progress",
+  "reviewed_on": "2026-10-24",
   "findings": [
     "All32 native frames inspected.",
     "Removed generic spherical ultimate body; retained braced compact defensive posture and yellow body/green shorts."
@@ -11,11 +11,356 @@
     "ci/animation-review/characters/the-worst/revision.json"
   ],
   "checks": {
-    "native_frames": 32,
-    "states": 12,
-    "facings": 2,
-    "actual_draws": 240,
-    "passed": true
+    "passed": false
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "revision": 2,
+  "requestedRepair124": true,
+  "renderHeight": 226,
+  "scale": 0.88,
+  "sources": {
+    "walk": "ci/animation-review/characters/the-worst/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/the-worst/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/the-worst/source-powers.webp",
+    "states": "ci/animation-review/characters/the-worst/source-states.webp"
+  },
+  "prompts": {
+    "belly": "Use attached image as EXACT identity reference for production 2D game animation. EXACT The Worst reference: short stocky yellow round alien with small bumps on head/back/shoulders, bored half-lidded green eyes, drooping mouth, very large soft round yellow belly, short thick bare yellow limbs/feet and dark-green patterned shorts with green belt/Omnitrix buckle. Same current facial design and proportions, no sphere transformation. Exactly3 separate full-body RIGHT-facing BELLY BUMP poses in one horizontal row:1 anticipation leaning upper body BACK, belly drawn slightly back, feet braced and both fists held away from belly;2 impact leaning belly FIRST forward to RIGHT, clearly protruding soft round belly as contact surface, hips driving forward, arms thrown BACK for balance, face/head unchanged, no punch;3 recoil/recovery soft belly settles, knees flex, arms return to sides. Keep connected body, SAME belly size except natural squash/stretch; no detached ball and no rocks/effects. Three full figures in3columns x1row. Crisp TV-cartoon black outlines, flat original-series cel shading, same character throughout. Body only, no motion trails, auras, electricity, saliva, attacks, floor, cast shadows, words or labels. Opaque artwork on true transparent background. Every paw, spine, tail, hand and toe fully inside canvas,25px transparent gutters and safe outer margins. Target native upright-equivalent detail400-470px; for quadruped native body height330-400px and enough width for complete limbs. Never crop or overlap poses."
+  },
+  "generation_inputs": {
+    "belly": "ci/animation-review/characters/the-worst/model-reference.webp"
+  },
+  "accepted_generated_sources": {
+    "belly": "ci/animation-review/characters/the-worst/generated-belly.webp"
+  },
+  "generated_frame_selections": {
+    "belly": {
+      "19": 0,
+      "20": 1,
+      "21": 2
+    }
+  },
+  "frameReferenceHeights": {
+    "0": 429,
+    "1": 429,
+    "2": 429,
+    "3": 429,
+    "4": 429,
+    "5": 429,
+    "6": 429,
+    "7": 429,
+    "8": 429,
+    "9": 429,
+    "10": 429,
+    "11": 429,
+    "12": 429,
+    "13": 429,
+    "14": 429,
+    "15": 429,
+    "16": 429,
+    "17": 429,
+    "18": 429,
+    "19": 734.0,
+    "20": 734.0,
+    "21": 734.0,
+    "22": 429,
+    "23": 429,
+    "24": 429,
+    "25": 429,
+    "26": 429,
+    "27": 429,
+    "28": 429,
+    "29": 429,
+    "30": 429,
+    "31": 429
+  },
+  "frameOrigins": {
+    "0": [
+      210,
+      435
+    ],
+    "1": [
+      195,
+      431
+    ],
+    "2": [
+      218,
+      437
+    ],
+    "3": [
+      222,
+      429
+    ],
+    "4": [
+      190,
+      418
+    ],
+    "5": [
+      193,
+      425
+    ],
+    "6": [
+      193,
+      422
+    ],
+    "7": [
+      191,
+      414
+    ],
+    "8": [
+      212,
+      313
+    ],
+    "9": [
+      192,
+      388
+    ],
+    "10": [
+      230,
+      441.55
+    ],
+    "11": [
+      212,
+      308
+    ],
+    "12": [
+      236,
+      383
+    ],
+    "13": [
+      211,
+      381
+    ],
+    "14": [
+      236,
+      385
+    ],
+    "15": [
+      193,
+      393
+    ],
+    "16": [
+      221,
+      373
+    ],
+    "17": [
+      221,
+      332
+    ],
+    "18": [
+      234,
+      377
+    ],
+    "22": [
+      150,
+      390
+    ],
+    "23": [
+      229,
+      314
+    ],
+    "24": [
+      244,
+      385
+    ],
+    "25": [
+      158,
+      320
+    ],
+    "26": [
+      207,
+      312
+    ],
+    "27": [
+      175,
+      437
+    ],
+    "28": [
+      185,
+      408
+    ],
+    "29": [
+      218,
+      404
+    ],
+    "30": [
+      246,
+      272
+    ],
+    "31": [
+      225,
+      268
+    ]
+  },
+  "preservedEmitters": {
+    "0": {},
+    "1": {},
+    "2": {},
+    "3": {},
+    "4": {},
+    "5": {},
+    "6": {},
+    "7": {},
+    "8": {},
+    "9": {},
+    "10": {},
+    "11": {},
+    "12": {
+      "normal": [
+        402,
+        168
+      ]
+    },
+    "13": {
+      "normal": [
+        439,
+        167
+      ]
+    },
+    "14": {
+      "normal": [
+        389,
+        169
+      ]
+    },
+    "15": {
+      "normal": [
+        346,
+        172
+      ]
+    },
+    "16": {
+      "skill0": [
+        374,
+        164
+      ]
+    },
+    "17": {
+      "skill0": [
+        410,
+        146
+      ]
+    },
+    "18": {
+      "skill0": [
+        389,
+        191
+      ]
+    },
+    "22": {
+      "skill2": [
+        293,
+        155
+      ]
+    },
+    "23": {
+      "skill2": [
+        398,
+        143
+      ],
+      "ultimate": [
+        398,
+        143
+      ]
+    },
+    "24": {
+      "ultimate": [
+        419,
+        200
+      ]
+    },
+    "25": {
+      "ultimate": [
+        289,
+        141
+      ]
+    },
+    "26": {
+      "ultimate": [
+        363,
+        146
+      ]
+    },
+    "27": {},
+    "28": {},
+    "29": {},
+    "30": {},
+    "31": {}
+  },
+  "emitterTargets": {
+    "12": [
+      0.88,
+      0.4
+    ],
+    "13": [
+      0.88,
+      0.4
+    ],
+    "14": [
+      0.88,
+      0.4
+    ],
+    "15": [
+      0.88,
+      0.4
+    ],
+    "16": [
+      0.88,
+      0.4
+    ],
+    "17": [
+      0.88,
+      0.4
+    ],
+    "18": [
+      0.88,
+      0.4
+    ],
+    "19": [
+      0.87,
+      0.58
+    ],
+    "20": [
+      0.98,
+      0.57
+    ],
+    "21": [
+      0.94,
+      0.58
+    ],
+    "22": [
+      0.88,
+      0.4
+    ],
+    "23": [
+      0.88,
+      0.4
+    ],
+    "24": [
+      0.88,
+      0.4
+    ],
+    "25": [
+      0.88,
+      0.4
+    ],
+    "26": [
+      0.88,
+      0.4
+    ]
+  },
+  "referenceHeightBySource": {
+    "walk": 429,
+    "jump-strike": 429,
+    "powers": 429,
+    "states": 429
+  },
+  "requested_changes": [
+    "belly"
+  ],
+  "changed_frames": [
+    19,
+    20,
+    21
+  ]
 }

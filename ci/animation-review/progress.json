@@ -98,7 +98,7 @@
     91
   ],
   "current_character": 49,
-  "completed": 85,
+  "completed": 79,
   "characters": [
     {
       "id": 35,
@@ -2388,21 +2388,376 @@
       "id": 4,
       "slug": "wildmutt",
       "batch": 7,
-      "status": "verified_unchanged",
+      "status": "in_progress",
       "findings": [
         "All32 frames inspected: eyeless orange quadruped identity, shoulder emblem and powerful forelimbs remain coherent.",
         "Retained low gait, crouch/pounce, claw/bite-ready attacks and standing hit recoil; prone pose reserved for defeat."
       ],
       "changed_files": [],
       "checks": {
-        "native_frames": 32,
-        "states": 12,
-        "facings": 2,
-        "actual_draws": 240,
-        "passed": true
+        "passed": false
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "revision": 1,
+      "requestedRepair124": true,
+      "renderHeight": 142,
+      "scale": 0.95,
+      "sources": {
+        "walk": "ci/animation-review/characters/wildmutt/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/wildmutt/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/wildmutt/source-powers.webp",
+        "states": "ci/animation-review/characters/wildmutt/source-states.webp"
+      },
+      "prompts": {
+        "walk": "Use attached image as EXACT identity reference for production 2D game animation. EXACT eyeless orange Vulpimancer from reference: large rounded eyeless head, broad toothed muzzle, three neck gill slits, arched muscular orange back with short fur tufts, huge clawed FOREPAWS and smaller hind paws, black-and-white Omnitrix brace on LEFT shoulder. FOUR-legged quadruped; absolutely no eyes, ears, nose or tail. 8 smooth four-legged TROT cycle poses, row-major: left fore/right hind contact; compression; diagonal pair passing; right fore/left hind reaching; right fore/left hind contact; compression; opposite passing; left fore/right hind reaching. Keep torso/head at nearly constant height and same proportions, all FOUR limbs anatomically attached, natural paws gripping/rolling off ground. No standing upright or humanoid running. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4columns x2rows. Crisp TV-cartoon black outlines, flat original-series cel shading, same character throughout. Body only, no motion trails, auras, electricity, saliva, attacks, floor, cast shadows, words or labels. Opaque artwork on true transparent background. Every paw, spine, tail, hand and toe fully inside canvas,25px transparent gutters and safe outer margins. Target native upright-equivalent detail400-470px; for quadruped native body height330-400px and enough width for complete limbs. Never crop or overlap poses.",
+        "states": "Production 2D sprite sheet using EXACT attached current wildmutt design as identity reference. Eyeless orange four-legged Vulpimancer with big smooth rounded head/toothed muzzle, neck gill slits, arched furred back, huge black-clawed FOREPAWS, smaller hind paws and LEFT shoulder black/white Omnitrix brace. Absolutely NO eyes, ears or tail; same current reference body. Exactly8 separate complete FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2rows, row-major: 1 Apex-hunt anticipation: low four-paw crouch, jaw partly opening;2 Apex-hunt active savage forward lunge to RIGHT, big jaw OPEN, four limbs attached, huge front paws reaching and hind legs driving, eyeless head same shape;3 recoil/landing on four paws with jaw closing;4 neutral four-paw standing;5 low four-paw guard;6 upright-on-four-paws hurt recoil, not collapsed;7 defeated lying on side;8 four-legged low dash. Crisp TV-cartoon black outlines and flat original-series cel shading, same body/head across poses. Effects will be animated separately: NO energy, flames, water, tornados, roots erupting outside body, long launched bandages, rocks, auras, trails, floor, cast shadows, text or labels. Opaque bodies on true transparency. Native upright-equivalent detail400-470px, quadruped body height330-400px; whole limbs/lure/appendages safely inside canvas,30px clear outer margins and gutters, no touching/overlap/cropping."
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/wildmutt/model-reference.webp",
+        "states": "ci/animation-review/characters/wildmutt/model-reference.webp"
+      },
+      "accepted_generated_sources": {
+        "walk": "ci/animation-review/characters/wildmutt/generated-walk.webp",
+        "states": "ci/animation-review/characters/wildmutt/generated-states.webp"
+      },
+      "generated_frame_selections": {
+        "walk": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7
+        },
+        "states": {
+          "24": 0,
+          "25": 1,
+          "26": 2
+        }
+      },
+      "frameReferenceHeights": {
+        "0": 329.0,
+        "1": 329.0,
+        "2": 329.0,
+        "3": 329.0,
+        "4": 329.0,
+        "5": 329.0,
+        "6": 329.0,
+        "7": 329.0,
+        "8": 304,
+        "9": 304,
+        "10": 304,
+        "11": 304,
+        "12": 304,
+        "13": 304,
+        "14": 304,
+        "15": 304,
+        "16": 304,
+        "17": 304,
+        "18": 304,
+        "19": 304,
+        "20": 304,
+        "21": 304,
+        "22": 304,
+        "23": 304,
+        "24": 352.0,
+        "25": 352.0,
+        "26": 352.0,
+        "27": 304,
+        "28": 304,
+        "29": 304,
+        "30": 304,
+        "31": 304
+      },
+      "frameOrigins": {
+        "8": [
+          181,
+          248
+        ],
+        "9": [
+          188,
+          360
+        ],
+        "10": [
+          172,
+          310.45
+        ],
+        "11": [
+          221,
+          257
+        ],
+        "12": [
+          197,
+          288
+        ],
+        "13": [
+          256,
+          288
+        ],
+        "14": [
+          209,
+          295
+        ],
+        "15": [
+          176,
+          265
+        ],
+        "16": [
+          177,
+          288
+        ],
+        "17": [
+          336,
+          293
+        ],
+        "18": [
+          186,
+          299
+        ],
+        "19": [
+          147,
+          418
+        ],
+        "20": [
+          221,
+          379
+        ],
+        "21": [
+          200,
+          288
+        ],
+        "22": [
+          199,
+          270
+        ],
+        "23": [
+          248,
+          285
+        ],
+        "27": [
+          166,
+          312
+        ],
+        "28": [
+          198,
+          359
+        ],
+        "29": [
+          124,
+          339
+        ],
+        "30": [
+          248,
+          204
+        ],
+        "31": [
+          200,
+          275
+        ],
+        "0": [
+          257.8,
+          337
+        ],
+        "1": [
+          263.8,
+          339
+        ],
+        "2": [
+          271.8,
+          343
+        ],
+        "3": [
+          279.8,
+          345
+        ],
+        "4": [
+          264.8,
+          340
+        ],
+        "5": [
+          199.8,
+          342
+        ],
+        "6": [
+          268.8,
+          346
+        ],
+        "7": [
+          262.8,
+          336
+        ]
+      },
+      "preservedEmitters": {
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {
+          "normal": [
+            360,
+            112
+          ]
+        },
+        "13": {
+          "normal": [
+            479,
+            136
+          ]
+        },
+        "14": {
+          "normal": [
+            337,
+            115
+          ]
+        },
+        "15": {
+          "normal": [
+            351,
+            104
+          ]
+        },
+        "16": {
+          "skill0": [
+            366,
+            115
+          ]
+        },
+        "17": {
+          "skill0": [
+            489,
+            112
+          ]
+        },
+        "18": {
+          "skill0": [
+            347,
+            137
+          ]
+        },
+        "19": {
+          "skill1": [
+            343,
+            161
+          ]
+        },
+        "20": {
+          "skill1": [
+            325,
+            180
+          ]
+        },
+        "21": {
+          "skill1": [
+            385,
+            123
+          ]
+        },
+        "22": {
+          "skill2": [
+            364,
+            106
+          ]
+        },
+        "23": {
+          "skill2": [
+            426,
+            119
+          ]
+        },
+        "27": {},
+        "28": {},
+        "29": {},
+        "30": {},
+        "31": {}
+      },
+      "emitterTargets": {
+        "12": [
+          0.88,
+          0.4
+        ],
+        "13": [
+          0.88,
+          0.4
+        ],
+        "14": [
+          0.88,
+          0.4
+        ],
+        "15": [
+          0.88,
+          0.4
+        ],
+        "16": [
+          0.88,
+          0.4
+        ],
+        "17": [
+          0.88,
+          0.4
+        ],
+        "18": [
+          0.88,
+          0.4
+        ],
+        "19": [
+          0.88,
+          0.4
+        ],
+        "20": [
+          0.88,
+          0.4
+        ],
+        "21": [
+          0.88,
+          0.4
+        ],
+        "22": [
+          0.88,
+          0.4
+        ],
+        "23": [
+          0.88,
+          0.4
+        ],
+        "24": [
+          0.9,
+          0.3
+        ],
+        "25": [
+          0.93,
+          0.28
+        ],
+        "26": [
+          0.92,
+          0.35
+        ]
+      },
+      "referenceHeightBySource": {
+        "walk": 329.0,
+        "jump-strike": 304,
+        "powers": 304,
+        "states": 352.0
+      },
+      "requested_changes": [
+        "walk",
+        "states"
+      ],
+      "changed_frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        24,
+        25,
+        26
+      ]
     },
     {
       "id": 5,
@@ -2468,20 +2823,363 @@
       "id": 8,
       "slug": "ripjaws",
       "batch": 8,
-      "status": "needs_revision",
+      "status": "in_progress",
       "findings": [
         "Walk cycle omits the head lure visible in jump, attacks and idle; these models need reconciliation.",
         "Preserve webbed limbs, dorsal fin and wide jaw bite animation when repairing the lure."
       ],
       "changed_files": [],
       "checks": {
-        "native_frames": 32,
-        "visual_review": true,
         "passed": false
       },
-      "reviewed_on": "2026-10-23",
+      "reviewed_on": "2026-10-24",
       "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
-      "stage": "Repair walk lure before approval"
+      "stage": "Repair walk lure before approval",
+      "revision": 1,
+      "requestedRepair124": true,
+      "renderHeight": 226,
+      "scale": 1.05,
+      "sources": {
+        "walk": "ci/animation-review/characters/ripjaws/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/ripjaws/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/ripjaws/source-powers.webp",
+        "states": "ci/animation-review/characters/ripjaws/source-states.webp"
+      },
+      "prompts": {
+        "states": "Production 2D sprite sheet using EXACT attached current ripjaws design as identity reference. Classic pale gray-white fish humanoid with dark-green dorsal head/back fin, ONE attached anglerfish forehead lure ending in yellow bulb, small dark round eye, huge tooth-filled jaw with yellow pointed teeth, long clawed hands, black torso/waist suit and chest Omnitrix. Preserve current same pale body/green fins/black suit; two arms/two legs, no shark transformation. Exactly8 separate complete FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2rows, row-major: 1 Deep-sea-frenzy anticipation crouching, jaw opening and clawed arms drawn back;2 active forward BITE lunge to RIGHT, jaws WIDE open, attached yellow-bulb lure sweeping back, claws reaching and legs pushing, same fish humanoid body;3 jaws closing and claw arms retracting into landing/recovery;4 neutral standing matching reference;5 defensive forearms guard;6 upright hit recoil feet planted;7 defeated side lying, lure intact;8 low running dash. Crisp TV-cartoon black outlines and flat original-series cel shading, same body/head across poses. Effects will be animated separately: NO energy, flames, water, tornados, roots erupting outside body, long launched bandages, rocks, auras, trails, floor, cast shadows, text or labels. Opaque bodies on true transparency. Native upright-equivalent detail400-470px, quadruped body height330-400px; whole limbs/lure/appendages safely inside canvas,30px clear outer margins and gutters, no touching/overlap/cropping."
+      },
+      "generation_inputs": {
+        "states": "ci/animation-review/characters/ripjaws/model-reference.webp"
+      },
+      "accepted_generated_sources": {
+        "states": "ci/animation-review/characters/ripjaws/generated-states.webp"
+      },
+      "generated_frame_selections": {
+        "states": {
+          "24": 0,
+          "25": 1,
+          "26": 2
+        }
+      },
+      "frameReferenceHeights": {
+        "0": 434,
+        "1": 434,
+        "2": 434,
+        "3": 434,
+        "4": 434,
+        "5": 434,
+        "6": 434,
+        "7": 434,
+        "8": 434,
+        "9": 434,
+        "10": 434,
+        "11": 434,
+        "12": 434,
+        "13": 434,
+        "14": 434,
+        "15": 434,
+        "16": 434,
+        "17": 434,
+        "18": 434,
+        "19": 434,
+        "20": 434,
+        "21": 434,
+        "22": 434,
+        "23": 434,
+        "24": 436.0,
+        "25": 436.0,
+        "26": 436.0,
+        "27": 434,
+        "28": 434,
+        "29": 434,
+        "30": 434,
+        "31": 434
+      },
+      "frameOrigins": {
+        "0": [
+          148,
+          441
+        ],
+        "1": [
+          127,
+          436
+        ],
+        "2": [
+          130,
+          439
+        ],
+        "3": [
+          136,
+          442
+        ],
+        "4": [
+          148,
+          438
+        ],
+        "5": [
+          127,
+          434
+        ],
+        "6": [
+          125,
+          434
+        ],
+        "7": [
+          138,
+          437
+        ],
+        "8": [
+          144,
+          286
+        ],
+        "9": [
+          159,
+          405
+        ],
+        "10": [
+          179,
+          431.2
+        ],
+        "11": [
+          197,
+          302
+        ],
+        "12": [
+          212,
+          370
+        ],
+        "13": [
+          174,
+          369
+        ],
+        "14": [
+          197,
+          395
+        ],
+        "15": [
+          151,
+          405
+        ],
+        "16": [
+          179,
+          399
+        ],
+        "17": [
+          184,
+          426
+        ],
+        "18": [
+          183,
+          366
+        ],
+        "19": [
+          217,
+          358
+        ],
+        "20": [
+          168,
+          356
+        ],
+        "21": [
+          184,
+          356
+        ],
+        "22": [
+          154,
+          259
+        ],
+        "23": [
+          208,
+          331
+        ],
+        "27": [
+          131,
+          442
+        ],
+        "28": [
+          164,
+          378
+        ],
+        "29": [
+          184,
+          396
+        ],
+        "30": [
+          266,
+          204
+        ],
+        "31": [
+          187,
+          317
+        ]
+      },
+      "preservedEmitters": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {},
+        "5": {},
+        "6": {},
+        "7": {},
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {
+          "normal": [
+            329,
+            82
+          ]
+        },
+        "13": {
+          "normal": [
+            450,
+            94
+          ]
+        },
+        "14": {
+          "normal": [
+            355,
+            72
+          ]
+        },
+        "15": {
+          "normal": [
+            257,
+            88
+          ]
+        },
+        "16": {
+          "skill0": [
+            342,
+            98
+          ]
+        },
+        "17": {
+          "skill0": [
+            374,
+            91
+          ]
+        },
+        "18": {
+          "skill0": [
+            335,
+            93
+          ]
+        },
+        "19": {
+          "skill1": [
+            376,
+            175
+          ]
+        },
+        "20": {
+          "skill1": [
+            481,
+            155
+          ]
+        },
+        "21": {
+          "skill1": [
+            356,
+            174
+          ]
+        },
+        "22": {
+          "skill2": [
+            338,
+            74
+          ]
+        },
+        "23": {
+          "skill2": [
+            427,
+            80
+          ]
+        },
+        "27": {},
+        "28": {},
+        "29": {},
+        "30": {},
+        "31": {}
+      },
+      "emitterTargets": {
+        "12": [
+          0.88,
+          0.4
+        ],
+        "13": [
+          0.88,
+          0.4
+        ],
+        "14": [
+          0.88,
+          0.4
+        ],
+        "15": [
+          0.88,
+          0.4
+        ],
+        "16": [
+          0.88,
+          0.4
+        ],
+        "17": [
+          0.88,
+          0.4
+        ],
+        "18": [
+          0.88,
+          0.4
+        ],
+        "19": [
+          0.88,
+          0.4
+        ],
+        "20": [
+          0.88,
+          0.4
+        ],
+        "21": [
+          0.88,
+          0.4
+        ],
+        "22": [
+          0.88,
+          0.4
+        ],
+        "23": [
+          0.88,
+          0.4
+        ],
+        "24": [
+          0.85,
+          0.22
+        ],
+        "25": [
+          0.94,
+          0.25
+        ],
+        "26": [
+          0.86,
+          0.22
+        ]
+      },
+      "referenceHeightBySource": {
+        "walk": 434,
+        "jump-strike": 434,
+        "powers": 434,
+        "states": 436.0
+      },
+      "requested_changes": [
+        "states"
+      ],
+      "changed_frames": [
+        24,
+        25,
+        26
+      ]
     },
     {
       "id": 9,
@@ -2527,21 +3225,304 @@
       "id": 11,
       "slug": "wildvine",
       "batch": 9,
-      "status": "verified_unchanged",
+      "status": "in_progress",
       "findings": [
         "All32 frames inspected: flytrap collar, central eye, back pods and vine-root anatomy stay coherent.",
         "Retained root-stepping gait, vine extension and elastic recovery; deliberate vines are part of the body animation."
       ],
       "changed_files": [],
       "checks": {
-        "native_frames": 32,
-        "states": 12,
-        "facings": 2,
-        "actual_draws": 240,
-        "passed": true
+        "passed": false
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "revision": 1,
+      "requestedRepair124": true,
+      "renderHeight": 226,
+      "scale": 1.05,
+      "sources": {
+        "walk": "ci/animation-review/characters/wildvine/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/wildvine/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/wildvine/source-powers.webp",
+        "states": "ci/animation-review/characters/wildvine/source-states.webp"
+      },
+      "prompts": {
+        "states": "Production 2D sprite sheet using EXACT attached current wildvine design as identity reference. EXACT green Florauna reference: flytrap-shaped yellow/green head flaps around a black face with ONE bright BLUE eye, thin plant torso/chest Omnitrix, back seed pods, TWO long leaf/vine arms with long fingers, FIVE connected flexible vine legs with leafy root feet. No human face, no extra eyes, preserve five legs and current colors. Exactly8 separate complete FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2rows, row-major: 1 Overgrowth windup lowering torso, five root feet spread/planted and arms drawn upward;2 active Overgrowth root-channeling stance, five vine legs firmly planted and arms spread with palms aimed toward ground, same head and blue eye;3 recovery rising from planted-root stance;4 neutral five-legged standing matching reference;5 vine-arm defensive guard;6 upright recoil supported by root feet;7 defeated lying side, full connected limbs;8 low five-leg dash/crawl. Crisp TV-cartoon black outlines and flat original-series cel shading, same body/head across poses. Effects will be animated separately: NO energy, flames, water, tornados, roots erupting outside body, long launched bandages, rocks, auras, trails, floor, cast shadows, text or labels. Opaque bodies on true transparency. Native upright-equivalent detail400-470px, quadruped body height330-400px; whole limbs/lure/appendages safely inside canvas,30px clear outer margins and gutters, no touching/overlap/cropping.",
+        "powers": "Production BODY-ONLY native sprite sheet using attached current wildvine image as exact identity reference. Exact current five-legged green plant alien: flytrap yellow/green head flaps framing black face with ONE blue eye, green thin torso/chest Omnitrix, seed pods on back, two long leaf/vine arms and FIVE vine-root legs with leafy feet. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses, 4columns x2rows. Row-major: 1 vine-lash anticipation, leaf hand drawn back;2 vine-lash release with own vine arm extendedRIGHT and leaf fingers open, no external detached vine;3 arm recovery;4 seed-bomb windup holding ONE small green seed pod in rear hand;5 empty throwing-hand releaseRIGHT;6 throwing recovery;7 Root-eruption windup lowering torso, five vine legs planting firmly and both palms lifting;8 root-release crouch with five vine-root feet spread and pressed DOWN and two hands directed toward ground; same head/eye/pods. NO roots growing outside body or surrounding forest drawn: those are procedural effects. Same proportions, face and costume across all poses; crisp black TV-cartoon outlines, flat original-series cel shading, high native detail. True transparent background, opaque bodies,30px clear safe outer margins/gutters. All head spines, tail, hands, root feet and toes fully visible; never crop/overlap. Desired native body detail400-470px tall. NO emitted spit, projectiles, aura, full external tongues, long launched ribbons, roots/forest outside body, sparks, trails, floor, cast shadow, dust, text or labels."
+      },
+      "generation_inputs": {
+        "states": "ci/animation-review/characters/wildvine/model-reference.webp",
+        "powers": "ci/animation-review/characters/wildvine/model-reference.webp"
+      },
+      "accepted_generated_sources": {
+        "powers": "ci/animation-review/characters/wildvine/generated-powers.webp",
+        "states": "ci/animation-review/characters/wildvine/generated-states.webp"
+      },
+      "generated_frame_selections": {
+        "powers": {
+          "16": 0,
+          "17": 1,
+          "18": 2,
+          "19": 3,
+          "20": 4,
+          "21": 5,
+          "22": 6,
+          "23": 7
+        },
+        "states": {
+          "24": 0,
+          "25": 1,
+          "26": 2
+        }
+      },
+      "frameReferenceHeights": {
+        "0": 442,
+        "1": 442,
+        "2": 442,
+        "3": 442,
+        "4": 442,
+        "5": 442,
+        "6": 442,
+        "7": 442,
+        "8": 442,
+        "9": 442,
+        "10": 442,
+        "11": 442,
+        "12": 442,
+        "13": 442,
+        "14": 442,
+        "15": 442,
+        "16": 439.0,
+        "17": 439.0,
+        "18": 439.0,
+        "19": 439.0,
+        "20": 439.0,
+        "21": 439.0,
+        "22": 439.0,
+        "23": 439.0,
+        "24": 441.0,
+        "25": 441.0,
+        "26": 441.0,
+        "27": 442,
+        "28": 442,
+        "29": 442,
+        "30": 442,
+        "31": 442
+      },
+      "frameOrigins": {
+        "0": [
+          246,
+          452
+        ],
+        "1": [
+          244,
+          450
+        ],
+        "2": [
+          241,
+          449
+        ],
+        "3": [
+          234,
+          440
+        ],
+        "4": [
+          264,
+          444
+        ],
+        "5": [
+          260,
+          437
+        ],
+        "6": [
+          265,
+          444
+        ],
+        "7": [
+          248,
+          444
+        ],
+        "8": [
+          233,
+          335
+        ],
+        "9": [
+          247,
+          463
+        ],
+        "10": [
+          191,
+          472.6
+        ],
+        "11": [
+          228,
+          317
+        ],
+        "12": [
+          240,
+          416
+        ],
+        "13": [
+          224,
+          387
+        ],
+        "14": [
+          273,
+          407
+        ],
+        "15": [
+          245,
+          437
+        ],
+        "27": [
+          229,
+          450
+        ],
+        "28": [
+          263,
+          413
+        ],
+        "29": [
+          232,
+          406
+        ],
+        "30": [
+          233,
+          215
+        ],
+        "31": [
+          231,
+          397
+        ]
+      },
+      "preservedEmitters": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {},
+        "5": {},
+        "6": {},
+        "7": {},
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {
+          "normal": [
+            384,
+            203
+          ]
+        },
+        "13": {
+          "normal": [
+            507,
+            170
+          ]
+        },
+        "14": {
+          "normal": [
+            407,
+            188
+          ]
+        },
+        "15": {
+          "normal": [
+            342,
+            238
+          ]
+        },
+        "27": {},
+        "28": {},
+        "29": {},
+        "30": {},
+        "31": {}
+      },
+      "emitterTargets": {
+        "12": [
+          0.88,
+          0.4
+        ],
+        "13": [
+          0.88,
+          0.4
+        ],
+        "14": [
+          0.88,
+          0.4
+        ],
+        "15": [
+          0.88,
+          0.4
+        ],
+        "16": [
+          0.15,
+          0.3
+        ],
+        "17": [
+          0.98,
+          0.33
+        ],
+        "18": [
+          0.9,
+          0.5
+        ],
+        "19": [
+          0.25,
+          0.18
+        ],
+        "20": [
+          0.96,
+          0.38
+        ],
+        "21": [
+          0.87,
+          0.48
+        ],
+        "22": [
+          0.55,
+          0.97
+        ],
+        "23": [
+          0.55,
+          0.97
+        ],
+        "24": [
+          0.55,
+          0.97
+        ],
+        "25": [
+          0.55,
+          0.97
+        ],
+        "26": [
+          0.55,
+          0.97
+        ]
+      },
+      "referenceHeightBySource": {
+        "walk": 442,
+        "jump-strike": 442,
+        "powers": 439.0,
+        "states": 441.0
+      },
+      "requested_changes": [
+        "states",
+        "powers"
+      ],
+      "changed_frames": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
     },
     {
       "id": 12,
@@ -2567,21 +3548,304 @@
       "id": 13,
       "slug": "snare-oh",
       "batch": 9,
-      "status": "verified_unchanged",
+      "status": "in_progress",
       "findings": [
         "All32 frames inspected: gold wrappings, black gaps, head silhouette and trailing bandages remain coherent.",
         "Retained bandage elongation and wrapping gestures as specific morphology, without replacing them with a generic punch loop."
       ],
       "changed_files": [],
       "checks": {
-        "native_frames": 32,
-        "states": 12,
-        "facings": 2,
-        "actual_draws": 240,
-        "passed": true
+        "passed": false
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "revision": 1,
+      "requestedRepair124": true,
+      "renderHeight": 226,
+      "scale": 1.05,
+      "sources": {
+        "walk": "ci/animation-review/characters/snare-oh/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/snare-oh/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/snare-oh/source-powers.webp",
+        "states": "ci/animation-review/characters/snare-oh/source-states.webp"
+      },
+      "prompts": {
+        "states": "Production 2D sprite sheet using EXACT attached current snare-oh design as identity reference. EXACT tall slender living mummy made of tan/golden bandage strips over black body gaps; pointed wrapped pharaoh head, black angular face with TWO green eyes, chest Omnitrix, long wrapped arms and legs, trailing attached head/body bandage ends. Same proportions/colors, no human exposed skin or extra limbs. Exactly8 separate complete FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2rows, row-major: 1 Royal-bind windup with two hands drawn back, short bandage ends loosening at wrists;2 active Royal-bind release with both wrapped arms extendedRIGHT, palms open and two short connected bandage ends lifted from wrists, no long full ribbons drawn across sheet;3 wrist/arm retraction and winding back into guard;4 neutral standing matching reference;5 defensive wrapped-forearm guard;6 upright hit recoil feet planted;7 defeated lying sideways, all parts attached;8 low forward sand-rush dash stance. Crisp TV-cartoon black outlines and flat original-series cel shading, same body/head across poses. Effects will be animated separately: NO energy, flames, water, tornados, roots erupting outside body, long launched bandages, rocks, auras, trails, floor, cast shadows, text or labels. Opaque bodies on true transparency. Native upright-equivalent detail400-470px, quadruped body height330-400px; whole limbs/lure/appendages safely inside canvas,30px clear outer margins and gutters, no touching/overlap/cropping.",
+        "powers": "Production BODY-ONLY native sprite sheet using attached current snare-oh image as exact identity reference. Exact reference tall slender tan/golden mummy bandage body over black gaps, pointed wrapped pharaoh head, angular black face with two green eyes, chest badge, long wrapped arms/legs, same trailing attached head/body strip ends. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses, 4columns x2rows. Row-major: 1 bandage-lash windup pulling wrist back;2 lash release with wrapped forearm extendedRIGHT and SHORT loose connected wrist-strip tip;3 arm retraction;4 binding-wrap windup drawing two wrapped hands toward chest, short wrist ends unspooling;5 binding release BOTH arms forwardRIGHT, palms open and two SHORT connected loose wrist-strip ends, but no launched long ribbons;6 retraction/winding into guard;7 sand-rush crouch with strip ends trailing;8 forward rush pose with connected mummy limbs and trailing strip ends. Exact same wrapped model throughout, no disappearance or tornado body. Same proportions, face and costume across all poses; crisp black TV-cartoon outlines, flat original-series cel shading, high native detail. True transparent background, opaque bodies,30px clear safe outer margins/gutters. All head spines, tail, hands, root feet and toes fully visible; never crop/overlap. Desired native body detail400-470px tall. NO emitted spit, projectiles, aura, full external tongues, long launched ribbons, roots/forest outside body, sparks, trails, floor, cast shadow, dust, text or labels."
+      },
+      "generation_inputs": {
+        "states": "ci/animation-review/characters/snare-oh/model-reference.webp",
+        "powers": "ci/animation-review/characters/snare-oh/model-reference.webp"
+      },
+      "accepted_generated_sources": {
+        "powers": "ci/animation-review/characters/snare-oh/generated-powers.webp",
+        "states": "ci/animation-review/characters/snare-oh/generated-states.webp"
+      },
+      "generated_frame_selections": {
+        "powers": {
+          "16": 0,
+          "17": 1,
+          "18": 2,
+          "19": 3,
+          "20": 4,
+          "21": 5,
+          "22": 6,
+          "23": 7
+        },
+        "states": {
+          "24": 0,
+          "25": 1,
+          "26": 2
+        }
+      },
+      "frameReferenceHeights": {
+        "0": 435,
+        "1": 435,
+        "2": 435,
+        "3": 435,
+        "4": 435,
+        "5": 435,
+        "6": 435,
+        "7": 435,
+        "8": 435,
+        "9": 435,
+        "10": 435,
+        "11": 435,
+        "12": 435,
+        "13": 435,
+        "14": 435,
+        "15": 435,
+        "16": 478.0,
+        "17": 478.0,
+        "18": 478.0,
+        "19": 478.0,
+        "20": 478.0,
+        "21": 478.0,
+        "22": 478.0,
+        "23": 478.0,
+        "24": 444.0,
+        "25": 444.0,
+        "26": 444.0,
+        "27": 435,
+        "28": 435,
+        "29": 435,
+        "30": 435,
+        "31": 435
+      },
+      "frameOrigins": {
+        "0": [
+          194,
+          441
+        ],
+        "1": [
+          188,
+          445
+        ],
+        "2": [
+          202,
+          442
+        ],
+        "3": [
+          192,
+          444
+        ],
+        "4": [
+          201,
+          437
+        ],
+        "5": [
+          183,
+          438
+        ],
+        "6": [
+          211,
+          440
+        ],
+        "7": [
+          188,
+          443
+        ],
+        "8": [
+          228,
+          333
+        ],
+        "9": [
+          190,
+          442
+        ],
+        "10": [
+          231,
+          411.65
+        ],
+        "11": [
+          201,
+          329
+        ],
+        "12": [
+          244,
+          420
+        ],
+        "13": [
+          191,
+          411
+        ],
+        "14": [
+          185,
+          420
+        ],
+        "15": [
+          188,
+          420
+        ],
+        "27": [
+          154,
+          443
+        ],
+        "28": [
+          162,
+          409
+        ],
+        "29": [
+          195,
+          398
+        ],
+        "30": [
+          268,
+          170
+        ],
+        "31": [
+          203,
+          368
+        ]
+      },
+      "preservedEmitters": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {},
+        "5": {},
+        "6": {},
+        "7": {},
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {
+          "normal": [
+            384,
+            214
+          ]
+        },
+        "13": {
+          "normal": [
+            502,
+            141
+          ]
+        },
+        "14": {
+          "normal": [
+            383,
+            170
+          ]
+        },
+        "15": {
+          "normal": [
+            336,
+            225
+          ]
+        },
+        "27": {},
+        "28": {},
+        "29": {},
+        "30": {},
+        "31": {}
+      },
+      "emitterTargets": {
+        "12": [
+          0.88,
+          0.4
+        ],
+        "13": [
+          0.88,
+          0.4
+        ],
+        "14": [
+          0.88,
+          0.4
+        ],
+        "15": [
+          0.88,
+          0.4
+        ],
+        "16": [
+          0.2,
+          0.2
+        ],
+        "17": [
+          0.94,
+          0.28
+        ],
+        "18": [
+          0.88,
+          0.43
+        ],
+        "19": [
+          0.8,
+          0.33
+        ],
+        "20": [
+          0.95,
+          0.3
+        ],
+        "21": [
+          0.85,
+          0.4
+        ],
+        "22": [
+          0.55,
+          0.5
+        ],
+        "23": [
+          0.55,
+          0.5
+        ],
+        "24": [
+          0.55,
+          0.5
+        ],
+        "25": [
+          0.96,
+          0.28
+        ],
+        "26": [
+          0.85,
+          0.4
+        ]
+      },
+      "referenceHeightBySource": {
+        "walk": 435,
+        "jump-strike": 435,
+        "powers": 478.0,
+        "states": 444.0
+      },
+      "requested_changes": [
+        "states",
+        "powers"
+      ],
+      "changed_frames": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
     },
     {
       "id": 14,
@@ -2607,21 +3871,368 @@
       "id": 15,
       "slug": "upchuck",
       "batch": 10,
-      "status": "verified_unchanged",
+      "status": "in_progress",
       "findings": [
         "All32 frames inspected: green/yellow round body, black/white suit and face remain coherent.",
         "Retained tongue extension, swallowing/body inflation and open-mouth expulsion; these deliberate changes preserve character identity."
       ],
       "changed_files": [],
       "checks": {
-        "native_frames": 32,
-        "states": 12,
-        "facings": 2,
-        "actual_draws": 240,
-        "passed": true
+        "passed": false
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "revision": 1,
+      "requestedRepair124": true,
+      "renderHeight": 226,
+      "scale": 0.78,
+      "sources": {
+        "walk": "ci/animation-review/characters/upchuck/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/upchuck/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/upchuck/source-powers.webp",
+        "states": "ci/animation-review/characters/upchuck/source-states.webp"
+      },
+      "prompts": {
+        "walk": "Use attached image as EXACT identity reference for production 2D game animation. EXACT round olive-green Perk Gourmand from reference: cream lower face and huge cream belly, half-lidded lime eyes, small uneven white teeth, short dark-green back/head nubs, black side vest with white border, green-black Omnitrix on upper arm, short thick arms, tiny stout legs and broad green feet. Same big belly/head, not humanoid skinny legs. 8 distinct smooth SHORT-LEG WADDLE cycle poses: left contact; slight compression; left passing; right reach; right contact; slight compression; right passing; left reach. Small natural belly weight shift and arm swing, feet stay close to body, only SMALL vertical bob. Mouth closed, no attack. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4columns x2rows. Crisp TV-cartoon black outlines, flat original-series cel shading, same character throughout. Body only, no motion trails, auras, electricity, saliva, attacks, floor, cast shadows, words or labels. Opaque artwork on true transparent background. Every paw, spine, tail, hand and toe fully inside canvas,25px transparent gutters and safe outer margins. Target native upright-equivalent detail400-470px; for quadruped native body height330-400px and enough width for complete limbs. Never crop or overlap poses.",
+        "powers": "Production BODY-ONLY native sprite sheet using attached current upchuck image as exact identity reference. Same olive-green round Gourmand, cream face/belly, short dark back nubs, uneven white teeth, black side vest/white trim, upper-arm Omnitrix and short thick legs as reference. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses, 4columns x2rows. Row-major: 1 plasma-spit windup puffing cheeks;2 spit-release with mouth OPEN towardRIGHT and visible deep red inner mouth, feet braced;3 mouth-closing recovery;4 explosive-burp windup belly/cheeks puffed slightly;5 burp release tilting head slightly up, mouth WIDE open with pink tongue base INSIDE;6 recovery lowering head;7 Tongue-lash windup, mouth partly OPEN aimedRIGHT, pink tongue tip INSIDE lips;8 tongue-lash release, mouth OPEN aimedRIGHT, pink tongue bases visible only INSIDE mouth, arms balancing and body braced. NO actual long external tongue: game animates stretching/retraction separately. Same proportions, face and costume across all poses; crisp black TV-cartoon outlines, flat original-series cel shading, high native detail. True transparent background, opaque bodies,30px clear safe outer margins/gutters. All head spines, tail, hands, root feet and toes fully visible; never crop/overlap. Desired native body detail400-470px tall. NO emitted spit, projectiles, aura, full external tongues, long launched ribbons, roots/forest outside body, sparks, trails, floor, cast shadow, dust, text or labels."
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/upchuck/model-reference.webp",
+        "powers": "ci/animation-review/characters/upchuck/model-reference.webp"
+      },
+      "accepted_generated_sources": {
+        "walk": "ci/animation-review/characters/upchuck/generated-walk.webp",
+        "powers": "ci/animation-review/characters/upchuck/generated-powers.webp"
+      },
+      "generated_frame_selections": {
+        "walk": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7
+        },
+        "powers": {
+          "16": 0,
+          "17": 1,
+          "18": 2,
+          "19": 3,
+          "20": 4,
+          "21": 5,
+          "22": 6,
+          "23": 7
+        }
+      },
+      "frameReferenceHeights": {
+        "0": 420.0,
+        "1": 420.0,
+        "2": 420.0,
+        "3": 420.0,
+        "4": 420.0,
+        "5": 420.0,
+        "6": 420.0,
+        "7": 420.0,
+        "8": 370,
+        "9": 370,
+        "10": 370,
+        "11": 370,
+        "12": 370,
+        "13": 370,
+        "14": 370,
+        "15": 370,
+        "16": 427.0,
+        "17": 427.0,
+        "18": 427.0,
+        "19": 427.0,
+        "20": 427.0,
+        "21": 427.0,
+        "22": 427.0,
+        "23": 427.0,
+        "24": 370,
+        "25": 370,
+        "26": 370,
+        "27": 370,
+        "28": 370,
+        "29": 370,
+        "30": 370,
+        "31": 370
+      },
+      "frameOrigins": {
+        "8": [
+          203,
+          345
+        ],
+        "9": [
+          194,
+          422
+        ],
+        "10": [
+          220,
+          411.65
+        ],
+        "11": [
+          214,
+          370
+        ],
+        "12": [
+          216,
+          351
+        ],
+        "13": [
+          244,
+          353
+        ],
+        "14": [
+          199,
+          334
+        ],
+        "15": [
+          178,
+          362
+        ],
+        "24": [
+          226,
+          416
+        ],
+        "25": [
+          232,
+          393
+        ],
+        "26": [
+          189,
+          401
+        ],
+        "27": [
+          156,
+          378
+        ],
+        "28": [
+          190,
+          377
+        ],
+        "29": [
+          212,
+          333
+        ],
+        "30": [
+          258,
+          228
+        ],
+        "31": [
+          219,
+          374
+        ],
+        "0": [
+          252.0,
+          428
+        ],
+        "1": [
+          237.0,
+          406
+        ],
+        "2": [
+          256.0,
+          420
+        ],
+        "3": [
+          273.0,
+          419
+        ],
+        "4": [
+          263.0,
+          416
+        ],
+        "5": [
+          215.0,
+          407
+        ],
+        "6": [
+          263.0,
+          416
+        ],
+        "7": [
+          268.0,
+          414
+        ],
+        "16": [
+          281.0,
+          438
+        ],
+        "17": [
+          286.0,
+          439
+        ],
+        "18": [
+          286.0,
+          435
+        ],
+        "19": [
+          248.0,
+          444
+        ],
+        "20": [
+          290.0,
+          441
+        ],
+        "21": [
+          266.0,
+          425
+        ],
+        "22": [
+          295.0,
+          426
+        ],
+        "23": [
+          288.0,
+          418
+        ]
+      },
+      "preservedEmitters": {
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {
+          "normal": [
+            355,
+            107
+          ]
+        },
+        "13": {
+          "normal": [
+            530,
+            90
+          ]
+        },
+        "14": {
+          "normal": [
+            386,
+            91
+          ]
+        },
+        "15": {
+          "normal": [
+            319,
+            94
+          ]
+        },
+        "24": {
+          "ultimate": [
+            344,
+            134
+          ]
+        },
+        "25": {
+          "ultimate": [
+            574,
+            100
+          ]
+        },
+        "26": {
+          "ultimate": [
+            324,
+            111
+          ]
+        },
+        "27": {},
+        "28": {},
+        "29": {},
+        "30": {},
+        "31": {}
+      },
+      "emitterTargets": {
+        "12": [
+          0.88,
+          0.4
+        ],
+        "13": [
+          0.88,
+          0.4
+        ],
+        "14": [
+          0.88,
+          0.4
+        ],
+        "15": [
+          0.88,
+          0.4
+        ],
+        "16": [
+          0.92,
+          0.25
+        ],
+        "17": [
+          0.92,
+          0.25
+        ],
+        "18": [
+          0.92,
+          0.25
+        ],
+        "19": [
+          0.92,
+          0.25
+        ],
+        "20": [
+          0.82,
+          0.2
+        ],
+        "21": [
+          0.92,
+          0.25
+        ],
+        "22": [
+          0.88,
+          0.32
+        ],
+        "23": [
+          0.88,
+          0.32
+        ],
+        "24": [
+          0.92,
+          0.25
+        ],
+        "25": [
+          0.92,
+          0.25
+        ],
+        "26": [
+          0.92,
+          0.25
+        ]
+      },
+      "referenceHeightBySource": {
+        "walk": 420.0,
+        "jump-strike": 370,
+        "powers": 427.0,
+        "states": 370
+      },
+      "requested_changes": [
+        "walk",
+        "powers"
+      ],
+      "changed_frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
     },
     {
       "id": 16,
@@ -2707,21 +4318,360 @@
       "id": 20,
       "slug": "spitter",
       "batch": 11,
-      "status": "verified_unchanged",
+      "status": "in_progress",
       "findings": [
         "All32 frames inspected: green body, pale throat and tail stay coherent.",
         "Preserved deliberate throat/body inflation and mouth-expulsion poses; no normalization that would erase his swallowing/spitting movement."
       ],
       "changed_files": [],
       "checks": {
-        "native_frames": 32,
-        "states": 12,
-        "facings": 2,
-        "actual_draws": 240,
-        "passed": true
+        "passed": false
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "revision": 1,
+      "requestedRepair124": true,
+      "renderHeight": 226,
+      "scale": 0.94,
+      "sources": {
+        "walk": "ci/animation-review/characters/spitter/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/spitter/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/spitter/source-powers.webp",
+        "states": "ci/animation-review/characters/spitter/source-states.webp"
+      },
+      "prompts": {
+        "walk": "Use attached image as EXACT identity reference for production 2D game animation. EXACT Spitter reference model: bulky olive-green pufferfish-like alien with a huge continuous cream face/belly, small sleepy green eyes, pointed dark-green dorsal head/back spines, ONE long tapered attached tail curling behind, stubby green arms/clawed hands, squat thick legs/clawed feet, black-and-white side suit panels and green belly Omnitrix. Same huge belly/body/head silhouette in every pose, not another fish alien. 8 distinct heavy SHORT-LEG WADDLE walk poses: left foot contact; compression; left passing; right reach; right contact; compression; opposite passing; left reach. Natural small arm counter-swing and attached tail gently swaying. Keep the SAME huge torso width, face, spine count, suit panels, belly badge and size, tiny vertical bob, no stretching or attack. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4columns x2rows. Crisp TV-cartoon black outlines, flat original-series cel shading, same character throughout. Body only, no motion trails, auras, electricity, saliva, attacks, floor, cast shadows, words or labels. Opaque artwork on true transparent background. Every paw, spine, tail, hand and toe fully inside canvas,25px transparent gutters and safe outer margins. Target native upright-equivalent detail400-470px; for quadruped native body height330-400px and enough width for complete limbs. Never crop or overlap poses.",
+        "powers": "Production BODY-ONLY native sprite sheet using attached current spitter image as exact identity reference. EXACT huge olive pufferfish-like body and continuous cream face/belly, sleepy green eyes, dark olive head/back spines, ONE long attached tapered tail, short green clawed limbs, black/white side suit and belly Omnitrix. Same head, spines, body volume, suit panels, belly badge and short legs throughout. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses, 2columns x4rows on a tall canvas so wide connected tail fits. Row-major: 1 pressure-spit windup cheeks tightening;2 pressure-spit release mouth WIDE OPEN aimedRIGHT, deep brown/red inner mouth visible, big cream belly unchanged;3 mouth-closing recovery;4 inflation windup body naturally puffing a little, feet braced;5 inflation release mouth WIDE OPEN, same model with mild natural belly expansion;6 recovery returning to normal body;7 Tail-sweep windup: body crouched, head still facingRIGHT, ONE attached tail coiled behind to LEFT;8 Tail-sweep CONTACT: same body pivots hips, head still facesRIGHT, ONE long attached tail wraps around the flank and whips FORWARD towardRIGHT, tip extending well beyond belly/hand on RIGHT at waist height. Show the full connected sweeping tail from hip to pointed tip, not a disconnected crescent, no second tail. Give this last pose abundant width; long tail makes a real reach rather than being hidden behind body. Same proportions, face and costume across all poses; crisp black TV-cartoon outlines, flat original-series cel shading, high native detail. True transparent background, opaque bodies,30px clear safe outer margins/gutters. All head spines, tail, hands, root feet and toes fully visible; never crop/overlap. Desired native body detail400-470px tall. NO emitted spit, projectiles, aura, full external tongues, long launched ribbons, roots/forest outside body, sparks, trails, floor, cast shadow, dust, text or labels.",
+        "states": "Use attached current Spitter as EXACT identity reference. EXACT Spitter reference model: bulky olive-green pufferfish-like alien with a huge continuous cream face/belly, small sleepy green eyes, pointed dark-green dorsal head/back spines, ONE long tapered attached tail curling behind, stubby green arms/clawed hands, squat thick legs/clawed feet, black-and-white side suit panels and green belly Omnitrix. Same huge belly/body/head silhouette in every pose, not another fish alien. Production high-detail body-only native sprite sheet: exactly8 separate full-body RIGHT-facing/three-quarter poses in4columns x2rows, row-major: 1 ultimate-deluge windup cheeks/body puffed slightly, arms drawn back;2 ultimate release mouth WIDE OPEN aimedRIGHT with visible dark red-brown inside, arms balancing and SAME cream belly/body identity;3 mouth closing and body settling;4 neutral standing exactly like attached reference;5 short arms raised in defensive guard;6 UPRIGHT hit recoil on two feet, not collapsed;7 defeated lying sideways with complete attached tail/spines;8 low forward dash with belly and tail same model. Crisp black TV-cartoon outlines and flat cel shading, preserve SAME pufferfish body volume, face, spine count, tail and suit across poses. All bodies opaque on true transparent background; every spine, complete tail, claw and foot inside canvas with30px safe margins/gutters, no touching/cropping. Native body height400-470px. NO emitted spit/slime/projectiles, auras, trails, floor, cast shadows, dust, text or labels.",
+        "jump-strike": "Use attached current Spitter as EXACT identity reference. EXACT Spitter reference model: bulky olive-green pufferfish-like alien with a huge continuous cream face/belly, small sleepy green eyes, pointed dark-green dorsal head/back spines, ONE long tapered attached tail curling behind, stubby green arms/clawed hands, squat thick legs/clawed feet, black-and-white side suit panels and green belly Omnitrix. Same huge belly/body/head silhouette in every pose, not another fish alien. Production high-detail body-only native sprite sheet: exactly8 separate full-body RIGHT-facing/three-quarter poses in4columns x2rows, row-major: 1 jump preparation crouch on two squat legs;2 rising jump with feet bent below belly;3 descending jump feet ready;4 low landing crouch;5 short-arm punch preparation;6 short-arm fist/palm extended forwardRIGHT;7 arm retraction;8 balanced recovery. SAME giant cream belly, spines, side suit and attached tail throughout, no skinny human legs or altered face. Crisp black TV-cartoon outlines and flat cel shading, preserve SAME pufferfish body volume, face, spine count, tail and suit across poses. All bodies opaque on true transparent background; every spine, complete tail, claw and foot inside canvas with30px safe margins/gutters, no touching/cropping. Native body height400-470px. NO emitted spit/slime/projectiles, auras, trails, floor, cast shadows, dust, text or labels."
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/spitter/model-reference.webp",
+        "powers": "ci/animation-review/characters/spitter/model-reference.webp",
+        "states": "ci/animation-review/characters/spitter/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/spitter/model-reference.webp"
+      },
+      "accepted_generated_sources": {
+        "walk": "ci/animation-review/characters/spitter/generated-walk.webp",
+        "jump-strike": "ci/animation-review/characters/spitter/generated-jump-strike.webp",
+        "powers": "ci/animation-review/characters/spitter/generated-powers.webp",
+        "states": "ci/animation-review/characters/spitter/generated-states.webp"
+      },
+      "generated_frame_selections": {
+        "walk": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7
+        },
+        "jump-strike": {
+          "8": 0,
+          "9": 1,
+          "10": 2,
+          "11": 3,
+          "12": 4,
+          "13": 5,
+          "14": 6,
+          "15": 7
+        },
+        "powers": {
+          "16": 0,
+          "17": 1,
+          "18": 2,
+          "19": 3,
+          "20": 4,
+          "21": 5,
+          "22": 6,
+          "23": 7
+        },
+        "states": {
+          "24": 0,
+          "25": 1,
+          "26": 2,
+          "28": 4,
+          "29": 5,
+          "30": 6,
+          "31": 7
+        }
+      },
+      "frameReferenceHeights": {
+        "0": 405.0,
+        "1": 405.0,
+        "2": 405.0,
+        "3": 405.0,
+        "4": 405.0,
+        "5": 405.0,
+        "6": 405.0,
+        "7": 405.0,
+        "8": 384.0,
+        "9": 384.0,
+        "10": 384.0,
+        "11": 384.0,
+        "12": 384.0,
+        "13": 384.0,
+        "14": 384.0,
+        "15": 384.0,
+        "16": 378.0,
+        "17": 378.0,
+        "18": 378.0,
+        "19": 378.0,
+        "20": 378.0,
+        "21": 378.0,
+        "22": 378.0,
+        "23": 378.0,
+        "24": 386.0,
+        "25": 386.0,
+        "26": 386.0,
+        "27": 317,
+        "28": 386.0,
+        "29": 386.0,
+        "30": 386.0,
+        "31": 386.0
+      },
+      "frameOrigins": {
+        "27": [
+          228,
+          325
+        ],
+        "0": [
+          330.0,
+          413
+        ],
+        "1": [
+          332.0,
+          388
+        ],
+        "2": [
+          339.0,
+          407
+        ],
+        "3": [
+          334.0,
+          408
+        ],
+        "4": [
+          329.0,
+          407
+        ],
+        "5": [
+          323.0,
+          379
+        ],
+        "6": [
+          343.0,
+          408
+        ],
+        "7": [
+          340.0,
+          404
+        ],
+        "8": [
+          344.0,
+          365
+        ],
+        "9": [
+          303.0,
+          452
+        ],
+        "10": [
+          304.0,
+          542.75
+        ],
+        "11": [
+          341.0,
+          329
+        ],
+        "12": [
+          307.0,
+          394
+        ],
+        "13": [
+          296.0,
+          391
+        ],
+        "14": [
+          307.0,
+          386
+        ],
+        "15": [
+          286.0,
+          392
+        ],
+        "16": [
+          374.0,
+          382
+        ],
+        "17": [
+          370.0,
+          382
+        ],
+        "18": [
+          378.0,
+          386
+        ],
+        "19": [
+          365.0,
+          385
+        ],
+        "20": [
+          371.0,
+          387
+        ],
+        "21": [
+          364.0,
+          383
+        ],
+        "22": [
+          338.0,
+          327
+        ],
+        "23": [
+          244.0,
+          341
+        ],
+        "24": [
+          321.0,
+          397
+        ],
+        "25": [
+          272.0,
+          401
+        ],
+        "26": [
+          286.0,
+          394
+        ],
+        "28": [
+          261.0,
+          354
+        ],
+        "29": [
+          240.0,
+          391
+        ],
+        "30": [
+          340.0,
+          234
+        ],
+        "31": [
+          294.0,
+          313
+        ]
+      },
+      "preservedEmitters": {
+        "27": {}
+      },
+      "emitterTargets": {
+        "12": [
+          0.88,
+          0.4
+        ],
+        "13": [
+          0.88,
+          0.4
+        ],
+        "14": [
+          0.88,
+          0.4
+        ],
+        "15": [
+          0.88,
+          0.4
+        ],
+        "16": [
+          0.92,
+          0.25
+        ],
+        "17": [
+          0.92,
+          0.25
+        ],
+        "18": [
+          0.92,
+          0.25
+        ],
+        "19": [
+          0.92,
+          0.25
+        ],
+        "20": [
+          0.92,
+          0.25
+        ],
+        "21": [
+          0.92,
+          0.25
+        ],
+        "22": [
+          0.25,
+          0.12
+        ],
+        "23": [
+          0.98,
+          0.47
+        ],
+        "24": [
+          0.92,
+          0.25
+        ],
+        "25": [
+          0.92,
+          0.25
+        ],
+        "26": [
+          0.92,
+          0.25
+        ]
+      },
+      "referenceHeightBySource": {
+        "walk": 405.0,
+        "jump-strike": 384.0,
+        "powers": 378.0,
+        "states": 386.0
+      },
+      "requested_changes": [
+        "walk",
+        "powers",
+        "states",
+        "jump-strike"
+      ],
+      "changed_frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31
+      ]
     },
     {
       "id": 21,
@@ -3073,7 +5023,7 @@
       "id": 60,
       "slug": "the-worst",
       "batch": 16,
-      "status": "verified_updated",
+      "status": "in_progress",
       "findings": [
         "All32 native frames inspected.",
         "Removed generic spherical ultimate body; retained braced compact defensive posture and yellow body/green shorts."
@@ -3082,14 +5032,359 @@
         "ci/animation-review/characters/the-worst/revision.json"
       ],
       "checks": {
-        "native_frames": 32,
-        "states": 12,
-        "facings": 2,
-        "actual_draws": 240,
-        "passed": true
+        "passed": false
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "revision": 2,
+      "requestedRepair124": true,
+      "renderHeight": 226,
+      "scale": 0.88,
+      "sources": {
+        "walk": "ci/animation-review/characters/the-worst/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/the-worst/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/the-worst/source-powers.webp",
+        "states": "ci/animation-review/characters/the-worst/source-states.webp"
+      },
+      "prompts": {
+        "belly": "Use attached image as EXACT identity reference for production 2D game animation. EXACT The Worst reference: short stocky yellow round alien with small bumps on head/back/shoulders, bored half-lidded green eyes, drooping mouth, very large soft round yellow belly, short thick bare yellow limbs/feet and dark-green patterned shorts with green belt/Omnitrix buckle. Same current facial design and proportions, no sphere transformation. Exactly3 separate full-body RIGHT-facing BELLY BUMP poses in one horizontal row:1 anticipation leaning upper body BACK, belly drawn slightly back, feet braced and both fists held away from belly;2 impact leaning belly FIRST forward to RIGHT, clearly protruding soft round belly as contact surface, hips driving forward, arms thrown BACK for balance, face/head unchanged, no punch;3 recoil/recovery soft belly settles, knees flex, arms return to sides. Keep connected body, SAME belly size except natural squash/stretch; no detached ball and no rocks/effects. Three full figures in3columns x1row. Crisp TV-cartoon black outlines, flat original-series cel shading, same character throughout. Body only, no motion trails, auras, electricity, saliva, attacks, floor, cast shadows, words or labels. Opaque artwork on true transparent background. Every paw, spine, tail, hand and toe fully inside canvas,25px transparent gutters and safe outer margins. Target native upright-equivalent detail400-470px; for quadruped native body height330-400px and enough width for complete limbs. Never crop or overlap poses."
+      },
+      "generation_inputs": {
+        "belly": "ci/animation-review/characters/the-worst/model-reference.webp"
+      },
+      "accepted_generated_sources": {
+        "belly": "ci/animation-review/characters/the-worst/generated-belly.webp"
+      },
+      "generated_frame_selections": {
+        "belly": {
+          "19": 0,
+          "20": 1,
+          "21": 2
+        }
+      },
+      "frameReferenceHeights": {
+        "0": 429,
+        "1": 429,
+        "2": 429,
+        "3": 429,
+        "4": 429,
+        "5": 429,
+        "6": 429,
+        "7": 429,
+        "8": 429,
+        "9": 429,
+        "10": 429,
+        "11": 429,
+        "12": 429,
+        "13": 429,
+        "14": 429,
+        "15": 429,
+        "16": 429,
+        "17": 429,
+        "18": 429,
+        "19": 734.0,
+        "20": 734.0,
+        "21": 734.0,
+        "22": 429,
+        "23": 429,
+        "24": 429,
+        "25": 429,
+        "26": 429,
+        "27": 429,
+        "28": 429,
+        "29": 429,
+        "30": 429,
+        "31": 429
+      },
+      "frameOrigins": {
+        "0": [
+          210,
+          435
+        ],
+        "1": [
+          195,
+          431
+        ],
+        "2": [
+          218,
+          437
+        ],
+        "3": [
+          222,
+          429
+        ],
+        "4": [
+          190,
+          418
+        ],
+        "5": [
+          193,
+          425
+        ],
+        "6": [
+          193,
+          422
+        ],
+        "7": [
+          191,
+          414
+        ],
+        "8": [
+          212,
+          313
+        ],
+        "9": [
+          192,
+          388
+        ],
+        "10": [
+          230,
+          441.55
+        ],
+        "11": [
+          212,
+          308
+        ],
+        "12": [
+          236,
+          383
+        ],
+        "13": [
+          211,
+          381
+        ],
+        "14": [
+          236,
+          385
+        ],
+        "15": [
+          193,
+          393
+        ],
+        "16": [
+          221,
+          373
+        ],
+        "17": [
+          221,
+          332
+        ],
+        "18": [
+          234,
+          377
+        ],
+        "22": [
+          150,
+          390
+        ],
+        "23": [
+          229,
+          314
+        ],
+        "24": [
+          244,
+          385
+        ],
+        "25": [
+          158,
+          320
+        ],
+        "26": [
+          207,
+          312
+        ],
+        "27": [
+          175,
+          437
+        ],
+        "28": [
+          185,
+          408
+        ],
+        "29": [
+          218,
+          404
+        ],
+        "30": [
+          246,
+          272
+        ],
+        "31": [
+          225,
+          268
+        ]
+      },
+      "preservedEmitters": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {},
+        "5": {},
+        "6": {},
+        "7": {},
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {
+          "normal": [
+            402,
+            168
+          ]
+        },
+        "13": {
+          "normal": [
+            439,
+            167
+          ]
+        },
+        "14": {
+          "normal": [
+            389,
+            169
+          ]
+        },
+        "15": {
+          "normal": [
+            346,
+            172
+          ]
+        },
+        "16": {
+          "skill0": [
+            374,
+            164
+          ]
+        },
+        "17": {
+          "skill0": [
+            410,
+            146
+          ]
+        },
+        "18": {
+          "skill0": [
+            389,
+            191
+          ]
+        },
+        "22": {
+          "skill2": [
+            293,
+            155
+          ]
+        },
+        "23": {
+          "skill2": [
+            398,
+            143
+          ],
+          "ultimate": [
+            398,
+            143
+          ]
+        },
+        "24": {
+          "ultimate": [
+            419,
+            200
+          ]
+        },
+        "25": {
+          "ultimate": [
+            289,
+            141
+          ]
+        },
+        "26": {
+          "ultimate": [
+            363,
+            146
+          ]
+        },
+        "27": {},
+        "28": {},
+        "29": {},
+        "30": {},
+        "31": {}
+      },
+      "emitterTargets": {
+        "12": [
+          0.88,
+          0.4
+        ],
+        "13": [
+          0.88,
+          0.4
+        ],
+        "14": [
+          0.88,
+          0.4
+        ],
+        "15": [
+          0.88,
+          0.4
+        ],
+        "16": [
+          0.88,
+          0.4
+        ],
+        "17": [
+          0.88,
+          0.4
+        ],
+        "18": [
+          0.88,
+          0.4
+        ],
+        "19": [
+          0.87,
+          0.58
+        ],
+        "20": [
+          0.98,
+          0.57
+        ],
+        "21": [
+          0.94,
+          0.58
+        ],
+        "22": [
+          0.88,
+          0.4
+        ],
+        "23": [
+          0.88,
+          0.4
+        ],
+        "24": [
+          0.88,
+          0.4
+        ],
+        "25": [
+          0.88,
+          0.4
+        ],
+        "26": [
+          0.88,
+          0.4
+        ]
+      },
+      "referenceHeightBySource": {
+        "walk": 429,
+        "jump-strike": 429,
+        "powers": 429,
+        "states": 429
+      },
+      "requested_changes": [
+        "belly"
+      ],
+      "changed_frames": [
+        19,
+        20,
+        21
+      ]
     },
     {
       "id": 61,

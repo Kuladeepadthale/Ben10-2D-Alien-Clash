@@ -10,7 +10,7 @@ def save_native(image,path):
  buffer=io.BytesIO();image.save(buffer,format='WEBP',lossless=True,quality=100,method=4,exact=True);data=buffer.getvalue();assert len(data)>100;temp=path.with_suffix('.writing');temp.write_bytes(data);os.replace(temp,path);assert path.read_bytes()==data
 cfg=json.loads(subprocess.check_output(['node','-e',"const fs=require('fs'),vm=require('vm'),b=vm.createContext({});vm.runInContext(fs.readFileSync('web/data.js','utf8'),b);console.log(vm.runInContext('JSON.stringify(aliens["+str(id)+"])',b))"],cwd=R))
 assert rec['renderHeight']==cfg['renderHeight'] and rec['scale']==cfg['scale'],'Exporter must use configured body size'
-c={'id':id,'name':slug,'sheets':[],'frames':[],'clips':{},'reviewedRevision':1}
+c={'id':id,'name':slug,'sheets':[],'frames':[],'clips':{},'reviewedRevision':rec.get('revision',1),'requestedRepair124':rec.get('requestedRepair124',False)}
 images=[]
 for si,kind in enumerate(['walk','jump-strike','powers','states']):
  src=R/rec['sources'][kind];poses=whole_poses(Image.open(src),attachment_ratio=rec.get('attachmentRatio',.05));assert len(poses)==8
@@ -21,12 +21,16 @@ for si,kind in enumerate(['walk','jump-strike','powers','states']):
   im=poses[cell][0];a=np.array(im);yy,xx=np.indices(a.shape[:2]);mask=(a[:,:,3]>180)&(yy>h*.48)&(yy<h*.72);anchor=float(np.median(xx[mask])) if mask.any() else w/2
   ground=h+(h*.15 if kind=='jump-strike' and cell==2 else 0)
   c['frames'].append({'sheet':si,'rect':[x-8,y-8,w+16,h+16],'origin':[round(anchor+8,2),round(ground+8,2)],'source':kind,'cell':cell,'bounds':[0,0,w,h],**meta,'referenceHeight':rec.get('frameReferenceHeights',{}).get(str(si*8+cell),rec['referenceHeightBySource'][kind])})
+for fi,f in enumerate(c['frames']):
+ if str(fi) in rec.get('frameOrigins',{}):f['origin']=rec['frameOrigins'][str(fi)]
 c['clips']={'walk':list(range(8)),'jump':list(range(8,12)),'normal':list(range(12,16)),'skill0':[16,17,18],'skill1':[19,20,21],'skill2':[22,23],'ultimate':[24,25,26],'idle':[27],'guard':[28],'hit':[29],'ko':[30],'dash':[31]}
-if slug=='eatle':c['clips']['skill2']=[22,23,21]
+if slug in ['eatle','spitter']:c['clips']['skill2']=[22,23,21]
 c['referenceHeight']=rec['referenceHeightBySource']['states']
 for key in ['normal','skill0','skill1','skill2','ultimate']:
  for fi in c['clips'][key]:
   f=c['frames'][fi];x,y,w,h=f['rect'];a=np.array(images[f['sheet']])[y:y+h,x:x+w];rgb=a[:,:,:3].astype(float)
+  if str(fi) in rec.get('preservedEmitters',{}) and key in rec['preservedEmitters'][str(fi)]:
+   f.setdefault('emitters',{})[key]=rec['preservedEmitters'][str(fi)][key];continue
   if slug=='water-hazard':
    mask=(a[:,:,3]>180)&(rgb[:,:,2]>140)&(rgb[:,:,2]>rgb[:,:,0]*1.3)&(rgb[:,:,2]>rgb[:,:,1]*1.12)
   elif slug=='lodestar':
@@ -49,6 +53,16 @@ for key in ['normal','skill0','skill1','skill2','ultimate']:
    elif slug=='gravattack' and key not in ['normal','skill2']:
     mask=mask&(rgb[:,:,0]>180)&(rgb[:,:,1]>75)&(rgb[:,:,1]>rgb[:,:,2]*1.5)&(rgb[:,:,0]>rgb[:,:,1]*1.04)&(yy>h*.35)&(yy<h*.82);target=[.58,.57]
    ys,xs=np.where(mask);assert len(xs)>0,(slug,key,fi);near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
+  elif slug in ['wildmutt','ripjaws','wildvine','snare-oh','upchuck','spitter','the-worst']:
+   target=rec['emitterTargets'][str(fi)];yy,xx=np.indices(a.shape[:2]);mask=(a[:,:,3]>180)
+   if slug=='spitter' and key=='skill2':
+    if fi==21:target=[.12,.65]
+    mask=mask&(rgb[:,:,0]<180)&(rgb[:,:,1]>45)&(rgb[:,:,1]>rgb[:,:,2]*1.15)
+   elif slug in ['upchuck','spitter'] and key!='normal':
+    if not(slug=='spitter' and key=='skill2'):mask=mask&(rgb[:,:,0]>rgb[:,:,1]*1.1)&(rgb[:,:,0]>rgb[:,:,2]*1.1)&(yy<h*.65)
+   ys,xs=np.where(mask)
+   if len(xs)==0:ys,xs=np.where(a[:,:,3]>180)
+   near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
   elif slug=='clockwork':
    yy,xx=np.indices(a.shape[:2]);mask=(a[:,:,3]>180)
    if fi in [22,23]:

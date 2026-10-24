@@ -1,19 +1,374 @@
 {
   "id": 4,
   "slug": "wildmutt",
-  "status": "verified_unchanged",
-  "reviewed_on": "2026-10-23",
+  "status": "in_progress",
+  "reviewed_on": "2026-10-24",
   "findings": [
     "All32 frames inspected: eyeless orange quadruped identity, shoulder emblem and powerful forelimbs remain coherent.",
     "Retained low gait, crouch/pounce, claw/bite-ready attacks and standing hit recoil; prone pose reserved for defeat."
   ],
   "changed_files": [],
   "checks": {
-    "native_frames": 32,
-    "states": 12,
-    "facings": 2,
-    "actual_draws": 240,
-    "passed": true
+    "passed": false
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "revision": 1,
+  "requestedRepair124": true,
+  "renderHeight": 142,
+  "scale": 0.95,
+  "sources": {
+    "walk": "ci/animation-review/characters/wildmutt/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/wildmutt/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/wildmutt/source-powers.webp",
+    "states": "ci/animation-review/characters/wildmutt/source-states.webp"
+  },
+  "prompts": {
+    "walk": "Use attached image as EXACT identity reference for production 2D game animation. EXACT eyeless orange Vulpimancer from reference: large rounded eyeless head, broad toothed muzzle, three neck gill slits, arched muscular orange back with short fur tufts, huge clawed FOREPAWS and smaller hind paws, black-and-white Omnitrix brace on LEFT shoulder. FOUR-legged quadruped; absolutely no eyes, ears, nose or tail. 8 smooth four-legged TROT cycle poses, row-major: left fore/right hind contact; compression; diagonal pair passing; right fore/left hind reaching; right fore/left hind contact; compression; opposite passing; left fore/right hind reaching. Keep torso/head at nearly constant height and same proportions, all FOUR limbs anatomically attached, natural paws gripping/rolling off ground. No standing upright or humanoid running. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4columns x2rows. Crisp TV-cartoon black outlines, flat original-series cel shading, same character throughout. Body only, no motion trails, auras, electricity, saliva, attacks, floor, cast shadows, words or labels. Opaque artwork on true transparent background. Every paw, spine, tail, hand and toe fully inside canvas,25px transparent gutters and safe outer margins. Target native upright-equivalent detail400-470px; for quadruped native body height330-400px and enough width for complete limbs. Never crop or overlap poses.",
+    "states": "Production 2D sprite sheet using EXACT attached current wildmutt design as identity reference. Eyeless orange four-legged Vulpimancer with big smooth rounded head/toothed muzzle, neck gill slits, arched furred back, huge black-clawed FOREPAWS, smaller hind paws and LEFT shoulder black/white Omnitrix brace. Absolutely NO eyes, ears or tail; same current reference body. Exactly8 separate complete FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2rows, row-major: 1 Apex-hunt anticipation: low four-paw crouch, jaw partly opening;2 Apex-hunt active savage forward lunge to RIGHT, big jaw OPEN, four limbs attached, huge front paws reaching and hind legs driving, eyeless head same shape;3 recoil/landing on four paws with jaw closing;4 neutral four-paw standing;5 low four-paw guard;6 upright-on-four-paws hurt recoil, not collapsed;7 defeated lying on side;8 four-legged low dash. Crisp TV-cartoon black outlines and flat original-series cel shading, same body/head across poses. Effects will be animated separately: NO energy, flames, water, tornados, roots erupting outside body, long launched bandages, rocks, auras, trails, floor, cast shadows, text or labels. Opaque bodies on true transparency. Native upright-equivalent detail400-470px, quadruped body height330-400px; whole limbs/lure/appendages safely inside canvas,30px clear outer margins and gutters, no touching/overlap/cropping."
+  },
+  "generation_inputs": {
+    "walk": "ci/animation-review/characters/wildmutt/model-reference.webp",
+    "states": "ci/animation-review/characters/wildmutt/model-reference.webp"
+  },
+  "accepted_generated_sources": {
+    "walk": "ci/animation-review/characters/wildmutt/generated-walk.webp",
+    "states": "ci/animation-review/characters/wildmutt/generated-states.webp"
+  },
+  "generated_frame_selections": {
+    "walk": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    },
+    "states": {
+      "24": 0,
+      "25": 1,
+      "26": 2
+    }
+  },
+  "frameReferenceHeights": {
+    "0": 329.0,
+    "1": 329.0,
+    "2": 329.0,
+    "3": 329.0,
+    "4": 329.0,
+    "5": 329.0,
+    "6": 329.0,
+    "7": 329.0,
+    "8": 304,
+    "9": 304,
+    "10": 304,
+    "11": 304,
+    "12": 304,
+    "13": 304,
+    "14": 304,
+    "15": 304,
+    "16": 304,
+    "17": 304,
+    "18": 304,
+    "19": 304,
+    "20": 304,
+    "21": 304,
+    "22": 304,
+    "23": 304,
+    "24": 352.0,
+    "25": 352.0,
+    "26": 352.0,
+    "27": 304,
+    "28": 304,
+    "29": 304,
+    "30": 304,
+    "31": 304
+  },
+  "frameOrigins": {
+    "8": [
+      181,
+      248
+    ],
+    "9": [
+      188,
+      360
+    ],
+    "10": [
+      172,
+      310.45
+    ],
+    "11": [
+      221,
+      257
+    ],
+    "12": [
+      197,
+      288
+    ],
+    "13": [
+      256,
+      288
+    ],
+    "14": [
+      209,
+      295
+    ],
+    "15": [
+      176,
+      265
+    ],
+    "16": [
+      177,
+      288
+    ],
+    "17": [
+      336,
+      293
+    ],
+    "18": [
+      186,
+      299
+    ],
+    "19": [
+      147,
+      418
+    ],
+    "20": [
+      221,
+      379
+    ],
+    "21": [
+      200,
+      288
+    ],
+    "22": [
+      199,
+      270
+    ],
+    "23": [
+      248,
+      285
+    ],
+    "27": [
+      166,
+      312
+    ],
+    "28": [
+      198,
+      359
+    ],
+    "29": [
+      124,
+      339
+    ],
+    "30": [
+      248,
+      204
+    ],
+    "31": [
+      200,
+      275
+    ],
+    "0": [
+      257.8,
+      337
+    ],
+    "1": [
+      263.8,
+      339
+    ],
+    "2": [
+      271.8,
+      343
+    ],
+    "3": [
+      279.8,
+      345
+    ],
+    "4": [
+      264.8,
+      340
+    ],
+    "5": [
+      199.8,
+      342
+    ],
+    "6": [
+      268.8,
+      346
+    ],
+    "7": [
+      262.8,
+      336
+    ]
+  },
+  "preservedEmitters": {
+    "8": {},
+    "9": {},
+    "10": {},
+    "11": {},
+    "12": {
+      "normal": [
+        360,
+        112
+      ]
+    },
+    "13": {
+      "normal": [
+        479,
+        136
+      ]
+    },
+    "14": {
+      "normal": [
+        337,
+        115
+      ]
+    },
+    "15": {
+      "normal": [
+        351,
+        104
+      ]
+    },
+    "16": {
+      "skill0": [
+        366,
+        115
+      ]
+    },
+    "17": {
+      "skill0": [
+        489,
+        112
+      ]
+    },
+    "18": {
+      "skill0": [
+        347,
+        137
+      ]
+    },
+    "19": {
+      "skill1": [
+        343,
+        161
+      ]
+    },
+    "20": {
+      "skill1": [
+        325,
+        180
+      ]
+    },
+    "21": {
+      "skill1": [
+        385,
+        123
+      ]
+    },
+    "22": {
+      "skill2": [
+        364,
+        106
+      ]
+    },
+    "23": {
+      "skill2": [
+        426,
+        119
+      ]
+    },
+    "27": {},
+    "28": {},
+    "29": {},
+    "30": {},
+    "31": {}
+  },
+  "emitterTargets": {
+    "12": [
+      0.88,
+      0.4
+    ],
+    "13": [
+      0.88,
+      0.4
+    ],
+    "14": [
+      0.88,
+      0.4
+    ],
+    "15": [
+      0.88,
+      0.4
+    ],
+    "16": [
+      0.88,
+      0.4
+    ],
+    "17": [
+      0.88,
+      0.4
+    ],
+    "18": [
+      0.88,
+      0.4
+    ],
+    "19": [
+      0.88,
+      0.4
+    ],
+    "20": [
+      0.88,
+      0.4
+    ],
+    "21": [
+      0.88,
+      0.4
+    ],
+    "22": [
+      0.88,
+      0.4
+    ],
+    "23": [
+      0.88,
+      0.4
+    ],
+    "24": [
+      0.9,
+      0.3
+    ],
+    "25": [
+      0.93,
+      0.28
+    ],
+    "26": [
+      0.92,
+      0.35
+    ]
+  },
+  "referenceHeightBySource": {
+    "walk": 329.0,
+    "jump-strike": 304,
+    "powers": 304,
+    "states": 352.0
+  },
+  "requested_changes": [
+    "walk",
+    "states"
+  ],
+  "changed_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    24,
+    25,
+    26
+  ]
 }

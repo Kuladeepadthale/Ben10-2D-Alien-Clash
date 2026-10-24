@@ -1,19 +1,358 @@
 {
   "id": 20,
   "slug": "spitter",
-  "status": "verified_unchanged",
-  "reviewed_on": "2026-10-23",
+  "status": "in_progress",
+  "reviewed_on": "2026-10-24",
   "findings": [
     "All32 frames inspected: green body, pale throat and tail stay coherent.",
     "Preserved deliberate throat/body inflation and mouth-expulsion poses; no normalization that would erase his swallowing/spitting movement."
   ],
   "changed_files": [],
   "checks": {
-    "native_frames": 32,
-    "states": 12,
-    "facings": 2,
-    "actual_draws": 240,
-    "passed": true
+    "passed": false
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "revision": 1,
+  "requestedRepair124": true,
+  "renderHeight": 226,
+  "scale": 0.94,
+  "sources": {
+    "walk": "ci/animation-review/characters/spitter/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/spitter/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/spitter/source-powers.webp",
+    "states": "ci/animation-review/characters/spitter/source-states.webp"
+  },
+  "prompts": {
+    "walk": "Use attached image as EXACT identity reference for production 2D game animation. EXACT Spitter reference model: bulky olive-green pufferfish-like alien with a huge continuous cream face/belly, small sleepy green eyes, pointed dark-green dorsal head/back spines, ONE long tapered attached tail curling behind, stubby green arms/clawed hands, squat thick legs/clawed feet, black-and-white side suit panels and green belly Omnitrix. Same huge belly/body/head silhouette in every pose, not another fish alien. 8 distinct heavy SHORT-LEG WADDLE walk poses: left foot contact; compression; left passing; right reach; right contact; compression; opposite passing; left reach. Natural small arm counter-swing and attached tail gently swaying. Keep the SAME huge torso width, face, spine count, suit panels, belly badge and size, tiny vertical bob, no stretching or attack. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4columns x2rows. Crisp TV-cartoon black outlines, flat original-series cel shading, same character throughout. Body only, no motion trails, auras, electricity, saliva, attacks, floor, cast shadows, words or labels. Opaque artwork on true transparent background. Every paw, spine, tail, hand and toe fully inside canvas,25px transparent gutters and safe outer margins. Target native upright-equivalent detail400-470px; for quadruped native body height330-400px and enough width for complete limbs. Never crop or overlap poses.",
+    "powers": "Production BODY-ONLY native sprite sheet using attached current spitter image as exact identity reference. EXACT huge olive pufferfish-like body and continuous cream face/belly, sleepy green eyes, dark olive head/back spines, ONE long attached tapered tail, short green clawed limbs, black/white side suit and belly Omnitrix. Same head, spines, body volume, suit panels, belly badge and short legs throughout. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses, 2columns x4rows on a tall canvas so wide connected tail fits. Row-major: 1 pressure-spit windup cheeks tightening;2 pressure-spit release mouth WIDE OPEN aimedRIGHT, deep brown/red inner mouth visible, big cream belly unchanged;3 mouth-closing recovery;4 inflation windup body naturally puffing a little, feet braced;5 inflation release mouth WIDE OPEN, same model with mild natural belly expansion;6 recovery returning to normal body;7 Tail-sweep windup: body crouched, head still facingRIGHT, ONE attached tail coiled behind to LEFT;8 Tail-sweep CONTACT: same body pivots hips, head still facesRIGHT, ONE long attached tail wraps around the flank and whips FORWARD towardRIGHT, tip extending well beyond belly/hand on RIGHT at waist height. Show the full connected sweeping tail from hip to pointed tip, not a disconnected crescent, no second tail. Give this last pose abundant width; long tail makes a real reach rather than being hidden behind body. Same proportions, face and costume across all poses; crisp black TV-cartoon outlines, flat original-series cel shading, high native detail. True transparent background, opaque bodies,30px clear safe outer margins/gutters. All head spines, tail, hands, root feet and toes fully visible; never crop/overlap. Desired native body detail400-470px tall. NO emitted spit, projectiles, aura, full external tongues, long launched ribbons, roots/forest outside body, sparks, trails, floor, cast shadow, dust, text or labels.",
+    "states": "Use attached current Spitter as EXACT identity reference. EXACT Spitter reference model: bulky olive-green pufferfish-like alien with a huge continuous cream face/belly, small sleepy green eyes, pointed dark-green dorsal head/back spines, ONE long tapered attached tail curling behind, stubby green arms/clawed hands, squat thick legs/clawed feet, black-and-white side suit panels and green belly Omnitrix. Same huge belly/body/head silhouette in every pose, not another fish alien. Production high-detail body-only native sprite sheet: exactly8 separate full-body RIGHT-facing/three-quarter poses in4columns x2rows, row-major: 1 ultimate-deluge windup cheeks/body puffed slightly, arms drawn back;2 ultimate release mouth WIDE OPEN aimedRIGHT with visible dark red-brown inside, arms balancing and SAME cream belly/body identity;3 mouth closing and body settling;4 neutral standing exactly like attached reference;5 short arms raised in defensive guard;6 UPRIGHT hit recoil on two feet, not collapsed;7 defeated lying sideways with complete attached tail/spines;8 low forward dash with belly and tail same model. Crisp black TV-cartoon outlines and flat cel shading, preserve SAME pufferfish body volume, face, spine count, tail and suit across poses. All bodies opaque on true transparent background; every spine, complete tail, claw and foot inside canvas with30px safe margins/gutters, no touching/cropping. Native body height400-470px. NO emitted spit/slime/projectiles, auras, trails, floor, cast shadows, dust, text or labels.",
+    "jump-strike": "Use attached current Spitter as EXACT identity reference. EXACT Spitter reference model: bulky olive-green pufferfish-like alien with a huge continuous cream face/belly, small sleepy green eyes, pointed dark-green dorsal head/back spines, ONE long tapered attached tail curling behind, stubby green arms/clawed hands, squat thick legs/clawed feet, black-and-white side suit panels and green belly Omnitrix. Same huge belly/body/head silhouette in every pose, not another fish alien. Production high-detail body-only native sprite sheet: exactly8 separate full-body RIGHT-facing/three-quarter poses in4columns x2rows, row-major: 1 jump preparation crouch on two squat legs;2 rising jump with feet bent below belly;3 descending jump feet ready;4 low landing crouch;5 short-arm punch preparation;6 short-arm fist/palm extended forwardRIGHT;7 arm retraction;8 balanced recovery. SAME giant cream belly, spines, side suit and attached tail throughout, no skinny human legs or altered face. Crisp black TV-cartoon outlines and flat cel shading, preserve SAME pufferfish body volume, face, spine count, tail and suit across poses. All bodies opaque on true transparent background; every spine, complete tail, claw and foot inside canvas with30px safe margins/gutters, no touching/cropping. Native body height400-470px. NO emitted spit/slime/projectiles, auras, trails, floor, cast shadows, dust, text or labels."
+  },
+  "generation_inputs": {
+    "walk": "ci/animation-review/characters/spitter/model-reference.webp",
+    "powers": "ci/animation-review/characters/spitter/model-reference.webp",
+    "states": "ci/animation-review/characters/spitter/model-reference.webp",
+    "jump-strike": "ci/animation-review/characters/spitter/model-reference.webp"
+  },
+  "accepted_generated_sources": {
+    "walk": "ci/animation-review/characters/spitter/generated-walk.webp",
+    "jump-strike": "ci/animation-review/characters/spitter/generated-jump-strike.webp",
+    "powers": "ci/animation-review/characters/spitter/generated-powers.webp",
+    "states": "ci/animation-review/characters/spitter/generated-states.webp"
+  },
+  "generated_frame_selections": {
+    "walk": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    },
+    "jump-strike": {
+      "8": 0,
+      "9": 1,
+      "10": 2,
+      "11": 3,
+      "12": 4,
+      "13": 5,
+      "14": 6,
+      "15": 7
+    },
+    "powers": {
+      "16": 0,
+      "17": 1,
+      "18": 2,
+      "19": 3,
+      "20": 4,
+      "21": 5,
+      "22": 6,
+      "23": 7
+    },
+    "states": {
+      "24": 0,
+      "25": 1,
+      "26": 2,
+      "28": 4,
+      "29": 5,
+      "30": 6,
+      "31": 7
+    }
+  },
+  "frameReferenceHeights": {
+    "0": 405.0,
+    "1": 405.0,
+    "2": 405.0,
+    "3": 405.0,
+    "4": 405.0,
+    "5": 405.0,
+    "6": 405.0,
+    "7": 405.0,
+    "8": 384.0,
+    "9": 384.0,
+    "10": 384.0,
+    "11": 384.0,
+    "12": 384.0,
+    "13": 384.0,
+    "14": 384.0,
+    "15": 384.0,
+    "16": 378.0,
+    "17": 378.0,
+    "18": 378.0,
+    "19": 378.0,
+    "20": 378.0,
+    "21": 378.0,
+    "22": 378.0,
+    "23": 378.0,
+    "24": 386.0,
+    "25": 386.0,
+    "26": 386.0,
+    "27": 317,
+    "28": 386.0,
+    "29": 386.0,
+    "30": 386.0,
+    "31": 386.0
+  },
+  "frameOrigins": {
+    "27": [
+      228,
+      325
+    ],
+    "0": [
+      330.0,
+      413
+    ],
+    "1": [
+      332.0,
+      388
+    ],
+    "2": [
+      339.0,
+      407
+    ],
+    "3": [
+      334.0,
+      408
+    ],
+    "4": [
+      329.0,
+      407
+    ],
+    "5": [
+      323.0,
+      379
+    ],
+    "6": [
+      343.0,
+      408
+    ],
+    "7": [
+      340.0,
+      404
+    ],
+    "8": [
+      344.0,
+      365
+    ],
+    "9": [
+      303.0,
+      452
+    ],
+    "10": [
+      304.0,
+      542.75
+    ],
+    "11": [
+      341.0,
+      329
+    ],
+    "12": [
+      307.0,
+      394
+    ],
+    "13": [
+      296.0,
+      391
+    ],
+    "14": [
+      307.0,
+      386
+    ],
+    "15": [
+      286.0,
+      392
+    ],
+    "16": [
+      374.0,
+      382
+    ],
+    "17": [
+      370.0,
+      382
+    ],
+    "18": [
+      378.0,
+      386
+    ],
+    "19": [
+      365.0,
+      385
+    ],
+    "20": [
+      371.0,
+      387
+    ],
+    "21": [
+      364.0,
+      383
+    ],
+    "22": [
+      338.0,
+      327
+    ],
+    "23": [
+      244.0,
+      341
+    ],
+    "24": [
+      321.0,
+      397
+    ],
+    "25": [
+      272.0,
+      401
+    ],
+    "26": [
+      286.0,
+      394
+    ],
+    "28": [
+      261.0,
+      354
+    ],
+    "29": [
+      240.0,
+      391
+    ],
+    "30": [
+      340.0,
+      234
+    ],
+    "31": [
+      294.0,
+      313
+    ]
+  },
+  "preservedEmitters": {
+    "27": {}
+  },
+  "emitterTargets": {
+    "12": [
+      0.88,
+      0.4
+    ],
+    "13": [
+      0.88,
+      0.4
+    ],
+    "14": [
+      0.88,
+      0.4
+    ],
+    "15": [
+      0.88,
+      0.4
+    ],
+    "16": [
+      0.92,
+      0.25
+    ],
+    "17": [
+      0.92,
+      0.25
+    ],
+    "18": [
+      0.92,
+      0.25
+    ],
+    "19": [
+      0.92,
+      0.25
+    ],
+    "20": [
+      0.92,
+      0.25
+    ],
+    "21": [
+      0.92,
+      0.25
+    ],
+    "22": [
+      0.25,
+      0.12
+    ],
+    "23": [
+      0.98,
+      0.47
+    ],
+    "24": [
+      0.92,
+      0.25
+    ],
+    "25": [
+      0.92,
+      0.25
+    ],
+    "26": [
+      0.92,
+      0.25
+    ]
+  },
+  "referenceHeightBySource": {
+    "walk": 405.0,
+    "jump-strike": 384.0,
+    "powers": 378.0,
+    "states": 386.0
+  },
+  "requested_changes": [
+    "walk",
+    "powers",
+    "states",
+    "jump-strike"
+  ],
+  "changed_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    28,
+    29,
+    30,
+    31
+  ]
 }

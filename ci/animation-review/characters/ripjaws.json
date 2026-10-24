@@ -1,18 +1,361 @@
 {
   "id": 8,
   "slug": "ripjaws",
-  "status": "needs_revision",
-  "reviewed_on": "2026-10-23",
+  "status": "in_progress",
+  "reviewed_on": "2026-10-24",
   "findings": [
     "Walk cycle omits the head lure visible in jump, attacks and idle; these models need reconciliation.",
     "Preserve webbed limbs, dorsal fin and wide jaw bite animation when repairing the lure."
   ],
   "changed_files": [],
   "checks": {
-    "native_frames": 32,
-    "visual_review": true,
     "passed": false
   },
   "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
-  "stage": "Repair walk lure before approval"
+  "stage": "Repair walk lure before approval",
+  "revision": 1,
+  "requestedRepair124": true,
+  "renderHeight": 226,
+  "scale": 1.05,
+  "sources": {
+    "walk": "ci/animation-review/characters/ripjaws/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/ripjaws/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/ripjaws/source-powers.webp",
+    "states": "ci/animation-review/characters/ripjaws/source-states.webp"
+  },
+  "prompts": {
+    "states": "Production 2D sprite sheet using EXACT attached current ripjaws design as identity reference. Classic pale gray-white fish humanoid with dark-green dorsal head/back fin, ONE attached anglerfish forehead lure ending in yellow bulb, small dark round eye, huge tooth-filled jaw with yellow pointed teeth, long clawed hands, black torso/waist suit and chest Omnitrix. Preserve current same pale body/green fins/black suit; two arms/two legs, no shark transformation. Exactly8 separate complete FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2rows, row-major: 1 Deep-sea-frenzy anticipation crouching, jaw opening and clawed arms drawn back;2 active forward BITE lunge to RIGHT, jaws WIDE open, attached yellow-bulb lure sweeping back, claws reaching and legs pushing, same fish humanoid body;3 jaws closing and claw arms retracting into landing/recovery;4 neutral standing matching reference;5 defensive forearms guard;6 upright hit recoil feet planted;7 defeated side lying, lure intact;8 low running dash. Crisp TV-cartoon black outlines and flat original-series cel shading, same body/head across poses. Effects will be animated separately: NO energy, flames, water, tornados, roots erupting outside body, long launched bandages, rocks, auras, trails, floor, cast shadows, text or labels. Opaque bodies on true transparency. Native upright-equivalent detail400-470px, quadruped body height330-400px; whole limbs/lure/appendages safely inside canvas,30px clear outer margins and gutters, no touching/overlap/cropping."
+  },
+  "generation_inputs": {
+    "states": "ci/animation-review/characters/ripjaws/model-reference.webp"
+  },
+  "accepted_generated_sources": {
+    "states": "ci/animation-review/characters/ripjaws/generated-states.webp"
+  },
+  "generated_frame_selections": {
+    "states": {
+      "24": 0,
+      "25": 1,
+      "26": 2
+    }
+  },
+  "frameReferenceHeights": {
+    "0": 434,
+    "1": 434,
+    "2": 434,
+    "3": 434,
+    "4": 434,
+    "5": 434,
+    "6": 434,
+    "7": 434,
+    "8": 434,
+    "9": 434,
+    "10": 434,
+    "11": 434,
+    "12": 434,
+    "13": 434,
+    "14": 434,
+    "15": 434,
+    "16": 434,
+    "17": 434,
+    "18": 434,
+    "19": 434,
+    "20": 434,
+    "21": 434,
+    "22": 434,
+    "23": 434,
+    "24": 436.0,
+    "25": 436.0,
+    "26": 436.0,
+    "27": 434,
+    "28": 434,
+    "29": 434,
+    "30": 434,
+    "31": 434
+  },
+  "frameOrigins": {
+    "0": [
+      148,
+      441
+    ],
+    "1": [
+      127,
+      436
+    ],
+    "2": [
+      130,
+      439
+    ],
+    "3": [
+      136,
+      442
+    ],
+    "4": [
+      148,
+      438
+    ],
+    "5": [
+      127,
+      434
+    ],
+    "6": [
+      125,
+      434
+    ],
+    "7": [
+      138,
+      437
+    ],
+    "8": [
+      144,
+      286
+    ],
+    "9": [
+      159,
+      405
+    ],
+    "10": [
+      179,
+      431.2
+    ],
+    "11": [
+      197,
+      302
+    ],
+    "12": [
+      212,
+      370
+    ],
+    "13": [
+      174,
+      369
+    ],
+    "14": [
+      197,
+      395
+    ],
+    "15": [
+      151,
+      405
+    ],
+    "16": [
+      179,
+      399
+    ],
+    "17": [
+      184,
+      426
+    ],
+    "18": [
+      183,
+      366
+    ],
+    "19": [
+      217,
+      358
+    ],
+    "20": [
+      168,
+      356
+    ],
+    "21": [
+      184,
+      356
+    ],
+    "22": [
+      154,
+      259
+    ],
+    "23": [
+      208,
+      331
+    ],
+    "27": [
+      131,
+      442
+    ],
+    "28": [
+      164,
+      378
+    ],
+    "29": [
+      184,
+      396
+    ],
+    "30": [
+      266,
+      204
+    ],
+    "31": [
+      187,
+      317
+    ]
+  },
+  "preservedEmitters": {
+    "0": {},
+    "1": {},
+    "2": {},
+    "3": {},
+    "4": {},
+    "5": {},
+    "6": {},
+    "7": {},
+    "8": {},
+    "9": {},
+    "10": {},
+    "11": {},
+    "12": {
+      "normal": [
+        329,
+        82
+      ]
+    },
+    "13": {
+      "normal": [
+        450,
+        94
+      ]
+    },
+    "14": {
+      "normal": [
+        355,
+        72
+      ]
+    },
+    "15": {
+      "normal": [
+        257,
+        88
+      ]
+    },
+    "16": {
+      "skill0": [
+        342,
+        98
+      ]
+    },
+    "17": {
+      "skill0": [
+        374,
+        91
+      ]
+    },
+    "18": {
+      "skill0": [
+        335,
+        93
+      ]
+    },
+    "19": {
+      "skill1": [
+        376,
+        175
+      ]
+    },
+    "20": {
+      "skill1": [
+        481,
+        155
+      ]
+    },
+    "21": {
+      "skill1": [
+        356,
+        174
+      ]
+    },
+    "22": {
+      "skill2": [
+        338,
+        74
+      ]
+    },
+    "23": {
+      "skill2": [
+        427,
+        80
+      ]
+    },
+    "27": {},
+    "28": {},
+    "29": {},
+    "30": {},
+    "31": {}
+  },
+  "emitterTargets": {
+    "12": [
+      0.88,
+      0.4
+    ],
+    "13": [
+      0.88,
+      0.4
+    ],
+    "14": [
+      0.88,
+      0.4
+    ],
+    "15": [
+      0.88,
+      0.4
+    ],
+    "16": [
+      0.88,
+      0.4
+    ],
+    "17": [
+      0.88,
+      0.4
+    ],
+    "18": [
+      0.88,
+      0.4
+    ],
+    "19": [
+      0.88,
+      0.4
+    ],
+    "20": [
+      0.88,
+      0.4
+    ],
+    "21": [
+      0.88,
+      0.4
+    ],
+    "22": [
+      0.88,
+      0.4
+    ],
+    "23": [
+      0.88,
+      0.4
+    ],
+    "24": [
+      0.85,
+      0.22
+    ],
+    "25": [
+      0.94,
+      0.25
+    ],
+    "26": [
+      0.86,
+      0.22
+    ]
+  },
+  "referenceHeightBySource": {
+    "walk": 434,
+    "jump-strike": 434,
+    "powers": 434,
+    "states": 436.0
+  },
+  "requested_changes": [
+    "states"
+  ],
+  "changed_frames": [
+    24,
+    25,
+    26
+  ]
 }

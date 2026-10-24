@@ -1,19 +1,350 @@
 {
   "id": 11,
   "slug": "wildvine",
-  "status": "verified_unchanged",
-  "reviewed_on": "2026-10-23",
+  "status": "in_progress",
+  "reviewed_on": "2026-10-24",
   "findings": [
     "All32 frames inspected: flytrap collar, central eye, back pods and vine-root anatomy stay coherent.",
     "Retained root-stepping gait, vine extension and elastic recovery; deliberate vines are part of the body animation."
   ],
   "changed_files": [],
   "checks": {
-    "native_frames": 32,
-    "states": 12,
-    "facings": 2,
-    "actual_draws": 240,
-    "passed": true
+    "passed": false
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "revision": 1,
+  "requestedRepair124": true,
+  "renderHeight": 226,
+  "scale": 1.05,
+  "sources": {
+    "walk": "ci/animation-review/characters/wildvine/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/wildvine/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/wildvine/source-powers.webp",
+    "states": "ci/animation-review/characters/wildvine/source-states.webp"
+  },
+  "prompts": {
+    "states": "Production 2D sprite sheet using EXACT attached current wildvine design as identity reference. EXACT green Florauna reference: flytrap-shaped yellow/green head flaps around a black face with ONE bright BLUE eye, thin plant torso/chest Omnitrix, back seed pods, TWO long leaf/vine arms with long fingers, FIVE connected flexible vine legs with leafy root feet. No human face, no extra eyes, preserve five legs and current colors. Exactly8 separate complete FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2rows, row-major: 1 Overgrowth windup lowering torso, five root feet spread/planted and arms drawn upward;2 active Overgrowth root-channeling stance, five vine legs firmly planted and arms spread with palms aimed toward ground, same head and blue eye;3 recovery rising from planted-root stance;4 neutral five-legged standing matching reference;5 vine-arm defensive guard;6 upright recoil supported by root feet;7 defeated lying side, full connected limbs;8 low five-leg dash/crawl. Crisp TV-cartoon black outlines and flat original-series cel shading, same body/head across poses. Effects will be animated separately: NO energy, flames, water, tornados, roots erupting outside body, long launched bandages, rocks, auras, trails, floor, cast shadows, text or labels. Opaque bodies on true transparency. Native upright-equivalent detail400-470px, quadruped body height330-400px; whole limbs/lure/appendages safely inside canvas,30px clear outer margins and gutters, no touching/overlap/cropping.",
+    "powers": "Production BODY-ONLY native sprite sheet using attached current wildvine image as exact identity reference. Exact current five-legged green plant alien: flytrap yellow/green head flaps framing black face with ONE blue eye, green thin torso/chest Omnitrix, seed pods on back, two long leaf/vine arms and FIVE vine-root legs with leafy feet. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses, 4columns x2rows. Row-major: 1 vine-lash anticipation, leaf hand drawn back;2 vine-lash release with own vine arm extendedRIGHT and leaf fingers open, no external detached vine;3 arm recovery;4 seed-bomb windup holding ONE small green seed pod in rear hand;5 empty throwing-hand releaseRIGHT;6 throwing recovery;7 Root-eruption windup lowering torso, five vine legs planting firmly and both palms lifting;8 root-release crouch with five vine-root feet spread and pressed DOWN and two hands directed toward ground; same head/eye/pods. NO roots growing outside body or surrounding forest drawn: those are procedural effects. Same proportions, face and costume across all poses; crisp black TV-cartoon outlines, flat original-series cel shading, high native detail. True transparent background, opaque bodies,30px clear safe outer margins/gutters. All head spines, tail, hands, root feet and toes fully visible; never crop/overlap. Desired native body detail400-470px tall. NO emitted spit, projectiles, aura, full external tongues, long launched ribbons, roots/forest outside body, sparks, trails, floor, cast shadow, dust, text or labels."
+  },
+  "generation_inputs": {
+    "states": "ci/animation-review/characters/wildvine/model-reference.webp",
+    "powers": "ci/animation-review/characters/wildvine/model-reference.webp"
+  },
+  "accepted_generated_sources": {
+    "powers": "ci/animation-review/characters/wildvine/generated-powers.webp",
+    "states": "ci/animation-review/characters/wildvine/generated-states.webp"
+  },
+  "generated_frame_selections": {
+    "powers": {
+      "22": 6,
+      "23": 7
+    },
+    "states": {
+      "24": 0,
+      "25": 1,
+      "26": 2
+    }
+  },
+  "frameReferenceHeights": {
+    "0": 442,
+    "1": 442,
+    "2": 442,
+    "3": 442,
+    "4": 442,
+    "5": 442,
+    "6": 442,
+    "7": 442,
+    "8": 442,
+    "9": 442,
+    "10": 442,
+    "11": 442,
+    "12": 442,
+    "13": 442,
+    "14": 442,
+    "15": 442,
+    "16": 442,
+    "17": 442,
+    "18": 442,
+    "19": 442,
+    "20": 442,
+    "21": 442,
+    "22": 439.0,
+    "23": 439.0,
+    "24": 441.0,
+    "25": 441.0,
+    "26": 441.0,
+    "27": 442,
+    "28": 442,
+    "29": 442,
+    "30": 442,
+    "31": 442
+  },
+  "frameOrigins": {
+    "0": [
+      246,
+      452
+    ],
+    "1": [
+      244,
+      450
+    ],
+    "2": [
+      241,
+      449
+    ],
+    "3": [
+      234,
+      440
+    ],
+    "4": [
+      264,
+      444
+    ],
+    "5": [
+      260,
+      437
+    ],
+    "6": [
+      265,
+      444
+    ],
+    "7": [
+      248,
+      444
+    ],
+    "8": [
+      233,
+      335
+    ],
+    "9": [
+      247,
+      463
+    ],
+    "10": [
+      191,
+      472.6
+    ],
+    "11": [
+      228,
+      317
+    ],
+    "12": [
+      240,
+      416
+    ],
+    "13": [
+      224,
+      387
+    ],
+    "14": [
+      273,
+      407
+    ],
+    "15": [
+      245,
+      437
+    ],
+    "16": [
+      232,
+      441
+    ],
+    "17": [
+      187,
+      425
+    ],
+    "18": [
+      261,
+      435
+    ],
+    "19": [
+      238,
+      427
+    ],
+    "20": [
+      262,
+      427
+    ],
+    "21": [
+      189,
+      434
+    ],
+    "27": [
+      229,
+      450
+    ],
+    "28": [
+      263,
+      413
+    ],
+    "29": [
+      232,
+      406
+    ],
+    "30": [
+      233,
+      215
+    ],
+    "31": [
+      231,
+      397
+    ]
+  },
+  "preservedEmitters": {
+    "0": {},
+    "1": {},
+    "2": {},
+    "3": {},
+    "4": {},
+    "5": {},
+    "6": {},
+    "7": {},
+    "8": {},
+    "9": {},
+    "10": {},
+    "11": {},
+    "12": {
+      "normal": [
+        384,
+        203
+      ]
+    },
+    "13": {
+      "normal": [
+        507,
+        170
+      ]
+    },
+    "14": {
+      "normal": [
+        407,
+        188
+      ]
+    },
+    "15": {
+      "normal": [
+        342,
+        238
+      ]
+    },
+    "16": {
+      "skill0": [
+        354,
+        244
+      ]
+    },
+    "17": {
+      "skill0": [
+        523,
+        186
+      ]
+    },
+    "18": {
+      "skill0": [
+        399,
+        203
+      ]
+    },
+    "19": {
+      "skill1": [
+        315,
+        151
+      ]
+    },
+    "20": {
+      "skill1": [
+        378,
+        242
+      ]
+    },
+    "21": {
+      "skill1": [
+        460,
+        190
+      ]
+    },
+    "27": {},
+    "28": {},
+    "29": {},
+    "30": {},
+    "31": {}
+  },
+  "emitterTargets": {
+    "12": [
+      0.88,
+      0.4
+    ],
+    "13": [
+      0.88,
+      0.4
+    ],
+    "14": [
+      0.88,
+      0.4
+    ],
+    "15": [
+      0.88,
+      0.4
+    ],
+    "16": [
+      0.15,
+      0.3
+    ],
+    "17": [
+      0.98,
+      0.33
+    ],
+    "18": [
+      0.9,
+      0.5
+    ],
+    "19": [
+      0.25,
+      0.18
+    ],
+    "20": [
+      0.96,
+      0.38
+    ],
+    "21": [
+      0.87,
+      0.48
+    ],
+    "22": [
+      0.55,
+      0.97
+    ],
+    "23": [
+      0.55,
+      0.97
+    ],
+    "24": [
+      0.55,
+      0.97
+    ],
+    "25": [
+      0.55,
+      0.97
+    ],
+    "26": [
+      0.55,
+      0.97
+    ]
+  },
+  "referenceHeightBySource": {
+    "walk": 442,
+    "jump-strike": 442,
+    "powers": 442,
+    "states": 441.0
+  },
+  "requested_changes": [
+    "states",
+    "powers"
+  ],
+  "changed_frames": [
+    22,
+    23,
+    24,
+    25,
+    26
+  ]
 }

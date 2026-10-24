@@ -1,0 +1,100 @@
+[
+  {
+    "id": 4,
+    "slug": "wildmutt",
+    "size": [
+      379,
+      304
+    ],
+    "visible_pose_sha256": "a2b7314a6b8c7a10120f2f7201f990bd685ca7068a6572837d357e2a41c63e47",
+    "origin": [
+      166,
+      312
+    ],
+    "referenceHeight": 304
+  },
+  {
+    "id": 8,
+    "slug": "ripjaws",
+    "size": [
+      258,
+      434
+    ],
+    "visible_pose_sha256": "133ee5c1b08e2c3a284d73da0bc3f0e854765049d1885065e658ee2ffeaa8a4f",
+    "origin": [
+      131,
+      442
+    ],
+    "referenceHeight": 434
+  },
+  {
+    "id": 11,
+    "slug": "wildvine",
+    "size": [
+      367,
+      442
+    ],
+    "visible_pose_sha256": "7e2842b713130435cb0086299662e94d40b04434b3232b5ff22c2678f5d5a358",
+    "origin": [
+      229,
+      450
+    ],
+    "referenceHeight": 442
+  },
+  {
+    "id": 13,
+    "slug": "snare-oh",
+    "size": [
+      287,
+      435
+    ],
+    "visible_pose_sha256": "20b30dc80b965df05477edf6f7fdf77bc2a58f3c24778891cf2f578a881655c4",
+    "origin": [
+      154,
+      443
+    ],
+    "referenceHeight": 435
+  },
+  {
+    "id": 15,
+    "slug": "upchuck",
+    "size": [
+      303,
+      370
+    ],
+    "visible_pose_sha256": "17739b8e574daffdd59f9956b3b5e756b02849e2a8b64a7da14dda1b89e14e99",
+    "origin": [
+      156,
+      378
+    ],
+    "referenceHeight": 370
+  },
+  {
+    "id": 20,
+    "slug": "spitter",
+    "size": [
+      353,
+      317
+    ],
+    "visible_pose_sha256": "4394de96095e1c3c95b23a1dcb9d5e7cf2d8100368eca03e93257257675fa537",
+    "origin": [
+      228,
+      325
+    ],
+    "referenceHeight": 317
+  },
+  {
+    "id": 60,
+    "slug": "the-worst",
+    "size": [
+      339,
+      429
+    ],
+    "visible_pose_sha256": "d2e2af7a9b752a5c1310c488f7ca322472003ee680bf7379abb48f65aa588bcc",
+    "origin": [
+      175,
+      437
+    ],
+    "referenceHeight": 429
+  }
+]
