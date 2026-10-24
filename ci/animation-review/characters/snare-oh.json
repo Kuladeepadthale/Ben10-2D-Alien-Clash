@@ -1,17 +1,27 @@
 {
   "id": 13,
   "slug": "snare-oh",
-  "status": "in_progress",
+  "status": "verified_updated",
   "reviewed_on": "2026-10-24",
   "findings": [
-    "All32 frames inspected: gold wrappings, black gaps, head silhouette and trailing bandages remain coherent.",
-    "Retained bandage elongation and wrapping gestures as specific morphology, without replacing them with a generic punch loop."
+    "Preserved the original standing model and unrelated attacks; Binding Wrap and Royal Bind use dedicated wrist release/retraction poses.",
+    "Flat animated ribbons travel independently and form hit-only coils/cocoon geometry. Repeated contacts extend a single wrap without restarting its winding."
   ],
   "changed_files": [],
   "checks": {
-    "passed": false
+    "native_frames": 32,
+    "native_asset_hashes": true,
+    "native_detail_and_margins": true,
+    "actual_draws": 240,
+    "facings": 2,
+    "standing_pixels_and_registration_preserved": true,
+    "visual_review": true,
+    "full_browser_review": true,
+    "browser_errors": [],
+    "requested_gameplay_regressions": true,
+    "passed": true
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "basis_commit": "5e0dfbe0b97ed5ede2e1e365b064f67aa205ce51",
   "revision": 1,
   "requestedRepair124": true,
   "renderHeight": 226,
@@ -66,14 +76,14 @@
     "16": 435,
     "17": 435,
     "18": 435,
-    "19": 478.0,
-    "20": 478.0,
-    "21": 478.0,
+    "19": 478,
+    "20": 478,
+    "21": 478,
     "22": 435,
     "23": 435,
-    "24": 444.0,
-    "25": 444.0,
-    "26": 444.0,
+    "24": 444,
+    "25": 444,
+    "26": 444,
     "27": 435,
     "28": 435,
     "29": 435,
@@ -325,7 +335,7 @@
     "walk": 435,
     "jump-strike": 435,
     "powers": 435,
-    "states": 444.0
+    "states": 444
   },
   "requested_changes": [
     "states",
