@@ -15,3 +15,16 @@ New art uses built-in image_gen with the viewed current portraits as identity re
 Validation includes224 native frames, complete source pixels/margins/hashes, seven original standing-image hashes,240 actual native draws per character in both facings, all eight gait cells exercised during real travel, frozen-target tongue hits/dodges, visible root growth, hit-only binding and native tail contact. Browser battle scenes reported zero page errors. Previous manual facing, target capture, power origins, AI pursuit and136 rush/pounce checks pass locally. Final release checks and APK verification will be recorded in last-release.json.
 
 The global review remains resumable. Six other queued repairs remain after this requested batch: Crashhopper49, BallWeevil50, Astrodactyl51, Buzzshock21, Spidermonkey29 and DarkMatter82. Live multiplayer Worker deployment needs owner credentials if those are not configured in releaseCI.
+
+## Verified release
+
+v12.4/code124 published successfully. ReleaseCI:69 passed,0 failed. All1120 reviewed native frames passed source-pixel/hash/detail checks; the seven standing images, anchors and heights remain exact. APK package, pinned signature and launch activity verified. Asset sizes and SHA256 digests are recorded in last-release.json. The pinned fighter-config guard allows only the requested Tongue Lash range/contact timing change and rejects unrelated configuration changes.
+
+Exact saved runtime and prompt locations (tool: built-in image_gen):
+- `web/assets/reviewed-native/wildmutt/`; exact prompts and selected generated cells: `ci/animation-review/characters/wildmutt.json`; raw accepted sources and revision: `ci/animation-review/characters/wildmutt/`.
+- `web/assets/reviewed-native/ripjaws/`; exact prompts and selected generated cells: `ci/animation-review/characters/ripjaws.json`; raw accepted sources and revision: `ci/animation-review/characters/ripjaws/`.
+- `web/assets/reviewed-native/wildvine/`; exact prompts and selected generated cells: `ci/animation-review/characters/wildvine.json`; raw accepted sources and revision: `ci/animation-review/characters/wildvine/`.
+- `web/assets/reviewed-native/snare-oh/`; exact prompts and selected generated cells: `ci/animation-review/characters/snare-oh.json`; raw accepted sources and revision: `ci/animation-review/characters/snare-oh/`.
+- `web/assets/reviewed-native/upchuck/`; exact prompts and selected generated cells: `ci/animation-review/characters/upchuck.json`; raw accepted sources and revision: `ci/animation-review/characters/upchuck/`.
+- `web/assets/reviewed-native/spitter/`; exact prompts and selected generated cells: `ci/animation-review/characters/spitter.json`; raw accepted sources and revision: `ci/animation-review/characters/spitter/`.
+- `web/assets/reviewed-native/the-worst/`; exact prompts and selected generated cells: `ci/animation-review/characters/the-worst.json`; raw accepted sources and revision: `ci/animation-review/characters/the-worst/`.
