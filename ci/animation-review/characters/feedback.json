@@ -1,17 +1,124 @@
 {
   "id": 46,
   "slug": "feedback",
-  "status": "needs_revision",
-  "reviewed_on": "2026-10-23",
+  "status": "verified_updated",
+  "reviewed_on": "2026-10-24",
   "findings": [
-    "All32 frames inspected: plug-ended antennae, tail and fingers persist, but painted electricity overlaps power cels.",
-    "Retain flexible cable motion and plug contacts; use one high-detail model and independent electrical effects."
+    "Rebuilt32 consistent black/white Conductoid poses, preserving exactly two head cables and one attached tail, gold finger/toe connectors and matching portrait.",
+    "Corrected extra head plug in the generated ultimate sheet before acceptance; finger shots and plug discharges use distinct gold native points. Current rush uses native crouch/drive frames."
   ],
-  "changed_files": [],
+  "changed_files": [
+    "ci/animation-review/characters/feedback/source-powers.webp",
+    "ci/animation-review/characters/feedback/revision.json",
+    "ci/animation-review/characters/feedback/source-jump-strike.webp",
+    "ci/animation-review/characters/feedback/source-walk.webp",
+    "ci/animation-review/characters/feedback/source-states.webp",
+    "ci/animation-review/characters/feedback/model-reference.webp",
+    "web/assets/reviewed-native/feedback/jump-strike.webp",
+    "web/assets/reviewed-native/feedback/states.webp",
+    "web/assets/reviewed-native/feedback/powers.webp",
+    "web/assets/reviewed-native/feedback/walk.webp",
+    "web/assets/reviewed-native/feedback/portrait.webp"
+  ],
   "checks": {
     "native_frames": 32,
+    "native_asset_hashes": true,
+    "native_detail_and_margins": true,
+    "actual_draws": 240,
+    "facings": 2,
     "visual_review": true,
-    "passed": false
+    "full_browser_review": true,
+    "browser_errors": [],
+    "passed": true
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "sources": {
+    "walk": "ci/animation-review/characters/feedback/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/feedback/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/feedback/source-powers.webp",
+    "states": "ci/animation-review/characters/feedback/source-states.webp"
+  },
+  "prompts": {
+    "states": "Production transparent 2D game sprite sheet of EXACT feedback from attached identity reference. Tall lean black Conductoid with white vertical chest stripe and green chest Omnitrix, small green eyes, TWO long flexible black plug-tipped head antennae, ONE long thin black plug-tipped tail, gold cylindrical connector fingertips and toes. Two arms/two legs. Exactly2 head cables and1 tail, all attached and fully visible. Crisp original TV-cartoon black outlines, flat cel shading, high native detail. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, consistent body/head/limb proportions across all8. Row-major:1 ultimate windup with arms drawn back;2 ultimate active release, head plugs aimed forward and fully visible;3 recovery guard;4 neutral upright standing with arms lowered, matching reference;5 defensive forearm guard;6 UPRIGHT hit recoil, feet planted;7 defeated lying sideways, complete attached body visible;8 forward dash brace with limbs tucked. BODY ONLY, NO actual electricity, beams, projectiles, gravity fields/orbs, floor bursts, muzzle flashes, stars, aura, speed trails, shadows, floor, text or labels. Natural connector/core colors allowed. All bodies opaque on true transparent background. Desired upright native height400-460px in1536x1024 or higher. Every fingertip, head appendage, tail and foot must be inside canvas with25px clear safe margins/gutters; no overlap or cropping.",
+    "walk": "Use EXACT attached feedback model as identity reference. Tall lean black Conductoid with white vertical chest stripe and green chest Omnitrix, small green eyes, TWO long flexible black plug-tipped head antennae, ONE long thin black plug-tipped tail, gold cylindrical connector fingertips and toes. Two arms/two legs. Exactly2 head cables and1 tail, all attached and fully visible. Create8 separate FULL-BODY RIGHT-facing/three-quarter WALK cycle poses in4 columns x2 rows. Same head, body, limb thickness, colors and markings throughout, crisp black outlines, flat original TV-cartoon cel shading and native detail. Row-major left contact, compression, left passing, right swing, right contact, compression, right passing, left swing; natural alternating arms/legs, small body bob. All2 attached head cables and1 tail must remain visible, gently trailing, not multiplying. Exactly8 complete opaque bodies on true transparency, each native upright height410-470px in1536x1024 or higher. All hands, feet, head appendages and tail inside canvas with25px clear transparent safe margins and gutters; no overlap/cropping. BODY ONLY, NO attacks, electricity, beams, projectiles, gravity fields, spheres, trails, floor, shadow, dust, text or labels. Natural core/connector colors allowed.",
+    "jump-strike": "Production eight-pose transparent sprite sheet using EXACT attached feedback model. Tall lean black Conductoid with white vertical chest stripe and green chest Omnitrix, small green eyes, TWO long flexible black plug-tipped head antennae, ONE long thin black plug-tipped tail, gold cylindrical connector fingertips and toes. Two arms/two legs. Exactly2 head cables and1 tail, all attached and fully visible. Same head, body, face, markings and limb proportions across ALL poses, high-detail crisp black outlines and flat TV-cartoon cel shading. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2 rows. Row-major:1 jump crouch preparation;2 rising jump with bent knees;3 descending jump feet ready;4 landing crouch;5 close punch anticipation, near fist pulled back;6 near fist extended forward in a clear straight punch;7 fist retracting;8 balanced combat guard. Exactly TWO head cables and ONE tail, not3 head cables, no cable from forehead. Head cables trail behind and never detach. Entire opaque bodies on true transparency, native upright-equivalent height410-470px in1536x1024 or higher. Allow25px safe transparent gutters/margins around every cable, tail, fist, crest and foot. No cropped/touching bodies. BODY ONLY, no actual power effects, rays, projectiles, electricity, auras, spheres, trails, floor, dust, shadows, stars, text or labels.",
+    "states_correction": "Edit ONLY the top row second figure (ultimate active pose) of this Feedback sprite sheet: it currently has THREE head plug cables. Remove the extra forward-projecting black head cable and its gold plug above/right of his face, leaving exactly the TWO existing rearward head cables with gold plugs. Keep both outstretched gold hands and all other body art and every other pose unchanged. Preserve exactly8 complete poses and all original layout, pixels, proportions, colors, chest stripe, tail and identity. No new cable, electricity, beam or extra effect. Preserve true transparent background and original transparent margins.",
+    "powers": "Production high-detail BODY-ONLY game animation sheet from EXACT attached feedback model. Tall lean black Conductoid with white vertical chest stripe and green chest Omnitrix, small green eyes, TWO long flexible black plug-tipped head antennae, ONE long thin black plug-tipped tail, gold cylindrical connector fingertips and toes. Two arms/two legs. Exactly2 head cables and1 tail, all attached and fully visible. Preserve identical head/body/limb proportions and colors across all poses. Crisp black TV-cartoon outlines and flat cel shading, no painterly texture. Exactly8 separate full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, row-major: 1 finger-bolt windup drawing gold hand back;2 finger release with two gold connector fingertips extendedRIGHT, other fingers folded;3 hand retraction;4 plug-discharge preparation leaning forward, arms braced;5 plug release leaning forward with EXACTLY TWO attached head cables sweeping BACK/UP, their TWO gold plugs clearly visible above shoulder level, no third cable or forward forehead cable;6 upright recovery with the same TWO head cables;7 current-rush crouch with elbows tucked;8 forward rush driving posture, feet striding and TWO head cables plus ONE tail trailing naturally. Natural core/connector colors only; every special effect will be rendered separately by game. NO actual projectiles, detached bricks, electricity, rays, auras, gravity fields, spheres/black holes, stars, trails, bursts, shadows, floor, dust, text or labels. True transparent background, opaque bodies. Native upright-equivalent detail410-470px in1536x1024 or higher. Entire appendages, tail, hands, crest and feet inside canvas with25px transparent safe margins/gutters, never crop or overlap poses. Exactly TWO head cables and ONE tail in each pose, all attached, count carefully."
+  },
+  "referenceHeightBySource": {
+    "walk": 485,
+    "jump-strike": 455,
+    "powers": 470,
+    "states": 457
+  },
+  "emitterTargets": {
+    "12": [
+      0.22,
+      0.24
+    ],
+    "13": [
+      0.96,
+      0.23
+    ],
+    "14": [
+      0.8,
+      0.4
+    ],
+    "15": [
+      0.8,
+      0.4
+    ],
+    "16": [
+      0.08,
+      0.26
+    ],
+    "17": [
+      0.98,
+      0.2
+    ],
+    "18": [
+      0.48,
+      0.45
+    ],
+    "19": [
+      0.3,
+      0.15
+    ],
+    "20": [
+      0.36,
+      0.04
+    ],
+    "21": [
+      0.2,
+      0.22
+    ],
+    "22": [
+      0.55,
+      0.55
+    ],
+    "23": [
+      0.55,
+      0.55
+    ],
+    "24": [
+      0.4,
+      0.49
+    ],
+    "25": [
+      0.95,
+      0.29
+    ],
+    "26": [
+      0.85,
+      0.49
+    ]
+  },
+  "generation_inputs": {
+    "walk": "ci/animation-review/characters/feedback/model-reference.webp",
+    "jump-strike": "ci/animation-review/characters/feedback/model-reference.webp",
+    "powers": "ci/animation-review/characters/feedback/model-reference.webp",
+    "states": "Shipped v11.9 identity portrait"
+  },
+  "renderHeight": 226,
+  "scale": 1.08
 }

@@ -1,6 +1,6 @@
 # Animation review progress
 
-**82 / 92 characters approved.** Batch size: 4.
+**83 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -25,7 +25,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 4 | 43 | clockwork | Reviewed — updated | Rebuilt32 coherent brass/key-head poses with an unobscured green chest clock and matching native portrait. |
 | 4 | 44 | jury-rigg | Reviewed — updated | Rebuilt32 coherent red mechanic poses and a matching native portrait, preserving goggles, vest, connected tail and species proportions. |
 | 5 | 45 | shocksquatch | Reviewed — updated | Rebuilt32 coherent yellow/black ape poses with white chest/muzzle, gray plugged bracers and a matching native portrait. |
-| 5 | 46 | feedback | In progress | All32 frames inspected: plug-ended antennae, tail and fingers persist, but painted electricity overlaps power cels. |
+| 5 | 46 | feedback | Reviewed — updated | Rebuilt32 consistent black/white Conductoid poses, preserving exactly two head cables and one attached tail, gold finger/toe connectors and matching portrait. |
 | 5 | 47 | bloxx | In progress | All32 frames inspected: colored blocks and gorilla identity persist, but small cels differ in detail from the high-resolution standing portrait. |
 | 5 | 48 | gravattack | In progress | All32 frames inspected: rocky body and orange core persist, but small textured cels differ from portrait detail and painted black holes overlap actions. |
 | 6 | 49 | crashhopper | Needs revision | All32 frames inspected: antennae, folded wings and long jump legs persist, but native detail is low and ground impacts are painted into body poses. |

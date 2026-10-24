@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 46,
-  "completed": 82,
+  "current_character": 47,
+  "completed": 83,
   "characters": [
     {
       "id": 35,
@@ -1899,16 +1899,34 @@
       "id": 46,
       "slug": "feedback",
       "batch": 5,
-      "status": "in_progress",
+      "status": "verified_updated",
       "findings": [
-        "All32 frames inspected: plug-ended antennae, tail and fingers persist, but painted electricity overlaps power cels.",
-        "Retain flexible cable motion and plug contacts; use one high-detail model and independent electrical effects."
+        "Rebuilt32 consistent black/white Conductoid poses, preserving exactly two head cables and one attached tail, gold finger/toe connectors and matching portrait.",
+        "Corrected extra head plug in the generated ultimate sheet before acceptance; finger shots and plug discharges use distinct gold native points. Current rush uses native crouch/drive frames."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/feedback/source-powers.webp",
+        "ci/animation-review/characters/feedback/revision.json",
+        "ci/animation-review/characters/feedback/source-jump-strike.webp",
+        "ci/animation-review/characters/feedback/source-walk.webp",
+        "ci/animation-review/characters/feedback/source-states.webp",
+        "ci/animation-review/characters/feedback/model-reference.webp",
+        "web/assets/reviewed-native/feedback/jump-strike.webp",
+        "web/assets/reviewed-native/feedback/states.webp",
+        "web/assets/reviewed-native/feedback/powers.webp",
+        "web/assets/reviewed-native/feedback/walk.webp",
+        "web/assets/reviewed-native/feedback/portrait.webp"
+      ],
       "checks": {
         "native_frames": 32,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "actual_draws": 240,
+        "facings": 2,
         "visual_review": true,
-        "passed": false
+        "full_browser_review": true,
+        "browser_errors": [],
+        "passed": true
       },
       "reviewed_on": "2026-10-24",
       "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
