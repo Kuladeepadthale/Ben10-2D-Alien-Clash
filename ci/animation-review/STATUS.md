@@ -1,6 +1,6 @@
 # Animation review progress
 
-**85 / 92 characters approved.** Batch size: 4.
+**86 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -68,7 +68,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 15 | 57 | gutrot | Reviewed — updated | All32 native frames inspected. |
 | 15 | 58 | atomix | Reviewed — updated | All32 native frames inspected. |
 | 15 | 59 | walkatrout | Reviewed — updated | All32 native frames inspected. |
-| 16 | 60 | the-worst | In progress | All32 native frames inspected. |
+| 16 | 60 | the-worst | Reviewed — updated | Preserved the original standing pose and other attacks; Belly Bump uses three dedicated belly-first anticipation, contact and recoil cels. |
 | 16 | 61 | mole-stache | Reviewed — kept | All32 native frames inspected. |
 | 16 | 62 | overflow | Reviewed — updated | All32 native frames inspected. |
 | 16 | 63 | gax | Reviewed — kept | All32 native frames inspected. |
