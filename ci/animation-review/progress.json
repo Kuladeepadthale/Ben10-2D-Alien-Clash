@@ -1313,7 +1313,7 @@
         "24": 568.36,
         "25": 526.4,
         "26": 503.52,
-        "27": 473.0,
+        "27": 473,
         "28": 518.77,
         "29": 537.85,
         "30": 473,
@@ -1653,8 +1653,8 @@
       "batch": 4,
       "status": "verified_updated",
       "findings": [
-        "Rebuilt32 coherent red mechanic poses and a matching native portrait, preserving goggles, vest, connected tail and species proportions.",
-        "Launcher, bomb and gear gestures use connected hands; registered muzzle/hand/ground origins replace painted flashes and detached projectile art."
+        "Native gear assembly/retraction and held-launcher ultimate poses preserve the existing mechanic design.",
+        "Visible gear deployment/arming and ballistic scrap rockets from the muzzle replace generic glowing trap and sky-spawned rain."
       ],
       "changed_files": [
         "ci/animation-review/characters/jury-rigg/source-jump-strike.webp",
@@ -1671,11 +1671,12 @@
       ],
       "checks": {
         "native_frames": 32,
+        "states": 12,
+        "facings": 2,
+        "actual_draws": 240,
         "native_asset_hashes": true,
         "native_detail_and_margins": true,
-        "actual_draws": 240,
-        "facings": 2,
-        "visual_review": true,
+        "standing_pixels_anchors_heights_preserved": true,
         "full_browser_review": true,
         "browser_errors": [],
         "passed": true
@@ -1685,83 +1686,80 @@
       "renderHeight": 160,
       "scale": 0.67,
       "sources": {
-        "states": "ci/animation-review/characters/jury-rigg/source-states.webp",
         "walk": "ci/animation-review/characters/jury-rigg/source-walk.webp",
         "jump-strike": "ci/animation-review/characters/jury-rigg/source-jump-strike.webp",
-        "powers": "ci/animation-review/characters/jury-rigg/source-powers.webp"
+        "powers": "ci/animation-review/characters/jury-rigg/source-powers.webp",
+        "states": "ci/animation-review/characters/jury-rigg/source-states.webp"
       },
       "prompts": {
-        "states": "Production game sprite sheet of EXACT attached Jury Rigg reference: small wiry RED gremlin mechanic, huge long pointed ears, long pointed red nose and little toothy grin, short red hair crest, round GREEN goggles with black strap, dark GREEN mechanic vest with small green chest Omnitrix, black cropped trousers, brown utility belt/tool pouches, oversized black gloves, red bare clawed feet, ONE thin red pointed gremlin tail curled close behind hip. Same face, goggles, ears, outfit and proportions throughout, no human skin. Clean original TV-cartoon cel art, black outlines, flat colors/one shadow. Exactly8 separate RIGHT-facing/three-quarter whole-body figures in4columns x2rows, full ears/tail/fingers/toes visible with25px clear transparent gutters/margins. Row-major:1 ultimate windup lifting a compact improvised GREY scrap-tube launcher with green lens in both gloves;2 ultimate firing posture with SAME launcher angled upward/right, muzzle clear but NO muzzle flash;3 recovering with launcher lowered;4 neutral upright cheeky mechanic stance, empty gloved hands beside body and belt tools;5 defensive crossed-glove guard;6 UPRIGHT hit recoil feet planted;7 defeated lying sideways, complete connected body/ears/tail;8 low forward dash with gloves driving. Gadgets must remain held and connected to gloves, never floating. Upright-equivalent native detail400-470px in1536x1024 or higher. Bodies fully opaque on true transparency. NO painted shots, muzzle flashes, explosions, sparks, speed streaks, ghosts, floor, shadows, text or labels.",
-        "walk": "EXACT attached Jury Rigg model: small wiry RED gremlin mechanic, huge pointed ears, long pointed red nose/toothy grin, short red crest, round GREEN goggles/black strap, dark GREEN mechanic vest with small chest Omnitrix, black cropped trousers, brown tool belt/pouches, oversized black gloves, red clawed feet and ONE thin red pointed tail curled near hip. Consistent face, goggles, outfit, limbs and scale. Clean TV-cartoon cel art, crisp black outlines, flat colors. Production sheet: exactly8 SEPARATE whole-body RIGHT-facing/three-quarter figures in4columns x2rows. Every full ear, nose, tail tip, glove and toe safely inside canvas with25px clear transparent margins/gutters. Native upright-equivalent detail400-470px in1536x1024 or higher. Bodies opaque on TRUE transparent background. No actual emitted shots, muzzle flashes, sparks, blasts, aura, trails, ghost copies, floor, shadows, dust, words or labels. Held props must stay naturally joined to gloves. Eight quick nimble WALK/RUN cycle phases: left contact, left push-off, passing feet, right swing, right contact, right push-off, passing opposite, left swing. Natural opposite arm/leg drive with empty gloves and belt tools secured; tail gently balances, SMALL head bob, no attack poses or floating gadgets.",
-        "jump-strike": "EXACT attached Jury Rigg model: small wiry RED gremlin mechanic, huge pointed ears, long pointed red nose/toothy grin, short red crest, round GREEN goggles/black strap, dark GREEN mechanic vest with small chest Omnitrix, black cropped trousers, brown tool belt/pouches, oversized black gloves, red clawed feet and ONE thin red pointed tail curled near hip. Consistent face, goggles, outfit, limbs and scale. Clean TV-cartoon cel art, crisp black outlines, flat colors. Production sheet: exactly8 SEPARATE whole-body RIGHT-facing/three-quarter figures in4columns x2rows. Every full ear, nose, tail tip, glove and toe safely inside canvas with25px clear transparent margins/gutters. Native upright-equivalent detail400-470px in1536x1024 or higher. Bodies opaque on TRUE transparent background. No actual emitted shots, muzzle flashes, sparks, blasts, aura, trails, ghost copies, floor, shadows, dust, words or labels. Held props must stay naturally joined to gloves. Row-major:1 jump-preparation crouch;2 rising agile jump knees tucked and gloves up;3 descending jump feet ready;4 soft crouched landing;5 glove-punch anticipation drawing near arm back;6 forward black-glove punch;7 punch retraction;8 guard recovery. Keep limbs connected and goggles on. No launcher needed for these close-combat body poses; belt tools remain secured.",
-        "powers": "EXACT attached Jury Rigg model: small wiry RED gremlin mechanic, huge pointed ears, long pointed red nose/toothy grin, short red crest, round GREEN goggles/black strap, dark GREEN mechanic vest with small chest Omnitrix, black cropped trousers, brown tool belt/pouches, oversized black gloves, red clawed feet and ONE thin red pointed tail curled near hip. Consistent face, goggles, outfit, limbs and scale. Clean TV-cartoon cel art, crisp black outlines, flat colors. Production sheet: exactly8 SEPARATE whole-body RIGHT-facing/three-quarter figures in4columns x2rows. Every full ear, nose, tail tip, glove and toe safely inside canvas with25px clear transparent margins/gutters. Native upright-equivalent detail400-470px in1536x1024 or higher. Bodies opaque on TRUE transparent background. No actual emitted shots, muzzle flashes, sparks, blasts, aura, trails, ghost copies, floor, shadows, dust, words or labels. Held props must stay naturally joined to gloves. Row-major:1 scrap-launcher windup holding compact GREY improvised scrap-tube launcher with GREEN muzzle lens in both gloves;2 firing posture SAME launcher aimed horizontallyRIGHT with muzzle clear but no flash/projectile;3 lowering SAME launcher in recovery;4 junk-bomb windup holding ONE small grey mechanical bomb/green LED near rear shoulder in glove;5 bomb-release posture with now-EMPTY throwing glove extended up/forwardRIGHT, no hovering bomb;6 throwing follow-through with empty glove forward/down;7 gear-trap preparation crouching with ONE grey gear-shaped plate/green LED held between gloves;8 gear-trap placement kneeling, gloves touching SAME gear plate at own front foot/floor level. Gadgets have consistent sensible metallic construction and remain held/touched by gloves; no duplicate props or painted flying objects."
+        "mechanic": "EXACT attached red gremlin mechanic: huge pointed ears, long red pointed nose, green goggles, dark green vest/chest badge, tool belt, black cropped trousers, black gloves, red feet and connected red pointed tail. 1 Gear trap anticipation crouching, one black glove holding a small metal cog base and other glove with a wrench. 2 rapid assembly crouch BOTH gloves pressing a small low grey metal gear trap into ground, green central switch. 3 withdrawing gloved hands from finished compact trap, same crouch. 4 Junkyard arsenal anticipation assembling a compact improvised grey scrap launcher held in BOTH gloves at chest height. 5 launcher fully assembled, aiming RIGHT slightly upward with elbow braced, muzzle clear. 6 same launcher FIRING posture with subtle shoulder recoil, empty clear muzzle NO blast. 7 lowering launcher and recovering. 8 neutral upright reference stance. Gadgets are connected to fingers, same grey tube weapon across4-7. Never green magical energy; he builds mechanical devices. Eight full-body right-facing poses in4x2 transparent sheet; crisp cartoon cel style, no effects."
       },
       "referenceHeightBySource": {
-        "states": 428,
         "walk": 465,
         "jump-strike": 445,
-        "powers": 445
+        "powers": 445,
+        "states": 478
       },
       "emitterTargets": {
         "12": [
-          0.85,
-          0.43
+          0.88,
+          0.4
         ],
         "13": [
-          0.85,
-          0.43
+          0.88,
+          0.4
         ],
         "14": [
-          0.85,
-          0.43
+          0.88,
+          0.4
         ],
         "15": [
-          0.85,
-          0.43
+          0.88,
+          0.4
         ],
         "16": [
-          0.96,
-          0.46
+          0.88,
+          0.4
         ],
         "17": [
-          0.96,
-          0.34
+          0.88,
+          0.4
         ],
         "18": [
-          0.94,
-          0.7
+          0.88,
+          0.4
         ],
         "19": [
-          0.16,
-          0.25
+          0.88,
+          0.4
         ],
         "20": [
-          0.9,
-          0.1
+          0.88,
+          0.4
         ],
         "21": [
-          0.95,
-          0.65
+          0.83,
+          0.6
         ],
         "22": [
-          0.72,
-          0.73
+          0.68,
+          0.75
         ],
         "23": [
-          0.72,
-          0.92
+          0.78,
+          0.86
         ],
         "24": [
           0.94,
-          0.58
+          0.4
         ],
         "25": [
-          0.95,
-          0.12
+          0.98,
+          0.31
         ],
         "26": [
-          0.95,
-          0.8
+          0.98,
+          0.56
         ]
       },
       "generation_inputs": {
@@ -1769,7 +1767,244 @@
         "jump-strike": "ci/animation-review/characters/jury-rigg/model-reference.webp",
         "powers": "ci/animation-review/characters/jury-rigg/model-reference.webp",
         "states": "Shipped v11.9 identity portrait"
-      }
+      },
+      "revision": 2,
+      "requestedRepair125": true,
+      "accepted_generated_sources": {
+        "mechanic": "ci/animation-review/characters/jury-rigg/generated-mechanic125.webp"
+      },
+      "generated_frame_selections": {
+        "mechanic": {
+          "21": 7,
+          "22": 0,
+          "23": 1,
+          "24": 3,
+          "25": 5,
+          "26": 6
+        }
+      },
+      "frameReferenceHeights": {
+        "0": 465,
+        "1": 465,
+        "2": 465,
+        "3": 465,
+        "4": 465,
+        "5": 465,
+        "6": 465,
+        "7": 465,
+        "8": 445,
+        "9": 445,
+        "10": 445,
+        "11": 445,
+        "12": 445,
+        "13": 445,
+        "14": 445,
+        "15": 445,
+        "16": 445,
+        "17": 445,
+        "18": 445,
+        "19": 445,
+        "20": 445,
+        "21": 478,
+        "22": 478,
+        "23": 478,
+        "24": 478,
+        "25": 478,
+        "26": 478,
+        "27": 428,
+        "28": 428,
+        "29": 428,
+        "30": 428,
+        "31": 428
+      },
+      "frameOrigins": {
+        "0": [
+          153,
+          448
+        ],
+        "1": [
+          175,
+          461
+        ],
+        "2": [
+          161,
+          466
+        ],
+        "3": [
+          187,
+          457
+        ],
+        "4": [
+          160,
+          460
+        ],
+        "5": [
+          166,
+          456
+        ],
+        "6": [
+          165,
+          467
+        ],
+        "7": [
+          175,
+          461
+        ],
+        "8": [
+          182,
+          366
+        ],
+        "9": [
+          165,
+          473
+        ],
+        "10": [
+          210,
+          477.2
+        ],
+        "11": [
+          189,
+          327
+        ],
+        "12": [
+          197,
+          439
+        ],
+        "13": [
+          161,
+          424
+        ],
+        "14": [
+          164,
+          447
+        ],
+        "15": [
+          152,
+          452
+        ],
+        "16": [
+          178,
+          464
+        ],
+        "17": [
+          148,
+          440
+        ],
+        "18": [
+          187,
+          443
+        ],
+        "19": [
+          218,
+          452
+        ],
+        "20": [
+          153,
+          445
+        ],
+        "27": [
+          142,
+          436
+        ],
+        "28": [
+          144,
+          382
+        ],
+        "29": [
+          212,
+          414
+        ],
+        "30": [
+          249,
+          214
+        ],
+        "31": [
+          175,
+          354
+        ]
+      },
+      "preservedEmitters": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {},
+        "5": {},
+        "6": {},
+        "7": {},
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {
+          "normal": [
+            331,
+            195
+          ]
+        },
+        "13": {
+          "normal": [
+            403,
+            177
+          ]
+        },
+        "14": {
+          "normal": [
+            319,
+            175
+          ]
+        },
+        "15": {
+          "normal": [
+            305,
+            198
+          ]
+        },
+        "16": {
+          "skill0": [
+            363,
+            217
+          ]
+        },
+        "17": {
+          "skill0": [
+            413,
+            156
+          ]
+        },
+        "18": {
+          "skill0": [
+            341,
+            314
+          ]
+        },
+        "19": {
+          "skill1": [
+            84,
+            126
+          ]
+        },
+        "20": {
+          "skill1": [
+            415,
+            45
+          ]
+        },
+        "27": {},
+        "28": {},
+        "29": {},
+        "30": {},
+        "31": {}
+      },
+      "changed_frames": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "request125": true
     },
     {
       "id": 45,
@@ -2326,10 +2561,9 @@
       "id": 1,
       "slug": "four-arms",
       "batch": 6,
-      "status": "verified_unchanged",
+      "status": "verified_updated",
       "findings": [
-        "All32 native frames inspected: four arms, black/white shirt, face and body proportions remain coherent.",
-        "Retained weighty gait, multi-fist attacks, thunderclap and grounded slam; standing hit reaction differs from defeat."
+        "Replaced eight gait cels with linked four-arm weight transfer and alternating planted feet; preserved every attack and original standing pose."
       ],
       "changed_files": [],
       "checks": {
@@ -2337,10 +2571,387 @@
         "states": 12,
         "facings": 2,
         "actual_draws": 240,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "standing_pixels_anchors_heights_preserved": true,
+        "full_browser_review": true,
+        "browser_errors": [],
         "passed": true
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "revision": 1,
+      "requestedRepair125": true,
+      "renderHeight": 226,
+      "scale": 1.22,
+      "sources": {
+        "walk": "ci/animation-review/characters/four-arms/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/four-arms/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/four-arms/source-powers.webp",
+        "states": "ci/animation-review/characters/four-arms/source-states.webp"
+      },
+      "prompts": {
+        "walk": "Exact attached Four Arms: massive RED Tetramand with FOUR muscular connected arms, TWO legs, four small green eyes, black chin stripe, white short-sleeved shirt with broad vertical black center stripe, black trousers, black wrist cuffs, red three-toed feet. Eight sequential walking cycle phases: 1 left foot forward heel contact, 2 left weight-taking, 3 left push and right passing, 4 right leg forward swing, 5 right foot forward heel contact, 6 right weight-taking, 7 right push and left passing, 8 left leg forward swing. Two upper arms and two lower arms swing opposite respective legs, with believable shoulder articulation and separated fists. Small head bob and weight shift. Heavy purposeful walking, not fighting, no sliding. Eight full-body right-facing poses in4x2 transparent sheet; crisp cartoon cel style, no effects."
+      },
+      "accepted_generated_sources": {
+        "walk": "ci/animation-review/characters/four-arms/generated-walk125.webp"
+      },
+      "generated_frame_selections": {
+        "walk": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7
+        }
+      },
+      "frameReferenceHeights": {
+        "0": 423.5,
+        "1": 423.5,
+        "2": 423.5,
+        "3": 423.5,
+        "4": 423.5,
+        "5": 423.5,
+        "6": 423.5,
+        "7": 423.5,
+        "8": 398,
+        "9": 398,
+        "10": 398,
+        "11": 398,
+        "12": 398,
+        "13": 398,
+        "14": 398,
+        "15": 398,
+        "16": 398,
+        "17": 398,
+        "18": 398,
+        "19": 398,
+        "20": 398,
+        "21": 398,
+        "22": 398,
+        "23": 398,
+        "24": 398,
+        "25": 398,
+        "26": 398,
+        "27": 398,
+        "28": 398,
+        "29": 398,
+        "30": 398,
+        "31": 398
+      },
+      "frameOrigins": {
+        "0": [
+          189,
+          436
+        ],
+        "1": [
+          175,
+          435
+        ],
+        "2": [
+          201,
+          438
+        ],
+        "3": [
+          195,
+          433
+        ],
+        "4": [
+          207,
+          426
+        ],
+        "5": [
+          180,
+          430
+        ],
+        "6": [
+          186,
+          428
+        ],
+        "7": [
+          190,
+          428
+        ],
+        "8": [
+          229,
+          288
+        ],
+        "9": [
+          166,
+          479
+        ],
+        "10": [
+          157,
+          405.9
+        ],
+        "11": [
+          238,
+          286
+        ],
+        "12": [
+          202,
+          364
+        ],
+        "13": [
+          184,
+          357
+        ],
+        "14": [
+          206,
+          378
+        ],
+        "15": [
+          195,
+          383
+        ],
+        "16": [
+          201,
+          463
+        ],
+        "17": [
+          175,
+          378
+        ],
+        "18": [
+          222,
+          432
+        ],
+        "19": [
+          163,
+          397
+        ],
+        "20": [
+          222,
+          302
+        ],
+        "21": [
+          178,
+          343
+        ],
+        "22": [
+          193,
+          353
+        ],
+        "23": [
+          195,
+          359
+        ],
+        "24": [
+          182,
+          438
+        ],
+        "25": [
+          210,
+          472
+        ],
+        "26": [
+          181,
+          333
+        ],
+        "27": [
+          173,
+          406
+        ],
+        "28": [
+          206,
+          373
+        ],
+        "29": [
+          185,
+          368
+        ],
+        "30": [
+          210,
+          309
+        ],
+        "31": [
+          228,
+          353
+        ]
+      },
+      "preservedEmitters": {
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {
+          "normal": [
+            301,
+            149
+          ]
+        },
+        "13": {
+          "normal": [
+            357,
+            146
+          ]
+        },
+        "14": {
+          "normal": [
+            309,
+            144
+          ]
+        },
+        "15": {
+          "normal": [
+            284,
+            156
+          ]
+        },
+        "16": {
+          "skill0": [
+            297,
+            188
+          ]
+        },
+        "17": {
+          "skill0": [
+            258,
+            154
+          ]
+        },
+        "18": {
+          "skill0": [
+            305,
+            176
+          ]
+        },
+        "19": {
+          "skill1": [
+            252,
+            162
+          ]
+        },
+        "20": {
+          "skill1": [
+            313,
+            124
+          ]
+        },
+        "21": {
+          "skill1": [
+            269,
+            140
+          ]
+        },
+        "22": {
+          "skill2": [
+            280,
+            144
+          ]
+        },
+        "23": {
+          "skill2": [
+            313,
+            147
+          ]
+        },
+        "24": {
+          "ultimate": [
+            275,
+            177
+          ]
+        },
+        "25": {
+          "ultimate": [
+            308,
+            192
+          ]
+        },
+        "26": {
+          "ultimate": [
+            278,
+            136
+          ]
+        },
+        "27": {},
+        "28": {},
+        "29": {},
+        "30": {},
+        "31": {}
+      },
+      "emitterTargets": {
+        "12": [
+          0.88,
+          0.4
+        ],
+        "13": [
+          0.88,
+          0.4
+        ],
+        "14": [
+          0.88,
+          0.4
+        ],
+        "15": [
+          0.88,
+          0.4
+        ],
+        "16": [
+          0.88,
+          0.4
+        ],
+        "17": [
+          0.88,
+          0.4
+        ],
+        "18": [
+          0.88,
+          0.4
+        ],
+        "19": [
+          0.88,
+          0.4
+        ],
+        "20": [
+          0.88,
+          0.4
+        ],
+        "21": [
+          0.88,
+          0.4
+        ],
+        "22": [
+          0.88,
+          0.4
+        ],
+        "23": [
+          0.88,
+          0.4
+        ],
+        "24": [
+          0.88,
+          0.4
+        ],
+        "25": [
+          0.88,
+          0.4
+        ],
+        "26": [
+          0.88,
+          0.4
+        ]
+      },
+      "referenceHeightBySource": {
+        "walk": 423.5,
+        "jump-strike": 398,
+        "powers": 398,
+        "states": 398
+      },
+      "changed_frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "request125": true
     },
     {
       "id": 2,
@@ -3226,10 +3837,10 @@
       "id": 10,
       "slug": "cannonbolt",
       "batch": 9,
-      "status": "verified_unchanged",
+      "status": "verified_updated",
       "findings": [
-        "All32 frames inspected: white/black body and yellow shell plates stay consistent.",
-        "Retained intentional ball curl for rush/ultimate and heavy uncurled gait; no size correction applied to the ball transformation."
+        "Rebuilt uncurled walk and native curl, full sphere, shell impact, uncurl and recovery.",
+        "Rebound/ultimate stay near the captured point with visible shell rotation and bounces, preserving direction and damage budgets."
       ],
       "changed_files": [],
       "checks": {
@@ -3237,10 +3848,303 @@
         "states": 12,
         "facings": 2,
         "actual_draws": 240,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "standing_pixels_anchors_heights_preserved": true,
+        "full_browser_review": true,
+        "browser_errors": [],
         "passed": true
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "revision": 1,
+      "requestedRepair125": true,
+      "renderHeight": 226,
+      "scale": 1.1,
+      "sources": {
+        "walk": "ci/animation-review/characters/cannonbolt/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/cannonbolt/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/cannonbolt/source-powers.webp",
+        "states": "ci/animation-review/characters/cannonbolt/source-states.webp"
+      },
+      "prompts": {
+        "walk": "Exact attached Cannonbolt: broad round WHITE body, BLACK shoulder/back and flank sections, large smooth YELLOW oval armored plates on shoulders, back and knees, small black face with TWO green eyes, forehead black-white Omnitrix, two short legs, two heavy arms with black clawed fingers. Eight sequential UNCURLED heavy walking cycle phases: left heel contact, weight-taking, left push/right passing, right forward swing, right heel contact, weight-taking, right push/left passing, left forward swing. Alternating large arms and short legs, subtle broad-torso sway, consistent yellow plates. Keep uncurled walking body and face throughout; NO ball transformation in this walk sheet. Eight full-body right-facing poses in4x2 transparent sheet; crisp cartoon cel style, no effects.",
+        "shell": "EXACT attached Cannonbolt: broad white body/black sections, smooth YELLOW armored shoulder/back/knee plates, green eyes in small black face, forehead badge, short legs and arms with black claws. 1 Shell slam anticipation full uncurled low crouch, feet planted and arms drawn close. 2 starting curl: head tucks downward, arms fold inward over chest and knees draw inward, yellow plates rotate together. 3 FULLY CURLED ROUND YELLOW AND BLACK armored sphere, no exposed face, hands or feet, circular yellow armor separated by black seams, exactly same armor colors. 4 same fully curled circular armored sphere in a second rotational orientation. 5 same sphere compressed slightly at lower edge for a powerful downward ground IMPACT, no floor/effects. 6 beginning uncurl with head emerging and both hands/feet opening from ball. 7 recovered low crouch complete body. 8 neutral uncurled reference stance. Keep same body volume: sphere diameter about seventy-five percent of standing height. Body-only, no dust or trails. Eight full-body right-facing poses in4x2 transparent sheet; crisp cartoon cel style, no effects."
+      },
+      "accepted_generated_sources": {
+        "walk": "ci/animation-review/characters/cannonbolt/generated-walk125.webp",
+        "shell": "ci/animation-review/characters/cannonbolt/generated-shell125.webp"
+      },
+      "generated_frame_selections": {
+        "walk": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7
+        },
+        "shell": {
+          "16": 1,
+          "17": 2,
+          "18": 6,
+          "19": 0,
+          "20": 4,
+          "21": 6,
+          "22": 1,
+          "23": 3,
+          "24": 1,
+          "25": 2,
+          "26": 5
+        }
+      },
+      "frameReferenceHeights": {
+        "0": 400.5,
+        "1": 400.5,
+        "2": 400.5,
+        "3": 400.5,
+        "4": 400.5,
+        "5": 400.5,
+        "6": 400.5,
+        "7": 400.5,
+        "8": 394,
+        "9": 394,
+        "10": 394,
+        "11": 394,
+        "12": 394,
+        "13": 394,
+        "14": 394,
+        "15": 394,
+        "16": 374,
+        "17": 374,
+        "18": 374,
+        "19": 374,
+        "20": 374,
+        "21": 374,
+        "22": 374,
+        "23": 374,
+        "24": 374,
+        "25": 374,
+        "26": 374,
+        "27": 394,
+        "28": 394,
+        "29": 394,
+        "30": 394,
+        "31": 394
+      },
+      "frameOrigins": {
+        "0": [
+          237,
+          413
+        ],
+        "1": [
+          208,
+          413
+        ],
+        "2": [
+          226,
+          413
+        ],
+        "3": [
+          220,
+          408
+        ],
+        "4": [
+          230,
+          409
+        ],
+        "5": [
+          222,
+          404
+        ],
+        "6": [
+          223,
+          408
+        ],
+        "7": [
+          223,
+          404
+        ],
+        "8": [
+          210,
+          335
+        ],
+        "9": [
+          242,
+          438
+        ],
+        "10": [
+          179,
+          457.65
+        ],
+        "11": [
+          208,
+          333
+        ],
+        "12": [
+          273,
+          401
+        ],
+        "13": [
+          186,
+          403
+        ],
+        "14": [
+          234,
+          409
+        ],
+        "15": [
+          214,
+          410
+        ],
+        "27": [
+          189,
+          402
+        ],
+        "28": [
+          210,
+          391
+        ],
+        "29": [
+          182,
+          377
+        ],
+        "30": [
+          248,
+          237
+        ],
+        "31": [
+          255,
+          364
+        ]
+      },
+      "preservedEmitters": {
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {
+          "normal": [
+            427,
+            178
+          ]
+        },
+        "13": {
+          "normal": [
+            453,
+            177
+          ]
+        },
+        "14": {
+          "normal": [
+            383,
+            179
+          ]
+        },
+        "15": {
+          "normal": [
+            382,
+            180
+          ]
+        },
+        "27": {},
+        "28": {},
+        "29": {},
+        "30": {},
+        "31": {}
+      },
+      "emitterTargets": {
+        "12": [
+          0.85,
+          0.5
+        ],
+        "13": [
+          0.85,
+          0.5
+        ],
+        "14": [
+          0.85,
+          0.5
+        ],
+        "15": [
+          0.85,
+          0.5
+        ],
+        "16": [
+          0.85,
+          0.5
+        ],
+        "17": [
+          0.85,
+          0.5
+        ],
+        "18": [
+          0.85,
+          0.5
+        ],
+        "19": [
+          0.85,
+          0.5
+        ],
+        "20": [
+          0.85,
+          0.5
+        ],
+        "21": [
+          0.85,
+          0.5
+        ],
+        "22": [
+          0.85,
+          0.5
+        ],
+        "23": [
+          0.85,
+          0.5
+        ],
+        "24": [
+          0.85,
+          0.5
+        ],
+        "25": [
+          0.85,
+          0.5
+        ],
+        "26": [
+          0.85,
+          0.5
+        ]
+      },
+      "referenceHeightBySource": {
+        "walk": 400.5,
+        "jump-strike": 394,
+        "powers": 374,
+        "states": 374
+      },
+      "changed_frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "request125": true
     },
     {
       "id": 11,
@@ -4462,10 +5366,10 @@
       "id": 19,
       "slug": "arctiguana",
       "batch": 11,
-      "status": "verified_unchanged",
+      "status": "verified_updated",
       "findings": [
-        "All32 frames inspected: blue lizard body, dorsal spikes, cheek fins and tail remain coherent.",
-        "Retained low quadruped travel and open-mouth freeze-breath pose; tail stays attached through jump and attacks."
+        "Rebuilt low four-paw crawl, forepaw glacial slam and braced open-mouth freezing ultimate.",
+        "Procedural ice fronts and mouth-attached gusts replace generic wave presentation."
       ],
       "changed_files": [],
       "checks": {
@@ -4473,10 +5377,343 @@
         "states": 12,
         "facings": 2,
         "actual_draws": 240,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "standing_pixels_anchors_heights_preserved": true,
+        "full_browser_review": true,
+        "browser_errors": [],
         "passed": true
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "revision": 1,
+      "requestedRepair125": true,
+      "renderHeight": 170,
+      "scale": 1,
+      "sources": {
+        "walk": "ci/animation-review/characters/arctiguana/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/arctiguana/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/arctiguana/source-powers.webp",
+        "states": "ci/animation-review/characters/arctiguana/source-states.webp"
+      },
+      "prompts": {
+        "walk": "Exact attached Arctiguana: BLUE low reptilian quadruped, two massive front forelegs and two shorter rear legs, long attached blue striped tail, THREE large dark blue dorsal shark-like fins, white cheek gills/frills, angular reptile face with TWO yellow eyes and teeth, black-and-white harness/chest Omnitrix, black wrist cuffs with white trim and black claws. Eight consecutive smooth FOUR-LEGGED walking poses, left forepaw/right hindpaw advance, weight transfer, passing, planted push, right forepaw/left hindpaw advance, weight transfer, passing, planted push. Belly remains low, head level, tail counterbalances fluidly. Every four paws stays anatomically connected; no standing on two legs and no punching. Same face, dorsal fins and leg lengths. Eight full-body right-facing poses in4x2 transparent sheet; crisp cartoon cel style, no effects.",
+        "freeze": "EXACT attached BLUE quadruped reptile: low body, powerful forelegs/shorter hindlegs, attached striped blue tail, three large dorsal blue fins, white gill frills, black/white chest harness and wrists, yellow eyes, toothy angular face and black claws. 1 Glacial slam windup: rear legs supporting low body, both large front paws lifted slightly, neck pulled back, all four legs connected. 2 Glacial slam contact both forepaws planted DOWN firmly in deep low crouch, mouth open directed downward and RIGHT; head, fins and tail remain same model. 3 recovering upward from paw slam with mouth closing. 4 Absolute zero windup inhales, cheeks/throat subtly drawn back and all four paws wide planted. 5 Absolute zero sustained freezing BREATH: wide OPEN mouth angledRIGHT at opponent torso level, jaw and teeth visible, head forward, forelegs braced, tail balances. 6 sustained breath with same open mouth/head, slight different neck extension and paw loading. 7 exhale recovery jaw closing and posture relaxing. 8 neutral reference quadruped stance. NO actual emitted ice, vapor, snow, projectiles, crystals or external effects; mouth remains empty for procedural effects. Eight full-body right-facing poses in4x2 transparent sheet; crisp cartoon cel style, no effects."
+      },
+      "accepted_generated_sources": {
+        "walk": "ci/animation-review/characters/arctiguana/generated-walk125.webp",
+        "freeze": "ci/animation-review/characters/arctiguana/generated-freeze125.webp"
+      },
+      "generated_frame_selections": {
+        "walk": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7
+        },
+        "freeze": {
+          "21": 2,
+          "22": 0,
+          "23": 1,
+          "24": 3,
+          "25": 4,
+          "26": 6
+        }
+      },
+      "frameReferenceHeights": {
+        "0": 319.5,
+        "1": 319.5,
+        "2": 319.5,
+        "3": 319.5,
+        "4": 319.5,
+        "5": 319.5,
+        "6": 319.5,
+        "7": 319.5,
+        "8": 313,
+        "9": 313,
+        "10": 313,
+        "11": 313,
+        "12": 313,
+        "13": 313,
+        "14": 313,
+        "15": 313,
+        "16": 313,
+        "17": 313,
+        "18": 313,
+        "19": 313,
+        "20": 313,
+        "21": 320,
+        "22": 320,
+        "23": 320,
+        "24": 320,
+        "25": 320,
+        "26": 320,
+        "27": 313,
+        "28": 313,
+        "29": 313,
+        "30": 313,
+        "31": 313
+      },
+      "frameOrigins": {
+        "0": [
+          287,
+          331
+        ],
+        "1": [
+          292,
+          331
+        ],
+        "2": [
+          294,
+          322
+        ],
+        "3": [
+          288,
+          322
+        ],
+        "4": [
+          290,
+          317
+        ],
+        "5": [
+          293,
+          330
+        ],
+        "6": [
+          288,
+          326
+        ],
+        "7": [
+          287,
+          329
+        ],
+        "8": [
+          256,
+          294
+        ],
+        "9": [
+          262,
+          380
+        ],
+        "10": [
+          155,
+          451.9
+        ],
+        "11": [
+          264,
+          365
+        ],
+        "12": [
+          239,
+          289
+        ],
+        "13": [
+          231,
+          284
+        ],
+        "14": [
+          266,
+          294
+        ],
+        "15": [
+          216,
+          287
+        ],
+        "16": [
+          252,
+          354
+        ],
+        "17": [
+          232,
+          309
+        ],
+        "18": [
+          244,
+          304
+        ],
+        "19": [
+          208,
+          278
+        ],
+        "20": [
+          230,
+          290
+        ],
+        "27": [
+          193,
+          321
+        ],
+        "28": [
+          219,
+          318
+        ],
+        "29": [
+          184,
+          320
+        ],
+        "30": [
+          246,
+          231
+        ],
+        "31": [
+          255,
+          260
+        ]
+      },
+      "preservedEmitters": {
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {
+          "normal": [
+            388,
+            101
+          ]
+        },
+        "13": {
+          "normal": [
+            489,
+            99
+          ]
+        },
+        "14": {
+          "normal": [
+            375,
+            113
+          ]
+        },
+        "15": {
+          "normal": [
+            369,
+            98
+          ]
+        },
+        "16": {
+          "skill0": [
+            429,
+            90
+          ]
+        },
+        "17": {
+          "skill0": [
+            428,
+            79
+          ]
+        },
+        "18": {
+          "skill0": [
+            408,
+            104
+          ]
+        },
+        "19": {
+          "skill1": [
+            358,
+            98
+          ]
+        },
+        "20": {
+          "skill1": [
+            450,
+            80
+          ]
+        },
+        "27": {},
+        "28": {},
+        "29": {},
+        "30": {},
+        "31": {}
+      },
+      "emitterTargets": {
+        "12": [
+          0.88,
+          0.4
+        ],
+        "13": [
+          0.88,
+          0.4
+        ],
+        "14": [
+          0.88,
+          0.4
+        ],
+        "15": [
+          0.88,
+          0.4
+        ],
+        "16": [
+          0.88,
+          0.4
+        ],
+        "17": [
+          0.88,
+          0.4
+        ],
+        "18": [
+          0.88,
+          0.4
+        ],
+        "19": [
+          0.88,
+          0.4
+        ],
+        "20": [
+          0.88,
+          0.4
+        ],
+        "21": [
+          0.9,
+          0.39
+        ],
+        "22": [
+          0.78,
+          0.9
+        ],
+        "23": [
+          0.8,
+          0.93
+        ],
+        "24": [
+          0.88,
+          0.4
+        ],
+        "25": [
+          0.96,
+          0.38
+        ],
+        "26": [
+          0.9,
+          0.38
+        ]
+      },
+      "referenceHeightBySource": {
+        "walk": 319.5,
+        "jump-strike": 313,
+        "powers": 313,
+        "states": 320
+      },
+      "changed_frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "request125": true
     },
     {
       "id": 20,

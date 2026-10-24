@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "four-arms",
+    "id": 1,
+    "visible_pose_sha256": "b96bf820dc8afee7f4598fa3d1a0d722a98e10909a4d95fb093101d80f771ae4",
+    "origin": [
+      173,
+      406
+    ],
+    "referenceHeight": 398
+  },
+  {
+    "slug": "cannonbolt",
+    "id": 10,
+    "visible_pose_sha256": "4e96c79a310a1e1f4b2e832a08526198164e01f2caf8dfcae3fbce8cd2ae6951",
+    "origin": [
+      189,
+      402
+    ],
+    "referenceHeight": 394
+  },
+  {
+    "slug": "arctiguana",
+    "id": 19,
+    "visible_pose_sha256": "a835ac287c354ae4dfe2b4c31e80f8f58a12d7412ea73480bd72188f66130b83",
+    "origin": [
+      193,
+      321
+    ],
+    "referenceHeight": 313
+  },
+  {
+    "slug": "jury-rigg",
+    "id": 44,
+    "visible_pose_sha256": "67668bdfd63d836e27fb2c3abf06b0899ee3c61e88ba897fb222d7cfc6f2dff4",
+    "origin": [
+      142,
+      436
+    ],
+    "referenceHeight": 428
+  }
+]

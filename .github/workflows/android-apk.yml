@@ -310,7 +310,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.4 — Seven Requested Animation Repairs' --notes 'Repairs Wildmutt, Ripjaws, Wildvine, Snare-oh, Upchuck, Spitter and The Worst while preserving every original standing pose. Includes four-paw and short-leg gaits, native predator ultimate combos at the captured location, leafy growing roots and Overgrowth forest, traveling ribbons and hit-only binding cocoons, long-range stretching Tongue Lash, coherent Spitter action art with forward tail contact, and a true belly-first bump. Preserves manual facing, frozen targets and unrelated attacks. Individual source/prompt/checkpoint records saved;86 of92 characters approved,6 other repairs remain queued.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.5 — Mechanic, Shell and Reptile Animation Repairs' --notes 'Repairs Jury Rigg Gear Trap and Junkyard Arsenal, Four Arms walking, Cannonbolt walking/Shell Slam/Rebound Rush/Orbit Breaker, and Arctiguana walking/Glacial Slam/Absolute Zero. Preserves all four original standing designs, manual facing and captured targets. Includes visible trap deployment/arming, muzzle-launched scrap rockets, native shell curl/impact/recovery and low reptile breath poses. See ci/animation-review/requests125/REPORT.md for validation and saved source/prompt records. Live Worker deployment still requires owner Cloudflare credentials.' --prerelease --target "$GITHUB_SHA"
 
 
 

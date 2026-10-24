@@ -10,7 +10,7 @@ def save_native(image,path):
  buffer=io.BytesIO();image.save(buffer,format='WEBP',lossless=True,quality=100,method=4,exact=True);data=buffer.getvalue();assert len(data)>100;temp=path.with_suffix('.writing');temp.write_bytes(data);os.replace(temp,path);assert path.read_bytes()==data
 cfg=json.loads(subprocess.check_output(['node','-e',"const fs=require('fs'),vm=require('vm'),b=vm.createContext({});vm.runInContext(fs.readFileSync('web/data.js','utf8'),b);console.log(vm.runInContext('JSON.stringify(aliens["+str(id)+"])',b))"],cwd=R))
 assert rec['renderHeight']==cfg['renderHeight'] and rec['scale']==cfg['scale'],'Exporter must use configured body size'
-c={'id':id,'name':slug,'sheets':[],'frames':[],'clips':{},'reviewedRevision':rec.get('revision',1),'requestedRepair124':rec.get('requestedRepair124',False)}
+c={'id':id,'name':slug,'sheets':[],'frames':[],'clips':{},'reviewedRevision':rec.get('revision',1),'requestedRepair124':rec.get('requestedRepair124',False),'requestedRepair125':rec.get('requestedRepair125',False)}
 images=[]
 for si,kind in enumerate(['walk','jump-strike','powers','states']):
  src=R/rec['sources'][kind];poses=whole_poses(Image.open(src),attachment_ratio=rec.get('attachmentRatio',.05));assert len(poses)==8
@@ -25,6 +25,10 @@ for fi,f in enumerate(c['frames']):
  if str(fi) in rec.get('frameOrigins',{}):f['origin']=rec['frameOrigins'][str(fi)]
 c['clips']={'walk':list(range(8)),'jump':list(range(8,12)),'normal':list(range(12,16)),'skill0':[16,17,18],'skill1':[19,20,21],'skill2':[22,23],'ultimate':[24,25,26],'idle':[27],'guard':[28],'hit':[29],'ko':[30],'dash':[31]}
 if slug in ['eatle','spitter']:c['clips']['skill2']=[22,23,21]
+if rec.get('requestedRepair125'):
+ if slug=='jury-rigg':c['clips']['skill2']=[22,23,21]
+ if slug=='cannonbolt':c['clips']['skill2']=[22,23,21]
+ if slug=='arctiguana':c['clips']['skill2']=[22,23,21]
 c['referenceHeight']=rec['referenceHeightBySource']['states']
 for key in ['normal','skill0','skill1','skill2','ultimate']:
  for fi in c['clips'][key]:
@@ -70,6 +74,9 @@ for key in ['normal','skill0','skill1','skill2','ultimate']:
    else:
     green=mask&(rgb[:,:,1]>100)&(rgb[:,:,1]>rgb[:,:,0]*1.12)&(rgb[:,:,1]>rgb[:,:,2]*1.12)&(yy>h*.25)&(yy<h*.70);gy,gx=np.where(green);assert len(gx)>0;ys,xs=np.where(mask);near=int(np.argmin((xs-gx.mean())**2+(ys-gy.mean())**2));point=[int(xs[near]),int(ys[near])]
    f.setdefault('emitters',{})[key]=point;continue
+  elif rec.get('requestedRepair125'):
+   target=rec['emitterTargets'][str(fi)];yy,xx=np.indices(a.shape[:2]);mask=a[:,:,3]>180
+   ys,xs=np.where(mask);assert len(xs)>0;near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
   elif slug=='jury-rigg':
    yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)
    if fi in [16,17,18,19,22,23,24,25,26]:mask=mask&(rgb[:,:,1]>100)&(rgb[:,:,1]>rgb[:,:,0]*1.15)&(rgb[:,:,1]>rgb[:,:,2]*1.05)

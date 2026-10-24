@@ -1,11 +1,10 @@
 {
   "id": 1,
   "slug": "four-arms",
-  "status": "verified_unchanged",
-  "reviewed_on": "2026-10-23",
+  "status": "verified_updated",
+  "reviewed_on": "2026-10-24",
   "findings": [
-    "All32 native frames inspected: four arms, black/white shirt, face and body proportions remain coherent.",
-    "Retained weighty gait, multi-fist attacks, thunderclap and grounded slam; standing hit reaction differs from defeat."
+    "Replaced eight gait cels with linked four-arm weight transfer and alternating planted feet; preserved every attack and original standing pose."
   ],
   "changed_files": [],
   "checks": {
@@ -13,7 +12,383 @@
     "states": 12,
     "facings": 2,
     "actual_draws": 240,
+    "native_asset_hashes": true,
+    "native_detail_and_margins": true,
+    "standing_pixels_anchors_heights_preserved": true,
+    "full_browser_review": true,
+    "browser_errors": [],
     "passed": true
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "revision": 1,
+  "requestedRepair125": true,
+  "renderHeight": 226,
+  "scale": 1.22,
+  "sources": {
+    "walk": "ci/animation-review/characters/four-arms/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/four-arms/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/four-arms/source-powers.webp",
+    "states": "ci/animation-review/characters/four-arms/source-states.webp"
+  },
+  "prompts": {
+    "walk": "Exact attached Four Arms: massive RED Tetramand with FOUR muscular connected arms, TWO legs, four small green eyes, black chin stripe, white short-sleeved shirt with broad vertical black center stripe, black trousers, black wrist cuffs, red three-toed feet. Eight sequential walking cycle phases: 1 left foot forward heel contact, 2 left weight-taking, 3 left push and right passing, 4 right leg forward swing, 5 right foot forward heel contact, 6 right weight-taking, 7 right push and left passing, 8 left leg forward swing. Two upper arms and two lower arms swing opposite respective legs, with believable shoulder articulation and separated fists. Small head bob and weight shift. Heavy purposeful walking, not fighting, no sliding. Eight full-body right-facing poses in4x2 transparent sheet; crisp cartoon cel style, no effects."
+  },
+  "accepted_generated_sources": {
+    "walk": "ci/animation-review/characters/four-arms/generated-walk125.webp"
+  },
+  "generated_frame_selections": {
+    "walk": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "frameReferenceHeights": {
+    "0": 423.5,
+    "1": 423.5,
+    "2": 423.5,
+    "3": 423.5,
+    "4": 423.5,
+    "5": 423.5,
+    "6": 423.5,
+    "7": 423.5,
+    "8": 398,
+    "9": 398,
+    "10": 398,
+    "11": 398,
+    "12": 398,
+    "13": 398,
+    "14": 398,
+    "15": 398,
+    "16": 398,
+    "17": 398,
+    "18": 398,
+    "19": 398,
+    "20": 398,
+    "21": 398,
+    "22": 398,
+    "23": 398,
+    "24": 398,
+    "25": 398,
+    "26": 398,
+    "27": 398,
+    "28": 398,
+    "29": 398,
+    "30": 398,
+    "31": 398
+  },
+  "frameOrigins": {
+    "8": [
+      229,
+      288
+    ],
+    "9": [
+      166,
+      479
+    ],
+    "10": [
+      157,
+      405.9
+    ],
+    "11": [
+      238,
+      286
+    ],
+    "12": [
+      202,
+      364
+    ],
+    "13": [
+      184,
+      357
+    ],
+    "14": [
+      206,
+      378
+    ],
+    "15": [
+      195,
+      383
+    ],
+    "16": [
+      201,
+      463
+    ],
+    "17": [
+      175,
+      378
+    ],
+    "18": [
+      222,
+      432
+    ],
+    "19": [
+      163,
+      397
+    ],
+    "20": [
+      222,
+      302
+    ],
+    "21": [
+      178,
+      343
+    ],
+    "22": [
+      193,
+      353
+    ],
+    "23": [
+      195,
+      359
+    ],
+    "24": [
+      182,
+      438
+    ],
+    "25": [
+      210,
+      472
+    ],
+    "26": [
+      181,
+      333
+    ],
+    "27": [
+      173,
+      406
+    ],
+    "28": [
+      206,
+      373
+    ],
+    "29": [
+      185,
+      368
+    ],
+    "30": [
+      210,
+      309
+    ],
+    "31": [
+      228,
+      353
+    ],
+    "0": [
+      189.0,
+      436
+    ],
+    "1": [
+      175.0,
+      435
+    ],
+    "2": [
+      201.0,
+      438
+    ],
+    "3": [
+      195.0,
+      433
+    ],
+    "4": [
+      207.0,
+      426
+    ],
+    "5": [
+      180.0,
+      430
+    ],
+    "6": [
+      186.0,
+      428
+    ],
+    "7": [
+      190.0,
+      428
+    ]
+  },
+  "preservedEmitters": {
+    "8": {},
+    "9": {},
+    "10": {},
+    "11": {},
+    "12": {
+      "normal": [
+        301,
+        149
+      ]
+    },
+    "13": {
+      "normal": [
+        357,
+        146
+      ]
+    },
+    "14": {
+      "normal": [
+        309,
+        144
+      ]
+    },
+    "15": {
+      "normal": [
+        284,
+        156
+      ]
+    },
+    "16": {
+      "skill0": [
+        297,
+        188
+      ]
+    },
+    "17": {
+      "skill0": [
+        258,
+        154
+      ]
+    },
+    "18": {
+      "skill0": [
+        305,
+        176
+      ]
+    },
+    "19": {
+      "skill1": [
+        252,
+        162
+      ]
+    },
+    "20": {
+      "skill1": [
+        313,
+        124
+      ]
+    },
+    "21": {
+      "skill1": [
+        269,
+        140
+      ]
+    },
+    "22": {
+      "skill2": [
+        280,
+        144
+      ]
+    },
+    "23": {
+      "skill2": [
+        313,
+        147
+      ]
+    },
+    "24": {
+      "ultimate": [
+        275,
+        177
+      ]
+    },
+    "25": {
+      "ultimate": [
+        308,
+        192
+      ]
+    },
+    "26": {
+      "ultimate": [
+        278,
+        136
+      ]
+    },
+    "27": {},
+    "28": {},
+    "29": {},
+    "30": {},
+    "31": {}
+  },
+  "emitterTargets": {
+    "12": [
+      0.88,
+      0.4
+    ],
+    "13": [
+      0.88,
+      0.4
+    ],
+    "14": [
+      0.88,
+      0.4
+    ],
+    "15": [
+      0.88,
+      0.4
+    ],
+    "16": [
+      0.88,
+      0.4
+    ],
+    "17": [
+      0.88,
+      0.4
+    ],
+    "18": [
+      0.88,
+      0.4
+    ],
+    "19": [
+      0.88,
+      0.4
+    ],
+    "20": [
+      0.88,
+      0.4
+    ],
+    "21": [
+      0.88,
+      0.4
+    ],
+    "22": [
+      0.88,
+      0.4
+    ],
+    "23": [
+      0.88,
+      0.4
+    ],
+    "24": [
+      0.88,
+      0.4
+    ],
+    "25": [
+      0.88,
+      0.4
+    ],
+    "26": [
+      0.88,
+      0.4
+    ]
+  },
+  "referenceHeightBySource": {
+    "walk": 423.5,
+    "jump-strike": 398,
+    "powers": 398,
+    "states": 398
+  },
+  "changed_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
 }
