@@ -5,20 +5,24 @@
   "reviewed_on": "2026-10-24",
   "findings": [
     "Native gear assembly/retraction and held-launcher ultimate poses preserve the existing mechanic design.",
-    "Visible gear deployment/arming and ballistic scrap rockets from the muzzle replace generic glowing trap and sky-spawned rain."
+    "Visible gear deployment/arming and ballistic scrap rockets from the muzzle replace generic glowing trap and sky-spawned rain.",
+    "Short .12-second placement activity is independent of the three-second armed trap lifetime; movement resumes after placement/recovery. Point-blank rockets retain facing and hit inside the launcher span."
   ],
   "changed_files": [
-    "ci/animation-review/characters/jury-rigg/source-jump-strike.webp",
-    "ci/animation-review/characters/jury-rigg/revision.json",
-    "ci/animation-review/characters/jury-rigg/source-powers.webp",
     "ci/animation-review/characters/jury-rigg/source-walk.webp",
+    "ci/animation-review/characters/jury-rigg/source-jump-strike.webp",
+    "ci/animation-review/characters/jury-rigg/source-powers.webp",
     "ci/animation-review/characters/jury-rigg/source-states.webp",
-    "ci/animation-review/characters/jury-rigg/model-reference.webp",
-    "web/assets/reviewed-native/jury-rigg/powers.webp",
-    "web/assets/reviewed-native/jury-rigg/portrait.webp",
+    "ci/animation-review/characters/jury-rigg/revision.json",
+    "web/assets/reviewed-native/jury-rigg/walk.webp",
     "web/assets/reviewed-native/jury-rigg/jump-strike.webp",
+    "web/assets/reviewed-native/jury-rigg/powers.webp",
     "web/assets/reviewed-native/jury-rigg/states.webp",
-    "web/assets/reviewed-native/jury-rigg/walk.webp"
+    "web/assets/reviewed-native/jury-rigg/portrait.webp",
+    "web/cel-player.js",
+    "web/species-animation-fixes.js",
+    "web/game.js",
+    "server/engine.generated.mjs"
   ],
   "checks": {
     "native_frames": 32,

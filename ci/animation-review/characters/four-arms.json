@@ -6,7 +6,20 @@
   "findings": [
     "Replaced eight gait cels with linked four-arm weight transfer and alternating planted feet; preserved every attack and original standing pose."
   ],
-  "changed_files": [],
+  "changed_files": [
+    "ci/animation-review/characters/four-arms/source-walk.webp",
+    "ci/animation-review/characters/four-arms/source-jump-strike.webp",
+    "ci/animation-review/characters/four-arms/source-powers.webp",
+    "ci/animation-review/characters/four-arms/source-states.webp",
+    "ci/animation-review/characters/four-arms/revision.json",
+    "web/assets/reviewed-native/four-arms/walk.webp",
+    "web/assets/reviewed-native/four-arms/jump-strike.webp",
+    "web/assets/reviewed-native/four-arms/powers.webp",
+    "web/assets/reviewed-native/four-arms/states.webp",
+    "web/assets/reviewed-native/four-arms/portrait.webp",
+    "web/cel-player.js",
+    "web/species-animation-fixes.js"
+  ],
   "checks": {
     "native_frames": 32,
     "states": 12,

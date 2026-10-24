@@ -5,9 +5,23 @@
   "reviewed_on": "2026-10-24",
   "findings": [
     "Rebuilt low four-paw crawl, forepaw glacial slam and braced open-mouth freezing ultimate.",
-    "Procedural ice fronts and mouth-attached gusts replace generic wave presentation."
+    "Procedural ice fronts and mouth-attached gusts replace generic wave presentation.",
+    "Traveling freezing gusts detach naturally after the mouth finishes exhaling."
   ],
-  "changed_files": [],
+  "changed_files": [
+    "ci/animation-review/characters/arctiguana/source-walk.webp",
+    "ci/animation-review/characters/arctiguana/source-jump-strike.webp",
+    "ci/animation-review/characters/arctiguana/source-powers.webp",
+    "ci/animation-review/characters/arctiguana/source-states.webp",
+    "ci/animation-review/characters/arctiguana/revision.json",
+    "web/assets/reviewed-native/arctiguana/walk.webp",
+    "web/assets/reviewed-native/arctiguana/jump-strike.webp",
+    "web/assets/reviewed-native/arctiguana/powers.webp",
+    "web/assets/reviewed-native/arctiguana/states.webp",
+    "web/assets/reviewed-native/arctiguana/portrait.webp",
+    "web/cel-player.js",
+    "web/species-animation-fixes.js"
+  ],
   "checks": {
     "native_frames": 32,
     "states": 12,

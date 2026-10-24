@@ -1654,20 +1654,24 @@
       "status": "verified_updated",
       "findings": [
         "Native gear assembly/retraction and held-launcher ultimate poses preserve the existing mechanic design.",
-        "Visible gear deployment/arming and ballistic scrap rockets from the muzzle replace generic glowing trap and sky-spawned rain."
+        "Visible gear deployment/arming and ballistic scrap rockets from the muzzle replace generic glowing trap and sky-spawned rain.",
+        "Short .12-second placement activity is independent of the three-second armed trap lifetime; movement resumes after placement/recovery. Point-blank rockets retain facing and hit inside the launcher span."
       ],
       "changed_files": [
-        "ci/animation-review/characters/jury-rigg/source-jump-strike.webp",
-        "ci/animation-review/characters/jury-rigg/revision.json",
-        "ci/animation-review/characters/jury-rigg/source-powers.webp",
         "ci/animation-review/characters/jury-rigg/source-walk.webp",
+        "ci/animation-review/characters/jury-rigg/source-jump-strike.webp",
+        "ci/animation-review/characters/jury-rigg/source-powers.webp",
         "ci/animation-review/characters/jury-rigg/source-states.webp",
-        "ci/animation-review/characters/jury-rigg/model-reference.webp",
-        "web/assets/reviewed-native/jury-rigg/powers.webp",
-        "web/assets/reviewed-native/jury-rigg/portrait.webp",
+        "ci/animation-review/characters/jury-rigg/revision.json",
+        "web/assets/reviewed-native/jury-rigg/walk.webp",
         "web/assets/reviewed-native/jury-rigg/jump-strike.webp",
+        "web/assets/reviewed-native/jury-rigg/powers.webp",
         "web/assets/reviewed-native/jury-rigg/states.webp",
-        "web/assets/reviewed-native/jury-rigg/walk.webp"
+        "web/assets/reviewed-native/jury-rigg/portrait.webp",
+        "web/cel-player.js",
+        "web/species-animation-fixes.js",
+        "web/game.js",
+        "server/engine.generated.mjs"
       ],
       "checks": {
         "native_frames": 32,
@@ -1698,7 +1702,7 @@
         "walk": 465,
         "jump-strike": 445,
         "powers": 445,
-        "states": 478
+        "states": 478.0
       },
       "emitterTargets": {
         "12": [
@@ -1775,9 +1779,9 @@
       },
       "generated_frame_selections": {
         "mechanic": {
-          "21": 7,
           "22": 0,
           "23": 1,
+          "21": 7,
           "24": 3,
           "25": 5,
           "26": 6
@@ -1805,12 +1809,12 @@
         "18": 445,
         "19": 445,
         "20": 445,
-        "21": 478,
-        "22": 478,
-        "23": 478,
-        "24": 478,
-        "25": 478,
-        "26": 478,
+        "21": 478.0,
+        "22": 478.0,
+        "23": 478.0,
+        "24": 478.0,
+        "25": 478.0,
+        "26": 478.0,
         "27": 428,
         "28": 428,
         "29": 428,
@@ -2565,7 +2569,20 @@
       "findings": [
         "Replaced eight gait cels with linked four-arm weight transfer and alternating planted feet; preserved every attack and original standing pose."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/four-arms/source-walk.webp",
+        "ci/animation-review/characters/four-arms/source-jump-strike.webp",
+        "ci/animation-review/characters/four-arms/source-powers.webp",
+        "ci/animation-review/characters/four-arms/source-states.webp",
+        "ci/animation-review/characters/four-arms/revision.json",
+        "web/assets/reviewed-native/four-arms/walk.webp",
+        "web/assets/reviewed-native/four-arms/jump-strike.webp",
+        "web/assets/reviewed-native/four-arms/powers.webp",
+        "web/assets/reviewed-native/four-arms/states.webp",
+        "web/assets/reviewed-native/four-arms/portrait.webp",
+        "web/cel-player.js",
+        "web/species-animation-fixes.js"
+      ],
       "checks": {
         "native_frames": 32,
         "states": 12,
@@ -2643,38 +2660,6 @@
         "31": 398
       },
       "frameOrigins": {
-        "0": [
-          189,
-          436
-        ],
-        "1": [
-          175,
-          435
-        ],
-        "2": [
-          201,
-          438
-        ],
-        "3": [
-          195,
-          433
-        ],
-        "4": [
-          207,
-          426
-        ],
-        "5": [
-          180,
-          430
-        ],
-        "6": [
-          186,
-          428
-        ],
-        "7": [
-          190,
-          428
-        ],
         "8": [
           229,
           288
@@ -2770,6 +2755,38 @@
         "31": [
           228,
           353
+        ],
+        "0": [
+          189.0,
+          436
+        ],
+        "1": [
+          175.0,
+          435
+        ],
+        "2": [
+          201.0,
+          438
+        ],
+        "3": [
+          195.0,
+          433
+        ],
+        "4": [
+          207.0,
+          426
+        ],
+        "5": [
+          180.0,
+          430
+        ],
+        "6": [
+          186.0,
+          428
+        ],
+        "7": [
+          190.0,
+          428
         ]
       },
       "preservedEmitters": {
@@ -3842,7 +3859,22 @@
         "Rebuilt uncurled walk and native curl, full sphere, shell impact, uncurl and recovery.",
         "Rebound/ultimate stay near the captured point with visible shell rotation and bounces, preserving direction and damage budgets."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/cannonbolt/source-walk.webp",
+        "ci/animation-review/characters/cannonbolt/source-jump-strike.webp",
+        "ci/animation-review/characters/cannonbolt/source-powers.webp",
+        "ci/animation-review/characters/cannonbolt/source-states.webp",
+        "ci/animation-review/characters/cannonbolt/revision.json",
+        "web/assets/reviewed-native/cannonbolt/walk.webp",
+        "web/assets/reviewed-native/cannonbolt/jump-strike.webp",
+        "web/assets/reviewed-native/cannonbolt/powers.webp",
+        "web/assets/reviewed-native/cannonbolt/states.webp",
+        "web/assets/reviewed-native/cannonbolt/portrait.webp",
+        "web/cel-player.js",
+        "web/species-animation-fixes.js",
+        "web/game.js",
+        "server/engine.generated.mjs"
+      ],
       "checks": {
         "native_frames": 32,
         "states": 12,
@@ -3917,17 +3949,17 @@
         "13": 394,
         "14": 394,
         "15": 394,
-        "16": 374,
-        "17": 374,
-        "18": 374,
-        "19": 374,
-        "20": 374,
-        "21": 374,
-        "22": 374,
-        "23": 374,
-        "24": 374,
-        "25": 374,
-        "26": 374,
+        "16": 374.0,
+        "17": 374.0,
+        "18": 374.0,
+        "19": 374.0,
+        "20": 374.0,
+        "21": 374.0,
+        "22": 374.0,
+        "23": 374.0,
+        "24": 374.0,
+        "25": 374.0,
+        "26": 374.0,
         "27": 394,
         "28": 394,
         "29": 394,
@@ -3935,38 +3967,6 @@
         "31": 394
       },
       "frameOrigins": {
-        "0": [
-          237,
-          413
-        ],
-        "1": [
-          208,
-          413
-        ],
-        "2": [
-          226,
-          413
-        ],
-        "3": [
-          220,
-          408
-        ],
-        "4": [
-          230,
-          409
-        ],
-        "5": [
-          222,
-          404
-        ],
-        "6": [
-          223,
-          408
-        ],
-        "7": [
-          223,
-          404
-        ],
         "8": [
           210,
           335
@@ -4018,6 +4018,38 @@
         "31": [
           255,
           364
+        ],
+        "0": [
+          237.0,
+          413
+        ],
+        "1": [
+          208.0,
+          413
+        ],
+        "2": [
+          226.0,
+          413
+        ],
+        "3": [
+          220.0,
+          408
+        ],
+        "4": [
+          230.0,
+          409
+        ],
+        "5": [
+          222.0,
+          404
+        ],
+        "6": [
+          223.0,
+          408
+        ],
+        "7": [
+          223.0,
+          404
         ]
       },
       "preservedEmitters": {
@@ -4120,8 +4152,8 @@
       "referenceHeightBySource": {
         "walk": 400.5,
         "jump-strike": 394,
-        "powers": 374,
-        "states": 374
+        "powers": 374.0,
+        "states": 374.0
       },
       "changed_frames": [
         0,
@@ -5369,9 +5401,23 @@
       "status": "verified_updated",
       "findings": [
         "Rebuilt low four-paw crawl, forepaw glacial slam and braced open-mouth freezing ultimate.",
-        "Procedural ice fronts and mouth-attached gusts replace generic wave presentation."
+        "Procedural ice fronts and mouth-attached gusts replace generic wave presentation.",
+        "Traveling freezing gusts detach naturally after the mouth finishes exhaling."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/arctiguana/source-walk.webp",
+        "ci/animation-review/characters/arctiguana/source-jump-strike.webp",
+        "ci/animation-review/characters/arctiguana/source-powers.webp",
+        "ci/animation-review/characters/arctiguana/source-states.webp",
+        "ci/animation-review/characters/arctiguana/revision.json",
+        "web/assets/reviewed-native/arctiguana/walk.webp",
+        "web/assets/reviewed-native/arctiguana/jump-strike.webp",
+        "web/assets/reviewed-native/arctiguana/powers.webp",
+        "web/assets/reviewed-native/arctiguana/states.webp",
+        "web/assets/reviewed-native/arctiguana/portrait.webp",
+        "web/cel-player.js",
+        "web/species-animation-fixes.js"
+      ],
       "checks": {
         "native_frames": 32,
         "states": 12,
@@ -5416,9 +5462,9 @@
           "7": 7
         },
         "freeze": {
-          "21": 2,
           "22": 0,
           "23": 1,
+          "21": 2,
           "24": 3,
           "25": 4,
           "26": 6
@@ -5446,12 +5492,12 @@
         "18": 313,
         "19": 313,
         "20": 313,
-        "21": 320,
-        "22": 320,
-        "23": 320,
-        "24": 320,
-        "25": 320,
-        "26": 320,
+        "21": 320.0,
+        "22": 320.0,
+        "23": 320.0,
+        "24": 320.0,
+        "25": 320.0,
+        "26": 320.0,
         "27": 313,
         "28": 313,
         "29": 313,
@@ -5459,38 +5505,6 @@
         "31": 313
       },
       "frameOrigins": {
-        "0": [
-          287,
-          331
-        ],
-        "1": [
-          292,
-          331
-        ],
-        "2": [
-          294,
-          322
-        ],
-        "3": [
-          288,
-          322
-        ],
-        "4": [
-          290,
-          317
-        ],
-        "5": [
-          293,
-          330
-        ],
-        "6": [
-          288,
-          326
-        ],
-        "7": [
-          287,
-          329
-        ],
         "8": [
           256,
           294
@@ -5562,6 +5576,38 @@
         "31": [
           255,
           260
+        ],
+        "0": [
+          287.0,
+          331
+        ],
+        "1": [
+          292.0,
+          331
+        ],
+        "2": [
+          294.0,
+          322
+        ],
+        "3": [
+          288.0,
+          322
+        ],
+        "4": [
+          290.0,
+          317
+        ],
+        "5": [
+          293.0,
+          330
+        ],
+        "6": [
+          288.0,
+          326
+        ],
+        "7": [
+          287.0,
+          329
         ]
       },
       "preservedEmitters": {
@@ -5695,7 +5741,7 @@
         "walk": 319.5,
         "jump-strike": 313,
         "powers": 313,
-        "states": 320
+        "states": 320.0
       },
       "changed_frames": [
         0,

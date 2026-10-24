@@ -1,0 +1,16 @@
+{
+  "version": "12.5",
+  "versionCode": 125,
+  "source_commit": "e3f941c1511393776e001599146dc225bb5f6740",
+  "run_id": 40099113167,
+  "status": "final_ci_running",
+  "requested": [
+    "Jury Rigg",
+    "Four Arms",
+    "Cannonbolt",
+    "Arctiguana"
+  ],
+  "local_validation": "Passed native/standing preservation,960 draws in both facings,10 browser scenes with zero page errors, targeted behavior/point-blank/placement lifetime checks and2760 damaging casts.",
+  "previous_release": "12.4",
+  "next_step": "Wait for final CI, APK/signature verification and published assets; then record final release metadata."
+}

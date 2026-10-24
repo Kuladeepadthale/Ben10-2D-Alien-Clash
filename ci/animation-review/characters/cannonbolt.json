@@ -7,7 +7,22 @@
     "Rebuilt uncurled walk and native curl, full sphere, shell impact, uncurl and recovery.",
     "Rebound/ultimate stay near the captured point with visible shell rotation and bounces, preserving direction and damage budgets."
   ],
-  "changed_files": [],
+  "changed_files": [
+    "ci/animation-review/characters/cannonbolt/source-walk.webp",
+    "ci/animation-review/characters/cannonbolt/source-jump-strike.webp",
+    "ci/animation-review/characters/cannonbolt/source-powers.webp",
+    "ci/animation-review/characters/cannonbolt/source-states.webp",
+    "ci/animation-review/characters/cannonbolt/revision.json",
+    "web/assets/reviewed-native/cannonbolt/walk.webp",
+    "web/assets/reviewed-native/cannonbolt/jump-strike.webp",
+    "web/assets/reviewed-native/cannonbolt/powers.webp",
+    "web/assets/reviewed-native/cannonbolt/states.webp",
+    "web/assets/reviewed-native/cannonbolt/portrait.webp",
+    "web/cel-player.js",
+    "web/species-animation-fixes.js",
+    "web/game.js",
+    "server/engine.generated.mjs"
+  ],
   "checks": {
     "native_frames": 32,
     "states": 12,
