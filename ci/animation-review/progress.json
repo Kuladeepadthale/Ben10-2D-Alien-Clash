@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 47,
-  "completed": 83,
+  "current_character": 48,
+  "completed": 84,
   "characters": [
     {
       "id": 35,
@@ -2024,16 +2024,34 @@
       "id": 47,
       "slug": "bloxx",
       "batch": 5,
-      "status": "in_progress",
+      "status": "verified_updated",
       "findings": [
-        "All32 frames inspected: colored blocks and gorilla identity persist, but small cels differ in detail from the high-resolution standing portrait.",
-        "Rebuild one block model while retaining deliberate arm extension, block reshaping and ground-smash debris behavior."
+        "Rebuilt32 coherent connected red/yellow/blue block-gorilla poses and a matching portrait.",
+        "Native attached block-hammer, open-palm volley, heavy slam and recovery maintain the same head and torso rather than replacing the body with power art."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/bloxx/source-powers.webp",
+        "ci/animation-review/characters/bloxx/revision.json",
+        "ci/animation-review/characters/bloxx/source-jump-strike.webp",
+        "ci/animation-review/characters/bloxx/source-walk.webp",
+        "ci/animation-review/characters/bloxx/source-states.webp",
+        "ci/animation-review/characters/bloxx/model-reference.webp",
+        "web/assets/reviewed-native/bloxx/jump-strike.webp",
+        "web/assets/reviewed-native/bloxx/states.webp",
+        "web/assets/reviewed-native/bloxx/powers.webp",
+        "web/assets/reviewed-native/bloxx/walk.webp",
+        "web/assets/reviewed-native/bloxx/portrait.webp"
+      ],
       "checks": {
         "native_frames": 32,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "actual_draws": 240,
+        "facings": 2,
         "visual_review": true,
-        "passed": false
+        "full_browser_review": true,
+        "browser_errors": [],
+        "passed": true
       },
       "reviewed_on": "2026-10-24",
       "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
