@@ -1,6 +1,6 @@
 # Animation review progress
 
-**84 / 92 characters approved.** Batch size: 4.
+**85 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -50,7 +50,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 10 | 17 | eye-guy | Reviewed — kept | All32 frames inspected: pointed ears, eyeless face and distributed body eyes retain one model. |
 | 11 | 18 | way-big | Reviewed — kept | All32 frames inspected: red/white proportions, head fin and shoulder silhouette remain coherent. |
 | 11 | 19 | arctiguana | Reviewed — kept | All32 frames inspected: blue lizard body, dorsal spikes, cheek fins and tail remain coherent. |
-| 11 | 20 | spitter | In progress | All32 frames inspected: green body, pale throat and tail stay coherent. |
+| 11 | 20 | spitter | Reviewed — updated | Preserved the original standing image while unifying the belly, face, spines, suit and attached tail throughout the other31 cels. |
 | 11 | 21 | buzzshock | Needs revision | Native action and state sheets use heavier outlines and a more rounded face than the walk cycle. |
 | 12 | 22 | swampfire | Reviewed — kept | All32 frames inspected: red flame-shaped head, green plant body and black chest remain coherent. |
 | 12 | 23 | echo-echo | Reviewed — kept | All32 frames inspected: white body, speaker disks and green eyes stay coherent. |
