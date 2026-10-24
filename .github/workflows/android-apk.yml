@@ -310,7 +310,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.3 — Native Animation Review Batch 5' --notes 'Rebuilds Shocksquatch, Feedback, Bloxx and Gravattack with coherent32-pose native models and matching portraits. Includes native electric fists and palm gestures, distinct Conductoid finger/head-plug registration and rush poses, attached block-hammer and brick-release gestures, and visible gravity-core origins. Preserves compact battle text, manual facing, frozen targets and earlier native repairs. All92 aliens analysed;85 approved and7 repairs queued. Exact generation prompts, raw accepted sources and individual checkpoints saved.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.4 — Seven Requested Animation Repairs' --notes 'Repairs Wildmutt, Ripjaws, Wildvine, Snare-oh, Upchuck, Spitter and The Worst while preserving every original standing pose. Includes four-paw and short-leg gaits, native predator ultimate combos at the captured location, leafy growing roots and Overgrowth forest, traveling ribbons and hit-only binding cocoons, long-range stretching Tongue Lash, coherent Spitter action art with forward tail contact, and a true belly-first bump. Preserves manual facing, frozen targets and unrelated attacks. Individual source/prompt/checkpoint records saved;86 of92 characters approved,6 other repairs remain queued.' --prerelease --target "$GITHUB_SHA"
 
 
 

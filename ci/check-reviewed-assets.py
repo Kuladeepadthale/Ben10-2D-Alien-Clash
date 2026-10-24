@@ -11,7 +11,8 @@ for file in sorted((R/'ci/animation-review/characters').glob('*/revision.json'))
  total+=check(c)
  idle=c['frames'][c['clips']['idle'][0]];assert idle['rect'][3]-16>=300
  for key in ['walk','normal','skill0','skill1','ultimate']:
-  assert max(c['frames'][i]['rect'][3]-16 for i in c['clips'][key])>=300
+  # A quadruped stretches horizontally: preserve native pixels rather than enlarging crouched poses.
+  assert max(max(c['frames'][i]['rect'][2]-16,c['frames'][i]['rect'][3]-16) if c['id']==4 else c['frames'][i]['rect'][3]-16 for i in c['clips'][key])>=300
  portrait=Image.open(R/'web'/c['portrait']);assert portrait.mode=='RGBA' and portrait.height>=300 and portrait.getchannel('A').getextrema()[0]==0
  if c['name']=='water-hazard':
   for key in ['normal','skill0','skill1','skill2','ultimate']:

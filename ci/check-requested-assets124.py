@@ -14,3 +14,9 @@ for baseline in json.loads((R/'ci/animation-review/requests124/standing-baseline
  c=json.loads((R/'ci/animation-review/characters'/baseline['slug']/'revision.json').read_text())['character'];f=c['frames'][27];im=Image.open(R/'web'/c['portrait']);a=np.array(im);a[a[:,:,3]<=100]=0
  assert hashlib.sha256(a.tobytes()).hexdigest()==baseline['visible_pose_sha256'];assert f['origin']==baseline['origin'];assert f['referenceHeight']==baseline['referenceHeight']
 print('All7 original standing images/anchors/heights preserved exactly.')
+
+for slug in ['wildmutt','ripjaws','wildvine','snare-oh','upchuck','spitter','the-worst']:
+ c=json.loads((R/'ci/animation-review/characters'/slug/'revision.json').read_text())['character']
+ for key in ['walk','normal','skill0','skill1','ultimate']:
+  assert max(max(c['frames'][i]['rect'][2]-16,c['frames'][i]['rect'][3]-16) if c['id']==4 else c['frames'][i]['rect'][3]-16 for i in c['clips'][key])>=300
+print('Native detail preserved in crouched and horizontal quadruped poses without upscaling.')
