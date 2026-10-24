@@ -1,6 +1,6 @@
 # Animation review progress
 
-**81 / 92 characters approved.** Batch size: 4.
+**82 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -24,10 +24,10 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 4 | 42 | eatle | Reviewed — updated | Unified dark beetle shell, single curved horn and green mouth across32 native cels, replacing the inconsistent flattened strike model. |
 | 4 | 43 | clockwork | Reviewed — updated | Rebuilt32 coherent brass/key-head poses with an unobscured green chest clock and matching native portrait. |
 | 4 | 44 | jury-rigg | Reviewed — updated | Rebuilt32 coherent red mechanic poses and a matching native portrait, preserving goggles, vest, connected tail and species proportions. |
-| 5 | 45 | shocksquatch | Needs revision | All32 frames inspected: fur, face and bracers remain identifiable, but native detail differs from portrait and electricity is baked over hands/feet. |
-| 5 | 46 | feedback | Needs revision | All32 frames inspected: plug-ended antennae, tail and fingers persist, but painted electricity overlaps power cels. |
-| 5 | 47 | bloxx | Needs revision | All32 frames inspected: colored blocks and gorilla identity persist, but small cels differ in detail from the high-resolution standing portrait. |
-| 5 | 48 | gravattack | Needs revision | All32 frames inspected: rocky body and orange core persist, but small textured cels differ from portrait detail and painted black holes overlap actions. |
+| 5 | 45 | shocksquatch | Reviewed — updated | Rebuilt32 coherent yellow/black ape poses with white chest/muzzle, gray plugged bracers and a matching native portrait. |
+| 5 | 46 | feedback | In progress | All32 frames inspected: plug-ended antennae, tail and fingers persist, but painted electricity overlaps power cels. |
+| 5 | 47 | bloxx | In progress | All32 frames inspected: colored blocks and gorilla identity persist, but small cels differ in detail from the high-resolution standing portrait. |
+| 5 | 48 | gravattack | In progress | All32 frames inspected: rocky body and orange core persist, but small textured cels differ from portrait detail and painted black holes overlap actions. |
 | 6 | 49 | crashhopper | Needs revision | All32 frames inspected: antennae, folded wings and long jump legs persist, but native detail is low and ground impacts are painted into body poses. |
 | 6 | 50 | ball-weevil | Needs revision | All32 frames inspected: yellow beetle and antenna identity persist, but standing native cel is only138pixels tall and differs from the sharper portrait. |
 | 6 | 51 | astrodactyl | Needs revision | All32 frames inspected: wing membranes and jetpack persist, but whip loops, jets and energy bursts are painted into body cels. |

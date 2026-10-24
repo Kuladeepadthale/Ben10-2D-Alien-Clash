@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 45,
-  "completed": 81,
+  "current_character": 46,
+  "completed": 82,
   "characters": [
     {
       "id": 35,
@@ -1775,25 +1775,131 @@
       "id": 45,
       "slug": "shocksquatch",
       "batch": 5,
-      "status": "needs_revision",
+      "status": "verified_updated",
       "findings": [
-        "All32 frames inspected: fur, face and bracers remain identifiable, but native detail differs from portrait and electricity is baked over hands/feet.",
-        "Rebuild one yellow/black model with weighty ape strikes and clean hand/ground electrical origins."
+        "Rebuilt32 coherent yellow/black ape poses with white chest/muzzle, gray plugged bracers and a matching native portrait.",
+        "Charged-fist contact, open-palm lightning and planted-foot stomp use actual native hand/foot points with separate electricity effects."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/shocksquatch/source-powers.webp",
+        "ci/animation-review/characters/shocksquatch/revision.json",
+        "ci/animation-review/characters/shocksquatch/source-jump-strike.webp",
+        "ci/animation-review/characters/shocksquatch/source-walk.webp",
+        "ci/animation-review/characters/shocksquatch/source-states.webp",
+        "ci/animation-review/characters/shocksquatch/model-reference.webp",
+        "web/assets/reviewed-native/shocksquatch/jump-strike.webp",
+        "web/assets/reviewed-native/shocksquatch/states.webp",
+        "web/assets/reviewed-native/shocksquatch/powers.webp",
+        "web/assets/reviewed-native/shocksquatch/walk.webp",
+        "web/assets/reviewed-native/shocksquatch/portrait.webp"
+      ],
       "checks": {
         "native_frames": 32,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "actual_draws": 240,
+        "facings": 2,
         "visual_review": true,
-        "passed": false
+        "full_browser_review": true,
+        "browser_errors": [],
+        "passed": true
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "sources": {
+        "walk": "ci/animation-review/characters/shocksquatch/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/shocksquatch/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/shocksquatch/source-powers.webp",
+        "states": "ci/animation-review/characters/shocksquatch/source-states.webp"
+      },
+      "prompts": {
+        "states": "Production transparent 2D game sprite sheet of EXACT shocksquatch from attached identity reference. Muscular yellow-furred ape, black shoulder/neck mane and black forearms/shins, white bare muzzle and white chest with green Omnitrix, swept yellow head crest, gray heavy plug-studded wrist/ankle bands, gray hands/feet. TWO arms and TWO legs, no tail. Crisp original TV-cartoon black outlines, flat cel shading, high native detail. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, consistent body/head/limb proportions across all8. Row-major:1 ultimate windup with arms drawn back;2 ultimate active release, both heavy fists extended forward;3 recovery guard;4 neutral upright standing with arms lowered, matching reference;5 defensive forearm guard;6 UPRIGHT hit recoil, feet planted;7 defeated lying sideways, complete attached body visible;8 forward dash brace with limbs tucked. BODY ONLY, NO actual electricity, beams, projectiles, gravity fields/orbs, floor bursts, muzzle flashes, stars, aura, speed trails, shadows, floor, text or labels. Natural connector/core colors allowed. All bodies opaque on true transparent background. Desired upright native height400-460px in1536x1024 or higher. Every fingertip, head appendage, tail and foot must be inside canvas with25px clear safe margins/gutters; no overlap or cropping.",
+        "walk": "Use EXACT attached shocksquatch model as identity reference. Muscular yellow-furred ape, black shoulder/neck mane and black forearms/shins, white bare muzzle and white chest with green Omnitrix, swept yellow head crest, gray heavy plug-studded wrist/ankle bands, gray hands/feet. TWO arms and TWO legs, no tail. Create8 separate FULL-BODY RIGHT-facing/three-quarter WALK cycle poses in4 columns x2 rows. Same head, body, limb thickness, colors and markings throughout, crisp black outlines, flat original TV-cartoon cel shading and native detail. Row-major left contact, compression, left passing, right swing, right contact, compression, right passing, left swing; natural alternating arms/legs, small body bob. Heavy ape gait and swinging plugged bracers, no tail. Exactly8 complete opaque bodies on true transparency, each native upright height410-470px in1536x1024 or higher. All hands, feet, head appendages and tail inside canvas with25px clear transparent safe margins and gutters; no overlap/cropping. BODY ONLY, NO attacks, electricity, beams, projectiles, gravity fields, spheres, trails, floor, shadow, dust, text or labels. Natural core/connector colors allowed.",
+        "jump-strike": "Production eight-pose transparent sprite sheet using EXACT attached shocksquatch model. Muscular yellow-furred ape, black shoulder/neck mane and black forearms/shins, white bare muzzle and white chest with green Omnitrix, swept yellow head crest, gray heavy plug-studded wrist/ankle bands, gray hands/feet. TWO arms and TWO legs, no tail. Same head, body, face, markings and limb proportions across ALL poses, high-detail crisp black outlines and flat TV-cartoon cel shading. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2 rows. Row-major:1 jump crouch preparation;2 rising jump with bent knees;3 descending jump feet ready;4 landing crouch;5 close punch anticipation, near fist pulled back;6 near fist extended forward in a clear straight punch;7 fist retracting;8 balanced combat guard. Keep all species-specific body parts attached and unchanged. Entire opaque bodies on true transparency, native upright-equivalent height410-470px in1536x1024 or higher. Allow25px safe transparent gutters/margins around every cable, tail, fist, crest and foot. No cropped/touching bodies. BODY ONLY, no actual power effects, rays, projectiles, electricity, auras, spheres, trails, floor, dust, shadows, stars, text or labels.",
+        "powers": "Production high-detail BODY-ONLY game animation sheet from EXACT attached shocksquatch model. Muscular yellow-furred ape, black shoulder/neck mane and black forearms/shins, white bare muzzle and white chest with green Omnitrix, swept yellow head crest, gray heavy plug-studded wrist/ankle bands, gray hands/feet. TWO arms and TWO legs, no tail. Preserve identical head/body/limb proportions and colors across all poses. Crisp black TV-cartoon outlines and flat cel shading, no painterly texture. Exactly8 separate full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, row-major: 1 charged-fist windup drawing near fist back;2 strong forward fist punch;3 fist retraction;4 lightning-arc preparation open hand pulled back;5 lightning release with open gray palm extendedRIGHT and clear fingers;6 lightning recovery;7 electric-stomp anticipation lifting front boot;8 stomp impact, boot planted and knees bent. Natural core/connector colors only; every special effect will be rendered separately by game. NO actual projectiles, detached bricks, electricity, rays, auras, gravity fields, spheres/black holes, stars, trails, bursts, shadows, floor, dust, text or labels. True transparent background, opaque bodies. Native upright-equivalent detail410-470px in1536x1024 or higher. Entire appendages, tail, hands, crest and feet inside canvas with25px transparent safe margins/gutters, never crop or overlap poses. "
+      },
+      "referenceHeightBySource": {
+        "walk": 490,
+        "jump-strike": 465,
+        "powers": 470,
+        "states": 466
+      },
+      "emitterTargets": {
+        "12": [
+          0.22,
+          0.24
+        ],
+        "13": [
+          0.96,
+          0.23
+        ],
+        "14": [
+          0.8,
+          0.4
+        ],
+        "15": [
+          0.8,
+          0.4
+        ],
+        "16": [
+          0.2,
+          0.2
+        ],
+        "17": [
+          0.97,
+          0.25
+        ],
+        "18": [
+          0.82,
+          0.4
+        ],
+        "19": [
+          0.22,
+          0.12
+        ],
+        "20": [
+          0.96,
+          0.24
+        ],
+        "21": [
+          0.8,
+          0.45
+        ],
+        "22": [
+          0.73,
+          0.83
+        ],
+        "23": [
+          0.9,
+          0.96
+        ],
+        "24": [
+          0.15,
+          0.3
+        ],
+        "25": [
+          0.93,
+          0.3
+        ],
+        "26": [
+          0.8,
+          0.4
+        ]
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/shocksquatch/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/shocksquatch/model-reference.webp",
+        "powers": "ci/animation-review/characters/shocksquatch/model-reference.webp",
+        "states": "Shipped v11.9 identity portrait"
+      },
+      "renderHeight": 226,
+      "scale": 1.13
     },
     {
       "id": 46,
       "slug": "feedback",
       "batch": 5,
-      "status": "needs_revision",
+      "status": "in_progress",
       "findings": [
         "All32 frames inspected: plug-ended antennae, tail and fingers persist, but painted electricity overlaps power cels.",
         "Retain flexible cable motion and plug contacts; use one high-detail model and independent electrical effects."
@@ -1804,14 +1910,103 @@
         "visual_review": true,
         "passed": false
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "sources": {
+        "walk": "ci/animation-review/characters/feedback/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/feedback/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/feedback/source-powers.webp",
+        "states": "ci/animation-review/characters/feedback/source-states.webp"
+      },
+      "prompts": {
+        "states": "Production transparent 2D game sprite sheet of EXACT feedback from attached identity reference. Tall lean black Conductoid with white vertical chest stripe and green chest Omnitrix, small green eyes, TWO long flexible black plug-tipped head antennae, ONE long thin black plug-tipped tail, gold cylindrical connector fingertips and toes. Two arms/two legs. Exactly2 head cables and1 tail, all attached and fully visible. Crisp original TV-cartoon black outlines, flat cel shading, high native detail. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, consistent body/head/limb proportions across all8. Row-major:1 ultimate windup with arms drawn back;2 ultimate active release, head plugs aimed forward and fully visible;3 recovery guard;4 neutral upright standing with arms lowered, matching reference;5 defensive forearm guard;6 UPRIGHT hit recoil, feet planted;7 defeated lying sideways, complete attached body visible;8 forward dash brace with limbs tucked. BODY ONLY, NO actual electricity, beams, projectiles, gravity fields/orbs, floor bursts, muzzle flashes, stars, aura, speed trails, shadows, floor, text or labels. Natural connector/core colors allowed. All bodies opaque on true transparent background. Desired upright native height400-460px in1536x1024 or higher. Every fingertip, head appendage, tail and foot must be inside canvas with25px clear safe margins/gutters; no overlap or cropping.",
+        "walk": "Use EXACT attached feedback model as identity reference. Tall lean black Conductoid with white vertical chest stripe and green chest Omnitrix, small green eyes, TWO long flexible black plug-tipped head antennae, ONE long thin black plug-tipped tail, gold cylindrical connector fingertips and toes. Two arms/two legs. Exactly2 head cables and1 tail, all attached and fully visible. Create8 separate FULL-BODY RIGHT-facing/three-quarter WALK cycle poses in4 columns x2 rows. Same head, body, limb thickness, colors and markings throughout, crisp black outlines, flat original TV-cartoon cel shading and native detail. Row-major left contact, compression, left passing, right swing, right contact, compression, right passing, left swing; natural alternating arms/legs, small body bob. All2 attached head cables and1 tail must remain visible, gently trailing, not multiplying. Exactly8 complete opaque bodies on true transparency, each native upright height410-470px in1536x1024 or higher. All hands, feet, head appendages and tail inside canvas with25px clear transparent safe margins and gutters; no overlap/cropping. BODY ONLY, NO attacks, electricity, beams, projectiles, gravity fields, spheres, trails, floor, shadow, dust, text or labels. Natural core/connector colors allowed.",
+        "jump-strike": "Production eight-pose transparent sprite sheet using EXACT attached feedback model. Tall lean black Conductoid with white vertical chest stripe and green chest Omnitrix, small green eyes, TWO long flexible black plug-tipped head antennae, ONE long thin black plug-tipped tail, gold cylindrical connector fingertips and toes. Two arms/two legs. Exactly2 head cables and1 tail, all attached and fully visible. Same head, body, face, markings and limb proportions across ALL poses, high-detail crisp black outlines and flat TV-cartoon cel shading. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2 rows. Row-major:1 jump crouch preparation;2 rising jump with bent knees;3 descending jump feet ready;4 landing crouch;5 close punch anticipation, near fist pulled back;6 near fist extended forward in a clear straight punch;7 fist retracting;8 balanced combat guard. Exactly TWO head cables and ONE tail, not3 head cables, no cable from forehead. Head cables trail behind and never detach. Entire opaque bodies on true transparency, native upright-equivalent height410-470px in1536x1024 or higher. Allow25px safe transparent gutters/margins around every cable, tail, fist, crest and foot. No cropped/touching bodies. BODY ONLY, no actual power effects, rays, projectiles, electricity, auras, spheres, trails, floor, dust, shadows, stars, text or labels.",
+        "states_correction": "Edit ONLY the top row second figure (ultimate active pose) of this Feedback sprite sheet: it currently has THREE head plug cables. Remove the extra forward-projecting black head cable and its gold plug above/right of his face, leaving exactly the TWO existing rearward head cables with gold plugs. Keep both outstretched gold hands and all other body art and every other pose unchanged. Preserve exactly8 complete poses and all original layout, pixels, proportions, colors, chest stripe, tail and identity. No new cable, electricity, beam or extra effect. Preserve true transparent background and original transparent margins.",
+        "powers": "Production high-detail BODY-ONLY game animation sheet from EXACT attached feedback model. Tall lean black Conductoid with white vertical chest stripe and green chest Omnitrix, small green eyes, TWO long flexible black plug-tipped head antennae, ONE long thin black plug-tipped tail, gold cylindrical connector fingertips and toes. Two arms/two legs. Exactly2 head cables and1 tail, all attached and fully visible. Preserve identical head/body/limb proportions and colors across all poses. Crisp black TV-cartoon outlines and flat cel shading, no painterly texture. Exactly8 separate full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, row-major: 1 finger-bolt windup drawing gold hand back;2 finger release with two gold connector fingertips extendedRIGHT, other fingers folded;3 hand retraction;4 plug-discharge preparation leaning forward, arms braced;5 plug release leaning forward with EXACTLY TWO attached head cables sweeping BACK/UP, their TWO gold plugs clearly visible above shoulder level, no third cable or forward forehead cable;6 upright recovery with the same TWO head cables;7 current-rush crouch with elbows tucked;8 forward rush driving posture, feet striding and TWO head cables plus ONE tail trailing naturally. Natural core/connector colors only; every special effect will be rendered separately by game. NO actual projectiles, detached bricks, electricity, rays, auras, gravity fields, spheres/black holes, stars, trails, bursts, shadows, floor, dust, text or labels. True transparent background, opaque bodies. Native upright-equivalent detail410-470px in1536x1024 or higher. Entire appendages, tail, hands, crest and feet inside canvas with25px transparent safe margins/gutters, never crop or overlap poses. Exactly TWO head cables and ONE tail in each pose, all attached, count carefully."
+      },
+      "referenceHeightBySource": {
+        "walk": 485,
+        "jump-strike": 455,
+        "powers": 470,
+        "states": 457
+      },
+      "emitterTargets": {
+        "12": [
+          0.22,
+          0.24
+        ],
+        "13": [
+          0.96,
+          0.23
+        ],
+        "14": [
+          0.8,
+          0.4
+        ],
+        "15": [
+          0.8,
+          0.4
+        ],
+        "16": [
+          0.08,
+          0.26
+        ],
+        "17": [
+          0.98,
+          0.2
+        ],
+        "18": [
+          0.48,
+          0.45
+        ],
+        "19": [
+          0.3,
+          0.15
+        ],
+        "20": [
+          0.36,
+          0.04
+        ],
+        "21": [
+          0.2,
+          0.22
+        ],
+        "22": [
+          0.55,
+          0.55
+        ],
+        "23": [
+          0.55,
+          0.55
+        ],
+        "24": [
+          0.4,
+          0.49
+        ],
+        "25": [
+          0.95,
+          0.29
+        ],
+        "26": [
+          0.85,
+          0.49
+        ]
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/feedback/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/feedback/model-reference.webp",
+        "powers": "ci/animation-review/characters/feedback/model-reference.webp",
+        "states": "Shipped v11.9 identity portrait"
+      },
+      "renderHeight": 226,
+      "scale": 1.08
     },
     {
       "id": 47,
       "slug": "bloxx",
       "batch": 5,
-      "status": "needs_revision",
+      "status": "in_progress",
       "findings": [
         "All32 frames inspected: colored blocks and gorilla identity persist, but small cels differ in detail from the high-resolution standing portrait.",
         "Rebuild one block model while retaining deliberate arm extension, block reshaping and ground-smash debris behavior."
@@ -1822,14 +2017,102 @@
         "visual_review": true,
         "passed": false
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "sources": {
+        "walk": "ci/animation-review/characters/bloxx/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/bloxx/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/bloxx/source-powers.webp",
+        "states": "ci/animation-review/characters/bloxx/source-states.webp"
+      },
+      "prompts": {
+        "states": "Production transparent 2D game sprite sheet of EXACT bloxx from attached identity reference. Bulky gorilla-like construction-block alien, red studded head/shoulders and forearms, yellow muzzle/chest and wrist panels, blue upper arms and thighs, yellow lower legs with red toe blocks, green chest Omnitrix. Crisp flat connected interlocking blocks, TWO arms and TWO legs, no tail. Crisp original TV-cartoon black outlines, flat cel shading, high native detail. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, consistent body/head/limb proportions across all8. Row-major:1 ultimate windup with arms drawn back;2 ultimate active release, both block fists raised for heavy downward impact;3 recovery guard;4 neutral upright standing with arms lowered, matching reference;5 defensive forearm guard;6 UPRIGHT hit recoil, feet planted;7 defeated lying sideways, complete attached body visible;8 forward dash brace with limbs tucked. BODY ONLY, NO actual electricity, beams, projectiles, gravity fields/orbs, floor bursts, muzzle flashes, stars, aura, speed trails, shadows, floor, text or labels. Natural connector/core colors allowed. All bodies opaque on true transparent background. Desired upright native height400-460px in1536x1024 or higher. Every fingertip, head appendage, tail and foot must be inside canvas with25px clear safe margins/gutters; no overlap or cropping.",
+        "walk": "Use EXACT attached bloxx model as identity reference. Bulky gorilla-like construction-block alien, red studded head/shoulders and forearms, yellow muzzle/chest and wrist panels, blue upper arms and thighs, yellow lower legs with red toe blocks, green chest Omnitrix. Crisp flat connected interlocking blocks, TWO arms and TWO legs, no tail. Create8 separate FULL-BODY RIGHT-facing/three-quarter WALK cycle poses in4 columns x2 rows. Same head, body, limb thickness, colors and markings throughout, crisp black outlines, flat original TV-cartoon cel shading and native detail. Row-major left contact, compression, left passing, right swing, right contact, compression, right passing, left swing; natural alternating arms/legs, small body bob. Heavy block-gorilla walking, preserve connected block topology and red/yellow/blue placement. Exactly8 complete opaque bodies on true transparency, each native upright height410-470px in1536x1024 or higher. All hands, feet, head appendages and tail inside canvas with25px clear transparent safe margins and gutters; no overlap/cropping. BODY ONLY, NO attacks, electricity, beams, projectiles, gravity fields, spheres, trails, floor, shadow, dust, text or labels. Natural core/connector colors allowed.",
+        "jump-strike": "Production eight-pose transparent sprite sheet using EXACT attached bloxx model. Bulky gorilla-like construction-block alien, red studded head/shoulders and forearms, yellow muzzle/chest and wrist panels, blue upper arms and thighs, yellow lower legs with red toe blocks, green chest Omnitrix. Crisp flat connected interlocking blocks, TWO arms and TWO legs, no tail. Same head, body, face, markings and limb proportions across ALL poses, high-detail crisp black outlines and flat TV-cartoon cel shading. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2 rows. Row-major:1 jump crouch preparation;2 rising jump with bent knees;3 descending jump feet ready;4 landing crouch;5 close punch anticipation, near fist pulled back;6 near fist extended forward in a clear straight punch;7 fist retracting;8 balanced combat guard. Keep all species-specific body parts attached and unchanged. Entire opaque bodies on true transparency, native upright-equivalent height410-470px in1536x1024 or higher. Allow25px safe transparent gutters/margins around every cable, tail, fist, crest and foot. No cropped/touching bodies. BODY ONLY, no actual power effects, rays, projectiles, electricity, auras, spheres, trails, floor, dust, shadows, stars, text or labels.",
+        "powers": "Production high-detail BODY-ONLY game animation sheet from EXACT attached bloxx model. Bulky gorilla-like construction-block alien, red studded head/shoulders and forearms, yellow muzzle/chest and wrist panels, blue upper arms and thighs, yellow lower legs with red toe blocks, green chest Omnitrix. Crisp flat connected interlocking blocks, TWO arms and TWO legs, no tail. Preserve identical head/body/limb proportions and colors across all poses. Crisp black TV-cartoon outlines and flat cel shading, no painterly texture. Exactly8 separate full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, row-major: 1 block-hammer windup drawing near arm back;2 block-hammer strike extending ONE connected large red/yellow rectangular block fist/hammer on his own forearm towardRIGHT, no detached weapon;3 block-arm recovery to normal fist;4 brick-volley windup drawing palm back;5 brick-volley release with open block palm extendedRIGHT but NO detached bricks drawn;6 palm retraction;7 construction-slam windup raising both fists;8 downward slam crouch with both connected fists close to the floor, no floor drawn. Natural core/connector colors only; every special effect will be rendered separately by game. NO actual projectiles, detached bricks, electricity, rays, auras, gravity fields, spheres/black holes, stars, trails, bursts, shadows, floor, dust, text or labels. True transparent background, opaque bodies. Native upright-equivalent detail410-470px in1536x1024 or higher. Entire appendages, tail, hands, crest and feet inside canvas with25px transparent safe margins/gutters, never crop or overlap poses. "
+      },
+      "referenceHeightBySource": {
+        "walk": 460,
+        "jump-strike": 430,
+        "powers": 400,
+        "states": 424
+      },
+      "emitterTargets": {
+        "12": [
+          0.22,
+          0.24
+        ],
+        "13": [
+          0.96,
+          0.23
+        ],
+        "14": [
+          0.8,
+          0.4
+        ],
+        "15": [
+          0.8,
+          0.4
+        ],
+        "16": [
+          0.12,
+          0.25
+        ],
+        "17": [
+          0.98,
+          0.25
+        ],
+        "18": [
+          0.9,
+          0.52
+        ],
+        "19": [
+          0.2,
+          0.1
+        ],
+        "20": [
+          0.98,
+          0.2
+        ],
+        "21": [
+          0.8,
+          0.3
+        ],
+        "22": [
+          0.82,
+          0.98
+        ],
+        "23": [
+          0.85,
+          0.95
+        ],
+        "24": [
+          0.75,
+          0.98
+        ],
+        "25": [
+          0.8,
+          0.98
+        ],
+        "26": [
+          0.85,
+          0.98
+        ]
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/bloxx/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/bloxx/model-reference.webp",
+        "powers": "ci/animation-review/characters/bloxx/model-reference.webp",
+        "states": "Shipped v11.9 identity portrait"
+      },
+      "renderHeight": 226,
+      "scale": 1.08
     },
     {
       "id": 48,
       "slug": "gravattack",
       "batch": 5,
-      "status": "needs_revision",
+      "status": "in_progress",
       "findings": [
         "All32 frames inspected: rocky body and orange core persist, but small textured cels differ from portrait detail and painted black holes overlap actions.",
         "Preserve rock anatomy and core location while rebuilding clean gravity-control gestures with separate effects."
@@ -1840,8 +2123,96 @@
         "visual_review": true,
         "passed": false
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "sources": {
+        "walk": "ci/animation-review/characters/gravattack/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/gravattack/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/gravattack/source-powers.webp",
+        "states": "ci/animation-review/characters/gravattack/source-states.webp"
+      },
+      "prompts": {
+        "states": "Production transparent 2D game sprite sheet of EXACT gravattack from attached identity reference. Huge round bulky red-brown rocky planetoid humanoid, layered cracked stone plates, small pale tan face with green eyes, pale stone fists/feet, green Omnitrix on upper torso above ONE luminous orange circular abdomen core. Two arms/two legs, no tail. Keep same round torso and core throughout. Crisp original TV-cartoon black outlines, flat cel shading, high native detail. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, consistent body/head/limb proportions across all8. Row-major:1 ultimate windup with arms drawn back;2 ultimate active release, arms spread, abdomen core clear;3 recovery guard;4 neutral upright standing with arms lowered, matching reference;5 defensive forearm guard;6 UPRIGHT hit recoil, feet planted;7 defeated lying sideways, complete attached body visible;8 forward dash brace with limbs tucked. BODY ONLY, NO actual electricity, beams, projectiles, gravity fields/orbs, floor bursts, muzzle flashes, stars, aura, speed trails, shadows, floor, text or labels. Natural connector/core colors allowed. All bodies opaque on true transparent background. Desired upright native height400-460px in1536x1024 or higher. Every fingertip, head appendage, tail and foot must be inside canvas with25px clear safe margins/gutters; no overlap or cropping.",
+        "walk": "Use EXACT attached gravattack model as identity reference. Huge round bulky red-brown rocky planetoid humanoid, layered cracked stone plates, small pale tan face with green eyes, pale stone fists/feet, green Omnitrix on upper torso above ONE luminous orange circular abdomen core. Two arms/two legs, no tail. Keep same round torso and core throughout. Create8 separate FULL-BODY RIGHT-facing/three-quarter WALK cycle poses in4 columns x2 rows. Same head, body, limb thickness, colors and markings throughout, crisp black outlines, flat original TV-cartoon cel shading and native detail. Row-major left contact, compression, left passing, right swing, right contact, compression, right passing, left swing; natural alternating arms/legs, small body bob. Heavy rock-body weight shift, preserve one orange abdomen core, no size transformation. Exactly8 complete opaque bodies on true transparency, each native upright height410-470px in1536x1024 or higher. All hands, feet, head appendages and tail inside canvas with25px clear transparent safe margins and gutters; no overlap/cropping. BODY ONLY, NO attacks, electricity, beams, projectiles, gravity fields, spheres, trails, floor, shadow, dust, text or labels. Natural core/connector colors allowed.",
+        "jump-strike": "Production eight-pose transparent sprite sheet using EXACT attached gravattack model. Huge round bulky red-brown rocky planetoid humanoid, layered cracked stone plates, small pale tan face with green eyes, pale stone fists/feet, green Omnitrix on upper torso above ONE luminous orange circular abdomen core. Two arms/two legs, no tail. Keep same round torso and core throughout. Same head, body, face, markings and limb proportions across ALL poses, high-detail crisp black outlines and flat TV-cartoon cel shading. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2 rows. Row-major:1 jump crouch preparation;2 rising jump with bent knees;3 descending jump feet ready;4 landing crouch;5 close punch anticipation, near fist pulled back;6 near fist extended forward in a clear straight punch;7 fist retracting;8 balanced combat guard. Keep all species-specific body parts attached and unchanged. Entire opaque bodies on true transparency, native upright-equivalent height410-470px in1536x1024 or higher. Allow25px safe transparent gutters/margins around every cable, tail, fist, crest and foot. No cropped/touching bodies. BODY ONLY, no actual power effects, rays, projectiles, electricity, auras, spheres, trails, floor, dust, shadows, stars, text or labels.",
+        "powers": "Production high-detail BODY-ONLY game animation sheet from EXACT attached gravattack model. Huge round bulky red-brown rocky planetoid humanoid, layered cracked stone plates, small pale tan face with green eyes, pale stone fists/feet, green Omnitrix on upper torso above ONE luminous orange circular abdomen core. Two arms/two legs, no tail. Keep same round torso and core throughout. Preserve identical head/body/limb proportions and colors across all poses. Crisp black TV-cartoon outlines and flat cel shading, no painterly texture. Exactly8 separate full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, row-major: 1 gravity-orb windup arms drawn back and orange abdomen core clear;2 orb-release stance extending one pale stone palmRIGHT while abdomen core stays clear/uncovered;3 recovery;4 orbital-field preparation lifting both arms;5 field-active stance with both hands spread and orange core unobscured;6 field recovery;7 planetfall windup lifting one heavy stone foot;8 stomp impact planting the same foot with braced arms and bent knees. Natural core/connector colors only; every special effect will be rendered separately by game. NO actual projectiles, detached bricks, electricity, rays, auras, gravity fields, spheres/black holes, stars, trails, bursts, shadows, floor, dust, text or labels. True transparent background, opaque bodies. Native upright-equivalent detail410-470px in1536x1024 or higher. Entire appendages, tail, hands, crest and feet inside canvas with25px transparent safe margins/gutters, never crop or overlap poses. "
+      },
+      "referenceHeightBySource": {
+        "walk": 450,
+        "jump-strike": 425,
+        "powers": 405,
+        "states": 407
+      },
+      "emitterTargets": {
+        "12": [
+          0.22,
+          0.24
+        ],
+        "13": [
+          0.96,
+          0.23
+        ],
+        "14": [
+          0.8,
+          0.4
+        ],
+        "15": [
+          0.8,
+          0.4
+        ],
+        "16": [
+          0.2,
+          0.2
+        ],
+        "17": [
+          0.97,
+          0.25
+        ],
+        "18": [
+          0.82,
+          0.4
+        ],
+        "19": [
+          0.22,
+          0.12
+        ],
+        "20": [
+          0.96,
+          0.24
+        ],
+        "21": [
+          0.8,
+          0.45
+        ],
+        "22": [
+          0.62,
+          0.65
+        ],
+        "23": [
+          0.87,
+          0.96
+        ],
+        "24": [
+          0.15,
+          0.3
+        ],
+        "25": [
+          0.93,
+          0.3
+        ],
+        "26": [
+          0.8,
+          0.4
+        ]
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/gravattack/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/gravattack/model-reference.webp",
+        "powers": "ci/animation-review/characters/gravattack/model-reference.webp",
+        "states": "Shipped v11.9 identity portrait"
+      },
+      "renderHeight": 226,
+      "scale": 1.18
     },
     {
       "id": 49,

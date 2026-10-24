@@ -37,6 +37,18 @@ for key in ['normal','skill0','skill1','skill2','ultimate']:
   elif slug=='ampfibian':
    yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)&(rgb[:,:,2]>100)&(rgb[:,:,2]>rgb[:,:,0]*1.2)
    ys,xs=np.where(mask);assert len(xs)>0;near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
+  elif slug in ['shocksquatch','feedback','bloxx','gravattack']:
+   yy,xx=np.indices(a.shape[:2]);target=rec['emitterTargets'][str(fi)];mask=(a[:,:,3]>180)
+   if slug=='shocksquatch':mask=mask&(rgb.min(axis=2)>85)&(rgb.max(axis=2)-rgb.min(axis=2)<65)
+   elif slug=='feedback':
+    if key!='skill2':
+     mask=mask&(rgb[:,:,0]>140)&(rgb[:,:,1]>75)&(rgb[:,:,1]>rgb[:,:,2]*1.45)&(rgb[:,:,0]>rgb[:,:,2]*1.5)
+     if key=='skill1':mask=mask&(yy<h*.43)
+   elif slug=='bloxx':
+    if key not in ['skill2','ultimate']:mask=mask&(rgb[:,:,0]>100)&(rgb[:,:,0]>rgb[:,:,1]*1.35)&(rgb[:,:,0]>rgb[:,:,2]*1.15)
+   elif slug=='gravattack' and key not in ['normal','skill2']:
+    mask=mask&(rgb[:,:,0]>180)&(rgb[:,:,1]>75)&(rgb[:,:,1]>rgb[:,:,2]*1.5)&(rgb[:,:,0]>rgb[:,:,1]*1.04)&(yy>h*.35)&(yy<h*.82);target=[.58,.57]
+   ys,xs=np.where(mask);assert len(xs)>0,(slug,key,fi);near=int(np.argmin((xs-w*target[0])**2+(ys-h*target[1])**2));f.setdefault('emitters',{})[key]=[int(xs[near]),int(ys[near])];continue
   elif slug=='clockwork':
    yy,xx=np.indices(a.shape[:2]);mask=(a[:,:,3]>180)
    if fi in [22,23]:

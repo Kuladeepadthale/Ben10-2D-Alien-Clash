@@ -1,17 +1,123 @@
 {
   "id": 45,
   "slug": "shocksquatch",
-  "status": "needs_revision",
-  "reviewed_on": "2026-10-23",
+  "status": "verified_updated",
+  "reviewed_on": "2026-10-24",
   "findings": [
-    "All32 frames inspected: fur, face and bracers remain identifiable, but native detail differs from portrait and electricity is baked over hands/feet.",
-    "Rebuild one yellow/black model with weighty ape strikes and clean hand/ground electrical origins."
+    "Rebuilt32 coherent yellow/black ape poses with white chest/muzzle, gray plugged bracers and a matching native portrait.",
+    "Charged-fist contact, open-palm lightning and planted-foot stomp use actual native hand/foot points with separate electricity effects."
   ],
-  "changed_files": [],
+  "changed_files": [
+    "ci/animation-review/characters/shocksquatch/source-powers.webp",
+    "ci/animation-review/characters/shocksquatch/revision.json",
+    "ci/animation-review/characters/shocksquatch/source-jump-strike.webp",
+    "ci/animation-review/characters/shocksquatch/source-walk.webp",
+    "ci/animation-review/characters/shocksquatch/source-states.webp",
+    "ci/animation-review/characters/shocksquatch/model-reference.webp",
+    "web/assets/reviewed-native/shocksquatch/jump-strike.webp",
+    "web/assets/reviewed-native/shocksquatch/states.webp",
+    "web/assets/reviewed-native/shocksquatch/powers.webp",
+    "web/assets/reviewed-native/shocksquatch/walk.webp",
+    "web/assets/reviewed-native/shocksquatch/portrait.webp"
+  ],
   "checks": {
     "native_frames": 32,
+    "native_asset_hashes": true,
+    "native_detail_and_margins": true,
+    "actual_draws": 240,
+    "facings": 2,
     "visual_review": true,
-    "passed": false
+    "full_browser_review": true,
+    "browser_errors": [],
+    "passed": true
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "sources": {
+    "walk": "ci/animation-review/characters/shocksquatch/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/shocksquatch/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/shocksquatch/source-powers.webp",
+    "states": "ci/animation-review/characters/shocksquatch/source-states.webp"
+  },
+  "prompts": {
+    "states": "Production transparent 2D game sprite sheet of EXACT shocksquatch from attached identity reference. Muscular yellow-furred ape, black shoulder/neck mane and black forearms/shins, white bare muzzle and white chest with green Omnitrix, swept yellow head crest, gray heavy plug-studded wrist/ankle bands, gray hands/feet. TWO arms and TWO legs, no tail. Crisp original TV-cartoon black outlines, flat cel shading, high native detail. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, consistent body/head/limb proportions across all8. Row-major:1 ultimate windup with arms drawn back;2 ultimate active release, both heavy fists extended forward;3 recovery guard;4 neutral upright standing with arms lowered, matching reference;5 defensive forearm guard;6 UPRIGHT hit recoil, feet planted;7 defeated lying sideways, complete attached body visible;8 forward dash brace with limbs tucked. BODY ONLY, NO actual electricity, beams, projectiles, gravity fields/orbs, floor bursts, muzzle flashes, stars, aura, speed trails, shadows, floor, text or labels. Natural connector/core colors allowed. All bodies opaque on true transparent background. Desired upright native height400-460px in1536x1024 or higher. Every fingertip, head appendage, tail and foot must be inside canvas with25px clear safe margins/gutters; no overlap or cropping.",
+    "walk": "Use EXACT attached shocksquatch model as identity reference. Muscular yellow-furred ape, black shoulder/neck mane and black forearms/shins, white bare muzzle and white chest with green Omnitrix, swept yellow head crest, gray heavy plug-studded wrist/ankle bands, gray hands/feet. TWO arms and TWO legs, no tail. Create8 separate FULL-BODY RIGHT-facing/three-quarter WALK cycle poses in4 columns x2 rows. Same head, body, limb thickness, colors and markings throughout, crisp black outlines, flat original TV-cartoon cel shading and native detail. Row-major left contact, compression, left passing, right swing, right contact, compression, right passing, left swing; natural alternating arms/legs, small body bob. Heavy ape gait and swinging plugged bracers, no tail. Exactly8 complete opaque bodies on true transparency, each native upright height410-470px in1536x1024 or higher. All hands, feet, head appendages and tail inside canvas with25px clear transparent safe margins and gutters; no overlap/cropping. BODY ONLY, NO attacks, electricity, beams, projectiles, gravity fields, spheres, trails, floor, shadow, dust, text or labels. Natural core/connector colors allowed.",
+    "jump-strike": "Production eight-pose transparent sprite sheet using EXACT attached shocksquatch model. Muscular yellow-furred ape, black shoulder/neck mane and black forearms/shins, white bare muzzle and white chest with green Omnitrix, swept yellow head crest, gray heavy plug-studded wrist/ankle bands, gray hands/feet. TWO arms and TWO legs, no tail. Same head, body, face, markings and limb proportions across ALL poses, high-detail crisp black outlines and flat TV-cartoon cel shading. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2 rows. Row-major:1 jump crouch preparation;2 rising jump with bent knees;3 descending jump feet ready;4 landing crouch;5 close punch anticipation, near fist pulled back;6 near fist extended forward in a clear straight punch;7 fist retracting;8 balanced combat guard. Keep all species-specific body parts attached and unchanged. Entire opaque bodies on true transparency, native upright-equivalent height410-470px in1536x1024 or higher. Allow25px safe transparent gutters/margins around every cable, tail, fist, crest and foot. No cropped/touching bodies. BODY ONLY, no actual power effects, rays, projectiles, electricity, auras, spheres, trails, floor, dust, shadows, stars, text or labels.",
+    "powers": "Production high-detail BODY-ONLY game animation sheet from EXACT attached shocksquatch model. Muscular yellow-furred ape, black shoulder/neck mane and black forearms/shins, white bare muzzle and white chest with green Omnitrix, swept yellow head crest, gray heavy plug-studded wrist/ankle bands, gray hands/feet. TWO arms and TWO legs, no tail. Preserve identical head/body/limb proportions and colors across all poses. Crisp black TV-cartoon outlines and flat cel shading, no painterly texture. Exactly8 separate full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, row-major: 1 charged-fist windup drawing near fist back;2 strong forward fist punch;3 fist retraction;4 lightning-arc preparation open hand pulled back;5 lightning release with open gray palm extendedRIGHT and clear fingers;6 lightning recovery;7 electric-stomp anticipation lifting front boot;8 stomp impact, boot planted and knees bent. Natural core/connector colors only; every special effect will be rendered separately by game. NO actual projectiles, detached bricks, electricity, rays, auras, gravity fields, spheres/black holes, stars, trails, bursts, shadows, floor, dust, text or labels. True transparent background, opaque bodies. Native upright-equivalent detail410-470px in1536x1024 or higher. Entire appendages, tail, hands, crest and feet inside canvas with25px transparent safe margins/gutters, never crop or overlap poses. "
+  },
+  "referenceHeightBySource": {
+    "walk": 490,
+    "jump-strike": 465,
+    "powers": 470,
+    "states": 466
+  },
+  "emitterTargets": {
+    "12": [
+      0.22,
+      0.24
+    ],
+    "13": [
+      0.96,
+      0.23
+    ],
+    "14": [
+      0.8,
+      0.4
+    ],
+    "15": [
+      0.8,
+      0.4
+    ],
+    "16": [
+      0.2,
+      0.2
+    ],
+    "17": [
+      0.97,
+      0.25
+    ],
+    "18": [
+      0.82,
+      0.4
+    ],
+    "19": [
+      0.22,
+      0.12
+    ],
+    "20": [
+      0.96,
+      0.24
+    ],
+    "21": [
+      0.8,
+      0.45
+    ],
+    "22": [
+      0.73,
+      0.83
+    ],
+    "23": [
+      0.9,
+      0.96
+    ],
+    "24": [
+      0.15,
+      0.3
+    ],
+    "25": [
+      0.93,
+      0.3
+    ],
+    "26": [
+      0.8,
+      0.4
+    ]
+  },
+  "generation_inputs": {
+    "walk": "ci/animation-review/characters/shocksquatch/model-reference.webp",
+    "jump-strike": "ci/animation-review/characters/shocksquatch/model-reference.webp",
+    "powers": "ci/animation-review/characters/shocksquatch/model-reference.webp",
+    "states": "Shipped v11.9 identity portrait"
+  },
+  "renderHeight": 226,
+  "scale": 1.13
 }
