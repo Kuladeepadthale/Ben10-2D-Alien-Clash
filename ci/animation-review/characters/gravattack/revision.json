@@ -1,0 +1,1291 @@
+{
+  "id": 48,
+  "slug": "gravattack",
+  "character": {
+    "id": 48,
+    "name": "gravattack",
+    "sheets": [
+      {
+        "src": "assets/reviewed-native/gravattack/walk.webp",
+        "width": 2008,
+        "height": 1004,
+        "sha256": "a4d48ccb2976a4abfb9a7e6ce98a21ae4d0260ee8514ee9c2f3b51a4d022d97a"
+      },
+      {
+        "src": "assets/reviewed-native/gravattack/jump-strike.webp",
+        "width": 2172,
+        "height": 1086,
+        "sha256": "ea6599f9629cc50a4720c9fac9f1f8368034fc2a94c43b64197f79f25e4ec9b3"
+      },
+      {
+        "src": "assets/reviewed-native/gravattack/powers.webp",
+        "width": 2140,
+        "height": 1070,
+        "sha256": "3dd084850b6e287de66dfc1bd82c15b2ffd23d7d6eddc726133a2c11ab8d482e"
+      },
+      {
+        "src": "assets/reviewed-native/gravattack/states.webp",
+        "width": 2248,
+        "height": 1124,
+        "sha256": "5932b50c99f862b63bb9339cab4073d1b3d36efd80165c05eefa633ac31ee7d8"
+      }
+    ],
+    "frames": [
+      {
+        "sheet": 0,
+        "rect": [
+          40,
+          22,
+          421,
+          464
+        ],
+        "origin": [
+          206.0,
+          456
+        ],
+        "source": "walk",
+        "cell": 0,
+        "bounds": [
+          0,
+          0,
+          405,
+          448
+        ],
+        "sourceRect": [
+          11,
+          44,
+          416,
+          492
+        ],
+        "sourcePixels": 119492,
+        "component": 3,
+        "referenceHeight": 450
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          572,
+          44,
+          361,
+          442
+        ],
+        "origin": [
+          185.0,
+          434
+        ],
+        "source": "walk",
+        "cell": 1,
+        "bounds": [
+          0,
+          0,
+          345,
+          426
+        ],
+        "sourceRect": [
+          426,
+          66,
+          771,
+          492
+        ],
+        "sourcePixels": 99991,
+        "component": 4,
+        "referenceHeight": 450
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          1052,
+          19,
+          406,
+          467
+        ],
+        "origin": [
+          183.0,
+          459
+        ],
+        "source": "walk",
+        "cell": 2,
+        "bounds": [
+          0,
+          0,
+          390,
+          451
+        ],
+        "sourceRect": [
+          780,
+          41,
+          1170,
+          492
+        ],
+        "sourcePixels": 111284,
+        "component": 1,
+        "referenceHeight": 450
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          1572,
+          17,
+          370,
+          469
+        ],
+        "origin": [
+          183.0,
+          461
+        ],
+        "source": "walk",
+        "cell": 3,
+        "bounds": [
+          0,
+          0,
+          354,
+          453
+        ],
+        "sourceRect": [
+          1172,
+          43,
+          1526,
+          496
+        ],
+        "sourcePixels": 105222,
+        "component": 2,
+        "referenceHeight": 450
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          37,
+          518,
+          427,
+          470
+        ],
+        "origin": [
+          195.0,
+          462
+        ],
+        "source": "walk",
+        "cell": 4,
+        "bounds": [
+          0,
+          0,
+          411,
+          454
+        ],
+        "sourceRect": [
+          12,
+          526,
+          423,
+          980
+        ],
+        "sourcePixels": 119722,
+        "component": 5,
+        "referenceHeight": 450
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          573,
+          546,
+          360,
+          442
+        ],
+        "origin": [
+          187.0,
+          434
+        ],
+        "source": "walk",
+        "cell": 5,
+        "bounds": [
+          0,
+          0,
+          344,
+          426
+        ],
+        "sourceRect": [
+          425,
+          549,
+          769,
+          975
+        ],
+        "sourcePixels": 98844,
+        "component": 8,
+        "referenceHeight": 450
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          1060,
+          529,
+          390,
+          459
+        ],
+        "origin": [
+          191.0,
+          451
+        ],
+        "source": "walk",
+        "cell": 6,
+        "bounds": [
+          0,
+          0,
+          374,
+          443
+        ],
+        "sourceRect": [
+          769,
+          534,
+          1143,
+          977
+        ],
+        "sourcePixels": 111547,
+        "component": 6,
+        "referenceHeight": 450
+      },
+      {
+        "sheet": 0,
+        "rect": [
+          1553,
+          527,
+          407,
+          461
+        ],
+        "origin": [
+          203.0,
+          453
+        ],
+        "source": "walk",
+        "cell": 7,
+        "bounds": [
+          0,
+          0,
+          391,
+          445
+        ],
+        "sourceRect": [
+          1141,
+          535,
+          1532,
+          980
+        ],
+        "sourcePixels": 111998,
+        "component": 7,
+        "referenceHeight": 450
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          69,
+          150,
+          404,
+          377
+        ],
+        "origin": [
+          213.0,
+          369
+        ],
+        "source": "jump-strike",
+        "cell": 0,
+        "bounds": [
+          0,
+          0,
+          388,
+          361
+        ],
+        "sourceRect": [
+          12,
+          143,
+          400,
+          504
+        ],
+        "sourcePixels": 102823,
+        "component": 3,
+        "referenceHeight": 425
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          611,
+          109,
+          406,
+          418
+        ],
+        "origin": [
+          210.0,
+          410
+        ],
+        "source": "jump-strike",
+        "cell": 1,
+        "bounds": [
+          0,
+          0,
+          390,
+          402
+        ],
+        "sourceRect": [
+          380,
+          21,
+          770,
+          423
+        ],
+        "sourcePixels": 92710,
+        "component": 1,
+        "referenceHeight": 425
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          1148,
+          80,
+          419,
+          447
+        ],
+        "origin": [
+          212.0,
+          503.65
+        ],
+        "source": "jump-strike",
+        "cell": 2,
+        "bounds": [
+          0,
+          0,
+          403,
+          431
+        ],
+        "sourceRect": [
+          776,
+          56,
+          1179,
+          487
+        ],
+        "sourcePixels": 100452,
+        "component": 2,
+        "referenceHeight": 425
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          1699,
+          188,
+          403,
+          339
+        ],
+        "origin": [
+          207.0,
+          331
+        ],
+        "source": "jump-strike",
+        "cell": 3,
+        "bounds": [
+          0,
+          0,
+          387,
+          323
+        ],
+        "sourceRect": [
+          1141,
+          192,
+          1528,
+          515
+        ],
+        "sourcePixels": 88159,
+        "component": 4,
+        "referenceHeight": 425
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          61,
+          614,
+          421,
+          456
+        ],
+        "origin": [
+          238.0,
+          448
+        ],
+        "source": "jump-strike",
+        "cell": 4,
+        "bounds": [
+          0,
+          0,
+          405,
+          440
+        ],
+        "sourceRect": [
+          9,
+          534,
+          414,
+          974
+        ],
+        "sourcePixels": 107899,
+        "component": 5,
+        "referenceHeight": 425,
+        "emitters": {
+          "normal": [
+            93,
+            109
+          ]
+        }
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          559,
+          629,
+          511,
+          441
+        ],
+        "origin": [
+          226.0,
+          433
+        ],
+        "source": "jump-strike",
+        "cell": 5,
+        "bounds": [
+          0,
+          0,
+          495,
+          425
+        ],
+        "sourceRect": [
+          380,
+          548,
+          875,
+          973
+        ],
+        "sourcePixels": 109773,
+        "component": 6,
+        "referenceHeight": 425,
+        "emitters": {
+          "normal": [
+            491,
+            101
+          ]
+        }
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          1157,
+          640,
+          400,
+          430
+        ],
+        "origin": [
+          231.0,
+          422
+        ],
+        "source": "jump-strike",
+        "cell": 6,
+        "bounds": [
+          0,
+          0,
+          384,
+          414
+        ],
+        "sourceRect": [
+          804,
+          557,
+          1188,
+          971
+        ],
+        "sourcePixels": 93196,
+        "component": 7,
+        "referenceHeight": 425,
+        "emitters": {
+          "normal": [
+            320,
+            172
+          ]
+        }
+      },
+      {
+        "sheet": 1,
+        "rect": [
+          1718,
+          644,
+          364,
+          426
+        ],
+        "origin": [
+          176.0,
+          418
+        ],
+        "source": "jump-strike",
+        "cell": 7,
+        "bounds": [
+          0,
+          0,
+          348,
+          410
+        ],
+        "sourceRect": [
+          1184,
+          565,
+          1532,
+          975
+        ],
+        "sourcePixels": 90179,
+        "component": 8,
+        "referenceHeight": 425,
+        "emitters": {
+          "normal": [
+            291,
+            170
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          56,
+          101,
+          423,
+          418
+        ],
+        "origin": [
+          238.0,
+          410
+        ],
+        "source": "powers",
+        "cell": 0,
+        "bounds": [
+          0,
+          0,
+          407,
+          402
+        ],
+        "sourceRect": [
+          5,
+          94,
+          412,
+          496
+        ],
+        "sourcePixels": 98274,
+        "component": 2,
+        "referenceHeight": 405,
+        "emitters": {
+          "skill0": [
+            261,
+            228
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          563,
+          108,
+          478,
+          411
+        ],
+        "origin": [
+          191.0,
+          403
+        ],
+        "source": "powers",
+        "cell": 1,
+        "bounds": [
+          0,
+          0,
+          462,
+          395
+        ],
+        "sourceRect": [
+          392,
+          101,
+          854,
+          496
+        ],
+        "sourcePixels": 102854,
+        "component": 4,
+        "referenceHeight": 405,
+        "emitters": {
+          "skill0": [
+            268,
+            219
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          1164,
+          105,
+          346,
+          414
+        ],
+        "origin": [
+          179.0,
+          406
+        ],
+        "source": "powers",
+        "cell": 2,
+        "bounds": [
+          0,
+          0,
+          330,
+          398
+        ],
+        "sourceRect": [
+          845,
+          100,
+          1175,
+          498
+        ],
+        "sourcePixels": 91648,
+        "component": 3,
+        "referenceHeight": 405,
+        "emitters": {
+          "skill0": [
+            200,
+            230
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          1680,
+          16,
+          385,
+          503
+        ],
+        "origin": [
+          179.0,
+          495
+        ],
+        "source": "powers",
+        "cell": 3,
+        "bounds": [
+          0,
+          0,
+          369,
+          487
+        ],
+        "sourceRect": [
+          1160,
+          11,
+          1529,
+          498
+        ],
+        "sourcePixels": 96634,
+        "component": 1,
+        "referenceHeight": 405,
+        "emitters": {
+          "skill1": [
+            223,
+            287
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          25,
+          636,
+          484,
+          418
+        ],
+        "origin": [
+          226.0,
+          410
+        ],
+        "source": "powers",
+        "cell": 4,
+        "bounds": [
+          0,
+          0,
+          468,
+          402
+        ],
+        "sourceRect": [
+          8,
+          559,
+          476,
+          961
+        ],
+        "sourcePixels": 102460,
+        "component": 7,
+        "referenceHeight": 405,
+        "emitters": {
+          "skill1": [
+            272,
+            223
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          607,
+          634,
+          391,
+          420
+        ],
+        "origin": [
+          202.0,
+          412
+        ],
+        "source": "powers",
+        "cell": 5,
+        "bounds": [
+          0,
+          0,
+          375,
+          404
+        ],
+        "sourceRect": [
+          458,
+          558,
+          833,
+          962
+        ],
+        "sourcePixels": 100514,
+        "component": 6,
+        "referenceHeight": 405,
+        "emitters": {
+          "skill1": [
+            230,
+            232
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          1136,
+          630,
+          403,
+          424
+        ],
+        "origin": [
+          225.0,
+          416
+        ],
+        "source": "powers",
+        "cell": 6,
+        "bounds": [
+          0,
+          0,
+          387,
+          408
+        ],
+        "sourceRect": [
+          789,
+          551,
+          1176,
+          959
+        ],
+        "sourcePixels": 84955,
+        "component": 5,
+        "referenceHeight": 405,
+        "emitters": {
+          "skill2": [
+            250,
+            276
+          ]
+        }
+      },
+      {
+        "sheet": 2,
+        "rect": [
+          1676,
+          715,
+          393,
+          339
+        ],
+        "origin": [
+          204.0,
+          331
+        ],
+        "source": "powers",
+        "cell": 7,
+        "bounds": [
+          0,
+          0,
+          377,
+          323
+        ],
+        "sourceRect": [
+          1158,
+          640,
+          1535,
+          963
+        ],
+        "sourcePixels": 85415,
+        "component": 8,
+        "referenceHeight": 405,
+        "emitters": {
+          "skill2": [
+            338,
+            308
+          ]
+        }
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          89,
+          155,
+          384,
+          391
+        ],
+        "origin": [
+          222.0,
+          383
+        ],
+        "source": "states",
+        "cell": 0,
+        "bounds": [
+          0,
+          0,
+          368,
+          375
+        ],
+        "sourceRect": [
+          13,
+          109,
+          381,
+          484
+        ],
+        "sourcePixels": 90636,
+        "component": 3,
+        "referenceHeight": 407,
+        "emitters": {
+          "ultimate": [
+            242,
+            223
+          ]
+        }
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          578,
+          129,
+          530,
+          417
+        ],
+        "origin": [
+          258.0,
+          409
+        ],
+        "source": "states",
+        "cell": 1,
+        "bounds": [
+          0,
+          0,
+          514,
+          401
+        ],
+        "sourceRect": [
+          383,
+          84,
+          897,
+          485
+        ],
+        "sourcePixels": 107475,
+        "component": 2,
+        "referenceHeight": 407,
+        "emitters": {
+          "ultimate": [
+            307,
+            238
+          ]
+        }
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          1222,
+          171,
+          365,
+          375
+        ],
+        "origin": [
+          187.0,
+          367
+        ],
+        "source": "states",
+        "cell": 2,
+        "bounds": [
+          0,
+          0,
+          349,
+          359
+        ],
+        "sourceRect": [
+          864,
+          127,
+          1213,
+          486
+        ],
+        "sourcePixels": 82408,
+        "component": 4,
+        "referenceHeight": 407,
+        "emitters": {
+          "ultimate": [
+            212,
+            214
+          ]
+        }
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          1803,
+          123,
+          327,
+          423
+        ],
+        "origin": [
+          160.0,
+          415
+        ],
+        "source": "states",
+        "cell": 3,
+        "bounds": [
+          0,
+          0,
+          311,
+          407
+        ],
+        "sourceRect": [
+          1222,
+          81,
+          1533,
+          488
+        ],
+        "sourcePixels": 89346,
+        "component": 1,
+        "referenceHeight": 407
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          85,
+          731,
+          391,
+          377
+        ],
+        "origin": [
+          189.0,
+          369
+        ],
+        "source": "states",
+        "cell": 4,
+        "bounds": [
+          0,
+          0,
+          375,
+          361
+        ],
+        "sourceRect": [
+          11,
+          575,
+          386,
+          936
+        ],
+        "sourcePixels": 84860,
+        "component": 6,
+        "referenceHeight": 407
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          640,
+          696,
+          405,
+          412
+        ],
+        "origin": [
+          182.0,
+          404
+        ],
+        "source": "states",
+        "cell": 5,
+        "bounds": [
+          0,
+          0,
+          389,
+          396
+        ],
+        "sourceRect": [
+          388,
+          541,
+          777,
+          937
+        ],
+        "sourcePixels": 89148,
+        "component": 5,
+        "referenceHeight": 407
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          1186,
+          877,
+          438,
+          231
+        ],
+        "origin": [
+          215.0,
+          223
+        ],
+        "source": "states",
+        "cell": 6,
+        "bounds": [
+          0,
+          0,
+          422,
+          215
+        ],
+        "sourceRect": [
+          751,
+          698,
+          1173,
+          913
+        ],
+        "sourcePixels": 61919,
+        "component": 8,
+        "referenceHeight": 407
+      },
+      {
+        "sheet": 3,
+        "rect": [
+          1782,
+          766,
+          370,
+          342
+        ],
+        "origin": [
+          200.0,
+          334
+        ],
+        "source": "states",
+        "cell": 7,
+        "bounds": [
+          0,
+          0,
+          354,
+          326
+        ],
+        "sourceRect": [
+          1181,
+          590,
+          1535,
+          916
+        ],
+        "sourcePixels": 70158,
+        "component": 7,
+        "referenceHeight": 407
+      }
+    ],
+    "clips": {
+      "walk": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "jump": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "normal": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "skill0": [
+        16,
+        17,
+        18
+      ],
+      "skill1": [
+        19,
+        20,
+        21
+      ],
+      "skill2": [
+        22,
+        23
+      ],
+      "ultimate": [
+        24,
+        25,
+        26
+      ],
+      "idle": [
+        27
+      ],
+      "guard": [
+        28
+      ],
+      "hit": [
+        29
+      ],
+      "ko": [
+        30
+      ],
+      "dash": [
+        31
+      ]
+    },
+    "reviewedRevision": 1,
+    "referenceHeight": 407,
+    "portrait": "assets/reviewed-native/gravattack/portrait.webp"
+  },
+  "power_phases": [
+    [
+      {
+        "frame": 16,
+        "pixel": [
+          261,
+          228
+        ],
+        "offset": [
+          15.145,
+          -119.841
+        ]
+      },
+      {
+        "frame": 17,
+        "pixel": [
+          268,
+          219
+        ],
+        "offset": [
+          50.702,
+          -121.158
+        ]
+      },
+      {
+        "frame": 18,
+        "pixel": [
+          200,
+          230
+        ],
+        "offset": [
+          13.828,
+          -115.891
+        ]
+      }
+    ],
+    [
+      {
+        "frame": 19,
+        "pixel": [
+          223,
+          287
+        ],
+        "offset": [
+          28.973,
+          -136.962
+        ]
+      },
+      {
+        "frame": 20,
+        "pixel": [
+          272,
+          223
+        ],
+        "offset": [
+          30.29,
+          -123.134
+        ]
+      },
+      {
+        "frame": 21,
+        "pixel": [
+          230,
+          232
+        ],
+        "offset": [
+          18.437,
+          -118.524
+        ]
+      }
+    ],
+    [
+      {
+        "frame": 22,
+        "pixel": [
+          250,
+          276
+        ],
+        "offset": [
+          16.462,
+          -92.186
+        ]
+      },
+      {
+        "frame": 23,
+        "pixel": [
+          338,
+          308
+        ],
+        "offset": [
+          88.235,
+          -15.145
+        ]
+      }
+    ],
+    [
+      {
+        "frame": 24,
+        "pixel": [
+          242,
+          223
+        ],
+        "offset": [
+          13.105,
+          -104.837
+        ]
+      },
+      {
+        "frame": 25,
+        "pixel": [
+          307,
+          238
+        ],
+        "offset": [
+          32.106,
+          -112.045
+        ]
+      },
+      {
+        "frame": 26,
+        "pixel": [
+          212,
+          214
+        ],
+        "offset": [
+          16.381,
+          -100.251
+        ]
+      }
+    ]
+  ],
+  "sources": {
+    "walk": "ci/animation-review/characters/gravattack/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/gravattack/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/gravattack/source-powers.webp",
+    "states": "ci/animation-review/characters/gravattack/source-states.webp"
+  },
+  "prompts": {
+    "states": "Production transparent 2D game sprite sheet of EXACT gravattack from attached identity reference. Huge round bulky red-brown rocky planetoid humanoid, layered cracked stone plates, small pale tan face with green eyes, pale stone fists/feet, green Omnitrix on upper torso above ONE luminous orange circular abdomen core. Two arms/two legs, no tail. Keep same round torso and core throughout. Crisp original TV-cartoon black outlines, flat cel shading, high native detail. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, consistent body/head/limb proportions across all8. Row-major:1 ultimate windup with arms drawn back;2 ultimate active release, arms spread, abdomen core clear;3 recovery guard;4 neutral upright standing with arms lowered, matching reference;5 defensive forearm guard;6 UPRIGHT hit recoil, feet planted;7 defeated lying sideways, complete attached body visible;8 forward dash brace with limbs tucked. BODY ONLY, NO actual electricity, beams, projectiles, gravity fields/orbs, floor bursts, muzzle flashes, stars, aura, speed trails, shadows, floor, text or labels. Natural connector/core colors allowed. All bodies opaque on true transparent background. Desired upright native height400-460px in1536x1024 or higher. Every fingertip, head appendage, tail and foot must be inside canvas with25px clear safe margins/gutters; no overlap or cropping.",
+    "walk": "Use EXACT attached gravattack model as identity reference. Huge round bulky red-brown rocky planetoid humanoid, layered cracked stone plates, small pale tan face with green eyes, pale stone fists/feet, green Omnitrix on upper torso above ONE luminous orange circular abdomen core. Two arms/two legs, no tail. Keep same round torso and core throughout. Create8 separate FULL-BODY RIGHT-facing/three-quarter WALK cycle poses in4 columns x2 rows. Same head, body, limb thickness, colors and markings throughout, crisp black outlines, flat original TV-cartoon cel shading and native detail. Row-major left contact, compression, left passing, right swing, right contact, compression, right passing, left swing; natural alternating arms/legs, small body bob. Heavy rock-body weight shift, preserve one orange abdomen core, no size transformation. Exactly8 complete opaque bodies on true transparency, each native upright height410-470px in1536x1024 or higher. All hands, feet, head appendages and tail inside canvas with25px clear transparent safe margins and gutters; no overlap/cropping. BODY ONLY, NO attacks, electricity, beams, projectiles, gravity fields, spheres, trails, floor, shadow, dust, text or labels. Natural core/connector colors allowed.",
+    "jump-strike": "Production eight-pose transparent sprite sheet using EXACT attached gravattack model. Huge round bulky red-brown rocky planetoid humanoid, layered cracked stone plates, small pale tan face with green eyes, pale stone fists/feet, green Omnitrix on upper torso above ONE luminous orange circular abdomen core. Two arms/two legs, no tail. Keep same round torso and core throughout. Same head, body, face, markings and limb proportions across ALL poses, high-detail crisp black outlines and flat TV-cartoon cel shading. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2 rows. Row-major:1 jump crouch preparation;2 rising jump with bent knees;3 descending jump feet ready;4 landing crouch;5 close punch anticipation, near fist pulled back;6 near fist extended forward in a clear straight punch;7 fist retracting;8 balanced combat guard. Keep all species-specific body parts attached and unchanged. Entire opaque bodies on true transparency, native upright-equivalent height410-470px in1536x1024 or higher. Allow25px safe transparent gutters/margins around every cable, tail, fist, crest and foot. No cropped/touching bodies. BODY ONLY, no actual power effects, rays, projectiles, electricity, auras, spheres, trails, floor, dust, shadows, stars, text or labels.",
+    "powers": "Production high-detail BODY-ONLY game animation sheet from EXACT attached gravattack model. Huge round bulky red-brown rocky planetoid humanoid, layered cracked stone plates, small pale tan face with green eyes, pale stone fists/feet, green Omnitrix on upper torso above ONE luminous orange circular abdomen core. Two arms/two legs, no tail. Keep same round torso and core throughout. Preserve identical head/body/limb proportions and colors across all poses. Crisp black TV-cartoon outlines and flat cel shading, no painterly texture. Exactly8 separate full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, row-major: 1 gravity-orb windup arms drawn back and orange abdomen core clear;2 orb-release stance extending one pale stone palmRIGHT while abdomen core stays clear/uncovered;3 recovery;4 orbital-field preparation lifting both arms;5 field-active stance with both hands spread and orange core unobscured;6 field recovery;7 planetfall windup lifting one heavy stone foot;8 stomp impact planting the same foot with braced arms and bent knees. Natural core/connector colors only; every special effect will be rendered separately by game. NO actual projectiles, detached bricks, electricity, rays, auras, gravity fields, spheres/black holes, stars, trails, bursts, shadows, floor, dust, text or labels. True transparent background, opaque bodies. Native upright-equivalent detail410-470px in1536x1024 or higher. Entire appendages, tail, hands, crest and feet inside canvas with25px transparent safe margins/gutters, never crop or overlap poses. "
+  },
+  "generated_with": "built-in image_gen"
+}

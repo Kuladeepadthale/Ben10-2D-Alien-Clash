@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 48,
-  "completed": 84,
+  "current_character": 49,
+  "completed": 85,
   "characters": [
     {
       "id": 35,
@@ -2148,16 +2148,34 @@
       "id": 48,
       "slug": "gravattack",
       "batch": 5,
-      "status": "in_progress",
+      "status": "verified_updated",
       "findings": [
-        "All32 frames inspected: rocky body and orange core persist, but small textured cels differ from portrait detail and painted black holes overlap actions.",
-        "Preserve rock anatomy and core location while rebuilding clean gravity-control gestures with separate effects."
+        "Rebuilt32 coherent round red-brown rocky body poses with pale stone extremities, green badge and one orange abdomen core.",
+        "Gravity origins register on visible native core pixels; planetfall uses boot origin and braced stomp poses, with fields rendered separately."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/gravattack/source-powers.webp",
+        "ci/animation-review/characters/gravattack/revision.json",
+        "ci/animation-review/characters/gravattack/source-jump-strike.webp",
+        "ci/animation-review/characters/gravattack/source-walk.webp",
+        "ci/animation-review/characters/gravattack/source-states.webp",
+        "ci/animation-review/characters/gravattack/model-reference.webp",
+        "web/assets/reviewed-native/gravattack/jump-strike.webp",
+        "web/assets/reviewed-native/gravattack/states.webp",
+        "web/assets/reviewed-native/gravattack/powers.webp",
+        "web/assets/reviewed-native/gravattack/walk.webp",
+        "web/assets/reviewed-native/gravattack/portrait.webp"
+      ],
       "checks": {
         "native_frames": 32,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "actual_draws": 240,
+        "facings": 2,
         "visual_review": true,
-        "passed": false
+        "full_browser_review": true,
+        "browser_errors": [],
+        "passed": true
       },
       "reviewed_on": "2026-10-24",
       "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",

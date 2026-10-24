@@ -1,17 +1,123 @@
 {
   "id": 48,
   "slug": "gravattack",
-  "status": "needs_revision",
-  "reviewed_on": "2026-10-23",
+  "status": "verified_updated",
+  "reviewed_on": "2026-10-24",
   "findings": [
-    "All32 frames inspected: rocky body and orange core persist, but small textured cels differ from portrait detail and painted black holes overlap actions.",
-    "Preserve rock anatomy and core location while rebuilding clean gravity-control gestures with separate effects."
+    "Rebuilt32 coherent round red-brown rocky body poses with pale stone extremities, green badge and one orange abdomen core.",
+    "Gravity origins register on visible native core pixels; planetfall uses boot origin and braced stomp poses, with fields rendered separately."
   ],
-  "changed_files": [],
+  "changed_files": [
+    "ci/animation-review/characters/gravattack/source-powers.webp",
+    "ci/animation-review/characters/gravattack/revision.json",
+    "ci/animation-review/characters/gravattack/source-jump-strike.webp",
+    "ci/animation-review/characters/gravattack/source-walk.webp",
+    "ci/animation-review/characters/gravattack/source-states.webp",
+    "ci/animation-review/characters/gravattack/model-reference.webp",
+    "web/assets/reviewed-native/gravattack/jump-strike.webp",
+    "web/assets/reviewed-native/gravattack/states.webp",
+    "web/assets/reviewed-native/gravattack/powers.webp",
+    "web/assets/reviewed-native/gravattack/walk.webp",
+    "web/assets/reviewed-native/gravattack/portrait.webp"
+  ],
   "checks": {
     "native_frames": 32,
+    "native_asset_hashes": true,
+    "native_detail_and_margins": true,
+    "actual_draws": 240,
+    "facings": 2,
     "visual_review": true,
-    "passed": false
+    "full_browser_review": true,
+    "browser_errors": [],
+    "passed": true
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "sources": {
+    "walk": "ci/animation-review/characters/gravattack/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/gravattack/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/gravattack/source-powers.webp",
+    "states": "ci/animation-review/characters/gravattack/source-states.webp"
+  },
+  "prompts": {
+    "states": "Production transparent 2D game sprite sheet of EXACT gravattack from attached identity reference. Huge round bulky red-brown rocky planetoid humanoid, layered cracked stone plates, small pale tan face with green eyes, pale stone fists/feet, green Omnitrix on upper torso above ONE luminous orange circular abdomen core. Two arms/two legs, no tail. Keep same round torso and core throughout. Crisp original TV-cartoon black outlines, flat cel shading, high native detail. Exactly8 separate complete full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, consistent body/head/limb proportions across all8. Row-major:1 ultimate windup with arms drawn back;2 ultimate active release, arms spread, abdomen core clear;3 recovery guard;4 neutral upright standing with arms lowered, matching reference;5 defensive forearm guard;6 UPRIGHT hit recoil, feet planted;7 defeated lying sideways, complete attached body visible;8 forward dash brace with limbs tucked. BODY ONLY, NO actual electricity, beams, projectiles, gravity fields/orbs, floor bursts, muzzle flashes, stars, aura, speed trails, shadows, floor, text or labels. Natural connector/core colors allowed. All bodies opaque on true transparent background. Desired upright native height400-460px in1536x1024 or higher. Every fingertip, head appendage, tail and foot must be inside canvas with25px clear safe margins/gutters; no overlap or cropping.",
+    "walk": "Use EXACT attached gravattack model as identity reference. Huge round bulky red-brown rocky planetoid humanoid, layered cracked stone plates, small pale tan face with green eyes, pale stone fists/feet, green Omnitrix on upper torso above ONE luminous orange circular abdomen core. Two arms/two legs, no tail. Keep same round torso and core throughout. Create8 separate FULL-BODY RIGHT-facing/three-quarter WALK cycle poses in4 columns x2 rows. Same head, body, limb thickness, colors and markings throughout, crisp black outlines, flat original TV-cartoon cel shading and native detail. Row-major left contact, compression, left passing, right swing, right contact, compression, right passing, left swing; natural alternating arms/legs, small body bob. Heavy rock-body weight shift, preserve one orange abdomen core, no size transformation. Exactly8 complete opaque bodies on true transparency, each native upright height410-470px in1536x1024 or higher. All hands, feet, head appendages and tail inside canvas with25px clear transparent safe margins and gutters; no overlap/cropping. BODY ONLY, NO attacks, electricity, beams, projectiles, gravity fields, spheres, trails, floor, shadow, dust, text or labels. Natural core/connector colors allowed.",
+    "jump-strike": "Production eight-pose transparent sprite sheet using EXACT attached gravattack model. Huge round bulky red-brown rocky planetoid humanoid, layered cracked stone plates, small pale tan face with green eyes, pale stone fists/feet, green Omnitrix on upper torso above ONE luminous orange circular abdomen core. Two arms/two legs, no tail. Keep same round torso and core throughout. Same head, body, face, markings and limb proportions across ALL poses, high-detail crisp black outlines and flat TV-cartoon cel shading. Exactly8 separate FULL-BODY RIGHT-facing/three-quarter figures in4 columns x2 rows. Row-major:1 jump crouch preparation;2 rising jump with bent knees;3 descending jump feet ready;4 landing crouch;5 close punch anticipation, near fist pulled back;6 near fist extended forward in a clear straight punch;7 fist retracting;8 balanced combat guard. Keep all species-specific body parts attached and unchanged. Entire opaque bodies on true transparency, native upright-equivalent height410-470px in1536x1024 or higher. Allow25px safe transparent gutters/margins around every cable, tail, fist, crest and foot. No cropped/touching bodies. BODY ONLY, no actual power effects, rays, projectiles, electricity, auras, spheres, trails, floor, dust, shadows, stars, text or labels.",
+    "powers": "Production high-detail BODY-ONLY game animation sheet from EXACT attached gravattack model. Huge round bulky red-brown rocky planetoid humanoid, layered cracked stone plates, small pale tan face with green eyes, pale stone fists/feet, green Omnitrix on upper torso above ONE luminous orange circular abdomen core. Two arms/two legs, no tail. Keep same round torso and core throughout. Preserve identical head/body/limb proportions and colors across all poses. Crisp black TV-cartoon outlines and flat cel shading, no painterly texture. Exactly8 separate full-body RIGHT-facing/three-quarter poses in4 columns x2 rows, row-major: 1 gravity-orb windup arms drawn back and orange abdomen core clear;2 orb-release stance extending one pale stone palmRIGHT while abdomen core stays clear/uncovered;3 recovery;4 orbital-field preparation lifting both arms;5 field-active stance with both hands spread and orange core unobscured;6 field recovery;7 planetfall windup lifting one heavy stone foot;8 stomp impact planting the same foot with braced arms and bent knees. Natural core/connector colors only; every special effect will be rendered separately by game. NO actual projectiles, detached bricks, electricity, rays, auras, gravity fields, spheres/black holes, stars, trails, bursts, shadows, floor, dust, text or labels. True transparent background, opaque bodies. Native upright-equivalent detail410-470px in1536x1024 or higher. Entire appendages, tail, hands, crest and feet inside canvas with25px transparent safe margins/gutters, never crop or overlap poses. "
+  },
+  "referenceHeightBySource": {
+    "walk": 450,
+    "jump-strike": 425,
+    "powers": 405,
+    "states": 407
+  },
+  "emitterTargets": {
+    "12": [
+      0.22,
+      0.24
+    ],
+    "13": [
+      0.96,
+      0.23
+    ],
+    "14": [
+      0.8,
+      0.4
+    ],
+    "15": [
+      0.8,
+      0.4
+    ],
+    "16": [
+      0.2,
+      0.2
+    ],
+    "17": [
+      0.97,
+      0.25
+    ],
+    "18": [
+      0.82,
+      0.4
+    ],
+    "19": [
+      0.22,
+      0.12
+    ],
+    "20": [
+      0.96,
+      0.24
+    ],
+    "21": [
+      0.8,
+      0.45
+    ],
+    "22": [
+      0.62,
+      0.65
+    ],
+    "23": [
+      0.87,
+      0.96
+    ],
+    "24": [
+      0.15,
+      0.3
+    ],
+    "25": [
+      0.93,
+      0.3
+    ],
+    "26": [
+      0.8,
+      0.4
+    ]
+  },
+  "generation_inputs": {
+    "walk": "ci/animation-review/characters/gravattack/model-reference.webp",
+    "jump-strike": "ci/animation-review/characters/gravattack/model-reference.webp",
+    "powers": "ci/animation-review/characters/gravattack/model-reference.webp",
+    "states": "Shipped v11.9 identity portrait"
+  },
+  "renderHeight": 226,
+  "scale": 1.18
 }
