@@ -1,17 +1,27 @@
 {
   "id": 8,
   "slug": "ripjaws",
-  "status": "in_progress",
+  "status": "verified_updated",
   "reviewed_on": "2026-10-24",
   "findings": [
-    "Walk cycle omits the head lure visible in jump, attacks and idle; these models need reconciliation.",
-    "Preserve webbed limbs, dorsal fin and wide jaw bite animation when repairing the lure."
+    "Preserved the original standing model and unrelated actions; Deep-sea Frenzy now has jaw-first windup, bite/lunge and recovery.",
+    "Animated aquatic spiral/wake accompanies the native fish model, with a fixed captured strike location and manual facing."
   ],
   "changed_files": [],
   "checks": {
-    "passed": false
+    "native_frames": 32,
+    "native_asset_hashes": true,
+    "native_detail_and_margins": true,
+    "actual_draws": 240,
+    "facings": 2,
+    "standing_pixels_and_registration_preserved": true,
+    "visual_review": true,
+    "full_browser_review": true,
+    "browser_errors": [],
+    "requested_gameplay_regressions": true,
+    "passed": true
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "basis_commit": "5e0dfbe0b97ed5ede2e1e365b064f67aa205ce51",
   "stage": "Repair walk lure before approval",
   "revision": 1,
   "requestedRepair124": true,
@@ -64,9 +74,9 @@
     "21": 434,
     "22": 434,
     "23": 434,
-    "24": 436.0,
-    "25": 436.0,
-    "26": 436.0,
+    "24": 436,
+    "25": 436,
+    "26": 436,
     "27": 434,
     "28": 434,
     "29": 434,
@@ -348,7 +358,7 @@
     "walk": 434,
     "jump-strike": 434,
     "powers": 434,
-    "states": 436.0
+    "states": 436
   },
   "requested_changes": [
     "states"
