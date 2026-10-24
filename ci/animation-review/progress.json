@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 42,
-  "completed": 78,
+  "current_character": 43,
+  "completed": 79,
   "characters": [
     {
       "id": 35,
@@ -1394,19 +1394,134 @@
       "id": 42,
       "slug": "eatle",
       "batch": 4,
-      "status": "needs_revision",
+      "status": "verified_updated",
       "findings": [
-        "Strike sheet uses a different flatter armor drawing from walk/state sheets; painted projectiles also overlap the mouth.",
-        "Unify beetle shell and horn silhouette, preserve existing strike-sheet scale correction, and separate mouth/horn effects."
+        "Unified dark beetle shell, single curved horn and green mouth across32 native cels, replacing the inconsistent flattened strike model.",
+        "Mouth projectiles and ultimate beam register to native mouth pixels, without painted projectile art over the body.",
+        "Beetle charge uses its own lowered-horn brace/drive/recovery rather than generic punches. Horn uppercut uses crouch, rise and braced recovery.",
+        "Legacy strike-sheet reference-size override remains for unreviewed source art only; rebuilt Eatle retains its own consistent registered sizes."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/eatle/source-jump-strike.webp",
+        "ci/animation-review/characters/eatle/revision.json",
+        "ci/animation-review/characters/eatle/source-powers.webp",
+        "ci/animation-review/characters/eatle/source-walk.webp",
+        "ci/animation-review/characters/eatle/source-states.webp",
+        "ci/animation-review/characters/eatle/model-reference.webp",
+        "web/assets/reviewed-native/eatle/powers.webp",
+        "web/assets/reviewed-native/eatle/portrait.webp",
+        "web/assets/reviewed-native/eatle/jump-strike.webp",
+        "web/assets/reviewed-native/eatle/states.webp",
+        "web/assets/reviewed-native/eatle/walk.webp",
+        "ci/export-reviewed-character.py",
+        "web/cel-player.js"
+      ],
       "checks": {
         "native_frames": 32,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "actual_draws": 240,
+        "facings": 2,
+        "upright_model_scale_visual_review": true,
+        "actual_mouth_beam_browser_review": true,
+        "native_horn_charge_and_uppercut": true,
+        "uppercut_recovery_frame": 21,
+        "roster_pursuit_and_registration": true,
         "visual_review": true,
-        "passed": false
+        "full_browser_review": true,
+        "browser_errors": [],
+        "passed": true
       },
-      "reviewed_on": "2026-10-23",
-      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+      "reviewed_on": "2026-10-24",
+      "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+      "renderHeight": 226,
+      "scale": 1.08,
+      "sources": {
+        "states": "ci/animation-review/characters/eatle/source-states.webp",
+        "walk": "ci/animation-review/characters/eatle/source-walk.webp",
+        "jump-strike": "ci/animation-review/characters/eatle/source-jump-strike.webp",
+        "powers": "ci/animation-review/characters/eatle/source-powers.webp"
+      },
+      "prompts": {
+        "states": "Production 2D animation sprite sheet of EXACT Eatle from attached Ben10 identity reference. Bulky dark gunmetal beetle-armored humanoid, ONE long upward-curved rhinoceros-beetle horn attached to forehead, narrow green eyes below horn, broad jaw with luminous GREEN inner mouth and pale-green teeth, green chest Omnitrix below mouth, rounded dark shoulder/shell plates, two thick armored arms with blocky clawed fists, two sturdy armored legs and broad split-toed feet. NO extra insect legs, wings, tail, extra horn, human face or transformation. Crisp original TV-cartoon black outlines, flat dark blue-gray/gunmetal panels with one shadow tone, not painterly. Exactly8 separate complete full-body RIGHT-facing/three-quarter figures in4 columns x2 rows, same horn/head/mouth/armor proportions throughout. Row-major:1 ultimate beam windup, fists braced, mouth partly closed;2 ultimate firing stance with GREEN mouth OPEN and helmet aimed forward, arms bracing;3 recovery guard;4 neutral upright bulky standing, fists lowered, green mouth/teeth visible like reference;5 forearms-up defensive guard;6 UPRIGHT hit recoil with feet planted;7 defeated lying sideways with entire connected horn/body visible;8 low forward dash braced with horn tilted forward and fists tucked. All bodies fully opaque. NO actual beams/projectiles, painted green fire, rays, aura, stars, trails, floor, shadows, dust, text or labels. True transparent background. Entire horn tips, fists and toes safely on canvas with25px clear gutters/margins. Desired upright figure height400-480px in1536x1024 or higher; make space for tall horn, never crop it.",
+        "walk": "EXACT attached Eatle beetle armor model. Bulky dark gunmetal humanoid, ONE long upward-curved forehead horn, narrow green eyes under horn, broad GREEN mouth with pale-green teeth, green chest Omnitrix, rounded shoulder/shell plates, two thick gauntleted arms and two sturdy armored legs/split-toed feet. No wings, tail, extra insect limbs or human face. Make8 separate FULL-BODY RIGHT-facing/three-quarter heavy WALK cycle poses in4 columns x2 rows, consistent horn/head/armor and physical scale, crisp black outlines and flat dark blue-gray TV cel shading. Left contact, compression, passing, right swing, right contact, compression, passing opposite, left swing. Natural alternating arms/legs, slight heavy weight shift, SMALL vertical body bob, no attacks. Green mouth naturally visible but NO energy being emitted. Desired upright native height440-500px in1536x1024 or higher. Every entire tall horn, fist and toe must be on canvas with25px transparent safe margins/gutters, never overlap another pose. Curl/tilt horn only as natural head movement, never change its length. Opaque clean bodies on true transparent background. NO beams, projectiles, green fire, aura, motion trails, stars, floor, shadows, dust, words or labels.",
+        "jump-strike": "Production eight-pose game sprite sheet using EXACT attached Eatle model: bulky gunmetal beetle armor, ONE long curved forehead horn, narrow green eyes, broad GREEN inner mouth/pale-green teeth, chest Omnitrix, dark rounded shoulders/shell plates, two armored arms/clawed fists and two armored legs/split-toed feet. Crisp flat TV-cartoon cel art with black outlines; same head, horn length, mouth and armor proportions throughout. Exactly8 separate full-body RIGHT-facing/three-quarter figures in4 columns x2 rows. Row-major:1 jump crouch preparation fists braced;2 rising heavy jump knees tucked, horn intact;3 descending jump boots ready;4 low landing crouch;5 punch anticipation arm pulled back;6 forward armored-fist punch fully extended;7 punch retraction;8 balanced guard recovery. Keep body segments connected, no extra limbs/wings/tail or separate horn projectile. Whole horn tips, fists and boots on canvas with25px transparent safe margins/gutters, no neighbouring overlap. Native upright-equivalent detail440-500px in1536x1024 or higher. Bodies fully opaque on true transparency; mouth can remain naturally green, but NO actual beam, projectile, flame, stars, aura, trails, floor, dust, shadow, text or labels.",
+        "powers": "Production body-only animation sheet from EXACT attached Eatle model. Bulky gunmetal beetle humanoid, one LONG curved forehead horn, narrow green eyes, broad green inner mouth/pale-green teeth, green chest Omnitrix, dark rounded shoulder/shell plates, thick armored fists, two sturdy armored legs and broad split-toed feet. Same shell/horn/head/limb proportions, crisp black outlines and flat TV cel shading.8 separate complete full-body RIGHT-facing/three-quarter poses in4 columns x2 rows. Row-major:1 mouth-blast windup with jaw partly closed and fists bracing;2 mouth-blast firing posture with jaw OPEN, mouth clear/unobscured and torso steady;3 mouth-blast recovery;4 beetle-charge preparation crouching and lowering horn forward, fists tucked;5 charge drive lunging with lowered attached horn leading toward RIGHT, not punching;6 braking recovery rising from charge;7 horn-uppercut windup deep crouch with head/horn lowered;8 horn-uppercut strike: body rises, knees extend, head tips UP and the SAME attached horn swings upward, fists balancing at sides rather than punching. No replacement drill/sword horn, no detached horn or extra limbs/wings/tail. All entire horn tips, jaw, fists and toes safely within canvas with25px transparent gutters/margins; don't crop or touch neighbours. Native upright-equivalent detail440-500px in1536x1024 or higher. BODY ONLY on true transparency: natural green mouth/teeth permitted but NO beams/projectiles, green flames, radiation, stars, trails, aura, floor, shadows, dust, text or labels."
+      },
+      "referenceHeightBySource": {
+        "states": 509,
+        "walk": 500,
+        "jump-strike": 435,
+        "powers": 500
+      },
+      "emitterTargets": {
+        "12": [
+          0.74,
+          0.43
+        ],
+        "13": [
+          0.65,
+          0.34
+        ],
+        "14": [
+          0.74,
+          0.43
+        ],
+        "15": [
+          0.74,
+          0.43
+        ],
+        "16": [
+          0.74,
+          0.43
+        ],
+        "17": [
+          0.72,
+          0.48
+        ],
+        "18": [
+          0.74,
+          0.43
+        ],
+        "19": [
+          0.74,
+          0.43
+        ],
+        "20": [
+          0.74,
+          0.43
+        ],
+        "21": [
+          0.72,
+          0.02
+        ],
+        "22": [
+          0.98,
+          0.29
+        ],
+        "23": [
+          0.76,
+          0.02
+        ],
+        "24": [
+          0.77,
+          0.43
+        ],
+        "25": [
+          0.74,
+          0.53
+        ],
+        "26": [
+          0.8,
+          0.46
+        ]
+      },
+      "generation_inputs": {
+        "walk": "ci/animation-review/characters/eatle/model-reference.webp",
+        "jump-strike": "ci/animation-review/characters/eatle/model-reference.webp",
+        "powers": "ci/animation-review/characters/eatle/model-reference.webp",
+        "states": "Shipped v11.9 Eatle portrait"
+      }
     },
     {
       "id": 43,
