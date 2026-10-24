@@ -97,8 +97,8 @@
     90,
     91
   ],
-  "current_character": 44,
-  "completed": 80,
+  "current_character": 45,
+  "completed": 81,
   "characters": [
     {
       "id": 35,
@@ -1651,18 +1651,36 @@
       "id": 44,
       "slug": "jury-rigg",
       "batch": 4,
-      "status": "in_progress",
+      "status": "verified_updated",
       "findings": [
-        "All32 frames inspected: mechanic identity is coherent, but low-detail cels and painted muzzle flashes differ from the sharp portrait.",
-        "Keep goggles, long ears and gremlin tail while separating gadget/projectile effects from the body."
+        "Rebuilt32 coherent red mechanic poses and a matching native portrait, preserving goggles, vest, connected tail and species proportions.",
+        "Launcher, bomb and gear gestures use connected hands; registered muzzle/hand/ground origins replace painted flashes and detached projectile art."
       ],
-      "changed_files": [],
+      "changed_files": [
+        "ci/animation-review/characters/jury-rigg/source-jump-strike.webp",
+        "ci/animation-review/characters/jury-rigg/revision.json",
+        "ci/animation-review/characters/jury-rigg/source-powers.webp",
+        "ci/animation-review/characters/jury-rigg/source-walk.webp",
+        "ci/animation-review/characters/jury-rigg/source-states.webp",
+        "ci/animation-review/characters/jury-rigg/model-reference.webp",
+        "web/assets/reviewed-native/jury-rigg/powers.webp",
+        "web/assets/reviewed-native/jury-rigg/portrait.webp",
+        "web/assets/reviewed-native/jury-rigg/jump-strike.webp",
+        "web/assets/reviewed-native/jury-rigg/states.webp",
+        "web/assets/reviewed-native/jury-rigg/walk.webp"
+      ],
       "checks": {
         "native_frames": 32,
+        "native_asset_hashes": true,
+        "native_detail_and_margins": true,
+        "actual_draws": 240,
+        "facings": 2,
         "visual_review": true,
-        "passed": false
+        "full_browser_review": true,
+        "browser_errors": [],
+        "passed": true
       },
-      "reviewed_on": "2026-10-23",
+      "reviewed_on": "2026-10-24",
       "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
       "renderHeight": 160,
       "scale": 0.67,

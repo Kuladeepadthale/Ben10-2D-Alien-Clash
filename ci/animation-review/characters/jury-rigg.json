@@ -1,17 +1,123 @@
 {
   "id": 44,
   "slug": "jury-rigg",
-  "status": "needs_revision",
-  "reviewed_on": "2026-10-23",
+  "status": "verified_updated",
+  "reviewed_on": "2026-10-24",
   "findings": [
-    "All32 frames inspected: mechanic identity is coherent, but low-detail cels and painted muzzle flashes differ from the sharp portrait.",
-    "Keep goggles, long ears and gremlin tail while separating gadget/projectile effects from the body."
+    "Rebuilt32 coherent red mechanic poses and a matching native portrait, preserving goggles, vest, connected tail and species proportions.",
+    "Launcher, bomb and gear gestures use connected hands; registered muzzle/hand/ground origins replace painted flashes and detached projectile art."
   ],
-  "changed_files": [],
+  "changed_files": [
+    "ci/animation-review/characters/jury-rigg/source-jump-strike.webp",
+    "ci/animation-review/characters/jury-rigg/revision.json",
+    "ci/animation-review/characters/jury-rigg/source-powers.webp",
+    "ci/animation-review/characters/jury-rigg/source-walk.webp",
+    "ci/animation-review/characters/jury-rigg/source-states.webp",
+    "ci/animation-review/characters/jury-rigg/model-reference.webp",
+    "web/assets/reviewed-native/jury-rigg/powers.webp",
+    "web/assets/reviewed-native/jury-rigg/portrait.webp",
+    "web/assets/reviewed-native/jury-rigg/jump-strike.webp",
+    "web/assets/reviewed-native/jury-rigg/states.webp",
+    "web/assets/reviewed-native/jury-rigg/walk.webp"
+  ],
   "checks": {
     "native_frames": 32,
+    "native_asset_hashes": true,
+    "native_detail_and_margins": true,
+    "actual_draws": 240,
+    "facings": 2,
     "visual_review": true,
-    "passed": false
+    "full_browser_review": true,
+    "browser_errors": [],
+    "passed": true
   },
-  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59"
+  "basis_commit": "b1467614250f8aec78675acc8963a1dde4840f59",
+  "renderHeight": 160,
+  "scale": 0.67,
+  "sources": {
+    "states": "ci/animation-review/characters/jury-rigg/source-states.webp",
+    "walk": "ci/animation-review/characters/jury-rigg/source-walk.webp",
+    "jump-strike": "ci/animation-review/characters/jury-rigg/source-jump-strike.webp",
+    "powers": "ci/animation-review/characters/jury-rigg/source-powers.webp"
+  },
+  "prompts": {
+    "states": "Production game sprite sheet of EXACT attached Jury Rigg reference: small wiry RED gremlin mechanic, huge long pointed ears, long pointed red nose and little toothy grin, short red hair crest, round GREEN goggles with black strap, dark GREEN mechanic vest with small green chest Omnitrix, black cropped trousers, brown utility belt/tool pouches, oversized black gloves, red bare clawed feet, ONE thin red pointed gremlin tail curled close behind hip. Same face, goggles, ears, outfit and proportions throughout, no human skin. Clean original TV-cartoon cel art, black outlines, flat colors/one shadow. Exactly8 separate RIGHT-facing/three-quarter whole-body figures in4columns x2rows, full ears/tail/fingers/toes visible with25px clear transparent gutters/margins. Row-major:1 ultimate windup lifting a compact improvised GREY scrap-tube launcher with green lens in both gloves;2 ultimate firing posture with SAME launcher angled upward/right, muzzle clear but NO muzzle flash;3 recovering with launcher lowered;4 neutral upright cheeky mechanic stance, empty gloved hands beside body and belt tools;5 defensive crossed-glove guard;6 UPRIGHT hit recoil feet planted;7 defeated lying sideways, complete connected body/ears/tail;8 low forward dash with gloves driving. Gadgets must remain held and connected to gloves, never floating. Upright-equivalent native detail400-470px in1536x1024 or higher. Bodies fully opaque on true transparency. NO painted shots, muzzle flashes, explosions, sparks, speed streaks, ghosts, floor, shadows, text or labels.",
+    "walk": "EXACT attached Jury Rigg model: small wiry RED gremlin mechanic, huge pointed ears, long pointed red nose/toothy grin, short red crest, round GREEN goggles/black strap, dark GREEN mechanic vest with small chest Omnitrix, black cropped trousers, brown tool belt/pouches, oversized black gloves, red clawed feet and ONE thin red pointed tail curled near hip. Consistent face, goggles, outfit, limbs and scale. Clean TV-cartoon cel art, crisp black outlines, flat colors. Production sheet: exactly8 SEPARATE whole-body RIGHT-facing/three-quarter figures in4columns x2rows. Every full ear, nose, tail tip, glove and toe safely inside canvas with25px clear transparent margins/gutters. Native upright-equivalent detail400-470px in1536x1024 or higher. Bodies opaque on TRUE transparent background. No actual emitted shots, muzzle flashes, sparks, blasts, aura, trails, ghost copies, floor, shadows, dust, words or labels. Held props must stay naturally joined to gloves. Eight quick nimble WALK/RUN cycle phases: left contact, left push-off, passing feet, right swing, right contact, right push-off, passing opposite, left swing. Natural opposite arm/leg drive with empty gloves and belt tools secured; tail gently balances, SMALL head bob, no attack poses or floating gadgets.",
+    "jump-strike": "EXACT attached Jury Rigg model: small wiry RED gremlin mechanic, huge pointed ears, long pointed red nose/toothy grin, short red crest, round GREEN goggles/black strap, dark GREEN mechanic vest with small chest Omnitrix, black cropped trousers, brown tool belt/pouches, oversized black gloves, red clawed feet and ONE thin red pointed tail curled near hip. Consistent face, goggles, outfit, limbs and scale. Clean TV-cartoon cel art, crisp black outlines, flat colors. Production sheet: exactly8 SEPARATE whole-body RIGHT-facing/three-quarter figures in4columns x2rows. Every full ear, nose, tail tip, glove and toe safely inside canvas with25px clear transparent margins/gutters. Native upright-equivalent detail400-470px in1536x1024 or higher. Bodies opaque on TRUE transparent background. No actual emitted shots, muzzle flashes, sparks, blasts, aura, trails, ghost copies, floor, shadows, dust, words or labels. Held props must stay naturally joined to gloves. Row-major:1 jump-preparation crouch;2 rising agile jump knees tucked and gloves up;3 descending jump feet ready;4 soft crouched landing;5 glove-punch anticipation drawing near arm back;6 forward black-glove punch;7 punch retraction;8 guard recovery. Keep limbs connected and goggles on. No launcher needed for these close-combat body poses; belt tools remain secured.",
+    "powers": "EXACT attached Jury Rigg model: small wiry RED gremlin mechanic, huge pointed ears, long pointed red nose/toothy grin, short red crest, round GREEN goggles/black strap, dark GREEN mechanic vest with small chest Omnitrix, black cropped trousers, brown tool belt/pouches, oversized black gloves, red clawed feet and ONE thin red pointed tail curled near hip. Consistent face, goggles, outfit, limbs and scale. Clean TV-cartoon cel art, crisp black outlines, flat colors. Production sheet: exactly8 SEPARATE whole-body RIGHT-facing/three-quarter figures in4columns x2rows. Every full ear, nose, tail tip, glove and toe safely inside canvas with25px clear transparent margins/gutters. Native upright-equivalent detail400-470px in1536x1024 or higher. Bodies opaque on TRUE transparent background. No actual emitted shots, muzzle flashes, sparks, blasts, aura, trails, ghost copies, floor, shadows, dust, words or labels. Held props must stay naturally joined to gloves. Row-major:1 scrap-launcher windup holding compact GREY improvised scrap-tube launcher with GREEN muzzle lens in both gloves;2 firing posture SAME launcher aimed horizontallyRIGHT with muzzle clear but no flash/projectile;3 lowering SAME launcher in recovery;4 junk-bomb windup holding ONE small grey mechanical bomb/green LED near rear shoulder in glove;5 bomb-release posture with now-EMPTY throwing glove extended up/forwardRIGHT, no hovering bomb;6 throwing follow-through with empty glove forward/down;7 gear-trap preparation crouching with ONE grey gear-shaped plate/green LED held between gloves;8 gear-trap placement kneeling, gloves touching SAME gear plate at own front foot/floor level. Gadgets have consistent sensible metallic construction and remain held/touched by gloves; no duplicate props or painted flying objects."
+  },
+  "referenceHeightBySource": {
+    "states": 428,
+    "walk": 465,
+    "jump-strike": 445,
+    "powers": 445
+  },
+  "emitterTargets": {
+    "12": [
+      0.85,
+      0.43
+    ],
+    "13": [
+      0.85,
+      0.43
+    ],
+    "14": [
+      0.85,
+      0.43
+    ],
+    "15": [
+      0.85,
+      0.43
+    ],
+    "16": [
+      0.96,
+      0.46
+    ],
+    "17": [
+      0.96,
+      0.34
+    ],
+    "18": [
+      0.94,
+      0.7
+    ],
+    "19": [
+      0.16,
+      0.25
+    ],
+    "20": [
+      0.9,
+      0.1
+    ],
+    "21": [
+      0.95,
+      0.65
+    ],
+    "22": [
+      0.72,
+      0.73
+    ],
+    "23": [
+      0.72,
+      0.92
+    ],
+    "24": [
+      0.94,
+      0.58
+    ],
+    "25": [
+      0.95,
+      0.12
+    ],
+    "26": [
+      0.95,
+      0.8
+    ]
+  },
+  "generation_inputs": {
+    "walk": "ci/animation-review/characters/jury-rigg/model-reference.webp",
+    "jump-strike": "ci/animation-review/characters/jury-rigg/model-reference.webp",
+    "powers": "ci/animation-review/characters/jury-rigg/model-reference.webp",
+    "states": "Shipped v11.9 identity portrait"
+  }
 }

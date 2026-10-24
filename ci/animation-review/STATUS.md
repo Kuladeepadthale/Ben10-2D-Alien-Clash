@@ -1,6 +1,6 @@
 # Animation review progress
 
-**80 / 92 characters approved.** Batch size: 4.
+**81 / 92 characters approved.** Batch size: 4.
 
 **92 / 92 individually analysed.**
 
@@ -23,7 +23,7 @@ Each completed entry has an individual record and Git checkpoint. Pending/revisi
 | 4 | 41 | chamalien | Reviewed — updated | Rebuilt a consistent purple reptilian model with exactly three red/blue/green eyes, crest, green front stripe and connected tail across32 cels. |
 | 4 | 42 | eatle | Reviewed — updated | Unified dark beetle shell, single curved horn and green mouth across32 native cels, replacing the inconsistent flattened strike model. |
 | 4 | 43 | clockwork | Reviewed — updated | Rebuilt32 coherent brass/key-head poses with an unobscured green chest clock and matching native portrait. |
-| 4 | 44 | jury-rigg | In progress | All32 frames inspected: mechanic identity is coherent, but low-detail cels and painted muzzle flashes differ from the sharp portrait. |
+| 4 | 44 | jury-rigg | Reviewed — updated | Rebuilt32 coherent red mechanic poses and a matching native portrait, preserving goggles, vest, connected tail and species proportions. |
 | 5 | 45 | shocksquatch | Needs revision | All32 frames inspected: fur, face and bracers remain identifiable, but native detail differs from portrait and electricity is baked over hands/feet. |
 | 5 | 46 | feedback | Needs revision | All32 frames inspected: plug-ended antennae, tail and fingers persist, but painted electricity overlaps power cels. |
 | 5 | 47 | bloxx | Needs revision | All32 frames inspected: colored blocks and gorilla identity persist, but small cels differ in detail from the high-resolution standing portrait. |
