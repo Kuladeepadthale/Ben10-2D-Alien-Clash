@@ -12,7 +12,14 @@ with tempfile.TemporaryDirectory(prefix='verified-v110-art-') as tmp:
   # Compare actual fighter configuration, including emitter locations and body size.
   node="const vm=require('vm');let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const b=vm.createContext({});console.log(vm.runInContext(s+';JSON.stringify(aliens.slice(0,72))',b))})"
   old=subprocess.check_output(['node','-e',node],input=z.read('assets/data.js'))
-  current=subprocess.check_output(['node','-e',node],input=(R/'web/data.js').read_bytes());assert old==current,'Existing fighter configuration changed'
+  current=subprocess.check_output(['node','-e',node],input=(R/'web/data.js').read_bytes())
+  # v12.4 explicitly authorizes only Upchuck Tongue Lash range/contact timing.
+  expected=json.loads(old);actual=json.loads(current)
+  assert expected[15]['name']=='Upchuck'
+  tongue=expected[15]['skills'][2]
+  assert tongue=={'name':'Tongue lash','kind':'melee','damage':140,'cooldown':5.5,'range':230,'windup':.35,'recovery':.4},'Pinned Tongue Lash baseline changed'
+  tongue.update(range=460,windup=.48,duration=.2,recovery=.38)
+  assert actual==expected,'Fighter configuration changed outside the requested Tongue Lash update'
   names=json.loads((R/'ci/roster.json').read_text());base=json.loads(z.read('assets/assets/cels/manifest.json'));assert len(names)==92 and names[:72]==[c['name'] for c in base['characters']]
   for n in z.namelist():
    if not n.startswith(('assets/assets/cels/','assets/assets/villains/')) or n.endswith('/'):continue
