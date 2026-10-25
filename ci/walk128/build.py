@@ -26,8 +26,9 @@ reference=measurements[6];reference_band=max(.012,float(np.max(np.abs(np.array(r
 ratio=meta['gaits'][6]['stride']/max(.1,reference['spread']);output={};records=[]
 for id,d in enumerate(characters):
  gait=meta['gaits'][id];m=measurements[id];old=float(gait['stride']);name=meta['aliens'][id]['name']
- excluded=id==6 or str(id) in meta['flight'] or gait.get('hover') or gait.get('skate')
- record={'id':id,'name':name,'reference':'Upgrade','nativeFrames':len(d['clips']['walk']),'status':'preserved-flight-skate-or-reference' if excluded else 'calibrated-native-ground-walk'}
+ approved=id in [0,1,2,4,10,19,24,26]
+ excluded=approved or id==6 or str(id) in meta['flight'] or gait.get('hover') or gait.get('skate')
+ record={'id':id,'name':name,'reference':'Upgrade','nativeFrames':len(d['clips']['walk']),'status':'preserved-approved-walk' if approved else 'preserved-flight-skate-or-reference' if excluded else 'calibrated-native-ground-walk'}
  if not excluded:
   # Retain species-specific crawl, waddle, fluid and running cadence. Calibrate ordinary
   # biped walking from its actual foot span; cap the change to protect previously good motion.
