@@ -39,9 +39,9 @@ celPhase=function(f,state,t,portrait=false){
 function requested127Ring(ctx,x,y,rx,ry,color,width=2,alpha=1){
  if(rx<=0||ry<=0)return;ctx.save();ctx.globalAlpha*=alpha;ctx.beginPath();ctx.ellipse(x,y,rx,ry,0,0,Math.PI*2);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();ctx.restore();
 }
-function requested127Native(ctx,f,key,index,x,y,dir,alpha=1){
+function requested127Native(ctx,f,key,index,x,y,dir,alpha=1,size=1){
  const d=CEL_DATA.characters[f.id],cache=celCache.get(f.id),frames=d?.clips[key];if(!cache||!frames?.length)return;
- const fr=d.frames[frames[Math.min(frames.length-1,index)]],scale=aliens[f.id].renderHeight*aliens[f.id].scale/(fr.referenceHeight||d.referenceHeight),[sx,sy,w,h]=fr.rect;
+ const fr=d.frames[frames[Math.min(frames.length-1,index)]],scale=size*aliens[f.id].renderHeight*aliens[f.id].scale/(fr.referenceHeight||d.referenceHeight),[sx,sy,w,h]=fr.rect;
  ctx.save();ctx.globalAlpha*=alpha;ctx.translate(x,y);ctx.scale(dir*scale,scale);ctx.drawImage(cache.images[fr.sheet],sx,sy,w,h,-fr.origin[0],-fr.origin[1],w,h);ctx.restore();
 }
 function requested127Attached(f,v=f.cast){
@@ -59,14 +59,14 @@ function requested127Limb(ctx,f){
  oval(ctx,s.tip.x,s.tip.y,tongue?8:15,tongue?5:10,tongue?'#e987a4':'#9ae13f',tongue?'#79384e':'#3e7029',1.5);
 }
 function requested127Surge(ctx,f,s,t){
- const key=s.v.ultimate?'ultimate':s.v.key,count=key==='skill2'?6:s.v.ultimate?6:3,h=body(f).h;
+ const key=s.v.ultimate?'ultimate':s.v.key,count=key==='skill2'?6:key==='skill1'?0:3,h=body(f).h;
  const grow=s.age<0?requested127Clamp(s.v.elapsed/s.v.cfg.windup):s.age<s.duration?1:1-requested127Clamp((s.age-s.duration)/s.v.cfg.recovery);
  const pts=[];
  for(let i=0;i<count;i++){
-  const angle=i*Math.PI*2/count+(key==='skill2'?t*2:0),r=(key==='skill2'?Math.min(s.v.cfg.range*.6,115):50)*grow;
-  const x=f.x+Math.cos(angle)*r-s.dir*(key==='skill0'||s.v.ultimate?35+i*12:0),y=f.y-h*.38+Math.sin(angle)*r*.58;
-  pts.push([x,y-h*.34]);
-  requested127Native(ctx,f,key,1,x,y,s.dir,.7*grow);
+  const angle=i*Math.PI*2/count+(key==='skill2'?t*2:0),r=(key==='skill2'?Math.min(s.v.cfg.range*.72,170):50)*grow;
+  const formation=key==='skill2',x=formation?f.x+Math.cos(angle)*r:f.x-s.dir*(65+i*85)*grow,y=formation?f.y-h*.36+Math.sin(angle)*r*.58:f.y-h*.12+Math.sin(t*7+i)*5;
+  pts.push([x,y-h*.17]);
+  requested127Native(ctx,f,key,Math.floor(t*9+i)%(CEL_DATA.characters[f.id].clips[key]?.length||1),x,y,s.dir,.85*grow,key==='skill2'?.45:.5);
  }
  if(pts.length>1)line(ctx,[...pts,pts[0]],'#d9a0ef',1.7);
 }

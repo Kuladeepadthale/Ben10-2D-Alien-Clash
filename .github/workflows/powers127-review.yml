@@ -2,7 +2,7 @@ name: Review requested power animations
 on:
   push:
     branches: [powers-review-127]
-    paths: ['ci/powers127/preview.cjs', '.github/workflows/powers127-review.yml']
+    paths: ['ci/powers127/preview.cjs', '.github/workflows/powers127-review.yml', 'web/requested-powers127.js', 'web/game.js', 'web/power-profiles.js', 'ci/animation-review/characters/bullfrag/revision.json']
 permissions:
   contents: write
 jobs:

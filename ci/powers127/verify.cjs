@@ -32,6 +32,13 @@ const {createCanvas}=require('@napi-rs/canvas');
    run('player.cast=null');
   }
  }
+ // Multi-hit ultimates finish at the captured point and complete their native combo there.
+ for(const id of [40,54,66])for(const dir of [-1,1]){
+  Object.assign(b,{id,dir});run('player=make(id,420,dir,true);enemy=make(2,420+dir*220,-dir);player.ult=100;mode="fight";effects=[];shots=[];cast(player,"ultimate");captured127=player.cast.targetX;enemy.x+=dir*180;');
+  for(let tick=0;tick<400;tick++)run('updateF(player,1/120);updateEffects(1/120);');
+  assert(Math.abs(run('player.x')-run('captured127-dir*60*aliens[id].scale'))<.1,'Ultimate overshot the captured combo point');assert.equal(run('player.dir'),dir);
+ }
+ assert.deepEqual(JSON.parse(run('JSON.stringify(POWER_PROFILES.aliens[54][0].phases.map(p=>p.pixel))')),[[329,82],[276,90],[316,79]],'Tongue must use native mouth pixels, not the hand');
  // New guard loads as a fifth native sheet, preserves stance and responds to blocked contacts.
  run('celCache.clear();celPinned=new Set([49]);');await run('celEnsure(49)');assert.equal(run('celCache.get(49).images.length'),5);
  run('player=make(49,640,1,true);player.block=true;time=0;');const first=run("celPhase(player,'guard',time).frame");assert(first.requestedGuard127);
