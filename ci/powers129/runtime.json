@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "aliens": 8,
+  "powers": 22,
+  "casts": 44,
+  "draws": 264,
+  "rushNativeFrames": 16,
+  "manualFacing": true,
+  "capturedTargets": true
+}

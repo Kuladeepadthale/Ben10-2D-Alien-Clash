@@ -1,0 +1,84 @@
+{
+  "version": "12.9",
+  "versionCode": 129,
+  "source_commit": "a27a4e543b47f0e0d42967d752c05894cf275d4e",
+  "run_id": 40223006978,
+  "job_id": 121258448079,
+  "build": "success",
+  "release_url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/tag/android-a27a4e543b47",
+  "requested_repairs_complete": [
+    "XLR8",
+    "Upgrade",
+    "Blitzwolfer",
+    "Ditto",
+    "Chamalien",
+    "Pesky Dust",
+    "Mole-Stache",
+    "Rush"
+  ],
+  "verification": {
+    "native_power_runtime": {
+      "passed": true,
+      "aliens": 8,
+      "powers": 22,
+      "casts": 44,
+      "draws": 264,
+      "rushNativeFrames": 16,
+      "manualFacing": true,
+      "capturedTargets": true
+    },
+    "baseline_source": "8363de5a172d82e81eea7181d3563e23cd6b4ebf",
+    "baseline_run_id": 40221463763,
+    "baseline_job_id": 121253747478,
+    "baseline_commands_passed": 74,
+    "baseline_failed_asset_checks": 3,
+    "all_three_failed_checks_corrected_and_passed_final": true,
+    "scope_guard": "Only canonical Rush crop/emitter metadata, exact original portrait resolution/hash verification and three Chamalien tail palette literals differ from the 74-command passing regression baseline; source sprites, simulation, timing, server and saves unchanged.",
+    "final_checks": [
+      "1248 reviewed native frames",
+      "2952 whole-body frames with transparent margins/source pixel counts",
+      "1440 opaque native emitter pixels",
+      "44 requested casts / 264 draws across22 powers and both facings",
+      "20 expansion forms / 2880 action renders",
+      "Rush32 frames / 12states /240 draws",
+      "15456 actual cel draws",
+      "clean power wakes and opposing streams",
+      "3408 registrations /432 ranged launches",
+      "all web JavaScript syntax",
+      "APK assets and v1/v2 signatures"
+    ],
+    "signing_certificate_sha256": "a52a570180898607ffdf736b6189244b73b2c1666ba5a63b34cd7015773c8a94",
+    "review_branch": "powers-review-129",
+    "review_commit": "a076cf1347c51651234958e8fe29fb1375deb502",
+    "contact_sheets": 6
+  },
+  "approved": 86,
+  "remaining": 6,
+  "phone_tested": false,
+  "server_changed_for_this_update": true,
+  "live_worker_deployed": false,
+  "exact_tv_animation_claimed": false,
+  "assets": [
+    {
+      "name": "Ben10-2D-Alien-Clash.apk",
+      "bytes": 439213483,
+      "state": "uploaded",
+      "sha256": "86564c6711872484d68fc29f867c3d275ac0c2be14d504fc2d3e0fbb8e37986a",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-a27a4e543b47/Ben10-2D-Alien-Clash.apk"
+    },
+    {
+      "name": "Ben10-Alien-Clash-Online.apk",
+      "bytes": 439213492,
+      "state": "uploaded",
+      "sha256": "316cb6efdfe648e80bfe87c5812aa34d0e0ce6101836546e99e11ae5c4d628fe",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-a27a4e543b47/Ben10-Alien-Clash-Online.apk"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 200,
+      "state": "uploaded",
+      "sha256": "b8164cfda7fdc8819077be78e7546790f08109d77ab54b9d6fea058e925d18d2",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-a27a4e543b47/SHA256SUMS.txt"
+    }
+  ]
+}
