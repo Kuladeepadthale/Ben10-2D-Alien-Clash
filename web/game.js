@@ -88,7 +88,7 @@ function updateEffects(dt){for(let s of shots){s.life-=dt;let oldX=s.spawnFromX?
  if(touches){e.hit=true;if(e.kind==='beam'){e.impactX=Math.max(Math.min(e.x,e.x+(e.rayDir||e.dir)*e.length),Math.min(Math.max(e.x,e.x+(e.rayDir||e.dir)*e.length),o.x));const t=e.length?Math.abs(e.impactX-e.x)/e.length:0;e.impactY=e.y+(e.endY-e.y)*t;}let actual=receiveHit(e.owner,o,e.damage,e.name,e.ultimate,e.kind==='spike'&&e.owner.id===11&&!Number.isInteger(e.owner.villain)&&e.ultimate?0:20,e.budget);if(actual&&e.slow)o.slow=e.slow;if(e.kind==='trap'){effects.push({...e,kind:'explosion',r:e.r,life:.4,maxLife:.4,harmless:true});e.life=.1}}
  }effects=effects.filter(e=>e.life>0).slice(-240);
 }
-function move(f,dir,dt){if(f.stun||f.cast||f.block||f.dash||f.hp<=0||!dir)return;f.dir=dir>0?1:-1;const previousX=f.x;f.x+=dir*(f.config||aliens[f.id]).speed*dt*(f.slow?.45:1);f.x=Math.max(65,Math.min(W-65,f.x));const travelled=f.x-previousX;if(Math.abs(travelled)<1e-6)return;f.moving=true;f.walk+=travelled/(f.config||aliens[f.id]).speed*(f.id===3?20:12)*(f.dir||1);if(Math.floor(Math.abs(f.walk)*2)!==f.lastStep&&f.y>=floor){f.lastStep=Math.floor(Math.abs(f.walk)*2);particles.push({x:f.x,y:floor-3,vx:-dir*35,vy:-25,life:.24,max:.24,r:7,color:'#b9c5a366'})}}
+function move(f,dir,dt){if(f.stun||f.cast||f.block||f.dash||f.hp<=0||!dir)return;f.dir=dir>0?1:-1;const previousX=f.x;f.x+=dir*(f.config||aliens[f.id]).speed*dt*(f.slow?.45:1);f.x=Math.max(65,Math.min(W-65,f.x));const travelled=f.x-previousX;if(Math.abs(travelled)<1e-6)return;f.moving=true;f.gaitDistance126=(f.gaitDistance126||0)+Math.abs(travelled);f.walk+=travelled/(f.config||aliens[f.id]).speed*(f.id===3?20:12)*(f.dir||1);if(Math.floor(Math.abs(f.walk)*2)!==f.lastStep&&f.y>=floor&&!(typeof locomotionNoFootsteps126==='function'&&locomotionNoFootsteps126(f))){f.lastStep=Math.floor(Math.abs(f.walk)*2);particles.push({x:f.x,y:floor-3,vx:-dir*35,vy:-25,life:.24,max:.24,r:7,color:'#b9c5a366'})}}
 const DASH_DURATION=.22,DASH_DISTANCE=190,DASH_COOLDOWN=1.25;
 function dash(f){if(mode!=='fight'||f.hp<=0||f.stun||f.cast||f.block||f.jumpWindup||f.y<floor-1||f.dash||(f.dashCooldown||0)>0)return false;
  f.dash={elapsed:0,startX:f.x,dir:f.dir||1};f.dashCooldown=DASH_COOLDOWN;f.moving=false;f.block=false;f.vy=0;sound(440,.08,'sine');return true;
@@ -190,6 +190,7 @@ select(0);renderReport();$('start').disabled=true;$('start').textContent='LOADIN
 window.androidPause=()=>{if(mode==='fight')pause()};window.androidBack=()=>{if(mode==='fight')pause();else if(isLocked())quit();else window.scrollTo({top:0,behavior:'smooth'})};
 
 if(location.hostname==='appassets.androidplatform.net'){document.querySelector('.asset-import').style.display='none';$('full').style.display='none'}
+
 
 
 
