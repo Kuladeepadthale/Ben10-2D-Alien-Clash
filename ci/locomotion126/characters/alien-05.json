@@ -1,0 +1,63 @@
+{
+  "kind": "alien",
+  "id": 5,
+  "name": "Grey Matter",
+  "slug": "grey-matter",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2007,
+  "footVariation": 0.3239,
+  "sizes": [
+    [
+      320,
+      418
+    ],
+    [
+      243,
+      419
+    ],
+    [
+      219,
+      424
+    ],
+    [
+      314,
+      417
+    ],
+    [
+      335,
+      418
+    ],
+    [
+      264,
+      412
+    ],
+    [
+      223,
+      416
+    ],
+    [
+      330,
+      415
+    ]
+  ],
+  "existingGait": {
+    "style": "Quick, light steps",
+    "stride": 0.94,
+    "bob": 0.45,
+    "weight": 0
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

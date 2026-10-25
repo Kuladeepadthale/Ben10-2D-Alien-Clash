@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 35,
+  "name": "Water Hazard",
+  "slug": "water-hazard",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.113,
+  "footVariation": 0.2076,
+  "sizes": [
+    [
+      384,
+      425
+    ],
+    [
+      404,
+      423
+    ],
+    [
+      368,
+      430
+    ],
+    [
+      364,
+      436
+    ],
+    [
+      395,
+      418
+    ],
+    [
+      390,
+      411
+    ],
+    [
+      363,
+      421
+    ],
+    [
+      386,
+      422
+    ]
+  ],
+  "existingGait": {
+    "style": "Armored Orishan steps",
+    "stride": 0.78,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

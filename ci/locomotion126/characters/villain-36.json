@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 36,
+  "name": "Sunder",
+  "slug": "sunder",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.2746,
+  "footVariation": 0.2665,
+  "sizes": [
+    [
+      275,
+      291
+    ],
+    [
+      278,
+      297
+    ],
+    [
+      264,
+      295
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

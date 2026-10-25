@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 47,
+  "name": "Bloxx",
+  "slug": "bloxx",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2002,
+  "footVariation": 0.3487,
+  "sizes": [
+    [
+      407,
+      460
+    ],
+    [
+      348,
+      425
+    ],
+    [
+      384,
+      455
+    ],
+    [
+      369,
+      460
+    ],
+    [
+      415,
+      451
+    ],
+    [
+      323,
+      420
+    ],
+    [
+      377,
+      459
+    ],
+    [
+      353,
+      460
+    ]
+  ],
+  "existingGait": {
+    "style": "Segmented knuckle walk",
+    "stride": 0.82,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

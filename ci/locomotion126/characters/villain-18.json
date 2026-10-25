@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 18,
+  "name": "Yenaldooshi",
+  "slug": "werewolf",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1958,
+  "footVariation": 0.2574,
+  "sizes": [
+    [
+      227,
+      258
+    ],
+    [
+      228,
+      261
+    ],
+    [
+      227,
+      263
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

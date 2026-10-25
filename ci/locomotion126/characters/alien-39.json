@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 39,
+  "name": "NRG",
+  "slug": "nrg",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.153,
+  "footVariation": 0.2358,
+  "sizes": [
+    [
+      372,
+      473
+    ],
+    [
+      375,
+      445
+    ],
+    [
+      302,
+      471
+    ],
+    [
+      338,
+      482
+    ],
+    [
+      385,
+      462
+    ],
+    [
+      363,
+      436
+    ],
+    [
+      324,
+      466
+    ],
+    [
+      351,
+      457
+    ]
+  ],
+  "existingGait": {
+    "style": "Containment-suit march",
+    "stride": 0.7,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

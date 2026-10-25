@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 25,
+  "name": "Charmcaster",
+  "slug": "charmcaster",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.0916,
+  "footVariation": 0.0862,
+  "sizes": [
+    [
+      173,
+      297
+    ],
+    [
+      194,
+      293
+    ],
+    [
+      203,
+      297
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

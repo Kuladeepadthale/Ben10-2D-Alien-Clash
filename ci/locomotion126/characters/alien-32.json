@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 32,
+  "name": "Rath",
+  "slug": "rath",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1584,
+  "footVariation": 0.2155,
+  "sizes": [
+    [
+      441,
+      424
+    ],
+    [
+      408,
+      411
+    ],
+    [
+      374,
+      410
+    ],
+    [
+      390,
+      423
+    ],
+    [
+      406,
+      381
+    ],
+    [
+      389,
+      372
+    ],
+    [
+      422,
+      383
+    ],
+    [
+      381,
+      381
+    ]
+  ],
+  "existingGait": {
+    "style": "Tiger strides",
+    "stride": 0.88,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

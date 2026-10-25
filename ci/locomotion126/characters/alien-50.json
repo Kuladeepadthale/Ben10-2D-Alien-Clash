@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 50,
+  "name": "Ball Weevil",
+  "slug": "ball-weevil",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.106,
+  "footVariation": 0.2155,
+  "sizes": [
+    [
+      172,
+      147
+    ],
+    [
+      167,
+      143
+    ],
+    [
+      177,
+      143
+    ],
+    [
+      169,
+      147
+    ],
+    [
+      156,
+      144
+    ],
+    [
+      162,
+      147
+    ],
+    [
+      168,
+      148
+    ],
+    [
+      168,
+      144
+    ]
+  ],
+  "existingGait": {
+    "style": "Four-legged insect scuttle",
+    "stride": 0.92,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

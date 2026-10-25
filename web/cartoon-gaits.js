@@ -59,3 +59,59 @@ CARTOON_GAITS.push(...[{"style":"Tiger strides","stride":0.88,"hover":false},{"s
 CARTOON_GAITS.push(...[{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Floating glide","stride":0.85,"hover":true},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Floating glide","stride":0.85,"hover":true},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Floating glide","stride":0.85,"hover":true},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Floating glide","stride":0.85,"hover":true},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Natural character strides","stride":0.85,"hover":false},{"style":"Natural character strides","stride":0.85,"hover":false}]);
 // expansion111 gaits
 CARTOON_GAITS.push(...[{"style":"quadruped movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"gorilla movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"giant movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"reptile movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"hover movement","stride":0.85,"bob":0.4,"hover":true,"skate":false},{"style":"tiger movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"hover movement","stride":0.85,"bob":0.4,"hover":true,"skate":false},{"style":"wolf movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"fluid movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"armored movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"stalker movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"balanced movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"dinosaur movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"four-arms movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"skate movement","stride":1.02,"bob":0.4,"hover":false,"skate":true},{"style":"hover movement","stride":0.85,"bob":0.4,"hover":true,"skate":false},{"style":"plant movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"armored movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"heavy movement","stride":0.85,"bob":0.4,"hover":false,"skate":false},{"style":"giant movement","stride":0.85,"bob":0.4,"hover":false,"skate":false}]);
+
+
+// v12.6 locomotion-only corrections. Native drawings and approved stride profiles stay intact.
+const LOCOMOTION126_FLIGHT={
+ 25:{style:'Membrane-wing glide',clip:'jump',pose:2,lift:18},
+ 33:{style:'Magnetic levitation',clip:'idle',pose:0,lift:12},
+ 51:{style:'Jet-assisted glide',clip:'jump',pose:2,lift:18},
+ 69:{style:'Sonic-disc hover',clip:'jump',pose:2,lift:12}
+};
+const locomotionSamples126=new WeakMap();
+function locomotionTravel126(f,state){
+ const key=Number.isInteger(f.villain)?'v'+f.villain:'a'+f.id,counter=Number.isFinite(f.gaitDistance126)?f.gaitDistance126:null;
+ let s=locomotionSamples126.get(f);
+ if(!s||s.key!==key){s={key,x:f.x,counter,distance:counter||0,state};locomotionSamples126.set(f,s);return s.distance;}
+ const dx=f.x-s.x,moving=state==='walk';
+ if(moving){
+  // Simulation-owned travel survives short taps, low render rates and repeated emitter queries.
+  if(counter!==null&&s.counter!==null&&counter>s.counter)s.distance+=counter-s.counter;
+  // Older online snapshots and preview/test actors do not carry the new optional travel counter.
+  else if((s.state==='walk'||s.state==='idle')&&Math.abs(dx)<=Math.max(80,(f.config?.speed||aliens[f.id]?.speed||300)*.25))s.distance+=Math.abs(dx);
+ }
+ s.x=f.x;s.counter=counter;s.state=state;return s.distance;
+}
+function locomotionFlight126(f){return !Number.isInteger(f.villain)?LOCOMOTION126_FLIGHT[f.id]:null;}
+function locomotionVillain126(f){
+ const id=f.villain;
+ if(id===28)return {mode:'hover',stride:.9};
+ if(id===33)return {mode:'slither',stride:1.02};
+ if(id===9)return {mode:'fluid',stride:.83};
+ if([16,26,44].includes(id))return {mode:'scuttle',stride:.62};
+ if([4,20,21,29,31,39,40,42,43,49].includes(id))return {mode:'heavy',stride:.88};
+ if([14,18,30,41,45].includes(id))return {mode:'run',stride:.9};
+ return {mode:'walk',stride:.72};
+}
+function locomotionLift126(f,t){
+ if(Number.isInteger(f.villain))return locomotionVillain126(f).mode==='hover'?8+Math.sin(t*3):0;
+ const flight=locomotionFlight126(f);if(flight)return flight.lift+Math.sin(t*2.6)*1.2;
+ // Preserve previously approved hover offsets and Big Chill's existing cloaked native walk.
+ return f.id===7||f.id===9||(f.id>=52||f.id===34||f.id===36)&&CARTOON_GAITS[f.id]?.hover?6+Math.sin(t*(f.id===7?8:3))*1.5:0;
+}
+function locomotionNoFootsteps126(f){
+ if(Number.isInteger(f.villain))return ['hover','slither','fluid'].includes(locomotionVillain126(f).mode);
+ return !!locomotionFlight126(f)||!!CARTOON_GAITS[f.id]?.hover||[6,30,80].includes(f.id);
+}
+function locomotionVillainFrame126(f,d,state,t){
+ const travel=locomotionTravel126(f,state),p=locomotionVillain126(f);
+ if((state==='walk'||state==='idle')&&p.mode==='hover')return [1,2,3,2][Math.floor(t*3)%4];
+ if(state!=='walk')return null;
+ const cycle=Math.max(48,(d.height||226)*p.stride),phase=(travel/cycle)%1;
+ return [1,2,3,2][Math.floor(phase*4)%4];
+}
+
+function locomotionMoving126(f){
+ const s=locomotionSamples126.get(f);if(!s||!['idle','walk'].includes(s.state))return false;
+ const distance=Math.abs(f.x-s.x);return distance>.05&&distance<=Math.max(80,(f.config?.speed||aliens[f.id]?.speed||300)*.25);
+}

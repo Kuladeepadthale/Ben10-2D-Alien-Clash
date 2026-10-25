@@ -1,0 +1,64 @@
+{
+  "kind": "alien",
+  "id": 75,
+  "name": "Ultimate Arctiguana",
+  "slug": "ultimate-arctiguana",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1581,
+  "footVariation": 0.2397,
+  "sizes": [
+    [
+      353,
+      241
+    ],
+    [
+      350,
+      213
+    ],
+    [
+      347,
+      238
+    ],
+    [
+      339,
+      245
+    ],
+    [
+      363,
+      242
+    ],
+    [
+      361,
+      221
+    ],
+    [
+      372,
+      251
+    ],
+    [
+      355,
+      243
+    ]
+  ],
+  "existingGait": {
+    "style": "reptile movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": false,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

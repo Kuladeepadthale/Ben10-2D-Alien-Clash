@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 26,
+  "name": "The Great One",
+  "slug": "great-one",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.162,
+  "footVariation": 0.2453,
+  "sizes": [
+    [
+      267,
+      228
+    ],
+    [
+      255,
+      230
+    ],
+    [
+      263,
+      218
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

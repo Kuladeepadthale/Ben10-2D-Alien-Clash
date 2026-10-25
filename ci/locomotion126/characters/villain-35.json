@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 35,
+  "name": "EightEight",
+  "slug": "eighteight",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.2517,
+  "footVariation": 0.3141,
+  "sizes": [
+    [
+      225,
+      299
+    ],
+    [
+      163,
+      301
+    ],
+    [
+      227,
+      298
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

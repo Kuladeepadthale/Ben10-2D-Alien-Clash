@@ -1,0 +1,35 @@
+name: Review native locomotion assets
+on:
+  push:
+    branches: [locomotion-review-126]
+    paths: ['ci/locomotion126/audit.py', 'ci/locomotion126/verify.cjs', 'web/cartoon-gaits.js', 'web/cel-player.js', 'web/game.js', 'web/threat-ladder.js', 'web/power-profiles.js', '.github/workflows/locomotion-audit.yml']
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python3 -m pip install Pillow numpy scipy
+      - run: npm install --prefix /tmp/cel-tools --no-package-lock --no-save @napi-rs/canvas
+      - name: Restore the actual released and reviewed battle images
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 ci/restore-verified-art.py
+      - name: Audit all native alien and villain movement cels
+        run: python3 ci/locomotion126/audit.py
+      - name: Verify actual native movement, stops and transitions
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: node ci/locomotion126/verify.cjs
+      - name: Save resumable audit and internal inspection sheets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ci/locomotion126/characters ci/locomotion126/previews ci/locomotion126/audit.json ci/locomotion126/runtime.json
+          git commit -m '[art-audit] Save 142-character locomotion inventory and native inspection sheets'
+          git push origin HEAD:locomotion-review-126

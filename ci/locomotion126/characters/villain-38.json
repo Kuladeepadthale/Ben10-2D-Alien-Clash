@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 38,
+  "name": "Darkstar",
+  "slug": "darkstar",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1814,
+  "footVariation": 0.2098,
+  "sizes": [
+    [
+      266,
+      287
+    ],
+    [
+      251,
+      280
+    ],
+    [
+      268,
+      281
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

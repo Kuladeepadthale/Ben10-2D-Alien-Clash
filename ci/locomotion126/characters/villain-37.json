@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 37,
+  "name": "Psyphon",
+  "slug": "psyphon",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1169,
+  "footVariation": 0.0876,
+  "sizes": [
+    [
+      243,
+      318
+    ],
+    [
+      232,
+      323
+    ],
+    [
+      249,
+      321
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

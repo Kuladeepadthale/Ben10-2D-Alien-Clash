@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 19,
+  "name": "Arctiguana",
+  "slug": "arctiguana",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.0781,
+  "footVariation": 0.1725,
+  "sizes": [
+    [
+      426,
+      319
+    ],
+    [
+      432,
+      319
+    ],
+    [
+      435,
+      311
+    ],
+    [
+      427,
+      310
+    ],
+    [
+      430,
+      305
+    ],
+    [
+      434,
+      318
+    ],
+    [
+      427,
+      314
+    ],
+    [
+      425,
+      317
+    ]
+  ],
+  "existingGait": {
+    "style": "Low reptile crawl",
+    "stride": 0.92,
+    "bob": 0.5
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

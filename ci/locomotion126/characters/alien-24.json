@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 24,
+  "name": "Humungousaur",
+  "slug": "humungousaur",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1965,
+  "footVariation": 0.326,
+  "sizes": [
+    [
+      450,
+      417
+    ],
+    [
+      405,
+      412
+    ],
+    [
+      430,
+      417
+    ],
+    [
+      427,
+      404
+    ],
+    [
+      439,
+      411
+    ],
+    [
+      388,
+      414
+    ],
+    [
+      461,
+      408
+    ],
+    [
+      430,
+      415
+    ]
+  ],
+  "existingGait": {
+    "style": "Heavy dinosaur strides",
+    "stride": 0.8
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

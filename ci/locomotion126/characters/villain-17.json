@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 17,
+  "name": "Megawatt",
+  "slug": "megawatt",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1288,
+  "footVariation": 0.2239,
+  "sizes": [
+    [
+      158,
+      229
+    ],
+    [
+      171,
+      226
+    ],
+    [
+      175,
+      220
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

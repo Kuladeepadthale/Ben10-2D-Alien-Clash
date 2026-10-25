@@ -17,9 +17,9 @@ function powerPoseIndex(f,v,count){
  return Math.max(0,Math.min(count-1,index));
 }
 function profileEmitter(f,v,t=0){
- if(Number.isInteger(f.villain)&&typeof villainFrame==='function'){const d=VILLAIN_DATA.characters[f.villain],frame=villainFrame(f),key=v.ultimate?'ultimate':v.cfg.poseKey||v.key,marker=frame.emitters?.[key]||frame.contact;if(marker){const scale=(d.height||226)/(frame.referenceHeight||d.referenceHeight),hover=d.type==='phase'?5+Math.sin(t*3):0;return{x:f.x+(v.dir||f.dir||1)*(marker[0]-frame.origin[0])*scale,y:f.y+(marker[1]-frame.origin[1])*scale-hover};}}
+ if(Number.isInteger(f.villain)&&typeof villainFrame==='function'){const d=VILLAIN_DATA.characters[f.villain],frame=villainFrame(f),key=v.ultimate?'ultimate':v.cfg.poseKey||v.key,marker=frame.emitters?.[key]||frame.contact;if(marker){const scale=(d.height||226)/(frame.referenceHeight||d.referenceHeight),hover=typeof locomotionLift126==='function'?locomotionLift126(f,t):(d.type==='phase'?5+Math.sin(t*3):0);return{x:f.x+(v.dir||f.dir||1)*(marker[0]-frame.origin[0])*scale,y:f.y+(marker[1]-frame.origin[1])*scale-hover};}}
  const p=powerProfileFor(f,v);if(!p)return null;let phase=p.phases[powerPoseIndex(f,v,p.phases.length)];if(p.comboPhases&&v.cfg.kind==='melee'){const age=v.elapsed-v.cfg.windup,duration=v.cfg.duration||.08;if(age>=0&&age<duration){const beat=(age/duration*Math.max(1,v.cfg.ticks||1))%1;phase=p.comboPhases[beat<.55?0:1];}}const dir=v.dir||f.dir||1;
- const hover=!Number.isInteger(f.villain)&&POWER_PROFILES.hover[f.id]?6+Math.sin(t*POWER_PROFILES.hover[f.id])*1.5:0;
+ const hover=typeof locomotionFlight126==='function'&&locomotionFlight126(f)?locomotionLift126(f,t):!Number.isInteger(f.villain)&&POWER_PROFILES.hover[f.id]?6+Math.sin(t*POWER_PROFILES.hover[f.id])*1.5:0;
  let registration=1;
  // Keep source points attached when a reviewed sheet uses corrected physical registration.
  if(!Number.isInteger(f.villain)){
@@ -35,3 +35,4 @@ for(const [id,rows] of Object.entries(REVIEWED_NATIVE_PHASES)){for(let slot=0;sl
 // END REVIEWED_NATIVE_PHASES
 POWER_PROFILES.hover[34]=3;
 POWER_PROFILES.hover[36]=3;
+

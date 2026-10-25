@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 41,
+  "name": "Chamalien",
+  "slug": "chamalien",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1803,
+  "footVariation": 0.2989,
+  "sizes": [
+    [
+      372,
+      483
+    ],
+    [
+      302,
+      479
+    ],
+    [
+      350,
+      481
+    ],
+    [
+      337,
+      487
+    ],
+    [
+      391,
+      483
+    ],
+    [
+      309,
+      467
+    ],
+    [
+      364,
+      478
+    ],
+    [
+      335,
+      483
+    ]
+  ],
+  "existingGait": {
+    "style": "Stealthy reptile steps",
+    "stride": 0.92,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

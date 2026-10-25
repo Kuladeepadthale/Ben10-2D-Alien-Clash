@@ -1,0 +1,861 @@
+{
+  "passed": true,
+  "scope": "locomotion-only",
+  "aliens": 92,
+  "villains": 50,
+  "draws": 12784,
+  "checks": [
+    {
+      "kind": "alien",
+      "id": 0,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 1,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 2,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 3,
+      "shortTapPoses": 7,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 4,
+      "shortTapPoses": 8,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 5,
+      "shortTapPoses": 8,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 6,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 7,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 8,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 9,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 10,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 11,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 12,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 13,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 14,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 15,
+      "shortTapPoses": 7,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 16,
+      "shortTapPoses": 7,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 17,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 18,
+      "shortTapPoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 19,
+      "shortTapPoses": 6,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 20,
+      "shortTapPoses": 6,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 21,
+      "shortTapPoses": 8,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 22,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 23,
+      "shortTapPoses": 7,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 24,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 25,
+      "shortTapPoses": 1,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 26,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 27,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 28,
+      "shortTapPoses": 7,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 29,
+      "shortTapPoses": 6,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 30,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 31,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 32,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 33,
+      "shortTapPoses": 1,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 34,
+      "shortTapPoses": 8,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 35,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 36,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 37,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 38,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 39,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 40,
+      "shortTapPoses": 6,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 41,
+      "shortTapPoses": 6,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 42,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 43,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 44,
+      "shortTapPoses": 8,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 45,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 46,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 47,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 48,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 49,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 50,
+      "shortTapPoses": 8,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 51,
+      "shortTapPoses": 1,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 52,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 53,
+      "shortTapPoses": 8,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 54,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 55,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 56,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 57,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 58,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 59,
+      "shortTapPoses": 8,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 60,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 61,
+      "shortTapPoses": 7,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 62,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 63,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 64,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 65,
+      "shortTapPoses": 6,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 66,
+      "shortTapPoses": 6,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 67,
+      "shortTapPoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 68,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 69,
+      "shortTapPoses": 1,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 70,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 71,
+      "shortTapPoses": 4,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 72,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 73,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 74,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 75,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 76,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 77,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 78,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 79,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 80,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 81,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 82,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 83,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 84,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 85,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 86,
+      "shortTapPoses": 7,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 87,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 88,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 89,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 90,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "alien",
+      "id": 91,
+      "shortTapPoses": 5,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 0,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 1,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 2,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 3,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 4,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 5,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 6,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 7,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 8,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 9,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 10,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 11,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 12,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 13,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 14,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 15,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 16,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 17,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 18,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 19,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 20,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 21,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 22,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 23,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 24,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 25,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 26,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 27,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 28,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 29,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 30,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 31,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 32,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 33,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 34,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 35,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 36,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 37,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 38,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 39,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 40,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 41,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 42,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 43,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 44,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 45,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 46,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 47,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 48,
+      "nativePoses": 3,
+      "passed": true
+    },
+    {
+      "kind": "villain",
+      "id": 49,
+      "nativePoses": 3,
+      "passed": true
+    }
+  ]
+}

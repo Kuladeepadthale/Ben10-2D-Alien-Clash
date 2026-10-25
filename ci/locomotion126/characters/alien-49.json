@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 49,
+  "name": "Crashhopper",
+  "slug": "crashhopper",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1586,
+  "footVariation": 0.2246,
+  "sizes": [
+    [
+      166,
+      201
+    ],
+    [
+      161,
+      199
+    ],
+    [
+      162,
+      202
+    ],
+    [
+      148,
+      202
+    ],
+    [
+      158,
+      201
+    ],
+    [
+      182,
+      199
+    ],
+    [
+      171,
+      199
+    ],
+    [
+      172,
+      201
+    ]
+  ],
+  "existingGait": {
+    "style": "Spring-leg bounds",
+    "stride": 1.05,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 45,
+  "name": "Shocksquatch",
+  "slug": "shocksquatch",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.201,
+  "footVariation": 0.3218,
+  "sizes": [
+    [
+      373,
+      481
+    ],
+    [
+      338,
+      431
+    ],
+    [
+      367,
+      483
+    ],
+    [
+      364,
+      480
+    ],
+    [
+      397,
+      482
+    ],
+    [
+      319,
+      433
+    ],
+    [
+      373,
+      491
+    ],
+    [
+      372,
+      491
+    ]
+  ],
+  "existingGait": {
+    "style": "Heavy electric strides",
+    "stride": 0.82,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

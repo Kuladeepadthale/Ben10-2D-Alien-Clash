@@ -1,0 +1,63 @@
+{
+  "kind": "alien",
+  "id": 4,
+  "name": "Wildmutt",
+  "slug": "wildmutt",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2177,
+  "footVariation": 0.4146,
+  "sizes": [
+    [
+      463,
+      326
+    ],
+    [
+      460,
+      328
+    ],
+    [
+      489,
+      332
+    ],
+    [
+      469,
+      336
+    ],
+    [
+      497,
+      328
+    ],
+    [
+      386,
+      330
+    ],
+    [
+      485,
+      334
+    ],
+    [
+      463,
+      324
+    ]
+  ],
+  "existingGait": {
+    "style": "Four-legged bounding",
+    "stride": 1.05,
+    "bob": 1.6,
+    "weight": 0
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

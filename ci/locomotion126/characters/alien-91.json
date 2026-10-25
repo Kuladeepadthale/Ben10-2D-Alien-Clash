@@ -1,0 +1,64 @@
+{
+  "kind": "alien",
+  "id": 91,
+  "name": "Alien V",
+  "slug": "alien-v",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1248,
+  "footVariation": 0.1563,
+  "sizes": [
+    [
+      250,
+      288
+    ],
+    [
+      239,
+      271
+    ],
+    [
+      238,
+      293
+    ],
+    [
+      246,
+      289
+    ],
+    [
+      233,
+      290
+    ],
+    [
+      244,
+      272
+    ],
+    [
+      245,
+      277
+    ],
+    [
+      248,
+      291
+    ]
+  ],
+  "existingGait": {
+    "style": "giant movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": false,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

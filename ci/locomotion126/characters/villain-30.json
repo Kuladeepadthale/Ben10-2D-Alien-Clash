@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 30,
+  "name": "Argit",
+  "slug": "argit",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1306,
+  "footVariation": 0.1083,
+  "sizes": [
+    [
+      240,
+      264
+    ],
+    [
+      235,
+      265
+    ],
+    [
+      250,
+      261
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

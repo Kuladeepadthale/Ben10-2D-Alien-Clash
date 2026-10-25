@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 22,
+  "name": "Swampfire",
+  "slug": "swampfire",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1106,
+  "footVariation": 0.1278,
+  "sizes": [
+    [
+      337,
+      428
+    ],
+    [
+      308,
+      424
+    ],
+    [
+      322,
+      428
+    ],
+    [
+      346,
+      428
+    ],
+    [
+      364,
+      422
+    ],
+    [
+      331,
+      420
+    ],
+    [
+      356,
+      421
+    ],
+    [
+      344,
+      420
+    ]
+  ],
+  "existingGait": {
+    "style": "Rooted plant strides",
+    "stride": 0.85
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

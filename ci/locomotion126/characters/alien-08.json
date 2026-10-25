@@ -1,0 +1,63 @@
+{
+  "kind": "alien",
+  "id": 8,
+  "name": "Ripjaws",
+  "slug": "ripjaws",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1815,
+  "footVariation": 0.2898,
+  "sizes": [
+    [
+      308,
+      431
+    ],
+    [
+      269,
+      424
+    ],
+    [
+      272,
+      428
+    ],
+    [
+      307,
+      430
+    ],
+    [
+      327,
+      426
+    ],
+    [
+      269,
+      422
+    ],
+    [
+      253,
+      422
+    ],
+    [
+      309,
+      426
+    ]
+  ],
+  "existingGait": {
+    "style": "Low, deliberate stalking",
+    "stride": 0.94,
+    "bob": 0.4,
+    "weight": 0.021
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

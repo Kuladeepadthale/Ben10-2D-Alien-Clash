@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 48,
+  "name": "Eon",
+  "slug": "eon",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.065,
+  "footVariation": 0.1048,
+  "sizes": [
+    [
+      267,
+      315
+    ],
+    [
+      262,
+      317
+    ],
+    [
+      257,
+      316
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

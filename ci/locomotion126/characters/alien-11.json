@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 11,
+  "name": "Wildvine",
+  "slug": "wildvine",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2108,
+  "footVariation": 0.335,
+  "sizes": [
+    [
+      391,
+      441
+    ],
+    [
+      378,
+      439
+    ],
+    [
+      404,
+      438
+    ],
+    [
+      382,
+      428
+    ],
+    [
+      419,
+      433
+    ],
+    [
+      423,
+      426
+    ],
+    [
+      414,
+      433
+    ],
+    [
+      389,
+      433
+    ]
+  ],
+  "existingGait": {
+    "style": "Five-vine planted crawl",
+    "stride": 0.85,
+    "bob": 0.25
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

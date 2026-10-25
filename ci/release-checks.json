@@ -1,5 +1,7 @@
 [
   "/tmp/cel-tools/node_modules/.bin/playwright install --with-deps chromium",
+  "python3 ci/locomotion126/audit.py",
+  "node ci/locomotion126/verify.cjs",
   "python3 ci/check-reviewed-assets.py",
   "python3 ci/check-requested-assets125.py",
   "node ci/check-species-fixes125.cjs",

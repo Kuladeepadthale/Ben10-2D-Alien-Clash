@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 65,
+  "name": "Slapback",
+  "slug": "slapback",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1785,
+  "footVariation": 0.2181,
+  "sizes": [
+    [
+      386,
+      383
+    ],
+    [
+      394,
+      386
+    ],
+    [
+      437,
+      387
+    ],
+    [
+      404,
+      381
+    ],
+    [
+      414,
+      384
+    ],
+    [
+      421,
+      391
+    ],
+    [
+      412,
+      391
+    ],
+    [
+      395,
+      373
+    ]
+  ],
+  "existingGait": {
+    "style": "Natural character strides",
+    "stride": 0.85,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

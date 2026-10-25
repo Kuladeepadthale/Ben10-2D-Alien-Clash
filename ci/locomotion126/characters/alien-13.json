@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 13,
+  "name": "Snare-oh",
+  "slug": "snare-oh",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2661,
+  "footVariation": 0.3346,
+  "sizes": [
+    [
+      375,
+      429
+    ],
+    [
+      344,
+      433
+    ],
+    [
+      342,
+      431
+    ],
+    [
+      348,
+      432
+    ],
+    [
+      381,
+      425
+    ],
+    [
+      367,
+      426
+    ],
+    [
+      358,
+      429
+    ],
+    [
+      362,
+      431
+    ]
+  ],
+  "existingGait": {
+    "style": "Trailing mummy strides",
+    "stride": 0.8,
+    "bob": 0.3
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

@@ -1,0 +1,64 @@
+{
+  "kind": "alien",
+  "id": 74,
+  "name": "Ultimate Way Big",
+  "slug": "ultimate-way-big",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2063,
+  "footVariation": 0.2439,
+  "sizes": [
+    [
+      193,
+      302
+    ],
+    [
+      218,
+      304
+    ],
+    [
+      192,
+      304
+    ],
+    [
+      208,
+      302
+    ],
+    [
+      197,
+      302
+    ],
+    [
+      203,
+      295
+    ],
+    [
+      204,
+      297
+    ],
+    [
+      164,
+      315
+    ]
+  ],
+  "existingGait": {
+    "style": "giant movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": false,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

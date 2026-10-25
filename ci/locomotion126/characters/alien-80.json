@@ -1,0 +1,64 @@
+{
+  "kind": "alien",
+  "id": 80,
+  "name": "Bootleg",
+  "slug": "bootleg",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2316,
+  "footVariation": 0.2582,
+  "sizes": [
+    [
+      219,
+      242
+    ],
+    [
+      230,
+      218
+    ],
+    [
+      226,
+      237
+    ],
+    [
+      207,
+      241
+    ],
+    [
+      230,
+      244
+    ],
+    [
+      242,
+      220
+    ],
+    [
+      216,
+      249
+    ],
+    [
+      202,
+      244
+    ]
+  ],
+  "existingGait": {
+    "style": "fluid movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": false,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

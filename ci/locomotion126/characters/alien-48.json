@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 48,
+  "name": "Gravattack",
+  "slug": "gravattack",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1555,
+  "footVariation": 0.3145,
+  "sizes": [
+    [
+      401,
+      444
+    ],
+    [
+      342,
+      422
+    ],
+    [
+      386,
+      447
+    ],
+    [
+      350,
+      449
+    ],
+    [
+      407,
+      450
+    ],
+    [
+      340,
+      422
+    ],
+    [
+      370,
+      439
+    ],
+    [
+      387,
+      441
+    ]
+  ],
+  "existingGait": {
+    "style": "Planetoid steps",
+    "stride": 0.74,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

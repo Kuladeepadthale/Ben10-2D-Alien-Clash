@@ -1,0 +1,7407 @@
+{
+  "scope": "locomotion-only",
+  "aliens": 92,
+  "villains": 50,
+  "characters": [
+    {
+      "kind": "alien",
+      "id": 0,
+      "name": "Heatblast",
+      "slug": "heatblast",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2004,
+      "footVariation": 0.2979,
+      "sizes": [
+        [
+          310,
+          413
+        ],
+        [
+          246,
+          415
+        ],
+        [
+          232,
+          418
+        ],
+        [
+          325,
+          416
+        ],
+        [
+          326,
+          418
+        ],
+        [
+          259,
+          419
+        ],
+        [
+          232,
+          420
+        ],
+        [
+          332,
+          419
+        ]
+      ],
+      "existingGait": {
+        "style": "Balanced strides",
+        "stride": 0.82,
+        "bob": 0.35,
+        "weight": 0
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 1,
+      "name": "Four Arms",
+      "slug": "four-arms",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1289,
+      "footVariation": 0.2322,
+      "sizes": [
+        [
+          398,
+          424
+        ],
+        [
+          384,
+          423
+        ],
+        [
+          407,
+          426
+        ],
+        [
+          406,
+          422
+        ],
+        [
+          408,
+          414
+        ],
+        [
+          390,
+          418
+        ],
+        [
+          394,
+          416
+        ],
+        [
+          399,
+          416
+        ]
+      ],
+      "existingGait": {
+        "style": "Heavy, deliberate strides",
+        "stride": 0.82,
+        "bob": 0.8,
+        "weight": 0.026
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 2,
+      "name": "Diamondhead",
+      "slug": "diamondhead",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1571,
+      "footVariation": 0.2581,
+      "sizes": [
+        [
+          336,
+          429
+        ],
+        [
+          311,
+          428
+        ],
+        [
+          265,
+          430
+        ],
+        [
+          341,
+          431
+        ],
+        [
+          351,
+          422
+        ],
+        [
+          327,
+          424
+        ],
+        [
+          284,
+          424
+        ],
+        [
+          336,
+          423
+        ]
+      ],
+      "existingGait": {
+        "style": "Measured armored steps",
+        "stride": 0.8,
+        "bob": 0.25,
+        "weight": 0.018
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 3,
+      "name": "XLR8",
+      "slug": "xlr8",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1931,
+      "footVariation": 0.3195,
+      "sizes": [
+        [
+          432,
+          437
+        ],
+        [
+          359,
+          418
+        ],
+        [
+          451,
+          434
+        ],
+        [
+          398,
+          430
+        ],
+        [
+          420,
+          416
+        ],
+        [
+          366,
+          422
+        ],
+        [
+          456,
+          423
+        ],
+        [
+          409,
+          409
+        ]
+      ],
+      "existingGait": {
+        "style": "Alternating skate pushes and glides",
+        "stride": 1.05,
+        "bob": 0,
+        "skate": true
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 4,
+      "name": "Wildmutt",
+      "slug": "wildmutt",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2177,
+      "footVariation": 0.4146,
+      "sizes": [
+        [
+          463,
+          326
+        ],
+        [
+          460,
+          328
+        ],
+        [
+          489,
+          332
+        ],
+        [
+          469,
+          336
+        ],
+        [
+          497,
+          328
+        ],
+        [
+          386,
+          330
+        ],
+        [
+          485,
+          334
+        ],
+        [
+          463,
+          324
+        ]
+      ],
+      "existingGait": {
+        "style": "Four-legged bounding",
+        "stride": 1.05,
+        "bob": 1.6,
+        "weight": 0
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 5,
+      "name": "Grey Matter",
+      "slug": "grey-matter",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2007,
+      "footVariation": 0.3239,
+      "sizes": [
+        [
+          320,
+          418
+        ],
+        [
+          243,
+          419
+        ],
+        [
+          219,
+          424
+        ],
+        [
+          314,
+          417
+        ],
+        [
+          335,
+          418
+        ],
+        [
+          264,
+          412
+        ],
+        [
+          223,
+          416
+        ],
+        [
+          330,
+          415
+        ]
+      ],
+      "existingGait": {
+        "style": "Quick, light steps",
+        "stride": 0.94,
+        "bob": 0.45,
+        "weight": 0
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 6,
+      "name": "Upgrade",
+      "slug": "upgrade",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1724,
+      "footVariation": 0.3106,
+      "sizes": [
+        [
+          328,
+          408
+        ],
+        [
+          269,
+          410
+        ],
+        [
+          257,
+          408
+        ],
+        [
+          337,
+          409
+        ],
+        [
+          342,
+          411
+        ],
+        [
+          281,
+          410
+        ],
+        [
+          266,
+          411
+        ],
+        [
+          345,
+          409
+        ]
+      ],
+      "existingGait": {
+        "style": "Long, fluid strides",
+        "stride": 0.98,
+        "bob": 0.3,
+        "weight": 0.012
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 7,
+      "name": "Stinkfly",
+      "slug": "stinkfly",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1641,
+      "footVariation": 0.1643,
+      "sizes": [
+        [
+          399,
+          426
+        ],
+        [
+          397,
+          411
+        ],
+        [
+          392,
+          425
+        ],
+        [
+          397,
+          413
+        ],
+        [
+          405,
+          404
+        ],
+        [
+          401,
+          418
+        ],
+        [
+          411,
+          396
+        ],
+        [
+          376,
+          423
+        ]
+      ],
+      "existingGait": {
+        "style": "Fluttering hover",
+        "stride": 0.85,
+        "bob": 0.9,
+        "hover": true
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 8,
+      "name": "Ripjaws",
+      "slug": "ripjaws",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1815,
+      "footVariation": 0.2898,
+      "sizes": [
+        [
+          308,
+          431
+        ],
+        [
+          269,
+          424
+        ],
+        [
+          272,
+          428
+        ],
+        [
+          307,
+          430
+        ],
+        [
+          327,
+          426
+        ],
+        [
+          269,
+          422
+        ],
+        [
+          253,
+          422
+        ],
+        [
+          309,
+          426
+        ]
+      ],
+      "existingGait": {
+        "style": "Low, deliberate stalking",
+        "stride": 0.94,
+        "bob": 0.4,
+        "weight": 0.021
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 9,
+      "name": "Ghostfreak",
+      "slug": "ghostfreak",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1452,
+      "footVariation": 0.1373,
+      "sizes": [
+        [
+          316,
+          425
+        ],
+        [
+          336,
+          422
+        ],
+        [
+          357,
+          415
+        ],
+        [
+          357,
+          413
+        ],
+        [
+          342,
+          411
+        ],
+        [
+          285,
+          415
+        ],
+        [
+          260,
+          409
+        ],
+        [
+          290,
+          421
+        ]
+      ],
+      "existingGait": {
+        "style": "Floating spectral glide",
+        "stride": 1.1,
+        "bob": 1.6,
+        "hover": true
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 10,
+      "name": "Cannonbolt",
+      "slug": "cannonbolt",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.0896,
+      "footVariation": 0.1622,
+      "sizes": [
+        [
+          456,
+          401
+        ],
+        [
+          365,
+          401
+        ],
+        [
+          436,
+          401
+        ],
+        [
+          425,
+          396
+        ],
+        [
+          416,
+          397
+        ],
+        [
+          416,
+          392
+        ],
+        [
+          403,
+          396
+        ],
+        [
+          403,
+          392
+        ]
+      ],
+      "existingGait": {
+        "style": "Heavy shell steps",
+        "stride": 0.7,
+        "bob": 0.5
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 11,
+      "name": "Wildvine",
+      "slug": "wildvine",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2108,
+      "footVariation": 0.335,
+      "sizes": [
+        [
+          391,
+          441
+        ],
+        [
+          378,
+          439
+        ],
+        [
+          404,
+          438
+        ],
+        [
+          382,
+          428
+        ],
+        [
+          419,
+          433
+        ],
+        [
+          423,
+          426
+        ],
+        [
+          414,
+          433
+        ],
+        [
+          389,
+          433
+        ]
+      ],
+      "existingGait": {
+        "style": "Five-vine planted crawl",
+        "stride": 0.85,
+        "bob": 0.25
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 12,
+      "name": "Blitzwolfer",
+      "slug": "blitzwolfer",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1684,
+      "footVariation": 0.2665,
+      "sizes": [
+        [
+          462,
+          382
+        ],
+        [
+          447,
+          383
+        ],
+        [
+          439,
+          388
+        ],
+        [
+          422,
+          421
+        ],
+        [
+          468,
+          379
+        ],
+        [
+          448,
+          368
+        ],
+        [
+          445,
+          383
+        ],
+        [
+          424,
+          415
+        ]
+      ],
+      "existingGait": {
+        "style": "Digitigrade stalking",
+        "stride": 0.95,
+        "bob": 0.5
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 13,
+      "name": "Snare-oh",
+      "slug": "snare-oh",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2661,
+      "footVariation": 0.3346,
+      "sizes": [
+        [
+          375,
+          429
+        ],
+        [
+          344,
+          433
+        ],
+        [
+          342,
+          431
+        ],
+        [
+          348,
+          432
+        ],
+        [
+          381,
+          425
+        ],
+        [
+          367,
+          426
+        ],
+        [
+          358,
+          429
+        ],
+        [
+          362,
+          431
+        ]
+      ],
+      "existingGait": {
+        "style": "Trailing mummy strides",
+        "stride": 0.8,
+        "bob": 0.3
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 14,
+      "name": "Frankenstrike",
+      "slug": "frankenstrike",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1424,
+      "footVariation": 0.2229,
+      "sizes": [
+        [
+          402,
+          441
+        ],
+        [
+          360,
+          441
+        ],
+        [
+          389,
+          442
+        ],
+        [
+          399,
+          433
+        ],
+        [
+          409,
+          433
+        ],
+        [
+          368,
+          431
+        ],
+        [
+          408,
+          431
+        ],
+        [
+          405,
+          433
+        ]
+      ],
+      "existingGait": {
+        "style": "Heavy conductor steps",
+        "stride": 0.78,
+        "bob": 0.6
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 15,
+      "name": "Upchuck",
+      "slug": "upchuck",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.0971,
+      "footVariation": 0.1546,
+      "sizes": [
+        [
+          383,
+          416
+        ],
+        [
+          354,
+          394
+        ],
+        [
+          385,
+          408
+        ],
+        [
+          409,
+          408
+        ],
+        [
+          390,
+          404
+        ],
+        [
+          328,
+          396
+        ],
+        [
+          389,
+          404
+        ],
+        [
+          399,
+          402
+        ]
+      ],
+      "existingGait": {
+        "style": "Short Gourmand steps",
+        "stride": 0.78,
+        "bob": 0.5
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 16,
+      "name": "Ditto",
+      "slug": "ditto",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1283,
+      "footVariation": 0.2653,
+      "sizes": [
+        [
+          269,
+          431
+        ],
+        [
+          272,
+          437
+        ],
+        [
+          269,
+          439
+        ],
+        [
+          271,
+          436
+        ],
+        [
+          275,
+          431
+        ],
+        [
+          282,
+          432
+        ],
+        [
+          282,
+          432
+        ],
+        [
+          276,
+          427
+        ]
+      ],
+      "existingGait": {
+        "style": "Springy Splixson steps",
+        "stride": 0.9,
+        "bob": 0.6
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 17,
+      "name": "Eye Guy",
+      "slug": "eye-guy",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1881,
+      "footVariation": 0.3299,
+      "sizes": [
+        [
+          318,
+          437
+        ],
+        [
+          278,
+          439
+        ],
+        [
+          255,
+          440
+        ],
+        [
+          294,
+          435
+        ],
+        [
+          343,
+          431
+        ],
+        [
+          317,
+          433
+        ],
+        [
+          270,
+          433
+        ],
+        [
+          295,
+          433
+        ]
+      ],
+      "existingGait": {
+        "style": "Measured Opticoid walk",
+        "stride": 0.83,
+        "bob": 0.3
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 18,
+      "name": "Way Big",
+      "slug": "way-big",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2107,
+      "footVariation": 0.3024,
+      "sizes": [
+        [
+          303,
+          438
+        ],
+        [
+          274,
+          442
+        ],
+        [
+          257,
+          437
+        ],
+        [
+          328,
+          436
+        ],
+        [
+          334,
+          433
+        ],
+        [
+          299,
+          433
+        ],
+        [
+          271,
+          434
+        ],
+        [
+          332,
+          436
+        ]
+      ],
+      "existingGait": {
+        "style": "Long giant strides",
+        "stride": 0.92,
+        "bob": 0.4
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 19,
+      "name": "Arctiguana",
+      "slug": "arctiguana",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.0781,
+      "footVariation": 0.1725,
+      "sizes": [
+        [
+          426,
+          319
+        ],
+        [
+          432,
+          319
+        ],
+        [
+          435,
+          311
+        ],
+        [
+          427,
+          310
+        ],
+        [
+          430,
+          305
+        ],
+        [
+          434,
+          318
+        ],
+        [
+          427,
+          314
+        ],
+        [
+          425,
+          317
+        ]
+      ],
+      "existingGait": {
+        "style": "Low reptile crawl",
+        "stride": 0.92,
+        "bob": 0.5
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 20,
+      "name": "Spitter",
+      "slug": "spitter",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1067,
+      "footVariation": 0.2029,
+      "sizes": [
+        [
+          418,
+          402
+        ],
+        [
+          418,
+          376
+        ],
+        [
+          430,
+          396
+        ],
+        [
+          421,
+          396
+        ],
+        [
+          422,
+          396
+        ],
+        [
+          416,
+          367
+        ],
+        [
+          426,
+          397
+        ],
+        [
+          424,
+          393
+        ]
+      ],
+      "existingGait": {
+        "style": "Heavy waddling steps",
+        "stride": 0.65,
+        "bob": 0.45
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 21,
+      "name": "Buzzshock",
+      "slug": "buzzshock",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2288,
+      "footVariation": 0.3769,
+      "sizes": [
+        [
+          324,
+          384
+        ],
+        [
+          268,
+          367
+        ],
+        [
+          272,
+          384
+        ],
+        [
+          324,
+          389
+        ],
+        [
+          306,
+          382
+        ],
+        [
+          283,
+          358
+        ],
+        [
+          275,
+          372
+        ],
+        [
+          323,
+          392
+        ]
+      ],
+      "existingGait": {
+        "style": "Quick battery steps",
+        "stride": 0.9,
+        "bob": 0.35
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 22,
+      "name": "Swampfire",
+      "slug": "swampfire",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1106,
+      "footVariation": 0.1278,
+      "sizes": [
+        [
+          337,
+          428
+        ],
+        [
+          308,
+          424
+        ],
+        [
+          322,
+          428
+        ],
+        [
+          346,
+          428
+        ],
+        [
+          364,
+          422
+        ],
+        [
+          331,
+          420
+        ],
+        [
+          356,
+          421
+        ],
+        [
+          344,
+          420
+        ]
+      ],
+      "existingGait": {
+        "style": "Rooted plant strides",
+        "stride": 0.85
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 23,
+      "name": "Echo Echo",
+      "slug": "echo-echo",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1798,
+      "footVariation": 0.3311,
+      "sizes": [
+        [
+          294,
+          425
+        ],
+        [
+          277,
+          425
+        ],
+        [
+          249,
+          430
+        ],
+        [
+          290,
+          429
+        ],
+        [
+          275,
+          421
+        ],
+        [
+          294,
+          422
+        ],
+        [
+          283,
+          418
+        ],
+        [
+          297,
+          421
+        ]
+      ],
+      "existingGait": {
+        "style": "Quick light steps",
+        "stride": 0.85
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 24,
+      "name": "Humungousaur",
+      "slug": "humungousaur",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1965,
+      "footVariation": 0.326,
+      "sizes": [
+        [
+          450,
+          417
+        ],
+        [
+          405,
+          412
+        ],
+        [
+          430,
+          417
+        ],
+        [
+          427,
+          404
+        ],
+        [
+          439,
+          411
+        ],
+        [
+          388,
+          414
+        ],
+        [
+          461,
+          408
+        ],
+        [
+          430,
+          415
+        ]
+      ],
+      "existingGait": {
+        "style": "Heavy dinosaur strides",
+        "stride": 0.8
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 25,
+      "name": "Jetray",
+      "slug": "jetray",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1375,
+      "footVariation": 0.1873,
+      "sizes": [
+        [
+          459,
+          422
+        ],
+        [
+          425,
+          421
+        ],
+        [
+          435,
+          421
+        ],
+        [
+          439,
+          420
+        ],
+        [
+          461,
+          411
+        ],
+        [
+          422,
+          409
+        ],
+        [
+          433,
+          418
+        ],
+        [
+          452,
+          423
+        ]
+      ],
+      "existingGait": {
+        "style": "Aerodynamic steps",
+        "stride": 1.02
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native flight-ready pose reused; ground stepping suppressed"
+    },
+    {
+      "kind": "alien",
+      "id": 26,
+      "name": "Big Chill",
+      "slug": "big-chill",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1002,
+      "footVariation": 0.1273,
+      "sizes": [
+        [
+          365,
+          430
+        ],
+        [
+          352,
+          424
+        ],
+        [
+          355,
+          427
+        ],
+        [
+          372,
+          428
+        ],
+        [
+          376,
+          426
+        ],
+        [
+          350,
+          422
+        ],
+        [
+          387,
+          427
+        ],
+        [
+          361,
+          424
+        ]
+      ],
+      "existingGait": {
+        "style": "Cloaked spectral steps",
+        "stride": 0.92,
+        "hover": true
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 27,
+      "name": "Chromastone",
+      "slug": "chromastone",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1552,
+      "footVariation": 0.1859,
+      "sizes": [
+        [
+          284,
+          431
+        ],
+        [
+          252,
+          430
+        ],
+        [
+          271,
+          431
+        ],
+        [
+          288,
+          431
+        ],
+        [
+          309,
+          428
+        ],
+        [
+          283,
+          422
+        ],
+        [
+          253,
+          427
+        ],
+        [
+          295,
+          429
+        ]
+      ],
+      "existingGait": {
+        "style": "Measured crystal strides",
+        "stride": 0.82
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 28,
+      "name": "Brainstorm",
+      "slug": "brainstorm",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1534,
+      "footVariation": 0.212,
+      "sizes": [
+        [
+          398,
+          396
+        ],
+        [
+          415,
+          413
+        ],
+        [
+          417,
+          389
+        ],
+        [
+          408,
+          385
+        ],
+        [
+          419,
+          408
+        ],
+        [
+          402,
+          413
+        ],
+        [
+          427,
+          392
+        ],
+        [
+          398,
+          384
+        ]
+      ],
+      "existingGait": {
+        "style": "Six-legged crab scuttle",
+        "stride": 0.72
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 29,
+      "name": "Spidermonkey",
+      "slug": "spidermonkey",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.171,
+      "footVariation": 0.2825,
+      "sizes": [
+        [
+          396,
+          417
+        ],
+        [
+          379,
+          420
+        ],
+        [
+          370,
+          422
+        ],
+        [
+          380,
+          424
+        ],
+        [
+          391,
+          421
+        ],
+        [
+          391,
+          419
+        ],
+        [
+          390,
+          421
+        ],
+        [
+          383,
+          417
+        ]
+      ],
+      "existingGait": {
+        "style": "Agile monkey strides",
+        "stride": 0.95
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 30,
+      "name": "Goop",
+      "slug": "goop",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1802,
+      "footVariation": 0.2707,
+      "sizes": [
+        [
+          335,
+          419
+        ],
+        [
+          232,
+          421
+        ],
+        [
+          197,
+          425
+        ],
+        [
+          332,
+          419
+        ],
+        [
+          328,
+          420
+        ],
+        [
+          237,
+          421
+        ],
+        [
+          325,
+          422
+        ],
+        [
+          334,
+          418
+        ]
+      ],
+      "existingGait": {
+        "style": "Elastic fluid strides",
+        "stride": 0.92
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 31,
+      "name": "Alien X",
+      "slug": "alien-x",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.193,
+      "footVariation": 0.2126,
+      "sizes": [
+        [
+          300,
+          429
+        ],
+        [
+          301,
+          429
+        ],
+        [
+          195,
+          431
+        ],
+        [
+          295,
+          430
+        ],
+        [
+          310,
+          429
+        ],
+        [
+          311,
+          431
+        ],
+        [
+          209,
+          431
+        ],
+        [
+          287,
+          431
+        ]
+      ],
+      "existingGait": {
+        "style": "Calm celestial strides",
+        "stride": 0.84
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 32,
+      "name": "Rath",
+      "slug": "rath",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1584,
+      "footVariation": 0.2155,
+      "sizes": [
+        [
+          441,
+          424
+        ],
+        [
+          408,
+          411
+        ],
+        [
+          374,
+          410
+        ],
+        [
+          390,
+          423
+        ],
+        [
+          406,
+          381
+        ],
+        [
+          389,
+          372
+        ],
+        [
+          422,
+          383
+        ],
+        [
+          381,
+          381
+        ]
+      ],
+      "existingGait": {
+        "style": "Tiger strides",
+        "stride": 0.88,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 33,
+      "name": "Lodestar",
+      "slug": "lodestar",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1881,
+      "footVariation": 0.2063,
+      "sizes": [
+        [
+          451,
+          420
+        ],
+        [
+          393,
+          418
+        ],
+        [
+          439,
+          416
+        ],
+        [
+          355,
+          426
+        ],
+        [
+          414,
+          403
+        ],
+        [
+          430,
+          404
+        ],
+        [
+          430,
+          408
+        ],
+        [
+          363,
+          399
+        ]
+      ],
+      "existingGait": {
+        "style": "Magnetic steps",
+        "stride": 0.82,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native flight-ready pose reused; ground stepping suppressed"
+    },
+    {
+      "kind": "alien",
+      "id": 34,
+      "name": "Nanomech",
+      "slug": "nanomech",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2455,
+      "footVariation": 0.2643,
+      "sizes": [
+        [
+          329,
+          472
+        ],
+        [
+          499,
+          455
+        ],
+        [
+          368,
+          425
+        ],
+        [
+          314,
+          475
+        ],
+        [
+          326,
+          360
+        ],
+        [
+          332,
+          387
+        ],
+        [
+          376,
+          350
+        ],
+        [
+          362,
+          364
+        ]
+      ],
+      "existingGait": {
+        "style": "Winged micro-flight",
+        "stride": 0.9,
+        "hover": true
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 35,
+      "name": "Water Hazard",
+      "slug": "water-hazard",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.113,
+      "footVariation": 0.2076,
+      "sizes": [
+        [
+          384,
+          425
+        ],
+        [
+          404,
+          423
+        ],
+        [
+          368,
+          430
+        ],
+        [
+          364,
+          436
+        ],
+        [
+          395,
+          418
+        ],
+        [
+          390,
+          411
+        ],
+        [
+          363,
+          421
+        ],
+        [
+          386,
+          422
+        ]
+      ],
+      "existingGait": {
+        "style": "Armored Orishan steps",
+        "stride": 0.78,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 36,
+      "name": "AmpFibian",
+      "slug": "ampfibian",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 4,
+      "silhouetteVariation": 0.1907,
+      "footVariation": 0.2304,
+      "sizes": [
+        [
+          345,
+          371
+        ],
+        [
+          404,
+          345
+        ],
+        [
+          386,
+          443
+        ],
+        [
+          494,
+          440
+        ],
+        [
+          386,
+          443
+        ],
+        [
+          345,
+          371
+        ],
+        [
+          404,
+          345
+        ],
+        [
+          345,
+          371
+        ]
+      ],
+      "existingGait": {
+        "style": "Amperi hover",
+        "stride": 0.88,
+        "hover": true
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 37,
+      "name": "Armodrillo",
+      "slug": "armodrillo",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1331,
+      "footVariation": 0.2571,
+      "sizes": [
+        [
+          371,
+          415
+        ],
+        [
+          356,
+          392
+        ],
+        [
+          341,
+          413
+        ],
+        [
+          364,
+          410
+        ],
+        [
+          376,
+          404
+        ],
+        [
+          363,
+          381
+        ],
+        [
+          347,
+          411
+        ],
+        [
+          363,
+          400
+        ]
+      ],
+      "existingGait": {
+        "style": "Heavy piston steps",
+        "stride": 0.72,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 38,
+      "name": "Terraspin",
+      "slug": "terraspin",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1398,
+      "footVariation": 0.2748,
+      "sizes": [
+        [
+          337,
+          414
+        ],
+        [
+          324,
+          415
+        ],
+        [
+          334,
+          408
+        ],
+        [
+          320,
+          414
+        ],
+        [
+          331,
+          409
+        ],
+        [
+          329,
+          401
+        ],
+        [
+          325,
+          409
+        ],
+        [
+          309,
+          412
+        ]
+      ],
+      "existingGait": {
+        "style": "Shell strides",
+        "stride": 0.8,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 39,
+      "name": "NRG",
+      "slug": "nrg",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.153,
+      "footVariation": 0.2358,
+      "sizes": [
+        [
+          372,
+          473
+        ],
+        [
+          375,
+          445
+        ],
+        [
+          302,
+          471
+        ],
+        [
+          338,
+          482
+        ],
+        [
+          385,
+          462
+        ],
+        [
+          363,
+          436
+        ],
+        [
+          324,
+          466
+        ],
+        [
+          351,
+          457
+        ]
+      ],
+      "existingGait": {
+        "style": "Containment-suit march",
+        "stride": 0.7,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 40,
+      "name": "Fasttrack",
+      "slug": "fasttrack",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1703,
+      "footVariation": 0.2148,
+      "sizes": [
+        [
+          389,
+          479
+        ],
+        [
+          401,
+          465
+        ],
+        [
+          409,
+          466
+        ],
+        [
+          352,
+          491
+        ],
+        [
+          387,
+          466
+        ],
+        [
+          391,
+          461
+        ],
+        [
+          407,
+          463
+        ],
+        [
+          348,
+          487
+        ]
+      ],
+      "existingGait": {
+        "style": "Citrakayah sprint",
+        "stride": 1.02,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 41,
+      "name": "Chamalien",
+      "slug": "chamalien",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1803,
+      "footVariation": 0.2989,
+      "sizes": [
+        [
+          372,
+          483
+        ],
+        [
+          302,
+          479
+        ],
+        [
+          350,
+          481
+        ],
+        [
+          337,
+          487
+        ],
+        [
+          391,
+          483
+        ],
+        [
+          309,
+          467
+        ],
+        [
+          364,
+          478
+        ],
+        [
+          335,
+          483
+        ]
+      ],
+      "existingGait": {
+        "style": "Stealthy reptile steps",
+        "stride": 0.92,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 42,
+      "name": "Eatle",
+      "slug": "eatle",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1883,
+      "footVariation": 0.342,
+      "sizes": [
+        [
+          405,
+          497
+        ],
+        [
+          305,
+          485
+        ],
+        [
+          347,
+          496
+        ],
+        [
+          375,
+          500
+        ],
+        [
+          388,
+          491
+        ],
+        [
+          307,
+          482
+        ],
+        [
+          284,
+          491
+        ],
+        [
+          370,
+          487
+        ]
+      ],
+      "existingGait": {
+        "style": "Armored beetle steps",
+        "stride": 0.76,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 43,
+      "name": "Clockwork",
+      "slug": "clockwork",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1496,
+      "footVariation": 0.275,
+      "sizes": [
+        [
+          373,
+          474
+        ],
+        [
+          352,
+          467
+        ],
+        [
+          359,
+          477
+        ],
+        [
+          353,
+          476
+        ],
+        [
+          366,
+          468
+        ],
+        [
+          344,
+          470
+        ],
+        [
+          325,
+          470
+        ],
+        [
+          358,
+          472
+        ]
+      ],
+      "existingGait": {
+        "style": "Clockwork march",
+        "stride": 0.74,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 44,
+      "name": "Jury Rigg",
+      "slug": "jury-rigg",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1819,
+      "footVariation": 0.3303,
+      "sizes": [
+        [
+          337,
+          436
+        ],
+        [
+          344,
+          449
+        ],
+        [
+          334,
+          454
+        ],
+        [
+          374,
+          445
+        ],
+        [
+          367,
+          448
+        ],
+        [
+          350,
+          444
+        ],
+        [
+          329,
+          455
+        ],
+        [
+          356,
+          449
+        ]
+      ],
+      "existingGait": {
+        "style": "Quick engineer steps",
+        "stride": 0.88,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 45,
+      "name": "Shocksquatch",
+      "slug": "shocksquatch",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.201,
+      "footVariation": 0.3218,
+      "sizes": [
+        [
+          373,
+          481
+        ],
+        [
+          338,
+          431
+        ],
+        [
+          367,
+          483
+        ],
+        [
+          364,
+          480
+        ],
+        [
+          397,
+          482
+        ],
+        [
+          319,
+          433
+        ],
+        [
+          373,
+          491
+        ],
+        [
+          372,
+          491
+        ]
+      ],
+      "existingGait": {
+        "style": "Heavy electric strides",
+        "stride": 0.82,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 46,
+      "name": "Feedback",
+      "slug": "feedback",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2393,
+      "footVariation": 0.3398,
+      "sizes": [
+        [
+          369,
+          484
+        ],
+        [
+          353,
+          444
+        ],
+        [
+          349,
+          485
+        ],
+        [
+          386,
+          478
+        ],
+        [
+          384,
+          481
+        ],
+        [
+          358,
+          449
+        ],
+        [
+          359,
+          479
+        ],
+        [
+          387,
+          473
+        ]
+      ],
+      "existingGait": {
+        "style": "Conductoid strides",
+        "stride": 0.9,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 47,
+      "name": "Bloxx",
+      "slug": "bloxx",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2002,
+      "footVariation": 0.3487,
+      "sizes": [
+        [
+          407,
+          460
+        ],
+        [
+          348,
+          425
+        ],
+        [
+          384,
+          455
+        ],
+        [
+          369,
+          460
+        ],
+        [
+          415,
+          451
+        ],
+        [
+          323,
+          420
+        ],
+        [
+          377,
+          459
+        ],
+        [
+          353,
+          460
+        ]
+      ],
+      "existingGait": {
+        "style": "Segmented knuckle walk",
+        "stride": 0.82,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 48,
+      "name": "Gravattack",
+      "slug": "gravattack",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1555,
+      "footVariation": 0.3145,
+      "sizes": [
+        [
+          401,
+          444
+        ],
+        [
+          342,
+          422
+        ],
+        [
+          386,
+          447
+        ],
+        [
+          350,
+          449
+        ],
+        [
+          407,
+          450
+        ],
+        [
+          340,
+          422
+        ],
+        [
+          370,
+          439
+        ],
+        [
+          387,
+          441
+        ]
+      ],
+      "existingGait": {
+        "style": "Planetoid steps",
+        "stride": 0.74,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 49,
+      "name": "Crashhopper",
+      "slug": "crashhopper",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1586,
+      "footVariation": 0.2246,
+      "sizes": [
+        [
+          166,
+          201
+        ],
+        [
+          161,
+          199
+        ],
+        [
+          162,
+          202
+        ],
+        [
+          148,
+          202
+        ],
+        [
+          158,
+          201
+        ],
+        [
+          182,
+          199
+        ],
+        [
+          171,
+          199
+        ],
+        [
+          172,
+          201
+        ]
+      ],
+      "existingGait": {
+        "style": "Spring-leg bounds",
+        "stride": 1.05,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 50,
+      "name": "Ball Weevil",
+      "slug": "ball-weevil",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.106,
+      "footVariation": 0.2155,
+      "sizes": [
+        [
+          172,
+          147
+        ],
+        [
+          167,
+          143
+        ],
+        [
+          177,
+          143
+        ],
+        [
+          169,
+          147
+        ],
+        [
+          156,
+          144
+        ],
+        [
+          162,
+          147
+        ],
+        [
+          168,
+          148
+        ],
+        [
+          168,
+          144
+        ]
+      ],
+      "existingGait": {
+        "style": "Four-legged insect scuttle",
+        "stride": 0.92,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 51,
+      "name": "Astrodactyl",
+      "slug": "astrodactyl",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.0979,
+      "footVariation": 0.1697,
+      "sizes": [
+        [
+          190,
+          201
+        ],
+        [
+          188,
+          203
+        ],
+        [
+          204,
+          201
+        ],
+        [
+          211,
+          201
+        ],
+        [
+          206,
+          204
+        ],
+        [
+          205,
+          200
+        ],
+        [
+          208,
+          199
+        ],
+        [
+          198,
+          201
+        ]
+      ],
+      "existingGait": {
+        "style": "Jet-assisted glide",
+        "stride": 1,
+        "hover": true
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native flight-ready pose reused; ground stepping suppressed"
+    },
+    {
+      "kind": "alien",
+      "id": 52,
+      "name": "Toepick",
+      "slug": "toepick",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.209,
+      "footVariation": 0.3244,
+      "sizes": [
+        [
+          385,
+          377
+        ],
+        [
+          414,
+          376
+        ],
+        [
+          418,
+          370
+        ],
+        [
+          384,
+          363
+        ],
+        [
+          409,
+          375
+        ],
+        [
+          381,
+          358
+        ],
+        [
+          403,
+          368
+        ],
+        [
+          379,
+          380
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 53,
+      "name": "Pesky Dust",
+      "slug": "pesky-dust",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2088,
+      "footVariation": 0.2174,
+      "sizes": [
+        [
+          436,
+          429
+        ],
+        [
+          308,
+          439
+        ],
+        [
+          295,
+          427
+        ],
+        [
+          361,
+          406
+        ],
+        [
+          368,
+          423
+        ],
+        [
+          358,
+          413
+        ],
+        [
+          285,
+          422
+        ],
+        [
+          388,
+          376
+        ]
+      ],
+      "existingGait": {
+        "style": "Floating glide",
+        "stride": 0.85,
+        "hover": true
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 54,
+      "name": "Bullfrag",
+      "slug": "bullfrag",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2734,
+      "footVariation": 0.3317,
+      "sizes": [
+        [
+          389,
+          407
+        ],
+        [
+          375,
+          402
+        ],
+        [
+          388,
+          401
+        ],
+        [
+          441,
+          394
+        ],
+        [
+          430,
+          397
+        ],
+        [
+          380,
+          392
+        ],
+        [
+          427,
+          394
+        ],
+        [
+          401,
+          398
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 55,
+      "name": "Kickin' Hawk",
+      "slug": "kickin-hawk",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1854,
+      "footVariation": 0.2358,
+      "sizes": [
+        [
+          292,
+          439
+        ],
+        [
+          324,
+          425
+        ],
+        [
+          363,
+          426
+        ],
+        [
+          368,
+          423
+        ],
+        [
+          409,
+          413
+        ],
+        [
+          379,
+          410
+        ],
+        [
+          392,
+          403
+        ],
+        [
+          378,
+          411
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 56,
+      "name": "Whampire",
+      "slug": "whampire",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2067,
+      "footVariation": 0.188,
+      "sizes": [
+        [
+          482,
+          488
+        ],
+        [
+          455,
+          377
+        ],
+        [
+          526,
+          331
+        ],
+        [
+          375,
+          316
+        ],
+        [
+          436,
+          322
+        ],
+        [
+          410,
+          297
+        ],
+        [
+          503,
+          339
+        ],
+        [
+          468,
+          413
+        ]
+      ],
+      "existingGait": {
+        "style": "Floating glide",
+        "stride": 0.85,
+        "hover": true
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 57,
+      "name": "Gutrot",
+      "slug": "gutrot",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2061,
+      "footVariation": 0.2865,
+      "sizes": [
+        [
+          368,
+          394
+        ],
+        [
+          378,
+          387
+        ],
+        [
+          386,
+          382
+        ],
+        [
+          373,
+          378
+        ],
+        [
+          397,
+          369
+        ],
+        [
+          388,
+          376
+        ],
+        [
+          364,
+          377
+        ],
+        [
+          397,
+          368
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 58,
+      "name": "Atomix",
+      "slug": "atomix",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1854,
+      "footVariation": 0.2142,
+      "sizes": [
+        [
+          353,
+          426
+        ],
+        [
+          386,
+          424
+        ],
+        [
+          403,
+          426
+        ],
+        [
+          331,
+          428
+        ],
+        [
+          391,
+          431
+        ],
+        [
+          390,
+          423
+        ],
+        [
+          395,
+          424
+        ],
+        [
+          417,
+          418
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 59,
+      "name": "Walkatrout",
+      "slug": "walkatrout",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1045,
+      "footVariation": 0.1949,
+      "sizes": [
+        [
+          422,
+          369
+        ],
+        [
+          413,
+          368
+        ],
+        [
+          432,
+          358
+        ],
+        [
+          423,
+          368
+        ],
+        [
+          427,
+          364
+        ],
+        [
+          416,
+          377
+        ],
+        [
+          424,
+          366
+        ],
+        [
+          412,
+          376
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 60,
+      "name": "The Worst",
+      "slug": "the-worst",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1727,
+      "footVariation": 0.2515,
+      "sizes": [
+        [
+          382,
+          423
+        ],
+        [
+          405,
+          419
+        ],
+        [
+          426,
+          425
+        ],
+        [
+          397,
+          417
+        ],
+        [
+          367,
+          407
+        ],
+        [
+          391,
+          413
+        ],
+        [
+          397,
+          410
+        ],
+        [
+          356,
+          402
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 61,
+      "name": "Mole-Stache",
+      "slug": "mole-stache",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2139,
+      "footVariation": 0.2698,
+      "sizes": [
+        [
+          415,
+          356
+        ],
+        [
+          406,
+          339
+        ],
+        [
+          407,
+          352
+        ],
+        [
+          420,
+          321
+        ],
+        [
+          430,
+          343
+        ],
+        [
+          391,
+          328
+        ],
+        [
+          408,
+          348
+        ],
+        [
+          417,
+          330
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 62,
+      "name": "Overflow",
+      "slug": "overflow",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2421,
+      "footVariation": 0.2943,
+      "sizes": [
+        [
+          381,
+          402
+        ],
+        [
+          396,
+          399
+        ],
+        [
+          368,
+          410
+        ],
+        [
+          381,
+          407
+        ],
+        [
+          375,
+          399
+        ],
+        [
+          393,
+          397
+        ],
+        [
+          436,
+          392
+        ],
+        [
+          368,
+          389
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 63,
+      "name": "Gax",
+      "slug": "gax",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2365,
+      "footVariation": 0.3137,
+      "sizes": [
+        [
+          372,
+          428
+        ],
+        [
+          370,
+          425
+        ],
+        [
+          317,
+          424
+        ],
+        [
+          406,
+          420
+        ],
+        [
+          420,
+          424
+        ],
+        [
+          362,
+          420
+        ],
+        [
+          436,
+          412
+        ],
+        [
+          335,
+          425
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 64,
+      "name": "Shock Rock",
+      "slug": "shock-rock",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1794,
+      "footVariation": 0.2125,
+      "sizes": [
+        [
+          338,
+          425
+        ],
+        [
+          379,
+          425
+        ],
+        [
+          403,
+          425
+        ],
+        [
+          436,
+          417
+        ],
+        [
+          394,
+          426
+        ],
+        [
+          412,
+          421
+        ],
+        [
+          388,
+          418
+        ],
+        [
+          429,
+          420
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 65,
+      "name": "Slapback",
+      "slug": "slapback",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1785,
+      "footVariation": 0.2181,
+      "sizes": [
+        [
+          386,
+          383
+        ],
+        [
+          394,
+          386
+        ],
+        [
+          437,
+          387
+        ],
+        [
+          404,
+          381
+        ],
+        [
+          414,
+          384
+        ],
+        [
+          421,
+          391
+        ],
+        [
+          412,
+          391
+        ],
+        [
+          395,
+          373
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 66,
+      "name": "Surge",
+      "slug": "surge",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1368,
+      "footVariation": 0.1181,
+      "sizes": [
+        [
+          414,
+          414
+        ],
+        [
+          389,
+          376
+        ],
+        [
+          420,
+          291
+        ],
+        [
+          389,
+          255
+        ],
+        [
+          418,
+          283
+        ],
+        [
+          389,
+          302
+        ],
+        [
+          391,
+          358
+        ],
+        [
+          385,
+          412
+        ]
+      ],
+      "existingGait": {
+        "style": "Floating glide",
+        "stride": 0.85,
+        "hover": true
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 67,
+      "name": "Ultimate Humungousaur",
+      "slug": "ultimate-humungousaur",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2061,
+      "footVariation": 0.3442,
+      "sizes": [
+        [
+          474,
+          401
+        ],
+        [
+          401,
+          379
+        ],
+        [
+          464,
+          387
+        ],
+        [
+          454,
+          371
+        ],
+        [
+          467,
+          363
+        ],
+        [
+          413,
+          362
+        ],
+        [
+          467,
+          356
+        ],
+        [
+          418,
+          357
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 68,
+      "name": "Ultimate Big Chill",
+      "slug": "ultimate-big-chill",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1988,
+      "footVariation": 0.1532,
+      "sizes": [
+        [
+          355,
+          442
+        ],
+        [
+          420,
+          432
+        ],
+        [
+          430,
+          350
+        ],
+        [
+          407,
+          436
+        ],
+        [
+          411,
+          429
+        ],
+        [
+          385,
+          411
+        ],
+        [
+          465,
+          377
+        ],
+        [
+          391,
+          428
+        ]
+      ],
+      "existingGait": {
+        "style": "Floating glide",
+        "stride": 0.85,
+        "hover": true
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 69,
+      "name": "Ultimate Echo Echo",
+      "slug": "ultimate-echo-echo",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1978,
+      "footVariation": 0.2049,
+      "sizes": [
+        [
+          323,
+          423
+        ],
+        [
+          321,
+          423
+        ],
+        [
+          360,
+          423
+        ],
+        [
+          404,
+          418
+        ],
+        [
+          421,
+          417
+        ],
+        [
+          363,
+          417
+        ],
+        [
+          379,
+          417
+        ],
+        [
+          364,
+          419
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native flight-ready pose reused; ground stepping suppressed"
+    },
+    {
+      "kind": "alien",
+      "id": 70,
+      "name": "Ultimate Swampfire",
+      "slug": "ultimate-swampfire",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1833,
+      "footVariation": 0.2207,
+      "sizes": [
+        [
+          402,
+          427
+        ],
+        [
+          418,
+          424
+        ],
+        [
+          413,
+          423
+        ],
+        [
+          414,
+          419
+        ],
+        [
+          441,
+          417
+        ],
+        [
+          419,
+          417
+        ],
+        [
+          385,
+          428
+        ],
+        [
+          404,
+          417
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 71,
+      "name": "Ultimate Cannonbolt",
+      "slug": "ultimate-cannonbolt",
+      "nativeWalkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1984,
+      "footVariation": 0.3381,
+      "sizes": [
+        [
+          422,
+          397
+        ],
+        [
+          425,
+          407
+        ],
+        [
+          420,
+          417
+        ],
+        [
+          393,
+          406
+        ],
+        [
+          459,
+          403
+        ],
+        [
+          360,
+          409
+        ],
+        [
+          418,
+          402
+        ],
+        [
+          388,
+          407
+        ]
+      ],
+      "existingGait": {
+        "style": "Natural character strides",
+        "stride": 0.85,
+        "hover": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 72,
+      "name": "Ultimate Wildmutt",
+      "slug": "ultimate-wildmutt",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2403,
+      "footVariation": 0.3331,
+      "sizes": [
+        [
+          339,
+          201
+        ],
+        [
+          380,
+          179
+        ],
+        [
+          353,
+          189
+        ],
+        [
+          354,
+          194
+        ],
+        [
+          333,
+          202
+        ],
+        [
+          378,
+          176
+        ],
+        [
+          356,
+          195
+        ],
+        [
+          338,
+          189
+        ]
+      ],
+      "existingGait": {
+        "style": "quadruped movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 73,
+      "name": "Ultimate Spidermonkey",
+      "slug": "ultimate-spidermonkey",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2467,
+      "footVariation": 0.3241,
+      "sizes": [
+        [
+          339,
+          229
+        ],
+        [
+          292,
+          229
+        ],
+        [
+          320,
+          231
+        ],
+        [
+          273,
+          233
+        ],
+        [
+          279,
+          230
+        ],
+        [
+          278,
+          223
+        ],
+        [
+          285,
+          232
+        ],
+        [
+          275,
+          233
+        ]
+      ],
+      "existingGait": {
+        "style": "gorilla movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 74,
+      "name": "Ultimate Way Big",
+      "slug": "ultimate-way-big",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2063,
+      "footVariation": 0.2439,
+      "sizes": [
+        [
+          193,
+          302
+        ],
+        [
+          218,
+          304
+        ],
+        [
+          192,
+          304
+        ],
+        [
+          208,
+          302
+        ],
+        [
+          197,
+          302
+        ],
+        [
+          203,
+          295
+        ],
+        [
+          204,
+          297
+        ],
+        [
+          164,
+          315
+        ]
+      ],
+      "existingGait": {
+        "style": "giant movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 75,
+      "name": "Ultimate Arctiguana",
+      "slug": "ultimate-arctiguana",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1581,
+      "footVariation": 0.2397,
+      "sizes": [
+        [
+          353,
+          241
+        ],
+        [
+          350,
+          213
+        ],
+        [
+          347,
+          238
+        ],
+        [
+          339,
+          245
+        ],
+        [
+          363,
+          242
+        ],
+        [
+          361,
+          221
+        ],
+        [
+          372,
+          251
+        ],
+        [
+          355,
+          243
+        ]
+      ],
+      "existingGait": {
+        "style": "reptile movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 76,
+      "name": "Ultimate Gravattack",
+      "slug": "ultimate-gravattack",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1341,
+      "footVariation": 0.1206,
+      "sizes": [
+        [
+          305,
+          223
+        ],
+        [
+          314,
+          218
+        ],
+        [
+          338,
+          223
+        ],
+        [
+          312,
+          230
+        ],
+        [
+          316,
+          228
+        ],
+        [
+          297,
+          219
+        ],
+        [
+          298,
+          221
+        ],
+        [
+          290,
+          229
+        ]
+      ],
+      "existingGait": {
+        "style": "hover movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": true,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 77,
+      "name": "Ultimate Rath",
+      "slug": "ultimate-rath",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1898,
+      "footVariation": 0.2782,
+      "sizes": [
+        [
+          299,
+          225
+        ],
+        [
+          302,
+          205
+        ],
+        [
+          284,
+          223
+        ],
+        [
+          294,
+          248
+        ],
+        [
+          303,
+          237
+        ],
+        [
+          303,
+          220
+        ],
+        [
+          301,
+          233
+        ],
+        [
+          294,
+          246
+        ]
+      ],
+      "existingGait": {
+        "style": "tiger movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 78,
+      "name": "Ultimate Grey Matter",
+      "slug": "ultimate-grey-matter",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.0385,
+      "footVariation": 0.0283,
+      "sizes": [
+        [
+          201,
+          221
+        ],
+        [
+          191,
+          217
+        ],
+        [
+          188,
+          218
+        ],
+        [
+          194,
+          229
+        ],
+        [
+          191,
+          219
+        ],
+        [
+          187,
+          207
+        ],
+        [
+          192,
+          217
+        ],
+        [
+          194,
+          224
+        ]
+      ],
+      "existingGait": {
+        "style": "hover movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": true,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 79,
+      "name": "Bashmouth",
+      "slug": "bashmouth",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1761,
+      "footVariation": 0.2618,
+      "sizes": [
+        [
+          306,
+          240
+        ],
+        [
+          326,
+          220
+        ],
+        [
+          333,
+          236
+        ],
+        [
+          321,
+          233
+        ],
+        [
+          326,
+          231
+        ],
+        [
+          315,
+          228
+        ],
+        [
+          333,
+          231
+        ],
+        [
+          307,
+          240
+        ]
+      ],
+      "existingGait": {
+        "style": "wolf movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 80,
+      "name": "Bootleg",
+      "slug": "bootleg",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2316,
+      "footVariation": 0.2582,
+      "sizes": [
+        [
+          219,
+          242
+        ],
+        [
+          230,
+          218
+        ],
+        [
+          226,
+          237
+        ],
+        [
+          207,
+          241
+        ],
+        [
+          230,
+          244
+        ],
+        [
+          242,
+          220
+        ],
+        [
+          216,
+          249
+        ],
+        [
+          202,
+          244
+        ]
+      ],
+      "existingGait": {
+        "style": "fluid movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 81,
+      "name": "Crystalfist",
+      "slug": "crystalfist",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2246,
+      "footVariation": 0.2829,
+      "sizes": [
+        [
+          214,
+          291
+        ],
+        [
+          168,
+          301
+        ],
+        [
+          229,
+          301
+        ],
+        [
+          276,
+          291
+        ],
+        [
+          247,
+          290
+        ],
+        [
+          197,
+          291
+        ],
+        [
+          263,
+          292
+        ],
+        [
+          272,
+          285
+        ]
+      ],
+      "existingGait": {
+        "style": "armored movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 82,
+      "name": "Dark Matter",
+      "slug": "dark-matter",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1692,
+      "footVariation": 0.2316,
+      "sizes": [
+        [
+          193,
+          251
+        ],
+        [
+          159,
+          251
+        ],
+        [
+          182,
+          252
+        ],
+        [
+          188,
+          247
+        ],
+        [
+          200,
+          247
+        ],
+        [
+          172,
+          247
+        ],
+        [
+          171,
+          241
+        ],
+        [
+          178,
+          247
+        ]
+      ],
+      "existingGait": {
+        "style": "stalker movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 83,
+      "name": "Hot Shot",
+      "slug": "hot-shot",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1984,
+      "footVariation": 0.2652,
+      "sizes": [
+        [
+          238,
+          264
+        ],
+        [
+          237,
+          254
+        ],
+        [
+          223,
+          267
+        ],
+        [
+          238,
+          264
+        ],
+        [
+          257,
+          259
+        ],
+        [
+          234,
+          248
+        ],
+        [
+          257,
+          261
+        ],
+        [
+          218,
+          258
+        ]
+      ],
+      "existingGait": {
+        "style": "balanced movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 84,
+      "name": "Humungoraptor",
+      "slug": "humungoraptor",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.0814,
+      "footVariation": 0.113,
+      "sizes": [
+        [
+          359,
+          237
+        ],
+        [
+          351,
+          227
+        ],
+        [
+          366,
+          237
+        ],
+        [
+          344,
+          239
+        ],
+        [
+          349,
+          235
+        ],
+        [
+          350,
+          229
+        ],
+        [
+          368,
+          233
+        ],
+        [
+          348,
+          233
+        ]
+      ],
+      "existingGait": {
+        "style": "dinosaur movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 85,
+      "name": "Quad Smack",
+      "slug": "quad-smack",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1238,
+      "footVariation": 0.1513,
+      "sizes": [
+        [
+          282,
+          290
+        ],
+        [
+          269,
+          286
+        ],
+        [
+          269,
+          292
+        ],
+        [
+          269,
+          289
+        ],
+        [
+          261,
+          286
+        ],
+        [
+          277,
+          292
+        ],
+        [
+          274,
+          294
+        ],
+        [
+          270,
+          287
+        ]
+      ],
+      "existingGait": {
+        "style": "four-arms movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 86,
+      "name": "Rush",
+      "slug": "rush",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1646,
+      "footVariation": 0.2027,
+      "sizes": [
+        [
+          323,
+          237
+        ],
+        [
+          334,
+          221
+        ],
+        [
+          336,
+          237
+        ],
+        [
+          324,
+          241
+        ],
+        [
+          309,
+          239
+        ],
+        [
+          337,
+          214
+        ],
+        [
+          340,
+          241
+        ],
+        [
+          343,
+          241
+        ]
+      ],
+      "existingGait": {
+        "style": "skate movement",
+        "stride": 1.02,
+        "bob": 0.4,
+        "hover": false,
+        "skate": true
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 87,
+      "name": "Skunkmoth",
+      "slug": "skunkmoth",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1617,
+      "footVariation": 0.1631,
+      "sizes": [
+        [
+          316,
+          242
+        ],
+        [
+          301,
+          243
+        ],
+        [
+          322,
+          239
+        ],
+        [
+          299,
+          235
+        ],
+        [
+          320,
+          241
+        ],
+        [
+          320,
+          239
+        ],
+        [
+          319,
+          230
+        ],
+        [
+          301,
+          247
+        ]
+      ],
+      "existingGait": {
+        "style": "hover movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": true,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 88,
+      "name": "Thornblade",
+      "slug": "thornblade",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.2163,
+      "footVariation": 0.2392,
+      "sizes": [
+        [
+          297,
+          239
+        ],
+        [
+          294,
+          233
+        ],
+        [
+          297,
+          235
+        ],
+        [
+          265,
+          247
+        ],
+        [
+          315,
+          244
+        ],
+        [
+          287,
+          233
+        ],
+        [
+          290,
+          241
+        ],
+        [
+          270,
+          253
+        ]
+      ],
+      "existingGait": {
+        "style": "plant movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 89,
+      "name": "Undertow",
+      "slug": "undertow",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1349,
+      "footVariation": 0.1958,
+      "sizes": [
+        [
+          289,
+          238
+        ],
+        [
+          294,
+          238
+        ],
+        [
+          296,
+          238
+        ],
+        [
+          293,
+          237
+        ],
+        [
+          316,
+          239
+        ],
+        [
+          307,
+          237
+        ],
+        [
+          307,
+          237
+        ],
+        [
+          291,
+          247
+        ]
+      ],
+      "existingGait": {
+        "style": "armored movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 90,
+      "name": "Wreckingbolt",
+      "slug": "wreckingbolt",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1746,
+      "footVariation": 0.2719,
+      "sizes": [
+        [
+          294,
+          231
+        ],
+        [
+          292,
+          229
+        ],
+        [
+          270,
+          234
+        ],
+        [
+          294,
+          239
+        ],
+        [
+          276,
+          232
+        ],
+        [
+          282,
+          229
+        ],
+        [
+          260,
+          237
+        ],
+        [
+          266,
+          238
+        ]
+      ],
+      "existingGait": {
+        "style": "heavy movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "alien",
+      "id": 91,
+      "name": "Alien V",
+      "slug": "alien-v",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nativeUnique": 8,
+      "silhouetteVariation": 0.1248,
+      "footVariation": 0.1563,
+      "sizes": [
+        [
+          250,
+          288
+        ],
+        [
+          239,
+          271
+        ],
+        [
+          238,
+          293
+        ],
+        [
+          246,
+          289
+        ],
+        [
+          233,
+          290
+        ],
+        [
+          244,
+          272
+        ],
+        [
+          245,
+          277
+        ],
+        [
+          248,
+          291
+        ]
+      ],
+      "existingGait": {
+        "style": "giant movement",
+        "stride": 0.85,
+        "bob": 0.4,
+        "hover": false,
+        "skate": false
+      },
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+    },
+    {
+      "kind": "villain",
+      "id": 0,
+      "name": "Phil Billings",
+      "slug": "phil-billings",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1155,
+      "footVariation": 0.1025,
+      "sizes": [
+        [
+          169,
+          243
+        ],
+        [
+          168,
+          236
+        ],
+        [
+          178,
+          241
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 1,
+      "name": "Sublimino",
+      "slug": "sublimino",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1513,
+      "footVariation": 0.2149,
+      "sizes": [
+        [
+          252,
+          230
+        ],
+        [
+          253,
+          228
+        ],
+        [
+          253,
+          227
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 2,
+      "name": "Acid Breath",
+      "slug": "acid-breath",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2004,
+      "footVariation": 0.1897,
+      "sizes": [
+        [
+          198,
+          284
+        ],
+        [
+          204,
+          281
+        ],
+        [
+          237,
+          274
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 3,
+      "name": "Frightwig",
+      "slug": "frightwig",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2039,
+      "footVariation": 0.1309,
+      "sizes": [
+        [
+          244,
+          283
+        ],
+        [
+          238,
+          289
+        ],
+        [
+          248,
+          296
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 4,
+      "name": "Thumbskull",
+      "slug": "thumbskull",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1666,
+      "footVariation": 0.152,
+      "sizes": [
+        [
+          218,
+          280
+        ],
+        [
+          233,
+          273
+        ],
+        [
+          218,
+          270
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 5,
+      "name": "Clancy",
+      "slug": "clancy",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.139,
+      "footVariation": 0.2157,
+      "sizes": [
+        [
+          202,
+          286
+        ],
+        [
+          209,
+          289
+        ],
+        [
+          217,
+          286
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 6,
+      "name": "Rojo",
+      "slug": "rojo",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1428,
+      "footVariation": 0.1038,
+      "sizes": [
+        [
+          194,
+          280
+        ],
+        [
+          198,
+          284
+        ],
+        [
+          187,
+          282
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 7,
+      "name": "Dr. Animo",
+      "slug": "dr-animo",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.0963,
+      "footVariation": 0.0545,
+      "sizes": [
+        [
+          205,
+          291
+        ],
+        [
+          209,
+          287
+        ],
+        [
+          219,
+          290
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 8,
+      "name": "Zombozo",
+      "slug": "zombozo",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2096,
+      "footVariation": 0.2345,
+      "sizes": [
+        [
+          203,
+          287
+        ],
+        [
+          205,
+          289
+        ],
+        [
+          229,
+          287
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 9,
+      "name": "Limax",
+      "slug": "limax",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1489,
+      "footVariation": 0.2484,
+      "sizes": [
+        [
+          228,
+          292
+        ],
+        [
+          223,
+          297
+        ],
+        [
+          248,
+          297
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 10,
+      "name": "Mycelium",
+      "slug": "mycelium",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1924,
+      "footVariation": 0.3417,
+      "sizes": [
+        [
+          263,
+          271
+        ],
+        [
+          230,
+          274
+        ],
+        [
+          236,
+          270
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 11,
+      "name": "Jonah Melville",
+      "slug": "jonah-melville",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.156,
+      "footVariation": 0.2177,
+      "sizes": [
+        [
+          226,
+          263
+        ],
+        [
+          187,
+          267
+        ],
+        [
+          206,
+          267
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 12,
+      "name": "Forever King",
+      "slug": "forever-king",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1379,
+      "footVariation": 0.1548,
+      "sizes": [
+        [
+          197,
+          296
+        ],
+        [
+          167,
+          295
+        ],
+        [
+          197,
+          291
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 13,
+      "name": "Enoch",
+      "slug": "enoch",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1283,
+      "footVariation": 0.2198,
+      "sizes": [
+        [
+          249,
+          295
+        ],
+        [
+          262,
+          298
+        ],
+        [
+          255,
+          301
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 14,
+      "name": "Forever Ninja",
+      "slug": "forever-ninja",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2807,
+      "footVariation": 0.3384,
+      "sizes": [
+        [
+          182,
+          272
+        ],
+        [
+          109,
+          273
+        ],
+        [
+          193,
+          268
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 15,
+      "name": "Sixsix",
+      "slug": "sixsix",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1889,
+      "footVariation": 0.1632,
+      "sizes": [
+        [
+          188,
+          268
+        ],
+        [
+          179,
+          276
+        ],
+        [
+          199,
+          270
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 16,
+      "name": "Kraab",
+      "slug": "kraab",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2169,
+      "footVariation": 0.3442,
+      "sizes": [
+        [
+          258,
+          185
+        ],
+        [
+          252,
+          179
+        ],
+        [
+          230,
+          184
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 17,
+      "name": "Megawatt",
+      "slug": "megawatt",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1288,
+      "footVariation": 0.2239,
+      "sizes": [
+        [
+          158,
+          229
+        ],
+        [
+          171,
+          226
+        ],
+        [
+          175,
+          220
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 18,
+      "name": "Yenaldooshi",
+      "slug": "werewolf",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1958,
+      "footVariation": 0.2574,
+      "sizes": [
+        [
+          227,
+          258
+        ],
+        [
+          228,
+          261
+        ],
+        [
+          227,
+          263
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 19,
+      "name": "The Mummy",
+      "slug": "mummy",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2277,
+      "footVariation": 0.1485,
+      "sizes": [
+        [
+          179,
+          280
+        ],
+        [
+          191,
+          289
+        ],
+        [
+          177,
+          283
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 20,
+      "name": "Dr. Viktor",
+      "slug": "dr-viktor",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2737,
+      "footVariation": 0.315,
+      "sizes": [
+        [
+          209,
+          296
+        ],
+        [
+          214,
+          301
+        ],
+        [
+          192,
+          299
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 21,
+      "name": "Vulkanus",
+      "slug": "vulkanus",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2663,
+      "footVariation": 0.3115,
+      "sizes": [
+        [
+          211,
+          260
+        ],
+        [
+          223,
+          261
+        ],
+        [
+          225,
+          251
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 22,
+      "name": "Slix Vigma",
+      "slug": "slix-vigma",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1428,
+      "footVariation": 0.184,
+      "sizes": [
+        [
+          187,
+          247
+        ],
+        [
+          145,
+          248
+        ],
+        [
+          185,
+          243
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 23,
+      "name": "S.A.M.",
+      "slug": "sam",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1702,
+      "footVariation": 0.1487,
+      "sizes": [
+        [
+          184,
+          284
+        ],
+        [
+          172,
+          296
+        ],
+        [
+          211,
+          284
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 24,
+      "name": "Hex",
+      "slug": "hex",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1835,
+      "footVariation": 0.2183,
+      "sizes": [
+        [
+          218,
+          273
+        ],
+        [
+          225,
+          278
+        ],
+        [
+          247,
+          276
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 25,
+      "name": "Charmcaster",
+      "slug": "charmcaster",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.0916,
+      "footVariation": 0.0862,
+      "sizes": [
+        [
+          173,
+          297
+        ],
+        [
+          194,
+          293
+        ],
+        [
+          203,
+          297
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 26,
+      "name": "The Great One",
+      "slug": "great-one",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.162,
+      "footVariation": 0.2453,
+      "sizes": [
+        [
+          267,
+          228
+        ],
+        [
+          255,
+          230
+        ],
+        [
+          263,
+          218
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 27,
+      "name": "Kevin 11",
+      "slug": "kevin-11",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1863,
+      "footVariation": 0.2621,
+      "sizes": [
+        [
+          233,
+          259
+        ],
+        [
+          228,
+          262
+        ],
+        [
+          244,
+          256
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 28,
+      "name": "Zs'Skayr",
+      "slug": "zs-skayr",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2079,
+      "footVariation": 0.2461,
+      "sizes": [
+        [
+          191,
+          295
+        ],
+        [
+          213,
+          278
+        ],
+        [
+          239,
+          292
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 29,
+      "name": "Vilgax",
+      "slug": "vilgax",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2154,
+      "footVariation": 0.1863,
+      "sizes": [
+        [
+          243,
+          275
+        ],
+        [
+          233,
+          276
+        ],
+        [
+          252,
+          275
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 30,
+      "name": "Argit",
+      "slug": "argit",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1306,
+      "footVariation": 0.1083,
+      "sizes": [
+        [
+          240,
+          264
+        ],
+        [
+          235,
+          265
+        ],
+        [
+          250,
+          261
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 31,
+      "name": "Fistrick",
+      "slug": "fistrick",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2208,
+      "footVariation": 0.182,
+      "sizes": [
+        [
+          253,
+          249
+        ],
+        [
+          202,
+          254
+        ],
+        [
+          233,
+          254
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 32,
+      "name": "Billy Billions",
+      "slug": "billy-billions",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1395,
+      "footVariation": 0.2038,
+      "sizes": [
+        [
+          187,
+          234
+        ],
+        [
+          173,
+          228
+        ],
+        [
+          207,
+          226
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 33,
+      "name": "Ssserpent",
+      "slug": "ssserpent",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1698,
+      "footVariation": 0.2935,
+      "sizes": [
+        [
+          296,
+          232
+        ],
+        [
+          279,
+          232
+        ],
+        [
+          296,
+          232
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 34,
+      "name": "SevenSeven",
+      "slug": "sevenseven",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1016,
+      "footVariation": 0.0984,
+      "sizes": [
+        [
+          236,
+          312
+        ],
+        [
+          237,
+          314
+        ],
+        [
+          239,
+          310
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 35,
+      "name": "EightEight",
+      "slug": "eighteight",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2517,
+      "footVariation": 0.3141,
+      "sizes": [
+        [
+          225,
+          299
+        ],
+        [
+          163,
+          301
+        ],
+        [
+          227,
+          298
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 36,
+      "name": "Sunder",
+      "slug": "sunder",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2746,
+      "footVariation": 0.2665,
+      "sizes": [
+        [
+          275,
+          291
+        ],
+        [
+          278,
+          297
+        ],
+        [
+          264,
+          295
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 37,
+      "name": "Psyphon",
+      "slug": "psyphon",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1169,
+      "footVariation": 0.0876,
+      "sizes": [
+        [
+          243,
+          318
+        ],
+        [
+          232,
+          323
+        ],
+        [
+          249,
+          321
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 38,
+      "name": "Darkstar",
+      "slug": "darkstar",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1814,
+      "footVariation": 0.2098,
+      "sizes": [
+        [
+          266,
+          287
+        ],
+        [
+          251,
+          280
+        ],
+        [
+          268,
+          281
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 39,
+      "name": "D'Void",
+      "slug": "d-void",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1325,
+      "footVariation": 0.1242,
+      "sizes": [
+        [
+          253,
+          297
+        ],
+        [
+          263,
+          296
+        ],
+        [
+          265,
+          296
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 40,
+      "name": "Highbreed Commander",
+      "slug": "highbreed",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.178,
+      "footVariation": 0.1969,
+      "sizes": [
+        [
+          224,
+          304
+        ],
+        [
+          278,
+          305
+        ],
+        [
+          250,
+          298
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 41,
+      "name": "Princess Attea",
+      "slug": "attea",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1531,
+      "footVariation": 0.154,
+      "sizes": [
+        [
+          237,
+          310
+        ],
+        [
+          247,
+          307
+        ],
+        [
+          260,
+          312
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 42,
+      "name": "Looma Red Wind",
+      "slug": "looma",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1272,
+      "footVariation": 0.0997,
+      "sizes": [
+        [
+          226,
+          326
+        ],
+        [
+          261,
+          319
+        ],
+        [
+          248,
+          324
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 43,
+      "name": "Fistina",
+      "slug": "fistina",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.0989,
+      "footVariation": 0.0837,
+      "sizes": [
+        [
+          278,
+          305
+        ],
+        [
+          269,
+          305
+        ],
+        [
+          257,
+          297
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 44,
+      "name": "Dr. Psychobos",
+      "slug": "dr-psychobos",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1503,
+      "footVariation": 0.2328,
+      "sizes": [
+        [
+          291,
+          234
+        ],
+        [
+          266,
+          226
+        ],
+        [
+          301,
+          225
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 45,
+      "name": "Khyber",
+      "slug": "khyber",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.186,
+      "footVariation": 0.1728,
+      "sizes": [
+        [
+          253,
+          306
+        ],
+        [
+          274,
+          297
+        ],
+        [
+          257,
+          300
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 46,
+      "name": "Albedo",
+      "slug": "albedo",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1047,
+      "footVariation": 0.0809,
+      "sizes": [
+        [
+          224,
+          317
+        ],
+        [
+          218,
+          320
+        ],
+        [
+          245,
+          322
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 47,
+      "name": "Aggregor",
+      "slug": "aggregor",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.1262,
+      "footVariation": 0.1399,
+      "sizes": [
+        [
+          223,
+          307
+        ],
+        [
+          215,
+          309
+        ],
+        [
+          235,
+          302
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 48,
+      "name": "Eon",
+      "slug": "eon",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.065,
+      "footVariation": 0.1048,
+      "sizes": [
+        [
+          267,
+          315
+        ],
+        [
+          262,
+          317
+        ],
+        [
+          257,
+          316
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    },
+    {
+      "kind": "villain",
+      "id": 49,
+      "name": "Malware",
+      "slug": "malware",
+      "nativeWalkIndices": [
+        1,
+        2,
+        3
+      ],
+      "nativeUnique": 3,
+      "silhouetteVariation": 0.2302,
+      "footVariation": 0.2012,
+      "sizes": [
+        [
+          239,
+          289
+        ],
+        [
+          240,
+          293
+        ],
+        [
+          248,
+          282
+        ]
+      ],
+      "existingGait": {},
+      "flags": [],
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
+    }
+  ],
+  "runtime": {
+    "passed": true,
+    "draws": 12784,
+    "characters": 142
+  }
+}

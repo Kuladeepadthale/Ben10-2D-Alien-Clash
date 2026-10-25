@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 10,
+  "name": "Mycelium",
+  "slug": "mycelium",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1924,
+  "footVariation": 0.3417,
+  "sizes": [
+    [
+      263,
+      271
+    ],
+    [
+      230,
+      274
+    ],
+    [
+      236,
+      270
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

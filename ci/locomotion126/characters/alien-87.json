@@ -1,0 +1,64 @@
+{
+  "kind": "alien",
+  "id": 87,
+  "name": "Skunkmoth",
+  "slug": "skunkmoth",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1617,
+  "footVariation": 0.1631,
+  "sizes": [
+    [
+      316,
+      242
+    ],
+    [
+      301,
+      243
+    ],
+    [
+      322,
+      239
+    ],
+    [
+      299,
+      235
+    ],
+    [
+      320,
+      241
+    ],
+    [
+      320,
+      239
+    ],
+    [
+      319,
+      230
+    ],
+    [
+      301,
+      247
+    ]
+  ],
+  "existingGait": {
+    "style": "hover movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": true,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

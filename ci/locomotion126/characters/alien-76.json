@@ -1,0 +1,64 @@
+{
+  "kind": "alien",
+  "id": 76,
+  "name": "Ultimate Gravattack",
+  "slug": "ultimate-gravattack",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1341,
+  "footVariation": 0.1206,
+  "sizes": [
+    [
+      305,
+      223
+    ],
+    [
+      314,
+      218
+    ],
+    [
+      338,
+      223
+    ],
+    [
+      312,
+      230
+    ],
+    [
+      316,
+      228
+    ],
+    [
+      297,
+      219
+    ],
+    [
+      298,
+      221
+    ],
+    [
+      290,
+      229
+    ]
+  ],
+  "existingGait": {
+    "style": "hover movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": true,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

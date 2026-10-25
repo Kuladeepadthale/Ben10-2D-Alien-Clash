@@ -1,0 +1,64 @@
+{
+  "kind": "alien",
+  "id": 90,
+  "name": "Wreckingbolt",
+  "slug": "wreckingbolt",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1746,
+  "footVariation": 0.2719,
+  "sizes": [
+    [
+      294,
+      231
+    ],
+    [
+      292,
+      229
+    ],
+    [
+      270,
+      234
+    ],
+    [
+      294,
+      239
+    ],
+    [
+      276,
+      232
+    ],
+    [
+      282,
+      229
+    ],
+    [
+      260,
+      237
+    ],
+    [
+      266,
+      238
+    ]
+  ],
+  "existingGait": {
+    "style": "heavy movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": false,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

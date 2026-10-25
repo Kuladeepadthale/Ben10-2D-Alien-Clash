@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 42,
+  "name": "Eatle",
+  "slug": "eatle",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1883,
+  "footVariation": 0.342,
+  "sizes": [
+    [
+      405,
+      497
+    ],
+    [
+      305,
+      485
+    ],
+    [
+      347,
+      496
+    ],
+    [
+      375,
+      500
+    ],
+    [
+      388,
+      491
+    ],
+    [
+      307,
+      482
+    ],
+    [
+      284,
+      491
+    ],
+    [
+      370,
+      487
+    ]
+  ],
+  "existingGait": {
+    "style": "Armored beetle steps",
+    "stride": 0.76,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

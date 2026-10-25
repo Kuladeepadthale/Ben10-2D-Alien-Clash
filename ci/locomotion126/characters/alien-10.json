@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 10,
+  "name": "Cannonbolt",
+  "slug": "cannonbolt",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.0896,
+  "footVariation": 0.1622,
+  "sizes": [
+    [
+      456,
+      401
+    ],
+    [
+      365,
+      401
+    ],
+    [
+      436,
+      401
+    ],
+    [
+      425,
+      396
+    ],
+    [
+      416,
+      397
+    ],
+    [
+      416,
+      392
+    ],
+    [
+      403,
+      396
+    ],
+    [
+      403,
+      392
+    ]
+  ],
+  "existingGait": {
+    "style": "Heavy shell steps",
+    "stride": 0.7,
+    "bob": 0.5
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

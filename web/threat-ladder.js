@@ -33,7 +33,8 @@ function villainEnsure(id){if(villainTextures.has(id))return Promise.resolve(vil
 function threatTuning(stage){stage=Math.max(1,Math.min(VILLAIN_COUNT,stage));const n=stage-1;return {hp:1200+100*n+8*n*n,damage:.9+.055*n+.0015*n*n,speed:245+3*n,playerCooldown:1+.045*n,enemyCooldown:Math.max(.5,1-.017*n),reaction:Math.max(.36,1-.022*n),difficulty:stage<5?'normal':'hard'};}
 function villainKit(id){const d=VILLAIN_DATA.characters[id],type=d.type,stage=id+1,t=selectedMode==='campaign'?plumberTuning(id):threatTuning(stage),copy=s=>({...s,damage:s.damage*t.damage,cooldown:s.cooldown*t.enemyCooldown});return {...d.kit,name:d.name,species:d.chapter===2?'GALACTIC VILLAIN':'CLASSIC VILLAIN',renderHeight:d.height||226,bodyHeight:d.bodyHeight||205,scale:1,speed:t.speed,strength:t.damage,type,light:d.color,skills:d.kit.skills.map(copy),ultimate:copy(d.kit.ultimate)};}
 function villainFrame(f){const d=VILLAIN_DATA.characters[f.villain],state=celState(f);let index=0;
- if(state==='walk')index=[1,2,3,2][Math.floor(Math.abs(f.walk)*.4)%4];
+ const move126=locomotionVillainFrame126(f,d,state,typeof time==='number'?time:0);
+ if(move126!==null)index=move126;
  else if(state==='jump')index=f.jumpWindup?4:5;
  else if(state==='guard')index=12;else if(state==='hit')index=13;else if(state==='ko')index=14;else if(state==='dash')index=15;
  if(f.cast&&['normal','skill0','skill1','skill2','ultimate'].includes(state)){
@@ -52,7 +53,7 @@ function villainFrame(f){const d=VILLAIN_DATA.characters[f.villain],state=celSta
  }
  return d.frames[index];}
 function drawVillain(ctx,f,t){const d=VILLAIN_DATA.characters[f.villain],frame=villainFrame(f),image=frame.closeCombat?villainCloseTextures.get(f.villain):villainTextures.get(f.villain);if(!image)return;const [x,y,w,h]=frame.rect,[ox,oy]=frame.origin,s=(d.height||226)/(frame.referenceHeight||d.referenceHeight);
- ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-(d.type==='phase'?5+Math.sin(t*3)*1:0));ctx.scale((f.dash?.dir||f.cast?.dir||f.dir||1)*s,s);ctx.drawImage(image,x,y,w,h,-ox,-oy,w,h);ctx.restore();}
+ ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y-locomotionLift126(f,t));ctx.scale((f.dash?.dir||f.cast?.dir||f.dir||1)*s,s);ctx.drawImage(image,x,y,w,h,-ox,-oy,w,h);ctx.restore();}
 const threatDrawBase=drawAlien;drawAlien=function(ctx,f,t,portrait=false){if(Number.isInteger(f.villain)){drawVillain(ctx,f,t);return}threatDrawBase(ctx,f,t,portrait);};
 const threatEmitterBase=drawnAlienEmitter;drawnAlienEmitter=function(f,cast){if(!Number.isInteger(f.villain))return threatEmitterBase(f,cast);if(typeof profileEmitter==='function'){const point=profileEmitter(f,cast,time);if(point)return point;}const b=body(f);return {x:f.x+(cast.dir||f.dir||1)*45,y:b.y+b.h*.4};};
 const threatEffectBase=drawEffect;drawEffect=function(ctx,e){if(e.kind==='afterimage'&&Number.isInteger(e.owner?.villain)){ctx.save();ctx.globalAlpha=Math.max(0,e.life/e.maxLife)*.25;drawVillain(ctx,{...e.owner,x:e.x,y:e.y,dir:e.dir},time);ctx.restore();return}threatEffectBase(ctx,e);};
@@ -153,3 +154,4 @@ function scrollPlumberLane(dir){const lane=$('plumberModes'),card=lane.firstElem
 $('plumberLanePrev').onclick=()=>scrollPlumberLane(-1);$('plumberLaneNext').onclick=()=>scrollPlumberLane(1);$('plumberModes').addEventListener('scroll',syncPlumberLane,{passive:true});$('plumberModes').addEventListener('keydown',e=>{if(e.target!==$('plumberModes'))return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();scrollPlumberLane(e.key==='ArrowRight'?1:-1);}});
 
 const rushRulesDialog=document.createElement('dialog');rushRulesDialog.id='rushRulesDialog';rushRulesDialog.innerHTML='<h2>Five bosses. One life.</h2><p>Defeat Hex, Kevin 11, Vilgax, Aggregor and Malware in order. Recover 20% maximum health after each win and keep your ultimate charge.</p><p>Clear all five: 600 coins + Hero XP. A completed defeat: 20 coins. Quitting gives no reward. Your best streak stays saved.</p><button id="closeRushRules" class="primary">Got it</button>';document.body.appendChild(rushRulesDialog);$('rushRules').onclick=()=>rushRulesDialog.showModal();$('closeRushRules').onclick=()=>rushRulesDialog.close();
+

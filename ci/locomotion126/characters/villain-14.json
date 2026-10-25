@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 14,
+  "name": "Forever Ninja",
+  "slug": "forever-ninja",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.2807,
+  "footVariation": 0.3384,
+  "sizes": [
+    [
+      182,
+      272
+    ],
+    [
+      109,
+      273
+    ],
+    [
+      193,
+      268
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

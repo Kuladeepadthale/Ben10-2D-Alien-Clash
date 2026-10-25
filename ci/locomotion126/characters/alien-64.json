@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 64,
+  "name": "Shock Rock",
+  "slug": "shock-rock",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1794,
+  "footVariation": 0.2125,
+  "sizes": [
+    [
+      338,
+      425
+    ],
+    [
+      379,
+      425
+    ],
+    [
+      403,
+      425
+    ],
+    [
+      436,
+      417
+    ],
+    [
+      394,
+      426
+    ],
+    [
+      412,
+      421
+    ],
+    [
+      388,
+      418
+    ],
+    [
+      429,
+      420
+    ]
+  ],
+  "existingGait": {
+    "style": "Natural character strides",
+    "stride": 0.85,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

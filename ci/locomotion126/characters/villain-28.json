@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 28,
+  "name": "Zs'Skayr",
+  "slug": "zs-skayr",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.2079,
+  "footVariation": 0.2461,
+  "sizes": [
+    [
+      191,
+      295
+    ],
+    [
+      213,
+      278
+    ],
+    [
+      239,
+      292
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

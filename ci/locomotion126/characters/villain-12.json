@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 12,
+  "name": "Forever King",
+  "slug": "forever-king",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1379,
+  "footVariation": 0.1548,
+  "sizes": [
+    [
+      197,
+      296
+    ],
+    [
+      167,
+      295
+    ],
+    [
+      197,
+      291
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

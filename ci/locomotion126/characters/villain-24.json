@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 24,
+  "name": "Hex",
+  "slug": "hex",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1835,
+  "footVariation": 0.2183,
+  "sizes": [
+    [
+      218,
+      273
+    ],
+    [
+      225,
+      278
+    ],
+    [
+      247,
+      276
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

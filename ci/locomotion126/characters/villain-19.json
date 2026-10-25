@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 19,
+  "name": "The Mummy",
+  "slug": "mummy",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.2277,
+  "footVariation": 0.1485,
+  "sizes": [
+    [
+      179,
+      280
+    ],
+    [
+      191,
+      289
+    ],
+    [
+      177,
+      283
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

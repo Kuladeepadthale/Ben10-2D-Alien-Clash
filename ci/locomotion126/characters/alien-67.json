@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 67,
+  "name": "Ultimate Humungousaur",
+  "slug": "ultimate-humungousaur",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2061,
+  "footVariation": 0.3442,
+  "sizes": [
+    [
+      474,
+      401
+    ],
+    [
+      401,
+      379
+    ],
+    [
+      464,
+      387
+    ],
+    [
+      454,
+      371
+    ],
+    [
+      467,
+      363
+    ],
+    [
+      413,
+      362
+    ],
+    [
+      467,
+      356
+    ],
+    [
+      418,
+      357
+    ]
+  ],
+  "existingGait": {
+    "style": "Natural character strides",
+    "stride": 0.85,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

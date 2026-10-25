@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 26,
+  "name": "Big Chill",
+  "slug": "big-chill",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1002,
+  "footVariation": 0.1273,
+  "sizes": [
+    [
+      365,
+      430
+    ],
+    [
+      352,
+      424
+    ],
+    [
+      355,
+      427
+    ],
+    [
+      372,
+      428
+    ],
+    [
+      376,
+      426
+    ],
+    [
+      350,
+      422
+    ],
+    [
+      387,
+      427
+    ],
+    [
+      361,
+      424
+    ]
+  ],
+  "existingGait": {
+    "style": "Cloaked spectral steps",
+    "stride": 0.92,
+    "hover": true
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

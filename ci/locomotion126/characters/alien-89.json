@@ -1,0 +1,64 @@
+{
+  "kind": "alien",
+  "id": 89,
+  "name": "Undertow",
+  "slug": "undertow",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1349,
+  "footVariation": 0.1958,
+  "sizes": [
+    [
+      289,
+      238
+    ],
+    [
+      294,
+      238
+    ],
+    [
+      296,
+      238
+    ],
+    [
+      293,
+      237
+    ],
+    [
+      316,
+      239
+    ],
+    [
+      307,
+      237
+    ],
+    [
+      307,
+      237
+    ],
+    [
+      291,
+      247
+    ]
+  ],
+  "existingGait": {
+    "style": "armored movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": false,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

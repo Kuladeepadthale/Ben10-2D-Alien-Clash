@@ -1,0 +1,64 @@
+{
+  "kind": "alien",
+  "id": 84,
+  "name": "Humungoraptor",
+  "slug": "humungoraptor",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.0814,
+  "footVariation": 0.113,
+  "sizes": [
+    [
+      359,
+      237
+    ],
+    [
+      351,
+      227
+    ],
+    [
+      366,
+      237
+    ],
+    [
+      344,
+      239
+    ],
+    [
+      349,
+      235
+    ],
+    [
+      350,
+      229
+    ],
+    [
+      368,
+      233
+    ],
+    [
+      348,
+      233
+    ]
+  ],
+  "existingGait": {
+    "style": "dinosaur movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": false,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

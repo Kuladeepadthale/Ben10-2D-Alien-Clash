@@ -1,0 +1,33 @@
+{
+  "kind": "villain",
+  "id": 43,
+  "name": "Fistina",
+  "slug": "fistina",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.0989,
+  "footVariation": 0.0837,
+  "sizes": [
+    [
+      278,
+      305
+    ],
+    [
+      269,
+      305
+    ],
+    [
+      257,
+      297
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "alien",
+  "id": 7,
+  "name": "Stinkfly",
+  "slug": "stinkfly",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1641,
+  "footVariation": 0.1643,
+  "sizes": [
+    [
+      399,
+      426
+    ],
+    [
+      397,
+      411
+    ],
+    [
+      392,
+      425
+    ],
+    [
+      397,
+      413
+    ],
+    [
+      405,
+      404
+    ],
+    [
+      401,
+      418
+    ],
+    [
+      411,
+      396
+    ],
+    [
+      376,
+      423
+    ]
+  ],
+  "existingGait": {
+    "style": "Fluttering hover",
+    "stride": 0.85,
+    "bob": 0.9,
+    "hover": true
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 23,
+  "name": "Echo Echo",
+  "slug": "echo-echo",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1798,
+  "footVariation": 0.3311,
+  "sizes": [
+    [
+      294,
+      425
+    ],
+    [
+      277,
+      425
+    ],
+    [
+      249,
+      430
+    ],
+    [
+      290,
+      429
+    ],
+    [
+      275,
+      421
+    ],
+    [
+      294,
+      422
+    ],
+    [
+      283,
+      418
+    ],
+    [
+      297,
+      421
+    ]
+  ],
+  "existingGait": {
+    "style": "Quick light steps",
+    "stride": 0.85
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
+}

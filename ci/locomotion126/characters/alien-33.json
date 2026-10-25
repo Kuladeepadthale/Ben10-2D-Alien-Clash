@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 33,
+  "name": "Lodestar",
+  "slug": "lodestar",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1881,
+  "footVariation": 0.2063,
+  "sizes": [
+    [
+      451,
+      420
+    ],
+    [
+      393,
+      418
+    ],
+    [
+      439,
+      416
+    ],
+    [
+      355,
+      426
+    ],
+    [
+      414,
+      403
+    ],
+    [
+      430,
+      404
+    ],
+    [
+      430,
+      408
+    ],
+    [
+      363,
+      399
+    ]
+  ],
+  "existingGait": {
+    "style": "Magnetic steps",
+    "stride": 0.82,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native flight-ready pose reused; ground stepping suppressed"
+}
