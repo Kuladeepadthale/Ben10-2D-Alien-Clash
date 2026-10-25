@@ -78,10 +78,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           git fetch --depth=1 origin d1eebfcda04eb88b32322779dbb0eab96ae71f39
-          gh api repos/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/jobs/121183185252/logs > /tmp/locomotion126-baseline.log
+          gh api --allow-escape-sequences repos/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/jobs/121183185252/logs > /tmp/locomotion126-baseline.log
           python3 - <<'PYGUARD'
           import pathlib,subprocess,re
-          log=pathlib.Path('/tmp/locomotion126-baseline.log').read_text()
+          log=re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]','',pathlib.Path('/tmp/locomotion126-baseline.log').read_text())
           assert 'Release checks: 73 passed; 1 failed.' in log
           assert re.findall(r'FAILED ([^\r\n]+)',log)==['node ci/check-clean-powers.cjs']
           changed=set(subprocess.check_output(['git','diff','--name-only','d1eebfcda04eb88b32322779dbb0eab96ae71f39','HEAD'],text=True).splitlines())
