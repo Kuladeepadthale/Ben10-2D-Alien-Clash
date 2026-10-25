@@ -19,7 +19,8 @@ for file in sorted((R/'ci/animation-review/characters').glob('*/revision.json'))
  for key in ([] if c['id']==86 and c.get('requestedRepair129') else ['walk','normal','skill0','skill1','ultimate']):
   # A quadruped stretches horizontally: preserve native pixels rather than enlarging crouched poses.
   assert max(max(c['frames'][i]['rect'][2]-16,c['frames'][i]['rect'][3]-16) if c['id'] in [4,19] else c['frames'][i]['rect'][3]-16 for i in c['clips'][key])>=300
- portrait=Image.open(R/'web'/c['portrait']);assert portrait.mode=='RGBA' and portrait.height>=300 and portrait.getchannel('A').getextrema()[0]==0
+ portrait=Image.open(R/'web'/c['portrait']);assert portrait.mode=='RGBA' and portrait.height>=(246 if c['id']==86 and c.get('requestedRepair129') else 300) and portrait.getchannel('A').getextrema()[0]==0
+ if c['id']==86 and c.get('requestedRepair129'):assert hashlib.sha256((R/'web'/c['portrait']).read_bytes()).hexdigest()=='4f3ae6fb1ca7ed5a698f2235dae14434dfa490d52406537fc47a7de17b77b7e9','Original native Rush portrait changed'
  if c['name']=='water-hazard':
   for key in ['normal','skill0','skill1','skill2','ultimate']:
    for fi in c['clips'][key]:

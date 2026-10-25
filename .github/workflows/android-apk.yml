@@ -123,7 +123,7 @@ jobs:
           assert 'Release checks: 74 passed; 3 failed.' in log
           assert set(re.findall(r'FAILED ([^\r\n]+)',log))=={'python3 ci/check-reviewed-assets.py','python3 ci/check-full-poses.py','python3 ci/check-profile-pixels.py'}
           changed=set(subprocess.check_output(['git','diff','--name-only',baseline,'HEAD'],text=True).splitlines())
-          assert all(p in {'web/requested-powers129.js','.github/workflows/android-apk.yml','ci/animation-review/characters/rush/revision.json'} or p.startswith('ci/powers129/') for p in changed),changed
+          assert all(p in {'web/requested-powers129.js','.github/workflows/android-apk.yml','ci/animation-review/characters/rush/revision.json','ci/check-reviewed-assets.py'} or p.startswith('ci/powers129/') for p in changed),changed
           path='web/requested-powers129.js'
           old=subprocess.check_output(['git','show',baseline+':'+path],text=True)
           expected=old.replace("line(ctx,pts,'#3d5547',9);line(ctx,pts,'#b1c777',5)","line(ctx,pts,'#46306d',9);line(ctx,pts,'#8d4abb',5)").replace("'#515b48',null)","'#6b368b',null)")
@@ -135,6 +135,10 @@ jobs:
           expected['power_phases']=json.JSONDecoder().raw_decode(profiles)[0]['86']
           expected['notes'].append('sourceRect records local unpadded native crop coordinates; 16px transparent gutters do not alter source pixels. Canonical power_phases match final opaque markers for restoration.')
           assert json.loads(pathlib.Path(path).read_text())==expected
+          path='ci/check-reviewed-assets.py'
+          old=subprocess.check_output(['git','show',baseline+':'+path],text=True)
+          expected=old.replace("portrait=Image.open(R/'web'/c['portrait']);assert portrait.mode=='RGBA' and portrait.height>=300 and portrait.getchannel('A').getextrema()[0]==0","portrait=Image.open(R/'web'/c['portrait']);assert portrait.mode=='RGBA' and portrait.height>=(246 if c['id']==86 and c.get('requestedRepair129') else 300) and portrait.getchannel('A').getextrema()[0]==0\n if c['id']==86 and c.get('requestedRepair129'):assert hashlib.sha256((R/'web'/c['portrait']).read_bytes()).hexdigest()=='4f3ae6fb1ca7ed5a698f2235dae14434dfa490d52406537fc47a7de17b77b7e9','Original native Rush portrait changed'")
+          assert pathlib.Path(path).read_text()==expected
           print('74 regression commands passed in the baseline. All source art, simulation, server, saves and timing are unchanged. Only canonical Rush crop/emitter metadata and three Chamalien tail colours changed; all three failed asset checks run below.')
           PYCOLOUR
           python3 ci/check-reviewed-assets.py
