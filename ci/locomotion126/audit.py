@@ -33,3 +33,11 @@ for page in range((len(rows)+7)//8):
  sheet.save(OUT/'previews'/f'walk-{page:02}.webp',quality=85)
 (OUT/'audit.json').write_text(json.dumps(dict(scope='locomotion-only',aliens=len(cels),villains=len(villains),characters=records),indent=2)+'\n')
 print(json.dumps(dict(aliens=len(cels),villains=len(villains),flagged=[dict(kind=r['kind'],id=r['id'],name=r['name'],flags=r['flags'])for r in records if r['flags']])))
+# Inspect already drawn flight-ready alternatives before selecting glider poses.
+flight=Image.new('RGB',(1340,4*180),(20,34,44));dr=ImageDraw.Draw(flight)
+for row,id in enumerate([25,33,51,69]):
+ d=cels[id];choices=[('idle',d['clips']['idle'][0])]+[('walk'+str(i),d['clips']['walk'][i])for i in [0,4]]+[('jump'+str(i),j)for i,j in enumerate(d['clips']['jump'])]+[('guard',d['clips']['guard'][0])]
+ dr.text((5,row*180+15),meta['aliens'][id]['name'],fill='white')
+ for col,(name,ix)in enumerate(choices):
+  f=d['frames'][ix];im=Image.open(R/'web'/d['sheets'][f['sheet']]['src']).convert('RGBA');x,y,w,h=f['rect'];tile=im.crop((x,y,x+w,y+h));tile=tile.crop(tile.getbbox());tile.thumbnail((130,145),Image.Resampling.LANCZOS);flight.paste(tile,(200+col*142+(130-tile.width)//2,row*180+168-tile.height),tile);dr.text((200+col*142,row*180+4),name,fill='white');im.close()
+flight.save(OUT/'previews'/'flight-options.webp',quality=90)
