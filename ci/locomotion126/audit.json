@@ -62,8 +62,9 @@
         "weight": 0
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -124,8 +125,9 @@
         "weight": 0.026
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -186,8 +188,9 @@
         "weight": 0.018
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -248,8 +251,9 @@
         "skate": true
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -310,8 +314,9 @@
         "weight": 0
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -372,8 +377,9 @@
         "weight": 0
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -434,8 +440,9 @@
         "weight": 0.012
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -496,8 +503,9 @@
         "hover": true
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -558,8 +566,9 @@
         "weight": 0.021
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -620,8 +629,9 @@
         "hover": true
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -681,8 +691,9 @@
         "bob": 0.5
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -742,8 +753,9 @@
         "bob": 0.25
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -803,8 +815,9 @@
         "bob": 0.5
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -864,8 +877,9 @@
         "bob": 0.3
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -925,8 +939,9 @@
         "bob": 0.6
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -986,8 +1001,9 @@
         "bob": 0.5
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1047,8 +1063,9 @@
         "bob": 0.6
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1108,8 +1125,9 @@
         "bob": 0.3
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1169,8 +1187,9 @@
         "bob": 0.4
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1230,8 +1249,9 @@
         "bob": 0.5
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1291,8 +1311,9 @@
         "bob": 0.45
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1352,8 +1373,9 @@
         "bob": 0.35
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1412,8 +1434,9 @@
         "stride": 0.85
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1472,8 +1495,9 @@
         "stride": 0.85
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1532,8 +1556,9 @@
         "stride": 0.8
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1592,8 +1617,9 @@
         "stride": 1.02
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native flight-ready pose reused; ground stepping suppressed"
     },
     {
       "kind": "alien",
@@ -1653,8 +1679,9 @@
         "hover": true
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1713,8 +1740,9 @@
         "stride": 0.82
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1773,8 +1801,9 @@
         "stride": 0.72
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1833,8 +1862,9 @@
         "stride": 0.95
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1893,8 +1923,9 @@
         "stride": 0.92
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -1953,8 +1984,9 @@
         "stride": 0.84
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2014,8 +2046,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2075,8 +2108,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native flight-ready pose reused; ground stepping suppressed"
     },
     {
       "kind": "alien",
@@ -2136,8 +2170,9 @@
         "hover": true
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2197,8 +2232,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2258,8 +2294,9 @@
         "hover": true
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2319,8 +2356,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2380,8 +2418,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2441,8 +2480,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2502,8 +2542,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2563,8 +2604,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2624,8 +2666,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2685,8 +2728,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2746,8 +2790,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2807,8 +2852,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2868,8 +2914,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2929,8 +2976,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -2990,8 +3038,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3051,8 +3100,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3112,8 +3162,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3173,8 +3224,9 @@
         "hover": true
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native flight-ready pose reused; ground stepping suppressed"
     },
     {
       "kind": "alien",
@@ -3234,8 +3286,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3295,8 +3348,9 @@
         "hover": true
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3356,8 +3410,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3417,8 +3472,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3478,8 +3534,9 @@
         "hover": true
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3539,8 +3596,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3600,8 +3658,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3661,8 +3720,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3722,8 +3782,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3783,8 +3844,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3844,8 +3906,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3905,8 +3968,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -3966,8 +4030,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4027,8 +4092,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4088,8 +4154,9 @@
         "hover": true
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4149,8 +4216,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4210,8 +4278,9 @@
         "hover": true
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4271,8 +4340,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native flight-ready pose reused; ground stepping suppressed"
     },
     {
       "kind": "alien",
@@ -4332,8 +4402,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4393,8 +4464,9 @@
         "hover": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4456,8 +4528,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4519,8 +4592,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4582,8 +4656,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4645,8 +4720,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4708,8 +4784,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4771,8 +4848,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4834,8 +4912,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4897,8 +4976,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -4960,8 +5040,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -5023,8 +5104,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -5086,8 +5168,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -5149,8 +5232,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -5212,8 +5296,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -5275,8 +5360,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -5338,8 +5424,9 @@
         "skate": true
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -5401,8 +5488,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -5464,8 +5552,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -5527,8 +5616,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -5590,8 +5680,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "alien",
@@ -5653,8 +5744,9 @@
         "skate": false
       },
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
     },
     {
       "kind": "villain",
@@ -5685,8 +5777,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -5717,8 +5810,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -5749,8 +5843,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -5781,8 +5876,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -5813,8 +5909,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -5845,8 +5942,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -5877,8 +5975,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -5909,8 +6008,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -5941,8 +6041,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -5973,8 +6074,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6005,8 +6107,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6037,8 +6140,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6069,8 +6173,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6101,8 +6206,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6133,8 +6239,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6165,8 +6272,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6197,8 +6305,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6229,8 +6338,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6261,8 +6371,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6293,8 +6404,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6325,8 +6437,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6357,8 +6470,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6389,8 +6503,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6421,8 +6536,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6453,8 +6569,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6485,8 +6602,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6517,8 +6635,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6549,8 +6668,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6581,8 +6701,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6613,8 +6734,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6645,8 +6767,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6677,8 +6800,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6709,8 +6833,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6741,8 +6866,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6773,8 +6899,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6805,8 +6932,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6837,8 +6965,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6869,8 +6998,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6901,8 +7031,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6933,8 +7064,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6965,8 +7097,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -6997,8 +7130,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -7029,8 +7163,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -7061,8 +7196,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -7093,8 +7229,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -7125,8 +7262,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -7157,8 +7295,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -7189,8 +7328,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -7221,8 +7361,9 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     },
     {
       "kind": "villain",
@@ -7253,8 +7394,14 @@
       ],
       "existingGait": {},
       "flags": [],
-      "status": "native-metrics-complete-visual-review-pending",
-      "source": "restored verified release plus existing reviewed revisions"
+      "status": "native-sequence-and-runtime-verified",
+      "source": "restored verified release plus existing reviewed revisions",
+      "action": "distance-matched native gait and explicit ground/spectral classification"
     }
-  ]
+  ],
+  "runtime": {
+    "passed": true,
+    "draws": 12784,
+    "characters": 142
+  }
 }

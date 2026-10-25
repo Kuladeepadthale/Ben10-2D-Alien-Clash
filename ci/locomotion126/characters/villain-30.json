@@ -27,6 +27,7 @@
   ],
   "existingGait": {},
   "flags": [],
-  "status": "native-metrics-complete-visual-review-pending",
-  "source": "restored verified release plus existing reviewed revisions"
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "distance-matched native gait and explicit ground/spectral classification"
 }

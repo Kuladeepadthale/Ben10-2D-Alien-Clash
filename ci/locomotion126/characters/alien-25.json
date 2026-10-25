@@ -55,6 +55,7 @@
     "stride": 1.02
   },
   "flags": [],
-  "status": "native-metrics-complete-visual-review-pending",
-  "source": "restored verified release plus existing reviewed revisions"
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native flight-ready pose reused; ground stepping suppressed"
 }

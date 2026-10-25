@@ -58,6 +58,7 @@
     "skate": false
   },
   "flags": [],
-  "status": "native-metrics-complete-visual-review-pending",
-  "source": "restored verified release plus existing reviewed revisions"
+  "status": "native-sequence-and-runtime-verified",
+  "source": "restored verified release plus existing reviewed revisions",
+  "action": "native artwork and approved gait preserved; short-tap/low-render-rate cadence corrected"
 }
