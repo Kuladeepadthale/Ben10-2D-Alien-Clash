@@ -73,5 +73,6 @@
   "node ci/check-reviewed-hover.cjs",
   "python3 ci/check-reviewed-registration.py",
   "node ci/check-combat-choreography.cjs",
-  "node ci/check-combat-notices.cjs"
+  "node ci/check-combat-notices.cjs",
+  "node ci/walk128/verify.cjs"
 ]

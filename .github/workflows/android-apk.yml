@@ -65,8 +65,45 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 ci/restore-verified-art.py
+      - name: Build Upgrade-reference native walking calibration
+        run: |
+          python3 ci/walk128/build.py
+          cp web/walk128-data.js builds/web/walk128-data.js
+      - name: Verify walking-only scope and all native movement
+        if: contains(github.event.head_commit.message, '[walk128]')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          git fetch --depth=1 origin 5968327e8ca0e6755635705a302f6cf46f0123a0
+          gh api repos/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/jobs/121214163822 > /tmp/walk128-baseline.json
+          python3 - <<'PYWALK'
+          import json,pathlib,subprocess
+          baseline='5968327e8ca0e6755635705a302f6cf46f0123a0'
+          job=json.load(open('/tmp/walk128-baseline.json'));assert job['conclusion']=='success'
+          assert any(s['name']=='Verify Goop ability-card reach against completed 75-check combat baseline' and s['conclusion']=='success' for s in job['steps'])
+          changed=set(subprocess.check_output(['git','diff','--name-only',baseline,'HEAD'],text=True).splitlines())
+          allowed={'web/cel-player.js','web/index.html','web/walk128-data.js','web/walk-quality128.js','android/app/build.gradle','.github/workflows/android-apk.yml','.github/workflows/walk128-review.yml','ci/release-checks.json'}
+          assert all(p in allowed or p.startswith('ci/walk128/') for p in changed),changed-allowed
+          previous=json.loads(subprocess.check_output(['git','show',baseline+':ci/release-checks.json'],text=True))
+          assert json.load(open('ci/release-checks.json'))==previous+['node ci/walk128/verify.cjs']
+          old=subprocess.check_output(['git','show',baseline+':web/cel-player.js'],text=True)
+          needle='let phase=((travel126/(h*profile.stride))%1+1)%1;'
+          replacement="const stride128=typeof walk128Stride==='function'?walk128Stride(f,profile.stride):profile.stride;\n  let phase=((travel126/(h*stride128))%1+1)%1;"
+          assert pathlib.Path('web/cel-player.js').read_text()==old.replace(needle,replacement,1)
+          print('Walking renderer hook only. All powers, simulation, server, save/progression and source body art match the verified v12.7 baseline.')
+          PYWALK
+          node ci/walk128/verify.cjs
+          node ci/locomotion126/verify.cjs
+          node ci/powers127/verify.cjs
+          node ci/check-facing.cjs
+          node ci/check-footwork-dash.cjs
+          node ci/check-target-snapshot.cjs
+          node ci/check-reviewed-hover.cjs
+          node ci/check-testing-flow.cjs
+          for script in web/*.js; do node --check "$script"; done
       - name: Verify all 92 action sets and game controls
-        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]') && !contains(github.event.head_commit.message, '[package116]') && !contains(github.event.head_commit.message, '[locomotion126-check]') && !contains(github.event.head_commit.message, '[powers127-ui]')"
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]') && !contains(github.event.head_commit.message, '[package116]') && !contains(github.event.head_commit.message, '[locomotion126-check]') && !contains(github.event.head_commit.message, '[powers127-ui]') && !contains(github.event.head_commit.message, '[walk128]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
@@ -339,6 +376,8 @@ jobs:
           assert 'assets/cartoon-power-effects.js' in names
           assert 'assets/ability-animations.js' in names
           assert 'assets/combat-choreography.js' in names
+          assert all('assets/'+p in names for p in ['walk128-data.js','walk-quality128.js'])
+          walking=json.loads(z.read('assets/walk128-data.js').decode().split('const WALK128_DATA=',1)[1].split(';',1)[0]);assert walking['reference']==6 and len(walking['characters'])>50
           assert all('assets/'+p in names for p in ['requested-powers127.js','crashhopper-guard127.js','assets/cels/crashhopper/guard127.webp'])
           assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v100.webp' in names for i in range(13,18))
           m=json.loads(z.read('assets/assets/cels/manifest.json'))
@@ -367,7 +406,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.7 — Eight Alien Power Animation Repairs' --notes 'Repairs 20 requested powers across Echo Echo, Brainstorm, Goop, Nanomech, Fasttrack, Crashhopper, Bullfrag and Surge. Includes four newly generated native Crashhopper guard poses, native action-specific rush/kick playback, sonic pulses and barrage, cerebral electricity, longer Goop elastic contact, attached Bullfrag tongue collision, liquid effects and linked native Surge formations. Manual facing, captured target positions, save progress and existing good movement are preserved. Full release checks and focused native-render/collision checks run before publishing. Exact TV animation and physical phone testing are not claimed. Live multiplayer Worker deployment requires owner credentials.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.8 — Upgrade-Reference Ground Walking' --notes 'Uses Upgrade as a native walking-quality reference. Ground-walk stride calibration follows each body foot span; bounded torso registration reduces excess horizontal jitter. Keeps all original body pixels, eight native walk poses, body scales, approved good walks, flight/skating, powers and manual movement. All92 aliens receive native runtime checks in both directions. See ci/walk128 for measurements and validation; physical phone testing is pending.' --prerelease --target "$GITHUB_SHA"
 
 
 

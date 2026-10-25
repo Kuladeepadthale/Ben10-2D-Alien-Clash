@@ -1,0 +1,39 @@
+name: Review Upgrade-reference ground walks
+on:
+  push:
+    branches: [walk-review-128]
+    paths: ['ci/walk128/build.py','ci/walk128/verify.cjs','web/walk-quality128.js','.github/workflows/walk128-review.yml']
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install native audit tools
+        run: |
+          python3 -m pip install Pillow numpy scipy
+          npm install --prefix /tmp/cel-tools --no-package-lock --no-save @napi-rs/canvas
+      - name: Restore verified native artwork
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 ci/restore-verified-art.py
+      - name: Calibrate and verify native ground walks
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          python3 ci/walk128/build.py
+          node ci/walk128/verify.cjs
+      - name: Save per-character movement checkpoint
+        run: |
+          git config user.name 'Animation review'
+          git config user.email 'animation-review@users.noreply.github.com'
+          git add web/walk128-data.js ci/walk128/audit.json ci/walk128/runtime.json ci/walk128/walk-*.webp
+          if ! git diff --cached --quiet; then
+            git commit -m '[art-audit] Save Upgrade-reference walking calibration and native validation'
+            git push
+          fi
