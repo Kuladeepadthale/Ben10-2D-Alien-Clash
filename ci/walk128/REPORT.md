@@ -13,3 +13,7 @@ The release workflow proves all combat, power, server, save and source-art files
 This improves pacing and body stability using the existing native animation library. It does not replace every walk with newly drawn keyframes or claim exact television animation. Physical phone testing remains pending.
 
 The root-registration preview reads pending travel without consuming the shared movement observer. This preserves older multiplayer snapshots that omit the moving flag; the native renderer remains the sole observer update. A regression check covers stale movement flags in both directions for every calibrated walker.
+
+## Verified release
+
+Published [android-c5c9aaab0eb0](https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/tag/android-c5c9aaab0eb0) from `c5c9aaab0eb02f670ad5b2a62cf99e3027f58c50`. Run40210495882/job121220490857 completed successfully. All92 aliens were checked;66 ground walkers were measured against the reference,58 received pacing or registration corrections, and34 were preserved or already within tolerance. The final check passed7,676 native draws, including stale network movement flags; the earlier142-character locomotion check and all20 v12.7 power repairs also passed. The signer is unchanged. Exact APK digests and download links are in [last-release.json](last-release.json). Physical phone testing remains pending.
