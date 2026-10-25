@@ -11,3 +11,5 @@ Previously approved walks (Heatblast, Four Arms, Diamondhead, Wildmutt, Cannonbo
 The release workflow proves all combat, power, server, save and source-art files match the verified v12.7 baseline before running the new real-native movement checks, the earlier142-character locomotion check, all20 recent power repairs, manual facing, dash, captured-target, hover and testing-flow checks. The only existing renderer change selects the calibrated walking stride. The separate outer drawing hook applies the bounded horizontal walking registration offset.
 
 This improves pacing and body stability using the existing native animation library. It does not replace every walk with newly drawn keyframes or claim exact television animation. Physical phone testing remains pending.
+
+The root-registration preview reads pending travel without consuming the shared movement observer. This preserves older multiplayer snapshots that omit the moving flag; the native renderer remains the sole observer update. A regression check covers stale movement flags in both directions for every calibrated walker.
