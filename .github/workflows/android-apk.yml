@@ -308,6 +308,7 @@ jobs:
           assert 'assets/cartoon-power-effects.js' in names
           assert 'assets/ability-animations.js' in names
           assert 'assets/combat-choreography.js' in names
+          assert all('assets/'+p in names for p in ['requested-powers127.js','crashhopper-guard127.js','assets/cels/crashhopper/guard127.webp'])
           assert all('assets/assets/ui/abilities/ability-atlas-'+str(i).zfill(2)+'-v100.webp' in names for i in range(13,18))
           m=json.loads(z.read('assets/assets/cels/manifest.json'))
           assert len(m['characters'])==92
@@ -335,12 +336,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.5 — Mechanic, Shell and Reptile Animation Repairs' --notes 'Repairs Jury Rigg Gear Trap and Junkyard Arsenal, Four Arms walking, Cannonbolt walking/Shell Slam/Rebound Rush/Orbit Breaker, and Arctiguana walking/Glacial Slam/Absolute Zero. Preserves all four original standing designs, manual facing and captured targets. Includes visible trap deployment/arming, muzzle-launched scrap rockets, native shell curl/impact/recovery and low reptile breath poses. See ci/animation-review/requests125/REPORT.md for validation and saved source/prompt records. Live Worker deployment still requires owner Cloudflare credentials.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.7 — Eight Alien Power Animation Repairs' --notes 'Repairs 20 requested powers across Echo Echo, Brainstorm, Goop, Nanomech, Fasttrack, Crashhopper, Bullfrag and Surge. Includes four newly generated native Crashhopper guard poses, native action-specific rush/kick playback, sonic pulses and barrage, cerebral electricity, longer Goop elastic contact, attached Bullfrag tongue collision, liquid effects and linked native Surge formations. Manual facing, captured target positions, save progress and existing good movement are preserved. Full release checks and focused native-render/collision checks run before publishing. Exact TV animation and physical phone testing are not claimed. Live multiplayer Worker deployment requires owner credentials.' --prerelease --target "$GITHUB_SHA"
 
 
 
 
 # v8.2: verify full-screen controls and all forty native replacement sheets.
+
 
 
 

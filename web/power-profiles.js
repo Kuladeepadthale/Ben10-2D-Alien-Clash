@@ -10,6 +10,11 @@ function powerProfileFor(f,action){
 function powerPoseIndex(f,v,count){
  const wind=Math.max(.001,v.cfg.windup),active=['rush','pounce'].includes(v.cfg.kind)?Math.max(.42,v.cfg.duration||.08):(v.cfg.castDuration??(v.cfg.duration||.08));
  if(Number.isInteger(f.villain))return v.elapsed<wind?0:1;
+ if(!Number.isInteger(f.villain)&&v.key!=='normal'&&([30,34,40,49,54,66].includes(f.id)&&['rush','pounce'].includes(v.cfg.kind)||f.id===40&&v.key==='skill2')&&v.elapsed>=wind&&v.elapsed<wind+active){
+  const age=v.elapsed-wind,phase=(v.cfg.ticks>1?age/active*v.cfg.ticks:age*9)%1;
+  return count===2?(phase<.62?1:0):phase<.18?0:phase<.7?1:Math.min(2,count-1);
+ }
+
  if(f.id===44&&v.key==='skill2'&&count===3)return v.elapsed<wind?Math.min(1,Math.floor(v.elapsed/wind*2)):v.elapsed<wind+active?1:2;
  if(powerProfileFor(f,v)?.motion==='tail-strike'&&v.elapsed>=wind&&v.elapsed<wind+active+Math.min(.22,(v.cfg.recovery||.4)*.7))return f.id===20&&count===3?1:count-1;
  let index=v.elapsed<wind?0:v.elapsed<wind+active?(count>=4?1+Math.min(1,Math.floor((v.elapsed-wind)/active*2)):1):count>=3?count-1:0;

@@ -12,7 +12,7 @@ const celCache=new Map(),celPending=new Map(),celStates=new WeakMap();let celUse
 let allAlienPosesLoaded=false,allAlienPoseError='';
 function celTrim(){for(const [id]of [...celCache].sort((a,b)=>a[1].used-b[1].used)){if(celCache.size<=2)break;if(!celPinned.has(id))celCache.delete(id);}}
 function celEnsure(id){if(celCache.has(id)){celCache.get(id).used=++celUse;return Promise.resolve(true)}if(celPending.has(id))return celPending.get(id);const d=CEL_DATA.characters[id];
- const pending=Promise.all([...d.sheets.map(s=>loadClassicImage(s.src)),...(id===32&&typeof RATH_CLOSE!=='undefined'?[loadClassicImage(RATH_CLOSE.src)]:[])]).then(images=>{celCache.set(id,{images,used:++celUse});celPending.delete(id);celTrim();return true},e=>{celPending.delete(id);throw e});celPending.set(id,pending);return pending;
+ const pending=Promise.all([...d.sheets.map(s=>loadClassicImage(s.src)),...(id===32&&typeof RATH_CLOSE!=='undefined'?[loadClassicImage(RATH_CLOSE.src)]:[]),...(id===49&&typeof CRASHHOPPER_GUARD127!=='undefined'?[loadClassicImage(CRASHHOPPER_GUARD127.src)]:[])]).then(images=>{celCache.set(id,{images,used:++celUse});celPending.delete(id);celTrim();return true},e=>{celPending.delete(id);throw e});celPending.set(id,pending);return pending;
 }
 function celPreload(id){if(typeof mode!=='undefined'&&!['fight','paused','roundend','loading'].includes(mode))celPinned=new Set([id,typeof enemy!=='undefined'&&enemy?enemy.id:2]);celEnsure(id).catch(()=>{});}
 function hasDrawnAlien(id){return !!CEL_DATA.characters[id]}
