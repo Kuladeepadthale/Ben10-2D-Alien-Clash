@@ -40,7 +40,7 @@
           427
         ],
         "origin": [
-          151.0,
+          151,
           419
         ],
         "source": "walk",
@@ -69,7 +69,7 @@
           422
         ],
         "origin": [
-          165.0,
+          165,
           414
         ],
         "source": "walk",
@@ -98,7 +98,7 @@
           420
         ],
         "origin": [
-          171.0,
+          171,
           412
         ],
         "source": "walk",
@@ -127,7 +127,7 @@
           414
         ],
         "origin": [
-          224.0,
+          224,
           406
         ],
         "source": "walk",
@@ -156,7 +156,7 @@
           417
         ],
         "origin": [
-          182.0,
+          182,
           409
         ],
         "source": "walk",
@@ -185,7 +185,7 @@
           412
         ],
         "origin": [
-          182.0,
+          182,
           404
         ],
         "source": "walk",
@@ -214,7 +214,7 @@
           413
         ],
         "origin": [
-          213.0,
+          213,
           405
         ],
         "source": "walk",
@@ -243,7 +243,7 @@
           418
         ],
         "origin": [
-          183.0,
+          183,
           410
         ],
         "source": "walk",
@@ -272,7 +272,7 @@
           324
         ],
         "origin": [
-          200.0,
+          200,
           316
         ],
         "source": "jump-strike",
@@ -301,7 +301,7 @@
           431
         ],
         "origin": [
-          180.0,
+          180,
           423
         ],
         "source": "jump-strike",
@@ -330,7 +330,7 @@
           383
         ],
         "origin": [
-          233.0,
+          233,
           430.05
         ],
         "source": "jump-strike",
@@ -359,7 +359,7 @@
           312
         ],
         "origin": [
-          179.0,
+          179,
           304
         ],
         "source": "jump-strike",
@@ -388,7 +388,7 @@
           410
         ],
         "origin": [
-          196.0,
+          196,
           402
         ],
         "source": "jump-strike",
@@ -423,7 +423,7 @@
           386
         ],
         "origin": [
-          222.0,
+          222,
           378
         ],
         "source": "jump-strike",
@@ -458,7 +458,7 @@
           409
         ],
         "origin": [
-          222.0,
+          222,
           401
         ],
         "source": "jump-strike",
@@ -493,7 +493,7 @@
           418
         ],
         "origin": [
-          160.0,
+          160,
           410
         ],
         "source": "jump-strike",
@@ -528,7 +528,7 @@
           402
         ],
         "origin": [
-          162.0,
+          162,
           394
         ],
         "source": "powers",
@@ -549,8 +549,8 @@
         "component": 1,
         "emitters": {
           "skill0": [
-            395,
-            104
+            329,
+            82
           ]
         }
       },
@@ -563,7 +563,7 @@
           394
         ],
         "origin": [
-          146.0,
+          146,
           386
         ],
         "source": "powers",
@@ -584,8 +584,8 @@
         "component": 2,
         "emitters": {
           "skill0": [
-            424,
-            98
+            276,
+            90
           ]
         }
       },
@@ -598,7 +598,7 @@
           383
         ],
         "origin": [
-          172.0,
+          172,
           375
         ],
         "source": "powers",
@@ -619,8 +619,8 @@
         "component": 4,
         "emitters": {
           "skill0": [
-            360,
-            102
+            316,
+            79
           ]
         }
       },
@@ -633,7 +633,7 @@
           390
         ],
         "origin": [
-          280.0,
+          280,
           382
         ],
         "source": "powers",
@@ -668,7 +668,7 @@
           300
         ],
         "origin": [
-          236.0,
+          236,
           292
         ],
         "source": "powers",
@@ -707,7 +707,7 @@
           325
         ],
         "origin": [
-          182.0,
+          182,
           317
         ],
         "source": "powers",
@@ -742,7 +742,7 @@
           368
         ],
         "origin": [
-          193.0,
+          193,
           360
         ],
         "source": "powers",
@@ -777,7 +777,7 @@
           370
         ],
         "origin": [
-          225.0,
+          225,
           362
         ],
         "source": "powers",
@@ -812,7 +812,7 @@
           389
         ],
         "origin": [
-          218.0,
+          218,
           381
         ],
         "source": "states",
@@ -847,7 +847,7 @@
           336
         ],
         "origin": [
-          170.0,
+          170,
           328
         ],
         "source": "states",
@@ -882,7 +882,7 @@
           333
         ],
         "origin": [
-          225.0,
+          225,
           325
         ],
         "source": "states",
@@ -917,7 +917,7 @@
           454
         ],
         "origin": [
-          161.0,
+          161,
           446
         ],
         "source": "states",
@@ -946,7 +946,7 @@
           408
         ],
         "origin": [
-          183.0,
+          183,
           400
         ],
         "source": "states",
@@ -975,7 +975,7 @@
           396
         ],
         "origin": [
-          201.0,
+          201,
           388
         ],
         "source": "states",
@@ -1004,7 +1004,7 @@
           217
         ],
         "origin": [
-          240.0,
+          240,
           209
         ],
         "source": "states",
@@ -1033,7 +1033,7 @@
           274
         ],
         "origin": [
-          241.0,
+          241,
           266
         ],
         "source": "states",
@@ -1121,34 +1121,34 @@
       {
         "frame": 16,
         "pixel": [
-          395,
-          104
+          329,
+          82
         ],
         "offset": [
-          128.639,
-          -160.109
+          92.201,
+          -172.255
         ]
       },
       {
         "frame": 17,
         "pixel": [
-          424,
-          98
+          276,
+          90
         ],
         "offset": [
-          153.484,
-          -159.005
+          71.773,
+          -163.422
         ]
       },
       {
         "frame": 18,
         "pixel": [
-          360,
-          102
+          316,
+          79
         ],
         "offset": [
-          103.795,
-          -150.723
+          79.502,
+          -163.422
         ]
       }
     ],
@@ -1250,6 +1250,8 @@
   "sources": {},
   "generated_with": "Inspected existing native cel reuse; no image generation",
   "notes": [
-    "Replace generic spherical ultimate body with character-specific native gesture; preserve configured ability and effects."
+    "Replace generic spherical ultimate body with character-specific native gesture; preserve configured ability and effects.",
+    "v12.7: Tongue Snare emitter corrected from the forward hand to the native closed/open/recovery mouth pixels; original body pixels preserved."
   ]
 }
+
