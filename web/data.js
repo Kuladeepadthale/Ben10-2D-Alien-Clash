@@ -71,6 +71,10 @@ aliens[25].powerOrigins={skill2:[.13,.63]};
 aliens[29].powerOrigins={skill0:[.20,.40]};
 
 
+// v12.9: native Chamalien tail strike reaches its captured contact point.
+aliens[41].skills[2].range=390;
+
 // Frequent ranged users keep their characteristic emitter and pose for a lighter basic shot.
 for(const [id,index] of Object.entries({0:0,2:0,5:0,6:0,7:0,12:0,14:0,15:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,25:0,26:0,27:0,28:0,29:0,30:0,31:0,33:0,34:0,35:0,36:0,38:0,39:0,42:0,43:0,44:0,46:0,48:0,50:0,51:2,53:0,56:0,57:0,58:0,62:0,63:0,64:1,67:0,68:0,69:0,70:0}))aliens[Number(id)].basicSkillIndex=index;
+
 

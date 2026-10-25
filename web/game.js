@@ -50,6 +50,10 @@ function spawnAttack(f,cast,index){const s=cast.cfg,o=other(f),col=(typeof power
   const endX=cast.targetX??f.x+dir*s.range,endY=cast.targetY??originY,startX=f.x+dir*20;
   effects.push({...shotBase,kind:'beam',attachedStrike127:true,x:startX,y:originY,dir,rayDir:(endX-startX)*dir<0?-dir:dir,length:Math.abs(endX-startX),endY,r:f.id===54?8:14,life:.14,maxLife:.14,hit:false});return;
  }
+ if(s.kind==='melee'&&f.id===41&&!Number.isInteger(f.villain)&&cast.key==='skill2'){
+  const endX=cast.targetX??f.x+dir*s.range,startX=f.x+dir*20;
+  effects.push({...shotBase,kind:'beam',attachedTail129:true,x:startX,y:originY,dir,rayDir:(endX-startX)*dir<0?-dir:dir,length:Math.abs(endX-startX),endY:originY,r:12,life:.14,maxLife:.14,hit:false});return;
+ }
  // A tongue is a narrow attached strike at the captured point, not a full-height melee rectangle.
  if(f.id===15&&!Number.isInteger(f.villain)&&cast.key==='skill2'&&s.name==='Tongue lash'){
   const endX=cast.targetX??f.x+dir*s.range,endY=cast.targetY??originY;
@@ -73,7 +77,7 @@ function updateF(f,dt){let a=(f.config||aliens[f.id]),o=other(f);f.cool=Math.max
  if(s.kind==='leapslam'&&active>=0&&!v.emitted){let p=Math.min(1,active/duration);f.x=v.startX+(v.plannedTarget-v.startX)*Math.min(1,p*1.5);f.y=floor-Math.sin(p*Math.PI)*250;f.vy=0;if(p>.985&&!v.emitted){v.emitted=1;effects.push({id:++uid,owner:f,artKey:v.key,castId:v.id,kind:'explosion',x:f.x,y:floor-35,r:s.radius||110,life:.36,maxLife:.36,damage:v.damage,ultimate:v.ultimate,name:s.name,budget:v.budget,color:(f.config?.light||CLASSIC_COLORS[f.id]),hit:false});for(let side of [v.dir])shots.push({id:++uid,owner:f,artKey:v.key,kind:'ground',x:f.x,y:floor-15,vx:side*600,vy:0,r:55,dir:side,damage:v.damage,ultimate:v.ultimate,name:s.name,budget:v.budget,color:(f.config?.light||CLASSIC_COLORS[f.id]),life:1.2,maxLife:1.2,travel:0,range:s.range});shake=16;burst(f.x,floor,(f.config?.light||CLASSIC_COLORS[f.id]),35)}}
  else if(['rush','pounce'].includes(s.kind)&&active>=0&&active<Math.max(duration,.42)){
  const segment=Math.floor(active/(Math.max(duration,.42)/(s.ticks||1)));if(segment!==v.segment){v.segment=segment;v.rushHits.clear()}
- if(Math.abs(f.x-v.startX)<s.range){const step=v.dir*(s.speed||650)*dt;if((f.id===10||f.id===32||[4,8,40,54,66].includes(f.id)&&v.ultimate)&&!Number.isInteger(f.villain)&&v.targeted){const stop=v.startX+v.dir*Math.max(0,(v.plannedTarget-v.startX)*v.dir-(f.id===32||[40,54,66].includes(f.id)?60:f.id===10?40:35)*a.scale);f.x=v.dir>0?Math.min(stop,f.x+step):Math.max(stop,f.x+step);}else f.x+=step;f.x=Math.max(65,Math.min(W-65,f.x))}if(s.kind==='pounce'){f.y=floor-Math.sin(Math.min(1,active/.5)*Math.PI)*110;f.vy=0}if(s.phase)f.inv=.05;
+ if(Math.abs(f.x-v.startX)<s.range){const step=v.dir*(s.speed||650)*dt;if((f.id===10||f.id===32||([3,4,8,16,40,41,54,66,86].includes(f.id)&&v.ultimate||f.id===3&&v.key==='skill2'))&&!Number.isInteger(f.villain)&&v.targeted){const stop=v.startX+v.dir*Math.max(0,(v.plannedTarget-v.startX)*v.dir-(f.id===32||[3,16,40,41,54,66,86].includes(f.id)?60:f.id===10?40:35)*a.scale);f.x=v.dir>0?Math.min(stop,f.x+step):Math.max(stop,f.x+step);}else f.x+=step;f.x=Math.max(65,Math.min(W-65,f.x))}if(s.kind==='pounce'){f.y=floor-Math.sin(Math.min(1,active/.5)*Math.PI)*110;f.vy=0}if(s.phase)f.inv=.05;
  const reach=65*a.scale;if(Math.abs(f.x-o.x)<reach+35&&Math.abs(f.y-o.y)<155&&!v.rushHits.has(o.uid)){v.rushHits.add(o.uid);receiveHit(f,o,v.damage,s.name,v.ultimate,12,v.budget)}
  effects.push({kind:'afterimage',x:f.x-v.dir*35,y:f.y,dir:v.dir,alien:f.id,owner:f,artKey:v.key,name:s.name,color:(f.config?.light||CLASSIC_COLORS[f.id]),life:.18,maxLife:.18,harmless:true});
  }else if(!['rush','pounce','leapslam'].includes(s.kind)){let ticks=s.ticks||1;while(v.emitted<ticks&&active>=v.emitted*(duration/ticks)){spawnAttack(f,v,v.emitted);v.emitted++}}

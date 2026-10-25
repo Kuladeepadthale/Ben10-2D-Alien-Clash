@@ -1,0 +1,7 @@
+# Requested species powers — v12.9
+
+22 powers across XLR8, Upgrade, Blitzwolfer, Ditto, Chamalien, Pesky Dust, Mole-Stache and Rush. These are newly made game animations and species effects; exact television footage is not claimed.
+
+XLR8 uses native wheel/cyclone/ricochet and ultimate poses with compact speed arcs. Upgrade Tech Pulse uses green circuit fronts. Blitzwolfer's howl and ultimate use mouth-launched sonic fronts. Ditto uses solid animated native clone actors for all four powers instead of transparent ghost stamps. Chamalien uses native cloaked ambush poses and an attached longer tail strike, with reach390 shown in the ability card and shared simulation. Pesky Dust uses moving dust motes and dream spirals. Mole-Stache uses native moustache contact poses, connected whisker extensions, uppercut curls and propeller/cyclone motion. Rush's mismatched red-stripe combat design is replaced with a newly generated native set matching the existing olive/charcoal walking body and wheel design; all new combat frames share one standing-based registration scale.
+
+All selected rushes retain their own native attack clips. Selected multi-hit ultimates stop at the captured contact location and complete their combo there. Manual facing, dash direction, captured targets, damage budgets, progression, approved v12.8 walking and unrelated powers remain intact. The native render, both facings, narrow tail collision, cloak, scale registration and full release suites gate publication. Physical phone testing and live Worker deployment remain pending.

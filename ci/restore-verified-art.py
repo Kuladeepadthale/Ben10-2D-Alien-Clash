@@ -19,7 +19,9 @@ with tempfile.TemporaryDirectory(prefix='verified-v110-art-') as tmp:
   tongue=expected[15]['skills'][2]
   assert tongue=={'name':'Tongue lash','kind':'melee','damage':140,'cooldown':5.5,'range':230,'windup':.35,'recovery':.4},'Pinned Tongue Lash baseline changed'
   tongue.update(range=460,windup=.48,duration=.2,recovery=.38)
-  assert actual==expected,'Fighter configuration changed outside the requested Tongue Lash update'
+  assert expected[41]['skills'][2]['name']=='Tail sweep'
+  expected[41]['skills'][2]['range']=390
+  assert actual==expected,'Fighter configuration changed outside the requested Tongue Lash and Tail Sweep updates'
   names=json.loads((R/'ci/roster.json').read_text());base=json.loads(z.read('assets/assets/cels/manifest.json'));assert len(names)==92 and names[:72]==[c['name'] for c in base['characters']]
   for n in z.namelist():
    if not n.startswith(('assets/assets/cels/','assets/assets/villains/')) or n.endswith('/'):continue
@@ -38,3 +40,4 @@ subprocess.run(['python3','ci/apply-reviewed-animations.py'],cwd=R,check=True)
 subprocess.run(['python3','ci/build-cels.py','--from-id','92'],cwd=R,check=True)
 shutil.copytree(R/'web/assets/villains',R/'builds/web/assets/villains',dirs_exist_ok=True)
 print('Verified previous72 fighters and50 villains; appended20 reviewed native fighters.')
+

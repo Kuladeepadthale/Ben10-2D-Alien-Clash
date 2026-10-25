@@ -376,6 +376,8 @@ jobs:
           assert 'assets/cartoon-power-effects.js' in names
           assert 'assets/ability-animations.js' in names
           assert 'assets/combat-choreography.js' in names
+          assert 'assets/requested-powers129.js' in names
+          assert all('assets/assets/cels/rush/combat129-'+str(i)+'.webp' in names for i in range(2))
           assert all('assets/'+p in names for p in ['walk128-data.js','walk-quality128.js'])
           walking=json.loads(z.read('assets/walk128-data.js').decode().split('const WALK128_DATA=',1)[1].split(';',1)[0]);assert walking['reference']==6 and len(walking['characters'])>50
           assert all('assets/'+p in names for p in ['requested-powers127.js','crashhopper-guard127.js','assets/cels/crashhopper/guard127.webp'])
@@ -406,7 +408,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.8 — Upgrade-Reference Ground Walking' --notes 'Uses Upgrade as a native walking-quality reference. Ground-walk stride calibration follows each body foot span; bounded torso registration reduces excess horizontal jitter. Keeps all original body pixels, eight native walk poses, body scales, approved good walks, flight/skating, powers and manual movement. All92 aliens receive native runtime checks in both directions. See ci/walk128 for measurements and validation; physical phone testing is pending.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.9 — Native Species Power Repairs' --notes 'Repairs22 requested powers across XLR8, Upgrade, Blitzwolfer, Ditto, Chamalien, Pesky Dust, Mole-Stache and Rush. New16-pose Rush combat/state artwork matches the existing walking design at one consistent registration scale. Includes native clones, mouth-launched howl fronts, circuit pulse, connected tail reach390, dream dust and moustache motion. Preserves v12.8 walks, manual facing, captured targets and damage budgets. Full release checks and native power validation gate publication; physical phone testing and live Worker deployment remain pending.' --prerelease --target "$GITHUB_SHA"
 
 
 

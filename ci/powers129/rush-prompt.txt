@@ -1,0 +1,1 @@
+Reference: existing Rush movement-0 artwork. Generate sixteen native side-facing attack/state poses, olive/gray armor and small red circular chest emblem, lime arms and striped tail, red-eye dark helmet and red-hub foot wheels. Match identity and scale. No red chest stripe, large X emblem, effects, shadows or text. Full structured prompt is recorded in the generation tool call.
