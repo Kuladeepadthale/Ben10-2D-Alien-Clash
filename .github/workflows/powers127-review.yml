@@ -1,0 +1,37 @@
+name: Review requested power animations
+on:
+  push:
+    branches: [powers-review-127]
+    paths: ['ci/powers127/preview.cjs', '.github/workflows/powers127-review.yml']
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install native rendering tools
+        run: |
+          python3 -m pip install Pillow numpy scipy
+          npm install --prefix /tmp/cel-tools --no-package-lock --no-save @napi-rs/canvas
+      - name: Restore verified native artwork
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 ci/restore-verified-art.py
+      - name: Render real cast timelines
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: node ci/powers127/preview.cjs
+      - name: Save review images
+        run: |
+          git config user.name 'Animation review'
+          git config user.email 'animation-review@users.noreply.github.com'
+          git add ci/powers127/preview-*.webp
+          if ! git diff --cached --quiet; then
+            git commit -m '[art-audit] Save eight-alien native power timelines'
+            git push
+          fi
