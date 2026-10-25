@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 0,
+  "name": "Phil Billings",
+  "slug": "phil-billings",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1155,
+  "footVariation": 0.1025,
+  "sizes": [
+    [
+      169,
+      243
+    ],
+    [
+      168,
+      236
+    ],
+    [
+      178,
+      241
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

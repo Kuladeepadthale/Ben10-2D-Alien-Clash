@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 49,
+  "name": "Malware",
+  "slug": "malware",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.2302,
+  "footVariation": 0.2012,
+  "sizes": [
+    [
+      239,
+      289
+    ],
+    [
+      240,
+      293
+    ],
+    [
+      248,
+      282
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

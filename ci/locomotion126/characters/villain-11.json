@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 11,
+  "name": "Jonah Melville",
+  "slug": "jonah-melville",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.156,
+  "footVariation": 0.2177,
+  "sizes": [
+    [
+      226,
+      263
+    ],
+    [
+      187,
+      267
+    ],
+    [
+      206,
+      267
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

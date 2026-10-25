@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 18,
+  "name": "Way Big",
+  "slug": "way-big",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2107,
+  "footVariation": 0.3024,
+  "sizes": [
+    [
+      303,
+      438
+    ],
+    [
+      274,
+      442
+    ],
+    [
+      257,
+      437
+    ],
+    [
+      328,
+      436
+    ],
+    [
+      334,
+      433
+    ],
+    [
+      299,
+      433
+    ],
+    [
+      271,
+      434
+    ],
+    [
+      332,
+      436
+    ]
+  ],
+  "existingGait": {
+    "style": "Long giant strides",
+    "stride": 0.92,
+    "bob": 0.4
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

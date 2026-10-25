@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 46,
+  "name": "Feedback",
+  "slug": "feedback",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2393,
+  "footVariation": 0.3398,
+  "sizes": [
+    [
+      369,
+      484
+    ],
+    [
+      353,
+      444
+    ],
+    [
+      349,
+      485
+    ],
+    [
+      386,
+      478
+    ],
+    [
+      384,
+      481
+    ],
+    [
+      358,
+      449
+    ],
+    [
+      359,
+      479
+    ],
+    [
+      387,
+      473
+    ]
+  ],
+  "existingGait": {
+    "style": "Conductoid strides",
+    "stride": 0.9,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "alien",
+  "id": 72,
+  "name": "Ultimate Wildmutt",
+  "slug": "ultimate-wildmutt",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2403,
+  "footVariation": 0.3331,
+  "sizes": [
+    [
+      339,
+      201
+    ],
+    [
+      380,
+      179
+    ],
+    [
+      353,
+      189
+    ],
+    [
+      354,
+      194
+    ],
+    [
+      333,
+      202
+    ],
+    [
+      378,
+      176
+    ],
+    [
+      356,
+      195
+    ],
+    [
+      338,
+      189
+    ]
+  ],
+  "existingGait": {
+    "style": "quadruped movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": false,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

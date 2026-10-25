@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 21,
+  "name": "Buzzshock",
+  "slug": "buzzshock",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2288,
+  "footVariation": 0.3769,
+  "sizes": [
+    [
+      324,
+      384
+    ],
+    [
+      268,
+      367
+    ],
+    [
+      272,
+      384
+    ],
+    [
+      324,
+      389
+    ],
+    [
+      306,
+      382
+    ],
+    [
+      283,
+      358
+    ],
+    [
+      275,
+      372
+    ],
+    [
+      323,
+      392
+    ]
+  ],
+  "existingGait": {
+    "style": "Quick battery steps",
+    "stride": 0.9,
+    "bob": 0.35
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

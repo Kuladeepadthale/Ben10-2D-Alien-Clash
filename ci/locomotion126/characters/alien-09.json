@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 9,
+  "name": "Ghostfreak",
+  "slug": "ghostfreak",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1452,
+  "footVariation": 0.1373,
+  "sizes": [
+    [
+      316,
+      425
+    ],
+    [
+      336,
+      422
+    ],
+    [
+      357,
+      415
+    ],
+    [
+      357,
+      413
+    ],
+    [
+      342,
+      411
+    ],
+    [
+      285,
+      415
+    ],
+    [
+      260,
+      409
+    ],
+    [
+      290,
+      421
+    ]
+  ],
+  "existingGait": {
+    "style": "Floating spectral glide",
+    "stride": 1.1,
+    "bob": 1.6,
+    "hover": true
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

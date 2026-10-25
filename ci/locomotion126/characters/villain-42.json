@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 42,
+  "name": "Looma Red Wind",
+  "slug": "looma",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1272,
+  "footVariation": 0.0997,
+  "sizes": [
+    [
+      226,
+      326
+    ],
+    [
+      261,
+      319
+    ],
+    [
+      248,
+      324
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

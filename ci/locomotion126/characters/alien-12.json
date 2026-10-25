@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 12,
+  "name": "Blitzwolfer",
+  "slug": "blitzwolfer",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1684,
+  "footVariation": 0.2665,
+  "sizes": [
+    [
+      462,
+      382
+    ],
+    [
+      447,
+      383
+    ],
+    [
+      439,
+      388
+    ],
+    [
+      422,
+      421
+    ],
+    [
+      468,
+      379
+    ],
+    [
+      448,
+      368
+    ],
+    [
+      445,
+      383
+    ],
+    [
+      424,
+      415
+    ]
+  ],
+  "existingGait": {
+    "style": "Digitigrade stalking",
+    "stride": 0.95,
+    "bob": 0.5
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

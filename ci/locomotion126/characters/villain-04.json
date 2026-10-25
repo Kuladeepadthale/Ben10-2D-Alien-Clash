@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 4,
+  "name": "Thumbskull",
+  "slug": "thumbskull",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1666,
+  "footVariation": 0.152,
+  "sizes": [
+    [
+      218,
+      280
+    ],
+    [
+      233,
+      273
+    ],
+    [
+      218,
+      270
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "alien",
+  "id": 78,
+  "name": "Ultimate Grey Matter",
+  "slug": "ultimate-grey-matter",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.0385,
+  "footVariation": 0.0283,
+  "sizes": [
+    [
+      201,
+      221
+    ],
+    [
+      191,
+      217
+    ],
+    [
+      188,
+      218
+    ],
+    [
+      194,
+      229
+    ],
+    [
+      191,
+      219
+    ],
+    [
+      187,
+      207
+    ],
+    [
+      192,
+      217
+    ],
+    [
+      194,
+      224
+    ]
+  ],
+  "existingGait": {
+    "style": "hover movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": true,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 1,
+  "name": "Sublimino",
+  "slug": "sublimino",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1513,
+  "footVariation": 0.2149,
+  "sizes": [
+    [
+      252,
+      230
+    ],
+    [
+      253,
+      228
+    ],
+    [
+      253,
+      227
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

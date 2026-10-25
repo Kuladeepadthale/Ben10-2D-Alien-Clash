@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 38,
+  "name": "Terraspin",
+  "slug": "terraspin",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1398,
+  "footVariation": 0.2748,
+  "sizes": [
+    [
+      337,
+      414
+    ],
+    [
+      324,
+      415
+    ],
+    [
+      334,
+      408
+    ],
+    [
+      320,
+      414
+    ],
+    [
+      331,
+      409
+    ],
+    [
+      329,
+      401
+    ],
+    [
+      325,
+      409
+    ],
+    [
+      309,
+      412
+    ]
+  ],
+  "existingGait": {
+    "style": "Shell strides",
+    "stride": 0.8,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

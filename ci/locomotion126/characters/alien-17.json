@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 17,
+  "name": "Eye Guy",
+  "slug": "eye-guy",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1881,
+  "footVariation": 0.3299,
+  "sizes": [
+    [
+      318,
+      437
+    ],
+    [
+      278,
+      439
+    ],
+    [
+      255,
+      440
+    ],
+    [
+      294,
+      435
+    ],
+    [
+      343,
+      431
+    ],
+    [
+      317,
+      433
+    ],
+    [
+      270,
+      433
+    ],
+    [
+      295,
+      433
+    ]
+  ],
+  "existingGait": {
+    "style": "Measured Opticoid walk",
+    "stride": 0.83,
+    "bob": 0.3
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

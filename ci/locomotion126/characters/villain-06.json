@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 6,
+  "name": "Rojo",
+  "slug": "rojo",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1428,
+  "footVariation": 0.1038,
+  "sizes": [
+    [
+      194,
+      280
+    ],
+    [
+      198,
+      284
+    ],
+    [
+      187,
+      282
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 20,
+  "name": "Spitter",
+  "slug": "spitter",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1067,
+  "footVariation": 0.2029,
+  "sizes": [
+    [
+      418,
+      402
+    ],
+    [
+      418,
+      376
+    ],
+    [
+      430,
+      396
+    ],
+    [
+      421,
+      396
+    ],
+    [
+      422,
+      396
+    ],
+    [
+      416,
+      367
+    ],
+    [
+      426,
+      397
+    ],
+    [
+      424,
+      393
+    ]
+  ],
+  "existingGait": {
+    "style": "Heavy waddling steps",
+    "stride": 0.65,
+    "bob": 0.45
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

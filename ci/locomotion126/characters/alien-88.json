@@ -1,0 +1,63 @@
+{
+  "kind": "alien",
+  "id": 88,
+  "name": "Thornblade",
+  "slug": "thornblade",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2163,
+  "footVariation": 0.2392,
+  "sizes": [
+    [
+      297,
+      239
+    ],
+    [
+      294,
+      233
+    ],
+    [
+      297,
+      235
+    ],
+    [
+      265,
+      247
+    ],
+    [
+      315,
+      244
+    ],
+    [
+      287,
+      233
+    ],
+    [
+      290,
+      241
+    ],
+    [
+      270,
+      253
+    ]
+  ],
+  "existingGait": {
+    "style": "plant movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": false,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

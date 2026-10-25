@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 40,
+  "name": "Fasttrack",
+  "slug": "fasttrack",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1703,
+  "footVariation": 0.2148,
+  "sizes": [
+    [
+      389,
+      479
+    ],
+    [
+      401,
+      465
+    ],
+    [
+      409,
+      466
+    ],
+    [
+      352,
+      491
+    ],
+    [
+      387,
+      466
+    ],
+    [
+      391,
+      461
+    ],
+    [
+      407,
+      463
+    ],
+    [
+      348,
+      487
+    ]
+  ],
+  "existingGait": {
+    "style": "Citrakayah sprint",
+    "stride": 1.02,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

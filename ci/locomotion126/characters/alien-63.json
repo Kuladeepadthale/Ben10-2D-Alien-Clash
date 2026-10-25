@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 63,
+  "name": "Gax",
+  "slug": "gax",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2365,
+  "footVariation": 0.3137,
+  "sizes": [
+    [
+      372,
+      428
+    ],
+    [
+      370,
+      425
+    ],
+    [
+      317,
+      424
+    ],
+    [
+      406,
+      420
+    ],
+    [
+      420,
+      424
+    ],
+    [
+      362,
+      420
+    ],
+    [
+      436,
+      412
+    ],
+    [
+      335,
+      425
+    ]
+  ],
+  "existingGait": {
+    "style": "Natural character strides",
+    "stride": 0.85,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

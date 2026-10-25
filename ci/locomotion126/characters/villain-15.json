@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 15,
+  "name": "Sixsix",
+  "slug": "sixsix",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1889,
+  "footVariation": 0.1632,
+  "sizes": [
+    [
+      188,
+      268
+    ],
+    [
+      179,
+      276
+    ],
+    [
+      199,
+      270
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

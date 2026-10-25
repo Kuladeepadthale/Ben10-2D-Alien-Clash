@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 5,
+  "name": "Clancy",
+  "slug": "clancy",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.139,
+  "footVariation": 0.2157,
+  "sizes": [
+    [
+      202,
+      286
+    ],
+    [
+      209,
+      289
+    ],
+    [
+      217,
+      286
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

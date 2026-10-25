@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 32,
+  "name": "Billy Billions",
+  "slug": "billy-billions",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1395,
+  "footVariation": 0.2038,
+  "sizes": [
+    [
+      187,
+      234
+    ],
+    [
+      173,
+      228
+    ],
+    [
+      207,
+      226
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

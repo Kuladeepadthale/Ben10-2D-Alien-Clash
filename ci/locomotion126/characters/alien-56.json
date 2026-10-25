@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 56,
+  "name": "Whampire",
+  "slug": "whampire",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2067,
+  "footVariation": 0.188,
+  "sizes": [
+    [
+      482,
+      488
+    ],
+    [
+      455,
+      377
+    ],
+    [
+      526,
+      331
+    ],
+    [
+      375,
+      316
+    ],
+    [
+      436,
+      322
+    ],
+    [
+      410,
+      297
+    ],
+    [
+      503,
+      339
+    ],
+    [
+      468,
+      413
+    ]
+  ],
+  "existingGait": {
+    "style": "Floating glide",
+    "stride": 0.85,
+    "hover": true
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

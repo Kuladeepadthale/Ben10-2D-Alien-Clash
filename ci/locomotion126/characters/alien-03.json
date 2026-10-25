@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 3,
+  "name": "XLR8",
+  "slug": "xlr8",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1931,
+  "footVariation": 0.3195,
+  "sizes": [
+    [
+      432,
+      437
+    ],
+    [
+      359,
+      418
+    ],
+    [
+      451,
+      434
+    ],
+    [
+      398,
+      430
+    ],
+    [
+      420,
+      416
+    ],
+    [
+      366,
+      422
+    ],
+    [
+      456,
+      423
+    ],
+    [
+      409,
+      409
+    ]
+  ],
+  "existingGait": {
+    "style": "Alternating skate pushes and glides",
+    "stride": 1.05,
+    "bob": 0,
+    "skate": true
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

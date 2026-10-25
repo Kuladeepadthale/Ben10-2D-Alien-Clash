@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 6,
+  "name": "Upgrade",
+  "slug": "upgrade",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1724,
+  "footVariation": 0.3106,
+  "sizes": [
+    [
+      328,
+      408
+    ],
+    [
+      269,
+      410
+    ],
+    [
+      257,
+      408
+    ],
+    [
+      337,
+      409
+    ],
+    [
+      342,
+      411
+    ],
+    [
+      281,
+      410
+    ],
+    [
+      266,
+      411
+    ],
+    [
+      345,
+      409
+    ]
+  ],
+  "existingGait": {
+    "style": "Long, fluid strides",
+    "stride": 0.98,
+    "bob": 0.3,
+    "weight": 0.012
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

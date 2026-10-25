@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 22,
+  "name": "Slix Vigma",
+  "slug": "slix-vigma",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1428,
+  "footVariation": 0.184,
+  "sizes": [
+    [
+      187,
+      247
+    ],
+    [
+      145,
+      248
+    ],
+    [
+      185,
+      243
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

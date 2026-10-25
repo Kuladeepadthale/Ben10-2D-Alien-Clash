@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 57,
+  "name": "Gutrot",
+  "slug": "gutrot",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2061,
+  "footVariation": 0.2865,
+  "sizes": [
+    [
+      368,
+      394
+    ],
+    [
+      378,
+      387
+    ],
+    [
+      386,
+      382
+    ],
+    [
+      373,
+      378
+    ],
+    [
+      397,
+      369
+    ],
+    [
+      388,
+      376
+    ],
+    [
+      364,
+      377
+    ],
+    [
+      397,
+      368
+    ]
+  ],
+  "existingGait": {
+    "style": "Natural character strides",
+    "stride": 0.85,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

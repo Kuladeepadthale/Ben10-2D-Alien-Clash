@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 31,
+  "name": "Fistrick",
+  "slug": "fistrick",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.2208,
+  "footVariation": 0.182,
+  "sizes": [
+    [
+      253,
+      249
+    ],
+    [
+      202,
+      254
+    ],
+    [
+      233,
+      254
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

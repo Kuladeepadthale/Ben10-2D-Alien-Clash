@@ -1,0 +1,60 @@
+{
+  "kind": "alien",
+  "id": 25,
+  "name": "Jetray",
+  "slug": "jetray",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1375,
+  "footVariation": 0.1873,
+  "sizes": [
+    [
+      459,
+      422
+    ],
+    [
+      425,
+      421
+    ],
+    [
+      435,
+      421
+    ],
+    [
+      439,
+      420
+    ],
+    [
+      461,
+      411
+    ],
+    [
+      422,
+      409
+    ],
+    [
+      433,
+      418
+    ],
+    [
+      452,
+      423
+    ]
+  ],
+  "existingGait": {
+    "style": "Aerodynamic steps",
+    "stride": 1.02
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

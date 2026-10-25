@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 60,
+  "name": "The Worst",
+  "slug": "the-worst",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1727,
+  "footVariation": 0.2515,
+  "sizes": [
+    [
+      382,
+      423
+    ],
+    [
+      405,
+      419
+    ],
+    [
+      426,
+      425
+    ],
+    [
+      397,
+      417
+    ],
+    [
+      367,
+      407
+    ],
+    [
+      391,
+      413
+    ],
+    [
+      397,
+      410
+    ],
+    [
+      356,
+      402
+    ]
+  ],
+  "existingGait": {
+    "style": "Natural character strides",
+    "stride": 0.85,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

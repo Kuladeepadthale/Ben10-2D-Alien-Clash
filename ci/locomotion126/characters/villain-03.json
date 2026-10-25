@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 3,
+  "name": "Frightwig",
+  "slug": "frightwig",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.2039,
+  "footVariation": 0.1309,
+  "sizes": [
+    [
+      244,
+      283
+    ],
+    [
+      238,
+      289
+    ],
+    [
+      248,
+      296
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

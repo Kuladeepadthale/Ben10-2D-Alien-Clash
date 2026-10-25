@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 43,
+  "name": "Clockwork",
+  "slug": "clockwork",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1496,
+  "footVariation": 0.275,
+  "sizes": [
+    [
+      373,
+      474
+    ],
+    [
+      352,
+      467
+    ],
+    [
+      359,
+      477
+    ],
+    [
+      353,
+      476
+    ],
+    [
+      366,
+      468
+    ],
+    [
+      344,
+      470
+    ],
+    [
+      325,
+      470
+    ],
+    [
+      358,
+      472
+    ]
+  ],
+  "existingGait": {
+    "style": "Clockwork march",
+    "stride": 0.74,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

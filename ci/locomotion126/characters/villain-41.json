@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 41,
+  "name": "Princess Attea",
+  "slug": "attea",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1531,
+  "footVariation": 0.154,
+  "sizes": [
+    [
+      237,
+      310
+    ],
+    [
+      247,
+      307
+    ],
+    [
+      260,
+      312
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

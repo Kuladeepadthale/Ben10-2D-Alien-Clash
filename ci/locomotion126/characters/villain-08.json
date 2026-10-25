@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 8,
+  "name": "Zombozo",
+  "slug": "zombozo",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.2096,
+  "footVariation": 0.2345,
+  "sizes": [
+    [
+      203,
+      287
+    ],
+    [
+      205,
+      289
+    ],
+    [
+      229,
+      287
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

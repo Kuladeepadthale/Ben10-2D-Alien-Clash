@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 2,
+  "name": "Acid Breath",
+  "slug": "acid-breath",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.2004,
+  "footVariation": 0.1897,
+  "sizes": [
+    [
+      198,
+      284
+    ],
+    [
+      204,
+      281
+    ],
+    [
+      237,
+      274
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

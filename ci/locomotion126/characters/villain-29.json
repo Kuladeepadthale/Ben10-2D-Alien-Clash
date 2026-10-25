@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 29,
+  "name": "Vilgax",
+  "slug": "vilgax",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.2154,
+  "footVariation": 0.1863,
+  "sizes": [
+    [
+      243,
+      275
+    ],
+    [
+      233,
+      276
+    ],
+    [
+      252,
+      275
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

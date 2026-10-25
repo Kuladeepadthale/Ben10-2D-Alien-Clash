@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 14,
+  "name": "Frankenstrike",
+  "slug": "frankenstrike",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1424,
+  "footVariation": 0.2229,
+  "sizes": [
+    [
+      402,
+      441
+    ],
+    [
+      360,
+      441
+    ],
+    [
+      389,
+      442
+    ],
+    [
+      399,
+      433
+    ],
+    [
+      409,
+      433
+    ],
+    [
+      368,
+      431
+    ],
+    [
+      408,
+      431
+    ],
+    [
+      405,
+      433
+    ]
+  ],
+  "existingGait": {
+    "style": "Heavy conductor steps",
+    "stride": 0.78,
+    "bob": 0.6
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 58,
+  "name": "Atomix",
+  "slug": "atomix",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1854,
+  "footVariation": 0.2142,
+  "sizes": [
+    [
+      353,
+      426
+    ],
+    [
+      386,
+      424
+    ],
+    [
+      403,
+      426
+    ],
+    [
+      331,
+      428
+    ],
+    [
+      391,
+      431
+    ],
+    [
+      390,
+      423
+    ],
+    [
+      395,
+      424
+    ],
+    [
+      417,
+      418
+    ]
+  ],
+  "existingGait": {
+    "style": "Natural character strides",
+    "stride": 0.85,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

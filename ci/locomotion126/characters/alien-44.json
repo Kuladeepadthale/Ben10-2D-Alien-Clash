@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 44,
+  "name": "Jury Rigg",
+  "slug": "jury-rigg",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1819,
+  "footVariation": 0.3303,
+  "sizes": [
+    [
+      337,
+      436
+    ],
+    [
+      344,
+      449
+    ],
+    [
+      334,
+      454
+    ],
+    [
+      374,
+      445
+    ],
+    [
+      367,
+      448
+    ],
+    [
+      350,
+      444
+    ],
+    [
+      329,
+      455
+    ],
+    [
+      356,
+      449
+    ]
+  ],
+  "existingGait": {
+    "style": "Quick engineer steps",
+    "stride": 0.88,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

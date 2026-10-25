@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 66,
+  "name": "Surge",
+  "slug": "surge",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1368,
+  "footVariation": 0.1181,
+  "sizes": [
+    [
+      414,
+      414
+    ],
+    [
+      389,
+      376
+    ],
+    [
+      420,
+      291
+    ],
+    [
+      389,
+      255
+    ],
+    [
+      418,
+      283
+    ],
+    [
+      389,
+      302
+    ],
+    [
+      391,
+      358
+    ],
+    [
+      385,
+      412
+    ]
+  ],
+  "existingGait": {
+    "style": "Floating glide",
+    "stride": 0.85,
+    "hover": true
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

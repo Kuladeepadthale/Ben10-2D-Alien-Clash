@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 23,
+  "name": "S.A.M.",
+  "slug": "sam",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1702,
+  "footVariation": 0.1487,
+  "sizes": [
+    [
+      184,
+      284
+    ],
+    [
+      172,
+      296
+    ],
+    [
+      211,
+      284
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

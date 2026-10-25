@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 16,
+  "name": "Ditto",
+  "slug": "ditto",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1283,
+  "footVariation": 0.2653,
+  "sizes": [
+    [
+      269,
+      431
+    ],
+    [
+      272,
+      437
+    ],
+    [
+      269,
+      439
+    ],
+    [
+      271,
+      436
+    ],
+    [
+      275,
+      431
+    ],
+    [
+      282,
+      432
+    ],
+    [
+      282,
+      432
+    ],
+    [
+      276,
+      427
+    ]
+  ],
+  "existingGait": {
+    "style": "Springy Splixson steps",
+    "stride": 0.9,
+    "bob": 0.6
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 7,
+  "name": "Dr. Animo",
+  "slug": "dr-animo",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.0963,
+  "footVariation": 0.0545,
+  "sizes": [
+    [
+      205,
+      291
+    ],
+    [
+      209,
+      287
+    ],
+    [
+      219,
+      290
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

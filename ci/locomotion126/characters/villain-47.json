@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 47,
+  "name": "Aggregor",
+  "slug": "aggregor",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1262,
+  "footVariation": 0.1399,
+  "sizes": [
+    [
+      223,
+      307
+    ],
+    [
+      215,
+      309
+    ],
+    [
+      235,
+      302
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

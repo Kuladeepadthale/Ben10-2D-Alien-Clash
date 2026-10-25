@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 69,
+  "name": "Ultimate Echo Echo",
+  "slug": "ultimate-echo-echo",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1978,
+  "footVariation": 0.2049,
+  "sizes": [
+    [
+      323,
+      423
+    ],
+    [
+      321,
+      423
+    ],
+    [
+      360,
+      423
+    ],
+    [
+      404,
+      418
+    ],
+    [
+      421,
+      417
+    ],
+    [
+      363,
+      417
+    ],
+    [
+      379,
+      417
+    ],
+    [
+      364,
+      419
+    ]
+  ],
+  "existingGait": {
+    "style": "Natural character strides",
+    "stride": 0.85,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

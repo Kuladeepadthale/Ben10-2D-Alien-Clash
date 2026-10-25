@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 54,
+  "name": "Bullfrag",
+  "slug": "bullfrag",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2734,
+  "footVariation": 0.3317,
+  "sizes": [
+    [
+      389,
+      407
+    ],
+    [
+      375,
+      402
+    ],
+    [
+      388,
+      401
+    ],
+    [
+      441,
+      394
+    ],
+    [
+      430,
+      397
+    ],
+    [
+      380,
+      392
+    ],
+    [
+      427,
+      394
+    ],
+    [
+      401,
+      398
+    ]
+  ],
+  "existingGait": {
+    "style": "Natural character strides",
+    "stride": 0.85,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

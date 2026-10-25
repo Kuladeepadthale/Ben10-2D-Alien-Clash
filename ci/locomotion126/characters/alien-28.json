@@ -1,0 +1,60 @@
+{
+  "kind": "alien",
+  "id": 28,
+  "name": "Brainstorm",
+  "slug": "brainstorm",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1534,
+  "footVariation": 0.212,
+  "sizes": [
+    [
+      398,
+      396
+    ],
+    [
+      415,
+      413
+    ],
+    [
+      417,
+      389
+    ],
+    [
+      408,
+      385
+    ],
+    [
+      419,
+      408
+    ],
+    [
+      402,
+      413
+    ],
+    [
+      427,
+      392
+    ],
+    [
+      398,
+      384
+    ]
+  ],
+  "existingGait": {
+    "style": "Six-legged crab scuttle",
+    "stride": 0.72
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

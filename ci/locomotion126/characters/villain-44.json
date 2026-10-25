@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 44,
+  "name": "Dr. Psychobos",
+  "slug": "dr-psychobos",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1503,
+  "footVariation": 0.2328,
+  "sizes": [
+    [
+      291,
+      234
+    ],
+    [
+      266,
+      226
+    ],
+    [
+      301,
+      225
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

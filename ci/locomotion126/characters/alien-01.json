@@ -1,0 +1,62 @@
+{
+  "kind": "alien",
+  "id": 1,
+  "name": "Four Arms",
+  "slug": "four-arms",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1289,
+  "footVariation": 0.2322,
+  "sizes": [
+    [
+      398,
+      424
+    ],
+    [
+      384,
+      423
+    ],
+    [
+      407,
+      426
+    ],
+    [
+      406,
+      422
+    ],
+    [
+      408,
+      414
+    ],
+    [
+      390,
+      418
+    ],
+    [
+      394,
+      416
+    ],
+    [
+      399,
+      416
+    ]
+  ],
+  "existingGait": {
+    "style": "Heavy, deliberate strides",
+    "stride": 0.82,
+    "bob": 0.8,
+    "weight": 0.026
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

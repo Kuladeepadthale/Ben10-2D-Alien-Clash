@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 62,
+  "name": "Overflow",
+  "slug": "overflow",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.2421,
+  "footVariation": 0.2943,
+  "sizes": [
+    [
+      381,
+      402
+    ],
+    [
+      396,
+      399
+    ],
+    [
+      368,
+      410
+    ],
+    [
+      381,
+      407
+    ],
+    [
+      375,
+      399
+    ],
+    [
+      393,
+      397
+    ],
+    [
+      436,
+      392
+    ],
+    [
+      368,
+      389
+    ]
+  ],
+  "existingGait": {
+    "style": "Natural character strides",
+    "stride": 0.85,
+    "hover": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

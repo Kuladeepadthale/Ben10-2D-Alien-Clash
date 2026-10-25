@@ -1,0 +1,32 @@
+{
+  "kind": "villain",
+  "id": 27,
+  "name": "Kevin 11",
+  "slug": "kevin-11",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3
+  ],
+  "nativeUnique": 3,
+  "silhouetteVariation": 0.1863,
+  "footVariation": 0.2621,
+  "sizes": [
+    [
+      233,
+      259
+    ],
+    [
+      228,
+      262
+    ],
+    [
+      244,
+      256
+    ]
+  ],
+  "existingGait": {},
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

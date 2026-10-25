@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 15,
+  "name": "Upchuck",
+  "slug": "upchuck",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.0971,
+  "footVariation": 0.1546,
+  "sizes": [
+    [
+      383,
+      416
+    ],
+    [
+      354,
+      394
+    ],
+    [
+      385,
+      408
+    ],
+    [
+      409,
+      408
+    ],
+    [
+      390,
+      404
+    ],
+    [
+      328,
+      396
+    ],
+    [
+      389,
+      404
+    ],
+    [
+      399,
+      402
+    ]
+  ],
+  "existingGait": {
+    "style": "Short Gourmand steps",
+    "stride": 0.78,
+    "bob": 0.5
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

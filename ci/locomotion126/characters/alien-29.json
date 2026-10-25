@@ -1,0 +1,60 @@
+{
+  "kind": "alien",
+  "id": 29,
+  "name": "Spidermonkey",
+  "slug": "spidermonkey",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.171,
+  "footVariation": 0.2825,
+  "sizes": [
+    [
+      396,
+      417
+    ],
+    [
+      379,
+      420
+    ],
+    [
+      370,
+      422
+    ],
+    [
+      380,
+      424
+    ],
+    [
+      391,
+      421
+    ],
+    [
+      391,
+      419
+    ],
+    [
+      390,
+      421
+    ],
+    [
+      383,
+      417
+    ]
+  ],
+  "existingGait": {
+    "style": "Agile monkey strides",
+    "stride": 0.95
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

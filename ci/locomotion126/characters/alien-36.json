@@ -1,0 +1,61 @@
+{
+  "kind": "alien",
+  "id": 36,
+  "name": "AmpFibian",
+  "slug": "ampfibian",
+  "nativeWalkIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nativeUnique": 4,
+  "silhouetteVariation": 0.1907,
+  "footVariation": 0.2304,
+  "sizes": [
+    [
+      345,
+      371
+    ],
+    [
+      404,
+      345
+    ],
+    [
+      386,
+      443
+    ],
+    [
+      494,
+      440
+    ],
+    [
+      386,
+      443
+    ],
+    [
+      345,
+      371
+    ],
+    [
+      404,
+      345
+    ],
+    [
+      345,
+      371
+    ]
+  ],
+  "existingGait": {
+    "style": "Amperi hover",
+    "stride": 0.88,
+    "hover": true
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}

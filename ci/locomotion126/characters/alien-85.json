@@ -1,0 +1,63 @@
+{
+  "kind": "alien",
+  "id": 85,
+  "name": "Quad Smack",
+  "slug": "quad-smack",
+  "nativeWalkIndices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "nativeUnique": 8,
+  "silhouetteVariation": 0.1238,
+  "footVariation": 0.1513,
+  "sizes": [
+    [
+      282,
+      290
+    ],
+    [
+      269,
+      286
+    ],
+    [
+      269,
+      292
+    ],
+    [
+      269,
+      289
+    ],
+    [
+      261,
+      286
+    ],
+    [
+      277,
+      292
+    ],
+    [
+      274,
+      294
+    ],
+    [
+      270,
+      287
+    ]
+  ],
+  "existingGait": {
+    "style": "four-arms movement",
+    "stride": 0.85,
+    "bob": 0.4,
+    "hover": false,
+    "skate": false
+  },
+  "flags": [],
+  "status": "native-metrics-complete-visual-review-pending",
+  "source": "restored verified release plus existing reviewed revisions"
+}
