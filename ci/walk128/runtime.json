@@ -1,0 +1,471 @@
+{
+  "passed": true,
+  "aliens": 92,
+  "groundWalkers": 73,
+  "nativeDraws": 7544,
+  "reference": 6,
+  "bodyScaleUnchanged": true,
+  "combatUnchanged": true,
+  "records": [
+    {
+      "id": 0,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 1,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 2,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 3,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 4,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 5,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 6,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 7,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 8,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 9,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 10,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 11,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 12,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 13,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 14,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 15,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 16,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 17,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 18,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 19,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 20,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 21,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 22,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 23,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 24,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 25,
+      "passed": true,
+      "nativePoses": 1
+    },
+    {
+      "id": 26,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 27,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 28,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 29,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 30,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 31,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 32,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 33,
+      "passed": true,
+      "nativePoses": 1
+    },
+    {
+      "id": 34,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 35,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 36,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 37,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 38,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 39,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 40,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 41,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 42,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 43,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 44,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 45,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 46,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 47,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 48,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 49,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 50,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 51,
+      "passed": true,
+      "nativePoses": 1
+    },
+    {
+      "id": 52,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 53,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 54,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 55,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 56,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 57,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 58,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 59,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 60,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 61,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 62,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 63,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 64,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 65,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 66,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 67,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 68,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 69,
+      "passed": true,
+      "nativePoses": 1
+    },
+    {
+      "id": 70,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 71,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 72,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 73,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 74,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 75,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 76,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 77,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 78,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 79,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 80,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 81,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 82,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 83,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 84,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 85,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 86,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 87,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 88,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 89,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 90,
+      "passed": true,
+      "nativePoses": 8
+    },
+    {
+      "id": 91,
+      "passed": true,
+      "nativePoses": 8
+    }
+  ]
+}
