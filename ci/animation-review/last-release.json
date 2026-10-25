@@ -1,55 +1,133 @@
 {
-  "version": "12.6",
-  "versionCode": 126,
-  "source_commit": "bf7938bd1d771da5b3e19cab67d1bdca29de7a81",
-  "run_id": 40199657380,
-  "job_id": 121187925422,
+  "version": "12.7",
+  "versionCode": 127,
+  "source_commit": "13ec642d1d590fe53e36413e96fd8107247e6fc3",
+  "run_id": 40208350995,
+  "job_id": 121214163822,
   "build": "success",
   "release_published": true,
-  "tag": "android-bf7938bd1d77",
-  "release_url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/tag/android-bf7938bd1d77",
-  "scope": "Locomotion only: 92 aliens and 50 battle villains",
-  "native_draws": 12784,
-  "existing_character_art_preserved": true,
-  "image_generation_calls": 0,
-  "full_suite_baseline": {
-    "source_commit": "d1eebfcda04eb88b32322779dbb0eab96ae71f39",
-    "run_id": 40198064636,
-    "passed": 73,
-    "failed_outdated_assertion": "Astrodactyl hover height; corrected and rechecked"
+  "tag": "android-13ec642d1d59",
+  "release_url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/tag/android-13ec642d1d59",
+  "scope": "20 requested powers across eight aliens; native Crashhopper guard; manual facing and captured target preservation",
+  "aliens": [
+    {
+      "id": 23,
+      "name": "Echo Echo",
+      "powers": [
+        "Echo barrage",
+        "Resonance pulse"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Brainstorm",
+      "powers": [
+        "Static field"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Goop",
+      "powers": [
+        "Elastic strike",
+        "Liquid rush",
+        "Acid deluge"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Nanomech",
+      "powers": [
+        "Micro blitz"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Fasttrack",
+      "powers": [
+        "Cyclone kick",
+        "Citrakayah blitz"
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Crashhopper",
+      "powers": [
+        "Spring pounce",
+        "Headlong rush",
+        "Landing shock",
+        "Meteor hopper"
+      ],
+      "guardFrames": 4
+    },
+    {
+      "id": 54,
+      "name": "Bullfrag",
+      "powers": [
+        "Tongue snare",
+        "Amphibian rush",
+        "Incursean combination"
+      ]
+    },
+    {
+      "id": 66,
+      "name": "Surge",
+      "powers": [
+        "Linked charge",
+        "Cross slice",
+        "Xerge formation",
+        "Swarm convergence"
+      ]
+    }
+  ],
+  "validation": {
+    "full_baseline": {
+      "source": "8dd43ce0e7a8e9f8fabdc2c50aa7d23936e8e50a",
+      "run_id": 40207536326,
+      "job_id": 121211876292,
+      "passed": 75,
+      "failed": 0
+    },
+    "final_patch": "Only Goop ability-card metadata and its assertion changed; workflow verifies exact source delta against baseline.",
+    "focused_checks": [
+      "20-power real native rendering and attached collision; 40 casts, 202 draws, both facings, mouth markers and captured combo stops",
+      "Manual facing and directional trajectories",
+      "Captured-target immutability",
+      "Power source registration",
+      "Clean projectile/beam effects",
+      "All web JavaScript syntax"
+    ],
+    "native_guard_frames": 4,
+    "visual_review_branch": "powers-review-127",
+    "visual_review_commit": "cfed863a7964ca752e72f6026f816132b0d95130",
+    "visual_contact_sheets": 5,
+    "signing_certificate_sha256": "a52a570180898607ffdf736b6189244b73b2c1666ba5a63b34cd7015773c8a94"
   },
-  "focused_checks": {
-    "passed": 6,
-    "game_server_art_identical_to_baseline": true
-  },
-  "hardware_tested": false,
-  "signer_sha256": "a52a570180898607ffdf736b6189244b73b2c1666ba5a63b34cd7015773c8a94",
-  "downloads": [
+  "phone_tested": false,
+  "live_worker_deployed": false,
+  "worker_note": "Owner Cloudflare credentials unavailable; matching source is saved and bundle dry-run verified.",
+  "exact_tv_animation_claimed": false,
+  "assets": [
     {
       "name": "Ben10-2D-Alien-Clash.apk",
-      "bytes": 437741671,
-      "digest": "sha256:5dabacb90b9ec8b2e8777c077937b0a376df48ab13a7d320fbb1473b261b3b02",
-      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-bf7938bd1d77/Ben10-2D-Alien-Clash.apk"
+      "bytes": 438353976,
+      "state": "uploaded",
+      "sha256": "1e103a2f22f6cfe1b1b9a9236c793eaaf8e49f6fab806239f6c1ffc4b0405738",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-13ec642d1d59/Ben10-2D-Alien-Clash.apk"
     },
     {
       "name": "Ben10-Alien-Clash-Online.apk",
-      "bytes": 437741707,
-      "digest": "sha256:783012f87a83c243011c7b47485580133d92a3435db97c3f70f60d9193c2c46a",
-      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-bf7938bd1d77/Ben10-Alien-Clash-Online.apk"
+      "bytes": 438353987,
+      "state": "uploaded",
+      "sha256": "8fa0f638602fae07785e3440c07e8601af28cd269045bc953ab22106104c9599",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-13ec642d1d59/Ben10-Alien-Clash-Online.apk"
     },
     {
       "name": "SHA256SUMS.txt",
       "bytes": 200,
-      "digest": "sha256:2babfba8525df0fc716b367c061db2d673bf96f5ee4a267476e3713141750c4a",
-      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-bf7938bd1d77/SHA256SUMS.txt"
+      "state": "uploaded",
+      "sha256": "870da609373db7d965bdf6c006d1becc2c3f5d09a9df05b836bf8aa238b2d6aa",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-13ec642d1d59/SHA256SUMS.txt"
     }
-  ],
-  "full_art_review_remaining": [
-    "Crashhopper",
-    "Ball Weevil",
-    "Astrodactyl",
-    "Buzzshock",
-    "Spidermonkey",
-    "Dark Matter"
   ]
 }
