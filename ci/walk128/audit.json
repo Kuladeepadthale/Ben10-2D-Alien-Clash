@@ -7,36 +7,21 @@
       "name": "Heatblast",
       "reference": "Upgrade",
       "nativeFrames": 8,
-      "status": "calibrated-native-ground-walk",
-      "oldStride": 0.82,
-      "stride": 0.82,
-      "maxBodyCorrection": 0.0,
-      "speciesCadencePreserved": false,
-      "changed": false
+      "status": "preserved-approved-walk"
     },
     {
       "id": 1,
       "name": "Four Arms",
       "reference": "Upgrade",
       "nativeFrames": 8,
-      "status": "calibrated-native-ground-walk",
-      "oldStride": 1.3,
-      "stride": 1.105,
-      "maxBodyCorrection": 0.0,
-      "speciesCadencePreserved": false,
-      "changed": true
+      "status": "preserved-approved-walk"
     },
     {
       "id": 2,
       "name": "Diamondhead",
       "reference": "Upgrade",
       "nativeFrames": 8,
-      "status": "calibrated-native-ground-walk",
-      "oldStride": 0.8,
-      "stride": 0.851252,
-      "maxBodyCorrection": 0.005942,
-      "speciesCadencePreserved": false,
-      "changed": true
+      "status": "preserved-approved-walk"
     },
     {
       "id": 3,
@@ -50,12 +35,7 @@
       "name": "Wildmutt",
       "reference": "Upgrade",
       "nativeFrames": 8,
-      "status": "calibrated-native-ground-walk",
-      "oldStride": 1.62,
-      "stride": 1.62,
-      "maxBodyCorrection": 0.025,
-      "speciesCadencePreserved": true,
-      "changed": true
+      "status": "preserved-approved-walk"
     },
     {
       "id": 5,
@@ -107,12 +87,7 @@
       "name": "Cannonbolt",
       "reference": "Upgrade",
       "nativeFrames": 8,
-      "status": "calibrated-native-ground-walk",
-      "oldStride": 0.95,
-      "stride": 0.95,
-      "maxBodyCorrection": 0.0,
-      "speciesCadencePreserved": true,
-      "changed": false
+      "status": "preserved-approved-walk"
     },
     {
       "id": 11,
@@ -215,12 +190,7 @@
       "name": "Arctiguana",
       "reference": "Upgrade",
       "nativeFrames": 8,
-      "status": "calibrated-native-ground-walk",
-      "oldStride": 1.7,
-      "stride": 1.7,
-      "maxBodyCorrection": 0.001157,
-      "speciesCadencePreserved": true,
-      "changed": true
+      "status": "preserved-approved-walk"
     },
     {
       "id": 20,
@@ -275,12 +245,7 @@
       "name": "Humungousaur",
       "reference": "Upgrade",
       "nativeFrames": 8,
-      "status": "calibrated-native-ground-walk",
-      "oldStride": 0.8,
-      "stride": 0.935619,
-      "maxBodyCorrection": 0.004148,
-      "speciesCadencePreserved": false,
-      "changed": true
+      "status": "preserved-approved-walk"
     },
     {
       "id": 25,
@@ -294,7 +259,7 @@
       "name": "Big Chill",
       "reference": "Upgrade",
       "nativeFrames": 8,
-      "status": "preserved-flight-skate-or-reference"
+      "status": "preserved-approved-walk"
     },
     {
       "id": 27,

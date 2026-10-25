@@ -1,7 +1,7 @@
 {
   "passed": true,
   "aliens": 92,
-  "groundWalkers": 73,
+  "groundWalkers": 66,
   "nativeDraws": 7544,
   "reference": 6,
   "bodyScaleUnchanged": true,
