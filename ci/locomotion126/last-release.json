@@ -1,0 +1,55 @@
+{
+  "version": "12.6",
+  "versionCode": 126,
+  "source_commit": "bf7938bd1d771da5b3e19cab67d1bdca29de7a81",
+  "run_id": 40199657380,
+  "job_id": 121187925422,
+  "build": "success",
+  "release_published": true,
+  "tag": "android-bf7938bd1d77",
+  "release_url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/tag/android-bf7938bd1d77",
+  "scope": "Locomotion only: 92 aliens and 50 battle villains",
+  "native_draws": 12784,
+  "existing_character_art_preserved": true,
+  "image_generation_calls": 0,
+  "full_suite_baseline": {
+    "source_commit": "d1eebfcda04eb88b32322779dbb0eab96ae71f39",
+    "run_id": 40198064636,
+    "passed": 73,
+    "failed_outdated_assertion": "Astrodactyl hover height; corrected and rechecked"
+  },
+  "focused_checks": {
+    "passed": 6,
+    "game_server_art_identical_to_baseline": true
+  },
+  "hardware_tested": false,
+  "signer_sha256": "a52a570180898607ffdf736b6189244b73b2c1666ba5a63b34cd7015773c8a94",
+  "downloads": [
+    {
+      "name": "Ben10-2D-Alien-Clash.apk",
+      "bytes": 437741671,
+      "digest": "sha256:5dabacb90b9ec8b2e8777c077937b0a376df48ab13a7d320fbb1473b261b3b02",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-bf7938bd1d77/Ben10-2D-Alien-Clash.apk"
+    },
+    {
+      "name": "Ben10-Alien-Clash-Online.apk",
+      "bytes": 437741707,
+      "digest": "sha256:783012f87a83c243011c7b47485580133d92a3435db97c3f70f60d9193c2c46a",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-bf7938bd1d77/Ben10-Alien-Clash-Online.apk"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 200,
+      "digest": "sha256:2babfba8525df0fc716b367c061db2d673bf96f5ee4a267476e3713141750c4a",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-bf7938bd1d77/SHA256SUMS.txt"
+    }
+  ],
+  "full_art_review_remaining": [
+    "Crashhopper",
+    "Ball Weevil",
+    "Astrodactyl",
+    "Buzzshock",
+    "Spidermonkey",
+    "Dark Matter"
+  ]
+}

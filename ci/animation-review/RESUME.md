@@ -9,3 +9,8 @@ Next repair batch: **Crashhopper49, BallWeevil50, Astrodactyl51, Buzzshock21**. 
 For each character: use identity reference; save exact prompts and raw accepted sources; pack 32 body-only native cels plus matching portrait; register actual species emitters and correct physical reference sizes. Reject clipped poses. Run native source-pixel, margin, hash and emitter checks; 240 actual native draws in both facings; inspect browser. Mark verified only after all checks pass, regenerate progress and commit the checkpoint to animation-review before beginning another character. Do not erase intentional forms such as Cannonbolt rolling, Goop stretching or Brainstorm shell opening.
 
 Release data is in last-release.json. Do not claim a new APK is available until the main build and release publication succeed. Live multiplayer Worker deployment needs owner Cloudflare credentials.
+
+
+## v12.6 locomotion checkpoint
+
+All92 alien and50 villain movement sequences now have saved native/runtime analysis in `ci/locomotion126/`. Release evidence and verified download links are in `ci/locomotion126/last-release.json`. The full-art review's six remaining issues are unchanged; do not confuse movement verification with complete new action art. Keep the v12.6 cadence/flight fixes from main when resuming the older animation-review branch. No new character drawings were generated for this movement pass.
