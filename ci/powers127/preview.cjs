@@ -1,7 +1,7 @@
 const fs=require('fs'),vm=require('vm'),{createCanvas}=require('@napi-rs/canvas'),{harness,declaration}=require('../cel-harness.cjs');
 (async()=>{
  const b=harness(),run=s=>vm.runInContext(s,b);await run('allAlienPosesReady');
- run(fs.readFileSync('web/art.js','utf8'));run('const CLASSIC_COLORS=aliens.map(a=>a.light);');
+ run(fs.readFileSync('web/art.js','utf8'));
  const game=fs.readFileSync('web/game.js','utf8');for(const name of ['drawEffect','drawShot','updateEffects','segmentRect','overlap','hitboxCircle'])run(declaration(game,name));
  for(const file of ['expansion-effects.js','alien-force-effects.js','next20-effects.js','cartoon-power-effects.js','ability-animations.js','combat-choreography.js','species-animation-fixes.js','crashhopper-guard127.js','requested-powers127.js'])run(fs.readFileSync('web/'+file,'utf8'));
  const rows=[[23,'skill1'],[23,'skill2'],[28,'skill2'],[30,'skill1'],[30,'skill2'],[30,'ultimate'],[34,'skill1'],[40,'skill2'],[40,'ultimate'],[49,'skill0'],[49,'skill1'],[49,'skill2'],[49,'ultimate'],[54,'skill0'],[54,'skill2'],[54,'ultimate'],[66,'skill0'],[66,'skill1'],[66,'skill2'],[66,'ultimate'],[49,'guard']];

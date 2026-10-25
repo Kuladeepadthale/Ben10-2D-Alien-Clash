@@ -46,7 +46,7 @@ function spawnAttack(f,cast,index){const s=cast.cfg,o=other(f),col=(typeof power
  return;
  }
  // Attached elastic and tongue strikes reach the point captured at button press.
- if(!Number.isInteger(f.villain)&&(f.id===30&&cast.key==='skill1'||f.id===54&&cast.key==='skill0')){
+ if(s.kind==='melee'&&!Number.isInteger(f.villain)&&(f.id===30&&cast.key==='skill1'||f.id===54&&cast.key==='skill0')){
   const endX=cast.targetX??f.x+dir*s.range,endY=cast.targetY??originY,startX=f.x+dir*20;
   effects.push({...shotBase,kind:'beam',attachedStrike127:true,x:startX,y:originY,dir,rayDir:(endX-startX)*dir<0?-dir:dir,length:Math.abs(endX-startX),endY,r:f.id===54?8:14,life:.14,maxLife:.14,hit:false});return;
  }

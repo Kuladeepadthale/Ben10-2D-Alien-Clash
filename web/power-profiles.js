@@ -10,7 +10,7 @@ function powerProfileFor(f,action){
 function powerPoseIndex(f,v,count){
  const wind=Math.max(.001,v.cfg.windup),active=['rush','pounce'].includes(v.cfg.kind)?Math.max(.42,v.cfg.duration||.08):(v.cfg.castDuration??(v.cfg.duration||.08));
  if(Number.isInteger(f.villain))return v.elapsed<wind?0:1;
- if(!Number.isInteger(f.villain)&&v.key!=='normal'&&([30,34,40,49,54,66].includes(f.id)&&['rush','pounce'].includes(v.cfg.kind)||f.id===40&&v.key==='skill2')&&v.elapsed>=wind&&v.elapsed<wind+active){
+ if(!Number.isInteger(f.villain)&&v.key!=='normal'&&([30,34,40,49,54,66].includes(f.id)&&['rush','pounce'].includes(v.cfg.kind)||f.id===40&&v.key==='skill2'||f.id===66&&v.key==='skill1')&&v.elapsed>=wind&&v.elapsed<wind+active){
   const age=v.elapsed-wind,phase=(v.cfg.ticks>1?age/active*v.cfg.ticks:age*9)%1;
   return count===2?(phase<.62?1:0):phase<.18?0:phase<.7?1:Math.min(2,count-1);
  }
