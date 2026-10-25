@@ -25,3 +25,5 @@ All original native sprite/standing pixels, palettes, combat move definitions, m
 - Full existing release checks remain enabled. No physical Android device playtest is available. This is game animation inspired by the series, not extracted television footage or a claim of identical series animation.
 
 Keep checkpoints and change only characters with a new demonstrated issue. Run python3 ci/locomotion126/audit.py then node ci/locomotion126/verify.cjs after restoring actual verified assets. Release publication must succeed before announcing a new APK link.
+
+Release verification: run 40198064636 passed 73 of 74 full-suite commands. The single remaining failure was an older Astrodactyl overdrive assertion that omitted the newly explicit hover offset. Its expected Y position now uses the same body lift. A guarded focused rerun verifies that game/server/art/movement files are identical to that baseline, checks its recorded pass/failure result, and reruns the corrected power check, all power origins, hover continuity, all 142 locomotion draws, facing and dash checks. The 73 unchanged checks are reused, not reported as fresh reruns.

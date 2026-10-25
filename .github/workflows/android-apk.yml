@@ -66,11 +66,36 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python3 ci/restore-verified-art.py
       - name: Verify all 92 action sets and game controls
-        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]') && !contains(github.event.head_commit.message, '[package116]')"
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]') && !contains(github.event.head_commit.message, '[package116]') && !contains(github.event.head_commit.message, '[locomotion126-check]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
           python3 ci/run-release-checks.py
+      - name: Verify hover-aware power assertion against completed 73-check baseline
+        if: contains(github.event.head_commit.message, '[locomotion126-check]')
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --depth=1 origin d1eebfcda04eb88b32322779dbb0eab96ae71f39
+          gh api repos/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/jobs/121183185252/logs > /tmp/locomotion126-baseline.log
+          python3 - <<'PYGUARD'
+          import pathlib,subprocess,re
+          log=pathlib.Path('/tmp/locomotion126-baseline.log').read_text()
+          assert 'Release checks: 73 passed; 1 failed.' in log
+          assert re.findall(r'FAILED ([^\r\n]+)',log)==['node ci/check-clean-powers.cjs']
+          changed=set(subprocess.check_output(['git','diff','--name-only','d1eebfcda04eb88b32322779dbb0eab96ae71f39','HEAD'],text=True).splitlines())
+          allowed={'ci/check-clean-powers.cjs','.github/workflows/android-apk.yml','ci/locomotion126/REPORT.md'}
+          assert changed<=allowed,changed-allowed
+          print('All game, server, art and movement code exactly match the baseline with 73 passed checks. Only the hover-aware expected height and release verification changed.')
+          PYGUARD
+          node ci/check-clean-powers.cjs
+          node ci/check-power-origins.cjs
+          node ci/check-reviewed-hover.cjs
+          node ci/locomotion126/verify.cjs
+          node ci/check-facing.cjs
+          node ci/check-footwork-dash.cjs
+          for script in web/*.js; do node --check "$script"; done
       - name: Verify focused squad-screen correction after passed full suite
         if: contains(github.event.head_commit.message, '[squad-ui-only]')
         env:
