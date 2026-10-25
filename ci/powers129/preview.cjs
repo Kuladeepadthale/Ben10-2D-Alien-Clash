@@ -25,3 +25,5 @@ const fs=require('fs'),vm=require('vm'),{createCanvas}=require('@napi-rs/canvas'
   if(row%5===4||row===rows.length-1){const out='ci/powers129/preview-'+Math.floor(row/5)+'.webp';fs.writeFileSync(out,sheet.toBuffer('image/webp'));console.log('Saved '+out);}
  }
 })().catch(e=>{console.error(e);process.exit(1)});
+
+// Review checkpoint: all 22 requested powers.
