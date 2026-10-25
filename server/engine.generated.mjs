@@ -232,7 +232,7 @@ function locomotionVillainFrame126(f,d,state,t){
 }
 
 function locomotionMoving126(f){
- const s=locomotionSamples126.get(f);if(!s||!['idle','walk'].includes(s.state))return false;
+ let s=locomotionSamples126.get(f);if(!s){locomotionTravel126(f,'idle');s=locomotionSamples126.get(f);}if(!['idle','walk'].includes(s.state))return false;
  const distance=Math.abs(f.x-s.x);return distance>.05&&distance<=Math.max(80,(f.config?.speed||aliens[f.id]?.speed||300)*.25);
 }
 

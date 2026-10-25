@@ -7,7 +7,7 @@ const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),{harness
  const cv=createCanvas(1280,8*165),ctx=cv.getContext('2d');ctx.fillStyle='#14222c';ctx.fillRect(0,0,cv.width,cv.height);
  let draws=0;
  for(let id=0;id<92;id++){
-  b.id=id;run('celPinned=new Set([id]);');await run('celEnsure(id)');const indices=new Set();
+  b.id=id;run('cold={id,x:640,y:510,hp:100,dir:1};');assert.equal(run('celState(cold)'),'idle');run('cold.x+=3');assert.equal(run('celState(cold)'),'walk','First idle/portrait fallback must initialize snapshot movement tracking');run('celPinned=new Set([id]);');await run('celEnsure(id)');const indices=new Set();
   for(const dir of [1,-1]){run(`player=make(${id},640,${dir},true);enemy=make(2,1000,-1);f=player;mode='fight';time=0;celPhase(f,'idle',time);`);
    // Isolated short taps must advance the pose instead of discarding every first moving sample.
    for(let tap=0;tap<24;tap++){run('move(f,f.dir,1/60);time+=1/60;');indices.add(run("celPhase(f,'walk',time).frame"));run('drawAlien(ctx,f,time);f.moving=false;time+=.05;celPhase(f,\'idle\',time);');draws++;}
