@@ -66,11 +66,42 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python3 ci/restore-verified-art.py
       - name: Verify all 92 action sets and game controls
-        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]') && !contains(github.event.head_commit.message, '[package116]') && !contains(github.event.head_commit.message, '[locomotion126-check]')"
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]') && !contains(github.event.head_commit.message, '[package116]') && !contains(github.event.head_commit.message, '[locomotion126-check]') && !contains(github.event.head_commit.message, '[powers127-ui]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
           python3 ci/run-release-checks.py
+      - name: Verify Goop ability-card reach against completed 75-check combat baseline
+        if: contains(github.event.head_commit.message, '[powers127-ui]')
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --depth=1 origin 8dd43ce0e7a8e9f8fabdc2c50aa7d23936e8e50a
+          gh api --allow-escape-sequences repos/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/jobs/121211876292/logs > /tmp/powers127-baseline.log
+          python3 - <<'PYGUARD'
+          import pathlib,subprocess,re
+          baseline='8dd43ce0e7a8e9f8fabdc2c50aa7d23936e8e50a'
+          log=re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]','',pathlib.Path('/tmp/powers127-baseline.log').read_text())
+          assert 'Release checks: 75 passed; 0 failed.' in log
+          assert not re.findall(r'FAILED ([^\r\n]+)',log)
+          changed=set(subprocess.check_output(['git','diff','--name-only',baseline,'HEAD'],text=True).splitlines())
+          assert changed<={'web/requested-powers127.js','ci/powers127/verify.cjs','.github/workflows/android-apk.yml','ci/powers127/REPORT.md'},changed
+          def old(path):return subprocess.check_output(['git','show',baseline+':'+path],text=True)
+          path='web/requested-powers127.js'
+          added="// Match the ability card to the shared combat cast's approved elastic reach.\naliens[30].skills[1].range=390;\n"
+          assert pathlib.Path(path).read_text()==old(path).replace('const requested127Ids=',added+'const requested127Ids=',1)
+          path='ci/powers127/verify.cjs'
+          added=" assert.equal(run('aliens[30].skills[1].range'),390,'Ability card reach must match the shared elastic cast');\n"
+          assert pathlib.Path(path).read_text()==old(path).replace(' const canvas=createCanvas',added+' const canvas=createCanvas',1)
+          print('Verified all combat, server, art and animation algorithms exactly match the passed 75-check baseline. Only ability-card metadata and its assertion changed.')
+          PYGUARD
+          node ci/powers127/verify.cjs
+          node ci/check-facing.cjs
+          node ci/check-target-snapshot.cjs
+          node ci/check-power-origins.cjs
+          node ci/check-clean-powers.cjs
+          for script in web/*.js; do node --check "$script"; done
       - name: Verify hover-aware power assertion against completed 73-check baseline
         if: contains(github.event.head_commit.message, '[locomotion126-check]')
         env:

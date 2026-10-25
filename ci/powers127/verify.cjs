@@ -8,6 +8,7 @@ const {createCanvas}=require('@napi-rs/canvas');
  for(const name of ['line','oval','path'])run(declaration(fs.readFileSync('web/art.js','utf8'),name));
  const game=fs.readFileSync('web/game.js','utf8');for(const name of ['drawEffect','drawShot','updateEffects','segmentRect','overlap','hitboxCircle'])run(declaration(game,name));
  for(const file of ['cartoon-power-effects.js','ability-animations.js','combat-choreography.js','species-animation-fixes.js','crashhopper-guard127.js','requested-powers127.js'])run(fs.readFileSync('web/'+file,'utf8'));
+ assert.equal(run('aliens[30].skills[1].range'),390,'Ability card reach must match the shared elastic cast');
  const canvas=createCanvas(1280,640);b.ctx=canvas.getContext('2d');let draws=0,casts=0;
  for(const [raw,keys]of Object.entries(selected)){
   const id=Number(raw);b.id=id;run('celCache.clear();celPinned=new Set([id]);');await run('celEnsure(id)');

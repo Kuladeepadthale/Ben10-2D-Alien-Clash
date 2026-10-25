@@ -1,6 +1,8 @@
 'use strict';
 // Species-specific presentation. Native body artwork is never stretched or crossfaded.
 // Damage, cast snapshots, facing and cooldowns belong exclusively to game.js.
+// Match the ability card to the shared combat cast's approved elastic reach.
+aliens[30].skills[1].range=390;
 const requested127Ids=new Set([23,28,30,34,40,49,54,66]);
 const requested127PhaseBase=celPhase,requested127DrawBase=drawAlien;
 const requested127EffectBase=drawEffect,requested127ShotBase=drawShot;
