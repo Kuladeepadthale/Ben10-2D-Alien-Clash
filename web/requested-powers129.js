@@ -27,7 +27,7 @@ function powers129Tail(ctx,f,s){
  const at=drawnAlienEmitter(f,s.v),u=s.age<0?powers129Clamp((s.v.elapsed/s.v.cfg.windup-.5)*2):s.age<s.duration?1:1-powers129Clamp((s.age-s.duration)/s.v.cfg.recovery);
  if(!at||u<.01)return;const tx=s.v.targetX??f.x+s.dir*s.v.cfg.range,endX=at.x+(tx-at.x)*u,endY=at.y+Math.sin(u*Math.PI)*12;
  const pts=[];for(let j=0;j<=24;j++){const t=j/24;pts.push([at.x+(endX-at.x)*t,at.y+(endY-at.y)*t-Math.sin(t*Math.PI)*18*u]);}
- line(ctx,pts,'#3d5547',9);line(ctx,pts,'#b1c777',5);path(ctx,[[endX-s.dir*8,endY-5],[endX+s.dir*10,endY],[endX-s.dir*8,endY+5]],'#515b48',null);
+ line(ctx,pts,'#46306d',9);line(ctx,pts,'#8d4abb',5);path(ctx,[[endX-s.dir*8,endY-5],[endX+s.dir*10,endY],[endX-s.dir*8,endY+5]],'#6b368b',null);
 }
 function powers129Moustache(ctx,f,s){
  const h=body(f).h,root=drawnAlienEmitter(f,s.v)||{x:f.x+s.dir*h*.13,y:f.y-h*.61},beat=s.active?Math.sin(s.phase*Math.PI):s.age<0?powers129Clamp(s.v.elapsed/s.v.cfg.windup)*.2:0;

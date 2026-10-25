@@ -534,7 +534,13 @@
             89
           ]
         },
-        "sourcePixels": 23078
+        "sourcePixels": 23078,
+        "sourceRect": [
+          0,
+          0,
+          368,
+          184
+        ]
       },
       {
         "sheet": 2,
@@ -557,7 +563,13 @@
             102
           ]
         },
-        "sourcePixels": 22728
+        "sourcePixels": 22728,
+        "sourceRect": [
+          0,
+          0,
+          368,
+          204
+        ]
       },
       {
         "sheet": 2,
@@ -580,7 +592,13 @@
             141
           ]
         },
-        "sourcePixels": 22304
+        "sourcePixels": 22304,
+        "sourceRect": [
+          0,
+          0,
+          360,
+          254
+        ]
       },
       {
         "sheet": 2,
@@ -603,7 +621,13 @@
             119
           ]
         },
-        "sourcePixels": 20566
+        "sourcePixels": 20566,
+        "sourceRect": [
+          0,
+          0,
+          199,
+          219
+        ]
       },
       {
         "sheet": 2,
@@ -626,7 +650,13 @@
             118
           ]
         },
-        "sourcePixels": 25126
+        "sourcePixels": 25126,
+        "sourceRect": [
+          0,
+          0,
+          250,
+          228
+        ]
       },
       {
         "sheet": 2,
@@ -649,7 +679,13 @@
             114
           ]
         },
-        "sourcePixels": 23138
+        "sourcePixels": 23138,
+        "sourceRect": [
+          0,
+          0,
+          357,
+          216
+        ]
       },
       {
         "sheet": 2,
@@ -672,7 +708,13 @@
             125
           ]
         },
-        "sourcePixels": 22852
+        "sourcePixels": 22852,
+        "sourceRect": [
+          0,
+          0,
+          396,
+          253
+        ]
       },
       {
         "sheet": 2,
@@ -695,7 +737,13 @@
             129
           ]
         },
-        "sourcePixels": 21011
+        "sourcePixels": 21011,
+        "sourceRect": [
+          0,
+          0,
+          311,
+          253
+        ]
       },
       {
         "sheet": 3,
@@ -718,7 +766,13 @@
             129
           ]
         },
-        "sourcePixels": 21011
+        "sourcePixels": 21011,
+        "sourceRect": [
+          0,
+          0,
+          311,
+          253
+        ]
       },
       {
         "sheet": 3,
@@ -741,7 +795,13 @@
             81
           ]
         },
-        "sourcePixels": 19210
+        "sourcePixels": 19210,
+        "sourceRect": [
+          0,
+          0,
+          373,
+          145
+        ]
       },
       {
         "sheet": 3,
@@ -764,7 +824,13 @@
             98
           ]
         },
-        "sourcePixels": 20349
+        "sourcePixels": 20349,
+        "sourceRect": [
+          0,
+          0,
+          377,
+          208
+        ]
       },
       {
         "sheet": 3,
@@ -787,7 +853,13 @@
             92
           ]
         },
-        "sourcePixels": 19449
+        "sourcePixels": 19449,
+        "sourceRect": [
+          0,
+          0,
+          352,
+          172
+        ]
       },
       {
         "sheet": 3,
@@ -804,7 +876,13 @@
         "referenceHeight": 224,
         "source": "native-rush129",
         "cell": 12,
-        "sourcePixels": 21667
+        "sourcePixels": 21667,
+        "sourceRect": [
+          0,
+          0,
+          331,
+          234
+        ]
       },
       {
         "sheet": 3,
@@ -821,7 +899,13 @@
         "referenceHeight": 224,
         "source": "native-rush129",
         "cell": 13,
-        "sourcePixels": 22600
+        "sourcePixels": 22600,
+        "sourceRect": [
+          0,
+          0,
+          296,
+          252
+        ]
       },
       {
         "sheet": 3,
@@ -838,7 +922,13 @@
         "referenceHeight": 224,
         "source": "native-rush129",
         "cell": 14,
-        "sourcePixels": 18224
+        "sourcePixels": 18224,
+        "sourceRect": [
+          0,
+          0,
+          382,
+          103
+        ]
       },
       {
         "sheet": 3,
@@ -855,7 +945,13 @@
         "referenceHeight": 224,
         "source": "native-rush129",
         "cell": 15,
-        "sourcePixels": 21911
+        "sourcePixels": 21911,
+        "sourceRect": [
+          0,
+          0,
+          358,
+          212
+        ]
       }
     ],
     "clips": {
@@ -926,8 +1022,8 @@
       {
         "frame": 16,
         "pixel": [
-          235,
-          73
+          251,
+          89
         ],
         "offset": [
           -15.134,
@@ -937,8 +1033,8 @@
       {
         "frame": 17,
         "pixel": [
-          226,
-          86
+          242,
+          102
         ],
         "offset": [
           67.598,
@@ -948,8 +1044,8 @@
       {
         "frame": 18,
         "pixel": [
-          220,
-          125
+          236,
+          141
         ],
         "offset": [
           -40.357,
@@ -961,8 +1057,8 @@
       {
         "frame": 19,
         "pixel": [
-          108,
-          103
+          124,
+          119
         ],
         "offset": [
           -7.062,
@@ -972,8 +1068,8 @@
       {
         "frame": 20,
         "pixel": [
-          134,
-          102
+          150,
+          118
         ],
         "offset": [
           13.116,
@@ -983,8 +1079,8 @@
       {
         "frame": 21,
         "pixel": [
-          229,
-          98
+          245,
+          114
         ],
         "offset": [
           -29.259,
@@ -996,33 +1092,33 @@
       {
         "frame": 22,
         "pixel": [
-          387,
-          109
+          402,
+          125
         ],
         "offset": [
-          175.554,
+          174.545,
           -137.214
         ]
       },
       {
         "frame": 23,
         "pixel": [
-          302,
-          113
+          317,
+          129
         ],
         "offset": [
-          67.598,
+          66.589,
           -133.179
         ]
       },
       {
         "frame": 24,
         "pixel": [
-          302,
-          113
+          317,
+          129
         ],
         "offset": [
-          67.598,
+          66.589,
           -133.179
         ]
       }
@@ -1031,8 +1127,8 @@
       {
         "frame": 25,
         "pixel": [
-          229,
-          65
+          245,
+          81
         ],
         "offset": [
           23.205,
@@ -1042,8 +1138,8 @@
       {
         "frame": 26,
         "pixel": [
-          192,
-          82
+          208,
+          98
         ],
         "offset": [
           -2.018,
@@ -1053,8 +1149,8 @@
       {
         "frame": 27,
         "pixel": [
-          224,
-          76
+          240,
+          92
         ],
         "offset": [
           -23.205,
@@ -1070,6 +1166,7 @@
   "notes": [
     "Reference: existing movement-0 artwork, not the old red-stripe combat body.",
     "All16 replacement combat/state frames use one referenceHeight=224. Natural crouch and KO heights are retained.",
-    "No per-pose body stretching, crossfade or generic punch fallback."
+    "No per-pose body stretching, crossfade or generic punch fallback.",
+    "sourceRect records local unpadded native crop coordinates; 16px transparent gutters do not alter source pixels. Canonical power_phases match final opaque markers for restoration."
   ]
 }

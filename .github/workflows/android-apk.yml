@@ -103,11 +103,50 @@ jobs:
           node ci/check-testing-flow.cjs
           for script in web/*.js; do node --check "$script"; done
       - name: Verify all 92 action sets and game controls
-        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]') && !contains(github.event.head_commit.message, '[package116]') && !contains(github.event.head_commit.message, '[locomotion126-check]') && !contains(github.event.head_commit.message, '[powers127-ui]') && !contains(github.event.head_commit.message, '[walk128]')"
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]') && !contains(github.event.head_commit.message, '[package116]') && !contains(github.event.head_commit.message, '[locomotion126-check]') && !contains(github.event.head_commit.message, '[powers127-ui]') && !contains(github.event.head_commit.message, '[walk128]') && !contains(github.event.head_commit.message, '[powers129-native]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
           python3 ci/run-release-checks.py
+      - name: Verify corrected native Rush metadata and Chamalien palette against regression baseline
+        if: contains(github.event.head_commit.message, '[powers129-native]')
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --depth=1 origin 8363de5a172d82e81eea7181d3563e23cd6b4ebf
+          gh api --allow-escape-sequences repos/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/jobs/121253747478/logs > /tmp/powers129-baseline.log
+          python3 - <<'PYCOLOUR'
+          import pathlib,subprocess,re,json
+          baseline='8363de5a172d82e81eea7181d3563e23cd6b4ebf'
+          log=re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]','',pathlib.Path('/tmp/powers129-baseline.log').read_text())
+          assert 'Release checks: 74 passed; 3 failed.' in log
+          assert set(re.findall(r'FAILED ([^\r\n]+)',log))=={'python3 ci/check-reviewed-assets.py','python3 ci/check-full-poses.py','python3 ci/check-profile-pixels.py'}
+          changed=set(subprocess.check_output(['git','diff','--name-only',baseline,'HEAD'],text=True).splitlines())
+          assert all(p in {'web/requested-powers129.js','.github/workflows/android-apk.yml','ci/animation-review/characters/rush/revision.json'} or p.startswith('ci/powers129/') for p in changed),changed
+          path='web/requested-powers129.js'
+          old=subprocess.check_output(['git','show',baseline+':'+path],text=True)
+          expected=old.replace("line(ctx,pts,'#3d5547',9);line(ctx,pts,'#b1c777',5)","line(ctx,pts,'#46306d',9);line(ctx,pts,'#8d4abb',5)").replace("'#515b48',null)","'#6b368b',null)")
+          assert pathlib.Path(path).read_text()==expected
+          path='ci/animation-review/characters/rush/revision.json'
+          expected=json.loads(subprocess.check_output(['git','show',baseline+':'+path],text=True))
+          for f in expected['character']['frames'][16:]:f['sourceRect']=[0,0,f['rect'][2]-32,f['rect'][3]-32]
+          profiles=subprocess.check_output(['git','show',baseline+':web/power-profiles.js'],text=True).split('const REVIEWED_NATIVE_PHASES=',1)[1]
+          expected['power_phases']=json.JSONDecoder().raw_decode(profiles)[0]['86']
+          expected['notes'].append('sourceRect records local unpadded native crop coordinates; 16px transparent gutters do not alter source pixels. Canonical power_phases match final opaque markers for restoration.')
+          assert json.loads(pathlib.Path(path).read_text())==expected
+          print('74 regression commands passed in the baseline. All source art, simulation, server, saves and timing are unchanged. Only canonical Rush crop/emitter metadata and three Chamalien tail colours changed; all three failed asset checks run below.')
+          PYCOLOUR
+          python3 ci/check-reviewed-assets.py
+          python3 ci/check-full-poses.py
+          python3 ci/check-profile-pixels.py
+          node ci/powers129/verify.cjs
+          node ci/check-expansion111.cjs
+          node ci/check-reviewed-character.cjs 86
+          node ci/check-cels.cjs
+          node ci/check-clean-powers.cjs
+          node ci/check-power-origins.cjs
+          for script in web/*.js; do node --check "$script"; done
       - name: Verify Goop ability-card reach against completed 75-check combat baseline
         if: contains(github.event.head_commit.message, '[powers127-ui]')
         env:
