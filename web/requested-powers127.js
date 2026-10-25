@@ -28,7 +28,7 @@ celPhase=function(f,state,t,portrait=false){
  const d=CEL_DATA.characters[f.id],key=s.v.ultimate?'ultimate':s.v.key;
  if(f.id===49&&s.v.cfg.kind==='leapslam'){const frames=d.clips.jump,index=s.p<.12?1:s.p<.55?2:3;return{frame:d.frames[frames[Math.min(index,frames.length-1)]],state,index};}
  // Each rush keeps its OWN native action, rather than falling back to a generic punch.
- if(['rush','pounce'].includes(s.v.cfg.kind)&&[30,34,40,49,54,66].includes(f.id)||f.id===40&&key==='skill2'){
+ if(['rush','pounce'].includes(s.v.cfg.kind)&&[30,34,40,49,54,66].includes(f.id)||f.id===40&&key==='skill2'||f.id===66&&key==='skill1'){
   const frames=d.clips[key];if(!frames?.length)return picked;
   const phase=s.v.cfg.ticks>1?s.phase:(s.age*9)%1;
   const index=frames.length===2?(phase<.62?1:0):phase<.18?0:phase<.7?1:Math.min(2,frames.length-1);
