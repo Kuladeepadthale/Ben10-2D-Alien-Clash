@@ -36,7 +36,8 @@ function celPhase(f,state,t,portrait=false){const d=CEL_DATA.characters[f.id];le
  if(state==='walk'){
   // Travel-based cadence. The cell exporter records soles; artwork owns the actual limb motion.
   const profile=CARTOON_GAITS[f.id],h=aliens[f.id].renderHeight*aliens[f.id].scale;
-  let phase=((travel126/(h*profile.stride))%1+1)%1;if(profile.skate)phase=cartoonSkatePhase(phase);index=Math.floor(phase*frames.length)%frames.length;
+  const stride128=typeof walk128Stride==='function'?walk128Stride(f,profile.stride):profile.stride;
+  let phase=((travel126/(h*stride128))%1+1)%1;if(profile.skate)phase=cartoonSkatePhase(phase);index=Math.floor(phase*frames.length)%frames.length;
  }else if(f.cast&&['normal','skill0','skill1','skill2','ultimate'].includes(state)){
   const v=f.cast,wind=Math.max(.001,v.cfg.windup),active=['rush','pounce'].includes(v.cfg.kind)?Math.max(.42,v.cfg.duration||.08):(v.cfg.castDuration??(v.cfg.duration||.08)),recovery=Math.max(.001,v.cfg.recovery);
   if(v.elapsed<wind)index=0;
