@@ -22,7 +22,7 @@ for c in chars:
   fy,fx=np.where(mask);footspans.append((float(np.percentile(fx,95)-np.percentile(fx,5))/rr) if len(fx)>8 else .3)
  current=old[str(id)]['stride'];special=id in [11,28,50,72,73,75,79,80,84] or any(v in g.get('style','').lower() for v in ['quadruped','four-legged','scuttle','gorilla','fluid','segmented'])
  measured=max(.44,min(1.15,2*float(np.percentile(footspans,75))))
- target=current if special else round(max(current*.68,min(current*1.05,measured)),6)
+ target=current if special else round(max(current*.68,min(current*1.18,measured)),6)
  if abs(target-current)/current<.06:target=current
  centre=float(np.median(centres));offsets=[round(max(-.06,min(.06,centre-v)),6) for v in centres]
  profiles[str(id)]={'stride':target,'offsets':offsets,'nativeFrames':len(c['clips']['walk'])}
