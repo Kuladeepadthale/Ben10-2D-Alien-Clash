@@ -1,0 +1,1390 @@
+{
+  "records": [
+    {
+      "id": 0,
+      "name": "Heatblast",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 1,
+      "name": "Four Arms",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 2,
+      "name": "Diamondhead",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 3,
+      "name": "XLR8",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 4,
+      "name": "Wildmutt",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 5,
+      "name": "Grey Matter",
+      "status": "native-ground-refit",
+      "oldStride": 0.94,
+      "stride": 0.94,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.0,
+        0.010127,
+        0.007595,
+        -0.005063,
+        -0.007595,
+        -0.002532,
+        0.012658,
+        0.0
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 6,
+      "name": "Upgrade",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 7,
+      "name": "Stinkfly",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 8,
+      "name": "Ripjaws",
+      "status": "native-ground-refit",
+      "oldStride": 0.799,
+      "stride": 0.799,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.008065,
+        0.003456,
+        0.008065,
+        -0.003456,
+        -0.00576,
+        0.001152,
+        0.003456,
+        -0.001152
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 9,
+      "name": "Ghostfreak",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 10,
+      "name": "Cannonbolt",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 11,
+      "name": "Wildvine",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.00905,
+        0.00905,
+        0.002262,
+        -0.002262,
+        0.002262,
+        0.013575,
+        -0.011312,
+        -0.011312
+      ],
+      "speciesStridePreserved": true
+    },
+    {
+      "id": 12,
+      "name": "Blitzwolfer",
+      "status": "native-ground-refit",
+      "oldStride": 0.842084,
+      "stride": 0.842084,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.009454,
+        0.003151,
+        -0.003151,
+        -0.007353,
+        -0.013655,
+        0.013655,
+        0.013655,
+        -0.013655
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 13,
+      "name": "Snare-oh",
+      "status": "native-ground-refit",
+      "oldStride": 0.864541,
+      "stride": 0.864541,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.013793,
+        -0.011494,
+        -0.002299,
+        0.006897,
+        -0.013793,
+        0.006897,
+        0.02069,
+        0.002299
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 14,
+      "name": "Frankenstrike",
+      "status": "native-ground-refit",
+      "oldStride": 0.78,
+      "stride": 0.78,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.00116,
+        0.00116,
+        0.0058,
+        -0.00348,
+        0.00116,
+        0.0058,
+        -0.00116,
+        -0.0058
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 15,
+      "name": "Upchuck",
+      "status": "native-ground-refit",
+      "oldStride": 0.9,
+      "stride": 0.9,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.003571,
+        0.003571,
+        -0.00119,
+        0.00119,
+        -0.00119,
+        0.005952,
+        -0.005952,
+        0.00119
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 16,
+      "name": "Ditto",
+      "status": "native-ground-refit",
+      "oldStride": 0.9,
+      "stride": 0.9,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.00939,
+        0.00939,
+        -0.016432,
+        0.002347,
+        0.007042,
+        -0.004695,
+        0.011737,
+        -0.002347
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 17,
+      "name": "Eye Guy",
+      "status": "native-ground-refit",
+      "oldStride": 0.7055,
+      "stride": 0.7055,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.014706,
+        0.001131,
+        0.007919,
+        -0.014706,
+        0.012443,
+        -0.001131,
+        0.005656,
+        -0.005656
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 18,
+      "name": "Way Big",
+      "status": "native-ground-refit",
+      "oldStride": 0.782,
+      "stride": 0.782,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.008316,
+        -0.006237,
+        0.006237,
+        0.004158,
+        -0.012474,
+        0.0,
+        0.012474,
+        0.0
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 19,
+      "name": "Arctiguana",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 20,
+      "name": "Spitter",
+      "status": "native-ground-refit",
+      "oldStride": 0.78,
+      "stride": 0.78,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.002469,
+        0.0,
+        0.0,
+        -0.002469,
+        -0.004938,
+        0.002469,
+        0.002469,
+        0.002469
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 21,
+      "name": "Buzzshock",
+      "status": "native-ground-refit",
+      "oldStride": 0.777515,
+      "stride": 0.777515,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.001166,
+        -0.01049,
+        0.005828,
+        -0.01049,
+        -0.003497,
+        0.001166,
+        0.001166,
+        0.01049
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 22,
+      "name": "Swampfire",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.0,
+        0.0,
+        0.00216,
+        -0.00432,
+        -0.008639,
+        0.00432,
+        0.00216,
+        -0.00216
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 23,
+      "name": "Echo Echo",
+      "status": "native-ground-refit",
+      "oldStride": 0.7225,
+      "stride": 0.7225,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.001109,
+        -0.003326,
+        -0.001109,
+        0.001109,
+        0.003326,
+        0.003326,
+        -0.007761,
+        -0.003326
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 24,
+      "name": "Humungousaur",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 25,
+      "name": "Jetray",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 26,
+      "name": "Big Chill",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 27,
+      "name": "Chromastone",
+      "status": "native-ground-refit",
+      "oldStride": 0.697,
+      "stride": 0.697,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.001062,
+        0.011677,
+        0.007431,
+        -0.001062,
+        0.001062,
+        -0.003185,
+        0.009554,
+        -0.007431
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 28,
+      "name": "Brainstorm",
+      "status": "native-ground-refit",
+      "oldStride": 0.72,
+      "stride": 0.72,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.01108,
+        0.00831,
+        0.022161,
+        -0.00277,
+        -0.00554,
+        0.00277,
+        0.00277,
+        -0.00554
+      ],
+      "speciesStridePreserved": true
+    },
+    {
+      "id": 29,
+      "name": "Spidermonkey",
+      "status": "native-ground-refit",
+      "oldStride": 0.845879,
+      "stride": 0.845879,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.014184,
+        0.009456,
+        0.007092,
+        -0.004728,
+        0.002364,
+        0.002364,
+        -0.002364,
+        -0.01182
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 30,
+      "name": "Goop",
+      "status": "native-ground-refit",
+      "oldStride": 0.92,
+      "stride": 0.92,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.002257,
+        0.009029,
+        -0.002257,
+        -0.011287,
+        -0.013544,
+        0.004515,
+        -0.015801,
+        0.002257
+      ],
+      "speciesStridePreserved": true
+    },
+    {
+      "id": 31,
+      "name": "Alien X",
+      "status": "native-ground-refit",
+      "oldStride": 0.734932,
+      "stride": 0.734932,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.001089,
+        0.003268,
+        0.005447,
+        0.001089,
+        -0.005447,
+        -0.005447,
+        0.003268,
+        -0.011983
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 32,
+      "name": "Rath",
+      "status": "native-ground-refit",
+      "oldStride": 0.88,
+      "stride": 0.88,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.001163,
+        0.001163,
+        0.001163,
+        -0.001163,
+        -0.012791,
+        0.003488,
+        -0.012791,
+        -0.005814
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 33,
+      "name": "Lodestar",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 34,
+      "name": "Nanomech",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 35,
+      "name": "Water Hazard",
+      "status": "native-ground-refit",
+      "oldStride": 0.835039,
+      "stride": 0.835039,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.003488,
+        0.002326,
+        0.013953,
+        -0.002326,
+        -0.002326,
+        0.004651,
+        0.004651,
+        -0.006977
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 36,
+      "name": "AmpFibian",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 37,
+      "name": "Armodrillo",
+      "status": "native-ground-refit",
+      "oldStride": 0.72,
+      "stride": 0.72,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.004831,
+        0.0,
+        0.009662,
+        -0.002415,
+        -0.002415,
+        0.0,
+        0.004831,
+        0.007246
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 38,
+      "name": "Terraspin",
+      "status": "native-ground-refit",
+      "oldStride": 0.68,
+      "stride": 0.68,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.0,
+        0.004819,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.00241,
+        0.0
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 39,
+      "name": "NRG",
+      "status": "native-ground-refit",
+      "oldStride": 0.7,
+      "stride": 0.7,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.001064,
+        -0.001064,
+        0.026596,
+        -0.009574,
+        -0.005319,
+        0.007447,
+        0.01383,
+        -0.001064
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 40,
+      "name": "Fasttrack",
+      "status": "native-ground-refit",
+      "oldStride": 1.02,
+      "stride": 1.02,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.006098,
+        0.006098,
+        -0.006098,
+        0.006098,
+        -0.01626,
+        -0.010163,
+        -0.01626,
+        0.010163
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 41,
+      "name": "Chamalien",
+      "status": "native-ground-refit",
+      "oldStride": 0.782,
+      "stride": 0.782,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.023393,
+        0.003358,
+        -0.000677,
+        0.000677,
+        -0.021236,
+        0.002217,
+        -0.01626,
+        0.001574
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 42,
+      "name": "Eatle",
+      "status": "native-ground-refit",
+      "oldStride": 0.646,
+      "stride": 0.646,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.001,
+        -0.003,
+        0.009,
+        -0.001,
+        -0.001,
+        -0.005,
+        0.021,
+        0.003
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 43,
+      "name": "Clockwork",
+      "status": "native-ground-refit",
+      "oldStride": 0.629,
+      "stride": 0.629,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.001596,
+        0.001596,
+        0.00266,
+        -0.003723,
+        0.026064,
+        -0.001596,
+        0.004787,
+        -0.001596
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 44,
+      "name": "Jury Rigg",
+      "status": "native-ground-refit",
+      "oldStride": 0.758639,
+      "stride": 0.758639,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.01828,
+        0.005376,
+        -0.005376,
+        0.003226,
+        -0.016129,
+        -0.003226,
+        0.005376,
+        0.009677
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 45,
+      "name": "Shocksquatch",
+      "status": "native-ground-refit",
+      "oldStride": 0.708363,
+      "stride": 0.708363,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.007143,
+        0.013265,
+        0.003061,
+        -0.003061,
+        -0.009184,
+        0.013265,
+        0.005102,
+        -0.007143
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 46,
+      "name": "Feedback",
+      "status": "native-ground-refit",
+      "oldStride": 0.765,
+      "stride": 0.765,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.0,
+        0.028866,
+        0.024742,
+        -0.002062,
+        0.0,
+        0.016495,
+        0.0,
+        0.0
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 47,
+      "name": "Bloxx",
+      "status": "native-ground-refit",
+      "oldStride": 0.82,
+      "stride": 0.82,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.001087,
+        0.01413,
+        0.005435,
+        -0.005435,
+        -0.001087,
+        0.009783,
+        -0.005435,
+        -0.001087
+      ],
+      "speciesStridePreserved": true
+    },
+    {
+      "id": 48,
+      "name": "Gravattack",
+      "status": "native-ground-refit",
+      "oldStride": 0.795826,
+      "stride": 0.795826,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.001111,
+        -0.001111,
+        0.003333,
+        0.001111,
+        0.003333,
+        -0.001111,
+        0.001111,
+        -0.003333
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 49,
+      "name": "Crashhopper",
+      "status": "native-ground-refit",
+      "oldStride": 1.05,
+      "stride": 1.05,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.0,
+        0.023041,
+        0.018433,
+        0.0,
+        0.009217,
+        -0.032258,
+        -0.013825,
+        -0.023041
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 50,
+      "name": "Ball Weevil",
+      "status": "native-ground-refit",
+      "oldStride": 0.92,
+      "stride": 0.92,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.007246,
+        0.007246,
+        0.0,
+        0.0,
+        0.007246,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "speciesStridePreserved": true
+    },
+    {
+      "id": 51,
+      "name": "Astrodactyl",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 52,
+      "name": "Toepick",
+      "status": "native-ground-refit",
+      "oldStride": 0.990621,
+      "stride": 0.990621,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.005277,
+        -0.007916,
+        0.01847,
+        0.0,
+        -0.005277,
+        0.0,
+        -0.007916,
+        0.002639
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 53,
+      "name": "Pesky Dust",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 54,
+      "name": "Bullfrag",
+      "status": "native-ground-refit",
+      "oldStride": 1.003,
+      "stride": 1.003,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.009132,
+        0.0,
+        0.0,
+        -0.011416,
+        0.02968,
+        0.004566,
+        -0.038813,
+        0.0
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 55,
+      "name": "Kickin' Hawk",
+      "status": "native-ground-refit",
+      "oldStride": 1.003,
+      "stride": 1.003,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.015258,
+        0.008216,
+        0.001174,
+        -0.001174,
+        -0.003521,
+        -0.001174,
+        0.003521,
+        -0.034038
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 56,
+      "name": "Whampire",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 57,
+      "name": "Gutrot",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.0,
+        0.002445,
+        0.0,
+        -0.002445,
+        0.0,
+        -0.007335,
+        0.002445,
+        -0.036675
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 58,
+      "name": "Atomix",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.011038,
+        0.015453,
+        0.011038,
+        0.015453,
+        -0.022075,
+        -0.02649,
+        -0.013245,
+        -0.011038
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 59,
+      "name": "Walkatrout",
+      "status": "native-ground-refit",
+      "oldStride": 0.7225,
+      "stride": 0.7225,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.0,
+        0.0,
+        0.0,
+        -0.002725,
+        -0.002725,
+        0.0,
+        0.0,
+        -0.002725
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 60,
+      "name": "The Worst",
+      "status": "native-ground-refit",
+      "oldStride": 0.939773,
+      "stride": 0.939773,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.0,
+        0.0,
+        -0.002331,
+        -0.011655,
+        0.002331,
+        0.0,
+        -0.002331,
+        0.0
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 61,
+      "name": "Mole-Stache",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.0,
+        0.00813,
+        -0.01084,
+        0.00542,
+        -0.00271,
+        0.00271,
+        -0.00271,
+        0.0
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 62,
+      "name": "Overflow",
+      "status": "native-ground-refit",
+      "oldStride": 0.93093,
+      "stride": 0.93093,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.001168,
+        0.01285,
+        0.017523,
+        -0.010514,
+        0.001168,
+        0.003505,
+        -0.050234,
+        -0.003505
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 63,
+      "name": "Gax",
+      "status": "native-ground-refit",
+      "oldStride": 1.000829,
+      "stride": 1.000829,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.004494,
+        -0.008989,
+        -0.002247,
+        0.002247,
+        0.006742,
+        -0.013483,
+        -0.035955,
+        0.01573
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 64,
+      "name": "Shock Rock",
+      "status": "native-ground-refit",
+      "oldStride": 0.975238,
+      "stride": 0.975238,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.014223,
+        0.016411,
+        -0.003282,
+        -0.02954,
+        0.00547,
+        -0.016411,
+        0.003282,
+        -0.003282
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 65,
+      "name": "Slapback",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.025672,
+        -0.003667,
+        -0.003667,
+        -0.028117,
+        0.003667,
+        0.006112,
+        -0.003667,
+        0.033007
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 66,
+      "name": "Surge",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 67,
+      "name": "Ultimate Humungousaur",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.012531,
+        0.027569,
+        -0.007519,
+        -0.027569,
+        0.007519,
+        -0.005013,
+        -0.035088,
+        0.005013
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 68,
+      "name": "Ultimate Big Chill",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 69,
+      "name": "Ultimate Echo Echo",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 70,
+      "name": "Ultimate Swampfire",
+      "status": "native-ground-refit",
+      "oldStride": 0.969307,
+      "stride": 0.969307,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.002278,
+        -0.015945,
+        -0.002278,
+        -0.020501,
+        0.004556,
+        0.020501,
+        0.002278,
+        -0.002278
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 71,
+      "name": "Ultimate Cannonbolt",
+      "status": "native-ground-refit",
+      "oldStride": 0.782785,
+      "stride": 0.782785,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.004535,
+        0.002268,
+        -0.006803,
+        0.006803,
+        -0.00907,
+        0.004535,
+        -0.002268,
+        -0.006803
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 72,
+      "name": "Ultimate Wildmutt",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.007177,
+        0.002392,
+        -0.002392,
+        -0.002392,
+        0.011962,
+        -0.011962,
+        0.026316,
+        0.016746
+      ],
+      "speciesStridePreserved": true
+    },
+    {
+      "id": 73,
+      "name": "Ultimate Spidermonkey",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.006383,
+        -0.014894,
+        0.019149,
+        0.02766,
+        -0.014894,
+        -0.010638,
+        0.006383,
+        -0.006383
+      ],
+      "speciesStridePreserved": true
+    },
+    {
+      "id": 74,
+      "name": "Ultimate Way Big",
+      "status": "native-ground-refit",
+      "oldStride": 0.7225,
+      "stride": 0.7225,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.003226,
+        0.0,
+        -0.003226,
+        0.009677,
+        -0.009677,
+        0.0,
+        0.012903,
+        0.022581
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 75,
+      "name": "Ultimate Arctiguana",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.008032,
+        -0.024096,
+        0.004016,
+        0.004016,
+        -0.004016,
+        -0.004016,
+        0.008032,
+        -0.012048
+      ],
+      "speciesStridePreserved": true
+    },
+    {
+      "id": 76,
+      "name": "Ultimate Gravattack",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 77,
+      "name": "Ultimate Rath",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.008734,
+        0.0,
+        -0.028384,
+        -0.008734,
+        0.0,
+        0.004367,
+        0.004367,
+        -0.004367
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 78,
+      "name": "Ultimate Grey Matter",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 79,
+      "name": "Bashmouth",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.05102,
+        -0.006122,
+        0.05102,
+        0.030612,
+        0.014286,
+        -0.034694,
+        -0.006122,
+        0.006122
+      ],
+      "speciesStridePreserved": true
+    },
+    {
+      "id": 80,
+      "name": "Bootleg",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.020833,
+        -0.0125,
+        0.0,
+        0.0,
+        -0.004167,
+        0.0125,
+        0.0125,
+        0.004167
+      ],
+      "speciesStridePreserved": true
+    },
+    {
+      "id": 81,
+      "name": "Crystalfist",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.0,
+        0.016556,
+        0.023179,
+        -0.016556,
+        -0.013245,
+        0.0,
+        0.023179,
+        -0.029801
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 82,
+      "name": "Dark Matter",
+      "status": "native-ground-refit",
+      "oldStride": 0.775985,
+      "stride": 0.775985,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.025391,
+        0.025391,
+        -0.013672,
+        -0.009766,
+        -0.005859,
+        0.001953,
+        -0.001953,
+        0.001953
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 83,
+      "name": "Hot Shot",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.005338,
+        -0.008897,
+        0.033808,
+        0.001779,
+        -0.005338,
+        0.001779,
+        -0.016014,
+        -0.001779
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 84,
+      "name": "Humungoraptor",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.012295,
+        0.020492,
+        0.0,
+        0.012295,
+        -0.008197,
+        -0.012295,
+        0.0,
+        0.0
+      ],
+      "speciesStridePreserved": true
+    },
+    {
+      "id": 85,
+      "name": "Quad Smack",
+      "status": "native-ground-refit",
+      "oldStride": 0.981092,
+      "stride": 0.981092,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.008446,
+        0.008446,
+        -0.001689,
+        0.008446,
+        0.001689,
+        -0.008446,
+        -0.001689,
+        -0.001689
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 86,
+      "name": "Rush",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 87,
+      "name": "Skunkmoth",
+      "status": "preserved-approved-flight-skate-or-reference"
+    },
+    {
+      "id": 88,
+      "name": "Thornblade",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        -0.004082,
+        0.0,
+        -0.004082,
+        0.0,
+        0.0,
+        0.016327,
+        0.016327,
+        -0.008163
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 89,
+      "name": "Undertow",
+      "status": "native-ground-refit",
+      "oldStride": 1.003,
+      "stride": 1.003,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.012295,
+        0.002049,
+        0.0,
+        -0.008197,
+        0.0,
+        0.0,
+        -0.004098,
+        -0.008197
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 90,
+      "name": "Wreckingbolt",
+      "status": "native-ground-refit",
+      "oldStride": 1.003,
+      "stride": 1.003,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "speciesStridePreserved": false
+    },
+    {
+      "id": 91,
+      "name": "Alien V",
+      "status": "native-ground-refit",
+      "oldStride": 0.85,
+      "stride": 0.85,
+      "changedStride": false,
+      "torsoCorrections": [
+        0.001678,
+        -0.001678,
+        0.008389,
+        0.005034,
+        0.005034,
+        -0.005034,
+        -0.005034,
+        -0.001678
+      ],
+      "speciesStridePreserved": false
+    }
+  ],
+  "profiles": 66,
+  "strideChanges": 0
+}

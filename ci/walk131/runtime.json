@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "aliens": 92,
+  "jumpCases": 552,
+  "walkDraws": 7360,
+  "oneActorPerJump": true,
+  "bodyAfterimagesRemoved": true,
+  "nativeSourcePixelsPreserved": true,
+  "phoneTested": false
+}
