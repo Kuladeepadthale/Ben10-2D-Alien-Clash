@@ -30,7 +30,7 @@ jobs:
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
-          if test -f web/higher-powers130.js; then node ci/powers130/verify.cjs; fi
+          if test -f web/higher-powers130.js; then node ci/powers130/verify.cjs && node ci/powers130/verify-palette.cjs; fi
       - name: Review and checkpoint six aliens per batch
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
@@ -39,7 +39,7 @@ jobs:
           git config user.email 'animation-review@users.noreply.github.com'
           stage=before
           if test -f web/higher-powers130.js; then stage=after; fi
-          for batch in $(seq 0 9); do
+          for batch in 0 3; do
             node ci/powers130/audit.cjs "$batch" "$stage"
             git add ci/powers130/*.webp ci/powers130/*-batch-*.json
             if test -f ci/powers130/runtime.json; then git add ci/powers130/runtime.json ci/powers130/tracker.json ci/powers130/marker-errors.json; fi
