@@ -124,14 +124,15 @@ jobs:
           assert any(step['name']=='Verify all 92 action sets and game controls' and step['conclusion']=='success' for step in job['steps'])
           assert len(json.loads(subprocess.check_output(['git','show',baseline+':ci/release-checks.json'],text=True)))==78
           changed=set(subprocess.check_output(['git','diff','--name-only',baseline,'HEAD'],text=True).splitlines())
-          assert all(p in {'web/power-profiles.js','server/engine.generated.mjs','.github/workflows/android-apk.yml','ci/release-checks.json'} or p.startswith('ci/powers130/') for p in changed),changed
+          assert all(p in {'web/power-profiles.js','server/engine.generated.mjs','.github/workflows/android-apk.yml','ci/release-checks.json','android/app/build.gradle'} or p.startswith('ci/powers130/') for p in changed),changed
           def at(ref,path):return subprocess.check_output(['git','show',ref+':'+path],text=True)
           needle='// Discard two merged source crops'
           palette="// Match the existing Ultimate Alien-style bodies: pale-blue cosmic ray and red-orange containment-vent energy.\nfor(const p of POWER_PROFILES.aliens[18])p.color='#9edfff';\nfor(const p of POWER_PROFILES.aliens[39])p.color='#ff754b';\n"
           for path in ['web/power-profiles.js','server/engine.generated.mjs']:
            assert at('HEAD',path)==at(baseline,path).replace(needle,palette+needle,1),path
+          assert at('HEAD','android/app/build.gradle')==at(baseline,'android/app/build.gradle').replace("versionName '12.9'","versionName '13.0'",1)
           assert json.loads(at('HEAD','ci/release-checks.json'))==['node ci/powers130/verify-palette.cjs']+json.loads(at(baseline,'ci/release-checks.json'))
-          print('Verified78 passed regression commands. Only two species colour overrides changed in game/server code; native art, choreography, simulation, categories and progression are identical.')
+          print('Verified78 passed regression commands. Only two species colour overrides changed in game/server code and the Android display-version label is corrected; native art, choreography, simulation, categories and progression are identical.')
           PYPALETTE
           node ci/powers130/verify.cjs
           node ci/powers130/verify-palette.cjs
@@ -433,7 +434,11 @@ jobs:
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose builds/Ben10-2D-Alien-Clash.apk
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging builds/Ben10-2D-Alien-Clash.apk
           python3 - <<'PY'
-          import zipfile,json
+          import zipfile,json,os,subprocess
+          for apk130 in ['builds/Ben10-2D-Alien-Clash.apk','builds/Ben10-Alien-Clash-Online.apk']:
+           package130=subprocess.check_output([os.environ['ANDROID_HOME']+'/build-tools/35.0.0/aapt','dump','badging',apk130],text=True).splitlines()[0]
+           assert "versionCode='130'" in package130 and "versionName='13.0'" in package130,package130
+           print('Verified final Android version:',package130)
           z=zipfile.ZipFile('builds/Ben10-2D-Alien-Clash.apk');names=z.namelist()
           assert 'assets/threat-ladder.js' in names and 'assets/villain-data.js' in names
           villains=json.loads(z.read('assets/assets/villains/manifest.json'))

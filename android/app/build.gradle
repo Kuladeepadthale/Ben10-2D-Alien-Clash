@@ -8,7 +8,7 @@ android {
   minSdk 23
   targetSdk 35
   versionCode 130
-  versionName '12.9'
+  versionName '13.0'
   manifestPlaceholders = [appLabel: (parallelInstall ? 'Ben 10 Alien Clash Online' : 'Ben 10 Alien Clash')]
  }
  signingConfigs {
