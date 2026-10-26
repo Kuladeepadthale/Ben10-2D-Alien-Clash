@@ -1,6 +1,7 @@
 'use strict';
 // Upgrade is the motion-quality reference, never a replacement body or skeleton.
 function walk128Profile(f){
+ if(typeof walk131Profile==='function'&&walk131Profile(f))return null;
  if(Number.isInteger(f.villain)||f.id===6||locomotionFlight126(f)||CARTOON_GAITS[f.id]?.hover||CARTOON_GAITS[f.id]?.skate)return null;
  return WALK128_DATA.characters[f.id]||null;
 }

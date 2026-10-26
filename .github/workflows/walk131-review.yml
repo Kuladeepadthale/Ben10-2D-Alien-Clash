@@ -2,7 +2,7 @@ name: Review walking and single-body jumps
 on:
   push:
     branches: [walk-review-131]
-    paths: ['ci/walk131/audit.py', '.github/workflows/walk131-review.yml']
+    paths: ['ci/walk131/audit.py', 'ci/walk131/build.py', 'ci/walk131/verify.cjs', 'web/walk-jump131.js', '.github/workflows/walk131-review.yml']
 permissions:
   contents: write
 jobs:
@@ -15,11 +15,30 @@ jobs:
         with:
           node-version: '22'
       - name: Install analysis tools
-        run: python3 -m pip install Pillow numpy scipy
+        run: |
+          python3 -m pip install Pillow numpy scipy
+          npm install --prefix /tmp/cel-tools --no-package-lock --no-save @napi-rs/canvas
       - name: Restore verified artwork
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 ci/restore-verified-art.py
+      - name: Build and verify corrected native movement
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          python3 ci/walk128/build.py
+          python3 ci/walk131/build.py
+          node ci/walk131/verify.cjs
+          node ci/walk131/preview.cjs
+      - name: Save corrected movement evidence
+        run: |
+          git config user.name 'Animation review'
+          git config user.email 'animation-review@users.noreply.github.com'
+          git add web/walk131-data.js ci/walk131/calibration.json ci/walk131/runtime.json ci/walk131/jump-comparison.webp
+          if ! git diff --cached --quiet; then
+            git commit -m '[art-audit] Save corrected ground motion and single-body jump verification'
+            git push
+          fi
       - name: Audit and save six aliens per batch
         run: |
           git config user.name 'Animation review'
