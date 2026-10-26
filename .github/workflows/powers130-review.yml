@@ -1,0 +1,42 @@
+name: Review higher-category native powers
+on:
+  push:
+    branches: [powers-review-130]
+    paths: ['ci/powers130/audit.cjs', 'web/higher-powers130.js', '.github/workflows/powers130-review.yml']
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install native rendering tools
+        run: |
+          python3 -m pip install Pillow numpy scipy
+          npm install --prefix /tmp/cel-tools --no-package-lock --no-save @napi-rs/canvas
+      - name: Restore verified native artwork
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 ci/restore-verified-art.py
+          python3 ci/walk128/build.py
+      - name: Review and checkpoint six aliens per batch
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          git config user.name 'Animation review'
+          git config user.email 'animation-review@users.noreply.github.com'
+          stage=before
+          if test -f web/higher-powers130.js; then stage=after; fi
+          for batch in $(seq 0 9); do
+            node ci/powers130/audit.cjs "$batch" "$stage"
+            git add ci/powers130/*.webp ci/powers130/*-batch-*.json
+            if ! git diff --cached --quiet; then
+              git commit -m "[art-audit] Save $stage higher-category batch $batch"
+              git push
+            fi
+          done
