@@ -1,0 +1,34 @@
+name: Review walking and single-body jumps
+on:
+  push:
+    branches: [walk-review-131]
+    paths: ['ci/walk131/audit.py', '.github/workflows/walk131-review.yml']
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install analysis tools
+        run: python3 -m pip install Pillow numpy scipy
+      - name: Restore verified artwork
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 ci/restore-verified-art.py
+      - name: Audit and save six aliens per batch
+        run: |
+          git config user.name 'Animation review'
+          git config user.email 'animation-review@users.noreply.github.com'
+          for batch in $(seq 0 15); do
+            python3 ci/walk131/audit.py "$batch"
+            git add ci/walk131/before-*.json ci/walk131/before-*.webp
+            if ! git diff --cached --quiet; then
+              git commit -m "[art-audit] Save walking and jump inspection batch $batch"
+              git push
+            fi
+          done
