@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "aliens": 60,
+  "powers": 300,
+  "casts": 600,
+  "draws": 4800,
+  "attachedMarkerSamples": 4544,
+  "commonRareUntouched": true,
+  "sourcePixelsUnchanged": true,
+  "phoneTested": false
+}

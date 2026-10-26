@@ -1,0 +1,4562 @@
+[
+  {
+    "id": 0,
+    "name": "Heatblast",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Diamondhead",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Ghostfreak",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Frankenstrike",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Eye Guy",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Way Big",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Swampfire",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Humungousaur",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Jetray",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Big Chill",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Chromastone",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Spidermonkey",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Alien X",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Rath",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 7,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 7,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 7,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 7,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Lodestar",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Water Hazard",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "AmpFibian",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Armodrillo",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Terraspin",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "NRG",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Eatle",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Clockwork",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Shocksquatch",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Feedback",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Bloxx",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Gravattack",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Astrodactyl",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Toepick",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Kickin' Hawk",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Whampire",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Gutrot",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Atomix",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Overflow",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Gax",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Shock Rock",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Slapback",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Ultimate Humungousaur",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Ultimate Big Chill",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Ultimate Echo Echo",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Ultimate Swampfire",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Ultimate Cannonbolt",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 4,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Ultimate Wildmutt",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Ultimate Spidermonkey",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Ultimate Way Big",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Ultimate Arctiguana",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Ultimate Gravattack",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Ultimate Rath",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Ultimate Grey Matter",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Bashmouth",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Bootleg",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Crystalfist",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Dark Matter",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Hot Shot",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Humungoraptor",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Quad Smack",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Skunkmoth",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Thornblade",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Undertow",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Wreckingbolt",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 2,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Alien V",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "verified",
+    "attacks": [
+      {
+        "key": "normal",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "normal",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill0",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill1",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "skill2",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": -1,
+        "nativeFrames": 3,
+        "passed": true
+      },
+      {
+        "key": "ultimate",
+        "dir": 1,
+        "nativeFrames": 3,
+        "passed": true
+      }
+    ]
+  }
+]
