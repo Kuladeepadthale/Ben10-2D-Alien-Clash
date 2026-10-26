@@ -1,0 +1,69 @@
+{
+  "version": "13.1",
+  "versionCode": 131,
+  "source_commit": "1fec095ff2e361b6b2e0ad1f2a4d3441e45655ed",
+  "run_id": 40372028000,
+  "job_id": 121744978505,
+  "review_branch": "walk-review-131",
+  "review_commit": "2def1e50727097baba86347d5ffa4d1bffb8e419",
+  "native_aliens_audited": 92,
+  "review_batches": 16,
+  "ground_profiles": 66,
+  "stride_changes": 54,
+  "jump_cases": 552,
+  "walk_draws": 7360,
+  "phone_tested": false,
+  "exact_tv_animation_claimed": false,
+  "server_changed_for_this_update": false,
+  "fixes": [
+    "Ground gait stride fitted to source foot span with bounded adjustment",
+    "Native torso root alignment",
+    "Ordinary body afterimages replaced with speed strokes; disabled in air",
+    "Explicit clone abilities preserved"
+  ],
+  "signing_certificate_sha256": "a52a570180898607ffdf736b6189244b73b2c1666ba5a63b34cd7015773c8a94",
+  "build": "success",
+  "release_url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/tag/android-1fec095ff2e3",
+  "verification": {
+    "release_checks_passed": 80,
+    "runtime": {
+      "passed": true,
+      "aliens": 92,
+      "jumpCases": 552,
+      "walkDraws": 7360,
+      "oneActorPerJump": true,
+      "bodyAfterimagesRemoved": true,
+      "nativeSourcePixelsPreserved": true,
+      "phoneTested": false
+    },
+    "native_pixels_preserved": true,
+    "android_versions_verified": true,
+    "signatures_verified": true
+  },
+  "assets": [
+    {
+      "name": "Ben10-2D-Alien-Clash.apk",
+      "bytes": 439218922,
+      "state": "uploaded",
+      "sha256": "f4e50a91b21f2e6d3b636aaaa52dc6f1659a4b19d1d3774521beb6e4242dfda1",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-1fec095ff2e3/Ben10-2D-Alien-Clash.apk"
+    },
+    {
+      "name": "Ben10-Alien-Clash-Online.apk",
+      "bytes": 439218941,
+      "state": "uploaded",
+      "sha256": "7e839daa110255442b14f9919fbb5f1a6785843f766c1b0e724328e9bf2c401a",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-1fec095ff2e3/Ben10-Alien-Clash-Online.apk"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 200,
+      "state": "uploaded",
+      "sha256": "d659217f6a700a8362f2e2198cac19d606540d0e01ff312feb6162390a862727",
+      "url": "https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/releases/download/android-1fec095ff2e3/SHA256SUMS.txt"
+    }
+  ],
+  "approved": 86,
+  "remaining": 6,
+  "live_worker_deployed": false
+}
