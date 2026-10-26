@@ -69,6 +69,8 @@ jobs:
         run: |
           python3 ci/walk128/build.py
           cp web/walk128-data.js builds/web/walk128-data.js
+          python3 ci/walk131/build.py
+          cp web/walk131-data.js builds/web/walk131-data.js
       - name: Verify walking-only scope and all native movement
         if: contains(github.event.head_commit.message, '[walk128]')
         env:
@@ -437,7 +439,7 @@ jobs:
           import zipfile,json,os,subprocess
           for apk130 in ['builds/Ben10-2D-Alien-Clash.apk','builds/Ben10-Alien-Clash-Online.apk']:
            package130=subprocess.check_output([os.environ['ANDROID_HOME']+'/build-tools/35.0.0/aapt','dump','badging',apk130],text=True).splitlines()[0]
-           assert "versionCode='130'" in package130 and "versionName='13.0'" in package130,package130
+           assert "versionCode='131'" in package130 and "versionName='13.1'" in package130,package130
            print('Verified final Android version:',package130)
           z=zipfile.ZipFile('builds/Ben10-2D-Alien-Clash.apk');names=z.namelist()
           assert 'assets/threat-ladder.js' in names and 'assets/villain-data.js' in names
@@ -456,6 +458,8 @@ jobs:
           assert 'assets/ability-animations.js' in names
           assert 'assets/combat-choreography.js' in names
           assert 'assets/higher-powers130.js' in names
+          assert all('assets/'+p in names for p in ['walk131-data.js','walk-jump131.js'])
+          assert b'walk-jump131.js?v=131' in z.read('assets/index.html')
           assert 'assets/requested-powers129.js' in names
           assert all('assets/assets/cels/rush/combat129-'+str(i)+'.webp' in names for i in range(2))
           assert all('assets/'+p in names for p in ['walk128-data.js','walk-quality128.js'])
@@ -488,7 +492,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 13.0 — Higher-category Native Combat' --notes 'Reviews300 attacks across all60 Epic, Heroic and Legendary aliens. Uses species-native attack clips, shared body/emitter phase selection, clean native replacements for two merged body crops and animated projectile geometry instead of ability-card pictures for these categories. Preserves Common/Rare categories, approved Heatblast/Big Chill/Humungousaur/Rath choreography, walking, manual facing, progression and damage budgets. Ten resumable six-alien review batches and native cast checks are saved in ci/powers130. Physical phone validation and live Worker deployment remain pending.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 13.1 — Walking and Jump Fix' --notes 'Refits native ground-walking stride to source foot span and registers torso alignment for 66 ground characters. Preserves approved walks, species-specific locomotion, flight and skating. Replaces ordinary full-body movement afterimages with short speed strokes, suppressing them during jumps so jumping shows one body. Real clone powers remain. All92 native walk/jump sets inspected in16 saved batches. Existing powers and gameplay preserved. Automated regression and APK certificate/version checks required by this release. Physical phone testing remains pending.' --prerelease --target "$GITHUB_SHA"
 
 
 
