@@ -1,0 +1,842 @@
+[
+  {
+    "id": 0,
+    "name": "Heatblast",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 2,
+    "name": "Diamondhead",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 9,
+    "name": "Ghostfreak",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 14,
+    "name": "Frankenstrike",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 17,
+    "name": "Eye Guy",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 18,
+    "name": "Way Big",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 22,
+    "name": "Swampfire",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 24,
+    "name": "Humungousaur",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 25,
+    "name": "Jetray",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 26,
+    "name": "Big Chill",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 27,
+    "name": "Chromastone",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 29,
+    "name": "Spidermonkey",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 31,
+    "name": "Alien X",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 32,
+    "name": "Rath",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 33,
+    "name": "Lodestar",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 35,
+    "name": "Water Hazard",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 36,
+    "name": "AmpFibian",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 37,
+    "name": "Armodrillo",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 38,
+    "name": "Terraspin",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 39,
+    "name": "NRG",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 42,
+    "name": "Eatle",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 43,
+    "name": "Clockwork",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 45,
+    "name": "Shocksquatch",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 46,
+    "name": "Feedback",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 47,
+    "name": "Bloxx",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 48,
+    "name": "Gravattack",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 51,
+    "name": "Astrodactyl",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 52,
+    "name": "Toepick",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 55,
+    "name": "Kickin' Hawk",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 56,
+    "name": "Whampire",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 57,
+    "name": "Gutrot",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 58,
+    "name": "Atomix",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 62,
+    "name": "Overflow",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 63,
+    "name": "Gax",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 64,
+    "name": "Shock Rock",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 65,
+    "name": "Slapback",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 67,
+    "name": "Ultimate Humungousaur",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 68,
+    "name": "Ultimate Big Chill",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 69,
+    "name": "Ultimate Echo Echo",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 70,
+    "name": "Ultimate Swampfire",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 71,
+    "name": "Ultimate Cannonbolt",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 72,
+    "name": "Ultimate Wildmutt",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 73,
+    "name": "Ultimate Spidermonkey",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 74,
+    "name": "Ultimate Way Big",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 75,
+    "name": "Ultimate Arctiguana",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 76,
+    "name": "Ultimate Gravattack",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 77,
+    "name": "Ultimate Rath",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 78,
+    "name": "Ultimate Grey Matter",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 79,
+    "name": "Bashmouth",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 80,
+    "name": "Bootleg",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 81,
+    "name": "Crystalfist",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 82,
+    "name": "Dark Matter",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 83,
+    "name": "Hot Shot",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 84,
+    "name": "Humungoraptor",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 85,
+    "name": "Quad Smack",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 87,
+    "name": "Skunkmoth",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 88,
+    "name": "Thornblade",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 89,
+    "name": "Undertow",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 90,
+    "name": "Wreckingbolt",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": 91,
+    "name": "Alien V",
+    "rank": "Legendary",
+    "rankId": 4,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "pending"
+  }
+]

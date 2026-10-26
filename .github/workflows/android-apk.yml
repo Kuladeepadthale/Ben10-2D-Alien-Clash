@@ -419,6 +419,7 @@ jobs:
           assert 'assets/cartoon-power-effects.js' in names
           assert 'assets/ability-animations.js' in names
           assert 'assets/combat-choreography.js' in names
+          assert 'assets/higher-powers130.js' in names
           assert 'assets/requested-powers129.js' in names
           assert all('assets/assets/cels/rush/combat129-'+str(i)+'.webp' in names for i in range(2))
           assert all('assets/'+p in names for p in ['walk128-data.js','walk-quality128.js'])
@@ -451,7 +452,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 12.9 — Native Species Power Repairs' --notes 'Repairs22 requested powers across XLR8, Upgrade, Blitzwolfer, Ditto, Chamalien, Pesky Dust, Mole-Stache and Rush. New16-pose Rush combat/state artwork matches the existing walking design at one consistent registration scale. Includes native clones, mouth-launched howl fronts, circuit pulse, connected tail reach390, dream dust and moustache motion. Preserves v12.8 walks, manual facing, captured targets and damage budgets. Full release checks and native power validation gate publication; physical phone testing and live Worker deployment remain pending.' --prerelease --target "$GITHUB_SHA"
+          gh release create "android-${GITHUB_SHA::12}" builds/*.apk builds/SHA256SUMS.txt --title 'Ben 10 Alien Clash 13.0 — Higher-category Native Combat' --notes 'Reviews300 attacks across all60 Epic, Heroic and Legendary aliens. Uses species-native attack clips, shared body/emitter phase selection, clean native replacements for two merged body crops and animated projectile geometry instead of ability-card pictures for these categories. Preserves Common/Rare categories, approved Heatblast/Big Chill/Humungousaur/Rath choreography, walking, manual facing, progression and damage budgets. Ten resumable six-alien review batches and native cast checks are saved in ci/powers130. Physical phone validation and live Worker deployment remain pending.' --prerelease --target "$GITHUB_SHA"
 
 
 
