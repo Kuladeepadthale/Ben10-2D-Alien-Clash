@@ -1,0 +1,2978 @@
+[
+  {
+    "id": 84,
+    "name": "humungoraptor",
+    "clips": {
+      "idle": [
+        0
+      ],
+      "walk": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "jump": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "normal": [
+        13,
+        14,
+        15
+      ],
+      "skill0": [
+        16,
+        17,
+        18
+      ],
+      "skill1": [
+        19,
+        20,
+        21
+      ],
+      "skill2": [
+        22,
+        23,
+        24
+      ],
+      "ultimate": [
+        25,
+        26,
+        27
+      ],
+      "guard": [
+        28
+      ],
+      "hit": [
+        29
+      ],
+      "ko": [
+        30
+      ],
+      "dash": [
+        31
+      ]
+    },
+    "frames": [
+      {
+        "state": "walk",
+        "frame": 1,
+        "rect": [
+          427,
+          142,
+          379,
+          257
+        ],
+        "origin": [
+          221.0,
+          249
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          369,
+          247
+        ],
+        "sourcePixels": 29515,
+        "largeComponents": [
+          {
+            "area": 29515,
+            "bbox": [
+              10,
+              10,
+              369,
+              247
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 2,
+        "rect": [
+          842,
+          152,
+          370,
+          247
+        ],
+        "origin": [
+          214.0,
+          239
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          9,
+          10,
+          360,
+          237
+        ],
+        "sourcePixels": 28468,
+        "largeComponents": [
+          {
+            "area": 28468,
+            "bbox": [
+              9,
+              10,
+              360,
+              237
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 3,
+        "rect": [
+          1245,
+          143,
+          386,
+          256
+        ],
+        "origin": [
+          223.0,
+          248
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          376,
+          246
+        ],
+        "sourcePixels": 29573,
+        "largeComponents": [
+          {
+            "area": 29573,
+            "bbox": [
+              10,
+              10,
+              376,
+              246
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 4,
+        "rect": [
+          24,
+          551,
+          363,
+          259
+        ],
+        "origin": [
+          210.0,
+          251
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          9,
+          10,
+          353,
+          249
+        ],
+        "sourcePixels": 29161,
+        "largeComponents": [
+          {
+            "area": 29161,
+            "bbox": [
+              9,
+              10,
+              353,
+              249
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 5,
+        "rect": [
+          432,
+          555,
+          368,
+          255
+        ],
+        "origin": [
+          209.0,
+          247
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          9,
+          10,
+          358,
+          245
+        ],
+        "sourcePixels": 27840,
+        "largeComponents": [
+          {
+            "area": 27840,
+            "bbox": [
+              9,
+              10,
+              358,
+              245
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 6,
+        "rect": [
+          843,
+          561,
+          369,
+          249
+        ],
+        "origin": [
+          206.0,
+          241
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          9,
+          10,
+          359,
+          239
+        ],
+        "sourcePixels": 27697,
+        "largeComponents": [
+          {
+            "area": 27697,
+            "bbox": [
+              9,
+              10,
+              359,
+              239
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 7,
+        "rect": [
+          1245,
+          557,
+          387,
+          253
+        ],
+        "origin": [
+          222.0,
+          245
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          9,
+          10,
+          377,
+          243
+        ],
+        "sourcePixels": 29764,
+        "largeComponents": [
+          {
+            "area": 29764,
+            "bbox": [
+              9,
+              10,
+              377,
+              243
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 8,
+        "rect": [
+          67,
+          238,
+          367,
+          252
+        ],
+        "origin": [
+          211.0,
+          244
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          9,
+          10,
+          357,
+          242
+        ],
+        "sourcePixels": 28062,
+        "largeComponents": [
+          {
+            "area": 28061,
+            "bbox": [
+              10,
+              10,
+              357,
+              242
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 9,
+        "rect": [
+          570,
+          296,
+          366,
+          194
+        ],
+        "origin": [
+          202.0,
+          186
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          356,
+          184
+        ],
+        "sourcePixels": 27557,
+        "largeComponents": [
+          {
+            "area": 27557,
+            "bbox": [
+              10,
+              10,
+              356,
+              184
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 10,
+        "rect": [
+          1063,
+          231,
+          383,
+          259
+        ],
+        "origin": [
+          208.0,
+          251
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          373,
+          249
+        ],
+        "sourcePixels": 30209,
+        "largeComponents": [
+          {
+            "area": 30209,
+            "bbox": [
+              10,
+              10,
+              373,
+              249
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 11,
+        "rect": [
+          1568,
+          245,
+          378,
+          245
+        ],
+        "origin": [
+          171.0,
+          237
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          368,
+          235
+        ],
+        "sourcePixels": 30835,
+        "largeComponents": [
+          {
+            "area": 30835,
+            "bbox": [
+              10,
+              10,
+              368,
+              235
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 12,
+        "rect": [
+          57,
+          778,
+          387,
+          214
+        ],
+        "origin": [
+          208.0,
+          206
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          377,
+          204
+        ],
+        "sourcePixels": 31554,
+        "largeComponents": [
+          {
+            "area": 31554,
+            "bbox": [
+              10,
+              10,
+              377,
+              204
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "name": "quad-smack",
+    "clips": {
+      "idle": [
+        0
+      ],
+      "walk": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "jump": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "normal": [
+        13,
+        14,
+        15
+      ],
+      "skill0": [
+        16,
+        17,
+        18
+      ],
+      "skill1": [
+        19,
+        20,
+        21
+      ],
+      "skill2": [
+        22,
+        23,
+        24
+      ],
+      "ultimate": [
+        25,
+        26,
+        27
+      ],
+      "guard": [
+        28
+      ],
+      "hit": [
+        29
+      ],
+      "ko": [
+        30
+      ],
+      "dash": [
+        31
+      ]
+    },
+    "frames": [
+      {
+        "state": "walk",
+        "frame": 1,
+        "rect": [
+          355,
+          16,
+          301,
+          309
+        ],
+        "origin": [
+          143.0,
+          301
+        ],
+        "reference": 296,
+        "standingReference": 296,
+        "bounds": [
+          9,
+          10,
+          291,
+          299
+        ],
+        "sourcePixels": 36380,
+        "largeComponents": [
+          {
+            "area": 36380,
+            "bbox": [
+              9,
+              10,
+              291,
+              299
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 2,
+        "rect": [
+          698,
+          19,
+          289,
+          306
+        ],
+        "origin": [
+          133.0,
+          298
+        ],
+        "reference": 296,
+        "standingReference": 296,
+        "bounds": [
+          10,
+          10,
+          279,
+          296
+        ],
+        "sourcePixels": 36522,
+        "largeComponents": [
+          {
+            "area": 36522,
+            "bbox": [
+              10,
+              10,
+              279,
+              296
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 3,
+        "rect": [
+          1035,
+          13,
+          289,
+          312
+        ],
+        "origin": [
+          109.0,
+          304
+        ],
+        "reference": 296,
+        "standingReference": 296,
+        "bounds": [
+          10,
+          10,
+          279,
+          302
+        ],
+        "sourcePixels": 36400,
+        "largeComponents": [
+          {
+            "area": 36400,
+            "bbox": [
+              10,
+              10,
+              279,
+              302
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 4,
+        "rect": [
+          24,
+          353,
+          288,
+          309
+        ],
+        "origin": [
+          121.0,
+          301
+        ],
+        "reference": 296,
+        "standingReference": 296,
+        "bounds": [
+          10,
+          10,
+          279,
+          299
+        ],
+        "sourcePixels": 35566,
+        "largeComponents": [
+          {
+            "area": 35566,
+            "bbox": [
+              10,
+              10,
+              279,
+              299
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 5,
+        "rect": [
+          365,
+          356,
+          281,
+          306
+        ],
+        "origin": [
+          131.0,
+          298
+        ],
+        "reference": 296,
+        "standingReference": 296,
+        "bounds": [
+          10,
+          10,
+          271,
+          296
+        ],
+        "sourcePixels": 34467,
+        "largeComponents": [
+          {
+            "area": 34467,
+            "bbox": [
+              10,
+              10,
+              271,
+              296
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 6,
+        "rect": [
+          694,
+          350,
+          297,
+          312
+        ],
+        "origin": [
+          149.0,
+          304
+        ],
+        "reference": 296,
+        "standingReference": 296,
+        "bounds": [
+          10,
+          10,
+          287,
+          302
+        ],
+        "sourcePixels": 35574,
+        "largeComponents": [
+          {
+            "area": 35574,
+            "bbox": [
+              10,
+              10,
+              287,
+              302
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 7,
+        "rect": [
+          1032,
+          349,
+          294,
+          313
+        ],
+        "origin": [
+          148.0,
+          305
+        ],
+        "reference": 296,
+        "standingReference": 296,
+        "bounds": [
+          10,
+          9,
+          284,
+          303
+        ],
+        "sourcePixels": 36857,
+        "largeComponents": [
+          {
+            "area": 36857,
+            "bbox": [
+              10,
+              9,
+              284,
+              303
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 8,
+        "rect": [
+          61,
+          94,
+          290,
+          306
+        ],
+        "origin": [
+          137.0,
+          298
+        ],
+        "reference": 296,
+        "standingReference": 296,
+        "bounds": [
+          10,
+          9,
+          280,
+          296
+        ],
+        "sourcePixels": 34221,
+        "largeComponents": [
+          {
+            "area": 34221,
+            "bbox": [
+              10,
+              9,
+              280,
+              296
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 9,
+        "rect": [
+          468,
+          164,
+          300,
+          236
+        ],
+        "origin": [
+          155.0,
+          228
+        ],
+        "reference": 296,
+        "standingReference": 296,
+        "bounds": [
+          10,
+          10,
+          290,
+          226
+        ],
+        "sourcePixels": 34869,
+        "largeComponents": [
+          {
+            "area": 34869,
+            "bbox": [
+              10,
+              10,
+              290,
+              226
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 10,
+        "rect": [
+          892,
+          112,
+          275,
+          288
+        ],
+        "origin": [
+          160.0,
+          280
+        ],
+        "reference": 296,
+        "standingReference": 296,
+        "bounds": [
+          10,
+          9,
+          265,
+          278
+        ],
+        "sourcePixels": 32107,
+        "largeComponents": [
+          {
+            "area": 32107,
+            "bbox": [
+              10,
+              9,
+              265,
+              278
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 11,
+        "rect": [
+          1282,
+          115,
+          320,
+          285
+        ],
+        "origin": [
+          163.0,
+          277
+        ],
+        "reference": 296,
+        "standingReference": 296,
+        "bounds": [
+          10,
+          9,
+          310,
+          275
+        ],
+        "sourcePixels": 35659,
+        "largeComponents": [
+          {
+            "area": 35659,
+            "bbox": [
+              10,
+              9,
+              310,
+              275
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 12,
+        "rect": [
+          55,
+          592,
+          301,
+          220
+        ],
+        "origin": [
+          144.0,
+          212
+        ],
+        "reference": 296,
+        "standingReference": 296,
+        "bounds": [
+          10,
+          10,
+          291,
+          210
+        ],
+        "sourcePixels": 32421,
+        "largeComponents": [
+          {
+            "area": 32421,
+            "bbox": [
+              10,
+              10,
+              291,
+              210
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "name": "rush",
+    "clips": {
+      "idle": [
+        0
+      ],
+      "walk": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "jump": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "normal": [
+        13,
+        14,
+        15
+      ],
+      "skill0": [
+        16,
+        17,
+        18
+      ],
+      "skill1": [
+        19,
+        20,
+        21
+      ],
+      "skill2": [
+        22,
+        23,
+        24
+      ],
+      "ultimate": [
+        25,
+        26,
+        27
+      ],
+      "guard": [
+        28
+      ],
+      "hit": [
+        29
+      ],
+      "ko": [
+        30
+      ],
+      "dash": [
+        31
+      ]
+    },
+    "frames": [
+      {
+        "state": "walk",
+        "frame": 1,
+        "rect": [
+          403,
+          114,
+          343,
+          257
+        ],
+        "origin": [
+          210,
+          249
+        ],
+        "reference": 246,
+        "standingReference": 246,
+        "bounds": [
+          10,
+          10,
+          333,
+          247
+        ],
+        "sourcePixels": 21219,
+        "largeComponents": [
+          {
+            "area": 21219,
+            "bbox": [
+              10,
+              10,
+              333,
+              247
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 2,
+        "rect": [
+          781,
+          131,
+          353,
+          240
+        ],
+        "origin": [
+          215,
+          232
+        ],
+        "reference": 246,
+        "standingReference": 246,
+        "bounds": [
+          9,
+          10,
+          343,
+          230
+        ],
+        "sourcePixels": 20253,
+        "largeComponents": [
+          {
+            "area": 20253,
+            "bbox": [
+              9,
+              10,
+              343,
+              230
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 3,
+        "rect": [
+          1162,
+          114,
+          356,
+          257
+        ],
+        "origin": [
+          201,
+          249
+        ],
+        "reference": 246,
+        "standingReference": 246,
+        "bounds": [
+          10,
+          10,
+          346,
+          247
+        ],
+        "sourcePixels": 21292,
+        "largeComponents": [
+          {
+            "area": 21292,
+            "bbox": [
+              10,
+              10,
+              346,
+              247
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 4,
+        "rect": [
+          20,
+          493,
+          343,
+          261
+        ],
+        "origin": [
+          188,
+          253
+        ],
+        "reference": 246,
+        "standingReference": 246,
+        "bounds": [
+          9,
+          10,
+          333,
+          251
+        ],
+        "sourcePixels": 21239,
+        "largeComponents": [
+          {
+            "area": 21239,
+            "bbox": [
+              9,
+              10,
+              333,
+              251
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 5,
+        "rect": [
+          410,
+          495,
+          329,
+          259
+        ],
+        "origin": [
+          201,
+          251
+        ],
+        "reference": 246,
+        "standingReference": 246,
+        "bounds": [
+          10,
+          10,
+          319,
+          249
+        ],
+        "sourcePixels": 22210,
+        "largeComponents": [
+          {
+            "area": 22210,
+            "bbox": [
+              10,
+              10,
+              319,
+              249
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 6,
+        "rect": [
+          779,
+          520,
+          357,
+          234
+        ],
+        "origin": [
+          203,
+          226
+        ],
+        "reference": 246,
+        "standingReference": 246,
+        "bounds": [
+          10,
+          10,
+          347,
+          224
+        ],
+        "sourcePixels": 20672,
+        "largeComponents": [
+          {
+            "area": 20672,
+            "bbox": [
+              10,
+              10,
+              347,
+              224
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 7,
+        "rect": [
+          1161,
+          493,
+          359,
+          261
+        ],
+        "origin": [
+          212,
+          253
+        ],
+        "reference": 246,
+        "standingReference": 246,
+        "bounds": [
+          10,
+          10,
+          349,
+          251
+        ],
+        "sourcePixels": 22777,
+        "largeComponents": [
+          {
+            "area": 22777,
+            "bbox": [
+              10,
+              10,
+              349,
+              251
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 8,
+        "rect": [
+          45,
+          180,
+          363,
+          261
+        ],
+        "origin": [
+          209,
+          253
+        ],
+        "reference": 246,
+        "standingReference": 246,
+        "bounds": [
+          10,
+          10,
+          353,
+          251
+        ],
+        "sourcePixels": 21524,
+        "largeComponents": [
+          {
+            "area": 21524,
+            "bbox": [
+              10,
+              10,
+              353,
+              251
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 9,
+        "rect": [
+          500,
+          253,
+          358,
+          188
+        ],
+        "origin": [
+          191,
+          180
+        ],
+        "reference": 246,
+        "standingReference": 246,
+        "bounds": [
+          10,
+          10,
+          348,
+          178
+        ],
+        "sourcePixels": 18620,
+        "largeComponents": [
+          {
+            "area": 18620,
+            "bbox": [
+              10,
+              10,
+              348,
+              178
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 10,
+        "rect": [
+          970,
+          194,
+          325,
+          247
+        ],
+        "origin": [
+          195,
+          239
+        ],
+        "reference": 246,
+        "standingReference": 246,
+        "bounds": [
+          10,
+          10,
+          315,
+          237
+        ],
+        "sourcePixels": 20741,
+        "largeComponents": [
+          {
+            "area": 20741,
+            "bbox": [
+              10,
+              10,
+              315,
+              237
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 11,
+        "rect": [
+          1387,
+          259,
+          397,
+          182
+        ],
+        "origin": [
+          219,
+          174
+        ],
+        "reference": 246,
+        "standingReference": 246,
+        "bounds": [
+          9,
+          10,
+          387,
+          172
+        ],
+        "sourcePixels": 18580,
+        "largeComponents": [
+          {
+            "area": 18580,
+            "bbox": [
+              9,
+              10,
+              387,
+              172
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 12,
+        "rect": [
+          48,
+          686,
+          357,
+          208
+        ],
+        "origin": [
+          204,
+          200
+        ],
+        "reference": 246,
+        "standingReference": 246,
+        "bounds": [
+          10,
+          10,
+          347,
+          198
+        ],
+        "sourcePixels": 20749,
+        "largeComponents": [
+          {
+            "area": 20749,
+            "bbox": [
+              10,
+              10,
+              347,
+              198
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "name": "skunkmoth",
+    "clips": {
+      "idle": [
+        0
+      ],
+      "walk": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "jump": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "normal": [
+        13,
+        14,
+        15
+      ],
+      "skill0": [
+        16,
+        17,
+        18
+      ],
+      "skill1": [
+        19,
+        20,
+        21
+      ],
+      "skill2": [
+        22,
+        23,
+        24
+      ],
+      "ultimate": [
+        25,
+        26,
+        27
+      ],
+      "guard": [
+        28
+      ],
+      "hit": [
+        29
+      ],
+      "ko": [
+        30
+      ],
+      "dash": [
+        31
+      ]
+    },
+    "frames": [
+      {
+        "state": "walk",
+        "frame": 1,
+        "rect": [
+          381,
+          92,
+          336,
+          262
+        ],
+        "origin": [
+          170.0,
+          254
+        ],
+        "reference": 248,
+        "standingReference": 248,
+        "bounds": [
+          10,
+          10,
+          326,
+          252
+        ],
+        "sourcePixels": 32409,
+        "largeComponents": [
+          {
+            "area": 32409,
+            "bbox": [
+              10,
+              10,
+              326,
+              252
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 2,
+        "rect": [
+          754,
+          91,
+          321,
+          263
+        ],
+        "origin": [
+          178.0,
+          255
+        ],
+        "reference": 248,
+        "standingReference": 248,
+        "bounds": [
+          10,
+          10,
+          311,
+          253
+        ],
+        "sourcePixels": 32291,
+        "largeComponents": [
+          {
+            "area": 32290,
+            "bbox": [
+              10,
+              10,
+              311,
+              253
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 3,
+        "rect": [
+          1110,
+          95,
+          342,
+          259
+        ],
+        "origin": [
+          174.0,
+          251
+        ],
+        "reference": 248,
+        "standingReference": 248,
+        "bounds": [
+          10,
+          10,
+          332,
+          249
+        ],
+        "sourcePixels": 33346,
+        "largeComponents": [
+          {
+            "area": 33346,
+            "bbox": [
+              10,
+              10,
+              332,
+              249
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 4,
+        "rect": [
+          23,
+          465,
+          319,
+          255
+        ],
+        "origin": [
+          183.0,
+          247
+        ],
+        "reference": 248,
+        "standingReference": 248,
+        "bounds": [
+          10,
+          10,
+          309,
+          245
+        ],
+        "sourcePixels": 33157,
+        "largeComponents": [
+          {
+            "area": 33157,
+            "bbox": [
+              10,
+              10,
+              309,
+              245
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 5,
+        "rect": [
+          379,
+          459,
+          339,
+          261
+        ],
+        "origin": [
+          175.0,
+          253
+        ],
+        "reference": 248,
+        "standingReference": 248,
+        "bounds": [
+          10,
+          10,
+          329,
+          251
+        ],
+        "sourcePixels": 31358,
+        "largeComponents": [
+          {
+            "area": 31358,
+            "bbox": [
+              10,
+              10,
+              329,
+              251
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 6,
+        "rect": [
+          745,
+          461,
+          340,
+          259
+        ],
+        "origin": [
+          180.5,
+          251
+        ],
+        "reference": 248,
+        "standingReference": 248,
+        "bounds": [
+          10,
+          10,
+          330,
+          249
+        ],
+        "sourcePixels": 35282,
+        "largeComponents": [
+          {
+            "area": 35282,
+            "bbox": [
+              10,
+              10,
+              330,
+              249
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 7,
+        "rect": [
+          1111,
+          470,
+          339,
+          250
+        ],
+        "origin": [
+          174.0,
+          242
+        ],
+        "reference": 248,
+        "standingReference": 248,
+        "bounds": [
+          10,
+          10,
+          329,
+          240
+        ],
+        "sourcePixels": 32789,
+        "largeComponents": [
+          {
+            "area": 32789,
+            "bbox": [
+              10,
+              10,
+              329,
+              240
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 8,
+        "rect": [
+          44,
+          130,
+          321,
+          267
+        ],
+        "origin": [
+          185.0,
+          259
+        ],
+        "reference": 248,
+        "standingReference": 248,
+        "bounds": [
+          10,
+          10,
+          311,
+          257
+        ],
+        "sourcePixels": 31936,
+        "largeComponents": [
+          {
+            "area": 31936,
+            "bbox": [
+              10,
+              10,
+              311,
+              257
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 9,
+        "rect": [
+          448,
+          179,
+          330,
+          218
+        ],
+        "origin": [
+          194.0,
+          210
+        ],
+        "reference": 248,
+        "standingReference": 248,
+        "bounds": [
+          10,
+          10,
+          320,
+          208
+        ],
+        "sourcePixels": 29340,
+        "largeComponents": [
+          {
+            "area": 29340,
+            "bbox": [
+              10,
+              10,
+              320,
+              208
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 10,
+        "rect": [
+          859,
+          134,
+          326,
+          263
+        ],
+        "origin": [
+          201.0,
+          255
+        ],
+        "reference": 248,
+        "standingReference": 248,
+        "bounds": [
+          10,
+          10,
+          316,
+          253
+        ],
+        "sourcePixels": 30868,
+        "largeComponents": [
+          {
+            "area": 30868,
+            "bbox": [
+              10,
+              10,
+              316,
+              253
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 11,
+        "rect": [
+          1258,
+          118,
+          347,
+          279
+        ],
+        "origin": [
+          173.0,
+          271
+        ],
+        "reference": 248,
+        "standingReference": 248,
+        "bounds": [
+          10,
+          10,
+          338,
+          269
+        ],
+        "sourcePixels": 34443,
+        "largeComponents": [
+          {
+            "area": 34442,
+            "bbox": [
+              10,
+              10,
+              338,
+              269
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 12,
+        "rect": [
+          35,
+          545,
+          338,
+          261
+        ],
+        "origin": [
+          186.0,
+          253
+        ],
+        "reference": 248,
+        "standingReference": 248,
+        "bounds": [
+          10,
+          10,
+          328,
+          251
+        ],
+        "sourcePixels": 34380,
+        "largeComponents": [
+          {
+            "area": 34378,
+            "bbox": [
+              10,
+              10,
+              328,
+              251
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "name": "thornblade",
+    "clips": {
+      "idle": [
+        0
+      ],
+      "walk": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "jump": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "normal": [
+        13,
+        14,
+        15
+      ],
+      "skill0": [
+        16,
+        17,
+        18
+      ],
+      "skill1": [
+        19,
+        20,
+        21
+      ],
+      "skill2": [
+        22,
+        23,
+        24
+      ],
+      "ultimate": [
+        25,
+        26,
+        27
+      ],
+      "guard": [
+        28
+      ],
+      "hit": [
+        29
+      ],
+      "ko": [
+        30
+      ],
+      "dash": [
+        31
+      ]
+    },
+    "frames": [
+      {
+        "state": "walk",
+        "frame": 1,
+        "rect": [
+          381,
+          89,
+          315,
+          258
+        ],
+        "origin": [
+          199.0,
+          250
+        ],
+        "reference": 245,
+        "standingReference": 245,
+        "bounds": [
+          10,
+          10,
+          306,
+          248
+        ],
+        "sourcePixels": 19658,
+        "largeComponents": [
+          {
+            "area": 19657,
+            "bbox": [
+              10,
+              10,
+              306,
+              248
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 2,
+        "rect": [
+          740,
+          94,
+          314,
+          253
+        ],
+        "origin": [
+          195.0,
+          245
+        ],
+        "reference": 245,
+        "standingReference": 245,
+        "bounds": [
+          10,
+          10,
+          304,
+          243
+        ],
+        "sourcePixels": 20106,
+        "largeComponents": [
+          {
+            "area": 20105,
+            "bbox": [
+              10,
+              10,
+              304,
+              243
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 3,
+        "rect": [
+          1098,
+          92,
+          316,
+          255
+        ],
+        "origin": [
+          202.0,
+          247
+        ],
+        "reference": 245,
+        "standingReference": 245,
+        "bounds": [
+          9,
+          10,
+          306,
+          245
+        ],
+        "sourcePixels": 20216,
+        "largeComponents": [
+          {
+            "area": 20215,
+            "bbox": [
+              10,
+              10,
+              306,
+              245
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 4,
+        "rect": [
+          37,
+          440,
+          285,
+          266
+        ],
+        "origin": [
+          188.0,
+          258
+        ],
+        "reference": 245,
+        "standingReference": 245,
+        "bounds": [
+          10,
+          9,
+          275,
+          256
+        ],
+        "sourcePixels": 18546,
+        "largeComponents": [
+          {
+            "area": 18546,
+            "bbox": [
+              10,
+              9,
+              275,
+              256
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 5,
+        "rect": [
+          371,
+          443,
+          335,
+          263
+        ],
+        "origin": [
+          206.0,
+          255
+        ],
+        "reference": 245,
+        "standingReference": 245,
+        "bounds": [
+          10,
+          9,
+          325,
+          253
+        ],
+        "sourcePixels": 21146,
+        "largeComponents": [
+          {
+            "area": 21145,
+            "bbox": [
+              11,
+              9,
+              325,
+              253
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 6,
+        "rect": [
+          744,
+          453,
+          307,
+          253
+        ],
+        "origin": [
+          196.0,
+          245
+        ],
+        "reference": 245,
+        "standingReference": 245,
+        "bounds": [
+          10,
+          10,
+          297,
+          243
+        ],
+        "sourcePixels": 20108,
+        "largeComponents": [
+          {
+            "area": 20107,
+            "bbox": [
+              10,
+              10,
+              297,
+              243
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 7,
+        "rect": [
+          1102,
+          445,
+          309,
+          261
+        ],
+        "origin": [
+          195.0,
+          253
+        ],
+        "reference": 245,
+        "standingReference": 245,
+        "bounds": [
+          10,
+          10,
+          299,
+          251
+        ],
+        "sourcePixels": 19942,
+        "largeComponents": [
+          {
+            "area": 19942,
+            "bbox": [
+              10,
+              10,
+              299,
+              251
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 8,
+        "rect": [
+          84,
+          173,
+          289,
+          273
+        ],
+        "origin": [
+          188.0,
+          265
+        ],
+        "reference": 245,
+        "standingReference": 245,
+        "bounds": [
+          10,
+          10,
+          279,
+          263
+        ],
+        "sourcePixels": 18197,
+        "largeComponents": [
+          {
+            "area": 18194,
+            "bbox": [
+              10,
+              10,
+              278,
+              263
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 9,
+        "rect": [
+          548,
+          215,
+          277,
+          231
+        ],
+        "origin": [
+          197.0,
+          223
+        ],
+        "reference": 245,
+        "standingReference": 245,
+        "bounds": [
+          10,
+          10,
+          267,
+          221
+        ],
+        "sourcePixels": 16431,
+        "largeComponents": [
+          {
+            "area": 16431,
+            "bbox": [
+              10,
+              10,
+              267,
+              221
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 10,
+        "rect": [
+          1007,
+          177,
+          275,
+          269
+        ],
+        "origin": [
+          201.0,
+          261
+        ],
+        "reference": 245,
+        "standingReference": 245,
+        "bounds": [
+          10,
+          10,
+          265,
+          259
+        ],
+        "sourcePixels": 17774,
+        "largeComponents": [
+          {
+            "area": 17773,
+            "bbox": [
+              10,
+              10,
+              265,
+              259
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 11,
+        "rect": [
+          1441,
+          169,
+          323,
+          277
+        ],
+        "origin": [
+          209.0,
+          269
+        ],
+        "reference": 245,
+        "standingReference": 245,
+        "bounds": [
+          10,
+          9,
+          313,
+          267
+        ],
+        "sourcePixels": 19701,
+        "largeComponents": [
+          {
+            "area": 19700,
+            "bbox": [
+              10,
+              9,
+              313,
+              267
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 12,
+        "rect": [
+          71,
+          661,
+          315,
+          243
+        ],
+        "origin": [
+          195.0,
+          235
+        ],
+        "reference": 245,
+        "standingReference": 245,
+        "bounds": [
+          10,
+          10,
+          305,
+          233
+        ],
+        "sourcePixels": 19501,
+        "largeComponents": [
+          {
+            "area": 19501,
+            "bbox": [
+              10,
+              10,
+              305,
+              233
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "name": "undertow",
+    "clips": {
+      "idle": [
+        0
+      ],
+      "walk": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "jump": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "normal": [
+        13,
+        14,
+        15
+      ],
+      "skill0": [
+        16,
+        17,
+        18
+      ],
+      "skill1": [
+        19,
+        20,
+        21
+      ],
+      "skill2": [
+        23,
+        25,
+        26
+      ],
+      "ultimate": [
+        24,
+        25,
+        27
+      ],
+      "guard": [
+        28
+      ],
+      "hit": [
+        29
+      ],
+      "ko": [
+        30
+      ],
+      "dash": [
+        31
+      ]
+    },
+    "frames": [
+      {
+        "state": "walk",
+        "frame": 1,
+        "rect": [
+          385,
+          90,
+          309,
+          258
+        ],
+        "origin": [
+          164.0,
+          250
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          299,
+          248
+        ],
+        "sourcePixels": 31488,
+        "largeComponents": [
+          {
+            "area": 31488,
+            "bbox": [
+              10,
+              10,
+              299,
+              248
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 2,
+        "rect": [
+          743,
+          90,
+          314,
+          258
+        ],
+        "origin": [
+          168.5,
+          250
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          304,
+          248
+        ],
+        "sourcePixels": 30446,
+        "largeComponents": [
+          {
+            "area": 30446,
+            "bbox": [
+              10,
+              10,
+              304,
+              248
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 3,
+        "rect": [
+          1102,
+          91,
+          316,
+          257
+        ],
+        "origin": [
+          175.0,
+          249
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          9,
+          306,
+          247
+        ],
+        "sourcePixels": 29354,
+        "largeComponents": [
+          {
+            "area": 29354,
+            "bbox": [
+              10,
+              9,
+              306,
+              247
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 4,
+        "rect": [
+          23,
+          451,
+          313,
+          257
+        ],
+        "origin": [
+          172.0,
+          249
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          303,
+          247
+        ],
+        "sourcePixels": 29890,
+        "largeComponents": [
+          {
+            "area": 29890,
+            "bbox": [
+              10,
+              10,
+              303,
+              247
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 5,
+        "rect": [
+          372,
+          449,
+          336,
+          259
+        ],
+        "origin": [
+          175.0,
+          251
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          326,
+          249
+        ],
+        "sourcePixels": 32368,
+        "largeComponents": [
+          {
+            "area": 32368,
+            "bbox": [
+              10,
+              10,
+              326,
+              249
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 6,
+        "rect": [
+          736,
+          451,
+          327,
+          257
+        ],
+        "origin": [
+          170.0,
+          249
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          317,
+          247
+        ],
+        "sourcePixels": 32252,
+        "largeComponents": [
+          {
+            "area": 32252,
+            "bbox": [
+              10,
+              10,
+              317,
+              247
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 7,
+        "rect": [
+          1096,
+          452,
+          327,
+          256
+        ],
+        "origin": [
+          179.0,
+          248
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          317,
+          246
+        ],
+        "sourcePixels": 30882,
+        "largeComponents": [
+          {
+            "area": 30882,
+            "bbox": [
+              10,
+              10,
+              317,
+              246
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "walk",
+        "frame": 8,
+        "rect": [
+          67,
+          166,
+          310,
+          266
+        ],
+        "origin": [
+          165.0,
+          258
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          9,
+          10,
+          300,
+          256
+        ],
+        "sourcePixels": 31104,
+        "largeComponents": [
+          {
+            "area": 31104,
+            "bbox": [
+              9,
+              10,
+              300,
+              256
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 9,
+        "rect": [
+          519,
+          200,
+          294,
+          232
+        ],
+        "origin": [
+          141.0,
+          224
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          284,
+          222
+        ],
+        "sourcePixels": 27180,
+        "largeComponents": [
+          {
+            "area": 27179,
+            "bbox": [
+              10,
+              11,
+              284,
+              222
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 10,
+        "rect": [
+          971,
+          177,
+          278,
+          255
+        ],
+        "origin": [
+          146.0,
+          247
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          268,
+          246
+        ],
+        "sourcePixels": 23310,
+        "largeComponents": [
+          {
+            "area": 23310,
+            "bbox": [
+              10,
+              10,
+              268,
+              246
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 11,
+        "rect": [
+          1388,
+          223,
+          332,
+          209
+        ],
+        "origin": [
+          189.0,
+          201
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          322,
+          199
+        ],
+        "sourcePixels": 23272,
+        "largeComponents": [
+          {
+            "area": 23272,
+            "bbox": [
+              10,
+              10,
+              322,
+              199
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      },
+      {
+        "state": "jump",
+        "frame": 12,
+        "rect": [
+          54,
+          624,
+          335,
+          252
+        ],
+        "origin": [
+          177.0,
+          244
+        ],
+        "reference": 244,
+        "standingReference": 244,
+        "bounds": [
+          10,
+          10,
+          325,
+          242
+        ],
+        "sourcePixels": 33620,
+        "largeComponents": [
+          {
+            "area": 33616,
+            "bbox": [
+              11,
+              11,
+              325,
+              242
+            ]
+          }
+        ],
+        "suspect": false,
+        "reason": ""
+      }
+    ]
+  }
+]
