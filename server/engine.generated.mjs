@@ -136,6 +136,9 @@ function profileEmitter(f,v,t=0){
  }
  return {x:f.x+dir*phase.offset[0]*registration,y:f.y+phase.offset[1]*registration-hover};
 }
+// Match the existing Ultimate Alien-style bodies: pale-blue cosmic ray and red-orange containment-vent energy.
+for(const p of POWER_PROFILES.aliens[18])p.color='#9edfff';
+for(const p of POWER_PROFILES.aliens[39])p.color='#ff754b';
 // Discard two merged source crops in favour of clean native preparation/retraction poses.
 POWER_PROFILES.aliens[79][3].phases[0]={...POWER_PROFILES.aliens[79][0].phases[0]};
 POWER_PROFILES.aliens[82][2].phases[2]={...POWER_PROFILES.aliens[82][2].phases[0]};

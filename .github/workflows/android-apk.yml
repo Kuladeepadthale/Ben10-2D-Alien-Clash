@@ -103,11 +103,42 @@ jobs:
           node ci/check-testing-flow.cjs
           for script in web/*.js; do node --check "$script"; done
       - name: Verify all 92 action sets and game controls
-        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]') && !contains(github.event.head_commit.message, '[package116]') && !contains(github.event.head_commit.message, '[locomotion126-check]') && !contains(github.event.head_commit.message, '[powers127-ui]') && !contains(github.event.head_commit.message, '[walk128]') && !contains(github.event.head_commit.message, '[powers129-native]')"
+        if: "!contains(github.event.head_commit.message, '[landmarks-only]') && !contains(github.event.head_commit.message, '[squad-ui-only]') && !contains(github.event.head_commit.message, '[icons111-only]') && !contains(github.event.head_commit.message, '[plumber-layout-only]') && !contains(github.event.head_commit.message, '[plumber113]') && !contains(github.event.head_commit.message, '[expedition114]') && !contains(github.event.head_commit.message, '[battle115]') && !contains(github.event.head_commit.message, '[package116]') && !contains(github.event.head_commit.message, '[locomotion126-check]') && !contains(github.event.head_commit.message, '[powers127-ui]') && !contains(github.event.head_commit.message, '[walk128]') && !contains(github.event.head_commit.message, '[powers129-native]') && !contains(github.event.head_commit.message, '[higher130-palette]')"
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
         run: |
           python3 ci/run-release-checks.py
+      - name: Verify two species palettes against completed higher-category regression baseline
+        if: contains(github.event.head_commit.message, '[higher130-palette]')
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --depth=1 origin 6d1886f82c60e999c81adfe462182f678cd05f47
+          gh api repos/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/jobs/121407283812 > /tmp/higher130-baseline.json
+          python3 - <<'PYPALETTE'
+          import json,pathlib,subprocess,re
+          baseline='6d1886f82c60e999c81adfe462182f678cd05f47'
+          job=json.load(open('/tmp/higher130-baseline.json'))
+          assert job['head_sha']==baseline
+          assert any(step['name']=='Verify all 92 action sets and game controls' and step['conclusion']=='success' for step in job['steps'])
+          assert len(json.loads(subprocess.check_output(['git','show',baseline+':ci/release-checks.json'],text=True)))==78
+          changed=set(subprocess.check_output(['git','diff','--name-only',baseline,'HEAD'],text=True).splitlines())
+          assert all(p in {'web/power-profiles.js','server/engine.generated.mjs','.github/workflows/android-apk.yml','ci/release-checks.json'} or p.startswith('ci/powers130/') for p in changed),changed
+          def at(ref,path):return subprocess.check_output(['git','show',ref+':'+path],text=True)
+          needle='// Discard two merged source crops'
+          palette="// Match the existing Ultimate Alien-style bodies: pale-blue cosmic ray and red-orange containment-vent energy.\nfor(const p of POWER_PROFILES.aliens[18])p.color='#9edfff';\nfor(const p of POWER_PROFILES.aliens[39])p.color='#ff754b';\n"
+          for path in ['web/power-profiles.js','server/engine.generated.mjs']:
+           assert at('HEAD',path)==at(baseline,path).replace(needle,palette+needle,1),path
+          assert json.loads(at('HEAD','ci/release-checks.json'))==['node ci/powers130/verify-palette.cjs']+json.loads(at(baseline,'ci/release-checks.json'))
+          print('Verified78 passed regression commands. Only two species colour overrides changed in game/server code; native art, choreography, simulation, categories and progression are identical.')
+          PYPALETTE
+          node ci/powers130/verify.cjs
+          node ci/powers130/verify-palette.cjs
+          python3 ci/check-profile-pixels.py
+          node ci/check-clean-powers.cjs
+          node ci/check-power-origins.cjs
+          for script in web/*.js; do node --check "$script"; done
       - name: Verify corrected native Rush metadata and Chamalien palette against regression baseline
         if: contains(github.event.head_commit.message, '[powers129-native]')
         env:

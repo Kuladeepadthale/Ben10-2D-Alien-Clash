@@ -18,3 +18,11 @@ Damage, prices, card categories, upgrades, progression, cooldowns, mission/rewar
 `audit.cjs` steps each real cast at120Hz and saves six timeline samples for every attack. The `powers-review-130` branch retains before/after sheets and ten six-alien batch JSON checkpoints; each batch is committed independently. These are QA screenshots, never gameplay projectile art. Overviews cover all60 aliens. `tracker.json` records per-attack native verification, and the release checkpoint records visual review and final build evidence separately. Resume from fresh main; do not overwrite v12.8 walking or v12.9 repairs from an older branch.
 
 Physical Android phone testing and live Worker deployment remain pending. Six legacy full-art reviews from earlier versions remain separate from this targeted attack/rendering audit.
+
+## Visual review result
+
+All ten overview batches were inspected, covering all60 aliens and300 attacks. Comparing six sampled real-cast poses per attack found40 changed native sequences across24 aliens. Other existing good sequences were retained; animated projectile geometry applies to the selected categories. Approved jump/slam flight silhouettes and ball rolling are intentional exceptions to a power's on-ground contact clip.
+
+Way Big now uses pale-blue cosmic energy to match the existing Ultimate Alien-style body; NRG uses red-orange vent energy. Reference checks: https://ben10.fandom.com/wiki/Way_Big_(Classic) (the notes distinguish Ultimate Alien pale blue from Omniverse green) and https://ben10.fandom.com/wiki/NRG (red radioactive energy through containment-suit vents). These references guide palette choice, not a claim that this game reproduces exact episode footage.
+
+Review source: `powers-review-130` commit175a3b45582e8229199fee523c651236fb5b1d86; latest colour review rerendered only batches0 and3, and retained the eight unchanged reviewed batches. The full before/after character sheets remain on that branch. The final palette-only build must prove all other game/server implementation is byte-for-byte equal to the passed78-command baseline and rerun native/origin/palette checks.

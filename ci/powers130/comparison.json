@@ -1,0 +1,193 @@
+{
+  "aliensReviewed": 60,
+  "attacksReviewed": 300,
+  "changedNativeAliens": 24,
+  "changedNativeAttacks": 40,
+  "changes": [
+    {
+      "id": 9,
+      "name": "Ghostfreak",
+      "keys": [
+        "skill0"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Jetray",
+      "keys": [
+        "skill1"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Spidermonkey",
+      "keys": [
+        "skill1",
+        "skill2",
+        "ultimate"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Alien X",
+      "keys": [
+        "skill2"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "AmpFibian",
+      "keys": [
+        "skill1"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Armodrillo",
+      "keys": [
+        "skill2"
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Eatle",
+      "keys": [
+        "skill1"
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Feedback",
+      "keys": [
+        "skill2"
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Astrodactyl",
+      "keys": [
+        "skill1"
+      ]
+    },
+    {
+      "id": 55,
+      "name": "Kickin' Hawk",
+      "keys": [
+        "skill0",
+        "skill2",
+        "ultimate"
+      ]
+    },
+    {
+      "id": 56,
+      "name": "Whampire",
+      "keys": [
+        "skill2"
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Gax",
+      "keys": [
+        "ultimate"
+      ]
+    },
+    {
+      "id": 65,
+      "name": "Slapback",
+      "keys": [
+        "skill0",
+        "skill1",
+        "skill2",
+        "ultimate"
+      ]
+    },
+    {
+      "id": 68,
+      "name": "Ultimate Big Chill",
+      "keys": [
+        "skill2"
+      ]
+    },
+    {
+      "id": 72,
+      "name": "Ultimate Wildmutt",
+      "keys": [
+        "skill0",
+        "skill1",
+        "ultimate"
+      ]
+    },
+    {
+      "id": 73,
+      "name": "Ultimate Spidermonkey",
+      "keys": [
+        "skill2",
+        "ultimate"
+      ]
+    },
+    {
+      "id": 77,
+      "name": "Ultimate Rath",
+      "keys": [
+        "skill0",
+        "skill1",
+        "ultimate"
+      ]
+    },
+    {
+      "id": 79,
+      "name": "Bashmouth",
+      "keys": [
+        "skill0",
+        "skill2",
+        "ultimate"
+      ]
+    },
+    {
+      "id": 80,
+      "name": "Bootleg",
+      "keys": [
+        "skill1"
+      ]
+    },
+    {
+      "id": 81,
+      "name": "Crystalfist",
+      "keys": [
+        "skill2"
+      ]
+    },
+    {
+      "id": 82,
+      "name": "Dark Matter",
+      "keys": [
+        "skill2"
+      ]
+    },
+    {
+      "id": 84,
+      "name": "Humungoraptor",
+      "keys": [
+        "skill0",
+        "ultimate"
+      ]
+    },
+    {
+      "id": 85,
+      "name": "Quad Smack",
+      "keys": [
+        "skill0",
+        "ultimate"
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Skunkmoth",
+      "keys": [
+        "skill2"
+      ]
+    }
+  ],
+  "allOverviewsVisuallyInspected": true
+}

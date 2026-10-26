@@ -1,4 +1,5 @@
 [
+  "node ci/powers130/verify-palette.cjs",
   "node ci/powers130/verify.cjs",
   "node ci/powers129/verify.cjs",
   "node ci/powers127/verify.cjs",

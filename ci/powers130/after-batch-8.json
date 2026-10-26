@@ -1,0 +1,2138 @@
+[
+  {
+    "id": 79,
+    "name": "Bashmouth",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "rendered",
+    "attacks": [
+      {
+        "key": "normal",
+        "name": "Normal strike",
+        "kind": "melee",
+        "source": "native-contact",
+        "samples": [
+          {
+            "t": 0.06666666666666667,
+            "frame": 13,
+            "own": [
+              13,
+              14,
+              15
+            ],
+            "profileFrame": null
+          },
+          {
+            "t": 0.13333333333333333,
+            "frame": 14,
+            "own": [
+              13,
+              14,
+              15
+            ],
+            "profileFrame": null
+          },
+          {
+            "t": 0.15,
+            "frame": 14,
+            "own": [
+              13,
+              14,
+              15
+            ],
+            "profileFrame": null
+          },
+          {
+            "t": 0.16666666666666666,
+            "frame": 14,
+            "own": [
+              13,
+              14,
+              15
+            ],
+            "profileFrame": null
+          },
+          {
+            "t": 0.19166666666666665,
+            "frame": 14,
+            "own": [
+              13,
+              14,
+              15
+            ],
+            "profileFrame": null
+          },
+          {
+            "t": 0.33333333333333354,
+            "frame": 15,
+            "own": [
+              13,
+              14,
+              15
+            ],
+            "profileFrame": null
+          }
+        ]
+      },
+      {
+        "key": "skill0",
+        "name": "Metal-claw barrage",
+        "kind": "melee",
+        "source": "claws",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 16,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.5000000000000007,
+            "frame": 16,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.6500000000000001,
+            "frame": 18,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 18
+          },
+          {
+            "t": 0.7916666666666663,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 1.1499999999999984,
+            "frame": 18,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 18
+          }
+        ]
+      },
+      {
+        "key": "skill1",
+        "name": "Steel-jaw bite",
+        "kind": "melee",
+        "source": "claws",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 19,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 19
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.5000000000000007,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.6500000000000001,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.7916666666666663,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 1.1499999999999984,
+            "frame": 21,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 21
+          }
+        ]
+      },
+      {
+        "key": "skill2",
+        "name": "Wolf pounce",
+        "kind": "pounce",
+        "source": "claws",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 22,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 22
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.4583333333333339,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.5750000000000004,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.6916666666666667,
+            "frame": 24,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 24
+          },
+          {
+            "t": 1.0166666666666655,
+            "frame": 24,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 24
+          }
+        ]
+      },
+      {
+        "key": "ultimate",
+        "name": "Armored wolf frenzy",
+        "kind": "rush",
+        "source": "claws",
+        "samples": [
+          {
+            "t": 0.3583333333333336,
+            "frame": 16,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.6666666666666667,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.0749999999999986,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.4749999999999972,
+            "frame": 27,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 27
+          },
+          {
+            "t": 1.883333333333329,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 2.4083333333333274,
+            "frame": 27,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 27
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Bootleg",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "rendered",
+    "attacks": [
+      {
+        "key": "normal",
+        "name": "Optic corruption beam · basic",
+        "kind": "beam",
+        "source": "eye",
+        "samples": [
+          {
+            "t": 0.09166666666666666,
+            "frame": 16,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.175,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.19999999999999998,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.2333333333333333,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.26666666666666666,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.45000000000000057,
+            "frame": 18,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 18
+          }
+        ]
+      },
+      {
+        "key": "skill0",
+        "name": "Optic corruption beam",
+        "kind": "beam",
+        "source": "eye",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 16,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.47500000000000064,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.6083333333333336,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.7416666666666665,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 1.0749999999999986,
+            "frame": 18,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 18
+          }
+        ]
+      },
+      {
+        "key": "skill1",
+        "name": "Liquid spike strike",
+        "kind": "melee",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 19,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 19
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.5000000000000007,
+            "frame": 19,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 19
+          },
+          {
+            "t": 0.6500000000000001,
+            "frame": 21,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 21
+          },
+          {
+            "t": 0.7916666666666663,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 1.1499999999999984,
+            "frame": 21,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 21
+          }
+        ]
+      },
+      {
+        "key": "skill2",
+        "name": "Circuit pulse",
+        "kind": "wave",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 22,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 22
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.37500000000000033,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.4000000000000004,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.4250000000000005,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.7,
+            "frame": 24,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 24
+          }
+        ]
+      },
+      {
+        "key": "ultimate",
+        "name": "Corruption overload",
+        "kind": "beam",
+        "source": "eye",
+        "samples": [
+          {
+            "t": 0.3583333333333336,
+            "frame": 25,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 25
+          },
+          {
+            "t": 0.6666666666666667,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.0749999999999986,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.4749999999999972,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.883333333333329,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 2.4083333333333274,
+            "frame": 27,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 27
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Crystalfist",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "rendered",
+    "attacks": [
+      {
+        "key": "normal",
+        "name": "Violet crystal shard · basic",
+        "kind": "projectile",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.09166666666666666,
+            "frame": 16,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.175,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.19999999999999998,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.2333333333333333,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.26666666666666666,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.45000000000000057,
+            "frame": 18,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 18
+          }
+        ]
+      },
+      {
+        "key": "skill0",
+        "name": "Violet crystal shard",
+        "kind": "projectile",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 16,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.37500000000000033,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.4000000000000004,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.4250000000000005,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.7,
+            "frame": 18,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 18
+          }
+        ]
+      },
+      {
+        "key": "skill1",
+        "name": "Crystalline eruption",
+        "kind": "spikes",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.30833333333333346,
+            "frame": 19,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 19
+          },
+          {
+            "t": 0.5666666666666671,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.5750000000000004,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.6000000000000003,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.6166666666666669,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.8833333333333326,
+            "frame": 21,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 21
+          }
+        ]
+      },
+      {
+        "key": "skill2",
+        "name": "Crystal-fist combo",
+        "kind": "melee",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 22,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 22
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.5000000000000007,
+            "frame": 22,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 22
+          },
+          {
+            "t": 0.6500000000000001,
+            "frame": 24,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 24
+          },
+          {
+            "t": 0.7916666666666663,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 1.1499999999999984,
+            "frame": 24,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 24
+          }
+        ]
+      },
+      {
+        "key": "ultimate",
+        "name": "Purple crystal cascade",
+        "kind": "spikes",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.3583333333333336,
+            "frame": 25,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 25
+          },
+          {
+            "t": 0.6666666666666667,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.0749999999999986,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.4749999999999972,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.883333333333329,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 2.4083333333333274,
+            "frame": 27,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 27
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Dark Matter",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "rendered",
+    "attacks": [
+      {
+        "key": "normal",
+        "name": "Crystallizing flame · basic",
+        "kind": "projectile",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.09166666666666666,
+            "frame": 16,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.175,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.19999999999999998,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.2333333333333333,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.26666666666666666,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.45000000000000057,
+            "frame": 18,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 18
+          }
+        ]
+      },
+      {
+        "key": "skill0",
+        "name": "Crystallizing flame",
+        "kind": "projectile",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 16,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.37500000000000033,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.4000000000000004,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.4250000000000005,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.7,
+            "frame": 18,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 18
+          }
+        ]
+      },
+      {
+        "key": "skill1",
+        "name": "Dark crystal trap",
+        "kind": "trap",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 19,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 19
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 1.1833333333333316,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 1.991666666666662,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 2.7999999999999927,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 3.59999999999999,
+            "frame": 21,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 21
+          }
+        ]
+      },
+      {
+        "key": "skill2",
+        "name": "Crystalline claw",
+        "kind": "melee",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 22,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 22
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.5000000000000007,
+            "frame": 22,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 22
+          },
+          {
+            "t": 0.6500000000000001,
+            "frame": 22,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 22
+          },
+          {
+            "t": 0.7916666666666663,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 1.1499999999999984,
+            "frame": 22,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 22
+          }
+        ]
+      },
+      {
+        "key": "ultimate",
+        "name": "Matter crystallization",
+        "kind": "spikes",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.3583333333333336,
+            "frame": 25,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 25
+          },
+          {
+            "t": 0.6666666666666667,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.0749999999999986,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.4749999999999972,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.883333333333329,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 2.4083333333333274,
+            "frame": 27,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 27
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Hot Shot",
+    "rank": "Epic",
+    "rankId": 2,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "rendered",
+    "attacks": [
+      {
+        "key": "normal",
+        "name": "Magma fireball · basic",
+        "kind": "projectile",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.09166666666666666,
+            "frame": 16,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.175,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.19999999999999998,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.2333333333333333,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.26666666666666666,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.45000000000000057,
+            "frame": 18,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 18
+          }
+        ]
+      },
+      {
+        "key": "skill0",
+        "name": "Magma fireball",
+        "kind": "projectile",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 16,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.37500000000000033,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.4000000000000004,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.4250000000000005,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.7,
+            "frame": 18,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 18
+          }
+        ]
+      },
+      {
+        "key": "skill1",
+        "name": "Flame stream",
+        "kind": "beam",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 19,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 19
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.47500000000000064,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.6083333333333336,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.7416666666666665,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 1.0749999999999986,
+            "frame": 21,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 21
+          }
+        ]
+      },
+      {
+        "key": "skill2",
+        "name": "Volcanic eruption",
+        "kind": "eruption",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.33333333333333354,
+            "frame": 22,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 22
+          },
+          {
+            "t": 0.6166666666666669,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.6250000000000002,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.6500000000000001,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.6666666666666667,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.9333333333333325,
+            "frame": 24,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 24
+          }
+        ]
+      },
+      {
+        "key": "ultimate",
+        "name": "Magma storm",
+        "kind": "rain",
+        "source": "hands",
+        "samples": [
+          {
+            "t": 0.3583333333333336,
+            "frame": 25,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 25
+          },
+          {
+            "t": 0.6666666666666667,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.0749999999999986,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.4749999999999972,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.883333333333329,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 2.4083333333333274,
+            "frame": 27,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 27
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Humungoraptor",
+    "rank": "Heroic",
+    "rankId": 3,
+    "powers": [
+      "normal",
+      "skill0",
+      "skill1",
+      "skill2",
+      "ultimate"
+    ],
+    "review": "rendered",
+    "attacks": [
+      {
+        "key": "normal",
+        "name": "Normal strike",
+        "kind": "melee",
+        "source": "native-contact",
+        "samples": [
+          {
+            "t": 0.06666666666666667,
+            "frame": 13,
+            "own": [
+              13,
+              14,
+              15
+            ],
+            "profileFrame": null
+          },
+          {
+            "t": 0.13333333333333333,
+            "frame": 14,
+            "own": [
+              13,
+              14,
+              15
+            ],
+            "profileFrame": null
+          },
+          {
+            "t": 0.15,
+            "frame": 14,
+            "own": [
+              13,
+              14,
+              15
+            ],
+            "profileFrame": null
+          },
+          {
+            "t": 0.16666666666666666,
+            "frame": 14,
+            "own": [
+              13,
+              14,
+              15
+            ],
+            "profileFrame": null
+          },
+          {
+            "t": 0.19166666666666665,
+            "frame": 14,
+            "own": [
+              13,
+              14,
+              15
+            ],
+            "profileFrame": null
+          },
+          {
+            "t": 0.33333333333333354,
+            "frame": 15,
+            "own": [
+              13,
+              14,
+              15
+            ],
+            "profileFrame": null
+          }
+        ]
+      },
+      {
+        "key": "skill0",
+        "name": "Raptor claw combo",
+        "kind": "melee",
+        "source": "claws",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 16,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 0.5000000000000007,
+            "frame": 16,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 16
+          },
+          {
+            "t": 0.6500000000000001,
+            "frame": 18,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 18
+          },
+          {
+            "t": 0.7916666666666663,
+            "frame": 17,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 17
+          },
+          {
+            "t": 1.1499999999999984,
+            "frame": 18,
+            "own": [
+              16,
+              17,
+              18
+            ],
+            "profileFrame": 18
+          }
+        ]
+      },
+      {
+        "key": "skill1",
+        "name": "Spiked tail sweep",
+        "kind": "melee",
+        "source": "tail",
+        "samples": [
+          {
+            "t": 0.19166666666666665,
+            "frame": 19,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 19
+          },
+          {
+            "t": 0.35000000000000026,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.5000000000000007,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.6500000000000001,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 0.7916666666666663,
+            "frame": 20,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 20
+          },
+          {
+            "t": 1.1499999999999984,
+            "frame": 21,
+            "own": [
+              19,
+              20,
+              21
+            ],
+            "profileFrame": 21
+          }
+        ]
+      },
+      {
+        "key": "skill2",
+        "name": "Raptor stomp",
+        "kind": "ground",
+        "source": "feet",
+        "samples": [
+          {
+            "t": 0.33333333333333354,
+            "frame": 22,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 22
+          },
+          {
+            "t": 0.6166666666666669,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.6250000000000002,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.6500000000000001,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.6666666666666667,
+            "frame": 23,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 23
+          },
+          {
+            "t": 0.9333333333333325,
+            "frame": 24,
+            "own": [
+              22,
+              23,
+              24
+            ],
+            "profileFrame": 24
+          }
+        ]
+      },
+      {
+        "key": "ultimate",
+        "name": "Raptor stampede",
+        "kind": "rush",
+        "source": "body",
+        "samples": [
+          {
+            "t": 0.3583333333333336,
+            "frame": 25,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 25
+          },
+          {
+            "t": 0.6666666666666667,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.0749999999999986,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 1.4749999999999972,
+            "frame": 27,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 27
+          },
+          {
+            "t": 1.883333333333329,
+            "frame": 26,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 26
+          },
+          {
+            "t": 2.4083333333333274,
+            "frame": 27,
+            "own": [
+              25,
+              26,
+              27
+            ],
+            "profileFrame": 27
+          }
+        ]
+      }
+    ]
+  }
+]
