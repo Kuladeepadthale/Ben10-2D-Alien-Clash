@@ -4,7 +4,7 @@ const fs=require('fs'),vm=require('vm'),{createCanvas}=require('@napi-rs/canvas'
  const b=harness(),run=s=>vm.runInContext(s,b);await run('allAlienPosesReady');run(fs.readFileSync('web/art.js','utf8'));
  const game=fs.readFileSync('web/game.js','utf8');for(const n of ['drawEffect','drawShot','updateEffects','segmentRect','overlap','hitboxCircle'])run(declaration(game,n));
  for(const file of ['expansion-effects.js','alien-force-effects.js','next20-effects.js','cartoon-power-effects.js','ability-animations.js','combat-choreography.js','species-animation-fixes.js','crashhopper-guard127.js','requested-powers127.js','walk128-data.js','walk-quality128.js','requested-powers129.js','higher-powers130.js'])if(fs.existsSync('web/'+file))run(fs.readFileSync('web/'+file,'utf8'));
- const cv=createCanvas(1280,640),ctx=cv.getContext('2d');b.ctx=ctx;const records=[];
+ const cv=createCanvas(1280,640),ctx=cv.getContext('2d');b.ctx=ctx;const records=[],overview=createCanvas(1701,1520),oc=overview.getContext('2d');oc.fillStyle='#14212b';oc.fillRect(0,0,1701,1520);
  for(const row of rows){
   const {id}=row;b.id=id;run('celCache.clear();celPinned=new Set([id,2]);');await run('Promise.all([celEnsure(id),celEnsure(2)])');const sheet=createCanvas(1620,1040),sc=sheet.getContext('2d');sc.fillStyle='#14212b';sc.fillRect(0,0,1620,1040);const attacks=[];
   for(const [line,key]of row.powers.entries()){
@@ -20,7 +20,9 @@ const fs=require('fs'),vm=require('vm'),{createCanvas}=require('@napi-rs/canvas'
    }
    attacks.push({key,name:cfg.name,kind:cfg.kind,source:run('powerProfileFor(player,key)?.source||"native-contact"'),samples});
   }
+  const tile=records.length,tx=(tile%3)*567,ty=Math.floor(tile/3)*760;oc.fillStyle='#e4f0ec';oc.font='16px sans-serif';oc.fillText(row.name+' · '+id,tx+8,ty+22);for(let k=0;k<3;k++)oc.drawImage(sheet,[0,2,4][k]*270,0,270,1040,tx+k*189,ty+30,189,728);
   fs.writeFileSync('ci/powers130/'+stage+'-'+String(id).padStart(2,'0')+'.webp',sheet.toBuffer('image/webp'));records.push({...row,review:'rendered',attacks});console.log(stage+' reviewed '+id+' '+row.name);
  }
+ fs.writeFileSync('ci/powers130/'+stage+'-overview-'+batch+'.webp',overview.toBuffer('image/webp'));
  fs.writeFileSync('ci/powers130/'+stage+'-batch-'+batch+'.json',JSON.stringify(records,null,2)+'\n');
 })().catch(e=>{console.error(e);process.exit(1)});

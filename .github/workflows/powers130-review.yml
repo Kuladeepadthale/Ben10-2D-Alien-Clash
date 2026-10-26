@@ -24,6 +24,11 @@ jobs:
         run: |
           python3 ci/restore-verified-art.py
           python3 ci/walk128/build.py
+      - name: Verify all higher-category attacks when repaired
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          if test -f web/higher-powers130.js; then node ci/powers130/verify.cjs; fi
       - name: Review and checkpoint six aliens per batch
         env:
           NODE_PATH: /tmp/cel-tools/node_modules
@@ -35,6 +40,7 @@ jobs:
           for batch in $(seq 0 9); do
             node ci/powers130/audit.cjs "$batch" "$stage"
             git add ci/powers130/*.webp ci/powers130/*-batch-*.json
+            if test -f ci/powers130/runtime.json; then git add ci/powers130/runtime.json ci/powers130/tracker.json; fi
             if ! git diff --cached --quiet; then
               git commit -m "[art-audit] Save $stage higher-category batch $batch"
               git push

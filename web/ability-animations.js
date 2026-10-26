@@ -140,7 +140,7 @@ function ensureThrowArt(id){
  const pending=loadClassicImage('assets/ui/abilities/'+atlas).then(image=>{throwArtImages.set(atlas,image);throwArtPending.delete(atlas);const keep=new Set(typeof celPinned!=='undefined'?[...celPinned].map(id=>POWER_PROFILES.aliens[id]?.[0]?.icon?.atlas):[]);for(const key of throwArtImages.keys())if(throwArtImages.size>3&&key!==atlas&&!keep.has(key))throwArtImages.delete(key);return true;},()=>{throwArtPending.delete(atlas);return false;});throwArtPending.set(atlas,pending);return pending;
 }
 function drawSingleThrow(ctx,e){
- if(!e.singleThrow||!['projectile','lob'].includes(e.kind)||Number.isInteger(e.owner?.villain))return false;
+ if(!e.singleThrow||!['projectile','lob'].includes(e.kind)||Number.isInteger(e.owner?.villain)||typeof higher130Selected==='function'&&higher130Selected(e.owner))return false;
  const profile=powerProfileFor(e.owner,e.artKey||e.name),art=profile?.icon,image=art&&throwArtImages.get(art.atlas);if(!image)return false;
  const [x,y,w,h]=art.rect,scale=Math.min((e.r||18)*2.7/Math.max(1,h),100/Math.max(1,w)),angle=Math.atan2(e.vy||0,e.vx||0);
  ctx.save();ctx.translate(e.x,e.y);ctx.rotate(angle);ctx.globalAlpha=Math.min(1,e.life*12);ctx.imageSmoothingEnabled=true;
@@ -150,5 +150,6 @@ function drawSingleThrow(ctx,e){
 const nativeSingleShot=drawShot;drawShot=function(ctx,e){if(drawSingleThrow(ctx,e))return;nativeSingleShot(ctx,e);};
 const nativePowerEnsure=celEnsure;celEnsure=function(id){return Promise.all([nativePowerEnsure(id),ensureThrowArt(id)]).then(result=>result[0]);};
 ensureThrowArt(0);ensureThrowArt(2);
+
 
 
