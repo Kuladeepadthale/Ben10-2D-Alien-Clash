@@ -1,0 +1,76 @@
+name: Package first Play Store release
+on:
+  push:
+    branches: [play-store-first-release]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+          log-accepted-android-sdk-licenses: false
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Restore exact verified 13.1 game assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+          mkdir -p /tmp/verified-game builds/web
+          gh release download android-1fec095ff2e3 --pattern Ben10-2D-Alien-Clash.apk --dir /tmp/verified-game
+          echo 'f4e50a91b21f2e6d3b636aaaa52dc6f1659a4b19d1d3774521beb6e4242dfda1  /tmp/verified-game/Ben10-2D-Alien-Clash.apk' | sha256sum -c -
+          python3 - <<'PY'
+          import zipfile,pathlib,json
+          z=zipfile.ZipFile('/tmp/verified-game/Ben10-2D-Alien-Clash.apk')
+          root=pathlib.Path('builds/web').resolve()
+          for n in z.namelist():
+           if n.startswith('assets/') and not n.endswith('/'):
+            p=(root/n[7:]).resolve();assert p.is_relative_to(root);p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          assert len(json.loads((root/'assets/cels/manifest.json').read_text())['characters'])==92
+          assert len(json.loads((root/'assets/ui/abilities/manifest.json').read_text())['entries'])==460
+          PY
+      - name: Configure first store package without a development signer
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('android/app/build.gradle')
+          s=p.read_text()
+          s=s.replace("applicationId (parallelInstall ? 'org.alienclash.twod.online' : 'org.alienclash.twod')","applicationId 'com.ben10.myapp'")
+          s=s.replace("manifestPlaceholders = [appLabel: (parallelInstall ? 'Ben 10 Alien Clash Online' : 'Ben 10 Alien Clash')]","manifestPlaceholders = [appLabel: 'Ben 10 Omniverse']")
+          assert "applicationId 'com.ben10.myapp'" in s
+          p.write_text(s)
+          PY
+      - name: Build release bundle and installable package
+        run: |
+          gradle -p android --no-daemon bundleRelease assembleRelease
+          mkdir -p play-output
+          cp android/app/build/outputs/bundle/release/app-release.aab play-output/Ben10-Omniverse-13.1-unsigned.aab
+          cp android/app/build/outputs/apk/release/app-release-unsigned.apk play-output/Ben10-Omniverse-13.1-unsigned.apk
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging play-output/Ben10-Omniverse-13.1-unsigned.apk | head -1
+          python3 - <<'PY'
+          import zipfile,pathlib,hashlib,json
+          root=pathlib.Path('builds/web')
+          for suffix,prefix in [('aab','base/assets/'),('apk','assets/')]:
+           z=zipfile.ZipFile('play-output/Ben10-Omniverse-13.1-unsigned.'+suffix)
+           assert z.testzip() is None
+           for f in root.rglob('*'):
+            if f.is_file(): assert z.read(prefix+f.relative_to(root).as_posix())==f.read_bytes(),str(f)
+           print(suffix,'all game assets byte-identical to verified 13.1 release')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Ben10-first-store-release-unsigned
+          path: play-output/*
+          retention-days: 7
+          compression-level: 0
