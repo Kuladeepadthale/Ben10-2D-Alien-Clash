@@ -21,12 +21,12 @@ jobs:
           log-accepted-android-sdk-licenses: false
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.9'
+          gradle-version: '8.11.1'
       - name: Restore exact verified 13.1 game assets
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+          sdkmanager 'platforms;android-36' 'build-tools;35.0.0'
           mkdir -p /tmp/verified-game builds/web
           gh release download android-1fec095ff2e3 --pattern Ben10-2D-Alien-Clash.apk --dir /tmp/verified-game
           echo 'f4e50a91b21f2e6d3b636aaaa52dc6f1659a4b19d1d3774521beb6e4242dfda1  /tmp/verified-game/Ben10-2D-Alien-Clash.apk' | sha256sum -c -
@@ -45,7 +45,9 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           p=Path('android/app/build.gradle')
-          s=p.read_text()
+          s=p.read_text().replace('compileSdk 35','compileSdk 36').replace('targetSdk 35','targetSdk 36')
+          top=Path('android/build.gradle')
+          top.write_text(top.read_text().replace("version '8.7.3'","version '8.10.1'"))
           s=s.replace("applicationId (parallelInstall ? 'org.alienclash.twod.online' : 'org.alienclash.twod')","applicationId 'com.ben10.myapp'")
           s=s.replace("manifestPlaceholders = [appLabel: (parallelInstall ? 'Ben 10 Alien Clash Online' : 'Ben 10 Alien Clash')]","manifestPlaceholders = [appLabel: 'Ben 10 Omniverse']")
           assert "applicationId 'com.ben10.myapp'" in s
