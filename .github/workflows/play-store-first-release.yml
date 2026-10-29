@@ -4,7 +4,7 @@ on:
     branches: [play-store-first-release]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   package:
     runs-on: ubuntu-latest
@@ -68,9 +68,27 @@ jobs:
             if f.is_file(): assert z.read(prefix+f.relative_to(root).as_posix())==f.read_bytes(),str(f)
            print(suffix,'all game assets byte-identical to verified 13.1 release')
           PY
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Ben10-first-store-release-unsigned
-          path: play-output/*
-          retention-days: 7
-          compression-level: 0
+      - name: Save unsigned packaging outputs for local release signing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="play-packaging-${GITHUB_SHA::12}"
+          gh release create "$TAG" play-output/* --title 'First Play release packaging — unsigned staging' --notes 'Intermediate unsigned packaging outputs. Not ready for Play upload; final release signing happens separately.' --prerelease --target "$GITHUB_SHA"
+          python3 - <<'PY'
+          import urllib.request,json,os
+          repo='Kuladeepadthale/Ben10-2D-Alien-Clash'
+          tag='play-packaging-'+os.environ['GITHUB_SHA'][:12]
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'}
+          req=urllib.request.Request('https://api.github.com/repos/'+repo+'/releases/tags/'+tag,headers=headers)
+          release=json.load(urllib.request.urlopen(req))
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+           def redirect_request(self,req,fp,code,msg,headers,newurl):return None
+          opener=urllib.request.build_opener(NoRedirect)
+          for a in release['assets']:
+           req=urllib.request.Request(a['url'],headers={**headers,'Accept':'application/octet-stream'})
+           try: res=opener.open(req)
+           except urllib.error.HTTPError as e: res=e
+           location=res.headers.get('Location')
+           assert location and res.code==302,(res.code,a['name'])
+           print('PACKAGING_DOWNLOAD='+json.dumps({'name':a['name'],'url':location,'size':a['size']}))
+          PY
