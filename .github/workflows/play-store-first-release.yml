@@ -70,27 +70,80 @@ jobs:
             if f.is_file(): assert z.read(prefix+f.relative_to(root).as_posix())==f.read_bytes(),str(f)
            print(suffix,'all game assets byte-identical to verified 13.1 release')
           PY
-      - name: Save unsigned packaging outputs for local release signing
+      - name: Sign and validate first Play release
+        run: |
+          mkdir -p /tmp/ben10-private signed-output
+          chmod 700 /tmp/ben10-private
+          python3 - <<'PY'
+          import secrets,pathlib
+          p=pathlib.Path('/tmp/ben10-private')
+          (p/'store-password.txt').write_text(secrets.token_urlsafe(36))
+          (p/'README.txt').write_text('First Play upload key for com.ben10.myapp. Alias: ben10upload. Store and key passwords are in store-password.txt. Keep private. Required for future updates. Do not upload this backup ZIP to Play Console.')
+          PY
+          keytool -genkeypair -keystore /tmp/ben10-private/ben10-upload.jks -storetype JKS -alias ben10upload -storepass:file /tmp/ben10-private/store-password.txt -keypass:file /tmp/ben10-private/store-password.txt -keyalg RSA -keysize 3072 -validity 10000 -dname 'CN=Ben10 Game Upload, OU=Android Release, O=Kuladeep, C=IN'
+          keytool -exportcert -rfc -keystore /tmp/ben10-private/ben10-upload.jks -storepass:file /tmp/ben10-private/store-password.txt -alias ben10upload -file /tmp/ben10-private/upload-certificate.pem
+          jarsigner -keystore /tmp/ben10-private/ben10-upload.jks -storepass:file /tmp/ben10-private/store-password.txt -keypass:file /tmp/ben10-private/store-password.txt -sigalg SHA256withRSA -digestalg SHA-256 -signedjar signed-output/Ben10-Omniverse-13.1.aab play-output/Ben10-Omniverse-13.1-unsigned.aab ben10upload
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" sign --ks /tmp/ben10-private/ben10-upload.jks --ks-key-alias ben10upload --ks-pass file:/tmp/ben10-private/store-password.txt --key-pass file:/tmp/ben10-private/store-password.txt --out signed-output/Ben10-Omniverse-13.1.apk play-output/Ben10-Omniverse-13.1-unsigned.apk
+          jarsigner -verify signed-output/Ben10-Omniverse-13.1.aab
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs signed-output/Ben10-Omniverse-13.1.apk > signed-output/signature-verification.txt
+          curl -fLsS https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o /tmp/bundletool.jar
+          java -jar /tmp/bundletool.jar validate --bundle=signed-output/Ben10-Omniverse-13.1.aab
+          java -jar /tmp/bundletool.jar dump manifest --bundle=signed-output/Ben10-Omniverse-13.1.aab > signed-output/AndroidManifest.xml
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile,hashlib,json
+          root=Path('signed-output')
+          m=(root/'AndroidManifest.xml').read_text()
+          assert 'package="com.ben10.myapp"' in m
+          assert 'android:targetSdkVersion="36"' in m
+          assert 'android:debuggable="true"' not in m
+          assert 'android:versionCode="131"' in m
+          result={}
+          for ext,prefix in [('aab','base/assets/'),('apk','assets/')]:
+           f=root/('Ben10-Omniverse-13.1.'+ext)
+           z=zipfile.ZipFile(f);assert z.testzip() is None
+           for src in Path('builds/web').rglob('*'):
+            if src.is_file():assert z.read(prefix+src.relative_to('builds/web').as_posix())==src.read_bytes()
+           result[f.name]={'size':f.stat().st_size,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()}
+          (root/'release-validation.json').write_text(json.dumps({'package':'com.ben10.myapp','versionCode':131,'versionName':'13.1','targetSdk':36,'signed':True,'gameAssets':'byte-identical to verified 13.1','files':result},indent=2))
+          print('FINAL_VALIDATION='+json.dumps(result))
+          with zipfile.ZipFile('/tmp/private-key-backup.zip','w',zipfile.ZIP_DEFLATED) as z:
+           for f in Path('/tmp/ben10-private').iterdir():z.write(f,f.name)
+          PY
+          cat > /tmp/recipient.pem <<'CERT'
+          -----BEGIN CERTIFICATE-----
+          MIIEPTCCAqWgAwIBAgIUIDwqdGuTj/MbF2i2deMR8dtGO2EwDQYJKoZIhvcNAQEL
+          BQAwLjEsMCoGA1UEAwwjUHJpdmF0ZSByZWxlYXNlLWtleSBiYWNrdXAgdHJhbnNm
+          ZXIwHhcNMjYxMDI5MTg1NjE4WhcNMjYxMTA1MTg1NjE4WjAuMSwwKgYDVQQDDCNQ
+          cml2YXRlIHJlbGVhc2Uta2V5IGJhY2t1cCB0cmFuc2ZlcjCCAaIwDQYJKoZIhvcN
+          AQEBBQADggGPADCCAYoCggGBAObjjBi5h3qExvTAWo0qGLQE4x8+uetV3P+PeVEq
+          ApFfGjQUJa+HPa+w1oYye3R1ZMHnR/ExmuOh00FiVZDp/ZnGfCbuDuR++6qVtvmP
+          OlufHYCkJCJWZ/FNa6tzKG8KFAU1rZBftTSUw43toO0HDkgGBeAdpSi8v4bHQvj6
+          p9h8OkgRLN8N1uYzJ195a+f1YpYuzawZJrL2vf/eTpTiM+S5GRsskDGo2Ep/PEFw
+          i/IzkI/HgvTSa6dOW1ZSvrG0vjrZLH2D62FCsP3xdg0WFD+MV5TIxLCijvMEddoN
+          7EDgytvph39GJPlEHeemNiOjmjU4NyxqQlP90E8406DvgZL6ddLH3N4UAtlBioc/
+          NPTWpN89khpvlIQkmKppp+Q55LG3JE1eGzlL9zLw25UYOcWuJ8UV+OJefwHG96SC
+          7R8v4vndDjRLcOqMU0KhYmAS/QDjNGJ9MTMoUZD/dO7o1LRmwwEcbVlR7KRnBXHv
+          W0Disa/AqZbk1L8G6HxVvQcG7wIDAQABo1MwUTAdBgNVHQ4EFgQUHPHlPXk5yspD
+          5kxrdCqFq4RTlyswHwYDVR0jBBgwFoAUHPHlPXk5yspD5kxrdCqFq4RTlyswDwYD
+          VR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAYEAY7gNBrK0Y5cNu2c161pX
+          iCFAIWbB9cuwHmK+Uk5RYpIje5NDBRJPyUMVcBcTnWuP3MlIdGcVNnJ6CKE/7Mc4
+          nIlksax/Y81Cfn4fd1tlywCl3bsV7I3TunRLm3pBygNmTePoGKz5fzUxIhxAMtRb
+          TwNQ8AqZc9VatYsr3BlYlb3G1YIRcAZE+mDnaW3oP4wDEa6kM7zryqjuaa/rpg2a
+          9vv+UWurmLwiY7Ya2OXJvtaxd0Rdyq2rHsM36/otEDx4nEdWM6UFTihKIRQN6u4E
+          PPp89xsV0eUD03F5gsh0opfFgbuQIwlX0Zff8swW7e0/iCnWpajGNcemay8930xB
+          pRNjrPxnSsIb/m4qGZGpe8Th7rkb9+w5LB1L0Jv0i4ilCqOPwsvasImlZ/2zqQDW
+          HJvnzkylAk/JXToU7PdS4HLYnZZz7m2NOyq9yJzgovyqRtnbExfd+LF/ram0P4lC
+          q4OjgJUeG8BjOI5XavRf+Q0lJwwA2FSZsxeSrfv22BTc
+          -----END CERTIFICATE-----
+          CERT
+          openssl cms -encrypt -binary -aes256 -in /tmp/private-key-backup.zip -outform DER -out /tmp/private-key-backup.encrypted /tmp/recipient.pem
+          python3 - <<'PY'
+          import base64,pathlib
+          print('ENCRYPTED_KEY_BACKUP='+base64.b64encode(pathlib.Path('/tmp/private-key-backup.encrypted').read_bytes()).decode())
+          PY
+      - name: Publish signed APK and Play Store AAB
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          TAG="play-packaging-${GITHUB_SHA::12}"
-          gh release create "$TAG" play-output/* --title 'First Play release packaging — unsigned staging' --notes 'Intermediate unsigned packaging outputs. Not ready for Play upload; final release signing happens separately.' --prerelease --target "$GITHUB_SHA"
-          python3 - <<'PY'
-          import urllib.request,json,os
-          repo='Kuladeepadthale/Ben10-2D-Alien-Clash'
-          tag='play-packaging-'+os.environ['GITHUB_SHA'][:12]
-          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'}
-          req=urllib.request.Request('https://api.github.com/repos/'+repo+'/releases/tags/'+tag,headers=headers)
-          release=json.load(urllib.request.urlopen(req))
-          class NoRedirect(urllib.request.HTTPRedirectHandler):
-           def redirect_request(self,req,fp,code,msg,headers,newurl):return None
-          opener=urllib.request.build_opener(NoRedirect)
-          for a in release['assets']:
-           req=urllib.request.Request(a['url'],headers={**headers,'Accept':'application/octet-stream'})
-           try: res=opener.open(req)
-           except urllib.error.HTTPError as e: res=e
-           location=res.headers.get('Location')
-           assert location and res.code==302,(res.code,a['name'])
-           print('PACKAGING_DOWNLOAD='+json.dumps({'name':a['name'],'url':location,'size':a['size']}))
-          PY
+          gh release create "playstore-13.1-${GITHUB_SHA::12}" signed-output/* --title 'Ben 10 Omniverse 13.1 — Signed APK and Play Store AAB' --notes 'First release for com.ben10.myapp, version code 131, target Android API36. Signed release builds with private upload-key backup retained separately. Native game assets exactly match verified 13.1. Bundletool validation and signature checks passed. Physical phone testing and Play Console acceptance remain pending.' --prerelease --target "$GITHUB_SHA"
