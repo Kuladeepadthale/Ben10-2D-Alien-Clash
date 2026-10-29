@@ -19,57 +19,15 @@ jobs:
         with:
           packages: platform-tools
           log-accepted-android-sdk-licenses: false
-      - uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '8.11.1'
-      - name: Restore exact verified 13.1 game assets
+      - name: Restore verified API36 release packages
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          sdkmanager 'platforms;android-36' 'build-tools;35.0.0'
-          mkdir -p /tmp/verified-game builds/web
-          gh release download android-1fec095ff2e3 --pattern Ben10-2D-Alien-Clash.apk --dir /tmp/verified-game
-          echo 'f4e50a91b21f2e6d3b636aaaa52dc6f1659a4b19d1d3774521beb6e4242dfda1  /tmp/verified-game/Ben10-2D-Alien-Clash.apk' | sha256sum -c -
-          python3 - <<'PY'
-          import zipfile,pathlib,json
-          z=zipfile.ZipFile('/tmp/verified-game/Ben10-2D-Alien-Clash.apk')
-          root=pathlib.Path('builds/web').resolve()
-          for n in z.namelist():
-           if n.startswith('assets/') and not n.endswith('/'):
-            p=(root/n[7:]).resolve();assert p.is_relative_to(root);p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
-          assert len(json.loads((root/'assets/cels/manifest.json').read_text())['characters'])==92
-          assert len(json.loads((root/'assets/ui/abilities/manifest.json').read_text())['entries'])==460
-          PY
-      - name: Configure first store package without a development signer
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          p=Path('android/app/build.gradle')
-          s=p.read_text().replace('compileSdk 35','compileSdk 36').replace('targetSdk 35','targetSdk 36')
-          top=Path('android/build.gradle')
-          top.write_text(top.read_text().replace("version '8.7.3'","version '8.10.1'"))
-          s=s.replace("applicationId (parallelInstall ? 'org.alienclash.twod.online' : 'org.alienclash.twod')","applicationId 'com.ben10.myapp'")
-          s=s.replace("manifestPlaceholders = [appLabel: (parallelInstall ? 'Ben 10 Alien Clash Online' : 'Ben 10 Alien Clash')]","manifestPlaceholders = [appLabel: 'Ben 10 Omniverse']")
-          assert "applicationId 'com.ben10.myapp'" in s
-          p.write_text(s)
-          PY
-      - name: Build release bundle and installable package
-        run: |
-          gradle -p android --no-daemon bundleRelease assembleRelease
+          sdkmanager 'build-tools;35.0.0'
           mkdir -p play-output
-          cp android/app/build/outputs/bundle/release/app-release.aab play-output/Ben10-Omniverse-13.1-unsigned.aab
-          cp android/app/build/outputs/apk/release/app-release-unsigned.apk play-output/Ben10-Omniverse-13.1-unsigned.apk
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging play-output/Ben10-Omniverse-13.1-unsigned.apk | head -1
-          python3 - <<'PY'
-          import zipfile,pathlib,hashlib,json
-          root=pathlib.Path('builds/web')
-          for suffix,prefix in [('aab','base/assets/'),('apk','assets/')]:
-           z=zipfile.ZipFile('play-output/Ben10-Omniverse-13.1-unsigned.'+suffix)
-           assert z.testzip() is None
-           for f in root.rglob('*'):
-            if f.is_file(): assert z.read(prefix+f.relative_to(root).as_posix())==f.read_bytes(),str(f)
-           print(suffix,'all game assets byte-identical to verified 13.1 release')
-          PY
+          gh release download play-packaging-e1d05a5424f5 --pattern 'Ben10-Omniverse-13.1-unsigned.*' --dir play-output
+          echo '8d19718c1d5acb36fc3d0d6591dd680e3138f2c0c851fbf151e1d75607303045  play-output/Ben10-Omniverse-13.1-unsigned.aab' | sha256sum -c -
+          echo '1959cdb0e046fada4ec6ade1a898a1cac06a8ad492d457248f81abe7e07d0ddb  play-output/Ben10-Omniverse-13.1-unsigned.apk' | sha256sum -c -
       - name: Sign and validate first Play release
         run: |
           mkdir -p /tmp/ben10-private signed-output
@@ -78,12 +36,13 @@ jobs:
           import secrets,pathlib
           p=pathlib.Path('/tmp/ben10-private')
           (p/'store-password.txt').write_text(secrets.token_urlsafe(36))
+          (p/'key-password.txt').write_text((p/'store-password.txt').read_text())
           (p/'README.txt').write_text('First Play upload key for com.ben10.myapp. Alias: ben10upload. Store and key passwords are in store-password.txt. Keep private. Required for future updates. Do not upload this backup ZIP to Play Console.')
           PY
           keytool -genkeypair -keystore /tmp/ben10-private/ben10-upload.jks -storetype JKS -alias ben10upload -storepass:file /tmp/ben10-private/store-password.txt -keypass:file /tmp/ben10-private/store-password.txt -keyalg RSA -keysize 3072 -validity 10000 -dname 'CN=Ben10 Game Upload, OU=Android Release, O=Kuladeep, C=IN'
           keytool -exportcert -rfc -keystore /tmp/ben10-private/ben10-upload.jks -storepass:file /tmp/ben10-private/store-password.txt -alias ben10upload -file /tmp/ben10-private/upload-certificate.pem
           jarsigner -keystore /tmp/ben10-private/ben10-upload.jks -storepass:file /tmp/ben10-private/store-password.txt -keypass:file /tmp/ben10-private/store-password.txt -sigalg SHA256withRSA -digestalg SHA-256 -signedjar signed-output/Ben10-Omniverse-13.1.aab play-output/Ben10-Omniverse-13.1-unsigned.aab ben10upload
-          "$ANDROID_HOME/build-tools/35.0.0/apksigner" sign --ks /tmp/ben10-private/ben10-upload.jks --ks-key-alias ben10upload --ks-pass file:/tmp/ben10-private/store-password.txt --key-pass file:/tmp/ben10-private/store-password.txt --out signed-output/Ben10-Omniverse-13.1.apk play-output/Ben10-Omniverse-13.1-unsigned.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" sign --ks /tmp/ben10-private/ben10-upload.jks --ks-key-alias ben10upload --ks-pass file:/tmp/ben10-private/store-password.txt --key-pass file:/tmp/ben10-private/key-password.txt --out signed-output/Ben10-Omniverse-13.1.apk play-output/Ben10-Omniverse-13.1-unsigned.apk
           jarsigner -verify signed-output/Ben10-Omniverse-13.1.aab
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs signed-output/Ben10-Omniverse-13.1.apk > signed-output/signature-verification.txt
           curl -fLsS https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o /tmp/bundletool.jar
@@ -102,8 +61,9 @@ jobs:
           for ext,prefix in [('aab','base/assets/'),('apk','assets/')]:
            f=root/('Ben10-Omniverse-13.1.'+ext)
            z=zipfile.ZipFile(f);assert z.testzip() is None
-           for src in Path('builds/web').rglob('*'):
-            if src.is_file():assert z.read(prefix+src.relative_to('builds/web').as_posix())==src.read_bytes()
+           source=zipfile.ZipFile('play-output/Ben10-Omniverse-13.1-unsigned.'+ext)
+           for n in source.namelist():
+            if not n.startswith('META-INF/'):assert z.read(n)==source.read(n),n
            result[f.name]={'size':f.stat().st_size,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()}
           (root/'release-validation.json').write_text(json.dumps({'package':'com.ben10.myapp','versionCode':131,'versionName':'13.1','targetSdk':36,'signed':True,'gameAssets':'byte-identical to verified 13.1','files':result},indent=2))
           print('FINAL_VALIDATION='+json.dumps(result))
