@@ -1,0 +1,46 @@
+name: Prepare Play Store images
+on:
+  push:
+    branches: [store-listing-materials]
+    paths: ['.github/workflows/store-materials.yml','ci/store-materials/**']
+permissions:
+  contents: write
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Restore exact released game
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/store-source preview-web
+          gh release download playstore-13.1-ec34ea8c6ff6 --pattern Ben10-Omniverse-13.1.apk --dir /tmp/store-source
+          echo '068fa47282dbd23f90f7119c5526c3f0eb1a8d5ad0de02b1b5f83a03a5d095ee  /tmp/store-source/Ben10-Omniverse-13.1.apk' | sha256sum -c -
+          python3 - <<'PY'
+          import pathlib,zipfile
+          root=pathlib.Path('preview-web').resolve();z=zipfile.ZipFile('/tmp/store-source/Ben10-Omniverse-13.1.apk')
+          for n in z.namelist():
+           if n.startswith('assets/') and not n.endswith('/'):
+            p=(root/n[7:]).resolve();assert p.is_relative_to(root);p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          PY
+      - name: Capture actual game and export graphics
+        env:
+          NODE_PATH: /tmp/store-tools/node_modules
+        run: |
+          npm install --prefix /tmp/store-tools --no-save --no-package-lock playwright
+          /tmp/store-tools/node_modules/.bin/playwright install --with-deps chromium
+          python3 -m pip install Pillow
+          node ci/store-materials/capture.cjs
+          python3 ci/store-materials/graphics.py
+      - name: Save store image files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add store-assets
+          git commit -m 'Save actual 13.1 store screenshots and listing graphics [skip ci]'
+          git push origin HEAD:store-listing-materials
