@@ -1,0 +1,23 @@
+name: Export listing image transfers
+on:
+  push:
+    branches: [store-listing-materials]
+    paths: ['.github/workflows/store-export.yml']
+permissions:
+  contents: write
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python3 - <<'PY'
+          import pathlib,base64
+          for f in pathlib.Path('store-assets').iterdir():
+           if f.suffix in ['.png','.jpg']:(f.parent/(f.name+'.b64')).write_text(base64.b64encode(f.read_bytes()).decode())
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add store-assets
+          git commit -m 'Export listing image transfer files [skip ci]'
+          git push origin HEAD:store-listing-materials
