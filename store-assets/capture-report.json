@@ -1,0 +1,11 @@
+{
+  "sourceRelease": "playstore-13.1-ec34ea8c6ff6",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "screenshots": 6,
+  "guest": true,
+  "pageErrors": [],
+  "notes": "Real game UI captured from released APK assets in Chromium. Guest test profile only. Not a physical phone capture."
+}
