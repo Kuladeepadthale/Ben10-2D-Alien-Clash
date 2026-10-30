@@ -30,8 +30,9 @@ function renderAlienInfo(){
 const detailSelectBase=select;select=function(id){detailSelectBase(id);if(currentScreen==='characters')showScreen('alieninfo');if(currentScreen==='alieninfo')renderAlienInfo();};
 const detailRenderBase=renderSetup;renderSetup=function(){detailRenderBase();if(currentScreen==='alieninfo')renderAlienInfo();};
 const detailScreenBase=showScreen;showScreen=function(name,remember=true){
- // Leaving the lab to change a fighter ends practice, not the selected Testing mode.
- if(name==='characters'&&testingMode()&&isLocked()){
+ // Explicitly changing fighters ends the current local fight without awarding rewards.
+ // Preserve the selected battle mode, including Testing.
+ if(['characters','garage','upgrades'].includes(name)&&isLocked()){
   if(mode==='loading')++celBattleRequest;
   mode='menu';training=false;shots=[];effects=[];particles=[];resetInputs();
   if(typeof cancelBattleCountdown==='function')cancelBattleCountdown();
@@ -49,6 +50,8 @@ const detailScreenBase=showScreen;showScreen=function(name,remember=true){
 openAlienUpgrades=function(id){if(!ownsAlien(id)){careerToast('Unlock this alien first.');return}select(id);showScreen('alieninfo');alienUpgradeOpen=true;renderAlienInfo();};
 $('alienList').onclick=()=>showScreen('characters');
 $('alienUse').onclick=async()=>{
+ if(isLocked()||(!testingMode()&&!ownsAlien(selected)))return;
+ career.selected=selected;saveProfile();
  if(!testingMode()){showScreen('modes');return;}
  if(isLocked())return;
  $('alienUse').disabled=true;
@@ -68,5 +71,6 @@ document.querySelector('.home-copy .eyebrow').hidden=true;
 // Keep every card mounted for native vertical touch scrolling.
 rosterDeck.options.scroll=true;
 rosterDeck.capacity=null;refreshMenus();
+
 
 

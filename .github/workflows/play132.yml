@@ -1,0 +1,65 @@
+name: Play 13.2 selection fix
+on:
+  push:
+    branches: [main]
+    paths: ['ci/release132/test.cjs', '.github/workflows/play132.yml']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - name: Restore released artwork and apply fixes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/source132 release-output builds/web
+          gh release download playstore-13.1-ec34ea8c6ff6 --pattern Ben10-Omniverse-13.1.apk --dir /tmp/source132
+          echo '068fa47282dbd23f90f7119c5526c3f0eb1a8d5ad0de02b1b5f83a03a5d095ee  /tmp/source132/Ben10-Omniverse-13.1.apk' | sha256sum -c -
+          python3 - <<'PY'
+          import zipfile,pathlib,shutil
+          root=pathlib.Path('builds/web');z=zipfile.ZipFile('/tmp/source132/Ben10-Omniverse-13.1.apk')
+          for n in z.namelist():
+           if n.startswith('assets/') and not n.endswith('/'):
+            p=root/n[7:];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          for n in ['alien-detail.js','progression.js','progression.css']:shutil.copyfile('web/'+n,root/n)
+          p=root/'index.html';s=p.read_text().replace('alien-detail.js?v=108','alien-detail.js?v=132').replace('progression.js?v=114','progression.js?v=132').replace('progression.css?v=106','progression.css?v=132');p.write_text(s)
+          p=pathlib.Path('android/build.gradle');p.write_text(p.read_text().replace('8.7.3','8.10.1'))
+          p=pathlib.Path('android/app/build.gradle');s=p.read_text().replace('compileSdk 35','compileSdk 36').replace('targetSdk 35','targetSdk 36').replace('minSdk 23','minSdk 24').replace('versionCode 131','versionCode 132').replace("versionName '13.1'","versionName '13.2'").replace("applicationId (parallelInstall ? 'org.alienclash.twod.online' : 'org.alienclash.twod')","applicationId 'com.ben10.myapp'").replace("manifestPlaceholders = [appLabel: (parallelInstall ? 'Ben 10 Alien Clash Online' : 'Ben 10 Alien Clash')]","manifestPlaceholders = [appLabel: 'Ben 10 Omniverse']");p.write_text(s)
+          PY
+      - name: Check selection and unlocked colours
+        env:
+          NODE_PATH: /tmp/test132/node_modules
+        run: |
+          npm install --prefix /tmp/test132 --no-save --no-package-lock playwright
+          /tmp/test132/node_modules/.bin/playwright install --with-deps chromium
+          node ci/release132/test.cjs
+      - name: Build and validate AAB
+        run: |
+          sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+          gradle -p android --no-daemon bundleRelease
+          cp android/app/build/outputs/bundle/release/app-release.aab release-output/Ben10-Omniverse-13.2-unsigned.aab
+          curl -fLsS https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o /tmp/bundletool.jar
+          java -jar /tmp/bundletool.jar validate --bundle=release-output/Ben10-Omniverse-13.2-unsigned.aab
+          java -jar /tmp/bundletool.jar dump manifest --bundle=release-output/Ben10-Omniverse-13.2-unsigned.aab > release-output/AndroidManifest.xml
+          python3 ci/release132/manifest.py
+          sha256sum release-output/*
+      - name: Stage build for existing-key signature
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create play132-unsigned release-output/* --prerelease --title '13.2 unsigned staging - not for upload' --notes 'Selection regression tests and bundle validation; awaiting existing upload-key signature.' --target "$GITHUB_SHA"

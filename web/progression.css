@@ -75,3 +75,10 @@ body:not(.in-battle) #missionCards .mission-prize{display:grid!important;grid-te
 #missionCards .mission-prize strong{grid-column:1/-1;font-size:13px!important;width:auto!important;text-align:right!important;line-height:1.2!important}#missionCards .mission-prize>span{font-size:11px}
 body:not(.in-battle) #missionCards .mission-details{width:36px!important;height:36px!important;min-width:36px!important;min-height:36px!important;padding:7px!important;display:grid!important;place-items:center!important;border-radius:50%!important;background:#14352a!important;color:#c9f7b5!important}
 .mission-details svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}#missionCards .mission-details::after{display:none!important}#missionCards .mission-claim{height:36px!important;min-height:36px!important;padding:5px 10px!important;font-size:14px!important;width:auto!important}#missionCards .mission-count{font-size:12px!important}.mission-card.reward-claimed{opacity:.65}
+
+
+/* Owned artwork stays vivid even when a different fighter is selected. */
+body:not(.in-battle) #roster .card.alien-owned{opacity:1;filter:none;border-style:solid!important;background:radial-gradient(ellipse at 50% 32%,#91ef7633,transparent 72%),#18382a;border-color:var(--rank-color,#8ddd66)}
+body:not(.in-battle) #roster .card.alien-owned canvas{opacity:1!important;filter:none!important}
+body:not(.in-battle) #roster .card.alien-owned .ownership{color:#e1ffc7;background:#365c2b}
+#roster .alien-lock-symbol{pointer-events:none}
