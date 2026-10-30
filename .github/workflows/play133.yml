@@ -2,7 +2,7 @@ name: Build Play 13.3 daily rewards
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/play133.yml','ci/release133/test.cjs']
+    paths: ['.github/workflows/play133.yml','ci/release133/test.cjs','android/gradle.properties']
 permissions:
   contents: write
 jobs:
