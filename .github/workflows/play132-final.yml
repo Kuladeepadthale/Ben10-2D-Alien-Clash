@@ -7,6 +7,8 @@ permissions:
   contents: write
 jobs:
   publish:
+    # Retired: use standard jarsigner/apksigner workflow instead.
+    if: false
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
