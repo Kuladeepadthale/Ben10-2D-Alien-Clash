@@ -1,0 +1,47 @@
+name: Publish signed Play 13.3 APK and AAB
+on:
+  push:
+    branches: [main]
+    paths: ['ci/release133/signature.json']
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+      - name: Finalize, validate and publish both signed files
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p staged final-output
+          gh release download play133-unsigned --dir staged
+          python3 ci/release133/finalize.py
+          sdkmanager 'build-tools;36.0.0'
+          jarsigner -verify final-output/Ben10-Omniverse-13.3.aab | tee final-output/aab-signature.txt
+          grep 'jar verified.' final-output/aab-signature.txt
+          "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose --print-certs final-output/Ben10-Omniverse-13.3.apk | tee final-output/apk-signature.txt
+          grep -i '4a4d306c45d097db5fedf83ba84adaa04175e39e277bfe1aff492a8e8dadf50f' final-output/apk-signature.txt
+          keytool -printcert -jarfile final-output/Ben10-Omniverse-13.3.aab > final-output/aab-certificate.txt
+          grep '4A:4D:30:6C:45:D0:97:DB:5F:ED:F8:3B:A8:4A:DA:A0:41:75:E3:9E:27:7B:FE:1A:FF:49:2A:8E:8D:AD:F5:0F' final-output/aab-certificate.txt
+          curl -fLsS https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o /tmp/bundletool.jar
+          java -jar /tmp/bundletool.jar validate --bundle=final-output/Ben10-Omniverse-13.3.aab
+          cp staged/AndroidManifest.xml staged/rewards-tests.json final-output/
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          root=Path('final-output');d={}
+          for ext in ['apk','aab']:
+           f=root/('Ben10-Omniverse-13.3.'+ext);d[ext]={'bytes':f.stat().st_size,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()}
+          result={'versionCode':133,'versionName':'13.3','package':'com.ben10.myapp','minSdk':24,'targetSdk':36,'files':d,'phoneAdServingTested':False}
+          (root/'release-validation.json').write_text(json.dumps(result,indent=2));print(json.dumps(result))
+          PY
+          gh release create playstore-13.3 final-output/* --title 'Ben 10 Omniverse 13.3 - daily alien rewards and 15-card packs' --notes 'Optional shared daily rewarded-ad milestones at 2/4/6/8/10 completed ads; one displayed character per rarity daily. Owned rewards convert to 5 diamonds. All existing packs now contain 15 cards, preserving old five-card pending receipts. AdMob configured child-directed, under-age treatment and G-rated, Advertising ID permission removed. Signed with original upload identity. Browser regressions, Android compilation, APK v2 verification and bundle validation passed. Physical-device ad serving, five-second child-ad dismissal, provider approval and Play policy review must be verified before production.' --prerelease --target "$GITHUB_SHA"

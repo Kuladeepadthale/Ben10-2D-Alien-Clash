@@ -1,0 +1,70 @@
+name: Build Play 13.3 daily rewards
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/play133.yml','ci/release133/test.cjs']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - name: Restore existing artwork and current game changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/source133 builds/web release-output
+          gh release download playstore-13.2 --pattern Ben10-Omniverse-13.2.aab --dir /tmp/source133
+          echo '80481f2f5f7e25b9bbd990514ad9a479525dc32df12c46f449016977faa745e1  /tmp/source133/Ben10-Omniverse-13.2.aab' | sha256sum -c -
+          python3 - <<'PY'
+          import pathlib,zipfile,shutil
+          root=pathlib.Path('builds/web');z=zipfile.ZipFile('/tmp/source133/Ben10-Omniverse-13.2.aab')
+          for n in z.namelist():
+           if n.startswith('base/assets/') and not n.endswith('/'):
+            p=root/n[12:];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          for name in ['card-shop.js','daily-ad-rewards.js','daily-ad-rewards.css']:shutil.copyfile('web/'+name,root/name)
+          p=root/'index.html';s=p.read_text().replace('</head>','<link rel="stylesheet" href="daily-ad-rewards.css?v=133"></head>').replace('</body>','<script src="daily-ad-rewards.js?v=133"></script></body>').replace('card-shop.js?v=108','card-shop.js?v=133');p.write_text(s)
+          PY
+      - name: Test packs, saved rewards and age choices
+        env:
+          NODE_PATH: /tmp/test133/node_modules
+        run: |
+          npm install --prefix /tmp/test133 --no-save --no-package-lock playwright
+          /tmp/test133/node_modules/.bin/playwright install --with-deps chromium
+          node ci/release133/test.cjs
+      - name: Compile release APK and AAB
+        run: |
+          sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+          gradle -p android --no-daemon assembleRelease bundleRelease
+          cp android/app/build/outputs/apk/release/app-release-unsigned.apk release-output/Ben10-Omniverse-13.3-unsigned.apk
+          cp android/app/build/outputs/bundle/release/app-release.aab release-output/Ben10-Omniverse-13.3-unsigned.aab
+          curl -fLsS https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o /tmp/bundletool.jar
+          java -jar /tmp/bundletool.jar validate --bundle=release-output/Ben10-Omniverse-13.3-unsigned.aab
+          java -jar /tmp/bundletool.jar dump manifest --bundle=release-output/Ben10-Omniverse-13.3-unsigned.aab > release-output/AndroidManifest.xml
+          python3 - <<'PY'
+          import pathlib
+          s=pathlib.Path('release-output/AndroidManifest.xml').read_text()
+          assert 'com.google.android.gms.permission.AD_ID' not in s
+          assert 'ca-app-pub-8833928525618902~8755259198' in s
+          assert 'android:versionCode="133"' in s
+          PY
+          python3 ci/release133/signing.py
+      - name: Stage packages for original-key signing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create play133-unsigned release-output/* --prerelease --title '13.3 unsigned staging - do not install' --notes 'Reward UI regression and compilation checks. Awaiting original-key signature.' --target "$GITHUB_SHA"

@@ -1,14 +1,15 @@
 plugins { id 'com.android.application' }
 def parallelInstall = project.findProperty('parallelInstall') == 'true'
 android {
+ buildFeatures { buildConfig true }
  namespace 'org.alienclash.twod'
  compileSdk 36
  defaultConfig {
   applicationId 'com.ben10.myapp'
   minSdk 24
   targetSdk 36
-  versionCode 132
-  versionName '13.2'
+  versionCode 133
+  versionName '13.3'
   manifestPlaceholders = [appLabel: 'Ben 10 Omniverse']
  }
  signingConfigs {
@@ -20,7 +21,7 @@ android {
   }
  }
  sourceSets { main { assets.srcDirs = ['src/main/assets', '../../builds/web'] } }
- buildTypes { debug { signingConfig signingConfigs.debug }; release { minifyEnabled false } }
+ buildTypes { debug { signingConfig signingConfigs.debug; buildConfigField "boolean", "REWARDED_TEST_ADS", "true" }; release { minifyEnabled false; buildConfigField "boolean", "REWARDED_TEST_ADS", "false" } }
 }
 
 
@@ -34,3 +35,6 @@ android {
 
 
 
+
+
+dependencies { implementation "com.google.android.gms:play-services-ads:25.5.0" }

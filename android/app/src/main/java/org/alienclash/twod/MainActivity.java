@@ -20,6 +20,7 @@ public class MainActivity extends Activity {
   super.onCreate(state); web=new WebView(this); setContentView(web);
   WebSettings s=web.getSettings(); s.setJavaScriptEnabled(true); s.setDomStorageEnabled(true); s.setAllowFileAccess(false); s.setAllowContentAccess(false); s.setMediaPlaybackRequiresUserGesture(true); s.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
   web.addJavascriptInterface(new AccountVault(),"AlienAccountVault");
+  web.addJavascriptInterface(new RewardAds(this,web),"AlienRewardAds");
   web.setBackgroundColor(0xff0b1212); web.setWebChromeClient(new WebChromeClient());
   web.setWebViewClient(new WebViewClient(){
    @Override public WebResourceResponse shouldInterceptRequest(WebView view,WebResourceRequest request){
@@ -59,3 +60,4 @@ public class MainActivity extends Activity {
  @Override public void onBackPressed(){web.evaluateJavascript("window.androidBack&&window.androidBack()",null);}
  @Override protected void onDestroy(){web.destroy();super.onDestroy();}
 }
+
