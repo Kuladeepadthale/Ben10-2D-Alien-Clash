@@ -1,0 +1,53 @@
+name: Publish signed Play 13.2
+on:
+  push:
+    branches: [main]
+    paths: ['ci/release132/signature.json']
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Assemble signed bundle using existing upload certificate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p staged final-output
+          gh release download play132-unsigned --dir staged
+          python3 - <<'PY'
+          import json,hashlib,base64,zipfile,pathlib
+          data=json.loads(pathlib.Path('ci/release132/signature.json').read_text())
+          src=pathlib.Path('staged/Ben10-Omniverse-13.2-unsigned.aab')
+          assert hashlib.sha256(src.read_bytes()).hexdigest()==data['unsignedSha256']
+          sf=pathlib.Path('staged/BEN10.SF').read_bytes();assert base64.b64encode(sf).decode()==data['signatureFileBase64']
+          with zipfile.ZipFile(src) as a,zipfile.ZipFile('final-output/Ben10-Omniverse-13.2.aab','w',zipfile.ZIP_DEFLATED) as b:
+           b.writestr('META-INF/MANIFEST.MF',pathlib.Path('staged/MANIFEST.MF').read_bytes())
+           b.writestr('META-INF/BEN10.SF',sf)
+           b.writestr('META-INF/BEN10.RSA',base64.b64decode(data['signatureBlockBase64']))
+           for info in a.infolist():
+            if not info.filename.startswith('META-INF/'):b.writestr(info,a.read(info.filename))
+          PY
+          jarsigner -verify -verbose -certs final-output/Ben10-Omniverse-13.2.aab > final-output/signature-verification.txt
+          grep 'jar verified.' final-output/signature-verification.txt
+          curl -fLsS https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o /tmp/bundletool.jar
+          java -jar /tmp/bundletool.jar validate --bundle=final-output/Ben10-Omniverse-13.2.aab
+          java -jar /tmp/bundletool.jar dump manifest --bundle=final-output/Ben10-Omniverse-13.2.aab > final-output/AndroidManifest.xml
+          keytool -printcert -jarfile final-output/Ben10-Omniverse-13.2.aab > final-output/upload-certificate.txt
+          grep '4A:4D:30:6C:45:D0:97:DB:5F:ED:F8:3B:A8:4A:DA:A0:41:75:E3:9E:27:7B:FE:1A:FF:49:2A:8E:8D:AD:F5:0F' final-output/upload-certificate.txt
+          cp staged/selection-tests.json final-output/
+          python3 - <<'PY'
+          import pathlib,hashlib,json
+          root=pathlib.Path('final-output');m=(root/'AndroidManifest.xml').read_text()
+          for s in ['package="com.ben10.myapp"','android:versionCode="132"','android:minSdkVersion="24"','android:targetSdkVersion="36"']:assert s in m,s
+          assert 'android:debuggable="true"' not in m
+          f=root/'Ben10-Omniverse-13.2.aab';d={'versionCode':132,'versionName':'13.2','package':'com.ben10.myapp','minSdk':24,'targetSdk':36,'sha256':hashlib.sha256(f.read_bytes()).hexdigest(),'bytes':f.stat().st_size}
+          (root/'release-validation.json').write_text(json.dumps(d,indent=2));print(json.dumps(d))
+          PY
+          gh release create playstore-13.2 final-output/* --title 'Ben 10 Omniverse 13.2 - alien selection fix' --notes 'Fixes changing unlocked aliens after leaving combat, explicitly saves the battle selection, and gives unlocked collection portraits full colour. Version code 132, minimum SDK24, target SDK36. Signed with the existing upload certificate; bundletool and JAR signature validation passed. Two phone viewport browser regression tests passed. Physical-device and Play review remain pending.' --prerelease --target "$GITHUB_SHA"
