@@ -19,7 +19,7 @@ function wildmuttDetailedMotion(f,t){
 function wildmuttDetailedFrame(f,t,portrait=false){
  const d=WILDMUTT_DETAILED,m=wildmuttDetailedMotion(f,t),v=f.cast;
  let key='idle',frame;
- if(!portrait){if(f.hp<=0)key='ko';else if(f.stun>0)key='hit';else if(f.dash)key='dash';else if(f.block)key='guard';else if(v)key=v.ultimate?'ultimate':v.key;else if(f.jumpWindup>0||f.y<floor-2)key='jump';else if(f.moving||m.moving)key='walk';}
+ if(!portrait){if(f.hp<=0)key='ko';else if(f.stun>0)key='hit';else if(f.dash)key='dash';else if(f.block)key='guard';else if(v)key=v.ultimate?'ultimate':v.key;else if(f.jumpWindup>0||f.y<floor-2)key='jump';else if(m.moving)key='walk';}
  if(m.state!==key){m.state=key;m.stateStart=t;}
  const clip=d.clips[key]||d.clips.idle;
  if(v&&['normal','skill0','skill1','skill2','ultimate'].includes(key)){
@@ -49,7 +49,10 @@ function wildmuttDetailedFrame(f,t,portrait=false){
 
  }else if(key==='walk'||key==='dash'){
   const h=(f.config||aliens[4]).renderHeight*(f.config||aliens[4]).scale;
-  frame=clip[Math.floor(((m.distance/(h*1.65))%1+1)%1*clip.length)];
+  const stride=h*(key==='walk'?(d.gait?.strideHeight||1.2):1.65);
+  // Each cel belongs to a physical interval of one stride; no timed/repeated leg loop.
+  const phase=((m.distance/stride)%1+1)%1;
+  frame=clip[Math.min(clip.length-1,Math.floor(phase*clip.length+1e-8))];
  }else if(key==='jump')frame=clip[f.jumpWindup>0?0:f.vy< -80?1:f.vy<120?2:f.y<floor-18?3:4];
  else if(key==='ko')frame=clip[t-m.stateStart<.18?0:1];
  else if(key==='hit')frame=clip[(f.stun||0)>.11?0:1];

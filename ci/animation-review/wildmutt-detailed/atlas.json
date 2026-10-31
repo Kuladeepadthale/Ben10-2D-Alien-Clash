@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "cell": 384,
   "sheets": [
     "assets/wildmutt-detailed/walk.webp",
@@ -9,7 +9,9 @@
     "assets/wildmutt-detailed/pounce-v4.webp",
     "assets/wildmutt-detailed/claws-v4.webp",
     "assets/wildmutt-detailed/lunge-v4.webp",
-    "assets/wildmutt-detailed/apex-v4.webp"
+    "assets/wildmutt-detailed/apex-v4.webp",
+    "assets/wildmutt-detailed/walk-keys-v5.webp",
+    "assets/wildmutt-detailed/walk-between-v5.webp"
   ],
   "frames": [
     {
@@ -1803,26 +1805,250 @@
         209
       ],
       "referenceHeight": 203
+    },
+    {
+      "sheet": 8,
+      "rect": [
+        7,
+        180,
+        498,
+        328
+      ],
+      "origin": [
+        192.44,
+        326
+      ],
+      "referenceHeight": 328
+    },
+    {
+      "sheet": 8,
+      "rect": [
+        593,
+        180,
+        350,
+        328
+      ],
+      "origin": [
+        166.44,
+        326
+      ],
+      "referenceHeight": 328
+    },
+    {
+      "sheet": 8,
+      "rect": [
+        1099,
+        180,
+        361,
+        328
+      ],
+      "origin": [
+        179.44,
+        326
+      ],
+      "referenceHeight": 328
+    },
+    {
+      "sheet": 8,
+      "rect": [
+        1542,
+        199,
+        499,
+        309
+      ],
+      "origin": [
+        231.44,
+        307
+      ],
+      "referenceHeight": 328
+    },
+    {
+      "sheet": 8,
+      "rect": [
+        41,
+        693,
+        430,
+        327
+      ],
+      "origin": [
+        208.44,
+        325
+      ],
+      "referenceHeight": 328
+    },
+    {
+      "sheet": 8,
+      "rect": [
+        581,
+        693,
+        374,
+        327
+      ],
+      "origin": [
+        182.44,
+        325
+      ],
+      "referenceHeight": 328
+    },
+    {
+      "sheet": 8,
+      "rect": [
+        1046,
+        704,
+        468,
+        316
+      ],
+      "origin": [
+        240.44,
+        314
+      ],
+      "referenceHeight": 328
+    },
+    {
+      "sheet": 8,
+      "rect": [
+        1573,
+        690,
+        438,
+        330
+      ],
+      "origin": [
+        178.44,
+        328
+      ],
+      "referenceHeight": 328
+    },
+    {
+      "sheet": 9,
+      "rect": [
+        29,
+        178,
+        453,
+        330
+      ],
+      "origin": [
+        191.9,
+        328
+      ],
+      "referenceHeight": 330
+    },
+    {
+      "sheet": 9,
+      "rect": [
+        594,
+        182,
+        347,
+        326
+      ],
+      "origin": [
+        152.9,
+        324
+      ],
+      "referenceHeight": 330
+    },
+    {
+      "sheet": 9,
+      "rect": [
+        1093,
+        177,
+        374,
+        331
+      ],
+      "origin": [
+        181.9,
+        329
+      ],
+      "referenceHeight": 330
+    },
+    {
+      "sheet": 9,
+      "rect": [
+        1550,
+        189,
+        483,
+        319
+      ],
+      "origin": [
+        217.9,
+        317
+      ],
+      "referenceHeight": 330
+    },
+    {
+      "sheet": 9,
+      "rect": [
+        56,
+        711,
+        400,
+        309
+      ],
+      "origin": [
+        201.9,
+        307
+      ],
+      "referenceHeight": 330
+    },
+    {
+      "sheet": 9,
+      "rect": [
+        570,
+        693,
+        395,
+        327
+      ],
+      "origin": [
+        198.9,
+        325
+      ],
+      "referenceHeight": 330
+    },
+    {
+      "sheet": 9,
+      "rect": [
+        1048,
+        693,
+        464,
+        327
+      ],
+      "origin": [
+        217.9,
+        325
+      ],
+      "referenceHeight": 330
+    },
+    {
+      "sheet": 9,
+      "rect": [
+        1574,
+        687,
+        435,
+        333
+      ],
+      "origin": [
+        176.9,
+        331
+      ],
+      "referenceHeight": 330
     }
   ],
   "clips": {
     "walk": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15
+      128,
+      136,
+      129,
+      137,
+      130,
+      138,
+      131,
+      139,
+      132,
+      140,
+      133,
+      141,
+      134,
+      142,
+      135,
+      143
     ],
     "normal": [
       16,
@@ -1974,6 +2200,37 @@
     [
       2048,
       2048
+    ],
+    [
+      2048,
+      1024
+    ],
+    [
+      2048,
+      1024
     ]
-  ]
+  ],
+  "gait": {
+    "strideHeight": 1.2,
+    "stepsPerCycle": 2,
+    "phaseStops": [
+      0.0,
+      0.0625,
+      0.125,
+      0.1875,
+      0.25,
+      0.3125,
+      0.375,
+      0.4375,
+      0.5,
+      0.5625,
+      0.625,
+      0.6875,
+      0.75,
+      0.8125,
+      0.875,
+      0.9375
+    ],
+    "description": "Two alternating forepaw steps per full stride; pose advances with ground displacement, never elapsed time."
+  }
 }

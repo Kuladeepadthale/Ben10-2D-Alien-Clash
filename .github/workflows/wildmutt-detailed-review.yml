@@ -25,6 +25,7 @@ jobs:
           node ci/animation-review/wildmutt-detailed/test.cjs
           node ci/animation-review/wildmutt-detailed/smooth.cjs
           node ci/animation-review/wildmutt-detailed/choreography.cjs
+          node ci/animation-review/wildmutt-detailed/stride.cjs
       - name: Restore release engine for browser review only
         env:
           GH_TOKEN: ${{ github.token }}
@@ -39,7 +40,7 @@ jobs:
             p=(root/n[7:]).resolve();assert p.is_relative_to(root);p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
           for f in ['wildmutt-detailed-data.js','wildmutt-detailed.js']:shutil.copyfile('web/'+f,root/f)
           shutil.copytree('web/assets/wildmutt-detailed',root/'assets/wildmutt-detailed')
-          p=root/'index.html';p.write_text(p.read_text().replace('</body>','<script src="wildmutt-detailed-data.js?v=4"></script><script src="wildmutt-detailed.js?v=4"></script></body>'))
+          p=root/'index.html';p.write_text(p.read_text().replace('</body>','<script src="wildmutt-detailed-data.js?v=5"></script><script src="wildmutt-detailed.js?v=5"></script></body>'))
           PY
       - name: Check real engine, both directions and all actions
         env:

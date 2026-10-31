@@ -32,3 +32,8 @@ Earlier detailed 16-cel walk retained at the user's request. Four new 16-cel pow
 
 Local renderer checks and CI engine integration passed: https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/41233121126 . Source revision b529e1086b13471ab137776536e47ba606dd8495. User visual approval and real Android performance review remain pending. No APK/AAB produced.
 
+
+
+## Wildmutt revision 5: walking stride (1 November 2026)
+
+User accepted revision 4 powers; preserve them. New 8 walking key drawings + 8 in-betweens replace the earlier walking clip. One full cycle covers 1.2 times rendered body height, with two alternating forepaw steps; actual displacement chooses each pose. No timed gait advance at a wall/while stopped. Current model step = 80.94 world pixels, about .249 seconds at 325 px/s. Scale remains constant per source sheet. Local 2880-state renderer, cache/cadence, four-power choreography and multi-speed/direction stride checks passed. Browser CI pending. Generated art needs user visual approval, and phone performance remains unverified. No APK/AAB built.
