@@ -1,0 +1,44 @@
+name: Review detailed Wildmutt cartoon frames
+on:
+  push:
+    branches: [main]
+    paths: ['web/wildmutt-detailed*.js','web/assets/wildmutt-detailed/**','ci/animation-review/wildmutt-detailed/**','.github/workflows/wildmutt-detailed-review.yml']
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install review tools
+        run: |
+          npm install --prefix /tmp/detailed-tools --no-save --no-package-lock @napi-rs/canvas playwright
+          /tmp/detailed-tools/node_modules/.bin/playwright install --with-deps chromium
+      - name: Check all detailed frames and animation states
+        env:
+          NODE_PATH: /tmp/detailed-tools/node_modules
+        run: node ci/animation-review/wildmutt-detailed/test.cjs
+      - name: Restore release engine for browser review only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/detailed-source review-web
+          gh release download playstore-13.5 --pattern Ben10-Omniverse-13.5.apk --dir /tmp/detailed-source
+          python3 - <<'PY'
+          import pathlib,zipfile,shutil
+          root=pathlib.Path('review-web').resolve();z=zipfile.ZipFile('/tmp/detailed-source/Ben10-Omniverse-13.5.apk')
+          for n in z.namelist():
+           if n.startswith('assets/') and not n.endswith('/'):
+            p=(root/n[7:]).resolve();assert p.is_relative_to(root);p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          for f in ['wildmutt-detailed-data.js','wildmutt-detailed.js']:shutil.copyfile('web/'+f,root/f)
+          shutil.copytree('web/assets/wildmutt-detailed',root/'assets/wildmutt-detailed')
+          p=root/'index.html';p.write_text(p.read_text().replace('</body>','<script src="wildmutt-detailed-data.js?v=2"></script><script src="wildmutt-detailed.js?v=2"></script></body>'))
+          PY
+      - name: Check real engine, both directions and all actions
+        env:
+          NODE_PATH: /tmp/detailed-tools/node_modules
+        run: node ci/animation-review/wildmutt-detailed/browser.cjs

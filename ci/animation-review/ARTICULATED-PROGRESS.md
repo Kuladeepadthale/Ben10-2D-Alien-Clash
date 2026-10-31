@@ -1,32 +1,19 @@
-# Articulated alien animation pass
+# Alien cartoon animation progress
 
-User-requested sequence: one named alien at a time. Commit each completed revision.
-Do not build or publish APK/AAB releases until the user asks after the alien pass.
+One alien at a time. Save each revision to GitHub. Do not build APK/AAB until requested.
 
-| Alien | Renderer | Coverage | Validation | Review status |
-| --- | --- | --- | --- | --- |
-| Wildmutt (4) | `web/wildmutt-rig.js` — continuous vector skeleton, not sprite-pose replacement | Idle/breath, distance-driven four-paw trot/run, jump/tuck/landing reach, dash, guard, recoil, defeat, three basic variants, Predator pounce, three-strike Claw flurry, Savage lunge, five-beat Apex hunt | 2,160 sampled poses; invariant two-bone lengths; world-planted stance; transition continuity; mirrored paw/jaw emitter; no sprite calls; isolation from other aliens/villains. CI also exercises 24 real-engine state/facing combinations. | Implementation complete; local visual review and GitHub CI passed. Phone/player visual review pending. |
+## Required art approach
 
-## Wildmutt design and scale
+The user rejected the simplified procedural/vector Wildmutt redesign on 31 October 2026. That renderer is no longer loaded. Future aliens must preserve the detailed existing cartoon identity using generated animation drawings, enough distinct poses and careful registration/timing. Do not repeat the simplified rig approach.
 
-- Reference: existing `web/assets/classic/wildmutt/portrait.webp`.
-- Keep an eyeless orange quadruped, large head/jaw, neck gills, big clawed forepaws, small hind paws, short back tufts and left-shoulder Omnitrix brace. No added eyes, ears or tail.
-- One fixed 170-unit skeleton reference multiplied by the existing alien `renderHeight * scale`. Never fit a different source-image box per action.
-- Feet alternate in diagonal pairs. The stance moves opposite actual world displacement, including the character's scale; stationary and paused actors do not march in place.
-- Continuous jaw, spine, shoulder, elbow, wrist, hip, knee and paw transforms. Blend action changes over 90ms without changing limb lengths.
-- Attacks use the existing simulation's facing, wind-up, active duration, tick count and recovery. Each flurry beat reaches forward at the corresponding hit time, then recoils.
-- Presentation only: damage, cooldowns, targeting, inventory, rewards and ads are unchanged. Custom imported atlases retain the existing explicit renderer precedence.
-- Menu collection images remain existing artwork; the arena's neutral and action states share the new rig. This is newly drawn procedural animation, not footage or animation extracted from the cartoon.
+| Alien | Current revision | Coverage | Status |
+| --- | --- | --- | --- |
+| Wildmutt (4) | `web/wildmutt-detailed.js`, data script, four lossless atlases under `web/assets/wildmutt-detailed/` | 64 generated drawings: 16 gait; 8 basic combo; 8 Claw flurry; 8 pounce; 8 lunge; 8 Apex Hunt; 8 breathing, guard, recoil and defeat. Jump/dash use the matching movement drawings. | Detailed replacement implemented. Local 2,880-sample renderer checks passed. GitHub browser integration run is attached to the replacement commit. Player visual approval pending. |
 
-## Resume
+Use `ci/animation-review/wildmutt-detailed/README.md` for source, calibration and resume details. The previous 2,160-pose rig checks describe a rejected historical implementation, not the active renderer.
 
-Next requested alien: awaiting user name. Do not mark any other alien complete.
-Run `node ci/animation-review/rig-tests/wildmutt.cjs` with `@napi-rs/canvas` installed.
-The review workflow validates the existing battle engine without building an Android package.
-For the eventual release, copy every new rig script and the updated index into the packaged web root; do not restore an older index from an APK.
+Fixed sheet calibration preserves physical size across an action. Register shoulder and foot anchors; never enlarge a crouch or lying-down pose to fill an upright box. One body per frame, no ghost crossfade. Preserve simulation timing and facing. This is newly generated cartoon artwork, not TV footage.
 
-## Completed check
+Next alien: awaiting user name. No other alien is marked completed.
 
-Wildmutt implementation: `86ee348029b829fdb5b5b2688e93833ff7a09595`.
-[Passed render and real-engine integration checks](https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/41228217720).
-Android build was deliberately skipped. No package release was produced for this revision.
+The eventual release must copy both detailed scripts, all four atlases and current index. Keep the rejected rig unloaded. Existing package/reward/ad settings are unchanged by this art revision.
