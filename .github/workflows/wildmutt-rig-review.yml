@@ -1,0 +1,43 @@
+name: Review Wildmutt articulated animation
+on:
+  push:
+    branches: [main]
+    paths: ['web/wildmutt-rig.js','ci/animation-review/rig-tests/wildmutt*.cjs','.github/workflows/wildmutt-rig-review.yml']
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install rendering and browser test tools
+        run: |
+          npm install --prefix /tmp/wild-tools --no-save --no-package-lock @napi-rs/canvas playwright
+          /tmp/wild-tools/node_modules/.bin/playwright install --with-deps chromium
+      - name: Check articulated movement and invariant anatomy
+        env:
+          NODE_PATH: /tmp/wild-tools/node_modules
+        run: node ci/animation-review/rig-tests/wildmutt.cjs
+      - name: Restore release assets for integration test only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/wild-source review-web
+          gh release download playstore-13.5 --pattern Ben10-Omniverse-13.5.apk --dir /tmp/wild-source
+          python3 - <<'PY'
+          import pathlib,zipfile,shutil
+          root=pathlib.Path('review-web').resolve();z=zipfile.ZipFile('/tmp/wild-source/Ben10-Omniverse-13.5.apk')
+          for n in z.namelist():
+           if n.startswith('assets/') and not n.endswith('/'):
+            p=(root/n[7:]).resolve();assert p.is_relative_to(root);p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          shutil.copyfile('web/wildmutt-rig.js',root/'wildmutt-rig.js')
+          p=root/'index.html';s=p.read_text();assert 'wildmutt-rig.js' not in s;p.write_text(s.replace('</body>','<script src="wildmutt-rig.js?v=1"></script></body>'))
+          PY
+      - name: Check integration with released battle engine
+        env:
+          NODE_PATH: /tmp/wild-tools/node_modules
+        run: node ci/animation-review/rig-tests/wildmutt-browser.cjs
