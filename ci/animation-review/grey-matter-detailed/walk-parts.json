@@ -1,0 +1,52 @@
+{
+  "upperSrc": "assets/grey-matter-detailed/walk-upper.webp",
+  "legsSrc": "assets/grey-matter-detailed/walk-legs.webp",
+  "upperSize": [
+    733,
+    1423
+  ],
+  "hip": [
+    333,
+    1023
+  ],
+  "parts": [
+    [
+      231,
+      61,
+      177,
+      517
+    ],
+    [
+      871,
+      61,
+      177,
+      517
+    ],
+    [
+      267,
+      735,
+      105,
+      450
+    ],
+    [
+      907,
+      736,
+      105,
+      447
+    ],
+    [
+      125,
+      1493,
+      390,
+      213
+    ],
+    [
+      766,
+      1487,
+      388,
+      225
+    ]
+  ],
+  "strideHeight": 0.85,
+  "stanceFraction": 0.6
+}
