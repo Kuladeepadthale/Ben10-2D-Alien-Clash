@@ -1,11 +1,15 @@
 {
-  "version": 3,
+  "version": 4,
   "cell": 384,
   "sheets": [
     "assets/wildmutt-detailed/walk.webp",
     "assets/wildmutt-detailed/claws.webp",
     "assets/wildmutt-detailed/pounce.webp",
-    "assets/wildmutt-detailed/states.webp"
+    "assets/wildmutt-detailed/states.webp",
+    "assets/wildmutt-detailed/pounce-v4.webp",
+    "assets/wildmutt-detailed/claws-v4.webp",
+    "assets/wildmutt-detailed/lunge-v4.webp",
+    "assets/wildmutt-detailed/apex-v4.webp"
   ],
   "frames": [
     {
@@ -903,6 +907,902 @@
         98
       ],
       "referenceHeight": 219
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        91,
+        286,
+        329,
+        222
+      ],
+      "origin": [
+        139.06,
+        220
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        605,
+        310,
+        325,
+        198
+      ],
+      "origin": [
+        147.06,
+        196
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1130,
+        334,
+        299,
+        174
+      ],
+      "origin": [
+        137.06,
+        172
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1617,
+        292,
+        349,
+        216
+      ],
+      "origin": [
+        180.06,
+        214
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        79,
+        785,
+        354,
+        235
+      ],
+      "origin": [
+        179.06,
+        233
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        598,
+        826,
+        339,
+        194
+      ],
+      "origin": [
+        191.06,
+        192
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1071,
+        887,
+        417,
+        133
+      ],
+      "origin": [
+        206.06,
+        131
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1643,
+        808,
+        298,
+        212
+      ],
+      "origin": [
+        162.06,
+        210
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        83,
+        1300,
+        346,
+        232
+      ],
+      "origin": [
+        191.06,
+        230
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        595,
+        1304,
+        345,
+        228
+      ],
+      "origin": [
+        188.06,
+        226
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1129,
+        1331,
+        302,
+        201
+      ],
+      "origin": [
+        183.06,
+        199
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1642,
+        1339,
+        300,
+        193
+      ],
+      "origin": [
+        142.06,
+        191
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        107,
+        1830,
+        297,
+        214
+      ],
+      "origin": [
+        149.06,
+        212
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        612,
+        1818,
+        312,
+        226
+      ],
+      "origin": [
+        143.06,
+        224
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1112,
+        1828,
+        335,
+        216
+      ],
+      "origin": [
+        140.06,
+        214
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1630,
+        1827,
+        324,
+        217
+      ],
+      "origin": [
+        140.06,
+        215
+      ],
+      "referenceHeight": 222
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        107,
+        285,
+        298,
+        223
+      ],
+      "origin": [
+        116.79,
+        221
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        609,
+        307,
+        317,
+        201
+      ],
+      "origin": [
+        139.29,
+        199
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        1132,
+        309,
+        295,
+        199
+      ],
+      "origin": [
+        126.29,
+        197
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        1585,
+        323,
+        413,
+        185
+      ],
+      "origin": [
+        151.29,
+        183
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        108,
+        805,
+        296,
+        215
+      ],
+      "origin": [
+        129.29,
+        213
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        613,
+        799,
+        310,
+        221
+      ],
+      "origin": [
+        158.29,
+        219
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        1132,
+        759,
+        295,
+        261
+      ],
+      "origin": [
+        119.14,
+        259
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        1597,
+        734,
+        389,
+        286
+      ],
+      "origin": [
+        164.29,
+        284
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        134,
+        1340,
+        243,
+        192
+      ],
+      "origin": [
+        154.29,
+        190
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        602,
+        1348,
+        331,
+        184
+      ],
+      "origin": [
+        147.29,
+        182
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        1127,
+        1345,
+        305,
+        187
+      ],
+      "origin": [
+        183.29,
+        185
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        1594,
+        1357,
+        395,
+        175
+      ],
+      "origin": [
+        142.14,
+        173
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        60,
+        1844,
+        391,
+        200
+      ],
+      "origin": [
+        224.29,
+        198
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        617,
+        1842,
+        301,
+        202
+      ],
+      "origin": [
+        136.29,
+        200
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        1125,
+        1830,
+        309,
+        214
+      ],
+      "origin": [
+        118.29,
+        212
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 5,
+      "rect": [
+        1642,
+        1828,
+        299,
+        216
+      ],
+      "origin": [
+        119.29,
+        214
+      ],
+      "referenceHeight": 223
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        108,
+        271,
+        296,
+        237
+      ],
+      "origin": [
+        112.51,
+        235
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        612,
+        332,
+        312,
+        176
+      ],
+      "origin": [
+        132.51,
+        174
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        1134,
+        354,
+        292,
+        154
+      ],
+      "origin": [
+        138.51,
+        152
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        1604,
+        340,
+        376,
+        168
+      ],
+      "origin": [
+        219.51,
+        166
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        79,
+        844,
+        353,
+        176
+      ],
+      "origin": [
+        218.51,
+        174
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        591,
+        861,
+        353,
+        159
+      ],
+      "origin": [
+        212.51,
+        157
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        1114,
+        865,
+        331,
+        155
+      ],
+      "origin": [
+        211.51,
+        153
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        1619,
+        887,
+        346,
+        133
+      ],
+      "origin": [
+        210.51,
+        131
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        75,
+        1356,
+        361,
+        176
+      ],
+      "origin": [
+        200.51,
+        174
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        628,
+        1354,
+        280,
+        178
+      ],
+      "origin": [
+        138.51,
+        176
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        1099,
+        1359,
+        362,
+        173
+      ],
+      "origin": [
+        215.51,
+        171
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        1623,
+        1364,
+        338,
+        168
+      ],
+      "origin": [
+        161.51,
+        166
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        101,
+        1860,
+        310,
+        184
+      ],
+      "origin": [
+        142.51,
+        182
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        609,
+        1828,
+        317,
+        216
+      ],
+      "origin": [
+        158.51,
+        214
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        1116,
+        1846,
+        328,
+        198
+      ],
+      "origin": [
+        146.01,
+        196
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 6,
+      "rect": [
+        1642,
+        1812,
+        300,
+        232
+      ],
+      "origin": [
+        120.51,
+        230
+      ],
+      "referenceHeight": 237
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        94,
+        305,
+        324,
+        203
+      ],
+      "origin": [
+        125.69,
+        201
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        619,
+        324,
+        298,
+        184
+      ],
+      "origin": [
+        163.69,
+        182
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        1111,
+        288,
+        338,
+        220
+      ],
+      "origin": [
+        189.69,
+        218
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        1602,
+        309,
+        379,
+        199
+      ],
+      "origin": [
+        140.69,
+        197
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        106,
+        811,
+        300,
+        209
+      ],
+      "origin": [
+        139.69,
+        207
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        626,
+        806,
+        284,
+        214
+      ],
+      "origin": [
+        123.69,
+        212
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        1085,
+        828,
+        389,
+        192
+      ],
+      "origin": [
+        228.69,
+        190
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        1640,
+        761,
+        304,
+        259
+      ],
+      "origin": [
+        141.69,
+        257
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        121,
+        1283,
+        270,
+        249
+      ],
+      "origin": [
+        143.69,
+        247
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        561,
+        1331,
+        414,
+        201
+      ],
+      "origin": [
+        224.69,
+        199
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        1111,
+        1326,
+        338,
+        206
+      ],
+      "origin": [
+        142.69,
+        204
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        1679,
+        1335,
+        226,
+        197
+      ],
+      "origin": [
+        117.69,
+        195
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        60,
+        1859,
+        391,
+        185
+      ],
+      "origin": [
+        216.69,
+        183
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        633,
+        1841,
+        270,
+        203
+      ],
+      "origin": [
+        128.69,
+        201
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        1091,
+        1810,
+        378,
+        234
+      ],
+      "origin": [
+        177.69,
+        232
+      ],
+      "referenceHeight": 203
+    },
+    {
+      "sheet": 7,
+      "rect": [
+        1643,
+        1833,
+        298,
+        211
+      ],
+      "origin": [
+        139.69,
+        209
+      ],
+      "referenceHeight": 203
     }
   ],
   "clips": {
@@ -935,44 +1835,76 @@
       23
     ],
     "skill1": [
-      24,
-      25,
-      26,
-      27,
-      28,
-      29,
-      30,
-      31
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95
     ],
     "skill0": [
-      32,
-      33,
-      34,
-      35,
-      36,
-      37,
-      38,
-      39
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79
     ],
     "skill2": [
-      40,
-      41,
-      42,
-      43,
-      44,
-      45,
-      46,
-      47
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111
     ],
     "ultimate": [
-      48,
-      49,
-      50,
-      51,
-      52,
-      53,
-      54,
-      55
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127
     ],
     "idle": [
       56,
@@ -1009,5 +1941,39 @@
       11,
       12
     ]
-  }
+  },
+  "sheetSizes": [
+    [
+      1536,
+      1536
+    ],
+    [
+      1536,
+      1536
+    ],
+    [
+      1536,
+      1536
+    ],
+    [
+      1536,
+      1536
+    ],
+    [
+      2048,
+      2048
+    ],
+    [
+      2048,
+      2048
+    ],
+    [
+      2048,
+      2048
+    ],
+    [
+      2048,
+      2048
+    ]
+  ]
 }

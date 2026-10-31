@@ -24,3 +24,11 @@ Active art implementation: `4f9876f3ab2eefba39bed8da00ad5de4ab047cfc`.
 ## Wildmutt playback refinement — 1 November 2026
 
 Revision 3: corrected neutral scale calibration, one flat-floor pixel baseline, bounded display-resolution frame cache, physical-distance gait independent of render rate, and shorter recovery holds. Added smooth.cjs checks for 30/60/120 Hz cadence, no knockback-driven stepping, integer drawing coordinates, one floor row and no warm-gait surface allocation. Detailed generated art is retained. Phone/player visual approval remains pending. No APK/AAB requested or built.
+
+
+## Wildmutt revision 4: unique power choreography
+
+Earlier detailed 16-cel walk retained at the user's request. Four new 16-cel power sheets add 64 newly drawn poses: pounce launch/reach/landing; three different claw swings; ground-hugging jaw lunge; five-part Apex Hunt with rake, bite, hammer, double thrust and slam. 128 atlas entries, 96 currently used drawings; old power entries retained only for history/old jump references. One constant physical scale per sheet from its neutral pose, never per-pose fit-to-bounds scaling. Single-body pixel cache and facing preserved; damage, hit counts, cooldowns and movement simulation untouched.
+
+Local renderer checks pass. CI engine integration pending. User visual approval and real Android performance review remain pending. No APK/AAB produced.
+

@@ -28,12 +28,25 @@ function wildmuttDetailedFrame(f,t,portrait=false){
    const second=(f.normalChain||0)%2===1;
    frame=age<0?clip[second?(v.elapsed/wind<.45?0:5):Math.min(2,Math.floor(v.elapsed/wind*3))]:age<active?clip[second?6:3]:clip[[4,7,0][Math.min(2,Math.floor((age-active)/recovery*3))]];
   }else if(key==='skill1'){
-   if(age<0)frame=clip[0];else if(age<active){const beat=age/active*(v.cfg.ticks||3),i=Math.min(2,Math.floor(beat));frame=clip[Math.min(6,1+i*2+((beat%1)>.45?1:0))];}else frame=clip[[6,7,0][Math.min(2,Math.floor((age-active)/recovery*3))]];
+   // Three anatomically different strikes, each with preparation and recoil.
+   const beats=[[1,2,3,4],[5,6,7,8],[9,10,11,12]];
+   if(age<0)frame=clip[Math.min(2,Math.floor(v.elapsed/wind*3))];
+   else if(age<active){const beat=age/active*3,i=Math.min(2,Math.floor(beat));frame=clip[beats[i][Math.min(3,Math.floor((beat%1)*4))]];}
+   else frame=clip[[12,13,14,15][Math.min(3,Math.floor((age-active)/recovery*4))]];
   }else if(key==='ultimate'){
-   frame=age<0?clip[Math.min(2,Math.floor(v.elapsed/wind*3))]:age<active?clip[[3,4,5,6][Math.min(3,Math.floor(((age/active*(v.cfg.ticks||5))%1)*4))]]:clip[age-active<recovery*.35?6:7];
-  }else{
-   frame=age<0?clip[Math.min(2,Math.floor(v.elapsed/wind*3))]:age<active?clip[3+Math.min(2,Math.floor(age/active*3))]:clip[[6,7,0][Math.min(2,Math.floor((age-active)/recovery*3))]];
+   // Five unique contacts: near rake, bite, far hammer, double thrust, final slam.
+   const beats=[[2,3,4],[5,6,7],[8,9,10],[11,12,13],[13,14,15]];
+   if(age<0)frame=clip[Math.min(2,Math.floor(v.elapsed/wind*3))];
+   else if(age<active){const beat=age/active*5,i=Math.min(4,Math.floor(beat));frame=clip[beats[i][Math.min(2,Math.floor((beat%1)*3))]];}
+   else frame=clip[age-active<recovery*.35?14:15];
+  }else if(key==='skill0'){
+   // Pounce: coil -> launch -> airborne reach -> two-paw landing -> recovery.
+   frame=age<0?clip[Math.min(2,Math.floor(v.elapsed/wind*3))]:age<active?clip[3+Math.min(7,Math.floor(age/active*8))]:clip[11+Math.min(4,Math.floor((age-active)/recovery*5))];
+  }else if(key==='skill2'){
+   // Low jaw-first lunge; the second bound is intentionally unlike the pounce.
+   frame=age<0?clip[Math.min(2,Math.floor(v.elapsed/wind*3))]:age<active?clip[3+Math.min(8,Math.floor(age/active*9))]:clip[12+Math.min(3,Math.floor((age-active)/recovery*4))];
   }
+
  }else if(key==='walk'||key==='dash'){
   const h=(f.config||aliens[4]).renderHeight*(f.config||aliens[4]).scale;
   frame=clip[Math.floor(((m.distance/(h*1.65))%1+1)%1*clip.length)];
