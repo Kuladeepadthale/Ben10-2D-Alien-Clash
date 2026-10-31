@@ -1,0 +1,1596 @@
+{
+  "version": 1,
+  "sheets": [
+    "assets/grey-matter-detailed/walk.webp",
+    "assets/grey-matter-detailed/body.webp",
+    "assets/grey-matter-detailed/gadgets.webp",
+    "assets/grey-matter-detailed/throw-states.webp",
+    "assets/grey-matter-detailed/arsenal.webp"
+  ],
+  "sheetSizes": [
+    [
+      2048,
+      2048
+    ],
+    [
+      2048,
+      2048
+    ],
+    [
+      2048,
+      2048
+    ],
+    [
+      2048,
+      2048
+    ],
+    [
+      2048,
+      2048
+    ]
+  ],
+  "frames": [
+    {
+      "sheet": 0,
+      "rect": [
+        170,
+        260,
+        172,
+        248
+      ],
+      "origin": [
+        94.08,
+        246
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        158.24,
+        116.56
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        683,
+        257,
+        170,
+        251
+      ],
+      "origin": [
+        93.08,
+        249
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        156.4,
+        117.97
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        1203,
+        258,
+        153,
+        250
+      ],
+      "origin": [
+        78.08,
+        248
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        140.76,
+        117.5
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        1713,
+        257,
+        158,
+        251
+      ],
+      "origin": [
+        80.08,
+        249
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        145.36,
+        117.97
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        166,
+        776,
+        179,
+        244
+      ],
+      "origin": [
+        100.08,
+        242
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        164.68,
+        114.68
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        673,
+        777,
+        189,
+        243
+      ],
+      "origin": [
+        105.08,
+        241
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        173.88,
+        114.21
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        1185,
+        778,
+        189,
+        242
+      ],
+      "origin": [
+        107.08,
+        240
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        173.88,
+        113.74
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        1695,
+        773,
+        194,
+        247
+      ],
+      "origin": [
+        112.08,
+        245
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        178.48,
+        116.09
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        167,
+        1284,
+        177,
+        248
+      ],
+      "origin": [
+        96.08,
+        246
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        162.84,
+        116.56
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        677,
+        1285,
+        182,
+        247
+      ],
+      "origin": [
+        103.08,
+        245
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        167.44,
+        116.09
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        1191,
+        1285,
+        178,
+        247
+      ],
+      "origin": [
+        101.08,
+        245
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        163.76,
+        116.09
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        1711,
+        1283,
+        162,
+        249
+      ],
+      "origin": [
+        85.58,
+        247
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        149.04,
+        117.03
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        171,
+        1796,
+        170,
+        248
+      ],
+      "origin": [
+        90.08,
+        246
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        156.4,
+        116.56
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        674,
+        1797,
+        188,
+        247
+      ],
+      "origin": [
+        102.08,
+        245
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        172.96,
+        116.09
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        1191,
+        1792,
+        178,
+        252
+      ],
+      "origin": [
+        93.08,
+        250
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        163.76,
+        118.44
+      ]
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        1709,
+        1794,
+        166,
+        250
+      ],
+      "origin": [
+        86.08,
+        248
+      ],
+      "referenceHeight": 248,
+      "emitter": [
+        152.72,
+        117.5
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        152,
+        190,
+        208,
+        318
+      ],
+      "origin": [
+        123.08,
+        316
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        191.36,
+        149.46
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        642,
+        238,
+        251,
+        270
+      ],
+      "origin": [
+        169.08,
+        268
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        230.92,
+        126.9
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        1103,
+        248,
+        354,
+        260
+      ],
+      "origin": [
+        188.08,
+        258
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        345,
+        60
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        1690,
+        238,
+        204,
+        270
+      ],
+      "origin": [
+        126.08,
+        268
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        187.68,
+        126.9
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        118,
+        762,
+        276,
+        258
+      ],
+      "origin": [
+        151.08,
+        256
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        260,
+        78
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        659,
+        770,
+        217,
+        250
+      ],
+      "origin": [
+        132.08,
+        248
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        199.64,
+        117.5
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        1142,
+        805,
+        276,
+        215
+      ],
+      "origin": [
+        195.08,
+        213
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        253.92,
+        101.05
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        1666,
+        706,
+        252,
+        314
+      ],
+      "origin": [
+        171.08,
+        312
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        242.0,
+        113.0
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        175,
+        1297,
+        162,
+        235
+      ],
+      "origin": [
+        79.08,
+        233
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        149.04,
+        110.45
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        621,
+        1247,
+        293,
+        285
+      ],
+      "origin": [
+        163.08,
+        283
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        269.56,
+        133.95
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        1141,
+        1267,
+        277,
+        265
+      ],
+      "origin": [
+        143.08,
+        263
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        254.84,
+        124.55
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        1685,
+        1343,
+        213,
+        189
+      ],
+      "origin": [
+        132.08,
+        187
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        195.96,
+        88.83
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        168,
+        1721,
+        175,
+        323
+      ],
+      "origin": [
+        93.08,
+        321
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        161.0,
+        151.81
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        625,
+        1763,
+        286,
+        281
+      ],
+      "origin": [
+        162.08,
+        279
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        263.12,
+        132.07
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        1113,
+        1759,
+        334,
+        285
+      ],
+      "origin": [
+        50.08,
+        283
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        307.28,
+        133.95
+      ]
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        1629,
+        1842,
+        325,
+        202
+      ],
+      "origin": [
+        138.08,
+        200
+      ],
+      "referenceHeight": 323,
+      "emitter": [
+        216.0,
+        69.5
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        175,
+        93,
+        162,
+        415
+      ],
+      "origin": [
+        59.4,
+        413
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        79.0,
+        257.0
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        684,
+        104,
+        167,
+        404
+      ],
+      "origin": [
+        63.9,
+        402
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        153.64,
+        189.88
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        1190,
+        110,
+        180,
+        398
+      ],
+      "origin": [
+        64.4,
+        396
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        165.6,
+        187.06
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        1686,
+        117,
+        211,
+        391
+      ],
+      "origin": [
+        68.4,
+        389
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        201,
+        94
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        166,
+        629,
+        180,
+        391
+      ],
+      "origin": [
+        63.4,
+        389
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        128.0,
+        127.0
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        675,
+        611,
+        186,
+        409
+      ],
+      "origin": [
+        68.4,
+        407
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        171.12,
+        192.23
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        1196,
+        617,
+        168,
+        403
+      ],
+      "origin": [
+        65.4,
+        401
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        122.65,
+        240.0
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        1715,
+        611,
+        153,
+        409
+      ],
+      "origin": [
+        57.4,
+        407
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        74.25,
+        264.0
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        177,
+        1124,
+        158,
+        408
+      ],
+      "origin": [
+        55.4,
+        406
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        110.0,
+        154.0
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        674,
+        1246,
+        188,
+        286
+      ],
+      "origin": [
+        90.4,
+        284
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        139.0,
+        135.0
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        1152,
+        1317,
+        255,
+        215
+      ],
+      "origin": [
+        166.4,
+        213
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        238.0,
+        71.0
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        1688,
+        1279,
+        207,
+        253
+      ],
+      "origin": [
+        110.4,
+        251
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        177,
+        230
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        180,
+        1642,
+        151,
+        402
+      ],
+      "origin": [
+        48.4,
+        400
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        146.5,
+        129.0
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        679,
+        1646,
+        178,
+        398
+      ],
+      "origin": [
+        80.4,
+        396
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        162.0,
+        369.0
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        1189,
+        1640,
+        181,
+        404
+      ],
+      "origin": [
+        62.4,
+        402
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        168.0,
+        367.0
+      ]
+    },
+    {
+      "sheet": 2,
+      "rect": [
+        1710,
+        1634,
+        164,
+        410
+      ],
+      "origin": [
+        61.4,
+        408
+      ],
+      "referenceHeight": 415,
+      "emitter": [
+        149.0,
+        370.0
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        169,
+        219,
+        173,
+        289
+      ],
+      "origin": [
+        92.44,
+        287
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        43.0,
+        212.0
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        689,
+        219,
+        158,
+        289
+      ],
+      "origin": [
+        75.44,
+        287
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        145.36,
+        135.83
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        1199,
+        217,
+        162,
+        291
+      ],
+      "origin": [
+        69.44,
+        289
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        93.8,
+        129.0
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        1662,
+        229,
+        260,
+        279
+      ],
+      "origin": [
+        105.44,
+        277
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        239.2,
+        131.13
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        118,
+        732,
+        275,
+        288
+      ],
+      "origin": [
+        113.44,
+        286
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        258.5,
+        23.04
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        660,
+        741,
+        216,
+        279
+      ],
+      "origin": [
+        139.44,
+        277
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        198.72,
+        131.13
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        1191,
+        744,
+        177,
+        276
+      ],
+      "origin": [
+        105.44,
+        274
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        162.84,
+        129.72
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        1717,
+        737,
+        150,
+        283
+      ],
+      "origin": [
+        63.44,
+        281
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        138.0,
+        133.01
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        185,
+        1247,
+        141,
+        285
+      ],
+      "origin": [
+        60.44,
+        283
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        129.72,
+        133.95
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        663,
+        1246,
+        209,
+        286
+      ],
+      "origin": [
+        103.44,
+        284
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        192.28,
+        134.42
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        1182,
+        1266,
+        195,
+        266
+      ],
+      "origin": [
+        83.44,
+        264
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        179.4,
+        125.02
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        1700,
+        1293,
+        184,
+        239
+      ],
+      "origin": [
+        82.44,
+        237
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        169.28,
+        112.33
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        127,
+        1777,
+        258,
+        267
+      ],
+      "origin": [
+        34.44,
+        265
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        237.36,
+        125.49
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        664,
+        1803,
+        208,
+        241
+      ],
+      "origin": [
+        123.44,
+        239
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        191.36,
+        113.27
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        1154,
+        1846,
+        252,
+        198
+      ],
+      "origin": [
+        106.44,
+        196
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        156.0,
+        68.0
+      ]
+    },
+    {
+      "sheet": 3,
+      "rect": [
+        1668,
+        1936,
+        248,
+        108
+      ],
+      "origin": [
+        186.44,
+        106
+      ],
+      "referenceHeight": 289,
+      "emitter": [
+        238.0,
+        73.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        184,
+        234,
+        144,
+        274
+      ],
+      "origin": [
+        55.04,
+        272
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        109.0,
+        171.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        693,
+        240,
+        149,
+        268
+      ],
+      "origin": [
+        61.04,
+        266
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        130.15,
+        143.5
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1196,
+        237,
+        168,
+        271
+      ],
+      "origin": [
+        59.04,
+        269
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        155.5,
+        133.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1707,
+        238,
+        169,
+        270
+      ],
+      "origin": [
+        61.04,
+        268
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        155.0,
+        124.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        147,
+        753,
+        217,
+        267
+      ],
+      "origin": [
+        128.04,
+        265
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        200.0,
+        119.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        681,
+        754,
+        174,
+        266
+      ],
+      "origin": [
+        77.04,
+        264
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        159.4,
+        106.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1183,
+        751,
+        193,
+        269
+      ],
+      "origin": [
+        67.04,
+        267
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        177.0,
+        116.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1689,
+        749,
+        205,
+        271
+      ],
+      "origin": [
+        74.04,
+        269
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        191.0,
+        97.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        176,
+        1266,
+        159,
+        266
+      ],
+      "origin": [
+        72.04,
+        264
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        142.0,
+        115.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        673,
+        1271,
+        190,
+        261
+      ],
+      "origin": [
+        49.04,
+        259
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        171.75,
+        108.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1173,
+        1272,
+        214,
+        260
+      ],
+      "origin": [
+        105.04,
+        258
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        199.0,
+        110.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1650,
+        1287,
+        283,
+        245
+      ],
+      "origin": [
+        162.04,
+        243
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        270.1,
+        91.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        169,
+        1780,
+        173,
+        264
+      ],
+      "origin": [
+        84.04,
+        262
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        146.6,
+        111.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        655,
+        1781,
+        226,
+        263
+      ],
+      "origin": [
+        61.04,
+        261
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        208.9,
+        92.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1199,
+        1777,
+        162,
+        267
+      ],
+      "origin": [
+        70.04,
+        265
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        156.0,
+        152.0
+      ]
+    },
+    {
+      "sheet": 4,
+      "rect": [
+        1715,
+        1777,
+        153,
+        267
+      ],
+      "origin": [
+        64.04,
+        265
+      ],
+      "referenceHeight": 274,
+      "emitter": [
+        110.2,
+        161.0
+      ]
+    }
+  ],
+  "gait": {
+    "strideHeight": 0.95,
+    "stepsPerCycle": 2
+  },
+  "clips": {
+    "walk": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "dash": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "normal": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "jump": [
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "idle": [
+      56,
+      57
+    ],
+    "guard": [
+      58,
+      59
+    ],
+    "hit": [
+      60,
+      61
+    ],
+    "ko": [
+      62,
+      63
+    ],
+    "skill0": [
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "skill1": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "skill2": [
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55
+    ],
+    "ultimate": [
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79
+    ]
+  }
+}

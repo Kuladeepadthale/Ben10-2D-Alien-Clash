@@ -37,3 +37,10 @@ Local renderer checks and CI engine integration passed: https://github.com/Kulad
 ## Wildmutt revision 5: walking stride (1 November 2026)
 
 User accepted revision 4 powers; preserve them. New 8 walking key drawings + 8 in-betweens replace the earlier walking clip. One full cycle covers 1.2 times rendered body height, with two alternating forepaw steps; actual displacement chooses each pose. No timed gait advance at a wall/while stopped. Current model step = 80.94 world pixels, about .249 seconds at 325 px/s. Scale remains constant per source sheet. Local 2880-state renderer, cache/cadence, four-power choreography and multi-speed/direction stride checks passed. Browser CI passed: https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/41234687728 . Ground-displacement guard also ignores a ticking input gait counter while blocked; local stride/cache/state/choreography checks pass. Generated art needs user visual approval, and phone performance remains unverified. No APK/AAB built.
+
+
+## Grey Matter — detailed revision 1 (1 November 2026)
+
+Analysed id 5's original portrait, existing cel clips, gadget kit, render scale, hit states, cast timing and emitter registration. Added 80 new detailed drawings across five lossless atlases: 16-cel distance gait; basic palm/jump poses; shock aim/recoil; trap placement/remote; grenade throw; six-command Unite; guard/hit/defeat. Constant per-sheet neutral scale and single-body rendering; origins follow reviewed muzzle/release coordinates. Damage, cooldowns, game movement, ads and other characters unchanged. Wildmutt approved revisions preserved.
+
+Local 2,880 state/facing renders and cache/cadence/floor checks passed. Browser integration pending. Await user visual approval and Android test; no APK/AAB built. Resume the next named alien only after the user's instruction. Art/source review notes: `ci/animation-review/grey-matter-detailed/README.md`.
