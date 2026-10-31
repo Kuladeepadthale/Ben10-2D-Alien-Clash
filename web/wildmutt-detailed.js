@@ -9,10 +9,10 @@ function wildmuttDetailedMotion(f,t){
  if(s.time===t&&s.x===f.x)return s;
  const dx=Math.abs(f.x-s.x);s.moving=dx>.01;
  const grounded=f.y>=floor-2&&!f.cast&&f.stun<=0&&f.hp>0;
- const travelling=!!f.dash||grounded&&(f.moving||s.moving);
+ const travelling=s.moving&&(!!f.dash||grounded&&(f.moving||s.moving));
  if(travelling){
-  if(count!==null&&s.counter!==null&&count>=s.counter)s.distance+=Math.min(count-s.counter,Math.max(80,(f.config?.speed||325)*.3));
-  else if(dx<Math.max(80,(f.config?.speed||325)*.3))s.distance+=dx;
+  // Ground distance is authoritative even when an input/physics gait counter advances.
+  if(dx<Math.max(80,(f.config?.speed||325)*.3))s.distance+=dx;
  }
  s.x=f.x;s.counter=count;s.time=t;return s;
 }
