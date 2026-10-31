@@ -5,7 +5,7 @@ Do not build or publish APK/AAB releases until the user asks after the alien pas
 
 | Alien | Renderer | Coverage | Validation | Review status |
 | --- | --- | --- | --- | --- |
-| Wildmutt (4) | `web/wildmutt-rig.js` — continuous vector skeleton, not sprite-pose replacement | Idle/breath, distance-driven four-paw trot/run, jump/tuck/landing reach, dash, guard, recoil, defeat, three basic variants, Predator pounce, three-strike Claw flurry, Savage lunge, five-beat Apex hunt | 2,160 sampled poses; invariant two-bone lengths; world-planted stance; transition continuity; mirrored paw/jaw emitter; no sprite calls; isolation from other aliens/villains. CI also exercises 24 real-engine state/facing combinations. | Implemented and locally reviewed; CI run attached to commit. Phone/player visual review pending. |
+| Wildmutt (4) | `web/wildmutt-rig.js` — continuous vector skeleton, not sprite-pose replacement | Idle/breath, distance-driven four-paw trot/run, jump/tuck/landing reach, dash, guard, recoil, defeat, three basic variants, Predator pounce, three-strike Claw flurry, Savage lunge, five-beat Apex hunt | 2,160 sampled poses; invariant two-bone lengths; world-planted stance; transition continuity; mirrored paw/jaw emitter; no sprite calls; isolation from other aliens/villains. CI also exercises 24 real-engine state/facing combinations. | Implementation complete; local visual review and GitHub CI passed. Phone/player visual review pending. |
 
 ## Wildmutt design and scale
 
@@ -24,3 +24,9 @@ Next requested alien: awaiting user name. Do not mark any other alien complete.
 Run `node ci/animation-review/rig-tests/wildmutt.cjs` with `@napi-rs/canvas` installed.
 The review workflow validates the existing battle engine without building an Android package.
 For the eventual release, copy every new rig script and the updated index into the packaged web root; do not restore an older index from an APK.
+
+## Completed check
+
+Wildmutt implementation: `86ee348029b829fdb5b5b2688e93833ff7a09595`.
+[Passed render and real-engine integration checks](https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/41228217720).
+Android build was deliberately skipped. No package release was produced for this revision.
