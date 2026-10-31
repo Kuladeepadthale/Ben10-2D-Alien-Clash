@@ -30,5 +30,5 @@ Revision 3: corrected neutral scale calibration, one flat-floor pixel baseline, 
 
 Earlier detailed 16-cel walk retained at the user's request. Four new 16-cel power sheets add 64 newly drawn poses: pounce launch/reach/landing; three different claw swings; ground-hugging jaw lunge; five-part Apex Hunt with rake, bite, hammer, double thrust and slam. 128 atlas entries, 96 currently used drawings; old power entries retained only for history/old jump references. One constant physical scale per sheet from its neutral pose, never per-pose fit-to-bounds scaling. Single-body pixel cache and facing preserved; damage, hit counts, cooldowns and movement simulation untouched.
 
-Local renderer checks pass. CI engine integration pending. User visual approval and real Android performance review remain pending. No APK/AAB produced.
+Local renderer checks and CI engine integration passed: https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/41233121126 . Source revision b529e1086b13471ab137776536e47ba606dd8495. User visual approval and real Android performance review remain pending. No APK/AAB produced.
 

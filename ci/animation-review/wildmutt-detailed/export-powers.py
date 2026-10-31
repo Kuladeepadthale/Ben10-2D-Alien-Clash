@@ -4,6 +4,7 @@ from scipy.ndimage import label,find_objects,binary_dilation
 import numpy as np,json,pathlib,base64
 root=pathlib.Path('unique-work');out=root/'web/assets/wildmutt-detailed'
 src=(root/'web/wildmutt-detailed-data.js').read_text();data=json.loads(src.split('=',1)[1].strip().rstrip(';'));data['version']=4
+data['frames']=data['frames'][:64];data['sheets']=data['sheets'][:4]
 spec=[('pounce-v4','c48b2b79-f3e1-46c4-8ecf-3964ff547430','skill0'),('claws-v4','55f67a9b-88a6-47e0-a504-750ea6f7ee24','skill1'),('lunge-v4','abb09044-cdbf-49bc-a1ae-9512fb56e4e4','skill2'),('apex-v4','e92ab491-5273-4164-a149-282081850593','ultimate')]
 data['sheetSizes']=[[1536,1536]]*4
 for key,uid,clip in spec:
