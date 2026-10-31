@@ -1,0 +1,161 @@
+name: Build Play 13.4 horizontal reward vault
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/play134.yml','ci/release134/test.cjs','android/gradle.properties']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - name: Restore existing artwork and current game changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/source134 builds/web release-output
+          gh release download playstore-13.2 --pattern Ben10-Omniverse-13.2.aab --dir /tmp/source134
+          echo '80481f2f5f7e25b9bbd990514ad9a479525dc32df12c46f449016977faa745e1  /tmp/source134/Ben10-Omniverse-13.2.aab' | sha256sum -c -
+          python3 - <<'PY'
+          import pathlib,zipfile,shutil
+          root=pathlib.Path('builds/web');z=zipfile.ZipFile('/tmp/source134/Ben10-Omniverse-13.2.aab')
+          for n in z.namelist():
+           if n.startswith('base/assets/') and not n.endswith('/'):
+            p=root/n[12:];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          for name in ['card-shop.js','daily-ad-rewards.js','daily-ad-rewards.css']:shutil.copyfile('web/'+name,root/name)
+          p=root/'index.html';s=p.read_text().replace('</head>','<link rel="stylesheet" href="daily-ad-rewards.css?v=134"></head>').replace('</body>','<script src="daily-ad-rewards.js?v=134"></script></body>').replace('card-shop.js?v=108','card-shop.js?v=134');p.write_text(s)
+          PY
+      - name: Test horizontal rewards and isolated counters
+        env:
+          NODE_PATH: /tmp/test134/node_modules
+        run: |
+          npm install --prefix /tmp/test134 --no-save --no-package-lock playwright
+          /tmp/test134/node_modules/.bin/playwright install --with-deps chromium
+          node ci/release134/test.cjs
+      - name: Compile release APK and AAB
+        run: |
+          sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+          gradle -p android --no-daemon assembleRelease bundleRelease
+          cp android/app/build/outputs/apk/release/app-release-unsigned.apk release-output/Ben10-Omniverse-13.4-unsigned.apk
+          cp android/app/build/outputs/bundle/release/app-release.aab release-output/Ben10-Omniverse-13.4-unsigned.aab
+          curl -fLsS https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o /tmp/bundletool.jar
+          java -jar /tmp/bundletool.jar validate --bundle=release-output/Ben10-Omniverse-13.4-unsigned.aab
+          java -jar /tmp/bundletool.jar dump manifest --bundle=release-output/Ben10-Omniverse-13.4-unsigned.aab > release-output/AndroidManifest.xml
+          python3 - <<'PY'
+          import pathlib
+          s=pathlib.Path('release-output/AndroidManifest.xml').read_text()
+          assert 'com.google.android.gms.permission.AD_ID' not in s
+          assert 'ca-app-pub-8833928525618902~8755259198' in s
+          assert 'android:versionCode="134"' in s
+          PY
+          python3 - <<'PY'
+          import pathlib,hashlib,json
+          root=pathlib.Path('release-output');result={}
+          for ext in ['aab','apk']:
+           f=root/('Ben10-Omniverse-13.4-unsigned.'+ext);result[ext+'Sha256']=hashlib.sha256(f.read_bytes()).hexdigest()
+          (root/'signing-request.json').write_text(json.dumps(result))
+          PY
+      - name: Stage packages for original-key signing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create play134-unsigned release-output/* --prerelease --title '13.4 unsigned staging - do not install' --notes 'Reward UI regression and compilation checks. Awaiting original-key signature.' --target "$GITHUB_SHA"
+
+      - name: Prepare ephemeral encrypted key handoff
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/signing134-private ci/signing-handoff
+          chmod 700 /tmp/signing134-private
+          openssl req -x509 -newkey rsa:3072 -nodes -keyout /tmp/signing134-private/recipient.key -out ci/signing-handoff/recipient.pem -days 1 -subj '/CN=Ephemeral Play 13.4 Signing Transport' 2>/dev/null
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b "signing-handoff-${GITHUB_RUN_ID}"
+          git add ci/signing-handoff/recipient.pem
+          git commit -m 'Publish ephemeral signing transport certificate [skip ci]'
+          git push origin "HEAD:signing-handoff-${GITHUB_RUN_ID}"
+          echo "HANDOFF_BRANCH=signing-handoff-${GITHUB_RUN_ID}"
+          received=false
+          for attempt in $(seq 1 120); do
+            if gh api "repos/${GITHUB_REPOSITORY}/contents/ci/signing-handoff/sealed.b64?ref=signing-handoff-${GITHUB_RUN_ID}" --jq .content > /tmp/signing134-private/response 2>/dev/null; then
+              base64 -d /tmp/signing134-private/response > /tmp/signing134-private/sealed.b64
+              base64 -d /tmp/signing134-private/sealed.b64 > /tmp/signing134-private/sealed.cms
+              received=true
+              break
+            fi
+            sleep 5
+          done
+          test "$received" = true
+          openssl cms -decrypt -binary -inform DER -in /tmp/signing134-private/sealed.cms -recip ci/signing-handoff/recipient.pem -inkey /tmp/signing134-private/recipient.key -out /tmp/signing134-private/key.zip
+          python3 - <<'PY'
+          import zipfile,pathlib
+          root=pathlib.Path('/tmp/signing134-private/key');root.mkdir(mode=0o700)
+          z=zipfile.ZipFile('/tmp/signing134-private/key.zip')
+          for n in ['ben10-upload.jks','store-password.txt','key-password.txt','upload-certificate.pem']:
+           (root/n).write_bytes(z.read(n));(root/n).chmod(0o600)
+          PY
+          keytool -list -keystore /tmp/signing134-private/key/ben10-upload.jks -storepass:file /tmp/signing134-private/key/store-password.txt -alias ben10upload | grep '4A:4D:30:6C:45:D0:97:DB:5F:ED:F8:3B:A8:4A:DA:A0:41:75:E3:9E:27:7B:FE:1A:FF:49:2A:8E:8D:AD:F5:0F'
+      - name: Standard jarsigner and apksigner release signing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p staged fixed-output
+          gh release download play134-unsigned --dir staged
+          python3 - <<'PY'
+          import json,pathlib,hashlib
+          r=json.loads(pathlib.Path('staged/signing-request.json').read_text())
+          for ext in ['aab','apk']:
+           f=pathlib.Path('staged/Ben10-Omniverse-13.4-unsigned.'+ext)
+           assert hashlib.sha256(f.read_bytes()).hexdigest()==r[ext+'Sha256']
+          PY
+          sdkmanager 'build-tools;36.0.0'
+          jarsigner -keystore /tmp/signing134-private/key/ben10-upload.jks -storepass:file /tmp/signing134-private/key/store-password.txt -keypass:file /tmp/signing134-private/key/key-password.txt -sigalg SHA256withRSA -digestalg SHA-256 -signedjar fixed-output/Ben10-Omniverse-13.4.aab staged/Ben10-Omniverse-13.4-unsigned.aab ben10upload
+          "$ANDROID_HOME/build-tools/36.0.0/apksigner" sign --ks /tmp/signing134-private/key/ben10-upload.jks --ks-key-alias ben10upload --ks-pass file:/tmp/signing134-private/key/store-password.txt --key-pass file:/tmp/signing134-private/key/key-password.txt --out fixed-output/Ben10-Omniverse-13.4.apk staged/Ben10-Omniverse-13.4-unsigned.apk
+          jarsigner -verify -verbose -certs fixed-output/Ben10-Omniverse-13.4.aab > fixed-output/aab-signature.txt
+          grep 'jar verified.' fixed-output/aab-signature.txt
+          "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose --print-certs fixed-output/Ben10-Omniverse-13.4.apk > fixed-output/apk-signature.txt
+          grep -i '4a4d306c45d097db5fedf83ba84adaa04175e39e277bfe1aff492a8e8dadf50f' fixed-output/apk-signature.txt
+          curl -fLsS https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o /tmp/bundletool.jar
+          java -jar /tmp/bundletool.jar validate --bundle=fixed-output/Ben10-Omniverse-13.4.aab
+          keytool -printcert -jarfile fixed-output/Ben10-Omniverse-13.4.aab > fixed-output/aab-certificate.txt
+          grep '4A:4D:30:6C:45:D0:97:DB:5F:ED:F8:3B:A8:4A:DA:A0:41:75:E3:9E:27:7B:FE:1A:FF:49:2A:8E:8D:AD:F5:0F' fixed-output/aab-certificate.txt
+          python3 - <<'PY'
+          import zipfile,hashlib,json,pathlib
+          out=pathlib.Path('fixed-output');result={}
+          for ext in ['aab','apk']:
+           f=out/('Ben10-Omniverse-13.4.'+ext)
+           with zipfile.ZipFile(f) as z,zipfile.ZipFile('staged/Ben10-Omniverse-13.4-unsigned.'+ext) as original:
+            for n in original.namelist():
+             if not n.startswith('META-INF/'):assert original.read(n)==z.read(n),n
+            if ext=='aab':
+             sf=z.read('META-INF/BEN10UPL.SF');assert sf.count(b'Name: ')>100
+           result[ext]={'bytes':f.stat().st_size,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()}
+          (out/'release-validation.json').write_text(json.dumps({'versionCode':134,'package':'com.ben10.myapp','signing':'standard jarsigner/apksigner','unchangedGamePayload':True,'files':result},indent=2));print(json.dumps(result))
+          PY
+          cp staged/rewards-tests.json staged/AndroidManifest.xml fixed-output/
+          gh release create playstore-13.4 fixed-output/* --prerelease --title 'Ben 10 Omniverse 13.4 - horizontal reward vault' --notes 'Horizontal reward vault: three 15-card packs first, then five daily character offers. Independent completed-ad counters for every reward. No ad-specific age picker; all requests retain child-directed non-personalised G settings. SDK earned-reward callback alone increments progress. Browser regression, Android compilation, standard signature and bundle checks passed. Physical-device ad completion/dismissal and Play Families review remain pending.' --target "$GITHUB_SHA"
+      - name: Remove ephemeral signing material
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,shutil
+          p=pathlib.Path('/tmp/signing134-private')
+          if p.is_dir():shutil.rmtree(p)
+          PY
+
