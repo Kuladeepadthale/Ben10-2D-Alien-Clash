@@ -16,7 +16,7 @@ import java.util.*;
 // Native completion callbacks are the only source of ad progress. Web code cannot add views.
 public final class RewardAds {
  private final Activity activity; private final WebView web; private final SharedPreferences prefs;
- private boolean busy=false,initialized=false; private final Random random=new java.security.SecureRandom();
+ private volatile boolean busy=false; private boolean initialized=false; private final Random random=new java.security.SecureRandom();
  private static final int[] RANKS={2,1,2,1,0,0,1,1,0,2,1,0,1,0,2,0,1,2,4,1,0,0,2,1,3,2,2,2,1,2,1,4,2,2,1,2,2,3,2,3,1,1,2,3,0,2,3,2,4,1,0,2,2,1,1,2,3,2,4,0,0,1,2,3,3,2,1,4,4,4,4,4,3,3,4,3,4,3,4,2,2,2,2,2,3,2,1,2,2,2,2,4};
  private static final String LIVE_UNIT="ca-app-pub-8833928525618902/9806944422";
  private static final String TEST_UNIT="ca-app-pub-3940256099942544/5224354917";
@@ -30,7 +30,7 @@ public final class RewardAds {
   if(today.compareTo(old)>0){
    Set<Integer> owned=new HashSet<>();try{JSONArray a=new JSONArray(ownedText);for(int i=0;i<a.length();i++)owned.add(a.getInt(i));}catch(Exception ignored){}
    JSONArray offers=new JSONArray();for(int rank=0;rank<5;rank++){List<Integer> pool=new ArrayList<>(),all=new ArrayList<>();for(int id=0;id<RANKS.length;id++)if(RANKS[id]==rank){all.add(id);if(!owned.contains(id))pool.add(id);}if(pool.isEmpty())pool=all;int id=pool.get(random.nextInt(pool.size()));offers.put(new JSONObject().put("id",id).put("duplicate",owned.contains(id)));}
-   s.put("day",today).put("views",0).put("progress",new JSONObject()).put("offers",offers).put("claimed",new JSONArray());if(!save(s))throw new JSONException("Could not save daily rewards");
+   s.put("day",today).put("views",0).put("progress",new JSONObject()).put("offers",offers).put("claimed",new JSONArray()).put("offerChanges",new JSONObject());if(!save(s))throw new JSONException("Could not save daily rewards");
   }
   if(!s.has("progress")){
    JSONObject progress=new JSONObject();int used=0;JSONArray claimed=s.optJSONArray("claimed");if(claimed!=null)for(int i=0;i<claimed.length();i++)used=Math.max(used,2*(claimed.getJSONObject(i).optInt("rank")+1));
@@ -49,6 +49,18 @@ public final class RewardAds {
   else {String pack=key.substring(5);int[] weights=pack.equals("omni")?new int[]{60,25,10,4,1}:pack.equals("power")?new int[]{25,35,25,12,3}:new int[]{0,15,40,30,15};JSONArray ids=new JSONArray();for(int draw=0;draw<15;draw++){int roll=random.nextInt(100),sum=0,rank=4;for(int i=0;i<5;i++){sum+=weights[i];if(roll<sum){rank=i;break;}}List<Integer> pool=new ArrayList<>();for(int id=0;id<RANKS.length;id++)if(RANKS[id]==rank)pool.add(id);ids.put(pool.get(random.nextInt(pool.size())));}receipt.put("kind","pack").put("packId",pack).put("cardIds",ids);}
   receipts.put(receipt);if(!save(s))return "{}";return receipt.toString();
  }catch(Exception e){return "{}";}}
+ // Diamond debit is journaled in the atomic web profile before this idempotent native change.
+ @JavascriptInterface public synchronized String changeOffer(String transaction,String expectedDay,int rank,int chosen,String ownedText){try{
+  JSONObject s=state(ownedText);if(rank<0||rank>=5||transaction==null||transaction.length()>100||!expectedDay.equals(s.getString("day")))return "{\"error\":\"Offer day changed. Diamonds refunded.\"}";
+  JSONObject changes=s.optJSONObject("offerChanges");if(changes==null){changes=new JSONObject();s.put("offerChanges",changes);}if(changes.has(transaction))return changes.getJSONObject(transaction).toString();
+  if(busy||s.optBoolean("clockBlocked")||claimed(s,"alien:"+rank))return "{\"error\":\"Offer cannot be changed right now.\"}";
+  int current=s.getJSONArray("offers").getJSONObject(rank).getInt("id"),id=chosen;
+  if(chosen==-1){List<Integer> pool=new ArrayList<>();for(int i=0;i<RANKS.length;i++)if(RANKS[i]==rank&&i!=current)pool.add(i);if(pool.isEmpty())return "{\"error\":\"No other alien in this category.\"}";id=pool.get(random.nextInt(pool.size()));}
+  if(id<0||id>=RANKS.length||RANKS[id]!=rank||id==current)return "{\"error\":\"Choose a different alien in this category.\"}";
+  boolean duplicate=false;try{JSONArray a=new JSONArray(ownedText);for(int i=0;i<a.length();i++)if(a.getInt(i)==id)duplicate=true;}catch(Exception ignored){}
+  JSONObject offer=new JSONObject().put("id",id).put("duplicate",duplicate),result=new JSONObject().put("ok",true).put("day",s.getString("day")).put("offer",offer);
+  s.getJSONArray("offers").put(rank,offer);changes.put(transaction,result);if(!save(s))return "{\"error\":\"Offer could not be saved.\"}";return result.toString();
+ }catch(Exception e){return "{\"error\":\"Offer could not be changed.\"}";}}
  private void emit(String status){web.post(()->{if(!activity.isFinishing())web.evaluateJavascript("window.dispatchEvent(new CustomEvent('omni-ad-state',{detail:"+JSONObject.quote(status)+"}))",null);});}
  @JavascriptInterface public void watchReward(String key,String owned){activity.runOnUiThread(()->{
   try{JSONObject s=state(owned);int need=required(key);if(busy||need<0||s.optBoolean("clockBlocked")||claimed(s,key)||s.getJSONObject("progress").optInt(key)>=need){emit("This reward is unavailable or already ready to claim.");return;}
@@ -70,4 +82,5 @@ public final class RewardAds {
   });
  }
 }
+
 
