@@ -4,7 +4,7 @@ from scipy.ndimage import label,find_objects,binary_dilation
 import numpy as np,json,pathlib
 root=pathlib.Path('wild-frames');out=root/'web/assets/wildmutt-detailed'
 sheets=[('walk','exec-8e63830b-7160-4e51-a56c-3b05066bfe25.png',259),('claws','exec-0eab7d65-4b4d-43dd-bb69-cf054971ffde.png',248),('pounce','exec-b7077fb7-685b-4cd9-8933-ed8ca9439571.png',220),('states','exec-fbb3e222-582d-4f7b-99de-54d688dc2aec.png',216)]
-data={'version':2,'cell':384,'sheets':[],'frames':[],'clips':{'walk':list(range(16)),'normal':list(range(16,24)),'skill1':list(range(24,32)),'skill0':list(range(32,40)),'skill2':list(range(40,48)),'ultimate':list(range(48,56)),'idle':[56,57],'guard':[58,59],'hit':[61,57],'ko':[62,63],'jump':[34,35,36,37,38],'dash':[3,4,5,6,7,8,9,10,11,12]}}
+data={'version':3,'cell':384,'sheets':[],'frames':[],'clips':{'walk':list(range(16)),'normal':list(range(16,24)),'skill1':list(range(24,32)),'skill0':list(range(32,40)),'skill2':list(range(40,48)),'ultimate':list(range(48,56)),'idle':[56,57],'guard':[58,59],'hit':[61,57],'ko':[62,63],'jump':[34,35,36,37,38],'dash':[3,4,5,6,7,8,9,10,11,12]}}
 for si,(key,name,ref) in enumerate(sheets):
  a=np.array(Image.open(pathlib.Path('generated_images')/name).convert('RGBA'));lab,n=label(a[:,:,3]>160);sizes=np.bincount(lab.ravel());objs=find_objects(lab)
  found=[(i,objs[i-1]) for i,s in enumerate(sizes) if i and s>1000];assert len(found)==16,(key,len(found))
@@ -21,7 +21,7 @@ for si,(key,name,ref) in enumerate(sheets):
   ox=bx+ref*.23;oy=h-2
   cx=fi%4*384+(384-w)//2;cy=fi//4*384+380-h
   atlas.alpha_composite(im,(cx,cy))
-  data['frames'].append({'sheet':si,'rect':[cx,cy,w,h],'origin':[round(ox,2),oy],'referenceHeight':ref})
+  data['frames'].append({'sheet':si,'rect':[cx,cy,w,h],'origin':[round(ox,2),oy],'referenceHeight':[260,248,238,219][si]})
  path=out/(key+'.webp');atlas.save(path,'WEBP',lossless=True,method=6)
  data['sheets'].append('assets/wildmutt-detailed/'+key+'.webp')
  print(key,path.stat().st_size)

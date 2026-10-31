@@ -20,3 +20,7 @@ The eventual release must copy both detailed scripts, all four atlases and curre
 
 [Passed detailed-frame and released-engine review](https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/41230257851).
 Active art implementation: `4f9876f3ab2eefba39bed8da00ad5de4ab047cfc`.
+
+## Wildmutt playback refinement — 1 November 2026
+
+Revision 3: corrected neutral scale calibration, one flat-floor pixel baseline, bounded display-resolution frame cache, physical-distance gait independent of render rate, and shorter recovery holds. Added smooth.cjs checks for 30/60/120 Hz cadence, no knockback-driven stepping, integer drawing coordinates, one floor row and no warm-gait surface allocation. Detailed generated art is retained. Phone/player visual approval remains pending. No APK/AAB requested or built.

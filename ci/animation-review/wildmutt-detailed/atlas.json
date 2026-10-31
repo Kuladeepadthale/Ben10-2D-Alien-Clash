@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "cell": 384,
   "sheets": [
     "assets/wildmutt-detailed/walk.webp",
@@ -20,7 +20,7 @@
         152.57,
         258
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -34,7 +34,7 @@
         126.57,
         240
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -48,7 +48,7 @@
         126.57,
         254
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -62,7 +62,7 @@
         139.57,
         246
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -76,7 +76,7 @@
         159.57,
         261
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -90,7 +90,7 @@
         158.57,
         238
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -104,7 +104,7 @@
         156.07,
         264
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -118,7 +118,7 @@
         166.57,
         265
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -132,7 +132,7 @@
         156.57,
         262
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -146,7 +146,7 @@
         151.57,
         257
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -160,7 +160,7 @@
         137.57,
         265
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -174,7 +174,7 @@
         149.57,
         257
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -188,7 +188,7 @@
         154.57,
         254
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -202,7 +202,7 @@
         165.57,
         243
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -216,7 +216,7 @@
         132.07,
         254
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 0,
@@ -230,7 +230,7 @@
         139.57,
         261
       ],
-      "referenceHeight": 259
+      "referenceHeight": 260
     },
     {
       "sheet": 1,
@@ -468,7 +468,7 @@
         120.6,
         236
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -482,7 +482,7 @@
         110.6,
         199
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -496,7 +496,7 @@
         104.6,
         181
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -510,7 +510,7 @@
         159.6,
         218
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -524,7 +524,7 @@
         167.6,
         173
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -538,7 +538,7 @@
         137.6,
         202
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -552,7 +552,7 @@
         124.6,
         197
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -566,7 +566,7 @@
         109.6,
         227
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -580,7 +580,7 @@
         162.6,
         170
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -594,7 +594,7 @@
         99.6,
         217
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -608,7 +608,7 @@
         142.6,
         207
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -622,7 +622,7 @@
         149.6,
         186
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -636,7 +636,7 @@
         122.6,
         211
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -650,7 +650,7 @@
         108.6,
         208
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -664,7 +664,7 @@
         127.6,
         206
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 2,
@@ -678,7 +678,7 @@
         111.6,
         224
       ],
-      "referenceHeight": 220
+      "referenceHeight": 238
     },
     {
       "sheet": 3,
@@ -692,7 +692,7 @@
         135.68,
         176
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -706,7 +706,7 @@
         111.68,
         169
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -720,7 +720,7 @@
         129.68,
         177
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -734,7 +734,7 @@
         152.68,
         183
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -748,7 +748,7 @@
         169.68,
         248
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -762,7 +762,7 @@
         168.68,
         183
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -776,7 +776,7 @@
         106.68,
         182
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -790,7 +790,7 @@
         117.68,
         189
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -804,7 +804,7 @@
         108.68,
         217
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -818,7 +818,7 @@
         106.68,
         209
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -832,7 +832,7 @@
         123.68,
         169
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -846,7 +846,7 @@
         129.68,
         214
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -860,7 +860,7 @@
         86.68,
         231
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -874,7 +874,7 @@
         125.68,
         175
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -888,7 +888,7 @@
         169.68,
         144
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     },
     {
       "sheet": 3,
@@ -902,7 +902,7 @@
         178.68,
         98
       ],
-      "referenceHeight": 216
+      "referenceHeight": 219
     }
   ],
   "clips": {
