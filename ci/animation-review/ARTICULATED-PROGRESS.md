@@ -8,7 +8,7 @@ The user rejected the simplified procedural/vector Wildmutt redesign on 31 Octob
 
 | Alien | Current revision | Coverage | Status |
 | --- | --- | --- | --- |
-| Wildmutt (4) | `web/wildmutt-detailed.js`, data script, four lossless atlases under `web/assets/wildmutt-detailed/` | 64 generated drawings: 16 gait; 8 basic combo; 8 Claw flurry; 8 pounce; 8 lunge; 8 Apex Hunt; 8 breathing, guard, recoil and defeat. Jump/dash use the matching movement drawings. | Detailed replacement implemented. Local 2,880-sample renderer checks passed. GitHub browser integration run is attached to the replacement commit. Player visual approval pending. |
+| Wildmutt (4) | `web/wildmutt-detailed.js`, data script, four lossless atlases under `web/assets/wildmutt-detailed/` | 64 generated drawings: 16 gait; 8 basic combo; 8 Claw flurry; 8 pounce; 8 lunge; 8 Apex Hunt; 8 breathing, guard, recoil and defeat. Jump/dash use the matching movement drawings. | Detailed replacement implemented. Local 2,880-sample renderer checks passed. GitHub browser integration checks passed in all 24 action/facing combinations. Player visual approval pending. |
 
 Use `ci/animation-review/wildmutt-detailed/README.md` for source, calibration and resume details. The previous 2,160-pose rig checks describe a rejected historical implementation, not the active renderer.
 
@@ -17,3 +17,6 @@ Fixed sheet calibration preserves physical size across an action. Register shoul
 Next alien: awaiting user name. No other alien is marked completed.
 
 The eventual release must copy both detailed scripts, all four atlases and current index. Keep the rejected rig unloaded. Existing package/reward/ad settings are unchanged by this art revision.
+
+[Passed detailed-frame and released-engine review](https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/41230257851).
+Active art implementation: `4f9876f3ab2eefba39bed8da00ad5de4ab047cfc`.
