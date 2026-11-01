@@ -11,3 +11,8 @@
 @media(max-width:600px){#screen-characters #roster .card>.power-type141{right:3px;bottom:5px;width:20px!important;height:20px!important}.power-type141 i{font-size:12px}.power-type141 b{font-size:9px}}
 
 .pack-result-card{position:relative}.pack-result-card>.power-type141{position:absolute;top:32px;right:5px}.offer-choice{position:relative}
+/* Type icons occupy the top corner, away from wrapped names and card progress. */
+body:not(.in-battle) #screen-characters #roster .card>.power-type141{top:7px!important;bottom:auto!important;right:7px!important;height:24px!important;min-height:0!important;max-height:24px!important;width:24px!important;padding:2px!important;line-height:1!important;margin:0!important}
+body:not(.in-battle) #screen-characters #roster .card .alien-lock-symbol{top:36px!important;right:7px!important}
+.daily-alien-reward>.power-type141{top:36px!important}
+@media(max-width:600px){body:not(.in-battle) #screen-characters #roster .card>.power-type141{top:6px!important;right:4px!important;width:20px!important;height:20px!important;max-height:20px!important}body:not(.in-battle) #screen-characters #roster .card .alien-lock-symbol{top:30px!important;right:3px!important}}
