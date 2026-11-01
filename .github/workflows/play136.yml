@@ -43,6 +43,7 @@ jobs:
            source=pathlib.Path(name)
            if source.is_file():
             p=root/source.relative_to('web');p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,p)
+          shutil.copytree('web/assets/modes-v112',root/'assets/modes-v112',dirs_exist_ok=True)
           print('Overlay changed web files:',len(changed))
           for name in re.findall(r'(?:src|href)="([^"?]+)(?:\?[^"]*)?"',(root/'index.html').read_text()):
            if name.endswith(('.js','.css')):assert (root/name).is_file(),name

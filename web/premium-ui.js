@@ -28,7 +28,7 @@ function premiumShortCopy(root){
  while((n=walker.nextNode())){if(n.parentElement?.closest('input,textarea,script,style,[contenteditable]'))continue;const replacement=premiumCopy.get(n.nodeValue.trim());if(replacement)n.nodeValue=replacement;}
 }
 const lobbyRail=document.createElement('nav');lobbyRail.className='lobby-rail';lobbyRail.setAttribute('aria-label','Lobby shortcuts');
-for(const [screen,icon,label] of [['missions','block','Missions'],['packs','aliens','Packs'],['characters','aliens','Aliens'],['upgrades','upgrade','Upgrade']]){
+for(const [screen,icon,label] of [['missions','block','Missions'],['packs','aliens','Packs'],['characters','aliens','Aliens'],['account','upgrade','Profile']]){
  const button=document.createElement('button');button.innerHTML=uiIcon(icon)+'<span>'+label+'</span><b aria-hidden="true">›</b>';button.onclick=()=>navigate(screen);lobbyRail.appendChild(button);
 }
 const lobbyHeading=document.createElement('div');lobbyHeading.className='lobby-heading';lobbyHeading.innerHTML='<span>PLUMBER HQ</span><strong>HERO TIME</strong><small id="lobbyHeroLevel"></small>';
