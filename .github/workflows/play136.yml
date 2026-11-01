@@ -29,17 +29,23 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p /tmp/source136 builds/web release-output
+          git fetch --depth=1 origin tag playstore-13.5
           gh release download playstore-13.5 --pattern Ben10-Omniverse-13.5.apk --dir /tmp/source136
           python3 - <<'PY'
-          import pathlib,zipfile,shutil
+          import pathlib,zipfile,shutil,subprocess,re
           root=pathlib.Path('builds/web')
           with zipfile.ZipFile('/tmp/source136/Ben10-Omniverse-13.5.apk') as z:
            for n in z.namelist():
             if n.startswith('assets/') and not n.endswith('/'):
              p=root/n[7:];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
-          for source in pathlib.Path('web').rglob('*'):
+          changed=subprocess.check_output(['git','diff','--name-only','playstore-13.5','HEAD','--','web'],text=True).splitlines()
+          for name in changed:
+           source=pathlib.Path(name)
            if source.is_file():
             p=root/source.relative_to('web');p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,p)
+          print('Overlay changed web files:',len(changed))
+          for name in re.findall(r'(?:src|href)="([^"?]+)(?:\?[^"]*)?"',(root/'index.html').read_text()):
+           if name.endswith(('.js','.css')):assert (root/name).is_file(),name
           assert 'premium-ui.js?v=136' in (root/'index.html').read_text()
           assert 'grey-matter-walk.js' not in (root/'index.html').read_text()
           assert 'ripjaws-walk.js' not in (root/'index.html').read_text()
@@ -54,6 +60,7 @@ jobs:
           node ci/release136/review.cjs
           node ci/check-enemy-combat-timing.cjs
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: interface-review
           path: release-output/
