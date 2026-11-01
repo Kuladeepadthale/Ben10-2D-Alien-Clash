@@ -21,7 +21,7 @@ const premiumCopy=new Map([
  ['CHANGE CHARACTER →','Change alien'],['CHANGE ALIEN →','Change alien'],['EQUIP POWERS →','Powers'],['UPGRADE ALIEN →','Upgrade'],['MATCH SETUP →','Battle setup'],['READY FOR BATTLE →','Ready'],
  ['CHOOSE OPPONENT →','Select →'],['START YOUR RUN →','Start →'],['ENTER THE LAB →','Train →'],['START BATTLE','Play'],
  ['BEST OF THREE','BEST OF 3'],['ENDLESS CHALLENGE','ENDLESS'],['Alien Card Packs','Packs'],['Your active alien','Active alien'],
- ['Choose an alien','Choose alien'],['Unlock aliens →','Unlock →'],['Swipe battles ↔','Swipe ↔']
+ ['Choose an alien','Choose alien'],['Unlock aliens →','Unlock →'],['Swipe battles ↔','Swipe ↔'],['Swipe to explore operations','Swipe ↔'],['Defend Earth · 30 villain stages','30 stages'],['Explore beyond Earth · 20 villain stages','20 stages'],['Hold the ring · Seal the portal · 300 coins','Hold · Seal · 300 coins']
 ]);
 function premiumShortCopy(root){
  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;
@@ -34,7 +34,15 @@ for(const [screen,icon,label] of [['missions','block','Missions'],['packs','alie
 const lobbyHeading=document.createElement('div');lobbyHeading.className='lobby-heading';lobbyHeading.innerHTML='<span>PLUMBER HQ</span><strong>HERO TIME</strong><small id="lobbyHeroLevel"></small>';
 const lobbyTag=document.createElement('span');lobbyTag.className='lobby-status';lobbyTag.textContent='OMNITRIX ONLINE';
 document.querySelector('.home-team-board').append(lobbyRail,lobbyHeading,lobbyTag);
-function premiumView(){document.body.dataset.view=currentScreen;const level=$('lobbyHeroLevel');if(level&&typeof heroStanding==='function'){const text='★ LEVEL '+heroStanding().level;if(level.textContent!==text)level.textContent=text;}premiumShortCopy($('screen-'+currentScreen)||$('screens'));}
+function premiumModeArt(){
+ const paths={campaign:'classic',versus:'multiplayer',survival:'survival',training:'testing',expedition:'expedition'};
+ for(const card of document.querySelectorAll('#screen-modes .mode-card')){
+  const key=card.dataset.mode||(card.classList.contains('mode-expedition')?'expedition':/multiplayer/i.test(card.textContent)?'versus':null),name=paths[key],art=card.querySelector('.mode-scene');
+  if(!name||!art||art.querySelector('.battle-card-illustration'))continue;
+  const image=document.createElement('img');image.className='battle-card-illustration';image.src='assets/modes-v112/'+name+'.webp';image.alt='';image.decoding='async';art.replaceChildren(image);card.classList.add('illustrated-battle-card');
+ }
+}
+function premiumView(){document.body.dataset.view=currentScreen;if(currentScreen==='modes')premiumModeArt();const level=$('lobbyHeroLevel');if(level&&typeof heroStanding==='function'){const text='★ LEVEL '+heroStanding().level;if(level.textContent!==text)level.textContent=text;}premiumShortCopy($('screen-'+currentScreen)||$('screens'));}
 const premiumShowBase=showScreen;showScreen=function(name,remember=true){premiumShowBase(name,remember);premiumView();};
 let premiumCopyQueued=false;
 new MutationObserver(()=>{if(premiumCopyQueued||document.body.classList.contains('in-battle'))return;premiumCopyQueued=true;requestAnimationFrame(()=>{premiumCopyQueued=false;premiumView();});}).observe($('screens'),{childList:true,subtree:true});

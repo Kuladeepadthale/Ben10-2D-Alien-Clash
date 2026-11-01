@@ -49,3 +49,10 @@ body.in-battle .touch button[data-key=ultimate]{border-color:#dfff9e;box-shadow:
 @media(max-height:450px) and (orientation:landscape){.lobby-heading{top:5%}.lobby-heading>strong{font-size:27px}.lobby-heading>small{font-size:10px}.lobby-rail{top:34%;gap:5px}body:not(.in-battle) #screen-home .lobby-rail button{min-height:33px;padding:4px 7px;font-size:12px}.lobby-rail svg{width:18px;height:18px}body:not(.in-battle) #screen-home .home-team-actions .play-button{min-height:40px!important}.lobby-status{font-size:8px;padding:4px 6px;bottom:4%}}
 @media(orientation:portrait){.lobby-heading{top:4%;left:5%}.lobby-heading>strong{font-size:32px}.lobby-rail{left:4%;top:22%;width:30%;gap:8px}body:not(.in-battle) #screen-home .lobby-rail button{min-height:42px;padding:7px;font-size:12px;gap:5px}.lobby-rail svg{width:17px;height:17px}body:not(.in-battle) #screen-home .home-portal-stage{left:33%;right:0;top:10%;bottom:25%}body:not(.in-battle) #screen-home .home-team-actions{right:5%;bottom:7%;width:55%}.lobby-status{left:5%;bottom:18%;font-size:8px}body:not(.in-battle) .app-screen{padding:12px}.lobby-rail b{display:none}}
 @media(prefers-reduced-motion:reduce){body:not(.in-battle) .app-screen button{transition:none}}
+
+body:not(.in-battle) #plumberModes .plumber-mode{display:flex!important;flex-direction:column!important;padding:0!important;gap:0!important;min-height:0;overflow:hidden}
+body:not(.in-battle) #plumberModes .plumber-mode>img{width:100%!important;height:55%!important;flex:1;min-height:0;object-fit:contain!important;max-height:none!important;background:#071827}
+body:not(.in-battle) #plumberModes .plumber-mode>div{flex:none;padding:7px 10px!important;min-width:0}
+body:not(.in-battle) #plumberModes .plumber-mode h2{font-size:clamp(14px,1.9vw,21px)!important;line-height:1.1;margin:3px 0!important}
+body:not(.in-battle) #plumberModes .plumber-mode p{font-size:11px!important;line-height:1.2!important;margin:4px 0!important}
+body:not(.in-battle) #plumberModes .plumber-mode>div>span{font-size:8px!important;letter-spacing:1px}
