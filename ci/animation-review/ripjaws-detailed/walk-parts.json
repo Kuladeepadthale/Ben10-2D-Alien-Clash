@@ -1,0 +1,52 @@
+{
+  "upperSrc": "assets/ripjaws-detailed/walk-upper.webp",
+  "legsSrc": "assets/ripjaws-detailed/walk-legs.webp",
+  "upperSize": [
+    1041,
+    1439
+  ],
+  "hip": [
+    521,
+    1194
+  ],
+  "parts": [
+    [
+      241,
+      97,
+      157,
+      445
+    ],
+    [
+      878,
+      97,
+      164,
+      445
+    ],
+    [
+      245,
+      729,
+      149,
+      462
+    ],
+    [
+      888,
+      729,
+      143,
+      461
+    ],
+    [
+      147,
+      1511,
+      346,
+      177
+    ],
+    [
+      792,
+      1506,
+      336,
+      187
+    ]
+  ],
+  "strideHeight": 1,
+  "stanceFraction": 0.6
+}
