@@ -102,3 +102,5 @@ body:not(.in-battle) .settings-panel label small{display:none!important}
 @media(max-width:600px){body:not(.in-battle) .app-top{padding-left:7px!important;padding-right:7px!important;gap:5px!important}#homeLogo{display:none!important}.app-top .top-actions{gap:4px!important}.app-top #navBack{min-width:36px!important;width:36px!important;padding:3px!important}.app-top #navBack span{display:none!important}body:not(.in-battle) .top-actions #wallet,body:not(.in-battle) .top-actions #diamondWallet{width:64px!important;min-width:64px!important;height:36px!important;min-height:36px!important}.app-top :is(#accountNav,#settingsNav,#quietPageInfo){width:36px!important;min-width:36px!important;height:36px!important;padding:5px!important}body[data-view=home] .app-top #navBack{display:none!important}}
 
 #quietInfoDialog>header{position:static!important;width:auto!important;height:auto!important;min-height:0!important;background:none!important;padding:0!important;border:0!important;box-shadow:none!important}
+
+body:not(.in-battle) #screen-home .home-play-label{font-size:20px!important;line-height:1!important}

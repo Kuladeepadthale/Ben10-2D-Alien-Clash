@@ -47,7 +47,7 @@ function applyDailyReceipts(state){if(!state||dailyClaimBusy)return;dailyClaimBu
   careerToast('Reward saved!');careerRefresh();
  }}finally{dailyClaimBusy=false;}}
 function claimDailyReward(key){const bridge=dailyAdsBridge();if(!bridge||isLocked())return false;if(key.startsWith('pack:')&&career.packState.last?.unseen){dailyAdMessage='Reveal your saved pack before claiming another pack.';renderDailyRewards();return false;}try{bridge.claimReward(key,JSON.stringify(career.owned));const s=dailyState();applyDailyReceipts(s);renderDailyRewards();if(key.startsWith('pack:')&&career.packState.last?.unseen)showScreen('packreveal');return true;}catch{dailyAdMessage='Could not claim. Try again.';renderDailyRewards();return false;}}
-function watchDailyReward(key){const s=dailyState();if(!s||s.error||s.clockBlocked||isLocked())return;dailyAdMessage='Preparing optional ad…';$('dailyAdStatus').textContent=dailyAdMessage;dailyAdsBridge().watchReward(key,JSON.stringify(career.owned));}
+function watchDailyReward(key){const s=dailyState();if(!s||s.error||s.clockBlocked||isLocked())return;dailyAdMessage='Loading…';$('dailyAdStatus').textContent=dailyAdMessage;dailyAdsBridge().watchReward(key,JSON.stringify(career.owned));}
 function renderDailyRewards(){finishOfferPurchase();const state=dailyState();applyDailyReceipts(state);
  $('dailyAdStatus').textContent=dailyAdMessage||(!state?'':state.error?state.error:state.clockBlocked?'Check device date':'');
  $('resumeRewardPack').hidden=!career.packState.last?.unseen;
