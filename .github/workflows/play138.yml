@@ -98,9 +98,23 @@ jobs:
           if gh release view play138-unsigned >/dev/null 2>&1; then
             gh release upload play138-unsigned release-output/* --clobber
           else
-            gh release create play138-unsigned release-output/* --prerelease --title '13.8 unsigned staging - do not install' --notes 'Validated staging; awaiting original-key signature.' --target "$GITHUB_SHA"
+            gh release create play138-unsigned release-output/* --prerelease --title '13.8 unsigned staging - do not install' --notes 'Validated staging; awaiting original-key signature.' --target main
           fi
 
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: unsigned138-apk-recovery
+          path: release-output/Ben10-Omniverse-13.8-unsigned.apk
+          compression-level: 0
+          if-no-files-found: ignore
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: unsigned138-aab-recovery
+          path: release-output/Ben10-Omniverse-13.8-unsigned.aab
+          compression-level: 0
+          if-no-files-found: ignore
       - name: Prepare ephemeral encrypted key handoff
         env:
           GH_TOKEN: ${{ github.token }}
@@ -177,7 +191,7 @@ jobs:
           PY
           cp staged/rewards-tests.json staged/AndroidManifest.xml fixed-output/
           cp release-output/interface-tests.json release-output/all-assets-tests.json release-output/asset-pruning.json fixed-output/
-          gh release create playstore-13.8 fixed-output/* --prerelease --title 'Ben 10 Omniverse 13.8 - smaller package, same artwork' --notes 'Removes unreachable legacy artwork, disabled scripts and unused manifests from the 13.7 package. No image recompression or animation changes. All retained runtime bytes verified against 13.7, every alien/enemy atlas and all home poses checked, interface and rewards tests passed. Original upload-key signatures, aligned APK and validated AAB.' --target "$GITHUB_SHA"
+          gh release create playstore-13.8 fixed-output/* --prerelease --title 'Ben 10 Omniverse 13.8 - smaller package, same artwork' --notes 'Removes unreachable legacy artwork, disabled scripts and unused manifests from the 13.7 package. No image recompression or animation changes. All retained runtime bytes verified against 13.7, every alien/enemy atlas and all home poses checked, interface and rewards tests passed. Original upload-key signatures, aligned APK and validated AAB.' --target main
       - name: Remove ephemeral signing material
         if: always()
         run: |
