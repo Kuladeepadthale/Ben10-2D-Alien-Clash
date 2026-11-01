@@ -24,7 +24,6 @@ jobs:
         run: |
           node ci/animation-review/ripjaws-detailed/test.cjs
           node ci/animation-review/ripjaws-detailed/smooth.cjs
-          node ci/animation-review/ripjaws-detailed/walk-legs.cjs
           node ci/animation-review/ripjaws-detailed/contacts.cjs
       - name: Restore release engine for browser review only
         env:
@@ -44,7 +43,7 @@ jobs:
           shutil.copytree('web/assets/wildmutt-detailed',root/'assets/wildmutt-detailed')
           for f in ['grey-matter-detailed-data.js','grey-matter-detailed.js','grey-matter-walk.js']:shutil.copyfile('web/'+f,root/f)
           shutil.copytree('web/assets/grey-matter-detailed',root/'assets/grey-matter-detailed')
-          p=root/'index.html';p.write_text(p.read_text().replace('</body>','<script src="wildmutt-detailed-data.js?v=5"></script><script src="wildmutt-detailed.js?v=5"></script><script src="grey-matter-detailed-data.js?v=1"></script><script src="grey-matter-detailed.js?v=1"></script><script src="grey-matter-walk.js?v=1"></script><script src="ripjaws-detailed-data.js?v=1"></script><script src="ripjaws-detailed.js?v=1"></script><script src="ripjaws-walk.js?v=1"></script></body>'))
+          p=root/'index.html';p.write_text(p.read_text().replace('</body>','<script src="wildmutt-detailed-data.js?v=5"></script><script src="wildmutt-detailed.js?v=5"></script><script src="grey-matter-detailed-data.js?v=1"></script><script src="grey-matter-detailed.js?v=2"></script><script src="ripjaws-detailed-data.js?v=1"></script><script src="ripjaws-detailed.js?v=2"></script></body>'))
           PY
       - name: Check real engine, both directions and all actions
         env:
