@@ -56,3 +56,6 @@ body:not(.in-battle) #plumberModes .plumber-mode>div{flex:none;padding:7px 10px!
 body:not(.in-battle) #plumberModes .plumber-mode h2{font-size:clamp(14px,1.9vw,21px)!important;line-height:1.1;margin:3px 0!important}
 body:not(.in-battle) #plumberModes .plumber-mode p{font-size:11px!important;line-height:1.2!important;margin:4px 0!important}
 body:not(.in-battle) #plumberModes .plumber-mode>div>span{font-size:8px!important;letter-spacing:1px}
+
+body:not(.in-battle) #screen-modes .mode-card .mode-scene:before,body:not(.in-battle) #screen-modes .mode-card .mode-scene:after{display:none!important}
+body:not(.in-battle) #screen-modes .mode-card .mode-scene>.battle-card-illustration{visibility:hidden!important}

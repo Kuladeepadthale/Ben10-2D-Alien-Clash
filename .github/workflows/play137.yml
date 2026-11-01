@@ -14,7 +14,7 @@ jobs:
       - name: Stop superseded build
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh api -X POST repos/${{ github.repository }}/actions/runs/41277988639/cancel || true
+        run: gh api -X POST repos/${{ github.repository }}/actions/runs/41278237313/cancel || true
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
@@ -60,7 +60,7 @@ jobs:
         env:
           NODE_PATH: /tmp/test137/node_modules
         run: |
-          npm install --prefix /tmp/test137 --no-save --no-package-lock playwright
+          npm install --prefix /tmp/test137 --no-save --no-package-lock playwright pngjs
           /tmp/test137/node_modules/.bin/playwright install --with-deps chromium
           node ci/release137/packs.cjs
           node ci/release137/review.cjs
@@ -71,11 +71,28 @@ jobs:
           name: interface-review
           path: release-output/
       - name: Compile release APK and AAB
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
-          gradle -p android --no-daemon assembleRelease bundleRelease
-          cp android/app/build/outputs/apk/release/app-release-unsigned.apk release-output/Ben10-Omniverse-13.7-unsigned.apk
-          cp android/app/build/outputs/bundle/release/app-release.aab release-output/Ben10-Omniverse-13.7-unsigned.aab
+          mkdir -p /tmp/reuse137
+          if gh release download play137-unsigned --pattern 'Ben10-Omniverse-13.7-unsigned.*' --dir /tmp/reuse137; then
+            cp /tmp/reuse137/* release-output/
+          else
+            sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+            gradle -p android --no-daemon assembleRelease bundleRelease
+            cp android/app/build/outputs/apk/release/app-release-unsigned.apk release-output/Ben10-Omniverse-13.7-unsigned.apk
+            cp android/app/build/outputs/bundle/release/app-release.aab release-output/Ben10-Omniverse-13.7-unsigned.aab
+          fi
+          python3 - <<'PY'
+          import pathlib,zipfile,os
+          for ext,prefix in [('apk','assets/'),('aab','base/assets/')]:
+           target=pathlib.Path('release-output/Ben10-Omniverse-13.7-unsigned.'+ext);temp=target.with_suffix('.patched')
+           replacements={prefix+n:(pathlib.Path('builds/web')/n).read_bytes() for n in ['premium-ui.js','premium-ui.css','index.html']}
+           with zipfile.ZipFile(target) as src,zipfile.ZipFile(temp,'w') as dst:
+            for entry in src.infolist():dst.writestr(entry,replacements.pop(entry.filename,src.read(entry.filename)))
+            assert not replacements,'Missing interface asset in compiled bundle'
+           os.replace(temp,target)
+          PY
           curl -fLsS https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o /tmp/bundletool.jar
           java -jar /tmp/bundletool.jar validate --bundle=release-output/Ben10-Omniverse-13.7-unsigned.aab
           java -jar /tmp/bundletool.jar dump manifest --bundle=release-output/Ben10-Omniverse-13.7-unsigned.aab > release-output/AndroidManifest.xml
@@ -96,7 +113,12 @@ jobs:
       - name: Stage packages for original-key signing
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create play137-unsigned release-output/* --prerelease --title '13.7 unsigned staging - do not install' --notes 'Reward UI regression and compilation checks. Awaiting original-key signature.' --target "$GITHUB_SHA"
+        run: |
+          if gh release view play137-unsigned >/dev/null 2>&1; then
+            gh release upload play137-unsigned release-output/* --clobber
+          else
+            gh release create play137-unsigned release-output/* --prerelease --title '13.7 unsigned staging - do not install' --notes 'Validated staging; awaiting original-key signature.' --target "$GITHUB_SHA"
+          fi
 
       - name: Prepare ephemeral encrypted key handoff
         env:
@@ -149,7 +171,8 @@ jobs:
           PY
           sdkmanager 'build-tools;36.0.0'
           jarsigner -keystore /tmp/signing137-private/key/ben10-upload.jks -storepass:file /tmp/signing137-private/key/store-password.txt -keypass:file /tmp/signing137-private/key/key-password.txt -sigalg SHA256withRSA -digestalg SHA-256 -signedjar fixed-output/Ben10-Omniverse-13.7.aab staged/Ben10-Omniverse-13.7-unsigned.aab ben10upload
-          "$ANDROID_HOME/build-tools/36.0.0/apksigner" sign --ks /tmp/signing137-private/key/ben10-upload.jks --ks-key-alias ben10upload --ks-pass file:/tmp/signing137-private/key/store-password.txt --key-pass file:/tmp/signing137-private/key/key-password.txt --out fixed-output/Ben10-Omniverse-13.7.apk staged/Ben10-Omniverse-13.7-unsigned.apk
+          "$ANDROID_HOME/build-tools/36.0.0/zipalign" -f -P 16 4 staged/Ben10-Omniverse-13.7-unsigned.apk staged/Ben10-Omniverse-13.7-aligned.apk
+          "$ANDROID_HOME/build-tools/36.0.0/apksigner" sign --ks /tmp/signing137-private/key/ben10-upload.jks --ks-key-alias ben10upload --ks-pass file:/tmp/signing137-private/key/store-password.txt --key-pass file:/tmp/signing137-private/key/key-password.txt --out fixed-output/Ben10-Omniverse-13.7.apk staged/Ben10-Omniverse-13.7-aligned.apk
           jarsigner -verify -verbose -certs fixed-output/Ben10-Omniverse-13.7.aab > fixed-output/aab-signature.txt
           grep 'jar verified.' fixed-output/aab-signature.txt
           "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose --print-certs fixed-output/Ben10-Omniverse-13.7.apk > fixed-output/apk-signature.txt

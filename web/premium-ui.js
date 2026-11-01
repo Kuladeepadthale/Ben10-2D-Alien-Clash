@@ -38,7 +38,9 @@ function premiumModeArt(){
  const paths={campaign:'classic',versus:'multiplayer',survival:'survival',training:'testing',expedition:'expedition'};
  for(const card of document.querySelectorAll('#screen-modes .mode-card')){
   const key=card.dataset.mode||(card.classList.contains('mode-expedition')?'expedition':/multiplayer/i.test(card.textContent)?'versus':null),name=paths[key],art=card.querySelector('.mode-scene');
-  if(!name||!art||art.querySelector('.battle-card-illustration'))continue;
+  if(!name||!art)continue;
+  if(!art.dataset.premiumArt){art.style.setProperty('background-image','url(assets/modes-v112/'+name+'.webp)','important');art.style.setProperty('background-size','contain','important');art.style.setProperty('background-position','center','important');art.style.setProperty('background-repeat','no-repeat','important');art.dataset.premiumArt=name;}
+  if(art.querySelector('.battle-card-illustration'))continue;
   const image=document.createElement('img');image.className='battle-card-illustration';image.src='assets/modes-v112/'+name+'.webp';image.alt='';image.decoding='async';art.replaceChildren(image);card.classList.add('illustrated-battle-card');
  }
 }
