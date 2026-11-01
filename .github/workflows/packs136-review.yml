@@ -1,0 +1,45 @@
+name: Packs layout and reward review
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/packs136-review.yml','ci/check-packs136.cjs','web/card-shop.js','web/daily-ad-rewards.js','web/daily-ad-rewards.css']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Restore released game for browser checks
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/pack-review builds/web release-output
+          gh release download playstore-13.5 --pattern Ben10-Omniverse-13.5.apk --dir /tmp/pack-review
+          python3 - <<'PY'
+          import pathlib,zipfile,shutil
+          root=pathlib.Path('builds/web')
+          with zipfile.ZipFile('/tmp/pack-review/Ben10-Omniverse-13.5.apk') as z:
+           for n in z.namelist():
+            if n.startswith('assets/') and not n.endswith('/'):
+             p=root/n[7:];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          for name in ['card-shop.js','daily-ad-rewards.js','daily-ad-rewards.css']:
+           shutil.copyfile('web/'+name,root/name)
+          PY
+      - name: Test rewards, spending, persistence and phone layouts
+        env:
+          NODE_PATH: /tmp/packs136/node_modules
+        run: |
+          npm install --prefix /tmp/packs136 --no-save --no-package-lock playwright
+          /tmp/packs136/node_modules/.bin/playwright install --with-deps chromium
+          node ci/check-packs136.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: packs-review
+          path: release-output/

@@ -2,20 +2,20 @@
 // Native SDK reward callbacks own counters. Web code only claims saved receipts.
 career.adRewardReceipts=Array.isArray(storedCareer?.adRewardReceipts)?storedCareer.adRewardReceipts.filter(x=>typeof x==='string').slice(-2000):[];
 const dailyAdsBridge=()=>window.AlienRewardAds;
-const PACK_AD_GOALS={omni:2,power:6,master:10};
+const PACK_AD_GOALS={omni:1,power:2,master:3};
 let dailyAdMessage='',dailyClaimBusy=false;
 // All coin packs, ad packs and character offers share the existing Packs lane.
 career.adOfferPurchase=storedCareer?.adOfferPurchase||null;
 const adStatus=document.createElement('p');adStatus.id='dailyAdStatus';adStatus.setAttribute('role','status');$('shopBalances').after(adStatus);
-const resumeReward=document.createElement('button');resumeReward.id='resumeRewardPack';resumeReward.hidden=true;resumeReward.textContent='Reveal your saved pack →';$('resumePack').after(resumeReward);
-const rewardNote=document.createElement('p');rewardNote.id='dailyResetNote';rewardNote.textContent='Optional ad rewards have separate counters. Offers and unfinished ad progress reset at 00:00 UTC (05:30 India). Rerolls and choices keep today’s category ad progress. Normal battles and coin packs remain available without ads.';$('cardPackList').after(rewardNote);
+const resumeReward=document.createElement('button');resumeReward.id='resumeRewardPack';resumeReward.hidden=true;resumeReward.textContent='View cards →';$('resumePack').after(resumeReward);
+const rewardNote=document.createElement('p');rewardNote.id='dailyResetNote';rewardNote.textContent='↻ Daily reset · 05:30 IST · Ads optional';$('cardPackList').after(rewardNote);
 const offerDialog=document.createElement('dialog');offerDialog.id='alienOfferDialog';offerDialog.innerHTML='<h2 id="offerDialogTitle"></h2><p id="offerDialogNote"></p><div id="offerChoiceList"></div><div class="offer-dialog-actions"><button id="offerCancel">Cancel</button><button id="offerConfirm">Confirm</button></div>';document.body.appendChild(offerDialog);
 let offerChoice=null;
 function finishOfferPurchase(){const tx=career.adOfferPurchase,bridge=dailyAdsBridge();if(!tx||!bridge?.changeOffer)return;
  let result;try{result=JSON.parse(bridge.changeOffer(tx.id,tx.day,tx.rank,tx.chosen,JSON.stringify(career.owned)));}catch{return;}
  const beforeGems=career.gems;if(!result.ok)career.gems+=tx.cost;career.adOfferPurchase=null;saveProfile();
  if(!storageOK){career.gems=beforeGems;career.adOfferPurchase=tx;dailyAdMessage='Could not save offer transaction. It will recover when you reopen Packs.';return;}
- dailyAdMessage=result.ok?'Offer saved. Complete the displayed ads, then claim your character.':result.error||'Offer unavailable. Diamonds refunded.';
+ dailyAdMessage=result.ok?'✓ Choice saved':result.error||'Offer unavailable. Diamonds refunded.';
 }
 function buyOfferChange(rank,chosen){const state=dailyState(),cost=chosen===-1?1:5;if(!state||state.error||state.clockBlocked||dailyClaimed(state,'alien:'+rank)||isLocked()||career.adOfferPurchase||career.gems<cost||!dailyAdsBridge()?.changeOffer)return false;
  if(chosen!==-1&&(!Number.isInteger(chosen)||ALIEN_RANKS[chosen]!==rank||chosen===state.offers?.[rank]?.id))return false;
@@ -24,10 +24,10 @@ function buyOfferChange(rank,chosen){const state=dailyState(),cost=chosen===-1?1
  finishOfferPurchase();renderCardShop();return true;
 }
 function openOfferChange(rank,choose){const state=dailyState();if(!state||dailyClaimed(state,'alien:'+rank))return;const current=state.offers?.[rank]?.id;offerChoice={rank,chosen:choose?null:-1};
- $('offerDialogTitle').textContent=choose?'Choose '+CARD_RANKS[rank].name+' alien · 5 diamonds':'Reroll '+CARD_RANKS[rank].name+' alien · 1 diamond';
- $('offerDialogNote').textContent='Changes this offer only. You still need '+(2*(rank+1))+' completed ads to claim. Existing category ad progress stays. '+(choose?'Choose a different alien below.':'A different random alien from this category will be selected.');
- $('offerChoiceList').replaceChildren();$('offerConfirm').textContent=choose?'Choose · 5 diamonds':'Reroll · 1 diamond';$('offerConfirm').disabled=choose||career.gems<(choose?5:1);
- if(choose)for(let id=0;id<ALIEN_COUNT;id++){if(ALIEN_RANKS[id]!==rank)continue;const b=document.createElement('button');b.dataset.alien=id;b.disabled=id===current;b.className='offer-choice';const cv=document.createElement('canvas');cv.width=180;cv.height=180;const label=document.createElement('span');label.textContent=aliens[id].name+(id===current?' · Current':ownsAlien(id)?' · Owned: reward 5 diamonds':'');b.append(cv,label);classicReady.then(()=>drawClassicPortrait(cv.getContext('2d'),id,180,180)).catch(()=>{});b.onclick=()=>{offerChoice.chosen=id;for(const x of $('offerChoiceList').children)x.setAttribute('aria-pressed',String(x===b));$('offerConfirm').disabled=career.gems<5;};$('offerChoiceList').appendChild(b);}
+ $('offerDialogTitle').textContent=choose?'Choose · '+CARD_RANKS[rank].name:'Reroll · '+CARD_RANKS[rank].name;
+ $('offerDialogNote').textContent='▶ '+(2*(rank+1))+' ads to claim · Progress kept';
+ $('offerChoiceList').replaceChildren();$('offerConfirm').textContent=choose?'✓ Choose · ◆ 5':'↻ Reroll · ◆ 1';$('offerConfirm').disabled=choose||career.gems<(choose?5:1);
+ if(choose)for(let id=0;id<ALIEN_COUNT;id++){if(ALIEN_RANKS[id]!==rank)continue;const b=document.createElement('button');b.dataset.alien=id;b.disabled=id===current;b.className='offer-choice';const cv=document.createElement('canvas');cv.width=180;cv.height=180;const label=document.createElement('span');label.textContent=aliens[id].name+(id===current?' · ✓':ownsAlien(id)?' · ◆5':'');b.append(cv,label);classicReady.then(()=>drawClassicPortrait(cv.getContext('2d'),id,180,180)).catch(()=>{});b.onclick=()=>{offerChoice.chosen=id;for(const x of $('offerChoiceList').children)x.setAttribute('aria-pressed',String(x===b));$('offerConfirm').disabled=career.gems<5;};$('offerChoiceList').appendChild(b);}
  offerDialog.showModal();
 }
 $('offerCancel').onclick=()=>offerDialog.close();$('offerConfirm').onclick=()=>{if(!offerChoice)return;const {rank,chosen}=offerChoice;if(chosen===null)return;offerDialog.close();buyOfferChange(rank,chosen);};
@@ -49,22 +49,23 @@ function applyDailyReceipts(state){if(!state||dailyClaimBusy)return;dailyClaimBu
 function claimDailyReward(key){const bridge=dailyAdsBridge();if(!bridge||isLocked())return false;if(key.startsWith('pack:')&&career.packState.last?.unseen){dailyAdMessage='Reveal your saved pack before claiming another pack.';renderDailyRewards();return false;}try{bridge.claimReward(key,JSON.stringify(career.owned));const s=dailyState();applyDailyReceipts(s);renderDailyRewards();if(key.startsWith('pack:')&&career.packState.last?.unseen)showScreen('packreveal');return true;}catch{dailyAdMessage='Could not claim. Try again.';renderDailyRewards();return false;}}
 function watchDailyReward(key){const s=dailyState();if(!s||s.error||s.clockBlocked||isLocked())return;dailyAdMessage='Preparing optional ad…';$('dailyAdStatus').textContent=dailyAdMessage;dailyAdsBridge().watchReward(key,JSON.stringify(career.owned));}
 function renderDailyRewards(){finishOfferPurchase();const state=dailyState();applyDailyReceipts(state);
- $('dailyAdStatus').textContent=dailyAdMessage||(!state?'Rewarded ads are available inside the Android app.':state.error?state.error:state.clockBlocked?'Correct the device date to continue.':state.testAds?'TEST ADS: no revenue is generated.':'Only ads that earn the SDK reward add progress. Early closure adds nothing.');
+ $('dailyAdStatus').textContent=dailyAdMessage||(!state?'Rewarded ads are available inside the Android app.':state.error?state.error:state.clockBlocked?'Correct the device date to continue.':state.testAds?'TEST ADS: no revenue is generated.':'▶ Optional ads · Reward after completion');
  $('resumeRewardPack').hidden=!career.packState.last?.unseen;
  const entries=[...CARD_PACKS.map(p=>({key:'pack:'+p.id,goal:PACK_AD_GOALS[p.id],pack:p})),...CARD_RANKS.map((rank,i)=>({key:'alien:'+i,goal:2*(i+1),rank,index:i}))];
  const lane=$('cardPackList'),scrollLeft=lane.scrollLeft;
- lane.querySelectorAll('.daily-alien-reward').forEach(card=>card.remove());
- lane.append(...entries.map(item=>{const card=document.createElement('article');card.className='daily-alien-reward'+(item.pack?' daily-pack-reward':'');card.dataset.reward=item.key;card.style.setProperty('--rank-color',item.pack?.color||item.rank.color);const title=document.createElement('h2');title.textContent=item.pack?item.pack.name+' · Ad reward':item.rank.symbol+' '+item.rank.name;card.appendChild(title);
-  if(item.pack){const art=document.createElement('span');art.className='card-pack-art pack-front '+item.pack.id;art.setAttribute('aria-hidden','true');card.appendChild(art);}else{const offer=state?.offers?.[item.index],id=offer?.id;if(Number.isInteger(id)&&aliens[id]){const cv=document.createElement('canvas');cv.width=240;cv.height=260;card.appendChild(cv);classicReady.then(()=>drawClassicPortrait(cv.getContext('2d'),id,240,260)).catch(()=>{});const name=document.createElement('strong');name.textContent=aliens[id].name;card.appendChild(name);}}
-  const offer=state?.offers?.[item.index],note=document.createElement('p');note.textContent=item.pack?'15 random cards · Matching copies unlock characters':offer?.duplicate||ownsAlien(offer?.id)?'Already owned: receive 5 diamonds.':'One full character unlock.';card.appendChild(note);
-  if(item.pack){const odds=document.createElement('button');odds.className='reward-odds';odds.textContent='Reward odds ⓘ';odds.onclick=()=>renderPackOdds(item.pack.id);card.appendChild(odds);}
-  const views=Math.min(item.goal,state?.progress?.[item.key]||0),claimed=dailyClaimed(state,item.key),ready=views>=item.goal,count=document.createElement('strong');count.className='reward-ad-count';count.textContent=claimed?'Claimed today':views+' / '+item.goal+' completed ads';card.appendChild(count);
+ lane.querySelectorAll('.daily-alien-reward,.pack-ad-controls').forEach(card=>card.remove());
+ lane.append(...entries.map(item=>{const card=document.createElement('article');card.className='daily-alien-reward'+(item.pack?' daily-pack-reward':'');card.dataset.reward=item.key;card.style.setProperty('--rank-color',item.pack?.color||item.rank.color);const title=document.createElement('h2');title.textContent=item.pack?item.pack.name:item.rank.symbol+' '+item.rank.name;if(!item.pack)card.appendChild(title);
+  if(!item.pack){const offer=state?.offers?.[item.index],id=offer?.id;if(Number.isInteger(id)&&aliens[id]){const cv=document.createElement('canvas');cv.width=240;cv.height=260;card.appendChild(cv);classicReady.then(()=>drawClassicPortrait(cv.getContext('2d'),id,240,260)).catch(()=>{});const name=document.createElement('strong');name.textContent=aliens[id].name;card.appendChild(name);}}
+  const offer=state?.offers?.[item.index],note=document.createElement('p');note.textContent=item.pack?'':offer?.duplicate||ownsAlien(offer?.id)?'Owned · ◆5':'Full unlock';card.appendChild(note);
+  
+  const views=Math.min(item.goal,state?.progress?.[item.key]||0),claimed=dailyClaimed(state,item.key),ready=views>=item.goal,count=document.createElement('strong');count.className='reward-ad-count';count.textContent=claimed?'✓ Claimed':'▶ '+views+'/'+item.goal;card.appendChild(count);
   const meter=document.createElement('progress');meter.max=item.goal;meter.value=views;meter.setAttribute('aria-label',title.textContent+' ad progress');card.appendChild(meter);
-  const b=document.createElement('button');b.className='watch-reward-ad';b.textContent=claimed?'Claimed':ready?'Claim reward':'Watch ad · +1';b.disabled=!state||!!state.error||state.clockBlocked||claimed||isLocked()||!career.owned.length||(!item.pack&&!offer);b.onclick=()=>ready?claimDailyReward(item.key):watchDailyReward(item.key);card.appendChild(b);
-  if(!item.pack){const actions=document.createElement('div');actions.className='offer-change-actions';for(const [choose,label,cost] of [[false,'Reroll · 1 diamond',1],[true,'Choose alien · 5 diamonds',5]]){const change=document.createElement('button');change.className=choose?'choose-offer':'reroll-offer';change.textContent=label;change.disabled=b.disabled||ready&&claimed||career.gems<cost||!dailyAdsBridge()?.changeOffer||!!career.adOfferPurchase;change.onclick=()=>openOfferChange(item.index,choose);actions.appendChild(change);}card.appendChild(actions);}
-  return card;}));lane.scrollLeft=scrollLeft;}
+  const b=document.createElement('button');b.className='watch-reward-ad';b.textContent=claimed?'✓':ready?'✓ Claim':'▶ Watch ad';b.disabled=!state||!!state.error||state.clockBlocked||claimed||isLocked()||!career.owned.length||(!item.pack&&!offer);b.onclick=()=>ready?claimDailyReward(item.key):watchDailyReward(item.key);card.appendChild(b);
+  if(!item.pack){const actions=document.createElement('div');actions.className='offer-change-actions';for(const [choose,label,cost] of [[false,'↻ ◆1',1],[true,'✓ ◆5',5]]){const change=document.createElement('button');change.className=choose?'choose-offer':'reroll-offer';change.textContent=label;change.setAttribute('aria-label',choose?'Choose character for 5 gems':'Random reroll for 1 gem');change.title=choose?'Choose character · 5 gems':'Reroll · 1 gem';change.disabled=b.disabled||ready&&claimed||career.gems<cost||!dailyAdsBridge()?.changeOffer||!!career.adOfferPurchase;change.onclick=()=>openOfferChange(item.index,choose);actions.appendChild(change);}card.appendChild(actions);}
+  if(item.pack){const target=lane.querySelector('[data-pack-card="'+item.pack.id+'"]');if(target){card.className='pack-ad-controls';target.appendChild(card);}return null;}return card;}).filter(Boolean));lane.scrollLeft=scrollLeft;}
 $('resumeRewardPack').onclick=()=>showScreen('packreveal');
 window.addEventListener('omni-ad-state',event=>{dailyAdMessage=typeof event.detail==='string'?event.detail:'';if(currentScreen==='packs')renderCardShop();});
 const dailyShopBase=renderCardShop;renderCardShop=function(){const lane=$('cardPackList'),left=lane.scrollLeft;dailyShopBase();renderDailyRewards();lane.scrollLeft=left;};
 const dailyShowBase=showScreen;showScreen=function(name,remember=true){dailyShowBase(name==='dailyrewards'?'packs':name,remember);};
+
 

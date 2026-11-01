@@ -1,13 +1,41 @@
-body:not(.in-battle) #cardPackList{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;gap:14px;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;touch-action:pan-x pan-y;padding:8px 3px 18px;scrollbar-color:#bfff70 #102b22;width:100%;align-items:stretch}
-body:not(.in-battle) #cardPackList .daily-alien-reward{flex:0 0 calc((100% - 28px)/3);min-width:230px;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;text-align:center;padding:15px;border:1px solid var(--rank-color);border-radius:18px;background:radial-gradient(ellipse at 50% 30%,#a5ef6622,transparent 75%),#102b22;gap:10px;overflow:hidden}
-.daily-alien-reward h2{color:var(--rank-color);font-size:22px!important;margin:0}.daily-alien-reward canvas{width:100%;height:200px;object-fit:contain;filter:none;opacity:1}.daily-alien-reward>.card-pack-art{height:200px!important;width:150px!important;flex:none;display:block;margin:8px auto}.daily-alien-reward strong{font-size:18px}.daily-alien-reward p{font-size:13px!important;line-height:1.4!important;flex:1;margin:0}.daily-alien-reward button{width:100%;background:#bfff70;color:#14210d;font-weight:800}.daily-alien-reward button:disabled{background:#233c2d;color:#c2d4c6;opacity:.8}.daily-alien-reward .reward-odds{background:#193b2b;color:#dfffc6;min-height:32px!important;padding:6px!important;font-size:13px!important}.daily-alien-reward progress{width:100%;height:10px;accent-color:var(--rank-color)}.reward-ad-count{color:#e1ffc4}#dailyAdStatus,#dailyResetNote{margin:0;font-size:14px!important;line-height:1.5!important}#dailyRewardsLink{margin-top:12px;border-color:#bfff70;color:#daffba}.pack-result-cards{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))!important}
-@media(max-width:600px){body:not(.in-battle) #cardPackList .daily-alien-reward{flex-basis:82%;min-width:230px}} 
-
-
-body:not(.in-battle) #cardPackList>.card-pack{flex:0 0 calc((100% - 28px)/3);min-width:230px;scroll-snap-align:start}
-#cardPackList .offer-change-actions{display:flex;flex-direction:column;width:100%;gap:6px}
-#cardPackList .offer-change-actions button{background:#173c2b;color:#dfffbd;border:1px solid #69974c;font-size:13px!important}
-#alienOfferDialog{background:#102b22;color:#efffe3;border:1px solid #9de573;border-radius:18px;width:min(720px,94vw);max-height:90dvh;overflow:auto;padding:20px}
-#alienOfferDialog::backdrop{background:#000b}#alienOfferDialog h2{font-size:24px}#alienOfferDialog p{font-size:14px;line-height:1.5}
-#offerChoiceList{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}.offer-choice{display:flex;flex-direction:column;align-items:center;background:#193f2d;padding:8px;color:#efffe3;min-width:0}.offer-choice canvas{width:100%;height:130px;object-fit:contain}.offer-choice[aria-pressed=true]{border:2px solid #cfff76;background:#315b2c}.offer-dialog-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:15px}.offer-dialog-actions button{padding:12px;background:#bfff70;color:#14210d}
-@media(max-width:600px){body:not(.in-battle) #cardPackList>.card-pack{flex-basis:82%;min-width:230px}}
+/* Three offers / five results remain visible; each lane scrolls independently. */
+body:not(.in-battle) #cardPackList{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;gap:10px!important;width:100%;min-height:0;align-items:stretch;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-color:#bfff70 #102b22;padding:2px 0 8px!important;touch-action:pan-x pan-y}
+body:not(.in-battle) #cardPackList>article{box-sizing:border-box;flex:0 0 calc((100% - 20px)/3)!important;min-width:0!important;scroll-snap-align:start;border-radius:12px!important;padding:7px!important;gap:5px!important;overflow:hidden}
+body:not(.in-battle) #cardPackList>.card-pack{display:flex!important;flex-direction:column!important;justify-content:flex-start!important}
+body:not(.in-battle) #cardPackList .pack-image-button{flex:1!important;min-height:24px!important;max-height:none!important}
+body:not(.in-battle) #cardPackList .pack-bottom-row{flex:none;display:flex;flex-wrap:wrap;gap:4px;padding:0!important}
+body:not(.in-battle) #cardPackList .pack-bottom-row>div{width:100%;flex-basis:100%;justify-content:space-between}
+body:not(.in-battle) #cardPackList .card-pack h2{font-size:clamp(12px,1.8vw,21px)!important;line-height:1.15!important}
+body:not(.in-battle) #cardPackList .card-pack .buy-pack{position:static!important;min-height:32px!important;flex:1!important;font-size:12px!important;padding:4px!important}
+body:not(.in-battle) #cardPackList .card-pack .pack-odds{position:static!important;min-width:30px!important;min-height:30px!important;width:30px!important;height:30px!important;font-size:18px!important;padding:0!important}
+#cardPackList .pack-ad-controls{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:4px;width:100%;flex:none;border-top:1px solid #60844c;padding-top:5px}
+#cardPackList .pack-ad-controls>p,#cardPackList .pack-ad-controls>progress{display:none}
+#cardPackList .reward-ad-count{font-size:12px!important;white-space:nowrap;color:#ddffae}
+#cardPackList .watch-reward-ad{background:#bfff70;color:#14210d;font-weight:800;min-height:34px!important;font-size:12px!important;padding:5px!important;width:100%;border-radius:8px}
+#cardPackList button:disabled{opacity:.65;cursor:default}
+#cardPackList .daily-alien-reward{display:flex;flex-direction:column;align-items:center;text-align:center;border:1px solid var(--rank-color);background:radial-gradient(ellipse at 50% 25%,#a5ef6622,transparent 75%),#102b22}
+#cardPackList .daily-alien-reward h2{color:var(--rank-color);font-size:clamp(11px,1.8vw,20px)!important;margin:0;line-height:1.2;flex:none}
+#cardPackList .daily-alien-reward canvas{display:block;width:100%;height:0;flex:1;min-height:30px;object-fit:contain;filter:none;opacity:1}
+#cardPackList .daily-alien-reward>strong:not(.reward-ad-count){font-size:clamp(11px,1.7vw,18px)!important;line-height:1.15;overflow-wrap:anywhere}
+#cardPackList .daily-alien-reward p{font-size:11px!important;line-height:1.2!important;margin:0}
+#cardPackList .daily-alien-reward progress{width:100%;height:5px;flex:none;accent-color:var(--rank-color)}
+#cardPackList .offer-change-actions{display:flex;width:100%;gap:4px;flex:none}
+#cardPackList .offer-change-actions button{flex:1;min-width:0;font-size:12px!important;min-height:32px!important;padding:4px!important;background:#173c2b;color:#dfffbd;border:1px solid #69974c}
+#dailyAdStatus,#dailyResetNote{flex:none;margin:0;font-size:11px!important;line-height:1.2!important}
+#dailyAdStatus:empty{display:none}
+body:not(.in-battle) #screen-packreveal #packResultCards{display:flex!important;flex-wrap:nowrap;overflow-x:auto!important;overflow-y:hidden!important;grid-template-columns:none!important;gap:8px;min-height:0;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-color:#bfff70 #102b22;padding-bottom:8px;align-items:stretch}
+body:not(.in-battle) #screen-packreveal #packResultCards[hidden]{display:none!important}
+#packResultCards>.pack-result-card{box-sizing:border-box;flex:0 0 calc((100% - 32px)/5);min-width:0;scroll-snap-align:start;animation-delay:var(--reveal-delay);padding:5px 3px;gap:4px}
+#packResultCards .pack-result-card canvas{flex:1;width:100%;height:0;min-height:20px;object-fit:contain;filter:none;opacity:1}
+#packResultCards .pack-result-card>strong{font-size:clamp(10px,1.5vw,16px)!important;line-height:1.15;overflow-wrap:anywhere}
+#packResultCards .result-card-rank,#packResultCards .result-card-state{font-size:clamp(8px,1.2vw,12px)!important;line-height:1.15}
+#packResultCards .result-card-state{min-height:20px;flex:none}
+#alienOfferDialog{background:#102b22;color:#efffe3;border:1px solid #9de573;border-radius:18px;width:min(720px,94vw);max-height:90dvh;overflow:auto;padding:14px;box-sizing:border-box}
+#alienOfferDialog::backdrop{background:#000b}#alienOfferDialog h2{font-size:22px;margin:0 0 8px}#alienOfferDialog p{font-size:13px;line-height:1.3}
+#offerChoiceList{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 10px}
+.offer-choice{box-sizing:border-box;flex:0 0 130px;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;background:#193f2d;border:2px solid transparent;border-radius:10px;padding:6px;color:#efffe3;min-width:0}
+.offer-choice canvas{width:100%;height:140px;object-fit:contain}.offer-choice span{font-size:13px;white-space:normal}.offer-choice[aria-pressed=true]{border-color:#cfff76;background:#315b2c}.offer-choice:disabled{opacity:.6}
+.offer-dialog-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}.offer-dialog-actions button{min-height:44px;padding:8px;background:#bfff70;color:#14210d}
+@media(max-width:420px){body:not(.in-battle) #screen-packs,body:not(.in-battle) #screen-packreveal{padding-left:6px!important;padding-right:6px!important}#cardPackList .pack-ad-controls{grid-template-columns:1fr;gap:2px}#cardPackList .currency-icon{width:16px;height:16px}#cardPackList .pack-card-count{font-size:8px!important}#packResultCards>.pack-result-card{border-width:1px;border-radius:8px;padding:4px 1px}}
+@media(max-height:420px) and (orientation:landscape){#dailyResetNote{display:none}#cardPackList .daily-alien-reward p{display:none}#cardPackList .daily-alien-reward h2{font-size:12px!important}#cardPackList .daily-alien-reward>strong:not(.reward-ad-count){font-size:12px!important}#cardPackList .offer-change-actions button,#cardPackList .watch-reward-ad{min-height:30px!important}}
+@media(prefers-reduced-motion:reduce){#packResultCards>.pack-result-card{animation:none}}

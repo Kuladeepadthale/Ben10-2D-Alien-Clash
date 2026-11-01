@@ -24,7 +24,7 @@ public final class RewardAds {
  private String day(){SimpleDateFormat f=new SimpleDateFormat("yyyy-MM-dd",Locale.US);f.setTimeZone(TimeZone.getTimeZone("UTC"));return f.format(new Date());}
  private JSONObject read(){try{return new JSONObject(prefs.getString("ledger","{}"));}catch(Exception e){return new JSONObject();}}
  private boolean save(JSONObject s){return prefs.edit().putString("ledger",s.toString()).commit();}
- private int required(String key){if(key.equals("pack:omni"))return 2;if(key.equals("pack:power"))return 6;if(key.equals("pack:master"))return 10;for(int i=0;i<5;i++)if(key.equals("alien:"+i))return 2*(i+1);return -1;}
+ private int required(String key){if(key.equals("pack:omni"))return 1;if(key.equals("pack:power"))return 2;if(key.equals("pack:master"))return 3;for(int i=0;i<5;i++)if(key.equals("alien:"+i))return 2*(i+1);return -1;}
  private synchronized JSONObject state(String ownedText) throws JSONException {
   JSONObject s=read();String today=day(),old=s.optString("day","");
   if(today.compareTo(old)>0){
@@ -82,5 +82,6 @@ public final class RewardAds {
   });
  }
 }
+
 
 
