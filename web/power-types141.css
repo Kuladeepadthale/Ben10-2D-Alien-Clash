@@ -1,0 +1,13 @@
+.power-type141{display:inline-flex;align-items:center;justify-content:center;gap:4px;max-width:100%;box-sizing:border-box;padding:3px 6px;border:1px solid var(--type-color);color:var(--type-color);background:#071525ed;border-radius:7px;font-size:11px;line-height:1.15;white-space:nowrap;vertical-align:middle}
+.power-type141 i{font-style:normal;font-size:15px;line-height:1}.power-type141 b{font-size:10px;font-weight:700}
+#screen-characters #roster .card>.power-type141{position:absolute;right:7px;bottom:7px;min-height:0!important;height:24px!important;width:24px!important;padding:2px!important;z-index:2}
+#screen-characters #roster .card .ownership{align-self:center;max-width:calc(100% - 46px)}
+.threat-card,.daily-alien-reward,.squad-alien-card{position:relative}.threat-card>.power-type141{position:absolute;top:26px;right:6px}.daily-alien-reward>.power-type141{position:absolute;top:8px;right:8px}
+#screen-alieninfo .alien-art{position:relative}#screen-alieninfo .alien-art>.power-type141{position:absolute;top:6px;left:6px}
+#powerCards .power-card>.power-type141{position:absolute;left:7px;top:6px}#powerCards .power-card{padding-top:34px!important}
+#typePreview141{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:6px 0;padding:7px;background:#081d2cdc;border:1px solid #72a9b352;border-radius:9px}#typePreview141>div{display:flex;align-items:center;gap:5px}#typePreview141>div>span:first-child{font-size:9px;color:#9eb9c7}#typePreview141 button{padding:0!important;min-height:28px!important;width:28px;min-width:28px;font-size:20px!important;margin-left:auto}
+#typeGuide141{align-self:flex-end;flex:none;width:30px;height:28px;min-height:28px!important;padding:0!important;font-size:20px!important;margin-bottom:-4px;color:#ffe178;background:#102a3a}
+.hud :is(#pName,#eName)>.power-type141{margin:0 4px;padding:1px 3px;vertical-align:middle}.hud .power-type141 i{font-size:12px}
+@media(max-width:600px){#screen-characters #roster .card>.power-type141{right:3px;bottom:5px;width:20px!important;height:20px!important}.power-type141 i{font-size:12px}.power-type141 b{font-size:9px}}
+
+.pack-result-card{position:relative}.pack-result-card>.power-type141{position:absolute;top:32px;right:5px}.offer-choice{position:relative}

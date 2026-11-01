@@ -8,11 +8,11 @@ upgradeDeck.options.portrait=2;upgradeDeck.options.landscape=3;upgradeDeck.optio
 let alienUpgradeOpen=false,alienPortraitToken=0;
 function renderAlienInfo(){
  const a=aliens[selected],owned=ownsAlien(selected),test=testingMode();
- $('alienTitle').textContent=a.name;$('alienSpecies').textContent=cardRank(selected).symbol+' '+cardRank(selected).name+' · '+rarityHealth(selected).toLocaleString()+' HP · '+(owned?Math.round(rarityPower(selected)*100)+'% power':cardProgressLabel(selected));
+ $('alienTitle').textContent=a.name;$('alienSpecies').textContent=cardRank(selected).symbol+' '+cardRank(selected).name+' · '+Math.round(rarityHealth(selected)*upgradeFactor141(profile.aliens[selected].levels.health,true)).toLocaleString()+' HP · '+(owned?Math.round(rarityPower(selected)*100)+'% power':cardProgressLabel(selected));
  $('alienStory').textContent=a.desc;
  $('alienAbilities').replaceChildren(...[...a.skills,a.ultimate].map((s,i)=>{
   const row=document.createElement('div'),name=document.createElement('strong'),info=document.createElement('span');
-  name.textContent=s.name;info.textContent=i===3?'Ultimate · charged in combat':Math.round(s.damage*rarityPower(selected))+' damage · '+s.cooldown+'s cooldown';
+  name.textContent=s.name;info.textContent=i===3?'Ultimate · charged in combat':Math.round(s.damage*rarityPower(selected)*upgradeFactor141(profile.aliens[selected].levels[i===3?'ultimate':'skill'+i],false))+' damage · '+s.cooldown+'s cooldown';
   row.append(name,info);return row;
  }));
  $('alienUse').textContent=test?'Test alien':'Select for battle';$('alienUse').disabled=isLocked()||(!owned&&!test);
@@ -71,6 +71,3 @@ document.querySelector('.home-copy .eyebrow').hidden=true;
 // Keep every card mounted for native vertical touch scrolling.
 rosterDeck.options.scroll=true;
 rosterDeck.capacity=null;refreshMenus();
-
-
-

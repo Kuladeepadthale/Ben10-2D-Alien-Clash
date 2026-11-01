@@ -55,7 +55,7 @@ function renderDailyRewards(){finishOfferPurchase();const state=dailyState();app
  const lane=$('cardPackList'),scrollLeft=lane.scrollLeft;
  lane.querySelectorAll('.daily-alien-reward,.pack-ad-controls').forEach(card=>card.remove());
  lane.append(...entries.map(item=>{const card=document.createElement('article');card.className='daily-alien-reward'+(item.pack?' daily-pack-reward':'');card.dataset.reward=item.key;card.style.setProperty('--rank-color',item.pack?.color||item.rank.color);const title=document.createElement('h2');title.textContent=item.pack?item.pack.name:item.rank.symbol+' '+item.rank.name;if(!item.pack)card.appendChild(title);
-  if(!item.pack){const offer=state?.offers?.[item.index],id=offer?.id;if(Number.isInteger(id)&&aliens[id]){const cv=document.createElement('canvas');cv.width=240;cv.height=260;card.appendChild(cv);classicReady.then(()=>drawClassicPortrait(cv.getContext('2d'),id,240,260)).catch(()=>{});const name=document.createElement('strong');name.textContent=aliens[id].name;card.appendChild(name);}}
+  if(!item.pack){const offer=state?.offers?.[item.index],id=offer?.id;if(Number.isInteger(id)&&aliens[id]){card.dataset.alien=id;const cv=document.createElement('canvas');cv.width=240;cv.height=260;card.appendChild(cv);classicReady.then(()=>drawClassicPortrait(cv.getContext('2d'),id,240,260)).catch(()=>{});const name=document.createElement('strong');name.textContent=aliens[id].name;card.appendChild(name);}}
   const offer=state?.offers?.[item.index],note=document.createElement('p');if(!item.pack&&(offer?.duplicate||ownsAlien(offer?.id))){note.className='quiet-gem-reward';note.innerHTML='↪ '+currencyIcon('gem')+'5';note.setAttribute('aria-label','Already owned: reward 5 diamonds');}else note.textContent='';card.appendChild(note);
   
   const views=Math.min(item.goal,state?.progress?.[item.key]||0),claimed=dailyClaimed(state,item.key),ready=views>=item.goal,count=document.createElement('strong');count.className='reward-ad-count';count.textContent=claimed?'✓ Claimed':'▶ '+views+'/'+item.goal;card.appendChild(count);
@@ -67,6 +67,3 @@ $('resumeRewardPack').onclick=()=>showScreen('packreveal');
 window.addEventListener('omni-ad-state',event=>{dailyAdMessage=typeof event.detail==='string'?event.detail:'';if(currentScreen==='packs')renderCardShop();});
 const dailyShopBase=renderCardShop;renderCardShop=function(){const lane=$('cardPackList'),left=lane.scrollLeft;dailyShopBase();renderDailyRewards();lane.scrollLeft=left;};
 const dailyShowBase=showScreen;showScreen=function(name,remember=true){const target=name==='dailyrewards'?'packs':name,entering=target==='packs'&&currentScreen!=='packs';dailyShowBase(target,remember);if(entering)$('cardPackList').scrollLeft=0;};
-
-
-
