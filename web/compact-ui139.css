@@ -104,3 +104,11 @@ body:not(.in-battle) .settings-panel label small{display:none!important}
 #quietInfoDialog>header{position:static!important;width:auto!important;height:auto!important;min-height:0!important;background:none!important;padding:0!important;border:0!important;box-shadow:none!important}
 
 body:not(.in-battle) #screen-home .home-play-label{font-size:20px!important;line-height:1!important}
+
+body:not(.in-battle) .threat-heading>button[data-screen=plumber],body:not(.in-battle) .expedition-heading>button[data-screen=modes],body:not(.in-battle) :is(#backToThreats,#squadBack,#poseBack,#alienList,#accountBack){display:none!important}
+body:not(.in-battle) .app-screen :is(#startContainment,#startExpedition,#startBossRush,#fightThreat,#launchMatch){width:200px!important;max-width:60vw!important;min-height:38px!important;height:40px!important;max-height:44px!important;align-self:flex-end!important;margin-left:auto!important;flex:none!important;text-align:center}
+body:not(.in-battle) #screen-account #accountActions.quiet-guest{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+body:not(.in-battle) #screen-account #accountActions button{height:40px!important;max-height:40px!important;display:flex;align-items:center;justify-content:center}
+body:not(.in-battle) #alienStory{display:none!important}
+body:not(.in-battle) #screen-alieninfo .alien-overview{grid-template-columns:minmax(140px,42%) minmax(0,1fr)}
+body:not(.in-battle) #screen-alieninfo .alien-art canvas{max-height:none!important;object-fit:contain;width:100%;height:100%}
