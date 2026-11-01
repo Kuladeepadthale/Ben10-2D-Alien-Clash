@@ -37,3 +37,25 @@ function quietRefresh(){
 const quietShowBase=showScreen;showScreen=function(name,remember=true){quietShowBase(name,remember);quietRefresh();};
 let quietQueued=false;new MutationObserver(()=>{if(quietQueued||document.body.classList.contains('in-battle'))return;quietQueued=true;requestAnimationFrame(()=>{quietQueued=false;quietRefresh();});}).observe($('screens'),{childList:true,subtree:true});
 quietRefresh();
+// Explicit profile sections keep the XP meter out of the metrics grid.
+const quietProfile139=quietProfile;
+quietProfile=function(){
+ quietProfile139();
+ const dashboard=document.querySelector('.account-dashboard'),meter=$('profileXPMeter');
+ if(meter&&meter.parentElement!==dashboard)dashboard.insertBefore(meter,$('accountStatus'));
+ const metrics=document.querySelector('.account-metrics');
+ for(const [id,label] of [['accountMatches140','Battles'],['accountWinRate140','Win rate'],['accountCollection140','Collection']]){
+  if(!$(id)){const tile=document.createElement('div');tile.innerHTML='<strong id="'+id+'"></strong><span>'+label+'</span>';metrics.appendChild(tile);}
+ }
+ quietText($('accountMatches140'),profile.matches.toLocaleString());
+ quietText($('accountWinRate140'),(profile.matches?Math.round(profile.wins/profile.matches*100):0)+'%');
+ quietText($('accountCollection140'),career.owned.length+' / '+aliens.length);
+ quietText(meter?.querySelector('.xp-meter-head strong'),'HERO LEVEL '+heroStanding().level);
+ quietText(meter?.querySelector('.xp-meter-head span'),'NEXT · LEVEL '+(heroStanding().level+1));
+ quietText(meter?.querySelector('.xp-meter-foot strong'),Math.max(0,heroStanding().needed-heroStanding().xp).toLocaleString()+' XP remaining');
+ const note=$('accountLocalNote');quietText(note,accountState.mode==='member'?'Your device progress stays saved when you log out. Use Sync Progress to back it up online.':'Guest progress is saved on this device. Create an account to back up your journey online.');
+ if(!accountMessage)quietText($('accountStatus'),accountState.mode==='member'?'Account connected':'Playing as guest');
+ let label=$('profileControls140');if(!label){label=document.createElement('h3');label.id='profileControls140';label.textContent='ACCOUNT';dashboard.insertBefore(label,$('accountActions'));}
+};
+document.title='Ben 10 Omniverse';
+quietRefresh();

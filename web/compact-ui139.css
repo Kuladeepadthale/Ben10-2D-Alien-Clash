@@ -112,3 +112,62 @@ body:not(.in-battle) #screen-account #accountActions button{height:40px!importan
 body:not(.in-battle) #alienStory{display:none!important}
 body:not(.in-battle) #screen-alieninfo .alien-overview{grid-template-columns:minmax(140px,42%) minmax(0,1fr)}
 body:not(.in-battle) #screen-alieninfo .alien-art canvas{max-height:none!important;object-fit:contain;width:100%;height:100%}
+/* 14.0: balanced lobby, four-column collection and an explicit profile grid. */
+body:not(.in-battle) #homeLogo{letter-spacing:1px!important;white-space:nowrap}
+body:not(.in-battle) #homeLogo span{font-size:18px!important;line-height:1.05!important}
+body:not(.in-battle) #homeLogo small{font-size:10px!important;letter-spacing:2px!important}
+body:not(.in-battle) #screen-home .home-portal-stage{left:12%!important;right:12%!important;top:8%!important;bottom:74px!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:end}
+body:not(.in-battle) #screen-home .portal-slot,body:not(.in-battle) #screen-home .portal-slot:nth-child(n){position:relative!important;left:auto!important;bottom:auto!important;width:100%!important;height:90%!important;min-width:0;z-index:1}
+body:not(.in-battle) #screen-home .portal-slot:nth-child(2){height:100%!important}
+body:not(.in-battle) #screen-home .portal-alien{bottom:58px!important;height:calc(100% - 58px)!important;object-fit:contain!important;pointer-events:auto;cursor:pointer}
+body:not(.in-battle) #screen-home .ground-portal{bottom:44px!important;height:18px!important;box-shadow:0 0 7px #9dff7d,0 0 14px #76ff4d55}
+body:not(.in-battle) #screen-home .watch-alien-name{bottom:0!important;min-height:32px!important;height:32px!important;max-height:32px!important;padding:3px 5px!important;font-size:clamp(11px,1.5vw,15px)!important;line-height:1.12!important;display:flex;align-items:center;justify-content:center;gap:4px;background:#081e2ee8!important;border:1px solid #6eacba60!important;border-radius:8px!important}
+body:not(.in-battle) #screen-home .portal-active-label{left:50%!important;right:auto!important;bottom:36px!important;transform:translateX(-50%);font-size:8px!important;line-height:12px!important;letter-spacing:1px!important;background:#baff7d;color:#14351e;border-radius:4px;padding:0 7px;z-index:5;white-space:nowrap}
+body:not(.in-battle) #screen-home .portal-add{bottom:64px!important}
+body:not(.in-battle) #screen-home .home-team-actions{bottom:14px!important;right:20px!important;width:136px!important}
+body:not(.in-battle) #screen-characters #roster{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-auto-rows:clamp(190px,27vw,270px)!important;align-content:start!important;gap:10px!important;overflow-x:hidden!important;overflow-y:auto!important;padding:2px 3px 12px!important}
+body:not(.in-battle) #screen-characters #roster .card{width:100%!important;min-width:0!important;max-width:100%!important;min-height:0!important;box-sizing:border-box;overflow:hidden;padding:9px 6px 6px!important;display:flex;flex-direction:column;align-items:center}
+body:not(.in-battle) #screen-characters #roster .card>span{display:flex;align-items:center;justify-content:center;min-height:32px!important;max-width:100%;font-size:clamp(11px,1.5vw,15px)!important;overflow-wrap:anywhere;line-height:1.08!important;flex:none;text-align:center}
+body:not(.in-battle) #screen-characters #roster .ownership{flex:none;height:16px!important;font-size:11px!important}
+body:not(.in-battle) #screen-account{overflow-y:auto!important;overflow-x:hidden!important;padding:12px 18px!important}
+body:not(.in-battle) #screen-account .account-dashboard{display:grid!important;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;grid-template-rows:auto auto auto auto auto auto!important;grid-template-areas:'identity metrics' 'xp xp' 'controls controls' 'actions actions' 'status status' 'note note'!important;align-content:start!important;align-items:stretch!important;height:auto!important;min-height:100%;max-width:1040px!important;flex:none!important;padding:16px!important;gap:12px!important;box-sizing:border-box;background:radial-gradient(ellipse at 0 0,#247c7740,transparent 55%),linear-gradient(140deg,#0b2639f5,#061522f5)!important}
+body:not(.in-battle) #screen-account .account-profile-head{grid-area:identity!important;min-height:116px;align-items:center!important;padding:12px!important}
+body:not(.in-battle) #screen-account .account-avatar{width:82px!important;height:104px!important;border-radius:12px!important}
+body:not(.in-battle) #screen-account #accountIdentity{font-size:clamp(18px,2.4vw,26px)!important;line-height:1.12!important;max-width:100%}
+body:not(.in-battle) #screen-account #accountEmail{font-size:12px!important;line-height:1.4!important;margin:6px 0!important;color:#a8c4d3}
+body:not(.in-battle) #screen-account .account-metrics{grid-area:metrics!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,auto)!important;gap:7px!important;align-content:stretch!important}
+body:not(.in-battle) #screen-account .account-metrics>div{display:flex!important;flex-direction:column;justify-content:center;gap:3px;padding:8px 4px!important;min-height:48px;box-sizing:border-box}
+body:not(.in-battle) #screen-account .account-metrics>div>i{display:none!important}
+body:not(.in-battle) #screen-account .account-metrics>div>strong{font-size:21px!important;line-height:1.05!important;color:#d9ffad}
+body:not(.in-battle) #screen-account .account-metrics>div>span{font-size:10px!important;line-height:1.1!important;color:#b7cdd7}
+body:not(.in-battle) #screen-account #profileXPMeter{grid-area:xp!important;margin:0!important;width:auto!important;min-height:70px;box-sizing:border-box;padding:12px!important;display:flex;flex-direction:column;justify-content:center;gap:8px!important}
+body:not(.in-battle) #screen-account .xp-meter-head,body:not(.in-battle) #screen-account .xp-meter-foot{display:flex;justify-content:space-between;gap:10px;font-size:12px!important;line-height:1.3;flex-wrap:wrap}
+body:not(.in-battle) #screen-account .xp-meter-head strong{font-size:14px!important}
+body:not(.in-battle) #screen-account #profileControls140{grid-area:controls!important;margin:2px 0 -5px!important;color:#8fb9c9;font-size:10px!important;letter-spacing:2px}
+body:not(.in-battle) #screen-account #accountActions,body:not(.in-battle) #screen-account #accountActions.quiet-guest{grid-area:actions!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important;min-height:0}
+body:not(.in-battle) #screen-account #accountActions.quiet-guest{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+body:not(.in-battle) #screen-account #accountActions button{height:40px!important;min-height:40px!important;padding:6px!important;font-size:13px!important;gap:5px;background:linear-gradient(#163b48,#102a39);border:1px solid #6bafbf60}
+body:not(.in-battle) #screen-account #accountActions .primary{background:linear-gradient(110deg,#c6f38f,#87ce74)!important;color:#102b20}
+body:not(.in-battle) #screen-account #accountStatus{grid-area:status!important;display:block!important;margin:0!important;font-size:12px!important;line-height:1.4;color:#c8eaa8;padding-top:4px!important}
+body:not(.in-battle) #screen-account #accountLocalNote{grid-area:note!important;display:block!important;margin:0!important;font-size:11px!important;line-height:1.5;color:#9db7c9}
+@media(orientation:portrait){
+ body:not(.in-battle) #screen-home .home-portal-stage{left:3%!important;right:3%!important;top:16%!important;bottom:100px!important;gap:8px;max-height:380px;margin:auto 0}
+ body:not(.in-battle) #screen-home .watch-alien-name{height:40px!important;min-height:40px!important;max-height:40px!important;font-size:11px!important}
+ body:not(.in-battle) #screen-home .portal-active-label{bottom:44px!important}
+ body:not(.in-battle) #screen-home .portal-alien{bottom:68px!important;height:calc(100% - 68px)!important}
+ body:not(.in-battle) #screen-home .ground-portal{bottom:54px!important}
+ body:not(.in-battle) #screen-characters #roster{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-auto-rows:170px!important;gap:5px!important}
+ body:not(.in-battle) #screen-characters #roster .card{padding:6px 3px 5px!important;border-radius:9px!important}
+ body:not(.in-battle) #screen-characters #roster .card>span{font-size:10px!important;min-height:33px!important}
+ body:not(.in-battle) #screen-account .account-dashboard{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:repeat(7,auto)!important;grid-template-areas:'identity' 'metrics' 'xp' 'controls' 'actions' 'status' 'note'!important;padding:12px!important}
+ body:not(.in-battle) #screen-account #accountActions{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:600px){
+ body:not(.in-battle) #homeLogo{display:flex!important;margin-right:auto!important;gap:4px!important;min-width:58px!important;flex:0 1 auto!important}
+ body:not(.in-battle) #homeLogo img{display:none!important}
+ body:not(.in-battle) #homeLogo span{font-size:12px!important}
+ body:not(.in-battle) #homeLogo small{font-size:7px!important;letter-spacing:.5px!important}
+ body:not(.in-battle) .top-actions #wallet,body:not(.in-battle) .top-actions #diamondWallet{width:49px!important;min-width:49px!important;padding:2px!important;font-size:11px!important}
+ body:not(.in-battle) .top-actions :is(#accountNav,#settingsNav,#quietPageInfo){width:30px!important;min-width:30px!important;padding:3px!important}
+ body:not(.in-battle) .app-top{gap:3px!important}
+}

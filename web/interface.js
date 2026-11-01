@@ -4,7 +4,7 @@ const UI_ICONS={home:'<path d="m3 11 9-8 9 8v10h-6v-7H9v7H3Z"/>',play:'<path d="
 UI_ICONS.dash='<path d="m13 5 7 7-7 7M3 8h7M1 12h10M3 16h7"/>';
 const uiIcon=name=>'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">'+(UI_ICONS[name]||UI_ICONS.play)+'</svg>';
 const uiLabels={home:'Home',modes:'Play',characters:'Aliens',upgrades:'Upgrade',settings:'Settings',powers:'Powers',controls:'How to play',credits:'Credits',setup:'Battle setup',results:'Results'};
-$('homeLogo').innerHTML='<img src="assets/ui/omni-emblem.svg" alt=""><span>OMNITRIX<small>ALIEN CLASH</small></span>';
+$('homeLogo').innerHTML='<img src="assets/ui/omni-emblem.svg" alt=""><span>BEN 10<small>OMNIVERSE</small></span>';
 $('navBack').innerHTML=uiIcon('left')+'<span>Back</span>';
 $('settingsNav').innerHTML=uiIcon('settings');
 for(const b of document.querySelectorAll('.app-bottom button')){const k=b.dataset.screen;b.innerHTML=uiIcon(({modes:'play',characters:'aliens',upgrades:'upgrade'})[k]||k)+'<span>'+uiLabels[k]+'</span>';}
@@ -37,6 +37,3 @@ const uiShowScreen=showScreen;showScreen=function(name,remember=true){uiShowScre
 const uiRenderSetup=renderSetup;renderSetup=function(){uiRenderSetup();syncShell();refreshMenus();};
 const uiHud=hud;hud=function(){uiHud();if(!player)return;const dashButton=document.querySelector('.touch [data-key="dash"]');if(dashButton){const ready=player.dashCooldown<=0;dashButton.dataset.value=ready?'READY':player.dashCooldown.toFixed(1);dashButton.classList.toggle('ready',ready);dashButton.style.setProperty('--charge',Math.round((1-player.dashCooldown/DASH_COOLDOWN)*100)+'%');dashButton.setAttribute('aria-label','Forward dash — '+(ready?'ready':player.dashCooldown.toFixed(1)+' seconds'));}for(const k of ['skill0','skill1','ultimate']){const b=document.querySelector('.touch [data-key="'+k+'"]');if(!b)continue;const slot=k==='skill0'?0:1,ability=aliens[player.id].skills[player.loadout[slot]],ready=k==='ultimate'?player.ult>=100:player.cd[slot]<=0,fill=k==='ultimate'?player.ult/100:1-player.cd[slot]/ability.cooldown;b.classList.toggle('ready',ready);b.style.setProperty('--charge',Math.round(Math.max(0,Math.min(1,fill))*100)+'%');const name=k==='ultimate'?aliens[player.id].ultimate.name:ability.name;b.setAttribute('aria-label',name+' — '+b.dataset.value);}};
 window.addEventListener('resize',refreshMenus);window.addEventListener('orientationchange',refreshMenus);refreshMenus();
-
-
-

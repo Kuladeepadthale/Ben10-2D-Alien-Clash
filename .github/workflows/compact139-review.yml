@@ -1,8 +1,8 @@
-name: Review compact game interface
+name: Review 14.0 home and profile
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/compact139-review.yml','web/compact-ui139.js','web/compact-ui139.css','ci/release139/review.cjs','ci/release139/packs.cjs']
+    paths: ['.github/workflows/compact139-review.yml','web/compact-ui139.js','web/compact-ui139.css','ci/release139/review.cjs','ci/release139/packs.cjs','web/interface.js','web/account.js','web/home-team.js']
 permissions:
   contents: read
 jobs:
@@ -27,7 +27,7 @@ jobs:
            for n in z.namelist():
             if n.startswith('assets/') and not n.endswith('/'):
              p=root/n[7:];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
-          for n in ['compact-ui139.js','compact-ui139.css','daily-ad-rewards.js','index.html']:shutil.copyfile('web/'+n,root/n)
+          for n in ['compact-ui139.js','compact-ui139.css','daily-ad-rewards.js','index.html','interface.js','account.js','home-team.js']:shutil.copyfile('web/'+n,root/n)
           PY
       - name: Test compact pages and existing rewards
         env:
