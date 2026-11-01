@@ -20,4 +20,9 @@ with zipfile.ZipFile(apk) as z:
   row=groups[group];row[0]+=1;row[1]+=i.file_size;row[2]+=i.compress_size
   top.append({'path':p,'bytes':i.file_size,'compressed':i.compress_size})
  report={'apkBytes':apk.stat().st_size,'assetBytes':sum(i.file_size for i in files.values()),'assetCompressed':sum(i.compress_size for i in files.values()),'files':len(files),'activeFiles':active,'dynamicPrefixes':sorted(set(prefix)),'literalReferences':len(set(v for _,v in full)),'groups':[{'path':p,'files':r[0],'bytes':r[1],'compressed':r[2]} for p,r in sorted(groups.items(),key=lambda x:-x[1][2])],'largest':sorted(top,key=lambda x:-x['compressed'])[:50]}
- (out/'inventory.json').write_text(json.dumps(report,indent=2));print(json.dumps({k:report[k]for k in ['apkBytes','assetBytes','assetCompressed','files','literalReferences','dynamicPrefixes']},indent=2))
+ (out/'inventory.json').write_text(json.dumps(report,indent=2))
+ (out/'files.json').write_text(json.dumps([{'path':p,'bytes':i.file_size,'compressed':i.compress_size} for p,i in files.items()]))
+ with zipfile.ZipFile(out/'runtime-sources.zip','w',compression=zipfile.ZIP_DEFLATED) as dest:
+  for p in files:
+   if p.endswith(('.js','.css','.html','.json','.svg')):dest.writestr(p,z.read('assets/'+p))
+ print(json.dumps({k:report[k]for k in ['apkBytes','assetBytes','assetCompressed','files','literalReferences','dynamicPrefixes']},indent=2))
