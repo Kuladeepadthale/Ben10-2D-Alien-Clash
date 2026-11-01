@@ -66,6 +66,6 @@ function renderDailyRewards(){finishOfferPurchase();const state=dailyState();app
 $('resumeRewardPack').onclick=()=>showScreen('packreveal');
 window.addEventListener('omni-ad-state',event=>{dailyAdMessage=typeof event.detail==='string'?event.detail:'';if(currentScreen==='packs')renderCardShop();});
 const dailyShopBase=renderCardShop;renderCardShop=function(){const lane=$('cardPackList'),left=lane.scrollLeft;dailyShopBase();renderDailyRewards();lane.scrollLeft=left;};
-const dailyShowBase=showScreen;showScreen=function(name,remember=true){dailyShowBase(name==='dailyrewards'?'packs':name,remember);};
+const dailyShowBase=showScreen;showScreen=function(name,remember=true){const target=name==='dailyrewards'?'packs':name,entering=target==='packs'&&currentScreen!=='packs';dailyShowBase(target,remember);if(entering)$('cardPackList').scrollLeft=0;};
 
 

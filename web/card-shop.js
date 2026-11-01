@@ -36,7 +36,7 @@ function renderPackReveal(){const receipt=career.packState.last;if(!receipt){sho
  $('packSummary').innerHTML=receipt.results.length+' cards · +'+gemPrice(duplicateCount)+' · Swipe →';
  $('screen-packreveal').classList.add('reveal-complete');$('screen-packreveal').querySelector('h1').textContent='Your '+receipt.results.length+' cards';
  $('packOpening').hidden=true;$('packOpening').replaceChildren();$('revealNextCard').hidden=true;
- const lane=$('packResultCards'),left=lane.scrollLeft;lane.hidden=false;lane.setAttribute('aria-label','Pack characters · swipe horizontally');lane.tabIndex=0;
+ const lane=$('packResultCards'),left=lane.dataset.receipt===String(receipt.id)?lane.scrollLeft:0;lane.dataset.receipt=String(receipt.id);lane.hidden=false;lane.setAttribute('aria-label','Pack characters · swipe horizontally');lane.tabIndex=0;
  lane.replaceChildren(...receipt.results.map((r,i)=>resultCard(r,i%5)));lane.scrollLeft=left;
  $('finishPack').hidden=false;refreshEconomyWallet();}
 $('revealNextCard').onclick=revealNextCard;$('packOpening').onclick=revealNextCard;
