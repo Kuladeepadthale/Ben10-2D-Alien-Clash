@@ -1,0 +1,21 @@
+name: Enemy combat timing review
+on:
+  push:
+    paths:
+      - 'web/threat-ladder.js'
+      - 'web/villain-data.js'
+      - 'ci/check-enemy-combat-timing.cjs'
+      - '.github/workflows/enemy-combat-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  timing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check web/threat-ladder.js
+      - run: node ci/check-enemy-combat-timing.cjs

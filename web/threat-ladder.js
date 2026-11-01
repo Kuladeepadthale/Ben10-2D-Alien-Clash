@@ -32,24 +32,42 @@ const threatSaveBase=saveProfile;saveProfile=function(){const matches=Math.max(0
 function villainEnsure(id){if(villainTextures.has(id))return Promise.resolve(villainTextures.get(id));if(villainPending.has(id))return villainPending.get(id);const d=VILLAIN_DATA.characters[id],promise=Promise.all([loadClassicImage(d.src),...(d.closeSrc?[loadClassicImage(d.closeSrc)]:[])]).then(([image,close])=>{villainTextures.clear();villainCloseTextures.clear();villainTextures.set(id,image);if(close)villainCloseTextures.set(id,close);villainPending.delete(id);return image},e=>{villainPending.delete(id);throw e});villainPending.set(id,promise);return promise;}
 function threatTuning(stage){stage=Math.max(1,Math.min(VILLAIN_COUNT,stage));const n=stage-1;return {hp:1200+100*n+8*n*n,damage:.9+.055*n+.0015*n*n,speed:245+3*n,playerCooldown:1+.045*n,enemyCooldown:Math.max(.5,1-.017*n),reaction:Math.max(.36,1-.022*n),difficulty:stage<5?'normal':'hard'};}
 function villainKit(id){const d=VILLAIN_DATA.characters[id],type=d.type,stage=id+1,t=selectedMode==='campaign'?plumberTuning(id):threatTuning(stage),copy=s=>({...s,damage:s.damage*t.damage,cooldown:s.cooldown*t.enemyCooldown});return {...d.kit,name:d.name,species:d.chapter===2?'GALACTIC VILLAIN':'CLASSIC VILLAIN',renderHeight:d.height||226,bodyHeight:d.bodyHeight||205,scale:1,speed:t.speed,strength:t.damage,type,light:d.color,skills:d.kit.skills.map(copy),ultimate:copy(d.kit.ultimate)};}
+// Shared visual clock follows damage timing, not persistent trap/field lifetime.
+function villainCombatClock(f){
+ const v=f.cast,c=v.cfg,wind=Math.max(.001,c.windup||0),kind=c.kind;
+ let active=Math.max(.001,c.castDuration??c.duration??.08);
+ if(['rush','pounce'].includes(kind))active=Math.max(.42,active);
+ const age=v.elapsed-wind,recovery=Math.max(.001,c.recovery||.18);
+ return {wind,active,age,recovery,windProgress:Math.max(0,Math.min(1,v.elapsed/wind)),
+  recoveryProgress:Math.max(0,Math.min(1,(age-active)/recovery))};
+}
 function villainFrame(f){const d=VILLAIN_DATA.characters[f.villain],state=celState(f);let index=0;
+ // Locomotion, jumps, guard, hit and knockout retain their existing artwork.
  const move126=locomotionVillainFrame126(f,d,state,typeof time==='number'?time:0);
  if(move126!==null)index=move126;
  else if(state==='jump')index=f.jumpWindup?4:5;
  else if(state==='guard')index=12;else if(state==='hit')index=13;else if(state==='ko')index=14;else if(state==='dash')index=15;
  if(f.cast&&['normal','skill0','skill1','skill2','ultimate'].includes(state)){
-  const v=f.cast,wind=v.cfg.windup,active=['rush','pounce'].includes(v.cfg.kind)?Math.max(.42,v.cfg.duration||.08):(v.cfg.duration||.08),age=v.elapsed-wind;
+  const v=f.cast,c= villainCombatClock(f),age=c.age;
   const beat=typeof meleeComboBeat==='function'?meleeComboBeat(f,v):null;
   if(v.cfg.kind==='melee'&&d.closeFrames){
-   const hit=beat?Math.min(2,beat.count>1?beat.tick:(f.normalChain||0)%3):0;
-   const pose=age<0?0:beat?(beat.phase<.55?1+hit*2:2+hit*2):7;
+   // Cycle all three distinct contacts even in combos longer than three hits.
+   const hit=beat?(beat.count>1?beat.tick:(f.normalChain||0))%3:0;
+   const pose=age<0?0:age>=c.active?7:beat?(beat.phase<.55?1+hit*2:2+hit*2):1+hit*2;
    return d.closeFrames[pose];
   }
-  // An action-specific contact pose, then native guard recovery; no rewind of the entire wind-up per hit.
   const strike=state==='normal'?7:state==='ultimate'?11:8+Number(state.slice(-1));
-  index=age<0?6:age<active?(d.rangedPose!==undefined&&!['melee','rush','pounce','leapslam','ground'].includes(v.cfg.kind)?d.rangedPose:strike):12;
-  if(beat&&beat.count>1&&beat.phase>=.65)index=6;
-  if(v.cfg.kind==='leapslam'&&f.y<floor-30)index=5;
+  const actionFrame=d.frames[strike],markerKey=v.ultimate?'ultimate':v.cfg.poseKey||v.key;
+  // Prefer each power's own painted pose and emitter. Generic ranged fallback is
+  // only needed when the action artwork has no registered emission landmark.
+  const ranged=!['melee','rush','pounce','leapslam','ground'].includes(v.cfg.kind);
+  const release=ranged&&d.rangedPose!==undefined&&!actionFrame.emitters?.[markerKey]?d.rangedPose:strike;
+  if(age<0)index=c.windProgress<.22?0:c.windProgress<.52?12:6;
+  else if(age<c.active){
+   index=release;
+   if(beat&&beat.count>1&&beat.phase>=.65)index=6;
+   if(v.cfg.kind==='leapslam'&&f.y<floor-30)index=5;
+  }else index=c.recoveryProgress<.3?6:c.recoveryProgress<.82?12:0;
  }
  return d.frames[index];}
 function drawVillain(ctx,f,t){const d=VILLAIN_DATA.characters[f.villain],frame=villainFrame(f),image=frame.closeCombat?villainCloseTextures.get(f.villain):villainTextures.get(f.villain);if(!image)return;const [x,y,w,h]=frame.rect,[ox,oy]=frame.origin,s=(d.height||226)/(frame.referenceHeight||d.referenceHeight);
@@ -154,4 +172,5 @@ function scrollPlumberLane(dir){const lane=$('plumberModes'),card=lane.firstElem
 $('plumberLanePrev').onclick=()=>scrollPlumberLane(-1);$('plumberLaneNext').onclick=()=>scrollPlumberLane(1);$('plumberModes').addEventListener('scroll',syncPlumberLane,{passive:true});$('plumberModes').addEventListener('keydown',e=>{if(e.target!==$('plumberModes'))return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();scrollPlumberLane(e.key==='ArrowRight'?1:-1);}});
 
 const rushRulesDialog=document.createElement('dialog');rushRulesDialog.id='rushRulesDialog';rushRulesDialog.innerHTML='<h2>Five bosses. One life.</h2><p>Defeat Hex, Kevin 11, Vilgax, Aggregor and Malware in order. Recover 20% maximum health after each win and keep your ultimate charge.</p><p>Clear all five: 600 coins + Hero XP. A completed defeat: 20 coins. Quitting gives no reward. Your best streak stays saved.</p><button id="closeRushRules" class="primary">Got it</button>';document.body.appendChild(rushRulesDialog);$('rushRules').onclick=()=>rushRulesDialog.showModal();$('closeRushRules').onclick=()=>rushRulesDialog.close();
+
 
