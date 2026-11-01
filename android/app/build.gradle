@@ -8,8 +8,8 @@ android {
   applicationId 'com.ben10.myapp'
   minSdk 24
   targetSdk 36
-  versionCode 135
-  versionName '13.5'
+  versionCode 136
+  versionName '13.6'
   manifestPlaceholders = [appLabel: 'Ben 10 Omniverse']
  }
  signingConfigs {
@@ -38,5 +38,6 @@ android {
 
 
 dependencies { implementation "com.google.android.gms:play-services-ads:25.5.0" }
+
 
 
