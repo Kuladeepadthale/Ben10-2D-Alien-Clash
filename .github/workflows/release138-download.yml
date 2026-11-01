@@ -1,0 +1,35 @@
+name: Prepare signed 13.8 downloads
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/release138-download.yml']
+  workflow_run:
+    workflows: ['Build Play 13.8 smaller package']
+    types: [completed]
+permissions:
+  contents: read
+jobs:
+  downloads:
+    if: github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Collect signed release files
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          mkdir -p deliverables
+          gh release download playstore-13.8 --pattern '*.apk' --pattern '*.aab' --dir deliverables
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Ben10-Omniverse-13.8-APK
+          path: deliverables/*.apk
+          compression-level: 0
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Ben10-Omniverse-13.8-AAB
+          path: deliverables/*.aab
+          compression-level: 0
+          retention-days: 14
+
