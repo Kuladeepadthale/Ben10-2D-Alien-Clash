@@ -171,3 +171,17 @@ body:not(.in-battle) #screen-account #accountLocalNote{grid-area:note!important;
  body:not(.in-battle) .top-actions :is(#accountNav,#settingsNav,#quietPageInfo){width:30px!important;min-width:30px!important;padding:3px!important}
  body:not(.in-battle) .app-top{gap:3px!important}
 }
+/* Keep the name visible even under older narrow-header overrides. */
+body:not(.in-battle) #appShell .app-top #homeLogo{display:flex!important;visibility:visible!important;opacity:1!important}
+body:not(.in-battle) #appShell .app-top #homeLogo span,body:not(.in-battle) #appShell .app-top #homeLogo small{display:block!important;visibility:visible!important;opacity:1!important}
+body:not(.in-battle) #screen-account #accountActions button{margin:0!important;align-self:stretch!important;width:100%!important;box-sizing:border-box}
+@media(orientation:landscape){
+ body:not(.in-battle) #screen-account .account-dashboard{grid-template-areas:'identity metrics' 'actions xp' 'note status'!important;grid-template-rows:auto auto auto!important;gap:12px!important;padding:12px!important;align-content:start!important}
+ body:not(.in-battle) #screen-account #profileControls140{display:none!important}
+ body:not(.in-battle) #screen-account .account-profile-head{min-height:96px!important;padding:10px!important;box-sizing:border-box}
+ body:not(.in-battle) #screen-account .account-avatar{width:70px!important;height:88px!important}
+ body:not(.in-battle) #screen-account #accountActions{align-content:start!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ body:not(.in-battle) #screen-account #accountActions button{height:36px!important;min-height:36px!important;font-size:12px!important}
+ body:not(.in-battle) #screen-account #profileXPMeter{align-self:stretch!important}
+ body:not(.in-battle) #screen-account #accountLocalNote,body:not(.in-battle) #screen-account #accountStatus{align-self:start!important}
+}

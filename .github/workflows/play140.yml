@@ -201,3 +201,5 @@ jobs:
           p=pathlib.Path('/tmp/signing140-private')
           if p.is_dir():shutil.rmtree(p)
           PY
+
+# Final visual pass: landscape account controls sit beside XP, branding stays visible.
