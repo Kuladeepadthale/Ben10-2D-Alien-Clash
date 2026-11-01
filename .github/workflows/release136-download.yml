@@ -1,0 +1,25 @@
+name: Prepare signed 13.6 downloads
+on:
+  workflow_run:
+    workflows: ['Build Play 13.6 cinematic interface']
+    types: [completed]
+permissions:
+  contents: read
+jobs:
+  downloads:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Collect signed release files
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          mkdir -p deliverables
+          gh release download playstore-13.6 --pattern '*.apk' --pattern '*.aab' --dir deliverables
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Ben10-Omniverse-13.6-signed
+          path: deliverables/
+          compression-level: 0
+          retention-days: 14
