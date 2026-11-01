@@ -1,0 +1,23 @@
+name: Audit current game package size
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/size-audit138.yml','ci/size138/inventory.py']
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect released package
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/size138 size-report
+          gh release download playstore-13.7 --pattern Ben10-Omniverse-13.7.apk --dir /tmp/size138
+          python3 ci/size138/inventory.py /tmp/size138/Ben10-Omniverse-13.7.apk size-report
+      - uses: actions/upload-artifact@v4
+        with:
+          name: size-inventory
+          path: size-report/
