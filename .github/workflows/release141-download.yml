@@ -1,0 +1,31 @@
+name: Prepare signed 14.1 downloads
+on:
+  workflow_run:
+    workflows: ['Build Play 14.1 power types and mastery']
+    types: [completed]
+permissions:
+  contents: read
+jobs:
+  downloads:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Collect signed release files
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          mkdir -p deliverables
+          gh release download playstore-14.1 --pattern '*.apk' --pattern '*.aab' --dir deliverables
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Ben10-Omniverse-14.1-APK
+          path: deliverables/*.apk
+          compression-level: 0
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Ben10-Omniverse-14.1-AAB
+          path: deliverables/*.aab
+          compression-level: 0
+          retention-days: 14
