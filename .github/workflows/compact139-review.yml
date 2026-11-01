@@ -1,0 +1,44 @@
+name: Review compact game interface
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/compact139-review.yml','web/compact-ui139.js','web/compact-ui139.css','ci/release139/review.cjs','ci/release139/packs.cjs']
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Restore smaller release and overlay interface changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/quiet139 builds/web release-output
+          gh release download playstore-13.8 --pattern Ben10-Omniverse-13.8.apk --dir /tmp/quiet139
+          python3 - <<'PY'
+          import pathlib,zipfile,shutil
+          root=pathlib.Path('builds/web')
+          with zipfile.ZipFile('/tmp/quiet139/Ben10-Omniverse-13.8.apk') as z:
+           for n in z.namelist():
+            if n.startswith('assets/') and not n.endswith('/'):
+             p=root/n[7:];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          for n in ['compact-ui139.js','compact-ui139.css','daily-ad-rewards.js','index.html']:shutil.copyfile('web/'+n,root/n)
+          PY
+      - name: Test compact pages and existing rewards
+        env:
+          NODE_PATH: /tmp/quiet139/node_modules
+        run: |
+          npm install --prefix /tmp/quiet139 --no-save --no-package-lock playwright
+          /tmp/quiet139/node_modules/.bin/playwright install --with-deps chromium
+          node ci/release139/packs.cjs
+          node ci/release139/review.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: compact-interface-review
+          path: release-output/

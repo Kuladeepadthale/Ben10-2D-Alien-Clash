@@ -1,0 +1,104 @@
+/* Content first. No duplicate lobby rail or page-size title rows. */
+body:not(.in-battle) .app-screen h1:not(.quiet-entity-title){display:none!important}
+body:not(.in-battle) .app-screen :is(.career-kicker,.page-title,.battle-swipe-hint,.lobby-heading,.lobby-status,.lobby-rail){display:none!important}
+body:not(.in-battle) #screen-home .home-portal-stage{left:6%!important;right:6%!important;top:3%!important;bottom:74px!important}
+body:not(.in-battle) #screen-home .home-team-actions{left:auto!important;right:20px!important;top:auto!important;bottom:12px!important;width:144px!important;height:42px!important}
+body:not(.in-battle) #screen-home .home-team-actions .play-button{width:100%!important;height:42px!important;min-height:42px!important;max-height:42px!important;padding:4px 15px!important;font-size:21px!important;letter-spacing:2px!important;border-radius:7px;clip-path:none!important;transform:none!important;box-shadow:0 2px 0 #785013,0 3px 12px #0005!important}
+body:not(.in-battle) #screen-home .home-team-actions .play-button:before{display:none!important}
+body:not(.in-battle) .app-screen{gap:8px!important;padding:10px 14px!important}
+body:not(.in-battle) .app-screen :is(.shop-heading,.career-heading,.squad-heading,.threat-heading,.expedition-heading)>:is(p,span){display:none!important}
+body:not(.in-battle) .app-screen :is(.shop-heading,.career-heading,.squad-heading,.threat-heading,.expedition-heading){min-height:0!important;margin:0!important;gap:6px!important}
+body:not(.in-battle) :is(#screen-plumber>.plumber-heading,.plumber-lane-controls,.account-page-heading,#screen-characters .page-title,#collectionNotice,#screen-packs .shop-heading,#screen-packreveal .shop-heading){display:none!important}
+#quietPageInfo{font-size:21px!important;min-width:36px;height:36px!important;padding:3px 7px!important}
+#quietInfoDialog{color:#edf9ff;background:linear-gradient(145deg,#153c50,#071423);border:1px solid #88d8d7;border-radius:16px;width:min(600px,92vw);max-height:86dvh;overflow:auto;padding:16px;box-sizing:border-box;box-shadow:0 20px 70px #000a}
+#quietInfoDialog::backdrop{background:#000b}#quietInfoDialog>header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}#quietInfoDialog h2{margin:0;font-size:21px}#quietInfoDialog header button{min-width:40px;min-height:40px;border-radius:9px;background:#204251;color:#eaffdf;font-size:26px;padding:0}#quietInfoBody p{font-size:15px;line-height:1.5;color:#d4e9ef;margin:0 0 12px}
+/* Keep the navigation button and its details button as separate tap targets. */
+.quiet-mode-tile,.quiet-plumber-tile{position:relative;min-width:0;min-height:0;scroll-snap-align:start}
+body:not(.in-battle) #screen-modes .mode-grid{gap:10px!important}
+body:not(.in-battle) #screen-modes .mode-grid>.quiet-mode-tile{flex:0 0 calc((100% - 20px)/3);min-width:230px;height:100%}
+body:not(.in-battle) #screen-modes .quiet-mode-tile>.mode-card{display:flex!important;flex-direction:column!important;width:100%!important;height:100%!important;min-width:0!important;max-width:none!important;margin:0!important;padding:0!important}
+body:not(.in-battle) #screen-modes .mode-card .mode-scene{flex:1!important;min-height:80px!important;width:100%}
+body:not(.in-battle) #screen-modes .mode-card .mode-caption{flex:none!important;min-height:52px;padding:9px 48px 9px 10px!important;display:flex;align-items:center;width:100%;box-sizing:border-box}
+body:not(.in-battle) #screen-modes .mode-card .mode-caption> :not(h2),body:not(.in-battle) #screen-modes .mode-card>:is(p,strong,.mode-tag,.mode-reward,.mode-number){display:none!important}
+body:not(.in-battle) #screen-modes .mode-card h2{font-size:clamp(15px,2vw,22px)!important;line-height:1.15!important;margin:0!important}
+body:not(.in-battle) .app-screen .quiet-card-info{position:absolute;right:7px;bottom:9px;z-index:3;display:grid;place-items:center;width:36px;height:36px;min-height:36px!important;min-width:36px;padding:0!important;border:1px solid #8ecfd2;border-radius:50%;background:#0e2d3b;color:#c8fce4;font-size:22px!important}
+body:not(.in-battle) #plumberModes>.quiet-plumber-tile{flex:0 0 calc((100% - 20px)/3);min-width:220px;height:100%}
+body:not(.in-battle) #plumberModes .quiet-plumber-tile>.plumber-mode{display:flex!important;flex-direction:column!important;width:100%!important;height:100%!important;min-width:0!important;padding:0!important;margin:0!important}
+body:not(.in-battle) #plumberModes .plumber-mode>img{height:0!important;flex:1!important;min-height:70px!important;object-fit:contain!important}
+body:not(.in-battle) #plumberModes .plumber-mode>div{min-height:68px;box-sizing:border-box;width:100%;padding:8px 48px 8px 10px!important;text-align:left}
+body:not(.in-battle) #plumberModes .plumber-mode>div>:is(span,p){display:none!important}
+body:not(.in-battle) #plumberModes .plumber-mode h2{font-size:clamp(14px,1.9vw,20px)!important;margin:0 0 4px!important}
+body:not(.in-battle) #plumberModes .plumber-mode strong{font-size:11px!important;color:#a4d8c9}
+/* Larger full-body collection cards, with category and lock conveyed by symbols. */
+body:not(.in-battle) #screen-characters #characterContent{flex:1;min-height:0}
+body:not(.in-battle) #screen-characters #roster{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-auto-rows:100%!important;gap:10px!important}
+body:not(.in-battle) #screen-characters #roster .card{position:relative;justify-content:flex-end!important;gap:4px!important;padding:12px 7px 8px!important;border-radius:14px;box-shadow:inset 0 1px #ffffff18,0 5px 14px #0004}
+body:not(.in-battle) #screen-characters #roster .card canvas{width:100%!important;height:0!important;flex:1 1 0!important;max-height:none!important;min-height:0!important;opacity:1!important;filter:none!important;object-fit:contain}
+body:not(.in-battle) #roster .card>small{display:none!important}
+body:not(.in-battle) #roster .card .card-rank{position:absolute;top:7px;left:9px;font-size:19px!important;width:22px;line-height:1.2}
+body:not(.in-battle) #roster .card>span{font-size:clamp(13px,1.9vw,19px)!important;line-height:1.1!important;font-weight:800}
+body:not(.in-battle) #roster .card .ownership{font-size:12px!important;min-height:16px;padding:0 6px!important;background:#091c2aba;border-radius:10px;color:#d4f3cc}
+body:not(.in-battle) #roster .alien-lock-symbol{top:7px!important;right:7px!important;left:auto!important;bottom:auto!important;transform:none!important;width:22px!important;height:22px!important;background:#061522aa;border-radius:50%;padding:3px}
+body:not(.in-battle) #roster .alien-lock-symbol svg{width:16px;height:16px}
+body:not(.in-battle) #roster .alien-lock-symbol[hidden]{display:none!important}
+/* Packs show offers and prices; explanations live behind the info icons. */
+body:not(.in-battle) #screen-packs :is(#dailyResetNote,.shop-footer,#cardPackList .daily-alien-reward>p:not(.quiet-gem-reward)){display:none!important}
+#dailyAdStatus:empty{display:none!important}#dailyAdStatus{font-size:11px!important;flex:none;margin:0}
+body:not(.in-battle) #screen-packs .watch-reward-ad{font-size:21px!important;min-height:36px!important}
+body:not(.in-battle) #screen-packs .offer-change-actions button{display:flex;align-items:center;justify-content:center;gap:4px;font-size:14px!important;min-height:36px!important}
+body:not(.in-battle) #screen-packs .offer-change-actions .currency-icon,#offerConfirm .currency-icon,.quiet-gem-reward .currency-icon{width:20px;height:20px}
+.quiet-gem-reward{display:flex;align-items:center;justify-content:center;gap:4px;font-size:12px!important;margin:0!important}
+.choice-extra .currency-icon{width:15px;height:15px}#offerConfirm{display:flex;align-items:center;gap:5px;justify-content:center}
+body:not(.in-battle) #screen-packreveal .shop-footer>span{display:none!important}
+body:not(.in-battle) #screen-packreveal .shop-footer{justify-content:flex-end}
+body:not(.in-battle) #screen-packreveal #finishPack{min-height:38px!important;max-height:42px;font-size:15px!important;padding:6px 18px!important}
+/* Compact battle preparation and rules-on-demand. */
+body:not(.in-battle) :is(.boss-rush-banner,#rushBest,#threatStory,#threatStats,#modeDescription,#setupPowers){display:none!important}
+body:not(.in-battle) #screen-containment .rush-brief>div>:is(.career-kicker,h2,p):not(#containmentPlayer){display:none!important}
+body:not(.in-battle) #screen-expedition .expedition-intro>div>:is(h2,p):not(#expeditionAlien){display:none!important}
+body:not(.in-battle) .threat-brief>h2{display:none!important}
+body:not(.in-battle) .quiet-entity-title{font-size:22px!important;margin:0 0 6px!important}
+body:not(.in-battle) .power-card{position:relative}
+body:not(.in-battle) .power-card>p:not(.damage){display:none!important}
+.quiet-power-info{position:absolute;top:6px;right:6px;width:30px;min-height:30px!important;font-size:20px!important;padding:0!important;background:#123040;color:#d4f5e7;border:1px solid #8bc3c9}
+body:not(.in-battle) #screen-setup .setup-panel:first-child{display:grid;grid-template-columns:minmax(80px,38%) minmax(0,1fr);gap:6px 10px;align-items:center;padding:10px!important}
+.quiet-setup-portrait{grid-row:1/6;grid-column:1;width:100%;height:100%;min-height:80px;object-fit:contain}
+body:not(.in-battle) #screen-setup .setup-panel:first-child>:not(canvas){grid-column:2;margin:0!important}
+body:not(.in-battle) .app-screen :is(.primary,#launchMatch,#startBossRush,#startContainment,#startExpedition){min-height:38px!important;font-size:16px!important;padding:7px 14px!important;letter-spacing:.5px}
+/* Profile: a hero identity card, concise metrics and a clear XP meter. */
+body:not(.in-battle) #screen-account .account-dashboard{display:grid!important;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)!important;grid-template-rows:minmax(0,1fr) auto auto;max-width:980px!important;width:100%;height:100%;margin:0 auto!important;padding:18px!important;gap:12px!important;align-content:stretch;background:radial-gradient(ellipse at 15% 15%,#2da9a32b,transparent 65%),linear-gradient(135deg,#0b213de8,#0c1c2fee)!important;border:1px solid #91dfd96b;border-radius:18px;box-shadow:0 12px 30px #0004}
+body:not(.in-battle) #screen-account .account-profile-head{grid-column:1;grid-row:1;display:flex;align-items:center;gap:12px;padding:10px!important;border:1px solid #84d0cf4d;background:#0b243b7a;border-radius:14px;min-width:0}
+body:not(.in-battle) #screen-account .account-avatar{position:relative;flex:none;grid-row:auto;grid-column:auto;width:92px!important;height:100px!important;display:grid;place-items:center;border:1px solid #b9ee8d;border-radius:18px;background:radial-gradient(ellipse,#386758,#0a2635);box-shadow:0 0 18px #8be5bb20;overflow:hidden}
+.quiet-profile-alien{width:100%;height:100%;object-fit:contain}
+body:not(.in-battle) #screen-account #accountIdentity{font-size:clamp(18px,2.5vw,28px)!important;margin:5px 0!important;line-height:1.1;overflow-wrap:anywhere}
+body:not(.in-battle) #screen-account .account-name-block{min-width:0}.account-badge{letter-spacing:1.5px;font-size:10px!important}
+body:not(.in-battle) #screen-account #accountEmail{font-size:12px!important;overflow-wrap:anywhere}
+body:not(.in-battle) #screen-account .account-metrics{grid-column:2;grid-row:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-content:center}
+body:not(.in-battle) #screen-account .account-metrics>div{background:#102c3ed4;border:1px solid #77bcc54d;border-radius:12px;padding:9px 5px!important;min-width:0;text-align:center}
+body:not(.in-battle) #screen-account .account-metrics>div>strong{font-size:22px!important}.account-metrics>div>span{font-size:10px!important}
+body:not(.in-battle) #screen-account #profileXPMeter{grid-column:1/-1;padding:10px!important;background:#071b2cd4;border-color:#87d9c94d;gap:6px}
+body:not(.in-battle) #screen-account #accountActions{grid-column:1/-1;grid-row:2;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px!important}
+body:not(.in-battle) #screen-account #accountActions button{min-height:38px!important;font-size:13px!important;padding:7px!important}
+body:not(.in-battle) #screen-account #accountStatus{grid-row:3;grid-column:1/-1;font-size:12px!important;margin:0!important}
+body:not(.in-battle) #screen-account #accountStatus:empty{display:none!important}
+body:not(.in-battle) #screen-account .account-note{display:none!important}
+body:not(.in-battle) .settings-panel label small{display:none!important}
+@media(orientation:portrait){
+ body:not(.in-battle) #screen-home .home-portal-stage{left:0!important;right:2%!important;top:5%!important;bottom:80px!important}
+ body:not(.in-battle) #screen-home .home-team-actions{right:14px!important;bottom:14px!important;width:136px!important}
+ body:not(.in-battle) #screen-characters #roster{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:clamp(220px,calc((100% - 10px)/2),340px)!important}
+ body:not(.in-battle) #screen-modes .mode-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:minmax(180px,1fr);overflow-y:auto!important;overflow-x:hidden!important}
+ body:not(.in-battle) #screen-modes .mode-grid>.quiet-mode-tile{min-width:0!important;width:auto!important;height:auto!important}
+ body:not(.in-battle) #screen-modes .quiet-mode-tile[data-kind=expedition]{grid-column:1/-1;min-height:200px}
+ body:not(.in-battle) #screen-modes .mode-card h2{font-size:14px!important}
+ body:not(.in-battle) #plumberModes{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:minmax(220px,1fr);overflow-y:auto!important;overflow-x:hidden!important}
+ body:not(.in-battle) #plumberModes>.quiet-plumber-tile{min-width:0!important;width:auto!important;height:auto!important}
+ body:not(.in-battle) #screen-account .account-dashboard{grid-template-columns:1fr!important;grid-template-rows:auto minmax(0,1fr) auto auto;padding:13px!important;gap:12px!important;overflow-y:auto}
+ body:not(.in-battle) #screen-account .account-profile-head{grid-row:1;grid-column:1;padding:14px!important}
+ body:not(.in-battle) #screen-account .account-metrics{grid-column:1;grid-row:2;align-content:center}
+ body:not(.in-battle) #screen-account #accountActions{grid-column:1;grid-row:3;grid-template-columns:repeat(2,minmax(0,1fr))}
+ body:not(.in-battle) #screen-account #accountStatus{grid-column:1;grid-row:4}
+}
+@media(max-width:600px){body:not(.in-battle) .app-top{padding-left:7px!important;padding-right:7px!important;gap:5px!important}#homeLogo{display:none!important}.app-top .top-actions{gap:4px!important}.app-top #navBack{min-width:36px!important;width:36px!important;padding:3px!important}.app-top #navBack span{display:none!important}body:not(.in-battle) .top-actions #wallet,body:not(.in-battle) .top-actions #diamondWallet{width:64px!important;min-width:64px!important;height:36px!important;min-height:36px!important}.app-top :is(#accountNav,#settingsNav,#quietPageInfo){width:36px!important;min-width:36px!important;height:36px!important;padding:5px!important}body[data-view=home] .app-top #navBack{display:none!important}}
+
+#quietInfoDialog>header{position:static!important;width:auto!important;height:auto!important;min-height:0!important;background:none!important;padding:0!important;border:0!important;box-shadow:none!important}
