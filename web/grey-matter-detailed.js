@@ -77,7 +77,10 @@ function greyMatterDetailedTile(index,image,r,width,height){
 const greyMatterDetailedDrawBase=drawAlien;
 drawAlien=function(ctx,f,t,portrait=false){
  if(f.id!==5||Number.isInteger(f.villain)||!GREYMATTER_DETAILED.sheets.every((_,i)=>Boolean(greyMatterDetailedImages[i])))return greyMatterDetailedDrawBase(ctx,f,t,portrait);
- const q=greyMatterDetailedFrame(f,t,portrait),r=q.frame,a=f.config||aliens[5],scale=a.renderHeight*a.scale/r.referenceHeight,[x,y,w,h]=r.rect,dir=f.dash?.dir||f.cast?.dir||f.dir||1;
+ const q=greyMatterDetailedFrame(f,t,portrait);
+ // User requested the existing APK walking art, with no generated limb override.
+ if(!portrait&&q.key==='walk')return greyMatterDetailedDrawBase(ctx,f,t,portrait);
+ const r=q.frame,a=f.config||aliens[5],scale=a.renderHeight*a.scale/r.referenceHeight,[x,y,w,h]=r.rect,dir=f.dash?.dir||f.cast?.dir||f.dir||1;
  const tr=typeof ctx.getTransform==='function'?ctx.getTransform():null;
  // Pixel-align a single sharp cel in the fixed side-view camera. No blur filters,
  // opacity blends or second body. Floor baseline is the same physical pixel row.

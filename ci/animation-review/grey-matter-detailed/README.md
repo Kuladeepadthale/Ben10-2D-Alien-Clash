@@ -1,5 +1,8 @@
 # Grey Matter — detailed animation revision 1
 
+> Current user preference: keep the existing APK walking animation. The generated walking cutout module is disabled and walking delegates to the original released renderer. Native movement speed is preserved. All new non-walking animations stay active. Historical walking notes below describe superseded implementations.
+
+
 ## Audit and scope
 
 Grey Matter is alien id 5 (not Upgrade/id 6). Existing kit: Shock gadget, Proximity trap, Scrap grenade, Overclocked arsenal. These are game-specific gadget abilities, not claims that the cartoon character has innate energy powers. Existing damage, cooldowns, movement speed, attack direction, targeting, ads and economy remain unchanged. Wildmutt's accepted scripts and assets are untouched.

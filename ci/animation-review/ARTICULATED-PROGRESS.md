@@ -60,3 +60,12 @@ Analysed id 8's original portrait, anatomy, original cel bank, render scale, bit
 All whole-body atlases share the 285-pixel standing model reference. Replaced one bite sheet after previewing its oversized skull; revised sheet uses the original portrait and basic-action model. Mouth contacts use mouth markers; claw contacts register against the outer visible nail pixels. Actual movement, damage, cooldowns, facing/targeting rules, ads, economy and other characters unchanged. Wildmutt and Grey Matter approved scripts/assets preserved.
 
 Local 2,880 state/facing render checks, cache/cadence/floor tests, independent-leg support tests and five-hit contact/timing tests passed. Browser integration passed with all three updated aliens loaded together: https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/41265010320 . Source revision 19a8312ca20d1d364d8ac3741b0c42128e4f66f1. Preview is 25-second renderer playback. Await user visual approval and Android test; no APK/AAB built. Review notes: `ci/animation-review/ripjaws-detailed/README.md`.
+
+
+## Latest user decision — restore existing APK walking (Grey Matter and Ripjaws)
+
+User explicitly requested Ripjaws's pre-update walking, then requested Grey Matter's existing APK walking as well and rejected the generated walking legs. Both detailed renderers now delegate walking to the existing released native/cel renderer. Both generated walking script tags are removed from the active app index and browser review. Their historical cutout assets/modules remain archived in the repository but are not loaded by the app. Do not re-enable them without a new user request.
+
+The proposed Grey Matter slowdown was cancelled before publication. Original walking speeds, movement code and walking artwork remain unchanged. The approved new basic, jump, power, guard, hit and KO animation code/data remain unchanged except for the walking-only delegation branch. Wildmutt unchanged.
+
+Local delegation, body-state and cache tests passed for both aliens. Browser checks explicitly reject active generated walking modules and verify original ground movement speed and native walking delegation. Browser CI pending. No APK/AAB built.

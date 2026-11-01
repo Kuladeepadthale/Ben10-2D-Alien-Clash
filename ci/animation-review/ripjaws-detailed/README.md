@@ -1,5 +1,8 @@
 # Ripjaws — detailed animation revision 1
 
+> Current user preference: keep the existing APK walking animation. The generated walking cutout module is disabled and walking delegates to the original released renderer. Native movement speed is preserved. All new non-walking animations stay active. Historical walking notes below describe superseded implementations.
+
+
 ## Audit
 
 Ripjaws is alien id 8. Existing game kit: Crushing bite (single melee contact), Raking claws (three contacts), Predator leap (pounce), Deep-sea frenzy (five-hit rush). Reference is the existing `web/assets/classic/ripjaws/portrait.webp`: pale fish skin, green dorsal fins, gills/scales, small round eye, pointed ivory/yellow teeth, angler lure, black segmented abdominal suit, shoulder badge, clawed hands and webbed feet.

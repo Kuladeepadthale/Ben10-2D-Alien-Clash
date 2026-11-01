@@ -79,7 +79,10 @@ function ripjawsDetailedTile(index,image,r,width,height){
 const ripjawsDetailedDrawBase=drawAlien;
 drawAlien=function(ctx,f,t,portrait=false){
  if(f.id!==8||Number.isInteger(f.villain)||!RIPJAWS_DETAILED.sheets.every((_,i)=>Boolean(ripjawsDetailedImages[i])))return ripjawsDetailedDrawBase(ctx,f,t,portrait);
- const q=ripjawsDetailedFrame(f,t,portrait),r=q.frame,a=f.config||aliens[8],scale=a.renderHeight*a.scale/r.referenceHeight,[x,y,w,h]=r.rect,dir=f.dash?.dir||f.cast?.dir||f.dir||1;
+ const q=ripjawsDetailedFrame(f,t,portrait);
+ // Keep the original released walking art and cadence, as requested.
+ if(!portrait&&q.key==='walk')return ripjawsDetailedDrawBase(ctx,f,t,portrait);
+ const r=q.frame,a=f.config||aliens[8],scale=a.renderHeight*a.scale/r.referenceHeight,[x,y,w,h]=r.rect,dir=f.dash?.dir||f.cast?.dir||f.dir||1;
  const tr=typeof ctx.getTransform==='function'?ctx.getTransform():null;
  // Pixel-align a single sharp cel in the fixed side-view camera. No blur filters,
  // opacity blends or second body. Floor baseline is the same physical pixel row.
