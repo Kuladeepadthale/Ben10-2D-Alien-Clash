@@ -39,6 +39,7 @@ jobs:
           node --check builds/web/power-effects142.js
           node ci/release142/effects.cjs
           node ci/release142/browser.cjs
+          node ci/release141/types.cjs
           node ci/check-enemy-combat-timing.cjs
       - name: Publish check results in the run summary
         if: always()
