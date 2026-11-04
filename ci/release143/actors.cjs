@@ -1,0 +1,10 @@
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
+const b=vm.createContext({console,renderDailyRewards(){},renderMissions(){},drawAlien(ctx,f){ctx.push({cast:f.cast,hp:f.hp,dash:f.dash});},drawEffect(ctx,e){ctx.push(e);},drawnAlienEmitter:f=>({x:f.x+20,y:f.y-50}),powers129State:f=>f.cast,requested127State:f=>f.cast,locomotionLift126:()=>0,celPhase:(f,state)=>({frame:b.frames?.[state]}),$:()=>null,time:0,floor:510});
+for(const n of ['data.js','cel-data.js','power-profiles.js'])vm.runInContext(fs.readFileSync('builds/web/'+n,'utf8'),b);
+vm.runInContext(fs.readFileSync('builds/web/rewards-actors143.js','utf8'),b);
+b.calls=[];vm.runInContext(`f={id:16,x:400,y:510,hp:0,cast:{id:7},dash:{dir:1},stun:.2,block:true};oldCast=f.cast;drawAlien(calls,f,0);if(calls.length!==1||calls[0].cast!==null||calls[0].dash!==null||f.cast!==oldCast||!f.block||f.stun!==.2)throw Error('KO actor state not isolated/restored');if(powers129State(f)!==null)throw Error('KO clone');f.hp=100;f.y=430;f.stun=0;if(powers129State(f)!==null)throw Error('air clone');`,b);
+const data=vm.runInContext('CEL_DATA',b);
+assert.equal(data.characters[74].frames[30].rect[3],90);
+for(const id of [78,81,82])for(const frame of Object.values(vm.runInContext('ACTOR_REPAIRS143',b)[id]).filter(x=>x.crop))assert(frame.crop[3]<260);
+for(const id of [72,74,78,80,81,82,88])for(const f of data.characters[id].frames)assert(f.referenceHeight>0||data.characters[id].referenceHeight>0);
+fs.writeFileSync('release-output/actors143-data.json',JSON.stringify(data));console.log('Verified source-cell repairs, sheet registration, KO/air clone isolation and state restoration.');
