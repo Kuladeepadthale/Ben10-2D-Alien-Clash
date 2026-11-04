@@ -22,5 +22,9 @@ for(const family of ['aliens','villains'])for(let id=0;id<counts[family];id++)fo
 }
 vm.runInContext(`a={id:0,config:aliens[0]},target={hp:100,x:700,y:510};if(receiveHit(a,target,27,'Fireball')!==27||target.hp!==73)throw Error('damage changed');for(let i=0;i<30;i++){target.hp=100;receiveHit(a,target,1,'Fireball');}if(FX142_IMPACTS.length!==24)throw Error('unbounded impacts');`,b);
 assert.equal(profiles,1136);assert.equal(themes.size,20);
+// Inspect a representative projectile and stream for every material.
+const sheet=createCanvas(1200,1000),sc=sheet.getContext('2d');sc.fillStyle='#0b1926';sc.fillRect(0,0,1200,1000);let tile=0;
+for(const theme of [...themes].sort()){const x=(tile%4)*300,y=Math.floor(tile/4)*200;sc.save();sc.translate(x,y);sc.fillStyle='#d7f6ed';sc.font='18px sans-serif';sc.fillText(theme.toUpperCase(),16,28);b.paint=sc;b.theme=theme;sc.save();sc.translate(130,80);vm.runInContext(`fx142Packet(paint,{}, {theme,color:theme==='fire'?'#fc5219':'#79dbd7',hash:23,source:'hands'},25,time);`,b);sc.restore();sc.restore();tile++;}
+fs.mkdirSync('release-output',{recursive:true});fs.writeFileSync('release-output/power-materials142.png',sheet.toBuffer('image/png'));
 const report={aliens:counts.aliens,villains:counts.villains,profiles:profiles/2,facingDirections:2,renderChecks:frames,themes:[...themes].sort(),damagePreserved:true,renderStatePreserved:true};
 fs.mkdirSync('release-output',{recursive:true});fs.writeFileSync('release-output/power-effects142-coverage.json',JSON.stringify(report,null,2));console.log(report);
