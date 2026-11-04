@@ -1,0 +1,32 @@
+name: Verify published 14.3 and prepare download
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/download143.yml']
+permissions:
+  contents: read
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare requested signed AAB download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/${GITHUB_REPOSITORY}/releases/tags/playstore-14.3 > /tmp/release143.json
+          python3 - <<'PY'
+          import json,urllib.request,urllib.error,os
+          data=json.load(open('/tmp/release143.json'))
+          a=next(a for a in data['assets'] if a['name']=='Ben10-Omniverse-14.3.aab')
+          assert a['state']=='uploaded' and a['size']==400687968
+          assert a['digest']=='sha256:ef0b63da8ed5943a18ddd0732054f306ca0ffe404d2e6c38b4acc8591ebf477b'
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+           def redirect_request(self,req,fp,code,msg,headers,newurl):return None
+          req=urllib.request.Request(a['url']+'?download='+os.environ['GITHUB_RUN_ID'],headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/octet-stream','User-Agent':'signed-aab-download'})
+          try:
+           urllib.request.build_opener(NoRedirect).open(req)
+          except urllib.error.HTTPError as e:
+           if e.code==302:print('AAB_DOWNLOAD_URL='+e.headers['Location'])
+           else:raise
+          print('Confirmed signed 14.3 release asset metadata and SHA256.')
+          PY
