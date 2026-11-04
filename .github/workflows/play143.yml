@@ -7,6 +7,7 @@ permissions:
   contents: write
 jobs:
   build:
+    if: "!contains(github.event.head_commit.message, '[build-maintenance]')"
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
@@ -178,7 +179,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release view playstore-14.3 --json assets > /tmp/aab143-assets.json
+          gh api repos/${GITHUB_REPOSITORY}/releases/tags/playstore-14.3 > /tmp/aab143-assets.json
           python3 - <<'PYDOWNLOAD'
           import json,urllib.request,urllib.error,os
           data=json.load(open('/tmp/aab143-assets.json'))
