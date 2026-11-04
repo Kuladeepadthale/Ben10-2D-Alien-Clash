@@ -1,0 +1,12 @@
+const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),http=require('http'),assert=require('node:assert/strict');
+(async()=>{const root=path.resolve('builds/web'),server=http.createServer((q,r)=>{let p=path.resolve(root,'.'+new URL(q.url,'http://x').pathname);if(!p.startsWith(root+path.sep)){r.writeHead(403).end();return;}try{r.setHeader('Content-Type',({'.html':'text/html','.js':'application/javascript','.css':'text/css','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp'})[path.extname(p)]||'application/octet-stream');r.end(fs.readFileSync(p));}catch{r.writeHead(404).end();}});await new Promise(r=>server.listen(0,'127.0.0.1',r));const browser=await chromium.launch({args:['--no-sandbox']});fs.mkdirSync('release-output',{recursive:true});const page=await browser.newPage({viewport:{width:932,height:430}}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.route('**/*',r=>r.request().url().startsWith('http://127.0.0.1:')?r.continue():r.abort());try{
+await page.goto('http://127.0.0.1:'+server.address().port+'/index.html');if(await page.locator('#entryGuest').isVisible())await page.locator('#entryGuest').click();await page.waitForFunction(()=>typeof renderTypes141==='function');
+const result=await page.evaluate(async()=>{await classicReady;
+const canvas=document.createElement('canvas');canvas.width=1280;canvas.height=640;const ctx=canvas.getContext('2d');let checks=0;
+for(let family of ['aliens','villains'])for(let id=0;id<POWER_PROFILES[family].length;id++)for(let slot=0;slot<4;slot++)for(let dir of [-1,1]){
+const owner=make(family==='aliens'?id:0,dir===1?120:980,dir,true);if(family==='villains'){owner.villain=id;owner.config=VILLAIN_DATA.characters[id].kit;}const p=POWER_PROFILES[family][id][slot],key=slot===3?'ultimate':'skill'+slot;
+for(const kind of ['projectile','wave','beam','eruption','explosion','trap','vortex']){const e={owner,artKey:key,name:p.name,kind,x:dir===1?120:980,y:300,vx:400*dir,vy:0,dir,rayDir:dir,length:400,r:20,height:160,life:.4,maxLife:.7,delay:0,castId:1};if(kind==='projectile'||kind==='wave')drawShot(ctx,e);else drawEffect(ctx,e);checks++;}
+}
+return {checks,aliens:aliens.length,villains:VILLAIN_DATA.characters.length};});
+assert.equal(result.checks,7952);assert.deepEqual(errors,[]);fs.writeFileSync('release-output/power-effects142-browser.json',JSON.stringify(result,null,2));console.log(result);
+}finally{await browser.close();server.close();}})().catch(e=>{console.error(e);process.exit(1)});

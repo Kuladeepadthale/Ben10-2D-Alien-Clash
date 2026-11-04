@@ -1,0 +1,47 @@
+name: Review material power effects 14.2
+on:
+  push:
+    branches: [main]
+    paths: ['web/power-effects142.js', 'ci/release142/**', '.github/workflows/effects142-review.yml']
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Restore exact native release and overlay visual changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/native142 builds/web release-output
+          gh release download playstore-14.1 --pattern Ben10-Omniverse-14.1.apk --dir /tmp/native142
+          echo 'e31acb3beebda0f7733011b5e8086bac5fa0d81d8e3ffba455961376826a952b  /tmp/native142/Ben10-Omniverse-14.1.apk' | sha256sum -c -
+          python3 - <<'PY'
+          import pathlib,zipfile,shutil
+          root=pathlib.Path('builds/web')
+          with zipfile.ZipFile('/tmp/native142/Ben10-Omniverse-14.1.apk') as z:
+           for n in z.namelist():
+            if n.startswith('assets/') and not n.endswith('/'):
+             p=root/n[7:];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          for n in ['index.html','power-effects142.js']:shutil.copyfile('web/'+n,root/n)
+          PY
+      - name: Render every power and check live integration
+        env:
+          NODE_PATH: /tmp/fx142/node_modules
+        run: |
+          npm install --prefix /tmp/fx142 --no-save --no-package-lock @napi-rs/canvas playwright pngjs
+          /tmp/fx142/node_modules/.bin/playwright install --with-deps chromium
+          node --check builds/web/power-effects142.js
+          node ci/release142/effects.cjs
+          node ci/release142/browser.cjs
+          node ci/check-enemy-combat-timing.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: power-effects142-review
+          path: release-output/
