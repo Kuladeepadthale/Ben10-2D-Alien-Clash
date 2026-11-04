@@ -15,7 +15,7 @@ jobs:
         run: |
           gh api repos/${GITHUB_REPOSITORY}/releases/tags/playstore-14.3 > /tmp/release143.json
           python3 - <<'PY'
-          import json,urllib.request,urllib.error,os
+          import json,urllib.request,urllib.error,os,base64
           data=json.load(open('/tmp/release143.json'))
           a=next(a for a in data['assets'] if a['name']=='Ben10-Omniverse-14.3.aab')
           assert a['state']=='uploaded' and a['size']==400687968
@@ -26,7 +26,7 @@ jobs:
           try:
            urllib.request.build_opener(NoRedirect).open(req)
           except urllib.error.HTTPError as e:
-           if e.code==302:print('AAB_DOWNLOAD_URL='+e.headers['Location'])
+           if e.code==302:print('AAB_DOWNLOAD_REF='+base64.b64encode(e.headers['Location'].encode()).decode())
            else:raise
           print('Confirmed signed 14.3 release asset metadata and SHA256.')
           PY
