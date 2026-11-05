@@ -48,7 +48,15 @@ const ANIMATION144 = Object.freeze({
   18: {name:'Way Big',retract:.82,revision:149},
   21: {name:'Buzzshock',retract:.48,revision:149},
   22: {name:'Swampfire',retract:.70,revision:149},
-  23: {name:'Echo Echo',retract:.64,revision:149}
+  23: {name:'Echo Echo',retract:.64,revision:149},
+  24: {name:'Humungousaur',retract:.78,revision:150,label:'14.10'},
+  25: {name:'Jetray',retract:.60,revision:150,label:'14.10'},
+  26: {name:'Big Chill',retract:.74,revision:150,label:'14.10'},
+  27: {name:'Chromastone',retract:.70,revision:150,label:'14.10'},
+  28: {name:'Brainstorm',retract:.72,revision:150,label:'14.10'},
+  29: {name:'Spidermonkey',retract:.48,revision:150,label:'14.10'},
+  30: {name:'Goop',retract:.66,revision:150,label:'14.10'},
+  31: {name:'Alien X',retract:.82,revision:150,label:'14.10'}
 });
 function animation144Index(f,state,frames){
  const v=f.cast,c=v.cfg,n=frames.length;
@@ -103,6 +111,10 @@ celPhase=function(f,state,t,portrait=false){
  if(ANIMATION144[f.id].revision===149&&(
   f.id===16&&state!=='normal'||f.id===23&&state==='skill2'
  ))return original;
+ // Attached elastic limbs and the cerebral field retain their authored phases.
+ if(ANIMATION144[f.id].revision===150&&(
+  f.id===30&&state==='skill1'||f.id===28&&state==='skill2'
+ ))return original;
  const d=CEL_DATA.characters[f.id],frames=d?.clips[state];
  if(!frames?.length)return original;
  // Four Arms' short barrage sheet has no retraction cel; use his own full
@@ -119,7 +131,7 @@ if(typeof renderAlienInfo==='function'){
   let marker=document.getElementById('animationRevision');
   if(!marker){marker=document.createElement('small');marker.id='animationRevision';marker.style.cssText='display:block;color:#a6ef81;margin-top:6px';document.getElementById('alienSpecies').after(marker);}
   marker.hidden=!ANIMATION144[selected];
-  marker.textContent=ANIMATION144[selected]?'Animation '+((ANIMATION144[selected].revision||144)/10).toFixed(1)+' · combat timing':'';
+  marker.textContent=ANIMATION144[selected]?'Animation '+(ANIMATION144[selected].label||((ANIMATION144[selected].revision||144)/10).toFixed(1))+' · combat timing':'';
   return result;
  };
 }

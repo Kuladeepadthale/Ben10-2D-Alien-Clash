@@ -6,7 +6,10 @@ on:
       - 'web/index.html'
       - 'web/data.js'
       - 'web/cel-data.js'
-      - 'ci/check-animation14*.cjs'
+      - 'ci/check-animation1*.cjs'
+      - 'ci/build-cels.py'
+      - 'ci/full_poses.py'
+      - 'ci/cel-sources/**'
       - 'ci/animation-review/characters/**/revision.json'
       - '.github/workflows/combat-timing.yml'
   pull_request:
@@ -15,7 +18,10 @@ on:
       - 'web/index.html'
       - 'web/data.js'
       - 'web/cel-data.js'
-      - 'ci/check-animation14*.cjs'
+      - 'ci/check-animation1*.cjs'
+      - 'ci/build-cels.py'
+      - 'ci/full_poses.py'
+      - 'ci/cel-sources/**'
       - 'ci/animation-review/characters/**/revision.json'
       - '.github/workflows/combat-timing.yml'
   workflow_dispatch:
@@ -38,5 +44,6 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install pillow numpy scipy
-      - run: python ci/build-cels.py --skip-bundle --through-id 23
+      - run: python ci/build-cels.py --skip-bundle --only-ids 12,14,16,17,18,21,22,23,24,25,26,27,28,29,30,31
       - run: node ci/check-animation149.cjs
+      - run: node ci/check-animation150.cjs
