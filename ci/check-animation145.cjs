@@ -9,7 +9,7 @@ vm.runInContext(fs.readFileSync('web/data.js','utf8')+fs.readFileSync('web/cel-d
 vm.runInContext('for(const c of characters)CEL_DATA.characters[c.id]=c;',b);
 vm.runInContext(fs.readFileSync('web/animation144.js','utf8'),b);
 const run=s=>vm.runInContext(s,b);
-assert.equal(run('Object.keys(ANIMATION144).length'),16);
+assert.equal(run('Object.values(ANIMATION144).filter(p=>p.revision===145).length'),8);
 let checks=0;
 for(const c of characters){
  b.id=c.id;assert.equal(run('aliens[id].name'),run('ANIMATION144[id].name'));

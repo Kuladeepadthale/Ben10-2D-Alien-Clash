@@ -31,3 +31,4 @@ jobs:
           node-version: '22'
       - run: node ci/check-animation144.cjs
       - run: node ci/check-animation145.cjs
+      - run: node ci/check-animation146.cjs

@@ -16,7 +16,15 @@ const ANIMATION144 = Object.freeze({
   33: {name:'Lodestar',retract:.70,revision:145},
   35: {name:'Water Hazard',retract:.74,revision:145},
   37: {name:'Armodrillo',retract:.58,revision:145},
-  39: {name:'NRG',retract:.82,revision:145}
+  39: {name:'NRG',retract:.82,revision:145},
+  34: {name:'Nanomech',retract:.48,revision:146},
+  36: {name:'AmpFibian',retract:.70,revision:146},
+  38: {name:'Terraspin',retract:.64,revision:146},
+  40: {name:'Fasttrack',retract:.46,revision:146},
+  41: {name:'Chamalien',retract:.62,revision:146},
+  42: {name:'Eatle',retract:.68,revision:146},
+  43: {name:'Clockwork',retract:.80,revision:146},
+  44: {name:'Jury Rigg',retract:.52,revision:146}
 });
 function animation144Index(f,state,frames){
  const v=f.cast,c=v.cfg,n=frames.length;
@@ -27,7 +35,7 @@ function animation144Index(f,state,frames){
  if(age<active){
   // Beams, vines, ground growth and sonic waves retain their contact pose.
   // Melee cels retract between the same contacts used by the damage simulation.
-  if(c.kind==='melee'&&(c.ticks||1)>1&&(n>=3||ANIMATION144[f.id].revision===145)){
+  if(c.kind==='melee'&&(c.ticks||1)>1&&(n>=3||ANIMATION144[f.id].revision>=145)){
    const phase=(age/active*Math.max(1,c.ticks||1))%1;
    return phase<ANIMATION144[f.id].retract?1:n>=3?2:0;
   }
@@ -50,11 +58,17 @@ celPhase=function(f,state,t,portrait=false){
  if(ANIMATION144[f.id].revision===145&&(
   f.id===15&&state==='skill2'||f.id===20&&state==='skill2'||f.id===19&&state==='ultimate'
  ))return original;
+ // Retain rotating flippers, cyclone kicks, tail sweeps and gadget assembly.
+ if(ANIMATION144[f.id].revision===146&&(
+  (f.id===38||f.id===40)&&c.kind==='vortex'||
+  f.id===41&&state==='skill2'||
+  f.id===44&&['skill2','ultimate'].includes(state)
+ ))return original;
  const d=CEL_DATA.characters[f.id],frames=d?.clips[state];
  if(!frames?.length)return original;
  // Four Arms' short barrage sheet has no retraction cel; use his own full
  // punch cycle for each of its four contacts, as with the existing melee path.
- const clip=ANIMATION144[f.id].revision!==145&&c.kind==='melee'&&(c.ticks||1)>1&&frames.length<3&&d.clips.normal?.length>=3?d.clips.normal:frames;
+ const clip=!(ANIMATION144[f.id].revision>=145)&&c.kind==='melee'&&(c.ticks||1)>1&&frames.length<3&&d.clips.normal?.length>=3?d.clips.normal:frames;
  const index=animation144Index(f,state,clip);
  return {frame:d.frames[clip[index]],state,index,animationRevision:ANIMATION144[f.id].revision||144};
 };
@@ -66,7 +80,7 @@ if(typeof renderAlienInfo==='function'){
   let marker=document.getElementById('animationRevision');
   if(!marker){marker=document.createElement('small');marker.id='animationRevision';marker.style.cssText='display:block;color:#a6ef81;margin-top:6px';document.getElementById('alienSpecies').after(marker);}
   marker.hidden=!ANIMATION144[selected];
-  marker.textContent=ANIMATION144[selected]?'Animation '+(ANIMATION144[selected].revision===145?'14.5':'14.4')+' · combat timing':'';
+  marker.textContent=ANIMATION144[selected]?'Animation '+((ANIMATION144[selected].revision||144)/10).toFixed(1)+' · combat timing':'';
   return result;
  };
 }
