@@ -24,7 +24,15 @@ const ANIMATION144 = Object.freeze({
   41: {name:'Chamalien',retract:.62,revision:146},
   42: {name:'Eatle',retract:.68,revision:146},
   43: {name:'Clockwork',retract:.80,revision:146},
-  44: {name:'Jury Rigg',retract:.52,revision:146}
+  44: {name:'Jury Rigg',retract:.52,revision:146},
+  45: {name:'Shocksquatch',retract:.60,revision:147},
+  46: {name:'Feedback',retract:.68,revision:147},
+  47: {name:'Bloxx',retract:.64,revision:147},
+  48: {name:'Gravattack',retract:.82,revision:147},
+  54: {name:'Bullfrag',retract:.58,revision:147},
+  57: {name:'Gutrot',retract:.78,revision:147},
+  58: {name:'Atomix',retract:.72,revision:147},
+  60: {name:'The Worst',retract:.80,revision:147}
 });
 function animation144Index(f,state,frames){
  const v=f.cast,c=v.cfg,n=frames.length;
@@ -63,6 +71,10 @@ celPhase=function(f,state,t,portrait=false){
   (f.id===38||f.id===40)&&c.kind==='vortex'||
   f.id===41&&state==='skill2'||
   f.id===44&&['skill2','ultimate'].includes(state)
+ ))return original;
+ // Keep the authored tongue extension and belly-drive attachment synchronized.
+ if(ANIMATION144[f.id].revision===147&&(
+  f.id===54&&state==='skill0'||f.id===60&&state==='skill1'
  ))return original;
  const d=CEL_DATA.characters[f.id],frames=d?.clips[state];
  if(!frames?.length)return original;

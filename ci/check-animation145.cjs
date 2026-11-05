@@ -45,5 +45,5 @@ b.selected=1;run('renderAlienInfo()');assert.equal(nodes.animationRevision.textC
 b.selected=0;run('renderAlienInfo()');assert.equal(nodes.animationRevision.hidden,true);assert.equal(nodes.animationRevision.textContent,'');
 // Two-cel repeated attacks retract to their own preparation cel.
 assert.equal(run("animation144Index({id:37,cast:{elapsed:.37,cfg:{kind:'melee',windup:.2,duration:.4,recovery:.2,ticks:2}}},'skill0',[1,2])"),0);
-assert.ok(fs.readFileSync('web/index.html','utf8').includes('animation144.js?v=145'));
+const script=fs.readFileSync('web/index.html','utf8').match(/src="animation144\.js\?v=(\d+)"/);assert.ok(script&&Number(script[1])>=145);
 console.log('Animation 14.5 passed:',checks,'native pose samples for eight aliens, both directions, phase boundaries, saved-state immutability and detail identifiers.');
