@@ -40,7 +40,15 @@ const ANIMATION144 = Object.freeze({
   66: {name:'Surge',retract:.48,revision:148},
   67: {name:'Ultimate Humungousaur',retract:.78,revision:148},
   69: {name:'Ultimate Echo Echo',retract:.72,revision:148},
-  86: {name:'Rush',retract:.44,revision:148}
+  86: {name:'Rush',retract:.44,revision:148},
+  12: {name:'Blitzwolfer',retract:.56,revision:149},
+  14: {name:'Frankenstrike',retract:.68,revision:149},
+  16: {name:'Ditto',retract:.50,revision:149},
+  17: {name:'Eye Guy',retract:.74,revision:149},
+  18: {name:'Way Big',retract:.82,revision:149},
+  21: {name:'Buzzshock',retract:.48,revision:149},
+  22: {name:'Swampfire',retract:.70,revision:149},
+  23: {name:'Echo Echo',retract:.64,revision:149}
 });
 function animation144Index(f,state,frames){
  const v=f.cast,c=v.cfg,n=frames.length;
@@ -90,6 +98,10 @@ celPhase=function(f,state,t,portrait=false){
   f.id===67&&state==='skill2'||
   f.id===69&&state==='skill2'||
   f.id===86&&['skill1','skill2'].includes(state)
+ ))return original;
+ // Clone deployments and the sonic resonance field keep dedicated sequencing.
+ if(ANIMATION144[f.id].revision===149&&(
+  f.id===16&&state!=='normal'||f.id===23&&state==='skill2'
  ))return original;
  const d=CEL_DATA.characters[f.id],frames=d?.clips[state];
  if(!frames?.length)return original;

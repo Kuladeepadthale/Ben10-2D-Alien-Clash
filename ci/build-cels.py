@@ -1,13 +1,16 @@
 """Export native cel sprites, registration metadata and a minimal Android web bundle."""
 from pathlib import Path
 import json, shutil, re, argparse, subprocess
-parser=argparse.ArgumentParser();parser.add_argument("--new-only",action="store_true");parser.add_argument("--skip-bundle",action="store_true");parser.add_argument("--from-id",type=int,default=None);args=parser.parse_args();start=args.from_id if args.from_id is not None else (10 if args.new_only else 0)
+parser=argparse.ArgumentParser();parser.add_argument("--new-only",action="store_true");parser.add_argument("--skip-bundle",action="store_true");parser.add_argument("--from-id",type=int,default=None);parser.add_argument("--through-id",type=int,default=None);args=parser.parse_args();start=args.from_id if args.from_id is not None else (10 if args.new_only else 0)
 import numpy as np
 from PIL import Image
 from scipy import ndimage
 ROOT=Path(__file__).resolve().parents[1]
 WEB=ROOT/'web'; SRC=ROOT/'ci/cel-sources'; OUT=WEB/'assets/cels'
 NAMES=json.loads((ROOT/'ci/roster.json').read_text())
+if args.through_id is not None:
+    if not args.skip_bundle: parser.error('--through-id requires --skip-bundle; partial exports cannot package a release')
+    if not start <= args.through_id < len(NAMES): parser.error('--through-id must be at least the starting ID and within the roster')
 emitter_profiles=json.loads(subprocess.check_output(['node','-e',"const fs=require('fs'),vm=require('vm');const b=vm.createContext({});console.log(vm.runInContext(fs.readFileSync('web/data.js','utf8')+';JSON.stringify(aliens.map(a=>({base:a.powerOrigin||[.94,.43],keys:a.powerOrigins||{}})))',b));"],cwd=ROOT,text=True))
 assert len(emitter_profiles)==len(NAMES)
 previous=json.loads((OUT/"manifest.json").read_text())["characters"] if start else []
@@ -21,7 +24,7 @@ def save_native(im,base):
     Image.open(dest).load();return dest
 manifest={'version':2,'rendering':'Whole-pose extraction before padded atlas packing. No source grid clipping, frame blending or limb compositing.','characters':previous[:start]}
 for id,name in enumerate(NAMES):
-    if id<start: continue
+    if id<start or args.through_id is not None and id>args.through_id: continue
     folder=OUT/name;folder.mkdir(exist_ok=True)
     kinds=['walk','actions','strike-jet','powers-states','reactions'] if id==0 else ['walk','jump-strike','powers','states']
     processed=[]

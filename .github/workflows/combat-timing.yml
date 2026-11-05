@@ -34,3 +34,9 @@ jobs:
       - run: node ci/check-animation146.cjs
       - run: node ci/check-animation147.cjs
       - run: node ci/check-animation148.cjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pillow numpy scipy
+      - run: python ci/build-cels.py --skip-bundle --through-id 23
+      - run: node ci/check-animation149.cjs
