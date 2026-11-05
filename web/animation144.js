@@ -56,7 +56,15 @@ const ANIMATION144 = Object.freeze({
   28: {name:'Brainstorm',retract:.72,revision:150,label:'14.10'},
   29: {name:'Spidermonkey',retract:.48,revision:150,label:'14.10'},
   30: {name:'Goop',retract:.66,revision:150,label:'14.10'},
-  31: {name:'Alien X',retract:.82,revision:150,label:'14.10'}
+  31: {name:'Alien X',retract:.82,revision:150,label:'14.10'},
+  72: {name:'Ultimate Wildmutt',retract:.54,revision:151,label:'14.11'},
+  73: {name:'Ultimate Spidermonkey',retract:.60,revision:151,label:'14.11'},
+  74: {name:'Ultimate Way Big',retract:.84,revision:151,label:'14.11'},
+  75: {name:'Ultimate Arctiguana',retract:.78,revision:151,label:'14.11'},
+  76: {name:'Ultimate Gravattack',retract:.82,revision:151,label:'14.11'},
+  77: {name:'Ultimate Rath',retract:.48,revision:151,label:'14.11'},
+  78: {name:'Ultimate Grey Matter',retract:.72,revision:151,label:'14.11'},
+  79: {name:'Bashmouth',retract:.58,revision:151,label:'14.11'}
 });
 function animation144Index(f,state,frames){
  const v=f.cast,c=v.cfg,n=frames.length;
@@ -114,6 +122,10 @@ celPhase=function(f,state,t,portrait=false){
  // Attached elastic limbs and the cerebral field retain their authored phases.
  if(ANIMATION144[f.id].revision===150&&(
   f.id===30&&state==='skill1'||f.id===28&&state==='skill2'
+ ))return original;
+ // Tail contact and sustained gravity/psychic fields keep dedicated sequencing.
+ if(ANIMATION144[f.id].revision===151&&(
+  f.id===72&&state==='skill2'||[76,78].includes(f.id)&&c.kind==='vortex'
  ))return original;
  const d=CEL_DATA.characters[f.id],frames=d?.clips[state];
  if(!frames?.length)return original;

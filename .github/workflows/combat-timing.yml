@@ -9,6 +9,7 @@ on:
       - 'ci/check-animation1*.cjs'
       - 'ci/build-cels.py'
       - 'ci/full_poses.py'
+      - 'ci/expansion111-cels.json'
       - 'ci/cel-sources/**'
       - 'ci/animation-review/characters/**/revision.json'
       - '.github/workflows/combat-timing.yml'
@@ -21,6 +22,7 @@ on:
       - 'ci/check-animation1*.cjs'
       - 'ci/build-cels.py'
       - 'ci/full_poses.py'
+      - 'ci/expansion111-cels.json'
       - 'ci/cel-sources/**'
       - 'ci/animation-review/characters/**/revision.json'
       - '.github/workflows/combat-timing.yml'
@@ -40,10 +42,19 @@ jobs:
       - run: node ci/check-animation146.cjs
       - run: node ci/check-animation147.cjs
       - run: node ci/check-animation148.cjs
+      - run: node ci/check-animation151.cjs
+      - uses: actions/cache@v4
+        id: native-timing-cache
+        with:
+          path: web/assets/cels
+          key: native-timing-v1-${{ runner.os }}-${{ hashFiles('ci/cel-sources/**', 'ci/full_poses.py', 'ci/build-cels.py', 'ci/roster.json', 'web/data.js') }}
       - uses: actions/setup-python@v5
+        if: steps.native-timing-cache.outputs.cache-hit != 'true'
         with:
           python-version: '3.12'
       - run: python -m pip install pillow numpy scipy
+        if: steps.native-timing-cache.outputs.cache-hit != 'true'
       - run: python ci/build-cels.py --skip-bundle --only-ids 12,14,16,17,18,21,22,23,24,25,26,27,28,29,30,31
+        if: steps.native-timing-cache.outputs.cache-hit != 'true'
       - run: node ci/check-animation149.cjs
       - run: node ci/check-animation150.cjs
