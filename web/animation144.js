@@ -32,7 +32,15 @@ const ANIMATION144 = Object.freeze({
   54: {name:'Bullfrag',retract:.58,revision:147},
   57: {name:'Gutrot',retract:.78,revision:147},
   58: {name:'Atomix',retract:.72,revision:147},
-  60: {name:'The Worst',retract:.80,revision:147}
+  60: {name:'The Worst',retract:.80,revision:147},
+  59: {name:'Walkatrout',retract:.54,revision:148},
+  62: {name:'Overflow',retract:.70,revision:148},
+  64: {name:'Shock Rock',retract:.62,revision:148},
+  65: {name:'Slapback',retract:.60,revision:148},
+  66: {name:'Surge',retract:.48,revision:148},
+  67: {name:'Ultimate Humungousaur',retract:.78,revision:148},
+  69: {name:'Ultimate Echo Echo',retract:.72,revision:148},
+  86: {name:'Rush',retract:.44,revision:148}
 });
 function animation144Index(f,state,frames){
  const v=f.cast,c=v.cfg,n=frames.length;
@@ -75,6 +83,13 @@ celPhase=function(f,state,t,portrait=false){
  // Keep the authored tongue extension and belly-drive attachment synchronized.
  if(ANIMATION144[f.id].revision===147&&(
   f.id===54&&state==='skill0'||f.id===60&&state==='skill1'
+ ))return original;
+ // Formation, tail, disc-ring and wheel-kick sequences keep their own cadence.
+ if(ANIMATION144[f.id].revision===148&&(
+  f.id===66&&['skill1','skill2'].includes(state)||
+  f.id===67&&state==='skill2'||
+  f.id===69&&state==='skill2'||
+  f.id===86&&['skill1','skill2'].includes(state)
  ))return original;
  const d=CEL_DATA.characters[f.id],frames=d?.clips[state];
  if(!frames?.length)return original;

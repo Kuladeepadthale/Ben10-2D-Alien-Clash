@@ -33,3 +33,4 @@ jobs:
       - run: node ci/check-animation145.cjs
       - run: node ci/check-animation146.cjs
       - run: node ci/check-animation147.cjs
+      - run: node ci/check-animation148.cjs
