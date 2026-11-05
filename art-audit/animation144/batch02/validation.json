@@ -1,0 +1,38 @@
+[
+  {
+    "character": "xlr8",
+    "animationId": "AN144-A003",
+    "frames": 32,
+    "frameBoundsValid": true,
+    "clipIndicesValid": true,
+    "constantReferenceHeight": true,
+    "integrationTested": false
+  },
+  {
+    "character": "upgrade",
+    "animationId": "AN144-A006",
+    "frames": 32,
+    "frameBoundsValid": true,
+    "clipIndicesValid": true,
+    "constantReferenceHeight": true,
+    "integrationTested": false
+  },
+  {
+    "character": "stinkfly",
+    "animationId": "AN144-A007",
+    "frames": 32,
+    "frameBoundsValid": true,
+    "clipIndicesValid": true,
+    "constantReferenceHeight": true,
+    "integrationTested": false
+  },
+  {
+    "character": "ghostfreak",
+    "animationId": "AN144-A009",
+    "frames": 32,
+    "frameBoundsValid": true,
+    "clipIndicesValid": true,
+    "constantReferenceHeight": true,
+    "integrationTested": false
+  }
+]

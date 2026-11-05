@@ -1,0 +1,745 @@
+{
+  "slug": "ghostfreak",
+  "status": "ART_UPLOADED_INTEGRATION_PENDING",
+  "referenceHeight": 302,
+  "sheets": [
+    {
+      "src": "ghostfreak-motion.webp",
+      "width": 1199,
+      "height": 1312
+    },
+    {
+      "src": "ghostfreak-powers.webp",
+      "width": 1230,
+      "height": 1278
+    }
+  ],
+  "frames": [
+    {
+      "sheet": 0,
+      "rect": [
+        0,
+        0,
+        300,
+        328
+      ],
+      "origin": [
+        160.0,
+        311
+      ],
+      "bounds": [
+        66,
+        9,
+        264,
+        312
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        300,
+        0,
+        300,
+        328
+      ],
+      "origin": [
+        162.0,
+        311
+      ],
+      "bounds": [
+        66,
+        9,
+        265,
+        312
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        600,
+        0,
+        299,
+        328
+      ],
+      "origin": [
+        162.0,
+        311
+      ],
+      "bounds": [
+        63,
+        9,
+        283,
+        301
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        899,
+        0,
+        300,
+        328
+      ],
+      "origin": [
+        158.0,
+        311
+      ],
+      "bounds": [
+        68,
+        9,
+        288,
+        291
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        0,
+        328,
+        300,
+        328
+      ],
+      "origin": [
+        166.0,
+        310
+      ],
+      "bounds": [
+        59,
+        8,
+        273,
+        297
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        300,
+        328,
+        300,
+        328
+      ],
+      "origin": [
+        163.0,
+        310
+      ],
+      "bounds": [
+        66,
+        8,
+        265,
+        294
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        600,
+        328,
+        299,
+        328
+      ],
+      "origin": [
+        164.0,
+        309
+      ],
+      "bounds": [
+        68,
+        7,
+        260,
+        308
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        899,
+        328,
+        300,
+        328
+      ],
+      "origin": [
+        167.0,
+        310
+      ],
+      "bounds": [
+        70,
+        8,
+        267,
+        309
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        0,
+        656,
+        300,
+        328
+      ],
+      "origin": [
+        163.0,
+        309
+      ],
+      "bounds": [
+        68,
+        7,
+        259,
+        309
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        300,
+        656,
+        300,
+        328
+      ],
+      "origin": [
+        135.0,
+        314
+      ],
+      "bounds": [
+        51,
+        12,
+        299,
+        296
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        600,
+        656,
+        299,
+        328
+      ],
+      "origin": [
+        109.0,
+        315
+      ],
+      "bounds": [
+        0,
+        13,
+        298,
+        251
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        899,
+        656,
+        300,
+        328
+      ],
+      "origin": [
+        137.0,
+        314
+      ],
+      "bounds": [
+        0,
+        12,
+        287,
+        290
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        0,
+        984,
+        300,
+        328
+      ],
+      "origin": [
+        124.0,
+        315
+      ],
+      "bounds": [
+        55,
+        13,
+        299,
+        301
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        300,
+        984,
+        300,
+        328
+      ],
+      "origin": [
+        140.5,
+        315
+      ],
+      "bounds": [
+        0,
+        13,
+        265,
+        312
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        600,
+        984,
+        299,
+        328
+      ],
+      "origin": [
+        163.0,
+        310
+      ],
+      "bounds": [
+        68,
+        8,
+        265,
+        314
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 0,
+      "rect": [
+        899,
+        984,
+        300,
+        328
+      ],
+      "origin": [
+        166.0,
+        310
+      ],
+      "bounds": [
+        70,
+        8,
+        268,
+        313
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        0,
+        0,
+        308,
+        320
+      ],
+      "origin": [
+        144.0,
+        316
+      ],
+      "bounds": [
+        41,
+        14,
+        224,
+        308
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        308,
+        0,
+        307,
+        320
+      ],
+      "origin": [
+        139.0,
+        316
+      ],
+      "bounds": [
+        19,
+        14,
+        306,
+        308
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        615,
+        0,
+        307,
+        320
+      ],
+      "origin": [
+        106.0,
+        315
+      ],
+      "bounds": [
+        0,
+        13,
+        306,
+        303
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        922,
+        0,
+        308,
+        320
+      ],
+      "origin": [
+        159.0,
+        315
+      ],
+      "bounds": [
+        0,
+        13,
+        250,
+        306
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        0,
+        320,
+        308,
+        319
+      ],
+      "origin": [
+        129.0,
+        316
+      ],
+      "bounds": [
+        49,
+        14,
+        234,
+        306
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        308,
+        320,
+        307,
+        319
+      ],
+      "origin": [
+        132.0,
+        316
+      ],
+      "bounds": [
+        29,
+        14,
+        306,
+        306
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        615,
+        320,
+        307,
+        319
+      ],
+      "origin": [
+        130.0,
+        316
+      ],
+      "bounds": [
+        0,
+        14,
+        293,
+        306
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        922,
+        320,
+        308,
+        319
+      ],
+      "origin": [
+        149.0,
+        316
+      ],
+      "bounds": [
+        55,
+        14,
+        246,
+        306
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        0,
+        639,
+        308,
+        319
+      ],
+      "origin": [
+        111.0,
+        317
+      ],
+      "bounds": [
+        28,
+        15,
+        307,
+        296
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        308,
+        639,
+        307,
+        319
+      ],
+      "origin": [
+        77.0,
+        321
+      ],
+      "bounds": [
+        0,
+        19,
+        271,
+        287
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        615,
+        639,
+        307,
+        319
+      ],
+      "origin": [
+        158.0,
+        319
+      ],
+      "bounds": [
+        0,
+        17,
+        284,
+        273
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        922,
+        639,
+        308,
+        319
+      ],
+      "origin": [
+        149.0,
+        315
+      ],
+      "bounds": [
+        58,
+        13,
+        248,
+        303
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        0,
+        958,
+        308,
+        320
+      ],
+      "origin": [
+        172.0,
+        307
+      ],
+      "bounds": [
+        19,
+        5,
+        275,
+        271
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        308,
+        958,
+        307,
+        320
+      ],
+      "origin": [
+        123.0,
+        313
+      ],
+      "bounds": [
+        58,
+        11,
+        200,
+        304
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        615,
+        958,
+        307,
+        320
+      ],
+      "origin": [
+        163.0,
+        309
+      ],
+      "bounds": [
+        17,
+        7,
+        266,
+        293
+      ],
+      "referenceHeight": 302
+    },
+    {
+      "sheet": 1,
+      "rect": [
+        922,
+        958,
+        308,
+        320
+      ],
+      "origin": [
+        129.0,
+        376
+      ],
+      "bounds": [
+        45,
+        74,
+        251,
+        295
+      ],
+      "referenceHeight": 302
+    }
+  ],
+  "clips": {
+    "idle": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "walk": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "normal": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "skill0": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "skill1": [
+      16,
+      17,
+      18,
+      19
+    ],
+    "skill2": [
+      20,
+      21,
+      22,
+      23
+    ],
+    "ultimate": [
+      24,
+      25,
+      26,
+      27
+    ],
+    "jump": [
+      28
+    ],
+    "guard": [
+      29
+    ],
+    "hit": [
+      30
+    ],
+    "ko": [
+      31
+    ]
+  },
+  "animationId": "AN144-A009",
+  "uniqueDrawings": 32,
+  "integrated": false,
+  "combatTested": false,
+  "timing": {
+    "walkFPS": 8,
+    "castPhases": [
+      "windup",
+      "release/contact",
+      "followThrough",
+      "recovery"
+    ],
+    "phaseTiming": "must be matched to simulation before activation"
+  },
+  "sha256": {
+    "ghostfreak-motion.webp": "ba585148a0e08493fb28edd5b3d6c4deb09c3ff6870ada34ba6702782d7af71f",
+    "ghostfreak-powers.webp": "620bf2750a75569dceb8b76526282886094d29231b636edb0d7784df10d3587c"
+  }
+}
