@@ -1,0 +1,33 @@
+name: Combat timing checks
+on:
+  push:
+    paths:
+      - 'web/animation144.js'
+      - 'web/index.html'
+      - 'web/data.js'
+      - 'web/cel-data.js'
+      - 'ci/check-animation14*.cjs'
+      - 'ci/animation-review/characters/**/revision.json'
+      - '.github/workflows/combat-timing.yml'
+  pull_request:
+    paths:
+      - 'web/animation144.js'
+      - 'web/index.html'
+      - 'web/data.js'
+      - 'web/cel-data.js'
+      - 'ci/check-animation14*.cjs'
+      - 'ci/animation-review/characters/**/revision.json'
+      - '.github/workflows/combat-timing.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  playback:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node ci/check-animation144.cjs
+      - run: node ci/check-animation145.cjs
