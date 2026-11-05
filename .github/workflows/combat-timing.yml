@@ -10,6 +10,7 @@ on:
       - 'ci/build-cels.py'
       - 'ci/full_poses.py'
       - 'ci/expansion111-cels.json'
+      - 'ci/extract-pinned-timing-metadata.py'
       - 'ci/cel-sources/**'
       - 'ci/animation-review/characters/**/revision.json'
       - '.github/workflows/combat-timing.yml'
@@ -23,6 +24,7 @@ on:
       - 'ci/build-cels.py'
       - 'ci/full_poses.py'
       - 'ci/expansion111-cels.json'
+      - 'ci/extract-pinned-timing-metadata.py'
       - 'ci/cel-sources/**'
       - 'ci/animation-review/characters/**/revision.json'
       - '.github/workflows/combat-timing.yml'
@@ -44,6 +46,20 @@ jobs:
       - run: node ci/check-animation148.cjs
       - run: node ci/check-animation151.cjs
       - run: node ci/check-animation152.cjs
+      - uses: actions/cache@v4
+        id: pinned-timing-cache
+        with:
+          path: ${{ runner.temp }}/pinned-timing-manifest.json
+          key: pinned-timing-v1-1fda897b48bdbf83-${{ hashFiles('ci/extract-pinned-timing-metadata.py') }}
+      - name: Extract verified pinned native timing metadata
+        if: steps.pinned-timing-cache.outputs.cache-hit != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/timing-pinned-art"
+          gh release download android-c2dd350dc748 --repo Kuladeepadthale/Ben10-2D-Alien-Clash --pattern Ben10-Alien-Clash-Online.apk --dir "$RUNNER_TEMP/timing-pinned-art"
+          python3 ci/extract-pinned-timing-metadata.py "$RUNNER_TEMP/timing-pinned-art/Ben10-Alien-Clash-Online.apk" "$RUNNER_TEMP/pinned-timing-manifest.json"
+      - run: node ci/check-animation153.cjs "$RUNNER_TEMP/pinned-timing-manifest.json"
       - uses: actions/cache@v4
         id: native-timing-cache
         with:

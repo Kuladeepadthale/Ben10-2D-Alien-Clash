@@ -72,7 +72,15 @@ const ANIMATION144 = Object.freeze({
   84: {name:'Humungoraptor',retract:.54,revision:152,label:'14.12'},
   85: {name:'Quad Smack',retract:.52,revision:152,label:'14.12'},
   87: {name:'Skunkmoth',retract:.66,revision:152,label:'14.12'},
-  88: {name:'Thornblade',retract:.70,revision:152,label:'14.12'}
+  88: {name:'Thornblade',retract:.70,revision:152,label:'14.12'},
+  52: {name:'Toepick',retract:.76,revision:153,label:'14.13'},
+  53: {name:'Pesky Dust',retract:.62,revision:153,label:'14.13'},
+  55: {name:"Kickin' Hawk",retract:.48,revision:153,label:'14.13'},
+  56: {name:'Whampire',retract:.58,revision:153,label:'14.13'},
+  61: {name:'Mole-Stache',retract:.56,revision:153,label:'14.13'},
+  63: {name:'Gax',retract:.72,revision:153,label:'14.13'},
+  68: {name:'Ultimate Big Chill',retract:.74,revision:153,label:'14.13'},
+  70: {name:'Ultimate Swampfire',retract:.70,revision:153,label:'14.13'}
 });
 function animation144Index(f,state,frames){
  const v=f.cast,c=v.cfg,n=frames.length;
@@ -138,6 +146,10 @@ celPhase=function(f,state,t,portrait=false){
  // Tail sweeps and attached vine lashes retain their dedicated contact phases.
  if(ANIMATION144[f.id].revision===152&&(
   f.id===84&&state==='skill1'||f.id===88&&state==='skill1'
+ ))return original;
+ // Dream geometry and attached moustache attacks keep their authored cadence.
+ if(ANIMATION144[f.id].revision===153&&(
+  f.id===53&&['skill1','ultimate'].includes(state)||f.id===61&&state!=='normal'
  ))return original;
  const d=CEL_DATA.characters[f.id],frames=d?.clips[state];
  if(!frames?.length)return original;
