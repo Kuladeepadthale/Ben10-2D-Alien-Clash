@@ -64,7 +64,15 @@ const ANIMATION144 = Object.freeze({
   76: {name:'Ultimate Gravattack',retract:.82,revision:151,label:'14.11'},
   77: {name:'Ultimate Rath',retract:.48,revision:151,label:'14.11'},
   78: {name:'Ultimate Grey Matter',retract:.72,revision:151,label:'14.11'},
-  79: {name:'Bashmouth',retract:.58,revision:151,label:'14.11'}
+  79: {name:'Bashmouth',retract:.58,revision:151,label:'14.11'},
+  80: {name:'Bootleg',retract:.72,revision:152,label:'14.12'},
+  81: {name:'Crystalfist',retract:.58,revision:152,label:'14.12'},
+  82: {name:'Dark Matter',retract:.64,revision:152,label:'14.12'},
+  83: {name:'Hot Shot',retract:.68,revision:152,label:'14.12'},
+  84: {name:'Humungoraptor',retract:.54,revision:152,label:'14.12'},
+  85: {name:'Quad Smack',retract:.52,revision:152,label:'14.12'},
+  87: {name:'Skunkmoth',retract:.66,revision:152,label:'14.12'},
+  88: {name:'Thornblade',retract:.70,revision:152,label:'14.12'}
 });
 function animation144Index(f,state,frames){
  const v=f.cast,c=v.cfg,n=frames.length;
@@ -126,6 +134,10 @@ celPhase=function(f,state,t,portrait=false){
  // Tail contact and sustained gravity/psychic fields keep dedicated sequencing.
  if(ANIMATION144[f.id].revision===151&&(
   f.id===72&&state==='skill2'||[76,78].includes(f.id)&&c.kind==='vortex'
+ ))return original;
+ // Tail sweeps and attached vine lashes retain their dedicated contact phases.
+ if(ANIMATION144[f.id].revision===152&&(
+  f.id===84&&state==='skill1'||f.id===88&&state==='skill1'
  ))return original;
  const d=CEL_DATA.characters[f.id],frames=d?.clips[state];
  if(!frames?.length)return original;

@@ -43,6 +43,7 @@ jobs:
       - run: node ci/check-animation147.cjs
       - run: node ci/check-animation148.cjs
       - run: node ci/check-animation151.cjs
+      - run: node ci/check-animation152.cjs
       - uses: actions/cache@v4
         id: native-timing-cache
         with:
