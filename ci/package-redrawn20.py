@@ -59,6 +59,9 @@ if int(ident)>=23:
  clips['idle']=list(range(8)) if hover else [31]
 if hover:
  for fr in frames:fr['origin'][1]=round(fr['rect'][3]*.94,1)
+if int(ident)==49:
+ # Preserve authored lift in the hopping cycle instead of grounding every airborne foot.
+ for fr in frames[:8]:fr['origin'][1]=round(fr['rect'][3]*.94,1)
 d={'batchLabel':'Next 20 · Batch 03' if int(ident)>=43 else 'Next 20 · Batch 02' if int(ident)>=23 else '20-alien batch','idleFps':8 if hover else 3,'id':int(ident),'slug':slug,'status':'new-drawings-integrated','date':'2026-11-06','referenceHeight':round(statistics.median(heights[:8])),'stride':.9,'frames':frames,'clips':clips,'sheets':sheets}
 out=Path('web/redrawn20')/(slug+'.js');out.parent.mkdir(exist_ok=True,parents=True);out.write_text("'use strict';\nregisterRedrawn20("+json.dumps(d,separators=(',',':'))+");\n")
 print(json.dumps({'file':str(out),'poses':len(frames),'bytes':out.stat().st_size,'referenceHeight':d['referenceHeight']}))
