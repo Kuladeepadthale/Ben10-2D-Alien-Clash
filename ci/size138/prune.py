@@ -25,7 +25,16 @@ def plan(root):
    if not token.startswith(('data:','http:','https:','#')) and '\n' not in token:
     local=unquote(token.split('?',1)[0].split('#',1)[0])
     retain(posixpath.normpath(posixpath.join(posixpath.dirname(name),local)))
-   if not token.startswith('assets/'):continue
+   # Script loaders also concatenate redrawn20/ and redrawn-villains/.
+   # Preserve any explicitly named directory prefix, including nested relative URLs.
+   if not token.startswith('assets/'):
+    if token.endswith('/') and not token.startswith(('data:','http:','https:')):
+     directory=posixpath.normpath(posixpath.join(posixpath.dirname(name),token)).rstrip('/')+'/'
+     matches=[p for p in files if p.startswith(directory)]
+     if matches:
+      dynamic.append({'source':name,'prefix':directory,'files':len(matches)})
+      for p in matches:retain(p)
+    continue
    token=token.replace('\\/','/');prefix=token.split('${',1)[0]
    if prefix in files:retain(prefix);continue
    if re.search(r'\.[a-z0-9]{2,12}(?:[?#].*)?$',prefix,re.I):continue
@@ -56,3 +65,4 @@ def main():
  print(json.dumps({k:report[k]for k in ['mode','beforeBytes','afterBytes','removedBytes','removedCount','retainedCount']}))
 
 if __name__=='__main__':main()
+

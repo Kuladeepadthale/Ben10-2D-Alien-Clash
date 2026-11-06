@@ -11,6 +11,21 @@ class ReachabilityTests(unittest.TestCase):
    paths,keep,_,_=plan(root)
    self.assertEqual(set(paths)-keep,{'old.js','assets/old/walk.webp'})
    self.assertEqual((root/'assets/new/walk.webp').read_bytes(),b'LIVE')
+ def test_dynamic_animation_scripts_and_existing_registry(self):
+  with tempfile.TemporaryDirectory() as folder:
+   root=Path(folder)
+   files={'index.html':'<script src="cel-data.js"></script><script src="loader.js"></script>',
+    'cel-data.js':'const sheet="assets/reviewed-native/last.webp";',
+    'loader.js':"const slugs=['first','last']; const prefix='redrawn20/';",
+    'redrawn20/first.js':'register("data:image/webp;base64,AAA");',
+    'redrawn20/last.js':'register("data:image/webp;base64,BBB");',
+    'assets/reviewed-native/last.webp':'KEEP EXACT',
+    'obsolete.js':'old',
+    'assets/old-unused.webp':'REMOVE'}
+   for name,content in files.items():
+    p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(content)
+   paths,keep,_,_=plan(root)
+   self.assertEqual(set(paths)-keep,{'obsolete.js','assets/old-unused.webp'})
  def test_unknown_asset_root_fails_closed(self):
   with tempfile.TemporaryDirectory()as folder:
    root=Path(folder);(root/'index.html').write_text("<script>const folder='assets/';</script>")
@@ -22,3 +37,4 @@ class ReachabilityTests(unittest.TestCase):
    self.assertIn('art/bg.png',plan(root)[1])
 
 if __name__=='__main__':unittest.main()
+
