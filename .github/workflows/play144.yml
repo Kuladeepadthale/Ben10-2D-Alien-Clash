@@ -1,0 +1,137 @@
+name: Build Play 14.4 complete animation update
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/play144.yml']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - name: Prepare encrypted signing handoff
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -m 700 /tmp/play144-key
+          mkdir -p ci/signing-handoff
+          openssl req -x509 -newkey rsa:3072 -nodes -keyout /tmp/play144-key/recipient.key -out ci/signing-handoff/recipient.pem -days 1 -subj '/CN=Ephemeral Play 14.4 Signing Transport' 2>/dev/null
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b "signing-handoff-${GITHUB_RUN_ID}"
+          git add ci/signing-handoff/recipient.pem
+          git commit -m 'Publish ephemeral signing certificate [skip ci]'
+          git push origin "HEAD:signing-handoff-${GITHUB_RUN_ID}"
+      - name: Package current source over verified 14.3 base assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/play144-base builds/web release-output
+          gh release download playstore-14.3 --pattern Ben10-Omniverse-14.3.aab --dir /tmp/play144-base
+          python3 - <<'PY'
+          import pathlib,zipfile,shutil,re
+          root=pathlib.Path('builds/web')
+          with zipfile.ZipFile('/tmp/play144-base/Ben10-Omniverse-14.3.aab') as z:
+           assert z.testzip() is None
+           for n in z.namelist():
+            if n.startswith('base/assets/') and not n.endswith('/'):
+             p=root/n[len('base/assets/'):];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          shutil.copytree('web',root,dirs_exist_ok=True)
+          html=(root/'index.html').read_text()
+          for src in re.findall(r'<script[^>]+src=["\x27]([^"\x27]+)',html):
+           if not src.startswith(('https:','http:','//')):
+            assert (root/src.split('?')[0]).is_file(),src
+          build=pathlib.Path('android/app/build.gradle')
+          text=build.read_text()
+          assert "versionCode 143" in text and "versionName '14.3'" in text
+          build.write_text(text.replace('versionCode 143','versionCode 144',1).replace("versionName '14.3'","versionName '14.4'",1))
+          PY
+      - name: Verify complete alien and villain animation sources
+        env:
+          NODE_PATH: /tmp/redrawn-tools/node_modules
+        run: |
+          npm install --prefix /tmp/redrawn-tools --no-save --no-package-lock @napi-rs/canvas
+          node ci/check-redrawn-batch01.cjs
+          node ci/check-redrawn-villains.cjs web/redrawn-villains/*.js
+          node ci/check-villain-roster.cjs
+          for script in web/*.js web/redrawn-villains/*.js; do node --check "$script"; done
+      - name: Compile AAB with all current source assets
+        run: |
+          sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+          gradle -p android --no-daemon bundleRelease
+          cp android/app/build/outputs/bundle/release/app-release.aab release-output/Ben10-Omniverse-14.4-unsigned.aab
+          python3 - <<'PY'
+          import pathlib,zipfile,hashlib,json
+          root=pathlib.Path('builds/web')
+          with zipfile.ZipFile('release-output/Ben10-Omniverse-14.4-unsigned.aab') as z:
+           assert z.testzip() is None
+           for p in root.rglob('*'):
+            if p.is_file():assert z.read('base/assets/'+p.relative_to(root).as_posix())==p.read_bytes(),str(p)
+           assert len(list(pathlib.Path('web/redrawn-villains').glob('*.js')))==50
+          pathlib.Path('release-output/source-commit.txt').write_text(__import__('os').environ['GITHUB_SHA']+'\n')
+          PY
+      - name: Receive original signing key securely
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          received=false
+          for attempt in $(seq 1 120); do
+            if gh api "repos/${GITHUB_REPOSITORY}/contents/ci/signing-handoff/sealed.b64?ref=signing-handoff-${GITHUB_RUN_ID}" --jq .content > /tmp/play144-key/response 2>/dev/null; then
+              base64 -d /tmp/play144-key/response | base64 -d > /tmp/play144-key/sealed.cms
+              received=true
+              break
+            fi
+            sleep 5
+          done
+          test "$received" = true
+          openssl cms -decrypt -binary -inform DER -in /tmp/play144-key/sealed.cms -recip ci/signing-handoff/recipient.pem -inkey /tmp/play144-key/recipient.key -out /tmp/play144-key/key.zip
+          python3 - <<'PY'
+          import pathlib,zipfile
+          root=pathlib.Path('/tmp/play144-key/key');root.mkdir(mode=0o700)
+          with zipfile.ZipFile('/tmp/play144-key/key.zip') as z:
+           for n in ['ben10-upload.jks','store-password.txt','key-password.txt']:
+            (root/n).write_bytes(z.read(n));(root/n).chmod(0o600)
+          PY
+      - name: Sign and validate AAB
+        run: |
+          jarsigner -keystore /tmp/play144-key/key/ben10-upload.jks -storepass:file /tmp/play144-key/key/store-password.txt -keypass:file /tmp/play144-key/key/key-password.txt -sigalg SHA256withRSA -digestalg SHA-256 -signedjar release-output/Ben10-Omniverse-14.4.aab release-output/Ben10-Omniverse-14.4-unsigned.aab ben10upload
+          jarsigner -verify release-output/Ben10-Omniverse-14.4.aab
+          keytool -printcert -jarfile release-output/Ben10-Omniverse-14.4.aab > release-output/aab-certificate.txt
+          grep '4A:4D:30:6C:45:D0:97:DB:5F:ED:F8:3B:A8:4A:DA:A0:41:75:E3:9E:27:7B:FE:1A:FF:49:2A:8E:8D:AD:F5:0F' release-output/aab-certificate.txt
+          curl -fLsS https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o /tmp/bundletool.jar
+          java -jar /tmp/bundletool.jar validate --bundle=release-output/Ben10-Omniverse-14.4.aab
+          java -jar /tmp/bundletool.jar dump manifest --bundle=release-output/Ben10-Omniverse-14.4.aab > release-output/AndroidManifest.xml
+          python3 - <<'PY'
+          import pathlib
+          text=pathlib.Path('release-output/AndroidManifest.xml').read_text()
+          assert 'android:versionCode="144"' in text and 'package="com.ben10.myapp"' in text
+          PY
+          rm release-output/Ben10-Omniverse-14.4-unsigned.aab
+          sha256sum release-output/*.aab > release-output/SHA256SUMS.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Ben10-Omniverse-14.4-AAB
+          path: release-output/
+      - name: Publish signed AAB
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create playstore-14.4 release-output/* --prerelease --title 'Ben 10 Omniverse 14.4 - complete animation update' --notes 'Current animation source including all 50 villain atlases. Original upload-key signature; versionCode 144. Packaged source assets verified byte-for-byte. Physical device gameplay testing remains pending.' --target "$GITHUB_SHA"
+      - name: Remove temporary signing key
+        if: always()
+        run: rm -rf /tmp/play144-key
