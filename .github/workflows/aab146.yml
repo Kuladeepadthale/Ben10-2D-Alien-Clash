@@ -1,0 +1,115 @@
+name: Build signed Play 14.6 AAB
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/aab146.yml']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - name: Prepare encrypted original-key handoff
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -m 700 /tmp/play146-key
+          mkdir -p ci/signing-handoff
+          openssl req -x509 -newkey rsa:3072 -nodes -keyout /tmp/play146-key/recipient.key -out ci/signing-handoff/recipient.pem -days 1 -subj '/CN=Ephemeral Play 14.6 Signing Transport' 2>/dev/null
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b "signing-handoff-${GITHUB_RUN_ID}"
+          git add ci/signing-handoff/recipient.pem
+          git commit -m 'Publish ephemeral signing certificate [skip ci]'
+          git push origin "HEAD:signing-handoff-${GITHUB_RUN_ID}"
+      - name: Restore exact verified 14.6 game payload
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/play146-base builds/web release-output
+          gh release download combat-ui-14.6-f9170fb --pattern Ben10-Omniverse-14.6.apk --dir /tmp/play146-base
+          gh release download combat-ui-14.6-f9170fb --pattern SHA256SUMS.txt --dir /tmp/play146-base
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile,hashlib
+          apk=Path('/tmp/play146-base/Ben10-Omniverse-14.6.apk')
+          assert hashlib.sha256(apk.read_bytes()).hexdigest()==Path('/tmp/play146-base/SHA256SUMS.txt').read_text().split()[0]
+          root=Path('builds/web')
+          with zipfile.ZipFile(apk) as z:
+           assert z.testzip() is None
+           for n in z.namelist():
+            if n.startswith('assets/') and not n.endswith('/'):
+             p=root/n[7:];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          p=Path('android/app/build.gradle');s=p.read_text();assert 'versionCode 143' in s;p.write_text(s.replace('versionCode 143','versionCode 146').replace("versionName '14.3'","versionName '14.6'"))
+          PY
+      - name: Compile release AAB
+        run: |
+          sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+          gradle -p android --no-daemon bundleRelease
+          cp android/app/build/outputs/bundle/release/app-release.aab /tmp/play146-base/unsigned.aab
+      - name: Receive original signing key securely
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          received=false
+          for attempt in $(seq 1 120); do
+            if gh api "repos/${GITHUB_REPOSITORY}/contents/ci/signing-handoff/sealed.b64?ref=signing-handoff-${GITHUB_RUN_ID}" --jq .content > /tmp/play146-key/response 2>/dev/null; then
+              base64 -d /tmp/play146-key/response | base64 -d > /tmp/play146-key/sealed.cms
+              received=true
+              break
+            fi
+            sleep 5
+          done
+          test "$received" = true
+          openssl cms -decrypt -binary -inform DER -in /tmp/play146-key/sealed.cms -recip ci/signing-handoff/recipient.pem -inkey /tmp/play146-key/recipient.key -out /tmp/play146-key/key.zip
+          python3 - <<'PY'
+          import pathlib,zipfile
+          root=pathlib.Path('/tmp/play146-key/key');root.mkdir(mode=0o700)
+          with zipfile.ZipFile('/tmp/play146-key/key.zip') as z:
+           for n in ['ben10-upload.jks','store-password.txt','key-password.txt']:
+            (root/n).write_bytes(z.read(n));(root/n).chmod(0o600)
+          PY
+      - name: Sign with original upload key and verify payload
+        run: |
+          jarsigner -keystore /tmp/play146-key/key/ben10-upload.jks -storepass:file /tmp/play146-key/key/store-password.txt -keypass:file /tmp/play146-key/key/key-password.txt -sigalg SHA256withRSA -digestalg SHA-256 -signedjar release-output/Ben10-Omniverse-14.6.aab /tmp/play146-base/unsigned.aab ben10upload
+          jarsigner -verify release-output/Ben10-Omniverse-14.6.aab
+          keytool -printcert -jarfile release-output/Ben10-Omniverse-14.6.aab > release-output/aab-certificate.txt
+          grep '4A:4D:30:6C:45:D0:97:DB:5F:ED:F8:3B:A8:4A:DA:A0:41:75:E3:9E:27:7B:FE:1A:FF:49:2A:8E:8D:AD:F5:0F' release-output/aab-certificate.txt
+          curl -fLsS https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o /tmp/bundletool146.jar
+          java -jar /tmp/bundletool146.jar validate --bundle=release-output/Ben10-Omniverse-14.6.aab
+          java -jar /tmp/bundletool146.jar dump manifest --bundle=release-output/Ben10-Omniverse-14.6.aab > release-output/AndroidManifest.xml
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile,hashlib,json,os
+          manifest=Path('release-output/AndroidManifest.xml').read_text()
+          assert 'android:versionCode="146"' in manifest and 'package="com.ben10.myapp"' in manifest
+          assert 'com.google.android.gms.permission.AD_ID' not in manifest
+          with zipfile.ZipFile('/tmp/play146-base/Ben10-Omniverse-14.6.apk') as apk,zipfile.ZipFile('release-output/Ben10-Omniverse-14.6.aab') as aab:
+           names=[n for n in apk.namelist() if n.startswith('assets/') and not n.endswith('/')]
+           actual=[n for n in aab.namelist() if n.startswith('base/assets/') and not n.endswith('/')]
+           assert len(actual)==len(names)
+           for n in names:assert apk.read(n)==aab.read('base/'+n),n
+          report={'versionCode':146,'versionName':'14.6','package':'com.ben10.myapp','originalUploadCertificate':True,'identicalToTestedAPKAssets':True,'assetCount':len(names),'source':os.environ['GITHUB_SHA']}
+          Path('release-output/release-validation.json').write_text(json.dumps(report,indent=2))
+          PY
+          sha256sum release-output/*.aab > release-output/SHA256SUMS.txt
+      - name: Publish signed AAB while preserving old releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create playstore-14.6 release-output/* --prerelease --title 'Ben 10 Omniverse 14.6 - classic artwork and responsive combat' --notes 'Original upload-key signature, versionCode 146. Game assets byte-identical to tested 14.6 APK. Restores 14.3 artwork; interruptible attacks and moving ultimates; five-column collection, fitted upgrades and first-visit guides. Prior releases preserved.' --target "$GITHUB_SHA"
+      - name: Remove temporary signing material
+        if: always()
+        run: rm -rf /tmp/play146-key
