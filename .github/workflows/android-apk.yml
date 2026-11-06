@@ -65,6 +65,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 ci/restore-verified-art.py
+      - name: Integrate and verify saved new-drawing batch
+        env:
+          NODE_PATH: /tmp/cel-tools/node_modules
+        run: |
+          node ci/check-redrawn-batch01.cjs
+          cp web/redrawn-batch01-data.js web/redrawn-batch01.js builds/web/
+          cp -r web/assets/redrawn-batch01 builds/web/assets/
+          cp web/index.html builds/web/index.html
       - name: Build Upgrade-reference native walking calibration
         run: |
           python3 ci/walk128/build.py

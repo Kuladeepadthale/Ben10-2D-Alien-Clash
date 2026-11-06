@@ -1,0 +1,19 @@
+name: Verify new Four Arms and Diamondhead drawings
+on:
+  push:
+    paths: ['web/redrawn-batch01*.js', 'web/assets/redrawn-batch01/**', 'ci/check-redrawn-batch01.cjs', '.github/workflows/redrawn-batch01.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --prefix /tmp/redrawn-tools --no-save --no-package-lock @napi-rs/canvas
+      - run: node ci/check-redrawn-batch01.cjs
+        env:
+          NODE_PATH: /tmp/redrawn-tools/node_modules
