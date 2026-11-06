@@ -1,10 +1,13 @@
 'use strict';
 // Newly drawn 2026-11-06 cels; authored game animation, not footage from the show.
 const redrawn20Registry=new Map(),redrawn20Travel=new WeakMap();
+function redrawn20Matte(image){
+ const canvas=document.createElement('canvas');canvas.width=image.width;canvas.height=image.height;const ctx=canvas.getContext('2d');ctx.drawImage(image,0,0);const pixels=ctx.getImageData(0,0,canvas.width,canvas.height);for(let i=3;i<pixels.data.length;i+=4)if(pixels.data[i]<64)pixels.data[i]=0;ctx.putImageData(pixels,0,0);return canvas;
+}
 function registerRedrawn20(d){
  if(!Number.isInteger(d.id)||d.id<3||!d.sheets?.length||!d.frames?.length)throw Error('Invalid new drawing set');
  const entry={data:d,images:[],ready:false};redrawn20Registry.set(d.id,entry);
- entry.promise=Promise.all(d.sheets.map(src=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=reject;im.src=src;}))).then(images=>{entry.images=images;entry.ready=true;});
+ entry.promise=Promise.all(d.sheets.map(src=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(redrawn20Matte(im));im.onerror=reject;im.src=src;}))).then(images=>{entry.images=images;entry.ready=true;});
  entry.promise.catch(()=>{});
 }
 function redrawn20Pick(f,state,t){
