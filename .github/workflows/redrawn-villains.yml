@@ -1,0 +1,26 @@
+name: Verify new villain drawings
+on:
+  push:
+    paths:
+      - 'web/redrawn-villains/**'
+      - 'web/redrawn-villains*.js'
+      - 'web/redrawn20.js'
+      - 'web/villain-data.js'
+      - 'ci/check-redrawn-villains.cjs'
+      - '.github/workflows/redrawn-villains.yml'
+  workflow_dispatch:
+concurrency:
+  group: redrawn-villains-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --prefix /tmp/redrawn-tools --no-save --no-package-lock @napi-rs/canvas
+      - run: node ci/check-redrawn-villains.cjs web/redrawn-villains/*.js
+        env:
+          NODE_PATH: /tmp/redrawn-tools/node_modules
