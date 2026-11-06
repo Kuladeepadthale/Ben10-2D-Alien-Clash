@@ -1,3 +1,3 @@
 'use strict';
-const REDRAWN_VILLAINS_COMPLETE=["sublimino","dr-animo","zombozo","mycelium","kraab","sam"];
+const REDRAWN_VILLAINS_COMPLETE=["sublimino","dr-animo","zombozo","mycelium","kraab","sam","ssserpent"];
 globalThis.redrawnVillainScriptsReady=Promise.all(REDRAWN_VILLAINS_COMPLETE.map(slug=>new Promise(resolve=>{const s=document.createElement('script');s.src='redrawn-villains/'+slug+'.js?v=20261106';s.onload=resolve;s.onerror=resolve;document.head.appendChild(s);})));
