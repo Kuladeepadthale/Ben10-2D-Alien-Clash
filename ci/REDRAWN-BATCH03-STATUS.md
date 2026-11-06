@@ -34,3 +34,5 @@ New movement, basic attack, three powers, ultimate, idle, guard and hit clips ar
 Detail marker: **New drawings · Next 20 · Batch 03 · 32 poses** when the character atlas is active. APK/AAB builds are separate from source integration.
 
 [Prompt set](REDRAWN-BATCH03-PROMPTS.json) · [Animation source files](../web/redrawn20/)
+
+Combined verification: **60 characters and 43,200 rendered samples passed together** in [GitHub Actions run 42172311188](https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/42172311188). This also validates native-state fallback and the bounded decoded-image cache.
