@@ -3,6 +3,9 @@ on:
   push:
     paths: ['web/redrawn20/**', 'web/redrawn20*.js', 'ci/check-redrawn20.cjs', '.github/workflows/redrawn20.yml']
   workflow_dispatch:
+concurrency:
+  group: redrawn-cels-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
