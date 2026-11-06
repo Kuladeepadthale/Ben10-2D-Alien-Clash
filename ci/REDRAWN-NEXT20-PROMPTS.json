@@ -1,0 +1,125 @@
+{
+  "layout": "Use case: stylized-concept. Production hand-drawn 2D Ben 10 fighting-game sprite atlas, faithful to the character's original television series design, bold clean black ink and flat cel shading. Exact uniform FOUR COLUMNS by EIGHT ROWS, 32 separate FULL-BODY cels on genuinely transparent background, tall portrait canvas. Every pose faces RIGHT in side/three-quarter view, same model, scale, camera and cell floor baseline. Generous transparent margins, no overlap or cropping. Rows1-2: eight consecutive distinct species-appropriate movement frames with articulated limbs and actual contacts or wingbeats. Row3: four basic attack phases windup, extension, contact, recovery. Row4: four phases of first listed power. Row5: four phases of second power. Row6: four phases of third power. Row7: four ultimate phases. Row8: guard, hit flinch, recoil, ready idle. Strong weight shifts and torso mechanics; individual new drawings, not duplicated idle poses. No text, labels, grid lines, background, floor shadows, extra characters or long beams/projectiles; game effects are rendered separately. Subject and actions: ",
+  "characters": [
+    {
+      "id": 23,
+      "slug": "echo-echo",
+      "name": "Echo Echo",
+      "brief": "ECHO ECHO Sonorosian from Alien Force. Small white robotic-looking body, black trim, round head with green eyes and black sound vents, green Omnitrix chest badge. Short nimble walking steps. Basic short hand jab. Sonic shout opens mouth sound vent and leans head toward right. Echo barrage braces arms and repeatedly shouts forward. Resonance pulse spreads arms then contracts chest and mouth in sound pulse. Sonic overload deep inhale, full shout, intense forward lean, recovery. Only primary body in each cell, clone assistants handled by game."
+    },
+    {
+      "id": 24,
+      "slug": "humungousaur",
+      "name": "Humungousaur",
+      "brief": "HUMUNGOUSAUR original Alien Force Vaxasaurian: massive brown muscular dinosaur humanoid with pale cream chest belly, short blunt head, green eyes, long heavy tail, black-white Omnitrix on chest. Eight heavy heel-to-toe walking cels with tail counterbalance. Basic punch. Seismic stomp raises foot high then plants it strongly. Titan fist large shoulder windup then powerful straight punch right. Dinosaur charge crouches and lunges with shoulder. Colossal impact squats, jumps with fists high, double-fist ground smash, recovery. Maintain same body size throughout, no growth transformation."
+    },
+    {
+      "id": 25,
+      "slug": "jetray",
+      "name": "Jetray",
+      "brief": "JETRAY original Alien Force Aerophibian: red manta-like alien with yellow face and wing membranes from wrists to torso, black accents, long red tail and green eyes. Movement is eight wingbeat/hover flight cels, not human walking. Basic short forward claw swipe. Neuroshock ray eyes aim right with head recoil, no hand beam. Aerial blitz folds wings and thrusts forward. Tail bolt curls long tail FORWARD toward right and points its tip right. Hyperspeed barrage strong wing-braced eye-firing posture aimed right. Full wing span and tail inside each cell."
+    },
+    {
+      "id": 26,
+      "slug": "big-chill",
+      "name": "Big Chill",
+      "brief": "BIG CHILL original Alien Force Necrofriggian: slender blue-black moth alien with skull-like blue head, green eyes, four large blue-black moth wings, long thin limbs, green Omnitrix chest. Movement eight distinct hovering wingbeat cels with legs gently bent, never walking like a human. Basic claw swipe. Freezing breath inhale then mouth exhale right. Phasing lunge wings sweep back while body darts forward. Ice wave crouched hover and mouth exhale. Deep freeze wings spread and chest expands before powerful mouth exhale. Keep four wings consistent and entire body visible."
+    },
+    {
+      "id": 27,
+      "slug": "chromastone",
+      "name": "Chromastone",
+      "brief": "CHROMASTONE original Alien Force Crystalsapien: purple rock-crystal muscular humanoid, magenta crystal spikes on shoulders back and head, single green eye, dark purple torso with magenta hands and feet, green Omnitrix on chest. Grounded crystalline walk. Basic crystal fist jab. Prismatic beam forward palm aim with splayed fingers. Crystal strike swings crystal-covered fist. Radiant wave both palms push forward. Spectrum overload absorbs into chest with arms spread then extends both hands right. No giant crystal projectiles painted in sheet."
+    },
+    {
+      "id": 28,
+      "slug": "brainstorm",
+      "name": "Brainstorm",
+      "brief": "BRAINSTORM original Alien Force Cerebrocrustacean: orange crab alien with huge orange shell skull opening to reveal pink folded brain, green eyes under shell rim, two big pincers and six thin segmented crab legs, white-black suit collar and Omnitrix. Eight distinct lateral-forward crab steps, never human legs. Basic right pincer snap. Neural bolt opens head shell and angles brain toward right. Cerebral discharge head fully open with pincers braced forward. Static field widens all six legs with open brain and raised pincers. Brainstorm surge opens head fully and lifts pincers for discharge. Brain exposed only during powers, original crab anatomy maintained."
+    },
+    {
+      "id": 29,
+      "slug": "spidermonkey",
+      "name": "Spidermonkey",
+      "brief": "SPIDERMONKEY original Alien Force Arachnichimp: athletic blue monkey alien with FOUR arms, dark blue fur, lighter blue face and chest, four green eyes, prehensile tail, green Omnitrix chest. Eight agile climbing-like quadruped run cels, four arms distinctly visible. Basic four-arm jab sequence. Web shot curls tail forward to aim tail-tip web spinner RIGHT; web comes from tail tip. Four-arm flurry alternating punches with all four arms. Acrobatic pounce crouch, push off, extended leap, landing. Webstorm rush low running punches and tail aiming. No missing or extra limbs."
+    },
+    {
+      "id": 30,
+      "slug": "goop",
+      "name": "Goop",
+      "brief": "GOOP original Alien Force Polymorph: translucent lime-green fluid humanoid, elongated pointed head, two green-white eyes, long elastic limbs, small silver anti-gravity saucer floating just above head in every cel. Eight elastic walking cels, feet squash into puddles then lift, fluid motion. Basic short liquid fist extension. Acid glob extends right palm to lob compact blob. Elastic strike right arm stretches VERY LONG toward right with fluid fist. Liquid rush flattens body low and stretches forward, then reforms. Acid deluge stretches both palms forward in flowing posture. Preserve saucer identity and position above body, same volume."
+    },
+    {
+      "id": 31,
+      "slug": "alien-x",
+      "name": "Alien X",
+      "brief": "ALIEN X original Alien Force Celestialsapien: tall muscular jet-black humanoid filled with small white star speckles, white hands, three white horn-like head crests, glowing green eyes, white chin outline and green Omnitrix chest. Calm deliberate eight-frame planted walking cycle, imposing controlled movements. Basic deliberate heavy punch. Cosmic orb right palm cups energy pose then pushes forward. Gravity pulse opens both hands then pulls arms inward. Starstep bends body into sudden forward lunge. Celestial judgement arms raise then extend toward right with commanding posture. No outside starfield background, stars ONLY inside black body."
+    },
+    {
+      "id": 32,
+      "slug": "rath",
+      "name": "Rath",
+      "brief": "RATH original Alien Force Appoplexian: muscular orange tiger humanoid with bold black tiger stripes, white muzzle throat chest, green eyes, strong jaw and short black wrist claws, green Omnitrix chest. Eight aggressive heavy feline walking/running steps. Basic three-punch style cels: guard, straight punch right, hook followthrough, recovery. Claw flurry torso windup, wrist claw slash, opposite claw strike, recovery. Tiger pounce compression then long airborne feline leap and landing. Rage slam raises both fists then crashes them down. Appoplexian fury forward boxing rush with claws. Original tiger face and consistent size."
+    },
+    {
+      "id": 33,
+      "slug": "lodestar",
+      "name": "Lodestar",
+      "brief": "LODESTAR original Alien Force Biot-Savartian: tall yellow-black metallic alien, magnet-shaped claw hands, separate grey metal head levitating between raised black-yellow shoulder prongs, green eyes, green Omnitrix chest. Head always floats visibly with neck gap. Eight rigid but articulated metal walking cels. Basic magnet claw strike. Magnetic pulse both horseshoe claws aim forward. Metal storm raises claws and separates fingers to command metal. Polarity field pulls claws inward around torso. Magnetic maelstrom spreads claws overhead then forcefully pulls down. No random floating debris or extra heads."
+    },
+    {
+      "id": 34,
+      "slug": "nanomech",
+      "name": "Nanomech",
+      "brief": "NANOMECH original Alien Swarm/Ultimate Alien nanochip hybrid: tiny silver-black biomechanical humanoid with bright green chest circuits and eye, insect-like silver wings, small antennae, segmented limbs and green Omnitrix. Eight rapid hovering wingbeat cels, no human ground walk. Basic tiny forearm jab. Nano laser aims right forearm and palm forward. Micro blitz wings fold into fast forward dart. Nano discharge braces both arms forward and opens wing spread. Nano overload powerful two-arm firing stance. Keep mechanical wings and complete tiny body readable, no long beams painted."
+    },
+    {
+      "id": 35,
+      "slug": "water-hazard",
+      "name": "Water Hazard",
+      "brief": "WATER HAZARD original Ultimate Alien Orishan: red armored crustacean humanoid with dark red shell plates, black joints, pale cream face within red hood shell, green eyes, circular WATER NOZZLES in BOTH PALMS, green Omnitrix chest. Eight weight-shifting armored walk cels. Basic armored fist jab. Palm water jet right open palm nozzle aims right. Pressure burst both open palms thrust right. Rising tide crouches with both palm nozzles directed down toward floor then rises. Ocean deluge wide stance both palm nozzles aimed right. Water must originate from palms, not mouth; no long streams painted."
+    },
+    {
+      "id": 36,
+      "slug": "ampfibian",
+      "name": "AmpFibian",
+      "brief": "AMPFIBIAN original Ultimate Alien Amperi: blue jellyfish-like alien, translucent blue body with lighter white-blue accents, four long tentacle arms and two trailing tentacle legs, green eyes and green Omnitrix chest. Eight flowing FLOATING movement cels with tentacles undulating, never human walking. Basic leading tentacle whip. Tentacle bolt extends upper right tentacle tip to aim right. Phasing current compresses bell torso then darts forward with tentacles trailing. Current field spreads four tentacles radially. Amperi thunderstorm lifts four tentacles then sweeps tips forward. Keep all six tentacles distinct."
+    },
+    {
+      "id": 37,
+      "slug": "armodrillo",
+      "name": "Armodrillo",
+      "brief": "ARMODRILLO original Ultimate Alien Talpaedan: massive yellow armored armadillo-like mechanical alien with grey face, green eyes, long ears, huge piston forearms with drill-like knuckles, black torso joints and tail, green Omnitrix chest. Eight heavy grounded mechanical walk cels with piston elbows articulating. Basic huge fist punch. Piston drill extends right piston fist forward. Seismic punch raises piston arm and punches ground. Drill charge lowers shoulders and thrusts armored body right. Tectonic breaker crouches, launches with fists up, double piston ground impact, recovery. Consistent heavy size, original model."
+    },
+    {
+      "id": 38,
+      "slug": "terraspin",
+      "name": "Terraspin",
+      "brief": "TERRASPIN original Ultimate Alien Geochelone Aerio: broad green turtle humanoid with large tan shell, round green face with two green eyes, black chest vent holes, green Omnitrix, wide flattened flipper arms and sturdy legs. Eight waddling turtle walking cels with weight shifts. Basic broad flipper slap. Vent blast retracts head partly and aims chest vents right. Shell cyclone retracts limbs then spreads flippers into propeller-like rotation poses while shell stays centered. Shell slam lifts body then lands heavily. Cyclonic tempest retracts legs and spins flipper arms through four clear rotation stages. No human hands or fingers."
+    },
+    {
+      "id": 39,
+      "slug": "nrg",
+      "name": "NRG",
+      "brief": "NRG original Ultimate Alien armored containment suit: very bulky riveted dark brown-grey metal furnace humanoid, cylindrical helmet with narrow glowing green eye slit, thick arms and legs, heavy round shoulder plates, red-orange heat glow in small vent gaps, green Omnitrix chest. Eight very heavy slow grounded suit walk cels. Basic heavy metal fist punch. Vent heat ray bends upper body and aims helmet vent toward right. Molten stomp lifts massive boot then stamps. Radiation wave arms spread then pushes both hands forward. Reactor flare head tilts and vents open with arms raised. Keep suit closed, no energy form transformation."
+    },
+    {
+      "id": 40,
+      "slug": "fasttrack",
+      "name": "Fasttrack",
+      "brief": "FASTTRACK original Ultimate Alien Citrakayah: lean athletic blue-and-black feline humanoid, black mask-like face and chest patches, pointed ears, green eyes, blue forearms and lower legs, green Omnitrix chest, NO long tail. Eight distinct fast sprint cels with planted contact, passing and full extension, opposing arms. Basic fast straight punch. Velocity rush low sprint windup and forward thrust. Claw combo alternating claw punches with torso twist. Cyclone kick crouch, rotating hip, long sideways kick, landing. Citrakayah blitz sprint to sharp knee and fist strike then braking recovery. No XLR8 helmet or wheel feet."
+    },
+    {
+      "id": 41,
+      "slug": "chamalien",
+      "name": "Chamalien",
+      "brief": "CHAMALIEN original Ultimate Alien Merlinisapien: slender lavender-purple chameleon humanoid with THREE eyes on head colored red green blue, angular head crest, long thick pointed lizard tail, slim limbs and dark bodysuit sections, green Omnitrix chest. Eight stealthy crouched reptile walk cels with tail counterbalance. Basic claw jab. Cloaked lunge crouches then darts right. Claw swipe large torso twisting claw strike. Tail sweep turns hips and swings VERY LONG TAIL toward RIGHT at ground level. Invisible ambush low rapid stalk and pounce poses. Body remains fully opaque for atlas, game handles camouflage. Preserve exactly three distinct eyes."
+    },
+    {
+      "id": 42,
+      "slug": "eatle",
+      "name": "Eatle",
+      "brief": "EATLE original Ultimate Alien Oryctini design: bulky BLACK armored beetle humanoid with single large upward curved horn on forehead, green eyes in narrow helmet-like face, broad white jaw and small mouth, thick black forearms and legs, green Omnitrix chest, NOT Omniverse slim green redesign. Eight heavy armored beetle walking cels with articulated knees and arms. Basic strong fist punch. Mouth blast head angles right, jaw opens, mouth aim, jaw recovers. Beetle charge lowers head and horn then drives body right. Horn uppercut crouches then lifts horn forcefully forward-up. Matter converter braces wide and aims mouth toward right. No long beam painted."
+    }
+  ]
+}
