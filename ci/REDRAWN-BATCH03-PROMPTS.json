@@ -1,0 +1,125 @@
+{
+  "layout": "Use case stylized-concept. Create a NEW high-quality hand-drawn Ben 10 2D fighting game sprite atlas, faithful to the named television-series design. Bold clean ink contours, flat cel-shaded colors, consistent anatomy. EXACTLY FOUR COLUMNS by EIGHT ROWS, 32 separate full-body cels on genuinely transparent background. Tall portrait sheet. All characters face RIGHT side/three-quarter view, same model, body scale and floor baseline. IMPORTANT: each body occupies only 65–75 percent of its cell, with at least 10 percent clear margin on all sides; every horn, wing, tail, antenna, hand and foot remains fully inside its own cell. No overlap or cropping. Rows 1–2: eight sequential species-appropriate movement cels with real articulation and contact or wingbeat changes. Row 3: four basic attack cels, anticipation, extension, contact, recovery. Rows 4/5/6: four animation phases for first/second/third listed power respectively. Row 7: four ultimate phases. Row 8: guard, hit flinch, recoil, ready idle. New distinct whole-body drawings with convincing body mechanics, no static copies. No labels, text, gridlines, floor, shadows, extra characters, large beams or projectiles; game renders effects separately. Character and action instructions: ",
+  "characters": [
+    {
+      "id": 43,
+      "slug": "clockwork",
+      "name": "Clockwork",
+      "brief": "CLOCKWORK original Ultimate Alien Chronosapien: stout brass-gold clockwork robot with round torso, black mechanical joints, green chest clock window, small black face with green eyes inside gold head, wind-up key on back, green Omnitrix. Eight heavy mechanical walking cels, knees and piston-like elbows alternate. Basic heavy metal fist jab. Temporal ray aims circular chest clock emitter toward RIGHT with arms braced. Time field rotates chest mechanism and spreads hands. Clockwork stomp raises metal boot then stamps. Temporal surge chest emitter faces right as both arms open in commanding temporal discharge posture. No gun hand, temporal energy comes from chest."
+    },
+    {
+      "id": 44,
+      "slug": "jury-rigg",
+      "name": "Jury Rigg",
+      "brief": "JURY RIGG Ultimate Alien red imp-like mechanical genius: small wiry RED gremlin with very long pointed ears, long pointed nose and chin, yellow-green eyes, thin limbs, black-white Omnitrix waist accent. Original imp anatomy, not a human mechanic. Eight quick scampering walk cels with planted toes and fidgeting arms. Basic short wrench swing. Scrap launcher rapidly assembles compact handheld scrap device then aims RIGHT and triggers. Junk bomb grabs small round gear bomb then throws right. Gear trap crouches, places a toothed gear gadget on floor, activates and rises. Junkyard arsenal rapidly works a handheld improvised controller. Gadgets only, no innate beams."
+    },
+    {
+      "id": 45,
+      "slug": "shocksquatch",
+      "name": "Shocksquatch",
+      "brief": "SHOCKSQUATCH Omniverse electric ape: huge muscular YELLOW fur and black striped primate body, shaggy yellow shoulders, black chest and forearms, white-grey ape face with green eyes, green Omnitrix chest. Eight heavy gorilla-like knuckle-assisted run/walk cels, substantial weight shift, not sliding. Basic huge knuckle jab. Charged fist torso coils then heavy right punch. Lightning arc opens right hand and aims fingers toward RIGHT with chest braced. Electric stomp raises foot and stamps while arms counterbalance. Thunderous fury strong forward electric boxing rush poses. Clean body drawing, no surrounding electricity cloud."
+    },
+    {
+      "id": 46,
+      "slug": "feedback",
+      "name": "Feedback",
+      "brief": "FEEDBACK Omniverse Conductoid: slender athletic BLACK body with white torso/chest stripe, white plug-like fingertips, two long black head cable antennae ending in white plug tips, black tail with white plug end, single central green eye, green Omnitrix chest. Eight agile grounded walking cels with cable antennae and tail counter-motion. Basic long arm jab. Finger bolt right hand extends with white plug fingertips aiming RIGHT. Plug discharge head antenna cables curl forward and point white tips RIGHT. Current rush crouches and darts forward with cable tips trailing. Conductoid overload draws antenna plugs and both palms forward into powerful discharge stance. Keep every cable and plug fully visible."
+    },
+    {
+      "id": 47,
+      "slug": "bloxx",
+      "name": "Bloxx",
+      "brief": "BLOXX Omniverse Segmentasapien: bulky gorilla-like living construction-block alien, red yellow and blue interlocking rectangular bricks, broad angular ape-like face, green eyes, green Omnitrix chest. Eight heavy gorilla walking cels with individual block joints articulating. Basic block fist punch. Block hammer reshapes right forearm into large squared brick hammer and swings RIGHT. Brick volley right forearm forms a short block launcher and aims right. Construction slam raises both brick fists then pounds floor. Megablock impact compresses into squat, jumps with fists high, lands double-fist block smash, recovers. Preserve LEGO-like brick construction and same body volume, no loose debris cloud."
+    },
+    {
+      "id": 48,
+      "slug": "gravattack",
+      "name": "Gravattack",
+      "brief": "GRAVATTACK Omniverse Galilean: massive round reddish-brown rock planetoid humanoid, rugged rocky shoulders and limbs, small green eyes, glowing orange gravity core in belly, green Omnitrix upper chest. Eight slow ponderous grounded steps with belly mass and planted stone feet. Basic stone fist jab. Gravity orb cups right stone hand and pushes forward. Orbital field opens arms and braces around glowing belly core. Planetfall crouches, lifts body, heavy falling impact, returns to stance. Gravity singularity both arms spread then pull toward belly core in commanding gravity pose. Same rock body size, no surrounding rocks or external black-hole graphic."
+    },
+    {
+      "id": 49,
+      "slug": "crashhopper",
+      "name": "Crashhopper",
+      "brief": "CRASHHOPPER Omniverse Orthopterran: green insect humanoid with large angular grasshopper head crest, green eyes, yellow-green chest, black joint sections, huge spring-loaded grasshopper hind legs and small arms, green Omnitrix chest. Eight distinct bounding locomotion cels: crouch compression, launch, airborne legs tuck, extension, landing, rebound and opposite leg contacts. Basic short claw jab. Spring pounce deep hind-leg squat then long airborne leap and landing. Headlong rush lowers armored head and launches RIGHT headfirst. Landing shock lifts with knees tucked then stamps both feet. Meteor hopper strongest coiled jump, high airborne headfirst dive, heavy landing crouch, recovery. Include strong proper guard crouch with forearms protecting head."
+    },
+    {
+      "id": 50,
+      "slug": "ball-weevil",
+      "name": "Ball Weevil",
+      "brief": "BALL WEEVIL Omniverse tiny yellow insect: small round pale yellow beetle body, big green eyes, black mouth mandibles, two long slender black antennae, four thin segmented black legs and tiny forelimbs, green Omnitrix atop body. Eight genuine insect scuttle cels, leg contacts alternate. Basic small forelimb jab. Plasma ball mouth leans toward floor to form small compact sticky glob then front legs roll it RIGHT. Sticky lob braces back legs and flicks compact glob forward with mouth. Plasma trap lowers body and places a small glob at ground then backs into stance. Giant plasma burst crouches, mouth inflates slightly, rolls a compact ball forward, recovers. No oversized ball obscuring character, no human arms."
+    },
+    {
+      "id": 51,
+      "slug": "astrodactyl",
+      "name": "Astrodactyl",
+      "brief": "ASTRODACTYL Omniverse jet-powered orange pterosaur alien: orange reptilian bird-like head with long beak and crest, green eyes, black-green suit sections, pale wing membranes, mechanical jetpack on upper back, thin tail, wrist whip emitters, green Omnitrix chest. Eight distinct flying wingbeat cels, jet-assisted hover, never human ground walk. Basic wing-arm claw swipe. Energy whip right wrist thrusts then snaps a short green whip handle-like arc toward RIGHT, full arm windup and recovery. Jet blitz folds wings and stretches body into forward jet dive. Star bolt right wrist points forward. Stellar overdrive wings spread, jetpack braces and both wrists aim right. Keep full wings crest tail and jetpack inside cell."
+    },
+    {
+      "id": 52,
+      "slug": "toepick",
+      "name": "Toepick",
+      "brief": "TOEPICK Omniverse stout yellow-green ogre-like alien: large round olive-yellow body, short thick legs, long muscular arms, bulbous belly, heavy dark grey cage helmet fully covering face, two short curved horns, green Omnitrix chest, original species design. Eight heavy slow lumbering walk cels. Basic strong arm jab. Terrifying gaze hand lifts face-cage front slightly and leans helmet RIGHT; inside is ONLY abstract black shadow with tiny subtle eyes, no gore. Dread aura braces legs and spreads long arms while cage opens partly. Heavy grasp reaches long right hand in grabbing strike. Nightmare exposure raises cage opening, leans threateningly forward with shadowed face, lowers cage to recover. Keep helmet and original body consistent, suitable cartoon fantasy."
+    },
+    {
+      "id": 53,
+      "slug": "pesky-dust",
+      "name": "Pesky Dust",
+      "brief": "PESKY DUST Omniverse Nemuina: tiny lavender-purple fairy alien with large green eyes, flowing light blue-green hair tuft, pointed ears, two delicate insect-like translucent wings, leaf-like green skirt and small limbs, green Omnitrix chest. Eight delicate hovering wingbeat cels with changing wing angles and gently bent legs. Basic little palm swat. Sleep dust right palm opens and blows a small pinch from hand RIGHT. Dream spiral both little hands circle then right hand extends gracefully. Fairy flutter wings fold then rapid darting flight pose. Dreamscape arms rise and sweep forward in gentle dream-casting gesture. All wings and hair visible, not a human fairy, no large dust clouds or dream background."
+    },
+    {
+      "id": 54,
+      "slug": "bullfrag",
+      "name": "Bullfrag",
+      "brief": "BULLFRAG Omniverse Incursean: tall muscular olive-green frog alien, large frog head with mouth and small ear disks, dark green-black suit with white accents, dark sunglasses-like eye covering, powerful long hind legs, green Omnitrix chest. Eight crouched frog walking/bounding cels with strong leg contacts. Basic large fist jab. Tongue snare mouth opens and LONG pink elastic tongue extends toward RIGHT then retracts, whole tongue inside cell. Frog spring deep leg crouch, launch, fully extended frog leap, landing. Amphibian rush low forward sprint and shoulder strike. Incursean combination energetic punch, frog knee and kick combination poses. Keep frog face and same body scale."
+    },
+    {
+      "id": 55,
+      "slug": "kickin-hawk",
+      "name": "Kickin' Hawk",
+      "brief": "KICKIN HAWK Omniverse bird martial artist: muscular brown-feathered hawk humanoid, white feather chest and head crest, sharp orange beak, green eyes, orange taloned feet, long blade-like feathers on forearms, green Omnitrix chest. Eight agile digitigrade walking cels with planted talons and arm guard. Basic swift straight punch with forearm blade followthrough. Talon combination alternates right and left talon punches/claw swipes. Roundhouse kick crouches, pivots hips, extends long sideways kick RIGHT, lands. Aerial talon launches from feet, airborne talon kick, contact, landing. Falcon flurry fast martial-arts knee and kick combo. Distinct torso rotation and strong kick extension, not static bird poses."
+    },
+    {
+      "id": 56,
+      "slug": "whampire",
+      "name": "Whampire",
+      "brief": "WHAMPIRE Omniverse Vladat: tall lean black bat-vampire humanoid with pale mint-grey face and hands, huge pointed bat ears, green eyes, dark green-black chest suit and wing membranes under arms, short sharp fangs, green Omnitrix chest. Eight low flying/hovering wingbeat cels, full wings inside each cell. Basic claw slash. Corruptura mouth opens and head aims right with small expulsion posture, no large creature obscuring body. Vladat shriek deep inhale and wide mouth sonic scream right. Nocturnal lunge wings sweep back and body lunges right. Nocturnal command wings spread and both claw hands command forward while mouth opens. Consistent original vampire design, no gore."
+    },
+    {
+      "id": 57,
+      "slug": "gutrot",
+      "name": "Gutrot",
+      "brief": "GUTROT Omniverse walking chemical laboratory: stocky green and black armored humanoid with large transparent green belly chemical chamber, white-grey bulky forearms, gas-mask-like face with green eyes and two round filter cheeks, round gas vents at shoulders elbows and hands, green Omnitrix chest. Eight heavy armored walking cels with weight shifts. Basic heavy forearm jab. Sedative cloud right arm turns gas vent to aim RIGHT and opens palm. Chemical cloud both shoulder vents tilt forward as arms spread. Pressure vent crouches then thrusts right forearm vent forward. Reactor cloud chest chamber glows softly as both arms lift and vents point right. Gas originates at vents, not magical mouth beam. No surrounding cloud painted."
+    },
+    {
+      "id": 58,
+      "slug": "atomix",
+      "name": "Atomix",
+      "brief": "ATOMIX Omniverse nuclear-powered armored alien: tall broad WHITE and green robotic-looking humanoid, black joint sections, green chest containment window with glowing yellow nuclear core, green spherical forearm chambers, helmeted white head with yellow-green face and green eyes, green Omnitrix chest. Eight heavy confident armored walk cels with clear alternating planted feet. Basic large fist punch. Atomic burst cups right palm then pushes it forward. Fusion beam braces both palms together aimed RIGHT. Nuclear shockwave expands chest and drives both fists outward. Fusion sun arms gather around a SMALL compact bright core near hands, then both palms push right, recover. Same armor proportions throughout, no giant sun covering character."
+    },
+    {
+      "id": 59,
+      "slug": "walkatrout",
+      "name": "Walkatrout",
+      "brief": "WALKATROUT Omniverse Ickthyperambuloid: tiny round blue fish alien with pale cream belly, wide simple mouth, large green eyes on sides of head, small fins for arms, short blue legs and webbed toes, green Omnitrix belly. Eight waddling slippery walking cels with tiny planted feet and fin counterbalance. Basic short fin jab. Slippery escape bends slippery body low then darts forward and regains footing. Fin slap winds right fin and slaps RIGHT. Fish flop curls body sideways, springs into short horizontal flop, lands belly low, recovers. Slipstream scramble quick waddling body bump and flop combination. Physical moves only, no invented water cannons or beams, keep tiny round fish anatomy."
+    },
+    {
+      "id": 60,
+      "slug": "the-worst",
+      "name": "The Worst",
+      "brief": "THE WORST Omniverse Atrocian: short extremely round YELLOW alien with big protruding belly, tiny stubby arms and legs, small green eyes, grumpy heavy-brow face, thick lower lip, dark briefs/waistband with green Omnitrix. Eight comical but grounded waddling walk cels with clear weight shift and planted short feet. Basic small arm jab. Stubborn charge leans huge belly forward into short charge. Belly bump twists hips and extends belly forcefully RIGHT. Unyielding landing small squat, short hop, belly-heavy landing, stand. Unbreakable impact deep squat then forceful short forward belly flop and recovery. No energy powers or superhero muscles, same squat round original design."
+    },
+    {
+      "id": 61,
+      "slug": "mole-stache",
+      "name": "Mole-Stache",
+      "brief": "MOLE-STACHE Omniverse small yellow-brown mole alien: short furry body, large pink nose, tiny green eyes, big orange-brown PREHENSILE MOUSTACHE extending far from both sides of face, small arms and feet, green Omnitrix chest. Eight small grounded mole walking cels, moustache gently counter-swings. Basic moustache-tip fist jab. Moustache lash right moustache strand stretches long and whips RIGHT. Whisker uppercut moustache curls into a muscular fist shape and punches upward-right. Propeller hop both moustache strands extend and rotate as two-blade propeller, lifting tiny body. Moustache cyclone four clearly different propeller/moustache rotation phases around face while body braces. Powers use moustache, not normal arms; all long whiskers inside cell."
+    },
+    {
+      "id": 62,
+      "slug": "overflow",
+      "name": "Overflow",
+      "brief": "OVERFLOW Ben 10 reboot Cascan: stocky RED and black armored aquatic humanoid with large red cylindrical forearms containing BLUE WATER behind transparent side windows, white mask-like face, green eyes, red hood helmet, green Omnitrix chest, thick red boots. Eight heavy armored walk cels with articulated knees and forearms. Basic armored fist jab. Water jet right forearm nozzle aims RIGHT, arm extends and retracts. Pressure shot braces both water-filled forearms forward. Water blade right wrist creates a SHORT blue water blade and makes sweeping right slash. Tidal barrage wide stance both arm nozzles aim right with forceful pushing gestures. Water comes from forearms, preserve glass water chambers and red armor, no long jets covering body."
+    }
+  ]
+}
