@@ -6,12 +6,23 @@ function redrawn20Matte(image){
 }
 function registerRedrawn20(d){
  if(!Number.isInteger(d.id)||d.id<3||!d.sheets?.length||!d.frames?.length)throw Error('Invalid new drawing set');
- const entry={data:d,images:[],ready:false};redrawn20Registry.set(d.id,entry);
- entry.promise=Promise.all(d.sheets.map(src=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(redrawn20Matte(im));im.onerror=reject;im.src=src;}))).then(images=>{entry.images=images;entry.ready=true;});
- entry.promise.catch(()=>{});
+ const entry={data:d,images:[],ready:false,lastUsed:0};redrawn20Registry.set(d.id,entry);
+}
+let redrawn20Clock=0;
+function redrawn20Load(id){
+ const entry=redrawn20Registry.get(id);if(!entry)return Promise.resolve();
+ entry.lastUsed=++redrawn20Clock;
+ if(entry.promise)return entry.promise;
+ entry.promise=Promise.all(entry.data.sheets.map(src=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(redrawn20Matte(im));im.onerror=reject;im.src=src;}))).then(images=>{
+  entry.images=images;entry.ready=true;
+  // Keep a small working set; encoded source data remains available for later reloads.
+  const loaded=[...redrawn20Registry.entries()].filter(([key,e])=>e.ready&&key!==id).sort((a,b)=>a[1].lastUsed-b[1].lastUsed);
+  while(loaded.length>3){const [key,e]=loaded.shift();e.images=[];e.ready=false;e.promise=null;}
+ },error=>{entry.promise=null;throw error;});
+ return entry.promise;
 }
 function redrawn20Pick(f,state,t){
- const e=redrawn20Registry.get(f.id);if(!e?.ready||Number.isInteger(f.villain))return null;
+ const e=redrawn20Registry.get(f.id);if(!e?.ready||Number.isInteger(f.villain))return null;e.lastUsed=++redrawn20Clock;
  const d=e.data,clip=d.clips[state];if(!clip?.length)return null;
  let i=0;
  if(state==='walk'){
@@ -32,7 +43,7 @@ function redrawn20Pick(f,state,t){
 const redrawn20Base=drawAlien;
 drawAlien=function(ctx,f,t,portrait=false){
  const p=redrawn20Pick(f,portrait?'idle':celState(f),t);
- if(!p)return redrawn20Base(ctx,f,t,portrait);
+ if(!p){if(!Number.isInteger(f.villain))redrawn20Load(f.id).catch(()=>{});return redrawn20Base(ctx,f,t,portrait);}
  const fr=p.frame,[x,y,w,h]=fr.rect,[ox,oy]=fr.origin,s=aliens[f.id].renderHeight*aliens[f.id].scale/p.entry.data.referenceHeight;
  ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(f.x,f.y);ctx.scale((f.cast?.dir||f.dir||1)*s,s);ctx.drawImage(p.entry.images[fr.sheet],x,y,w,h,-ox,-oy,w,h);ctx.restore();
 };
@@ -45,6 +56,6 @@ drawnAlienEmitter=function(f,v){
  return {x:f.x+(v.dir||f.dir||1)*(at[0]-fr.origin[0])*s,y:f.y+(at[1]-fr.origin[1])*s};
 };
 const redrawn20BeginBase=begin;
-begin=async function(...args){const e=redrawn20Registry.get(selected);if(e)await e.promise;return redrawn20BeginBase(...args);};
+begin=async function(...args){if(globalThis.redrawn20ScriptsReady)await globalThis.redrawn20ScriptsReady;await redrawn20Load(selected);return redrawn20BeginBase(...args);};
 const redrawn20InfoBase=renderAlienInfo;
 renderAlienInfo=function(){const r=redrawn20InfoBase(),e=redrawn20Registry.get(selected),m=document.getElementById('animationRevision');if(e?.ready&&m){m.hidden=false;m.textContent='New drawings · 20-alien batch · '+e.data.frames.length+' poses';}return r;};
