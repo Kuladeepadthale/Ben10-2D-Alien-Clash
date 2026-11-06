@@ -5,7 +5,7 @@ import sys,io,base64,json,statistics
 slug,ident,path=sys.argv[1:];ident=int(ident)
 im=Image.open(path).convert('RGBA');im.thumbnail((1024,2048),Image.Resampling.LANCZOS);w,h=im.size
 assert im.getextrema()[3][0]<64,'Transparent background required'
-b=io.BytesIO();im.save(b,format='WEBP',quality=82,method=6)
+encoded=io.BytesIO();im.save(encoded,format='WEBP',quality=82,method=6)
 frames=[];heights=[]
 for row in range(8):
  for col in range(4):
@@ -31,6 +31,7 @@ hover=ident in [17,28]
 if hover:
  for fr in frames:fr['origin'][1]=round(fr['rect'][3]*.94,1)
 clips={'idle':list(range(8)) if hover else [31],'walk':list(range(8)),'normal':list(range(8,12)),'skill0':list(range(12,16)),'skill1':list(range(16,20)),'skill2':list(range(20,24)),'ultimate':list(range(24,28)),'guard':[28],'hit':[29,30]}
-d={'id':ident,'slug':slug,'status':'new-drawings-integrated','date':'2026-11-06','referenceHeight':ref,'stride':.9,'idleFps':8,'frames':frames,'clips':clips,'sheets':['data:image/webp;base64,'+base64.b64encode(b.getvalue()).decode()]}
+d={'id':ident,'slug':slug,'status':'new-drawings-integrated','date':'2026-11-06','referenceHeight':ref,'stride':.9,'idleFps':8,'frames':frames,'clips':clips,'sheets':['data:image/webp;base64,'+base64.b64encode(encoded.getvalue()).decode()]}
 out=Path('web/redrawn-villains')/(slug+'.js');out.parent.mkdir(parents=True,exist_ok=True);out.write_text("'use strict';\nregisterRedrawnVillain("+json.dumps(d,separators=(',',':'))+");\n")
 print(json.dumps({'file':str(out),'poses':32,'bytes':out.stat().st_size}))
+
