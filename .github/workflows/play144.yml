@@ -1,4 +1,5 @@
 name: Build Play 14.4 complete animation update
+# Rebuild with the recovered original upload key via encrypted handoff.
 on:
   push:
     branches: [main]
