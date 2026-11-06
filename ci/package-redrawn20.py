@@ -72,6 +72,12 @@ if slug=='xlr8':
  clips={'idle':[7],'walk':[0,1,2,3],'normal':[4,5,6,7],'skill0':[16,17,18,19],'skill1':[20,21,22,23],'skill2':[24,25,26,27],'ultimate':[28,29,30,31],'guard':[14],'hit':[15]}
 else:
  clips={'idle':[0],'walk':list(range(0,8)),'normal':list(range(8,12)),'skill0':list(range(12,16)),'skill1':list(range(16,20)),'skill2':list(range(20,24)),'ultimate':list(range(24,28)),'guard':[28],'hit':[29,30]}
+if int(ident) in [87,88]:
+ # Authored sheet places dart, paired-vine lash and root impact on rows 3, 4 and 5.
+ clips['skill0']=list(range(8,12));clips['skill1']=list(range(12,16));clips['skill2']=list(range(16,20))
+if int(ident)==89:
+ # Raised single-nozzle arc is the globule; the level braced jet uses row 5.
+ clips['skill0']=list(range(16,20));clips['skill1']=list(range(12,16))
 hover=int(ident) in [25,26,34,36,51,53,56,66,68,69,76,78,87]
 if int(ident)>=23:
  clips['idle']=list(range(8)) if hover else [31]
