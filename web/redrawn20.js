@@ -37,7 +37,7 @@ function redrawn20Pick(f,state,t){
   else if(age<active){const repeat=c.kind==='melee'&&(c.ticks||1)>1,phase=repeat?(age/active*c.ticks)%1:age/active;i=1+Math.min(clip.length-3,Math.floor(phase*Math.max(1,clip.length-2)));}
   else i=clip.length-1;
  }else if(state==='hit')i=Math.min(clip.length-1,Math.floor(Math.max(0,f.stun||0)*10));
- else if(state==='idle'&&clip.length>1)i=Math.floor(t*3)%clip.length;
+ else if(state==='idle'&&clip.length>1)i=Math.floor(t*(d.idleFps||3))%clip.length;
  return {entry:e,frame:d.frames[clip[i]],index:i};
 }
 const redrawn20Base=drawAlien;
@@ -58,4 +58,4 @@ drawnAlienEmitter=function(f,v){
 const redrawn20BeginBase=begin;
 begin=async function(...args){if(globalThis.redrawn20ScriptsReady)await globalThis.redrawn20ScriptsReady;await redrawn20Load(selected);return redrawn20BeginBase(...args);};
 const redrawn20InfoBase=renderAlienInfo;
-renderAlienInfo=function(){const r=redrawn20InfoBase(),e=redrawn20Registry.get(selected),m=document.getElementById('animationRevision');if(e?.ready&&m){m.hidden=false;m.textContent='New drawings · 20-alien batch · '+e.data.frames.length+' poses';}return r;};
+renderAlienInfo=function(){const r=redrawn20InfoBase(),e=redrawn20Registry.get(selected),m=document.getElementById('animationRevision');if(e?.ready&&m){m.hidden=false;m.textContent='New drawings · '+(e.data.batchLabel||'20-alien batch')+' · '+e.data.frames.length+' poses';}return r;};
