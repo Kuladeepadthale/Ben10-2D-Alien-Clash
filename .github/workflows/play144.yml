@@ -123,7 +123,9 @@ jobs:
           PY
           rm release-output/Ben10-Omniverse-14.4-unsigned.aab
           sha256sum release-output/*.aab > release-output/SHA256SUMS.txt
-      - uses: actions/upload-artifact@v4
+      - name: Upload Actions artifact (best effort; quota must not block release)
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
         with:
           name: Ben10-Omniverse-14.4-AAB
           path: release-output/
