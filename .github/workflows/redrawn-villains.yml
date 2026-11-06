@@ -7,6 +7,7 @@ on:
       - 'web/redrawn20.js'
       - 'web/villain-data.js'
       - 'ci/check-redrawn-villains.cjs'
+      - 'ci/check-villain-roster.cjs'
       - '.github/workflows/redrawn-villains.yml'
   workflow_dispatch:
 concurrency:
@@ -21,6 +22,8 @@ jobs:
         with:
           node-version: 22
       - run: npm install --prefix /tmp/redrawn-tools --no-save --no-package-lock @napi-rs/canvas
+      - run: node ci/check-villain-roster.cjs
       - run: node ci/check-redrawn-villains.cjs web/redrawn-villains/*.js
         env:
           NODE_PATH: /tmp/redrawn-tools/node_modules
+

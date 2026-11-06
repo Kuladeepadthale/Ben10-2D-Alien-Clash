@@ -1,6 +1,6 @@
 # Newly drawn villain animations
 
-Status: integration and verification in progress. The enabled list records completed individual uploads.
+Status: **50/50 integrated and enabled** on 2026-11-06. SevenSeven's existing atlas is now included in the loader; the remaining 15 atlases were generated and uploaded individually in this continuation.
 
 Scope: all **50 villains** in the existing Classic and Galactic campaign roster. Each receives **32 newly drawn poses** (1,600 drawings total): eight movement poses, four basic attack phases, four phases for each of three powers, four ultimate phases, guard, two hit reactions and ready idle. Floating villains use hover movement. Existing jump, dash and knockout drawings remain in use.
 
@@ -64,3 +64,4 @@ Identification on the villain detail page: `New drawings · Villain upgrade · 3
 The runtime is isolated from alien sprites, preloads the selected villain before battle, limits decoded villain atlases to four, advances walking by distance, keeps emitter direction aligned with facing, and separates airborne versus landed leap impacts. Portrait cards retain their existing artwork. Newly drawn animation is series-inspired, not television footage; rendering checks verify technical integration, not exact television equivalence.
 
 GitHub source updates are separate from a downloadable Android build. No new APK/AAB is delivered by this animation task.
+
