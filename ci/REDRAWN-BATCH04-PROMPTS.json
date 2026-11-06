@@ -1,0 +1,125 @@
+{
+  "layout": "Use case stylized-concept. NEW high-quality hand-drawn 2D Ben 10 fighting-game sprite atlas faithful to the specified series character design. Clean bold black ink outlines, flat cel-shaded colors, consistent original anatomy and body proportions. EXACT FOUR COLUMNS by EIGHT ROWS, 32 separate FULL-BODY animation cels, tall portrait sheet, genuinely transparent background. Every pose faces RIGHT in side/three-quarter view, same scale, camera and cell floor baseline. Each complete figure occupies only 65–75% of its cell with at least 10% clear margin; ALL horns, wings, tails, weapons, spider legs, antennae, moons and chair parts fully inside their own cell. No cropping or overlap. Rows1–2: eight consecutive distinct species-appropriate movement frames with proper articulation and planted contacts or hovering changes. Row3: four basic attack phases anticipation, extension, contact, recovery. Row4 first listed power four phases. Row5 second power four phases. Row6 third power four phases. Row7 ultimate four phases. Row8 guard, flinch, recoil, ready idle. Strong deliberate whole-body mechanics, new distinct drawings, not static copies. No labels, text, grid, background, floor shadows, large outside effects or long projectiles; game renders external effects separately. Subject and actions: ",
+  "characters": [
+    {
+      "id": 63,
+      "slug": "gax",
+      "name": "Gax",
+      "brief": "GAX reboot Chimera Sui Generis: powerful muscular green-grey alien with broad head, long four facial tentacles hanging from mouth, red eyes, black and white suit with green Omnitrix, thick clawed arms and feet. Eight heavy grounded walking cels, facial tentacles swing naturally. Basic heavy claw punch. Laser vision head braces and red eyes aim RIGHT. Tentacle lash facial tentacles stretch forward-right in lashing strike and retract. Conqueror slam raises both fists then pounds ground. Vilgaxian charge low shoulder-first running strike. Preserve alien squid-like face and same muscle volume; no Vilgax armor."
+    },
+    {
+      "id": 64,
+      "slug": "shock-rock",
+      "name": "Shock Rock",
+      "brief": "SHOCK ROCK reboot Fulmini: massive grey-brown stone-armored humanoid with glowing BLUE electric energy between rock plates, blue energy face and green Omnitrix chest. Eight heavy rock-foot steps with shoulders counter-rotating. Basic stone fist jab. Energy blade right forearm shapes a short BLUE electrical sword and slashes RIGHT. Fulmini beam both palms brace forward-right with energy exposed at hands. Rock discharge spreads rock arms then thrusts both palms. Energy hammer right arm shapes a broad blue energy hammer head, raises and slams forward-down. Keep rock armor and blue energy model consistent, no red or fire energy."
+    },
+    {
+      "id": 65,
+      "slug": "slapback",
+      "name": "Slapback",
+      "brief": "SLAPBACK reboot Ekoplektoid: small stocky green frog-like humanoid with grey metallic-looking face and hands, bright green eyes, dark green-black bodysuit with white chest stripe and green Omnitrix, short thick legs and rounded shoulders. Eight grounded quick waddling walking cels with alternating feet. Basic short dense fist jab. Double trouble feints sideways then lunges with right fist. Dense fist coils shoulder then drives a heavy compact right punch. Compact cannonball crouches, curls into dense rounded body ball moving RIGHT, uncurls. Mass multiplicity energetic compact fist and body-bump combo cels. Show only primary Slapback in each cell; game draws clone assistants separately. Do not change body size across cels."
+    },
+    {
+      "id": 66,
+      "slug": "surge",
+      "name": "Surge",
+      "brief": "SURGE reboot Xerge: small dark purple floating X-shaped alien with four thick tapered arms making a clear X silhouette, magenta-red face markings, one green eye and green Omnitrix on central body. NO human arms legs or humanoid torso. Eight hovering locomotion cels with X arms flexing, compression, passing rotation and gentle spread while main eye faces RIGHT. Basic sharp upper X-arm slash. Linked charge X arms fold into aerodynamic shape and thrust right. Cross slice upper and lower X tips sweep in crossing diagonal attack. Xerge formation X body stretches and braces as linking connector then returns. Swarm convergence X arms alternately compress and spread in coordinated striking poses. One main Xerge only in each cell; game renders supporting Xerges independently."
+    },
+    {
+      "id": 67,
+      "slug": "ultimate-humungousaur",
+      "name": "Ultimate Humungousaur",
+      "brief": "ULTIMATE HUMUNGOUSAUR Ultimate Alien evolved Vaxasaurian: enormous GREEN muscular dinosaur humanoid with beige belly, brown spiked armored shell on shoulders and back, thick armored tail, red-green eyes and green Ultimatrix chest. Eight heavy planted armored dinosaur walking cels, tail counterbalances. Basic enormous fist jab. Bio-missile volley right hand transforms into a biological multi-barrel missile launcher aimed RIGHT, opens barrels, recoils, returns to fist. Armored stomp lifts huge boot and stamps. Heavy tail pivots hips and swings long armored tail RIGHT near ground. Missile saturation BOTH hands transform into multi-barrel launchers aimed right then recoil and return. No actual long missiles painted, hands must visibly change shape."
+    },
+    {
+      "id": 68,
+      "slug": "ultimate-big-chill",
+      "name": "Ultimate Big Chill",
+      "brief": "ULTIMATE BIG CHILL Ultimate Alien evolved Necrofriggian: lean moth humanoid with red-orange body, black limbs, yellow flame-like markings, green eyes, FOUR large red-orange moth wings with yellow flame patterns, green Ultimatrix chest. Eight distinct hovering wingbeat cels with softly bent legs, no human ground walking. Basic claw swipe. Freezing flame head inhales then mouth exhales RIGHT; heat-consuming red-orange flame pose, no huge flame painted. Ice-fire shard mouth opens with precise forward spit/recoil posture. Phasing flame wings fold and body lunges right. Subzero inferno wings spread fully and chest expands for forceful mouth exhale right. Four consistent wings, complete body and tips inside cell."
+    },
+    {
+      "id": 69,
+      "slug": "ultimate-echo-echo",
+      "name": "Ultimate Echo Echo",
+      "brief": "ULTIMATE ECHO ECHO Ultimate Alien evolved Sonorosian: tall broad BLUE robotic-looking humanoid with black round sound-disc pads on shoulders chest forearms and legs, white face with green eyes, green Ultimatrix chest. Eight smooth slightly hovering movement cels, feet gently tuck and arms counterbalance. Basic powerful right-arm jab. Sonic discs right arm extends as two SMALL round blue-black discs float near palm and are sent right, then arm recovers. Focused resonance both palms focus toward RIGHT with sound discs braced near wrists. Disc ring spreads arms as two discs hover beside shoulders, then pulls arms inward. Sonic doom arms raise and command discs forward in powerful stance. Main body only with up to two nearby discs; no swarm hiding silhouette."
+    },
+    {
+      "id": 70,
+      "slug": "ultimate-swampfire",
+      "name": "Ultimate Swampfire",
+      "brief": "ULTIMATE SWAMPFIRE Ultimate Alien evolved Methanosian: huge bulky DARK BROWN tree-bark humanoid with thick gnarled wooden arms and legs, BLUE rounded methane-fire pods on shoulders and upper arms, blue head crown with green eyes, beige wooden chest with green Ultimatrix. Eight heavy planted tree-root walking cels with bark joints bending. Basic massive wooden fist punch. Blue fireball right palm opens and makes a controlled throwing motion RIGHT with SMALL blue flame near hand. Armored roots crouches and drives both thick root hands into ground. Methane bomb draws small BLUE methane pod from shoulder then throws right and recovers. Blue-flame detonation shoulders brace and both palms extend right with small blue flame at hands. No orange-fire design or slim Swampfire body."
+    },
+    {
+      "id": 71,
+      "slug": "ultimate-cannonbolt",
+      "name": "Ultimate Cannonbolt",
+      "brief": "ULTIMATE CANNONBOLT Ultimate Alien evolved Arburian Pelarota: round SILVER-GREY armored body with metallic blue-white face, green eyes, black underbody and sharp grey spikes on heavy shoulder/back plates, short thick legs, clawed hands, green Ultimatrix chest. Eight heavy waddling armored walk cels with planted feet. Basic short armored fist jab. Spiked roller crouches then curls into fully CLOSED silver spiked ball rolling RIGHT, uncurls. Steel-shell slam raises body and lands low with shell forward. Spiked rebound curls into silver spiked ball at two distinct banking angles then uncurls. Wrecking orbit crouches, fully curled spiked airborne ball, heavy rolled impact, recovered stance. Keep metal spikes on ball, same volume, no yellow original Cannonbolt."
+    },
+    {
+      "id": 72,
+      "slug": "ultimate-wildmutt",
+      "name": "Ultimate Wildmutt",
+      "brief": "ULTIMATE WILDMUTT evolved Omniverse Vulpimancer: HUGE RED shaggy-furred eyeless alien hound, pale cream jaw and long pale claws, powerful forequarters, LONG thick red tail, black chest harness with GREEN Ultimatrix. Eight true quadruped run cels with distinct foreleg/hindleg contact, compression, passing, extension and suspension; face has NO eyes. Basic feral bite animation. Apex claw flurry coils foreleg then swipes right and follows with opposite claw. Predator lunge compresses hindquarters, leaps right with jaw open, strikes, lands. Tail sweep rotates low and swings LONG red tail RIGHT. Feral onslaught crouches, fierce airborne double-claw lunge, bite contact, recovery. Keep shaggy red fur and tail, not orange ordinary Wildmutt."
+    },
+    {
+      "id": 73,
+      "slug": "ultimate-spidermonkey",
+      "name": "Ultimate Spidermonkey",
+      "brief": "ULTIMATE SPIDERMONKEY Ultimate Alien: enormous muscular PURPLE gorilla body with dark purple fur, pale purple face, green eyes, TWO massive gorilla arms and FOUR very long jointed SPIDER LEGS emerging from back and supporting the body, green Ultimatrix chest. Four back legs plus two big arms only; no extra human arms. Eight articulated spider-leg walking cels with alternating long-leg contacts and swinging gorilla arms, whole leg span inside cell. Basic heavy gorilla fist punch. Mouth web snare leans head forward and opens mouth aimed RIGHT; web comes from MOUTH, not hands or tail. Gorilla ground smash raises both huge fists then pounds ground. Spider-leg rake lifts front two back spider legs and sweeps their tips right, then resets. Arachnid rampage low spider-leg charge with massive gorilla punch and mouth-ready poses."
+    },
+    {
+      "id": 74,
+      "slug": "ultimate-way-big",
+      "name": "Ultimate Way Big",
+      "brief": "ULTIMATE WAY BIG Ultimate Alien evolved To'kustar: enormous muscular BLUE and WHITE cosmic humanoid with THREE RED head crests, red forearm fins, green eyes and green Ultimatrix chest. Eight deliberate giant planted walking cels with heavy weight shifts; all three red head crests fully visible. Basic gigantic straight fist punch. Cosmic forearm ray crosses forearms into iconic L/cross firing pose aimed RIGHT. Colossal stomp raises knee high then stamps huge foot. Giant uppercut deep shoulder coil then driving fist upward-right and recovery. Ultimate cosmic ray wide planted stance then powerful crossed-forearm firing pose right. Preserve blue-white palette and red crests, not ordinary red-white Way Big."
+    },
+    {
+      "id": 75,
+      "slug": "ultimate-arctiguana",
+      "name": "Ultimate Arctiguana",
+      "brief": "ULTIMATE ARCTIGUANA Omniverse evolved Polar Manzardill: bulky BLUE reptile with white belly, green eyes, heavy tail and TWO HUGE FROST CANNON structures mounted over shoulders/back with forward-pointing barrels, green Ultimatrix chest. Eight low heavy reptile walking cels with planted fore/hind feet and cannons stable. Basic heavy claw swipe. Shoulder frost cannon braces body and turns RIGHT shoulder cannon barrel toward right with firing recoil. Ice cannon shell both cannons aim RIGHT and recoil. Glacial field lowers body and aims shoulder barrels down-right. Twin cannon blizzard raises forequarters then BOTH SHOULDER cannons point right and fire/recoil poses. Frost comes from shoulder cannons, not mouth; no long beams painted. Full tail and barrels inside each cell."
+    },
+    {
+      "id": 76,
+      "slug": "ultimate-gravattack",
+      "name": "Ultimate Gravattack",
+      "brief": "ULTIMATE GRAVATTACK Omniverse evolved Galilean: HUGE PURPLE rocky spherical planetoid alien with long heavy rock arms and NO LEGS, luminous GREEN chest core, green eyes, green forehead Ultimatrix and THREE SMALL PURPLE MOONS orbiting body. Eight hovering locomotion cels with body gently tilting, arms shifting and exactly three moons in changing orbital positions; absolutely no feet or legs. Basic stone arm jab. Gravity core pulse spreads arms then points glowing chest core RIGHT. Orbital gravity well opens both hands and moons shift into coordinated orbit. Moonfall raises right arm then directs one moon down-right while other two remain near body. Planetary compression both arms pull inward around green core then push out. Keep every moon fully inside its cell and body size consistent."
+    },
+    {
+      "id": 77,
+      "slug": "ultimate-rath",
+      "name": "Ultimate Rath",
+      "brief": "ULTIMATE RATH Omniverse evolved Appoplexian: muscular DARK PINK tiger humanoid with WHITE fur chest and muzzle, RED tiger stripes, TWO ENORMOUS claws on EACH hand, black shorts with white spiked belt, RED sleeveless coat with BLACK fur hood, red wrist wraps, green Ultimatrix chest. Eight aggressive planted feline walking/running cels, coat hem and hood counter-move. Basic sharp right boxing jab. Twin-claw frenzy both enormous claws slash right then opposite hand follows. Appoplexian pounce deep squat, long airborne tiger leap, claws extended, landing. Savage uppercut right shoulder winds back then HUGE twin-claw fist drives upward-right, recovery. Ultimate claw rampage forceful forward boxing/claw charge. Preserve pink-white-red design and coat, not orange ordinary Rath."
+    },
+    {
+      "id": 78,
+      "slug": "ultimate-grey-matter",
+      "name": "Ultimate Grey Matter",
+      "brief": "ULTIMATE GREY MATTER / ULTIMATE ALBEDO Omniverse: enormous PALE GREY folded brain-shaped head with small grey face, RED eyes and a THIRD RED forehead eye, small grey arms and legs, dark cybernetic brain plates and GREEN forehead Ultimatrix. Seated on a SMALL RED floating hoverchair with TWO forward-facing cannons. Clean non-gory cartoon brain folds. Eight hovering chair movement cels with head tilts and little arm changes, chair and both cannons always visible; no ground walking. Basic small cybernetic hand jab from chair. Third-eye beam tilts forehead eye toward RIGHT and braces hands. Psychic barrier both small hands open forward in concentration. Hoverchair cannon braces body and aims both RED CHAIR cannons RIGHT with recoil. Cerebral overload head tilts forward and third eye focuses right while hands spread. Full huge brain and entire chair inside every cell."
+    },
+    {
+      "id": 79,
+      "slug": "bashmouth",
+      "name": "Bashmouth",
+      "brief": "BASHMOUTH reboot Antitrix alien: huge muscular GREY wolf humanoid with spiky dark-grey fur, RED eyes, heavy metallic SILVER JAW and silver armored forearms, long black claws, BLACK/RED Antitrix chest badge. Eight grounded wolf run cels with digitigrade legs and shoulder weight, no human shoes. Basic heavy claw punch. Metal-claw barrage winds armored forearm then slashes RIGHT, opposite claw followthrough, recovery. Steel-jaw bite head winds back then opens SILVER METAL jaw and bites forward-right, closes, recovers. Wolf pounce low crouch, launch, fully extended werewolf leap, landing. Armored wolf frenzy low shoulder drive with alternating metal claw strikes. Preserve red eyes and red Antitrix, no green Omnitrix."
+    },
+    {
+      "id": 80,
+      "slug": "bootleg",
+      "name": "Bootleg",
+      "brief": "BOOTLEG reboot Antitrix Galvanic Mechamorph: BLUE liquid technorganic humanoid with BLACK circuit lines, one RED eye on smooth face, angular spikes on shoulders and forearms, BLACK/RED Antitrix chest badge. Eight flowing elastic grounded walking cels, feet squash then plant, body shape controlled. Basic elastic right-arm fist extension. Optic corruption beam RED face eye aims RIGHT with head brace. Liquid spike strike right forearm stretches into long angular blue-black spike and stabs right, retracts. Circuit pulse both hands sweep forward from torso. Corruption overload body braces and RED eye tilts right while arms open. Energy comes from face eye for beam, no green body or green eye."
+    },
+    {
+      "id": 81,
+      "slug": "crystalfist",
+      "name": "Crystalfist",
+      "brief": "CRYSTALFIST reboot Antitrix Petrosapien: powerful PURPLE crystalline humanoid with angular diamond head crest, violet pointed shoulder crystals, very large faceted crystal forearms and fists, RED eyes, BLACK/RED Antitrix chest badge. Eight heavy grounded crystalline walking cels with articulated knees and shoulders. Basic huge crystal fist jab. Violet crystal shard right palm opens and throws a compact shard-shaped gesture RIGHT. Crystalline eruption crouches and plants crystal palms toward floor. Crystal-fist combo strong alternating faceted punches with torso twist. Purple crystal cascade wide stance and both crystal palms aim right in commanding crystal-growth pose. Keep purple crystal design and red Antitrix, no green Diamondhead skin."
+    },
+    {
+      "id": 82,
+      "slug": "dark-matter",
+      "name": "Dark Matter",
+      "brief": "DARK MATTER reboot Antitrix Galvan: TALL powerful DARK RED alien with oversized long pointed brain head, dark maroon face with RED eyes, lean muscular limbs, black-red suit sections and BLACK/RED Antitrix chest badge. Eight deliberate stalking planted walk cels with long arms counter-swinging. Basic long powerful right-arm punch. Crystallizing flame right palm opens and pushes forward with a SMALL dark red-orange flame at hand, no huge stream. Dark crystal trap crouches and places one small dark crystal shard at ground then stands. Crystalline claw right hand forms a sharp dark crystal claw and sweeps RIGHT. Matter crystallization both hands gather then thrust forward in crystal-casting pose. Preserve huge pointed red brain head and red badge, no green Omnitrix."
+    }
+  ]
+}
