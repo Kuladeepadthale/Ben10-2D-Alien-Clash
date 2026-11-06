@@ -1,6 +1,6 @@
 # New animation drawings — batch 04
 
-Status: all 20 integrated, individually verified and enabled on GitHub. 14,400 local rendered samples passed. All 80 uploaded assets match local Git blob hashes and sizes. Combined GitHub verification pending.
+Status: all 20 integrated, individually verified and enabled on GitHub. 14,400 local rendered samples passed. All 80 uploaded assets match local Git blob hashes and sizes. [Combined GitHub verification passed](https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/42174844171): 80 characters and 57,600 rendered action/facing/time samples.
 
 20 characters, 32 newly drawn poses each (640 drawings). Each character is enabled on GitHub after its individual 720-sample rendering check passes.
 
