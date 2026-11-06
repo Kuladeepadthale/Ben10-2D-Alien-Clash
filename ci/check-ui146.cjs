@@ -10,7 +10,7 @@ for(const [width,height] of [[932,430],[740,360],[390,844]]){
  const cards=await page.locator('#roster').evaluate(el=>({columns:getComputedStyle(el).gridTemplateColumns.split(' ').length,count:el.children.length,scroll:el.scrollWidth<=el.clientWidth+2}));assert.equal(cards.columns,5);assert.equal(cards.count,92);assert(cards.scroll);
  await page.evaluate(()=>{career.owned.includes(0)||career.owned.push(0);openAlienUpgrades(0);});await page.waitForTimeout(150);
  const panel=await page.locator('#upgrades').evaluate(el=>{const r=el.getBoundingClientRect();return {n:[...el.children].filter(c=>!c.hidden).length,height:el.clientHeight,scroll:el.scrollHeight,rect:{x:r.x,y:r.y,right:r.right,bottom:r.bottom},cards:[...el.children].map(c=>{const b=c.getBoundingClientRect();return {bottom:b.bottom,right:b.right,art:!!c.querySelector('.upgrade-art146'),font:parseFloat(getComputedStyle(c.querySelector('h3')).fontSize)};})};});
- assert.equal(panel.n,6);assert(panel.height>0);assert(panel.scroll<=panel.height+3,JSON.stringify(panel));assert(panel.rect.bottom<=height+1);assert(panel.cards.every(c=>c.art&&c.font<=14&&c.bottom<=panel.rect.bottom+2&&c.right<=panel.rect.right+2));report.push({width,height,cards,panel});
+ console.log(JSON.stringify({width,height,panel}));assert.equal(panel.n,6);assert(panel.height>0);assert(panel.scroll<=panel.height+3,JSON.stringify(panel));assert(panel.rect.bottom<=height+1);assert(panel.cards.every(c=>c.art&&c.font<=14&&c.bottom<=panel.rect.bottom+2&&c.right<=panel.rect.right+2));report.push({width,height,cards,panel});
 }
 await page.setViewportSize({width:932,height:430});
 const combat=await page.evaluate(()=>{mode='fight';player=make(0,400,1,true);enemy=make(2,1050,-1);shots=[];effects=[];training=true;player.ult=100;
