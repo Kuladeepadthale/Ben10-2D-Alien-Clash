@@ -17,10 +17,7 @@ upgradeDeck.options.fitted=true;upgradeDeck.capacity=null;refreshDeck(upgradeDec
 const simpleRender146=renderSetup;
 renderSetup=function(){simpleRender146();compactUpgrades146();};
 const simplePictures146=refreshBattlePictures;
-refreshBattlePictures=function(){simplePictures146();const b=document.querySelector('.touch [data-key="normal"]');if(b&&!b.dataset.hand146){b.innerHTML=uiIcon('normal');b.dataset.hand146='true';b.setAttribute('aria-label','Basic attack');}};
-// The base icon renderer replaces the button on each alien change.
-let simpleAlien146=-1;
-const simpleHud146=hud;hud=function(){if(player.id!==simpleAlien146){simpleAlien146=player.id;delete document.querySelector('.touch [data-key="normal"]').dataset.hand146;}simpleHud146();refreshBattlePictures();};
+refreshBattlePictures=function(){simplePictures146();const b=document.querySelector('.touch [data-key="normal"]');if(b&&b.innerHTML!==uiIcon('normal')){b.innerHTML=uiIcon('normal');b.setAttribute('aria-label','Basic attack');}};
 const guides146={
  home:['Ready, hero?','Tap Play to choose a battle.','Tap Aliens to choose your hero.'],
  characters:['Choose an alien','Swipe to see more heroes. Tap a card.','A lock means you need more cards to unlock that hero.'],
@@ -58,3 +55,6 @@ compactUpgrades146();refreshBattlePictures();
 requestAnimationFrame(()=>{if(!document.body.classList.contains('app-loading'))firstGuide146(currentScreen);});
 // Battle may begin after its screen has already been selected during async loading.
 setInterval(()=>{if(currentScreen==='battle'){if(mode==='fight')firstGuide146('battle');}else if(!document.querySelector('#matchOutcome:not([hidden])'))firstGuide146(currentScreen);},700);
+// Results keeps its primary retry action; Upgrade goes directly to this hero.
+const resultUpgrade146=document.querySelector('#screen-results [data-screen="upgrades"]');
+resultUpgrade146?.addEventListener('click',e=>{e.stopPropagation();openAlienUpgrades(selected);});
