@@ -1,6 +1,6 @@
 # Remaining aliens-page animation drawings — batch 05
 
-Status: final verification in progress.
+Status: **all nine integrated, individually checked and enabled on GitHub**. All 89 uploaded assets match local Git blob hashes and sizes. [Combined GitHub verification passed](https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/42176220217): **89 characters / 64,080 rendered action, facing and time samples**. The final nine contributed 6,480 individually verified samples, plus Wreckingbolt airborne/landing assertions.
 
 Nine remaining characters receive 32 newly drawn series-inspired poses each: **288 drawings**. Each set is enabled individually after its 720-sample local rendering check passes.
 
