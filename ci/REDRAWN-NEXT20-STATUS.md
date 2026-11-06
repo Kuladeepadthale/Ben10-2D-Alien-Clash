@@ -34,3 +34,5 @@ Individual validation: 720 rendered action/facing/time samples per character, 14
 The detail marker for this batch reads **New drawings · Next 20 · Batch 02 · 32 poses** when its atlas is active. These are newly authored, series-inspired game assets rather than footage extracted from television. APK/AAB builds are separate from source integration.
 
 [Generation prompt set](REDRAWN-NEXT20-PROMPTS.json) · [Animation source folder](../web/redrawn20/)
+
+Combined validation: **40 characters and 28,800 rendered samples passed together** in [GitHub Actions run 42169353770](https://github.com/Kuladeepadthale/Ben10-2D-Alien-Clash/actions/runs/42169353770). Both airborne/landed slam assertions and the four-character decoded cache limit passed.
