@@ -28,12 +28,27 @@ for index,fr in enumerate(frames):
   fr['emitter']=[round(ox+ref*.18,1),round(oy-ref*.85,1)]
  elif int(ident) in [7,15,19,20] and index>=12:
   fr['emitter']=[round(ox+ref*.35,1),round(oy-ref*.65,1)]
+ elif (int(ident) in [23,42] and index>=12) or (int(ident)==26 and (12<=index<16 or 20<=index<28)):
+  fr['emitter']=[round(ox+ref*.25,1),round(oy-ref*.72,1)]
+ elif int(ident)==25 and (12<=index<16 or 24<=index<28):
+  fr['emitter']=[round(ox+ref*.20,1),round(oy-ref*.82,1)]
+ elif int(ident)==28 and index>=12:
+  fr['emitter']=[round(ox+ref*.12,1),round(oy-ref*.88,1)]
+ elif int(ident)==38 and index>=12:
+  fr['emitter']=[round(ox+ref*.15,1),round(oy-ref*.48,1)]
+ elif int(ident)==39 and (12<=index<16 or 24<=index<28):
+  fr['emitter']=[round(ox+ref*.18,1),round(oy-ref*.83,1)]
  elif int(ident)==17 and (16<=index<20 or 24<=index<28):
   fr['emitter']=[round(ox+ref*.12,1),round(oy-ref*.55,1)]
 if slug=='xlr8':
  clips={'idle':[7],'walk':[0,1,2,3],'normal':[4,5,6,7],'skill0':[16,17,18,19],'skill1':[20,21,22,23],'skill2':[24,25,26,27],'ultimate':[28,29,30,31],'guard':[14],'hit':[15]}
 else:
  clips={'idle':[0],'walk':list(range(0,8)),'normal':list(range(8,12)),'skill0':list(range(12,16)),'skill1':list(range(16,20)),'skill2':list(range(20,24)),'ultimate':list(range(24,28)),'guard':[28],'hit':[29,30]}
-d={'id':int(ident),'slug':slug,'status':'new-drawings-integrated','date':'2026-11-06','referenceHeight':round(statistics.median(heights[:8])),'stride':.9,'frames':frames,'clips':clips,'sheets':sheets}
+hover=int(ident) in [25,26,34,36]
+if int(ident)>=23:
+ clips['idle']=list(range(8)) if hover else [31]
+if hover:
+ for fr in frames:fr['origin'][1]=round(fr['rect'][3]*.94,1)
+d={'batchLabel':'Next 20 · Batch 02' if int(ident)>=23 else '20-alien batch','idleFps':8 if hover else 3,'id':int(ident),'slug':slug,'status':'new-drawings-integrated','date':'2026-11-06','referenceHeight':round(statistics.median(heights[:8])),'stride':.9,'frames':frames,'clips':clips,'sheets':sheets}
 out=Path('web/redrawn20')/(slug+'.js');out.parent.mkdir(exist_ok=True,parents=True);out.write_text("'use strict';\nregisterRedrawn20("+json.dumps(d,separators=(',',':'))+");\n")
 print(json.dumps({'file':str(out),'poses':len(frames),'bytes':out.stat().st_size,'referenceHeight':d['referenceHeight']}))
