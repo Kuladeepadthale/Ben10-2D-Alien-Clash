@@ -43,7 +43,7 @@ function drawGuide146(){$('guideTitle146').textContent=guideLines146[0];$('guide
 function finishGuide146(){try{localStorage.setItem('ben10-guide146-'+guideKey146,'seen');}catch{}guide146.close();if(guidePaused146&&mode==='paused'){mode='fight';resetInputs();}guidePaused146=false;}
 $('guideSkip146').onclick=finishGuide146;$('guideNext146').onclick=()=>{if(++guideStep146>=guideLines146.length)finishGuide146();else drawGuide146();};guide146.addEventListener('cancel',e=>{e.preventDefault();finishGuide146();});
 function firstGuide146(key,force=false){
- if(guide146.open)return;
+ if(guide146.open||$('entryGuest')?.offsetParent||document.body.classList.contains('app-loading'))return;
  const id=key==='alieninfo'&&alienUpgradeOpen?'upgrades':key;
  try{if(!force&&localStorage.getItem('ben10-guide146-'+id))return;}catch{}
  if(document.querySelector('dialog[open]'))return;
@@ -57,4 +57,4 @@ const help146=document.createElement('button');help146.textContent='Replay guide
 compactUpgrades146();refreshBattlePictures();
 requestAnimationFrame(()=>{if(!document.body.classList.contains('app-loading'))firstGuide146(currentScreen);});
 // Battle may begin after its screen has already been selected during async loading.
-setInterval(()=>{if(currentScreen==='battle'&&mode==='fight')firstGuide146('battle');},700);
+setInterval(()=>{if(currentScreen==='battle'){if(mode==='fight')firstGuide146('battle');}else if(!document.querySelector('#matchOutcome:not([hidden])'))firstGuide146(currentScreen);},700);
