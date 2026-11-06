@@ -36,6 +36,7 @@ function redrawn20Pick(f,state,t){
   if(age<0)i=0;
   else if(age<active){const repeat=c.kind==='melee'&&(c.ticks||1)>1,phase=repeat?(age/active*c.ticks)%1:age/active;i=1+Math.min(clip.length-3,Math.floor(phase*Math.max(1,clip.length-2)));}
   else i=clip.length-1;
+  if(c.kind==='leapslam'&&clip.length===4){const ground=typeof floor==='number'?floor:f.y;i=age<0?0:f.y<ground-30?1:age<active?2:3;}
  }else if(state==='hit')i=Math.min(clip.length-1,Math.floor(Math.max(0,f.stun||0)*10));
  else if(state==='idle'&&clip.length>1)i=Math.floor(t*(d.idleFps||3))%clip.length;
  return {entry:e,frame:d.frames[clip[i]],index:i};
