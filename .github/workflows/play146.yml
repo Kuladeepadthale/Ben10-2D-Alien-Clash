@@ -3,6 +3,9 @@ on:
   push:
     branches: [main]
     paths: ['.github/workflows/play146.yml','web/free-combat146.js','web/simple-ui146.js','web/simple-ui146.css','ci/check-ui146.cjs','ci/check-free-combat146.cjs','ci/package146.py']
+concurrency:
+  group: ben10-combat-ui146
+  cancel-in-progress: true
 permissions:
   contents: write
 jobs:
@@ -71,4 +74,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create combat-ui-14.6 release-output/* --prerelease --title 'Ben 10 Omniverse 14.6 - classic art and responsive combat' --notes 'Previous 14.3 artwork retained. Move during ultimates, cancel body attacks with another power, autonomous effects continue. Five-column collection, compact upgrades and first-visit guides. Development-signed APK for device testing; not a Play production AAB. Prior releases untouched.' --target "$GITHUB_SHA"
+          gh release create "combat-ui-14.6-${GITHUB_SHA:0:7}" release-output/* --prerelease --title 'Ben 10 Omniverse 14.6 - classic art and responsive combat' --notes 'Previous 14.3 artwork retained. Move during ultimates, cancel body attacks with another power, autonomous effects continue. Five-column collection, compact upgrades and first-visit guides. Development-signed APK for device testing; not a Play production AAB. Prior releases untouched.' --target "$GITHUB_SHA"
