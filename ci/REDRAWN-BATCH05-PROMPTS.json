@@ -1,0 +1,59 @@
+{
+  "layout": "Use case stylized-concept. NEW high-quality hand-drawn 2D Ben 10 fighting-game sprite atlas faithful to the specified series character design. Clean bold black ink outlines, flat cel-shaded colors, consistent original anatomy and body proportions. EXACT FOUR COLUMNS by EIGHT ROWS, 32 separate FULL-BODY animation cels, tall portrait sheet, genuinely transparent background. Every pose faces RIGHT in side/three-quarter view, same scale, camera and cell floor baseline. Each complete figure occupies only 65–75% of its cell with at least 10% clear margin; ALL horns, wings, tails, weapons, spider legs, antennae, moons and chair parts fully inside their own cell. No cropping or overlap. Rows1–2: eight consecutive distinct species-appropriate movement frames with proper articulation and planted contacts or hovering changes. Row3: four basic attack phases anticipation, extension, contact, recovery. Row4 first listed power four phases. Row5 second power four phases. Row6 third power four phases. Row7 ultimate four phases. Row8 guard, flinch, recoil, ready idle. Strong deliberate whole-body mechanics, new distinct drawings, not static copies. No labels, text, grid, background, floor shadows, large outside effects or long projectiles; game renders external effects separately. Subject and actions: ",
+  "characters": [
+    {
+      "id": 83,
+      "slug": "hot-shot",
+      "name": "Hot Shot",
+      "brief": "Muscular dark red volcanic humanoid, black magma seams, bright flame head, large olive-green chest armor, red eyes, black/red Antitrix badge. Heavy planted fire-alien walk. Basic palm fire shot, magma fireball throwing phases, flame stream two palms braced right, volcanic eruption raised fists then ground strike, magma storm arms raise and command fire right. Small flames at hands only, no huge effects."
+    },
+    {
+      "id": 84,
+      "slug": "humungoraptor",
+      "name": "Humungoraptor",
+      "brief": "Huge muscular dark red raptor dinosaur humanoid, long heavy spiked tail, black armored shoulders/forearms, red eyes, red Antitrix badge. Heavy dinosaur steps with tail counterbalance. Basic claw punch, raptor claw combo alternating claws, spiked tail sweep long tail swings right, raptor stomp foot lifts and plants, raptor stampede low shoulder charge. Entire tail inside each cell."
+    },
+    {
+      "id": 85,
+      "slug": "quad-smack",
+      "name": "Quad Smack",
+      "brief": "Muscular light purple FOUR armed humanoid, FOUR red eyes, black goatee, black/red suit, gray shoulder armor, red fingertips/spiked knuckles/red Antitrix. Exactly FOUR arms in every cel. Eight planted heavy steps with four-arm counter-motion. Basic upper-right fist jab; four-fist barrage alternating upper/lower fists; four-arm thunderclap both arm pairs spread then clap together; quad ground pound raises all four fists then slams; four-arm fury charging four-fist combo."
+    },
+    {
+      "id": 86,
+      "slug": "rush",
+      "name": "Rush",
+      "brief": "Armored GREEN speedster, angular gray-green plates, streamlined reptilian helmet, red eyes, roller-ball feet, long tapering tail, red Antitrix badge. Eight distinct articulated roller-striding run cels, alternating contacts, leg extension and passing, tail counterbalances. Basic speed punch, velocity tackle low shoulder dash, wheel cyclone rotating torso and sweeping arms, high speed kick knee coils then leg fully extends right, maximum velocity deep aerodynamic racing launch and recovery. SAME body scale across movement and powers."
+    },
+    {
+      "id": 87,
+      "slug": "skunkmoth",
+      "name": "Skunkmoth",
+      "brief": "Large RED insect humanoid, GOLD heavy shoulder/chest armor, black abdomen, broad translucent insect wings, red eyes/red Antitrix. Eight hovering wingbeats with bent legs. Basic MOUTH slime spit; mouth slime shot inhale mouth aim right release recover; toxic goo arc mouth pitches upward-right then recoils; armored moth dive wings sweep back, shoulder leads right; slime bombardment wings spread and mouth casts upward-right. Mouth is emitter, no hand slime. Whole wings in each cell."
+    },
+    {
+      "id": 88,
+      "slug": "thornblade",
+      "name": "Thornblade",
+      "brief": "Dark GREEN plant humanoid, sharp red eyes, TWO long thorn-covered BACK VINES, bladed leaf forearms, red Antitrix badge. Eight planted articulated root-foot steps with vines counter-swinging. Basic thorn-firing palm; thorn dart open hand aims right; twin-vine lash BOTH back vines extend and whip RIGHT then retract; thorn-root eruption crouches and plants hands; thorn forest both arms lift then drive roots downward. Complete vines inside cells."
+    },
+    {
+      "id": 89,
+      "slug": "undertow",
+      "name": "Undertow",
+      "brief": "Bulky dark GREEN aquatic armored humanoid, black armor plates, green slime markings, fin head, RED eyes, HUGE FOREARM WATER NOZZLES, red Antitrix badge. Eight heavy planted aquatic walking cels, consistent volume. Basic forearm water shot; forearm water jet raises nozzle and braces aimed right; pressure globule single nozzle casts with recoil; undertow surge both nozzles sweep right; hydro pressure torrent wide stance both forearm nozzles brace and recoil right. NO mouth jets, water originates from forearm nozzles. Tiny water at nozzle only."
+    },
+    {
+      "id": 90,
+      "slug": "wreckingbolt",
+      "name": "Wreckingbolt",
+      "brief": "Round powerful black metallic armored alien with dark RED limbs and RED SPIKED shoulder/back plating, red eyes/red Antitrix. Eight heavy waddling steps planted. Basic armored fist jab. Spiked shell roll crouch then FULLY CLOSED black-red spiked BALL rolls right then uncurls. Wrecking crash preparation, airborne CLOSED ball, heavy low landed shell impact, recover. Heavy shell strike shoulder winds back then drives shell and fist right. Rampage curled spiked ball at distinct rotating angles then recovered stance. Keep volume consistent."
+    },
+    {
+      "id": 91,
+      "slug": "alien-v",
+      "name": "Alien V",
+      "brief": "Towering Vilgax Celestialsapien fusion, broad BLACK STARFIELD muscular body with white cosmic specks, GREEN squidlike head and hanging facial tentacles, RED eyes, heavy BLACK shoulder armor, glowing RED chest emblem. Eight heavy giant planted walking cels. Basic cosmic palm shot. Cosmic hand blast open palm braces forward RIGHT; celestial crusher huge fist punch right; void gravity field both hands spread then pull toward chest; celestial annihilation both hands gather then thrust right. Keep green tentacled head and starfield body distinct in all cels, complete facial tentacles inside cells. No green Omnitrix."
+    }
+  ]
+}
